@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 2e80d314991539cb630a0f2a96048bb2e70a05b6
-ms.sourcegitcommit: 5f0013981fcea1d689649b9a2b2ffe84ae842e56
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -619,7 +619,7 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
 * Automação
   - Atualizar para Import-AzureRMAutomationRunbook
     - O suporte agora está sendo fornecido para runbooks Python2
-* Batch
+* Lote
   - Correção de bug em que as operações de conta sem um grupo de recursos não conseguiam detectar o grupo de recursos automaticamente
 * Computação
   - Get-AzureRmComputeResourceSku mostra informações de zona.

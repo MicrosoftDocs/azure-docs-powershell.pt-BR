@@ -1,5 +1,5 @@
 ---
-title: "Formatação de resultados da consulta | Microsoft Docs"
+title: Formatação de resultados da consulta | Microsoft Docs
 description: Como consultar recursos no Azure e formatar os resultados.
 services: azure
 author: sdwheeler
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 2b23af1ef84b7c91abdcbe0738b29b068f82fd32
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="formatting-query-results"></a>Formatação de resultados da consulta
 

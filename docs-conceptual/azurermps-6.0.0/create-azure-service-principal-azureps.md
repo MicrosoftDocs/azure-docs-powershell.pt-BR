@@ -11,7 +11,7 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6eda2d2a729331b212938aa2681d0188a25b734a
+ms.openlocfilehash: 4866ee6fa4d88f1e3143c4e4b5df7fa3cc80eeee
 ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
@@ -68,7 +68,8 @@ O cmdlet `New-AzureRmADServicePrincipal` é usado para criar a entidade de servi
 ```powershell
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```
@@ -98,7 +99,7 @@ Agora você pode entrar como a nova entidade de serviço para seu aplicativo usa
 
 ```powershell
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
 Execute este comando de uma nova sessão do PowerShell. Após uma entrada bem-sucedida, você verá uma saída semelhante a esta:
