@@ -1,6 +1,6 @@
 ---
-title: "Log de Alterações do Azure PowerShell | Microsoft Docs"
-description: "É um histórico das alterações feitas na versão mais recente do Azure PowerShell."
+title: Log de Alterações do Azure PowerShell | Microsoft Docs
+description: É um histórico das alterações feitas na versão mais recente do Azure PowerShell.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -299,15 +299,15 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="20170717---version-421"></a>17/07/2017 – Versão 4.2.1
 * Computação
-    - Corrigir problema com Disco de VM e com cmdlets de atualização e de criação de instantâneo do Disco de VM. Link: [https://github.com/azure/azure-powershell/issues/4309]
+    - Corrigir problema com o Disco da VM e com cmdlets de atualização e de criação de instantâneo do Disco da VM, (link): [https://github.com/azure/azure-powershell/issues/4309]
       - New-AzureRmDisk
       - New-AzureRmSnapshot
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Perfil
-    - Corrigir problema com autenticação de usuário não interativo no RDFE. Link: [https://github.com/Azure/azure-powershell/issues/4299]
+    - Corrija o problema com a autenticação de usuário não interativo no RDFE (link) [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Corrigir problema com autenticação de usuário não interativo. Link: [https://github.com/Azure/azure-powershell/issues/4299]
+    - Corrija o problema com a autenticação de usuário não interativo (link) [https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>11/07/2017 – Versão 4.2.0
 * AnalysisServices
@@ -370,7 +370,7 @@ ms.lasthandoff: 10/17/2017
         - Add-AzureRmDataLakeStoreItemContent
 * DNS
     * Corrigir bug no cenário de direcionamento para Get-AzureRmDnsZone
-        - Mais informações podem ser encontradas aqui: https://github.com/Azure/azure-powershell/issues/4203
+        - Encontre mais informações aqui: https://github.com/Azure/azure-powershell/issues/4203
 * HDInsight
     * Suporte adicionado para habilitar/desabilitar o OMS (Operations Management Suite)
     * Novos cmdlets
@@ -533,7 +533,7 @@ ms.lasthandoff: 10/17/2017
       * Adicionado alias do parâmetro `-EnvironmentName` para compatibilidade com versões anteriores 2.x do AzureRM.profile
 
 ## <a name="20170512---version-401"></a>12/05/2017 – Versão 4.0.1
- * Corrigir problema com o New-AzureStorageContext em cenários offline: https://github.com/Azure/azure-powershell/issues/3939
+ * Corrija o problema com New-AzureStorageContext em cenários offline: https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>10/05/2017 – Versão 4.0.0
 
@@ -554,7 +554,7 @@ ms.lasthandoff: 10/17/2017
   - Remover as propriedades duplicadas DataDiskNames e NetworkInterfaceIDs do objeto PS da VM.
   - Tornar os parâmetros DataDiskNames e NetworkInterfaceIDs opcionais em Remove-AzureRmVMDataDisk e Remove-AzureRmVMNetworkInterface, respectivamente.
   - Corrigir o problema de direcionamento dos cmdlets Get quando eles retornarem um objeto de lista.
-  - Os cmdlets que entraram em conflito com os cmdlets RDFE foram renomeados. Consulte o problema em https://github.com/Azure/azure-powershell/issues/2917 para obter mais detalhes
+  - Os cmdlets que entraram em conflito com os cmdlets RDFE foram renomeados. Consulte o problema https://github.com/Azure/azure-powershell/issues/2917 para obter mais detalhes
     + `New-AzureVMSqlServerAutoBackupConfig` foi renomeado para `New-AzureRmVMSqlServerAutoBackupConfig`
     + `New-AzureVMSqlServerAutoPatchingConfig` foi renomeado para `New-AzureRmVMSqlServerAutoPatchingConfig`
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` foi renomeado para `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
