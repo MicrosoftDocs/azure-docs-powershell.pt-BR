@@ -2,19 +2,19 @@
 title: Formatação de resultados da consulta | Microsoft Docs
 description: Como consultar recursos no Azure e formatar os resultados.
 services: azure
-author: sdwheeler
-ms.author: sewhee
+author: sptramer
+ms.author: sttramer
 manager: carmonm
 ms.product: azure
 ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 77f27b610ac008a6e3af81e5103d7573eac5e21e
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: ddfcc23bf1efd3d00efcae9adbe8585bad645b73
+ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/23/2018
 ---
 # <a name="formatting-query-results"></a>Formatação de resultados da consulta
 
