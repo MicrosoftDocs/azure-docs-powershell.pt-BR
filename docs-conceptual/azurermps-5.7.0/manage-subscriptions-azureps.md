@@ -1,19 +1,18 @@
 ---
-title: Gerenciar assinaturas do Aure com o Azure PowerShell | Microsoft Docs
+title: Gerenciar assinaturas do Azure com o Azure PowerShell
 description: Gerenciar assinaturas do Azure com o Azure PowerShell
-keywords: Azure PowerShell, assinatura
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821948"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323349"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerenciar várias assinaturas do Azure
 
@@ -21,11 +20,11 @@ Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas 
 
 1. Obtenha uma lista de todas as assinaturas em sua conta.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas 
 
 2. Defina o padrão.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Verifique a alteração ao executar o cmdlet `Get-AzureRmContext`.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX

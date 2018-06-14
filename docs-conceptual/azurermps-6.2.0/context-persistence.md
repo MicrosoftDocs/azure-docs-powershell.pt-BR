@@ -1,19 +1,18 @@
 ---
 title: Persistência de logons de usuário nas sessões do PowerShell
 description: Este artigo explica os novos recursos no Azure PowerShell que permitem a reutilização de credenciais e outras informações do usuário em várias sessões do PowerShell.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 9b4fd5ff557793a1e63c59188a8c90f4deb8d8d9
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821149"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34854759"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>Persistência de logons de usuário nas sessões do PowerShell
 

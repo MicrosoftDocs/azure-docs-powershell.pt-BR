@@ -1,19 +1,18 @@
 ---
 title: Persistência de logons de usuário nas sessões do PowerShell
 description: Este artigo explica os novos recursos no Azure PowerShell que permitem a reutilização de credenciais e outras informações do usuário em várias sessões do PowerShell.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 678d08c24cf254cd904850071872eea18c6bf6cf
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821591"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323111"
 ---
 # <a name="persisting-user-logins-across-powershell-sessions"></a>Persistência de logons de usuário nas sessões do PowerShell
 
@@ -76,7 +75,7 @@ Para criar um contexto, você deve estar conectado ao Azure. O cmdlet `Connect-A
 
 Para adicionar um novo contexto após o logon, use `Set-AzureRmContext` (ou seu alias, `Select-AzureRmSubscription`).
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -84,7 +83,7 @@ O exemplo anterior adiciona um novo contexto com 'Assinatura Contoso 1' como des
 
 Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo: 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -92,7 +91,7 @@ Este exemplo renomeia o contexto com o nome automático `[user1@contoso.org; 123
 
 E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo: 
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -102,7 +101,7 @@ Você se esquece do contexto que foi nomeado 'Contoso2'. É possível recriar es
 
 Você pode remover todas as credenciais e contextos associados de um usuário ou entidade de serviço usando `Disconnect-AzureRmAccount` (também conhecido como `Logout-AzureRmAccount`). Quando executado sem parâmetros, o cmdlet `Disconnect-AzureRmAccount` remove todas as credenciais e contextos associados ao usuário ou entidade de serviço no contexto atual. Você pode passar um Nome de Usuário, o Nome da Entidade de Serviço ou o Contexto para uma determinada entidade de destino.
 
-```powershell
+```azurepowershell-interactive
 Disconnect-AzureRmAccount user1@contoso.org
 ```
 
@@ -112,7 +111,7 @@ Ocasionalmente, convém selecionar, alterar ou remover um contexto em uma sessã
 
 Por exemplo, para alterar o contexto padrão na sessão atual do PowerShell sem afetar outras janelas ou o contexto usado na próxima vez em que uma sessão for aberta, use:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -120,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 A configuração de Salvamento Automático de contexto é salva no diretório do usuário do Azure PowerShell (`%AppData%\Roaming\Windows Azure PowerShell`). Alguns tipos de contas de computador podem não ter acesso a esse diretório. Para esses cenários, você pode usar a variável de ambiente
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
