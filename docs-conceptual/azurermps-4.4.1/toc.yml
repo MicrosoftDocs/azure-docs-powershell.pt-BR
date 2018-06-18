@@ -17,25 +17,25 @@
       items:
         - name: Criar uma entidade de serviço
           href: create-azure-service-principal-azureps.md
-        - name: Usar credenciais persistentes
+        - name: Credenciais persistentes
           href: context-persistence.md
     - name: Consultas
       href: queries-azureps.md
-    - name: Formatação
+    - name: Formato de saída
       href: formatting-output.md
-    - name: Assinaturas
+    - name: Gerenciar Assinaturas
       href: manage-subscriptions-azureps.md
     - name: Implantar
       items:
-        - name: Implantar usando modelos do Resource Manager
+        - name: Implantar modelos do Resource Manager
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Exportar modelos do Resource Manager
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Implantar modelo privado do Resource Manager com o token SAS
+        - name: Implantar modelos privados do Resource Manager
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Conceitos
       items:
-        - name: Usar módulos experimentais
+        - name: Módulos experimentais
           href: using-experimental-modules.md
     - name: Notas de versão
       href: release-notes-azureps.md

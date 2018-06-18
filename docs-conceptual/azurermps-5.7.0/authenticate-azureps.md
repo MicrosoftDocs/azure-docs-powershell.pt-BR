@@ -1,91 +1,74 @@
 ---
-title: Fazer logon com o Azure PowerShell
-description: Fazer logon com o Azure PowerShell
-services: azure
+title: Entrar com o Azure PowerShell
+description: Como entrar com o Azure PowerShell como um usuário, a entidade de serviço, ou com o MSI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 7ed9d53e905b5ac16432700b39a70fd07c4f16da
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34822118"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323332"
 ---
-# <a name="log-in-with-azure-powershell"></a>Fazer logon com o Azure PowerShell
+# <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
 O Azure PowerShell oferece suporte a vários métodos de logon. É a maneira mais simples para começar a fazer logon interativamente na linha de comando.
 
-## <a name="interactive-log-in"></a>Logon Interativo
+## <a name="sign-in-interactively"></a>Entrar no modo interativo
 
-1. Digite `Connect-AzureRmAccount`. Será exibida a caixa de diálogo solicitando as credenciais do Azure.
+Para entrar no modo interativo, use o cmdlet [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
-2. Digite o endereço de e-mail e a senha associada à sua conta. O Azure autentica e salva as informações de credenciais e, em seguida, fecha a janela.
+```azurepowershell
+Connect-AzureRmAccount
+```
 
-## <a name="log-in-with-a-service-principal"></a>Fazer logon com uma entidade de serviço
+Quando executado, esse cmdlet exibirá uma caixa de diálogo solicitando seu endereço de email e a senha associados à sua conta do Azure. Quando você autenticar, essas informações são salvas para a sessão atual do PowerShell, a caixa de diálogo é fechada e você tem acesso a todos os cmdlets do Azure PowerShell.
+
+> [!IMPORTANT]
+> Essa entrada é _somente_ para a sessão atual do PowerShell. Para manter o logon em várias sessões, confira o artigo sobre [Credenciais Persistentes](context-persistence.md).
+
+## <a name="sign-in-with-a-service-principal"></a>Entrar com uma entidade de serviço
 
 As entidades de serviço oferecem uma maneira de criar contas não interativas para manipular recursos. As entidades de serviço são como as contas de usuário às quais você pode aplicar regras usando o Azure Active Directory. Ao conceder as permissões mínimas necessárias para uma entidade de serviço, você pode garantir que seus scripts de automação fiquem ainda mais seguros.
 
-1. Se você ainda não tiver uma entidade de serviço, [crie uma](create-azure-service-principal-azureps.md).
+Se precisar criar uma entidade de serviço para usar com o Azure PowerShell, confira [Criar uma entidade de serviço do Azure com o Azure PowerShell](create-azure-service-principal-azureps.md).
 
-2. Faça logon com uma entidade de serviço.
+Para entrar com uma entidade de serviço, use o cmdlet `-ServicePrincipal`argumento com o `Connect-AzureRmAccount`. Você também precisará da ID do aplicativo da entidade de serviço, credenciais de entrada e da ID de locatário associada à entidade de serviço. Para obter as credenciais da entidade de serviço como o objeto apropriado, use o cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Esse cmdlet exibirá uma caixa de diálogo para inserir a ID de usuário da entidade de serviço e a senha.
 
-    ```powershell
-    Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
-    ```
+```azurepowershell-interactive
+$pscredential = Get-Credential
+Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
+```
 
-    Para obter a TenantId, faça logon interativamente e obtenha a TenantId da sua assinatura.
+## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Entre usando uma Identidade de Serviço Gerenciada da VM do Azure
 
-    ```powershell
-    Get-AzureRmSubscription
-    ```
-
-    ```
-    Environment           : AzureCloud
-    Account               : username@contoso.com
-    TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionId        : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-    SubscriptionName      : My Production Subscription
-    CurrentStorageAccount :
-    ```
-
-### <a name="log-in-using-an-azure-vm-managed-service-identity"></a>Faça logon usando uma identidade de serviço gerenciado do Azure VM
-
-A Identidade do Serviço Gerenciado (MSI) é a versão prévia de um recurso para o Azure Active Directory. Você pode usar uma entidade de serviço do MSI para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos.
+A Identidade do Serviço Gerenciado (MSI) é a versão prévia de um recurso para o Azure Active Directory. Você pode usar uma entidade de serviço do MSI para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. A MSI só está disponível em máquinas virtuais em execução em uma nuvem do Azure.
 
 Para obter mais informações sobre o MSI, consulte [Como usar uma Identidade de Serviço Gerenciado (MSI) da VM do Azure para conexão e aquisição de token](/azure/active-directory/msi-how-to-get-access-token-using-msi).
 
-## <a name="log-in-to-another-cloud"></a>Faça logon em outra Nuvem
+## <a name="sign-in-to-another-cloud"></a>Entre em outra Nuvem
 
-Os Serviços de Nuvem do Azure oferecem ambientes diferentes que estão de acordo com as regulamentações de manipulação de dados de diversos governos. Caso sua conta do Azure esteja em uma das nuvens de governo, será necessário especificar o ambiente ao se conectar. Por exemplo, se sua conta está na nuvem da China, faça logon usando o seguinte comando:
+Os serviços de nuvem do Azure oferecem ambientes diferentes que estão de acordo com as regulamentações de manipulação de dados de diversas regiões. Caso sua conta do Azure esteja em uma nuvem associada a uma dessas regiões, será necessário especificar o ambiente ao se conectar. Por exemplo, se sua conta está na nuvem da China, faça logon usando o seguinte comando:
 
-```powershell
+```azurepowershell-interactive
 Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
 Use o seguinte comando para obter uma lista de ambientes disponíveis:
 
-```powershell
+```azurepowershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
-```
-
-```
-Name
-----
-AzureCloud
-AzureChinaCloud
-AzureUSGovernment
-AzureGermanCloud
 ```
 
 ## <a name="learn-more-about-managing-azure-role-based-access"></a>Saiba mais sobre como gerenciar o acesso baseado em função do Azure
 
 Para obter mais informações sobre o gerenciamento de autenticação e assinatura no Azure, consulte [Gerenciar contas, assinaturas e funções administrativas](/azure/active-directory/role-based-access-control-configure) (a página pode estar em inglês).
 
-Cmdlets do Azure PowerShell para gerenciamento de função
+Cmdlets do Azure PowerShell para gerenciamento de função:
 
 * [Get-AzureRmRoleAssignment](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
 * [Get-AzureRmRoleDefinition](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)

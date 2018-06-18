@@ -1,25 +1,26 @@
 ---
-title: Outras maneiras de instalar o Azure PowerShell | Microsoft Docs
+title: Outras maneiras de instalar o Azure PowerShell
 description: Como instalar o Azure PowerShell usando o pacote MSI ou o Web Platform Installer.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: cb4ced3b72b69546594d75e7eb7db822b549a664
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 0919583d9cb05a75fae3b812eed84109be8b28aa
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821642"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323315"
 ---
 # <a name="other-installation-methods"></a>Outros métodos de instalação
 
-O Azure PowerShell tem vários métodos de instalação. O uso do PowerShellGet com a Galeria do PowerShell é o método preferencial. O Azure PowerShell pode ser instalado no Windows usando o Web Platform Installer (WebPI) ou usando o MSI de arquivo disponível no GitHub. O Azure PowerShell também pode ser instalado em um contêiner do Docker.
+Este artigo explica como instalar o Azure PowerShell usando uma MSI ou o Web Platform Installer (WebPI). Você também pode executar o Azure PowerShell de dentro de um contêiner do Docker. Use esses métodos de instalação somente se eles forem necessários para o seu sistema. A maneira canônica para instalar o Azure PowerShell é através do PowerShellGet. Para obter instruções sobre como usar o PowerShellGet para instalar o Azure PowerShell, confira [Instalar o Azure PowerShell com o PowerShellGet](install-azurerm-ps.md).
 
-## <a name="install-on-windows-using-the-web-platform-installer"></a>Instalar no Windows usando o Web Platform Installer
+Para instalar em ambientes Linux ou macOS, confira [Instalar o Azure PowerShell no macOS ou Linux](install-azurermps-maclinux.md).
+
+## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a>Instalar ou atualizar no Windows usando o Web Platform Installer
 
 A instalação do Azure PowerShell mais recente do WebPI é feita da mesma maneira como era nas versões anteriores.
 Baixe o [pacote WebPI do Azure PowerShell](http://aka.ms/webpi-azps) e inicie a instalação.
@@ -29,9 +30,9 @@ Baixe o [pacote WebPI do Azure PowerShell](http://aka.ms/webpi-azps) e inicie a 
 >
 > Os módulos da Galeria do PowerShell instalam módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`. Por outro lado, o instalador do WebPI instalam os módulos do Azure no `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Se ocorrer um erro durante a instalação, você poderá remover manualmente as pastas do Azure* de sua pasta `$env:ProgramFiles\WindowsPowerShell\Modules` e tentar instalar novamente.
+> Se ocorrer um erro durante a instalação, você poderá remover manualmente as pastas do `Azure*` de sua pasta `$env:ProgramFiles\WindowsPowerShell\Modules` e tentar instalar novamente.
 
-Quando a instalação for concluída, a configuração do `$env:PSModulePath` deverá incluir os diretórios que contêm os cmdlets do Azure PowerShell. O comando a seguir pode ser usado para verificar se o Azure PowerShell foi instalado corretamente.
+Quando a instalação for concluída, a configuração do `$env:PSModulePath` deverá incluir os diretórios que contêm os cmdlets do Azure PowerShell. O comando a seguir pode ser usado para verificar se o Azure PowerShell foi instalado corretamente:
 
 ```powershell
 # To make sure the Azure PowerShell module is available after you install
@@ -55,38 +56,31 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado. Por exemplo: 
+Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado.
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
-## <a name="install-on-windows-using-the-msi-package"></a>Instalar no Windows usando o pacote MSI
+## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows usando o pacote MSI
 
 O Azure PowerShell pode ser instalado usando o arquivo MSI disponível no [GitHub](https://aka.ms/azps-release). Se você tiver versões anteriores dos módulos do Azure instaladas, o instalador as removerá automaticamente. O pacote MSI instala módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`, mas não cria pastas específicas de versão.
 
-## <a name="install-in-a-docker-container"></a>Instalar em um contêiner do Docker
+## <a name="run-in-a-docker-container"></a>Executar em um contêiner do Docker
 
-Vamos manter uma imagem do Docker pré-configurada no Azure PowerShell.
+Vamos manter um conjunto de imagens do Docker pré-configuradas no Azure PowerShell. Há dois tipos de contêineres disponíveis: os que estão executando o PowerShell tradicional no Windows, e um contêiner executando o PowerShell Core no Windows ou no Linux.
 
-Execute o contêiner com `docker run`.
+| Ambiente | Imagem do Docker |
+|-------------|--------------|
+| PowerShell no Windows | [azuresdk/azure-powershell](https://hub.docker.com/r/azuresdk/azure-powershell/) |
+| PowerShell Core no Windows | [azuresdk/azure-powershell-core:nanoserver](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
+| PowerShell Core no Linux | [azuresdk/azure-powershell-core:latest](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Além disso, vamos manter um subconjunto de cmdlets como um contêiner do PowerShell Core.
-
-Para Mac/Linux, use a imagem `latest`.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Para Windows, use a imagem `nanoserver`.
+Para executar qualquer um desses contêineres, você deve usar `docker run -it $ImageName` para obter um terminal interativo. Por exemplo, para executar o PowerShell Core no contêiner do Linux, use:
 
 ```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
+docker run -it azuresdk/azure-powershell-core:latest
 ```
 
-O Azure PowerShell é instalado na imagem por meio de `Install-Module` da [Galeria do PowerShell](https://www.powershellgallery.com/).
+> [!NOTE]
+> Para executar um contêiner do Windows no Docker, o sistema operacional do host deve ser Windows e o Docker deve ser definido para executar contêineres do Windows. Para obter informações sobre como alternar entre ambientes Windows e Linux no Docker, confira a documentação do Docker [Alternar entre contêineres do Windows e do Linux](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).
