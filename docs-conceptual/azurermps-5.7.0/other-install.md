@@ -1,37 +1,38 @@
 ---
-title: Outras maneiras de instalar o Azure PowerShell | Microsoft Docs
+title: Outras maneiras de instalar o Azure PowerShell
 description: Como instalar o Azure PowerShell usando o pacote MSI ou o Web Platform Installer.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/06/2017
-ms.openlocfilehash: cb4ced3b72b69546594d75e7eb7db822b549a664
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 0919583d9cb05a75fae3b812eed84109be8b28aa
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821438"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323264"
 ---
-# <a name="other-installation-methods"></a><span data-ttu-id="6ef5b-103">Outros métodos de instalação</span><span class="sxs-lookup"><span data-stu-id="6ef5b-103">Other installation methods</span></span>
+# <a name="other-installation-methods"></a><span data-ttu-id="28e51-103">Outros métodos de instalação</span><span class="sxs-lookup"><span data-stu-id="28e51-103">Other installation methods</span></span>
 
-<span data-ttu-id="6ef5b-104">O Azure PowerShell tem vários métodos de instalação.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-104">Azure PowerShell has multiple installation methods.</span></span> <span data-ttu-id="6ef5b-105">O uso do PowerShellGet com a Galeria do PowerShell é o método preferencial.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-105">Using PowerShellGet with the PowerShell Gallery is the preferred method.</span></span> <span data-ttu-id="6ef5b-106">O Azure PowerShell pode ser instalado no Windows usando o Web Platform Installer (WebPI) ou usando o MSI de arquivo disponível no GitHub.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-106">Azure PowerShell can be installed on Windows using the Web Platform Installer (WebPI) or by using the MSI file available from GitHub.</span></span> <span data-ttu-id="6ef5b-107">O Azure PowerShell também pode ser instalado em um contêiner do Docker.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-107">Azure PowerShell can also be installed in a Docker container.</span></span>
+<span data-ttu-id="28e51-104">Este artigo explica como instalar o Azure PowerShell usando uma MSI ou o Web Platform Installer (WebPI).</span><span class="sxs-lookup"><span data-stu-id="28e51-104">This article explains how to install Azure PowerShell using an MSI or Web Platform Installer (WebPI).</span></span> <span data-ttu-id="28e51-105">Você também pode executar o Azure PowerShell de dentro de um contêiner do Docker.</span><span class="sxs-lookup"><span data-stu-id="28e51-105">You can also run Azure PowerShell from inside of a Docker container.</span></span> <span data-ttu-id="28e51-106">Use esses métodos de instalação somente se eles forem necessários para o seu sistema.</span><span class="sxs-lookup"><span data-stu-id="28e51-106">Use these installation methods only if they're necessary for your system.</span></span> <span data-ttu-id="28e51-107">A maneira canônica para instalar o Azure PowerShell é através do PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="28e51-107">The canonical way to install Azure PowerShell is through PowerShellGet.</span></span> <span data-ttu-id="28e51-108">Para obter instruções sobre como usar o PowerShellGet para instalar o Azure PowerShell, confira [Instalar o Azure PowerShell com o PowerShellGet](install-azurerm-ps.md).</span><span class="sxs-lookup"><span data-stu-id="28e51-108">For instructions on using PowerShellGet to install Azure PowerShell, see [Install Azure PowerShell with PowerShellGet](install-azurerm-ps.md).</span></span>
 
-## <a name="install-on-windows-using-the-web-platform-installer"></a><span data-ttu-id="6ef5b-108">Instalar no Windows usando o Web Platform Installer</span><span class="sxs-lookup"><span data-stu-id="6ef5b-108">Install on Windows using the Web Platform Installer</span></span>
+<span data-ttu-id="28e51-109">Para instalar em ambientes Linux ou macOS, confira [Instalar o Azure PowerShell no macOS ou Linux](install-azurermps-maclinux.md).</span><span class="sxs-lookup"><span data-stu-id="28e51-109">To install on Linux or macOS environments, see [Install Azure PowerShell on macOS or Linux](install-azurermps-maclinux.md).</span></span>
 
-<span data-ttu-id="6ef5b-109">A instalação do Azure PowerShell mais recente do WebPI é feita da mesma maneira como era nas versões anteriores.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-109">Installing the latest Azure PowerShell from WebPI is the same as it was for previous versions.</span></span>
-<span data-ttu-id="6ef5b-110">Baixe o [pacote WebPI do Azure PowerShell](http://aka.ms/webpi-azps) e inicie a instalação.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-110">Download the [Azure PowerShell WebPI package](http://aka.ms/webpi-azps) and start the install.</span></span>
+## <a name="install-or-update-on-windows-using-the-web-platform-installer"></a><span data-ttu-id="28e51-110">Instalar ou atualizar no Windows usando o Web Platform Installer</span><span class="sxs-lookup"><span data-stu-id="28e51-110">Install or update on Windows using the Web Platform Installer</span></span>
+
+<span data-ttu-id="28e51-111">A instalação do Azure PowerShell mais recente do WebPI é feita da mesma maneira como era nas versões anteriores.</span><span class="sxs-lookup"><span data-stu-id="28e51-111">Installing the latest Azure PowerShell from WebPI is the same as it was for previous versions.</span></span>
+<span data-ttu-id="28e51-112">Baixe o [pacote WebPI do Azure PowerShell](http://aka.ms/webpi-azps) e inicie a instalação.</span><span class="sxs-lookup"><span data-stu-id="28e51-112">Download the [Azure PowerShell WebPI package](http://aka.ms/webpi-azps) and start the install.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6ef5b-111">Se você já tiver instalado módulos do Azure da Galeria do PowerShell, o instalador os removerá automaticamente.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-111">If you have previously installed Azure modules from the PowerShell Gallery, the installer automatically removes them.</span></span> <span data-ttu-id="6ef5b-112">Isso simplifica a seu ambiente, garantindo que apenas uma versão do Azure PowerShell está instalada.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-112">This simplifies your environment by ensuring that only one version of Azure PowerShell is installed.</span></span> <span data-ttu-id="6ef5b-113">No entanto, há cenários em que será necessário ter diversas versões instaladas ao mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-113">However, there are scenarios where you may need multiple versions installed at the same time.</span></span>
+> <span data-ttu-id="28e51-113">Se você já tiver instalado módulos do Azure da Galeria do PowerShell, o instalador os removerá automaticamente.</span><span class="sxs-lookup"><span data-stu-id="28e51-113">If you have previously installed Azure modules from the PowerShell Gallery, the installer automatically removes them.</span></span> <span data-ttu-id="28e51-114">Isso simplifica a seu ambiente, garantindo que apenas uma versão do Azure PowerShell está instalada.</span><span class="sxs-lookup"><span data-stu-id="28e51-114">This simplifies your environment by ensuring that only one version of Azure PowerShell is installed.</span></span> <span data-ttu-id="28e51-115">No entanto, há cenários em que será necessário ter diversas versões instaladas ao mesmo tempo.</span><span class="sxs-lookup"><span data-stu-id="28e51-115">However, there are scenarios where you may need multiple versions installed at the same time.</span></span>
 >
-> <span data-ttu-id="6ef5b-114">Os módulos da Galeria do PowerShell instalam módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-114">PowerShell Gallery modules install modules in `$env:ProgramFiles\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="6ef5b-115">Por outro lado, o instalador do WebPI instalam os módulos do Azure no `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-115">In contrast, the WebPI installer installs the Azure modules in `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span></span>
+> <span data-ttu-id="28e51-116">Os módulos da Galeria do PowerShell instalam módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`.</span><span class="sxs-lookup"><span data-stu-id="28e51-116">PowerShell Gallery modules install modules in `$env:ProgramFiles\WindowsPowerShell\Modules`.</span></span> <span data-ttu-id="28e51-117">Por outro lado, o instalador do WebPI instalam os módulos do Azure no `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span><span class="sxs-lookup"><span data-stu-id="28e51-117">In contrast, the WebPI installer installs the Azure modules in `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.</span></span>
 >
-> <span data-ttu-id="6ef5b-116">Se ocorrer um erro durante a instalação, você poderá remover manualmente as pastas do Azure\* de sua pasta `$env:ProgramFiles\WindowsPowerShell\Modules` e tentar instalar novamente.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-116">If an error occurs during install, you can manually remove the Azure\* folders in your `$env:ProgramFiles\WindowsPowerShell\Modules` folder, and try the installation again.</span></span>
+> <span data-ttu-id="28e51-118">Se ocorrer um erro durante a instalação, você poderá remover manualmente as pastas do `Azure*` de sua pasta `$env:ProgramFiles\WindowsPowerShell\Modules` e tentar instalar novamente.</span><span class="sxs-lookup"><span data-stu-id="28e51-118">If an error occurs during install, you can manually remove the `Azure*` folders in your `$env:ProgramFiles\WindowsPowerShell\Modules` folder, and try the installation again.</span></span>
 
-<span data-ttu-id="6ef5b-117">Quando a instalação for concluída, a configuração do `$env:PSModulePath` deverá incluir os diretórios que contêm os cmdlets do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-117">Once the installation completes, your `$env:PSModulePath` setting should include the directories containing the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="6ef5b-118">O comando a seguir pode ser usado para verificar se o Azure PowerShell foi instalado corretamente.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-118">The following command can be used to verify that the Azure PowerShell is installed properly.</span></span>
+<span data-ttu-id="28e51-119">Quando a instalação for concluída, a configuração do `$env:PSModulePath` deverá incluir os diretórios que contêm os cmdlets do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="28e51-119">Once the installation completes, your `$env:PSModulePath` setting should include the directories containing the Azure PowerShell cmdlets.</span></span> <span data-ttu-id="28e51-120">O comando a seguir pode ser usado para verificar se o Azure PowerShell foi instalado corretamente:</span><span class="sxs-lookup"><span data-stu-id="28e51-120">The following command can be used to verify that the Azure PowerShell is installed properly:</span></span>
 
 ```powershell
 # To make sure the Azure PowerShell module is available after you install
@@ -39,9 +40,9 @@ Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
 ```
 
 > [!NOTE]
-> <span data-ttu-id="6ef5b-119">Há um problema conhecido que pode ocorrer durante a instalação do WebPI.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-119">There is a known issue that can occur when installing from WebPI.</span></span> <span data-ttu-id="6ef5b-120">Se o computador precisar de uma reinicialização devido a atualizações do sistema ou outras instalações, isso poderá fazer com que as atualizações do `$env:PSModulePath` falhem ao incluir o caminho em que o Azure PowerShell está instalado.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-120">If your computer requires a restart due to system updates or other installations, it may cause updates to `$env:PSModulePath` to fail to include the path where Azure PowerShell is installed.</span></span>
+> <span data-ttu-id="28e51-121">Há um problema conhecido que pode ocorrer durante a instalação do WebPI.</span><span class="sxs-lookup"><span data-stu-id="28e51-121">There is a known issue that can occur when installing from WebPI.</span></span> <span data-ttu-id="28e51-122">Se o computador precisar de uma reinicialização devido a atualizações do sistema ou outras instalações, isso poderá fazer com que as atualizações do `$env:PSModulePath` falhem ao incluir o caminho em que o Azure PowerShell está instalado.</span><span class="sxs-lookup"><span data-stu-id="28e51-122">If your computer requires a restart due to system updates or other installations, it may cause updates to `$env:PSModulePath` to fail to include the path where Azure PowerShell is installed.</span></span>
 
-<span data-ttu-id="6ef5b-121">Ao tentar carregar ou executar cmdlets após a instalação, você poderá receber a seguinte mensagem de erro:</span><span class="sxs-lookup"><span data-stu-id="6ef5b-121">When attempting to load or execute cmdlets after installation, you can receive the following error message:</span></span>
+<span data-ttu-id="28e51-123">Ao tentar carregar ou executar cmdlets após a instalação, você poderá receber a seguinte mensagem de erro:</span><span class="sxs-lookup"><span data-stu-id="28e51-123">When attempting to load or execute cmdlets after installation, you can receive the following error message:</span></span>
 
 ```
 PS C:\> Connect-AzureRmAccount
@@ -55,38 +56,31 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-<span data-ttu-id="6ef5b-122">Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-122">This error can be corrected by restarting the machine or importing the module using the fully qualified path.</span></span> <span data-ttu-id="6ef5b-123">Por exemplo: </span><span class="sxs-lookup"><span data-stu-id="6ef5b-123">For example:</span></span>
+<span data-ttu-id="28e51-124">Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado.</span><span class="sxs-lookup"><span data-stu-id="28e51-124">This error can be corrected by restarting the machine or importing the module using the fully qualified path.</span></span>
 
 ```powershell
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"
 ```
 
-## <a name="install-on-windows-using-the-msi-package"></a><span data-ttu-id="6ef5b-124">Instalar no Windows usando o pacote MSI</span><span class="sxs-lookup"><span data-stu-id="6ef5b-124">Install on Windows using the MSI Package</span></span>
+## <a name="install-or-update-on-windows-using-the-msi-package"></a><span data-ttu-id="28e51-125">Instalar ou atualizar no Windows usando o pacote MSI</span><span class="sxs-lookup"><span data-stu-id="28e51-125">Install or update on Windows using the MSI Package</span></span>
 
-<span data-ttu-id="6ef5b-125">O Azure PowerShell pode ser instalado usando o arquivo MSI disponível no [GitHub](https://aka.ms/azps-release).</span><span class="sxs-lookup"><span data-stu-id="6ef5b-125">Azure PowerShell can be installed using the MSI file available from [GitHub](https://aka.ms/azps-release).</span></span> <span data-ttu-id="6ef5b-126">Se você tiver versões anteriores dos módulos do Azure instaladas, o instalador as removerá automaticamente.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-126">If you have installed previous versions of Azure modules, the installer automatically removes them.</span></span> <span data-ttu-id="6ef5b-127">O pacote MSI instala módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`, mas não cria pastas específicas de versão.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-127">The MSI package installs modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific folders.</span></span>
+<span data-ttu-id="28e51-126">O Azure PowerShell pode ser instalado usando o arquivo MSI disponível no [GitHub](https://aka.ms/azps-release).</span><span class="sxs-lookup"><span data-stu-id="28e51-126">Azure PowerShell can be installed using the MSI file available from [GitHub](https://aka.ms/azps-release).</span></span> <span data-ttu-id="28e51-127">Se você tiver versões anteriores dos módulos do Azure instaladas, o instalador as removerá automaticamente.</span><span class="sxs-lookup"><span data-stu-id="28e51-127">If you have installed previous versions of Azure modules, the installer automatically removes them.</span></span> <span data-ttu-id="28e51-128">O pacote MSI instala módulos no `$env:ProgramFiles\WindowsPowerShell\Modules`, mas não cria pastas específicas de versão.</span><span class="sxs-lookup"><span data-stu-id="28e51-128">The MSI package installs modules in `$env:ProgramFiles\WindowsPowerShell\Modules` but does not create version-specific folders.</span></span>
 
-## <a name="install-in-a-docker-container"></a><span data-ttu-id="6ef5b-128">Instalar em um contêiner do Docker</span><span class="sxs-lookup"><span data-stu-id="6ef5b-128">Install in a Docker container</span></span>
+## <a name="run-in-a-docker-container"></a><span data-ttu-id="28e51-129">Executar em um contêiner do Docker</span><span class="sxs-lookup"><span data-stu-id="28e51-129">Run in a Docker container</span></span>
 
-<span data-ttu-id="6ef5b-129">Vamos manter uma imagem do Docker pré-configurada no Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-129">We maintain a Docker image preconfigured with Azure PowerShell.</span></span>
+<span data-ttu-id="28e51-130">Vamos manter um conjunto de imagens do Docker pré-configuradas no Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="28e51-130">We maintain a set of Docker images preconfigured with Azure PowerShell.</span></span> <span data-ttu-id="28e51-131">Há dois tipos de contêineres disponíveis: os que estão executando o PowerShell tradicional no Windows, e um contêiner executando o PowerShell Core no Windows ou no Linux.</span><span class="sxs-lookup"><span data-stu-id="28e51-131">There are two types of containers available: Those running traditional PowerShell on Windows, and a container running PowerShell Core on either Windows or Linux.</span></span>
 
-<span data-ttu-id="6ef5b-130">Execute o contêiner com `docker run`.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-130">Run the container with `docker run`.</span></span>
+| <span data-ttu-id="28e51-132">Ambiente</span><span class="sxs-lookup"><span data-stu-id="28e51-132">Environment</span></span> | <span data-ttu-id="28e51-133">Imagem do Docker</span><span class="sxs-lookup"><span data-stu-id="28e51-133">Docker image</span></span> |
+|-------------|--------------|
+| <span data-ttu-id="28e51-134">PowerShell no Windows</span><span class="sxs-lookup"><span data-stu-id="28e51-134">PowerShell on Windows</span></span> | [<span data-ttu-id="28e51-135">azuresdk/azure-powershell</span><span class="sxs-lookup"><span data-stu-id="28e51-135">azuresdk/azure-powershell</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell/) |
+| <span data-ttu-id="28e51-136">PowerShell Core no Windows</span><span class="sxs-lookup"><span data-stu-id="28e51-136">PowerShell Core on Windows</span></span> | [<span data-ttu-id="28e51-137">azuresdk/azure-powershell-core:nanoserver</span><span class="sxs-lookup"><span data-stu-id="28e51-137">azuresdk/azure-powershell-core:nanoserver</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
+| <span data-ttu-id="28e51-138">PowerShell Core no Linux</span><span class="sxs-lookup"><span data-stu-id="28e51-138">PowerShell Core on Linux</span></span> | [<span data-ttu-id="28e51-139">azuresdk/azure-powershell-core:latest</span><span class="sxs-lookup"><span data-stu-id="28e51-139">azuresdk/azure-powershell-core:latest</span></span>](https://hub.docker.com/r/azuresdk/azure-powershell-core/) |
 
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-<span data-ttu-id="6ef5b-131">Além disso, vamos manter um subconjunto de cmdlets como um contêiner do PowerShell Core.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-131">In addition, we maintain a subset of cmdlets as a PowerShell Core container.</span></span>
-
-<span data-ttu-id="6ef5b-132">Para Mac/Linux, use a imagem `latest`.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-132">For Mac/Linux, use the `latest` image.</span></span>
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-<span data-ttu-id="6ef5b-133">Para Windows, use a imagem `nanoserver`.</span><span class="sxs-lookup"><span data-stu-id="6ef5b-133">For Windows, use the `nanoserver` image.</span></span>
+<span data-ttu-id="28e51-140">Para executar qualquer um desses contêineres, você deve usar `docker run -it $ImageName` para obter um terminal interativo.</span><span class="sxs-lookup"><span data-stu-id="28e51-140">To run any of these containers, you use `docker run -it $ImageName` to get an interactive terminal.</span></span> <span data-ttu-id="28e51-141">Por exemplo, para executar o PowerShell Core no contêiner do Linux, use:</span><span class="sxs-lookup"><span data-stu-id="28e51-141">For example, to run the PowerShell Core on Linux container, use:</span></span>
 
 ```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
+docker run -it azuresdk/azure-powershell-core:latest
 ```
 
-<span data-ttu-id="6ef5b-134">O Azure PowerShell é instalado na imagem por meio de `Install-Module` da [Galeria do PowerShell](https://www.powershellgallery.com/).</span><span class="sxs-lookup"><span data-stu-id="6ef5b-134">Azure PowerShell is installed on the image via `Install-Module` from the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
+> [!NOTE]
+> <span data-ttu-id="28e51-142">Para executar um contêiner do Windows no Docker, o sistema operacional do host deve ser Windows e o Docker deve ser definido para executar contêineres do Windows.</span><span class="sxs-lookup"><span data-stu-id="28e51-142">To run a Windows container in Docker, your host OS must be Windows and Docker must be set to run Windows containers.</span></span> <span data-ttu-id="28e51-143">Para obter informações sobre como alternar entre ambientes Windows e Linux no Docker, confira a documentação do Docker [Alternar entre contêineres do Windows e do Linux](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).</span><span class="sxs-lookup"><span data-stu-id="28e51-143">To learn about switching between Windows and Linux environments in Docker, see the Docker documentation [Switch between Windows and Linux containers](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers).</span></span>
