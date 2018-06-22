@@ -489,7 +489,7 @@
             "ms.technology": "azure-powershell",
             "ms.devlang": "powershell",
             "feedback_system": "GitHub",
-            "feedback_github_repo": "azure/azure-docs-powershell.ru-RU",
+            "feedback_github_repo": "azure/azure-docs-powershell.pt-BR",
             "feedback_product_url": "https://github.com/Azure/azure-powershell/issues/new"
         },
         "dest": "azureps",
