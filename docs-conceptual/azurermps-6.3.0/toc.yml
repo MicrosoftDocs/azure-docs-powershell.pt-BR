@@ -6,7 +6,7 @@
       items:
         - name: Instalar no macOS ou Linux
           href: install-azurermps-maclinux.md
-        - name: Instalar com MSI ou WebPI
+        - name: Instalar com MSI
           href: other-install.md
         - name: Executar no Docker
           href: azurerm-ps-in-docker.md
@@ -46,8 +46,8 @@
     - name: Notas de versão
       href: release-notes-azureps.md
       items:
-        - name: Alterações interruptivas no Azure PowerShell 5.x
-          href: migration-guide.5.0.0.md
+        - name: Alterações de falha no Azure PowerShell 6.x
+          href: migration-guide.6.0.0.md
 - name: Tutoriais
   items:
     - name: Criar máquinas virtuais
