@@ -12,7 +12,7 @@
       href: get-started-azureps.md
     - name: Cloud Shell
       href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Fazer logon
+    - name: Entrar
       href: authenticate-azureps.md
       items:
         - name: Criar uma entidade de serviço
