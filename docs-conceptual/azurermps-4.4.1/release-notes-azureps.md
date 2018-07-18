@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854419"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100484"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -150,9 +150,9 @@ ms.locfileid: "34854419"
     * Todos os AzureRmCmdlets adicionam o parâmetro -AzureRmContext, que pode aceitar um contexto (a saída de um cmdlet Context).
       - Padrão comum para trabalhos com a persistência de contexto DESABILITADA:`Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - Padrão comum para trabalhos com a persistência de contexto HABILITADA:`Start-Job {New-AzureRmVM [... other parameters]}`
-  * Persistência das informações de logon nas sessões, novos cmdlets:
-    - Enable-AzureRmContextAutosave - Habilita a persistência de logon nas sessões.
-    - Disable-AzureRmContextAutosave - Desabilita a persistência de logon nas sessões.
+  * Mantenha as informações de conexão nas sessões e nos novos cmdlets:
+    - Enable-AzureRmContextAutosave - Habilita a persistência da credencial nas sessões.
+    - Disable-AzureRmContextAutosave - Desabilita a persistência da credencial nas sessões.
   * Gerenciar informações de contexto, novos cmdlets
     - Select-AzureRmContext - Seleciona o contexto nomeado ativo.
     - Rename-AzureRmContext - Renomeia um contexto existente para facilitar a referência.
@@ -212,7 +212,7 @@ ms.locfileid: "34854419"
     - Habilitar para definir/desabilitar o contêiner de blobs de backup para backup/restauração do Azure Analysis Services Server
   * A pesquisa de SKU foi atualizada em New-AzureRmAnalysisServicesServer e em Set-AzureRmAnalysisServicesServer
     - A SKU embutida em código foi alterada para consulta dinâmica.
-  * Add-AzureAnalysisServicesAccount para dar suporte a logon com entidade de serviço
+  * Add-AzureAnalysisServicesAccount para dar suporte à conexão com a Entidade de Serviço
 * Automação
   * Foram feitas alterações nos cmdlets AutomationDSC* para efetuar pull de mais de 100 registros
   * Foi resolvido o problema em que os fluxos detalhados param de funcionar depois de chamar alguns cmdlets de Automação (por exemplo, Get-AzureRmAutomationVariable, Get-AzureRmAutomationJob).
@@ -500,7 +500,7 @@ ms.locfileid: "34854419"
     * Resolve-AzureRmError
       * Novo cmdlet para mostrar os detalhes das exceções e dos erros gerados pelos cmdlets, incluindo dados de solicitação/resposta do servidor
     * Send-Feedback
-      * Habilitado o envio de comentários sem fazer logon
+      * Habilitado para enviar comentários sem conectar
     * Get-AzureRmSubscription
       * Corrigir bug ao recuperar assinaturas de CSP
 * Recursos

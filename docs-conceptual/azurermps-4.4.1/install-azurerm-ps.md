@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854436"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100232"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o PowerShell do Azure
 
@@ -50,6 +50,9 @@ Se você não tiver o PowerShellGet instalado, consulte a seção [Como obter o 
 
 > [!NOTE]
 > Usar o PowerShellGet requer uma Política de Execução que permite executar scripts. Para obter mais informações sobre a Política de Execução do PowerShell, consulte [Sobre as Políticas de Execução](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+
+> [!IMPORTANT]
+> O módulo descrito neste documento, AzureRM, usa o .NET Framework. Isso o torna incompatível com o PowerShell 6.0, que usa o .NET Core. Se você estiver usando o PowerShell 6.0, siga as [instruções de instalação para o macOS e o Linux](install-azurermps-maclinux.md). 
 
 ## <a name="step-2-install-azure-powershell"></a>Etapa 2: instalar o Azure PowerShell
 
@@ -162,7 +165,7 @@ Import-Module -Name AzureRM -RequiredVersion 1.2.9
 ```
 
 > [!NOTE]
-> A versão 2.1.0 e a versão 1.2.6 são as primeiras versões do módulo projetadas para ser instaladas e usadas lado a lado. Ao carregar uma versão anterior do Azure PowerShell, versões incompatíveis do módulo **AzureRM.Profile** serão carregadas. Desse modo, os cmdlets solicitarão que você faça logon sempre que um cmdlet for executado.
+> A versão 2.1.0 e a versão 1.2.6 são as primeiras versões do módulo projetadas para ser instaladas e usadas lado a lado. Ao carregar uma versão anterior do Azure PowerShell, versões incompatíveis do módulo **AzureRM.Profile** serão carregadas. Isso resultará nos cmdlets solicitando que você entre sempre que executar um cmdlet.
 
 ### <a name="other-installation-methods"></a>Outros métodos de instalação
 

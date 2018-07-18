@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100079"
+ms.locfileid: "38100215"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -55,7 +55,7 @@ Para obter mais informações sobre o MSI, consulte [Como usar uma Identidade de
 Os serviços de nuvem do Azure oferecem ambientes diferentes que estão de acordo com as regulamentações de manipulação de dados de diversas regiões. Caso sua conta do Azure esteja em uma nuvem associada a uma dessas regiões, será necessário especificar o ambiente ao se conectar. Por exemplo, se sua conta está na nuvem da China, faça logon usando o seguinte comando:
 
 ```azurepowershell-interactive
-Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+Connect-AzureRmAccount -Environment AzureChinaCloud
 ```
 
 Use o seguinte comando para obter uma lista de ambientes disponíveis:

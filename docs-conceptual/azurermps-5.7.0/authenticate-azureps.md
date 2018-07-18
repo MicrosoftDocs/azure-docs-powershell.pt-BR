@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323332"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100266"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
-O Azure PowerShell oferece suporte a vários métodos de logon. É a maneira mais simples para começar a fazer logon interativamente na linha de comando.
+O Azure PowerShell dá suporte a vários métodos de autenticação. É a maneira mais simples para entrar interativamente na linha de comando.
 
 ## <a name="sign-in-interactively"></a>Entrar no modo interativo
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Quando executado, esse cmdlet exibirá uma caixa de diálogo solicitando seu endereço de email e a senha associados à sua conta do Azure. Quando você autenticar, essas informações são salvas para a sessão atual do PowerShell, a caixa de diálogo é fechada e você tem acesso a todos os cmdlets do Azure PowerShell.
 
 > [!IMPORTANT]
-> Essa entrada é _somente_ para a sessão atual do PowerShell. Para manter o logon em várias sessões, confira o artigo sobre [Credenciais Persistentes](context-persistence.md).
+> Essa entrada é _somente_ para a sessão atual do PowerShell. Para manter a autenticação em várias sessões, consulte o artigo sobre [Credenciais Persistentes](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Entrar com uma entidade de serviço
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854572"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100147"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -36,7 +36,7 @@ Quando o armazenamento tiver sido criado, o Cloud Shell abrirá uma sessão do P
 
 Você também pode instalar o Azure PowerShell e usá-lo localmente em uma sessão do PowerShell.
 
-## <a name="install-azure-powershell"></a>Instalar o Azure Powershell
+## <a name="install-azure-powershell"></a>Instalar o Azure PowerShell
 
 A primeira etapa é certificar-se de que você tem a versão mais recente do Azure PowerShell instalada. Para saber mais sobre a versão mais recente, veja as [notas de versão](./release-notes-azureps.md).
 
@@ -44,11 +44,11 @@ A primeira etapa é certificar-se de que você tem a versão mais recente do Azu
 
 2. Para verificar se a instalação foi bem-sucedida, execute `Get-Module AzureRM -ListAvailable` na linha de comando.
 
-## <a name="log-in-to-azure"></a>Fazer logon no Azure
+## <a name="sign-in-to-azure"></a>Entrar no Azure
 
 Logon interativo:
 
-1. Digite `Login-AzureRmAccount`. Será exibida a caixa de diálogo solicitando as credenciais do Azure. A opção '-EnvironmentName' pode permitir que você faça logon no Azure China ou Azure Alemanha.
+1. Digite `Login-AzureRmAccount`. Será exibida a caixa de diálogo solicitando as credenciais do Azure. A opção “-EnvironmentName” pode permitir que você se autentique no Azure China ou no Azure Alemanha.
 
    Por exemplo, Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -146,7 +146,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
                          True         OK OK
 ```
 
-Agora faça logon em sua VM do Windows Server criada recentemente usando a Área de Trabalho Remota e o endereço IP público da VM. O comando a seguir exibe o endereço IP público criado no script anterior.
+Agora entre em sua VM do Windows Server recém-criada usando a Área de Trabalho Remota e o endereço IP público da VM. O comando a seguir exibe o endereço IP público criado no script anterior.
 
 ```powershell
 $publicIp | Select-Object Name,IpAddress
@@ -164,7 +164,7 @@ Se você estiver em um sistema baseado em Windows, faça isso na linha de comand
 mstsc /v:xx.xxx.xx.xxx
 ```
 
-Forneça a mesma combinação de nome de usuário/senha usada ao criar a VM para efetuar o logon.
+Forneça a mesma combinação de nome de usuário/senha usada ao criar a VM para conectar.
 
 ## <a name="create-a-linux-virtual-machine"></a>Criar uma máquina virtual do Linux
 
@@ -362,7 +362,7 @@ Para saber mais sobre como usar o Azure PowerShell, confira nossos scripts mais 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Logon com o Azure PowerShell](authenticate-azureps.md)
+* [Entrar com o Azure PowerShell](authenticate-azureps.md)
 * [Gerenciar as assinaturas do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
 * [Criar entidades de serviço no Azure usando o Azure PowerShell](create-azure-service-principal-azureps.md)
 * Leia as Notas de versão sobre como migrar a partir de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
