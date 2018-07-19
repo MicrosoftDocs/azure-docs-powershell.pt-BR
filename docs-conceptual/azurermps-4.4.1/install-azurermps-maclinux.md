@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100096"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024827"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Instale o Azure PowerShell no macOS ou no Linux
 
@@ -30,8 +30,8 @@ Para as plataformas não Windows, é possível executar o Azure PowerShell no Po
 As instruções de instalação do PowerShell Core são diferentes para o macOS e a maioria das distribuições do Linux.
 Instruções detalhadas podem ser encontradas nos seguintes artigos:
 
-- [Instalar o PowerShell Core no macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
-- [Instalar o PowerShell Core no Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
+* [Instalar o PowerShell Core no macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
+* [Instalar o PowerShell Core no Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
 ## <a name="install-azure-powershell-for-net-core"></a>Instalar o Azure PowerShell para .NET Core
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Responda `Yes` ou `Yes to All` para continuar a instalação.
@@ -83,17 +83,17 @@ No macOS e no Linux, trabalhe com seu perfil usando a variável de ambiente `$Pr
 Os módulos do Azure PowerShell para .NET Core ainda estão em desenvolvimento. Esses módulos não fornecem o conjunto completo de cmdlets que estão disponíveis para a versão do Windows dos módulos. As funções a seguir são implementadas em módulos AzureRM.Netcore:
 
 * Gerenciamento de contas
-  - Entrar com a conta da Microsoft, conta Organizacional ou Entidade de Serviço por meio do Microsoft Azure Active Directory
-  - Salvar credenciais para o disco com Save-AzureRmContext e carregar as credenciais salvas usando Import-AzureRmContext
+  * Entrar com a conta da Microsoft, conta Organizacional ou Entidade de Serviço por meio do Microsoft Azure Active Directory
+  * Salvar credenciais para o disco com Save-AzureRmContext e carregar as credenciais salvas usando Import-AzureRmContext
 * Ambiente
-  - Obter os diferentes ambientes do Microsoft Azure prontos para uso
-  - Adicionar/definir/remover ambientes personalizados (como seus ambientes do Azure Stack ou do Pacote do Microsoft Azure)
+  * Obter os diferentes ambientes do Microsoft Azure prontos para uso
+  * Adicionar/definir/remover ambientes personalizados (como seus ambientes do Azure Stack ou do Pacote do Microsoft Azure)
 * Cmdlets de plano de gerenciamento para os Serviços do Azure usando as interfaces do Resource Manager e do Gerenciamento de Serviços.
-  - Máquina Virtual
-  - Serviço de Aplicativo (Sites)
-  - Banco de dados SQL
-  - Armazenamento
-  - Rede
+  * Máquina Virtual
+  * Serviço de Aplicativo (Sites)
+  * Banco de dados SQL
+  * Armazenamento
+  * Rede
 
 ## <a name="next-steps"></a>Próximas etapas
 

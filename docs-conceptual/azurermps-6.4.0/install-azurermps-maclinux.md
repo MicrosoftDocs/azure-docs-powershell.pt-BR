@@ -12,7 +12,7 @@ ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024912"
+ms.locfileid: "39025422"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Instale o Azure PowerShell no macOS ou no Linux
 
