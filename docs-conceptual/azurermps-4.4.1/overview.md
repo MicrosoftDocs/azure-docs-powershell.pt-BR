@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: d36952b38a36a5196ee5b38ed048366da5416f0b
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821404"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39024691"
 ---
 # <a name="overview-of-azure-powershell"></a>Visão geral do Azure PowerShell
 
@@ -31,8 +31,7 @@ Os exemplos a seguir podem ajudar você a saber mais sobre como executar cenári
 > [!NOTE]
 > Se você tiver implantações que usam o modelo de implantação clássico que não pode ser convertido, será possível instalar a versão de Gerenciamento de Serviços do Azure PowerShell. Para obter mais informações, veja [Instalar o módulo Gerenciamento de Serviços do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
 
-
-### <a name="need-help-with-powershell"></a>Precisa de ajuda com o PowerShell?
+## <a name="learn-powershell-basics"></a>Saiba mais sobre os conceitos básicos do PowerShell
 
 Se você não estiver familiarizado com o PowerShell, uma introdução ao PowerShell poderá ser útil.
 
