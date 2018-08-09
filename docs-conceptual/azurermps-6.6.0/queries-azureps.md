@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/08/2018
 ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
-ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.sourcegitcommit: afae9f2f091b21ed07d5aec1c249cf859a8b89a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39367847"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39653620"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Consultar a saída de cmdlets do Azure PowerShell
 

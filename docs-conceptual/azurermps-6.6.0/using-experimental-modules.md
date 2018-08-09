@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: ac571363d79c83b268b5c25f65b14f16d4b86e71
-ms.sourcegitcommit: fd11600079ee3844986552bccc4e274a231332b6
+ms.sourcegitcommit: afae9f2f091b21ed07d5aec1c249cf859a8b89a4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39368221"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39653654"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Usando módulos experimentais do Azure PowerShell
 
@@ -69,7 +69,7 @@ As principais melhorias são consideradas de "bom senso" e pouca experimentaçã
 
 - Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo: 
   - Grupo de recursos
-  - Localização
+  - Local padrão
   - Recursos dependentes
 
 ### <a name="experimental-improvements"></a>Melhorias experimentais
