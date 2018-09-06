@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: e1606ddb02adf1de2cb5496917d61755ac3dad23
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250475"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43384137"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerenciar várias assinaturas do Azure
 
