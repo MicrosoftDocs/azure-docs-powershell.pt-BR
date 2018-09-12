@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250312"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383831"
 ---
 # <a name="release-notes"></a>Notas de versão
 
 É uma lista das alterações feitas nesta versão do Azure PowerShell.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 - Agosto de 2018
+#### <a name="general"></a>Geral
+* Corrigido o problema com os grupos de recursos padrão não sendo definidos.
+* Assemblies de tempo de execução comum atualizados
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Corrigido o problema com os grupos de recursos padrão não sendo definidos.
+* Problema corrigido https://github.com/Azure/azure-powershell/issues/6603
+    - Os cmdlets Importar-AzureRmApiManagementApi e *-AzureRmApiManagementCertificate podem agora lidar com caminhos relativos
+* Problema corrigido https://github.com/Azure/azure-powershell/issues/6879
+    - O CertificateInformation é uma propriedade configurável, permitindo que o cmdlet Set-AzureRmApiManagement funcione corretamente. Corrigida pela atualização para o nuget 4.0.4-nuget de prévia
+* Problema corrigido https://github.com/Azure/azure-powershell/issues/6853
+    - Corrigido o filtro Odata para pesquisar por nome no produto
+* Problema corrigido https://github.com/Azure/azure-powershell/issues/6814
+    - Corrigido o filtro Odata para pesquisar por nome na API
+* Adicionado suporte para o agente de AzureMonitor
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Corrigido o problema onde o destino está ausente na saída de erro.
+* Corrigido o problema com o tipo de conta de armazenamento para VM com disco gerenciado
+* Corrigido o problema com os grupos de recursos padrão não sendo definidos.
+* Corrigidos os cmdlets da extensão do AEM para outros ambientes, por exemplo, Azure China
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Alterada a representação de saída de cmdlet para exibição de tabela
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Corrigida a falha em atualização-AzureRmPowerBIEmbeddedCapacity durante uma tentativa de escalar a capacidade em pausa
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Corrigido o problema com a criação de aplicativos gerenciados do MarketPlace.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Problemas corrigidos
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Suporte adicionado para o método de roteamento de vários valores
+    - Novo parâmetro “MaxReturn” para o roteamento de vários valores
+* Suporte adicionado para o método de roteamento de sub-rede
+    - Suporte para intervalos de endereços IP (sub-redes) em pontos de extremidade
+* Suporte adicionado para cabeçalhos personalizados nos perfis
+* Suporte adicionado para intervalos de código de status esperados em perfis
+* Suporte adicionado para cabeçalhos personalizados nos pontos de extremidade
+
 ## <a name="680---august-2018"></a>6.8.0 - Agosto de 2018
 #### <a name="general"></a>Geral
 * Corrigido o problema com os grupos de recursos padrão não sendo definidos.
