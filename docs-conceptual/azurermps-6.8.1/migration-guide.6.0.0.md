@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383933"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304158"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações interruptivas no Microsoft Azure PowerShell 6.0.0
 
@@ -41,11 +41,11 @@ Este documento serve como uma notificação de alterações interruptivas e como
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Versão mínima do PowerShell necessária aumentada para 5.0
 
-Anteriormente, o Azure PowerShell precisava de _pelo menos_ a versão 3.0 do PowerShell para executar qualquer cmdlet. Mais para frente, este requisito será aumentado para a versão 5.0 do PowerShell. Para informações sobre a atualização para o PowerShell 5.0, consulte [esta tabela](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Anteriormente, o Azure PowerShell precisava de _pelo menos_ a versão 3.0 do PowerShell para executar qualquer cmdlet. Mais para frente, este requisito será aumentado para a versão 5.0 do PowerShell. Para informações sobre a atualização para o PowerShell 5.0, consulte [esta tabela](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Salvamento automático de contexto habilitado por padrão
 
-O salvamento automático do contexto é o armazenamento de informações de conexão do Azure que pode ser usado entre novas e diferentes sessões do PowerShell. Para obter mais informações sobre o salvamento automático de contexto, consulte [este documento](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
+O salvamento automático do contexto é o armazenamento de informações de conexão do Azure que pode ser usado entre novas e diferentes sessões do PowerShell. Para obter mais informações sobre o salvamento automático de contexto, consulte [este documento](https://docs.microsoft.com/powershell/azure/context-persistence).
 
 Anteriormente, por padrão, o salvamento automático do contexto era desabilitado, significando que as informações de autenticação do Azure do usuário não eram armazenadas entre as sessões até o `Enable-AzureRmContextAutosave` cmdlet ser executado para ativar a persistência do contexto. Mais adiante, o salvamento automático do contexto será habilitado por padrão, significando que os usuários _sem nenhuma configuração de salvamento automático gravada_  terão seu contexto armazenado na próxima vez que entrarem. Os usuários podem recusar essa funcionalidade usando o cmdlet `Disable-AzureRmContextAutosave`.
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - O cmdlet não aceita parâmetros individuais que compõem o token de acesso. Em vez disso, o cmdlet substitui parâmetros explícitos de token, como `Service` ou `Permissions`, com um parâmetro `TemplateUri` genérico, correspondente a um token de acesso de exemplo definido em outro lugar (supostamente usando cmdlets do PowerShell de armazenamento ou composto manualmente, de acordo com a documentação de armazenamento). O cmdlet retém o parâmetro `ValidityPeriod`.
 
 Para obter mais informações sobre a composição de tokens de acesso compartilhados para o Armazenamento do Azure, consulte as páginas de documentação, respectivamente:
-- [Criação de um serviço SAS] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Criação de uma conta SAS] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)
+- [Criação de um serviço SAS] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Criação de uma conta SAS] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell
 # Old
