@@ -1,3 +1,20 @@
+---
+title: Visão geral do Azure Stack Admin PowerShell | Microsoft Docs
+description: Uma visão geral do Azure Stack Admin PowerShell com instruções de instalação e configuração.
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47178792"
+---
 # <a name="azure-stack-module-140"></a>Módulo do Azure Stack 1.4.0
 
 ## <a name="requirements"></a>Requisitos:

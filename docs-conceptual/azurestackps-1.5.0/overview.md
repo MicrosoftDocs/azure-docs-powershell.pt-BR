@@ -8,47 +8,63 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179132"
+ms.locfileid: "47178622"
 ---
-# <a name="azure-stack-module-130"></a>Módulo Azure Stack 1.3.0
+# <a name="azure-stack-module-150"></a>Módulo do Azure Stack 1.5.0
 
 ## <a name="requirements"></a>Requisitos:
-A versão mínima suportada do Azure Stack é 1804.
+A versão mínima do Azure Stack com suporte é 1808.
 
-Nota: se você estiver usando uma versão anterior, instale a versão 1.2.11
+Nota: se você estiver usando uma versão anterior, instale a versão 1.4.0
 
 ## <a name="known-issues"></a>Problemas conhecidos:
 
-- Fechar o Alerta requer a versão Azure Stack 1803
-- Alguns cmdlets de armazenamento requerem a versão Azure Stack 1804
 - O New-AzsOffer não permite criar uma oferta com o estado público. O cmdlet Set-AzsOffer precisa ser chamado depois para alterar o estado.
 - Um Pool de IPs não pode ser removido sem uma reimplantação
 
-## <a name="breaking-changes"></a>Alterações significativas
-Todas as alterações significativas migrando de 1.2.11 estão documentadas aqui https://aka.ms/azspowershellmigration
-
 ## <a name="install"></a>Instalar
 ```
-# Remove previous Versions
+# Remove previous versions of AzureStack modules
+Uninstall-Module -Name AzureStack -Force 
 Uninstall-Module AzureRM.AzureStackAdmin -Force
 Uninstall-Module AzureRM.AzureStackStorage -Force
-Uninstall-Module -Name AzureStack -Force 
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 # Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
+
+##<a name="release-notes"></a>Notas de versão
+* Todos os módulos do Azure Stack Admin foram atualizados para dependência maior que ou igual a no módulo AzureRM.Profile
+* Suporte para lidar com nomes de recurso aninhado em todos os módulos
+* Correção de bug em todos os módulos em que ErrorActionPreference está sendo substituído por Stop
+* Módulo Azs.Compute.Admin
+    * Novas propriedades de cota adicionadas para o suporte de disco gerenciado
+    * Adição de cmdlets relacionados à migração de disco
+    * Propriedades adicionais nos objetos de extensão de VM e Imagem da Plataforma
+* Azs.Fabric.Admin 
+    * Novo cmdlet para adicionar nó de unidade de escala
+* Azs.Backup.Admin
+    * Set-AzsBackupShare agora é um alias para o cmdlet Set-AzsBackupConfiguration
+    * Get-AzsBackupLocation agora é um alias para o cmdlet Get-AzsBackupConfiguration
+    * Set-AzsBackupConfiguration, o parâmetro BackupShare agora é um alias para o caminho do parâmetro
+* Azs.Subscriptions
+    * Get-AzsDelegatedProviderOffer; o parâmetro OfferName agora é um alias para a oferta
+* Azs.Subscriptions.Admin
+    * Get-AzsDelegatedProviderOffer; o parâmetro OfferName agora é um alias para a oferta
+
 ## <a name="content"></a>Conteúdo:
 ### <a name="azure-bridge"></a>Azure Bridge
 Versão prévia do módulo administrador do Azure Stack AzureBridge que permite distribuir imagens do Azure.
@@ -63,7 +79,7 @@ Versão prévia do módulo administrador de Backup que permite aos administrador
 Versão prévia do módulo administrador do Azure Stack Commerce que fornece uma maneira de exibir o uso de agregação de dados no sistema do Azure Stack.
 
 ### <a name="compute"></a>Computação
-Versão prévia do módulo administrador do Azure Stack Compute que fornece funcionalidade para gerenciar cotas de computação, imagens da plataforma e extensões da máquina virtual.
+Versão prévia do módulo administrador do Azure Stack Compute que fornece funcionalidade para gerenciar cotas de computação, imagens da plataforma, discos gerenciados e extensões da máquina virtual.
 
 ### <a name="fabric"></a>Fabric
 Versão prévia do módulo administrador do Azure Stack Fabric que permite que os administradores exibam e gerenciem os componentes de infraestrutura:
