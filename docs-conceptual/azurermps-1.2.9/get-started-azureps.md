@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3114f9e9b36dc374f9fb2d402c448cff7fef0aa3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100419"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211444"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -64,7 +64,7 @@ Primeiro, crie um Grupo de Recursos. Os Grupos de recursos no Azure fornecem uma
 
 Vamos criar um grupo de recursos chamado "MyResourceGroup" na região Europa Ocidental do Azure. Para fazer isso, digite o seguinte comando:
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ Agora que temos nosso grupo de recursos, vamos criar uma VM do Windows dentro de
 
 Primeiro, precisamos criar uma configuração de sub-rede para usar com o processo de criação da rede virtual. Também criamos um endereço IP público para que possamos nos conectar a essa VM. Criamos um grupo de segurança de rede para proteger o acesso ao endereço público. Finalmente, criamos a NIC virtual usando todos os recursos anteriores.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 Primeiro, precisamos de um conjunto de credenciais para o sistema operacional.
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 Agora que temos os recursos necessários, podemos criar a VM. Para esta etapa, criamos um objeto de configuração da VM, depois, usamos a configuração para criar a VM.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 Agora faça logon em sua VM do Windows Server criada recentemente usando a Área de Trabalho Remota e o endereço IP público da VM. O comando a seguir exibe o endereço IP público criado no script anterior.
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Se você estiver em um sistema baseado em Windows, faça isso na linha de comando usando o comando mstsc:
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ Para criar uma nova VM do Linux, primeiro crie os outros recursos necessários e
 
 Primeiro, precisamos criar uma configuração de sub-rede para usar com o processo de criação da rede virtual. Também criamos um endereço IP público para que possamos nos conectar a essa VM. Criamos um grupo de segurança de rede para proteger o acesso ao endereço público. Finalmente, criamos a NIC virtual usando todos os recursos anteriores.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Agora que temos os recursos necessários, podemos criar a VM. Para esta etapa, criamos um objeto de configuração da VM, depois, usamos a configuração para criar a VM.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ Agora percorremos a criação de um Grupo de recursos, uma VM do Linux e uma VM 
 
 Por exemplo, para criar um Balanceador de carga de rede do Azure que poderíamos associar às nossas VMs recém-criadas, podemos usar o seguinte comando create:
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Também poderíamos criar uma nova Rede Virtual privada (conhecida como "VNet" no Azure) para nossa infraestrutura usando o seguinte comando:
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ O que torna o Azure e o Azure PowerShell tão poderosos é que podemos usar isso
 
 Por exemplo, é possível usar o Azure PowerShell para criar um Serviço de Aplicativo do Azure. Serviço de Aplicativo do Azure é um serviço de plataforma gerenciado que fornece uma ótima maneira para hospedar aplicativos Web sem precisar se preocupar com a infraestrutura. Depois de criar o Serviço de Aplicativo do Azure, você pode criar dois novos Aplicativos Web do Azure dentro do Serviço de Aplicativo usando os seguintes comandos:
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 Usar o cmdlet `Get-AzureRmResource` para listar os recursos em execução no Azure. O exemplo a seguir mostra os recursos que acabamos de criar no novo grupo de recursos.
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Para limpar sua conta do Azure, convém remover os recursos que criamos neste exemplo. Usar os cmdlets `Remove-AzureRm*` para excluir os recursos desnecessários. Para remover a VM do Windows que criamos, use o seguinte comando:
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Também é possível usar a exclusão de vários recursos ao mesmo tempo. Por exemplo, o comando a seguir exclui todo o grupo de recursos "MyResourceGroup" que usamos para todos os exemplos neste tutorial de Introdução. Isso remove o grupo de recursos e todos os recursos contidos nele.
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 

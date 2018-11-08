@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: c19d9ade0f69f4af9f14c68ad22b327c27c8ccfd
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.openlocfilehash: 6a42217c47c1e5101a708da87c15fc14004f2069
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50972155"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212567"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -22,7 +22,7 @@ O Azure PowerShell dá suporte a vários métodos de autenticação. É a maneir
 
 Para entrar no modo interativo, use o cmdlet [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
-```azurepowershell
+```azurepowershell-interactive
 Connect-AzureRmAccount
 ```
 

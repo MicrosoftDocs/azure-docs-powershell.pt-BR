@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737927"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211597"
 ---
 # <a name="log-in-with-azure-powershell"></a>Fazer logon com o Azure PowerShell
 
@@ -32,13 +32,13 @@ As entidades de serviço oferecem uma maneira de criar contas não interativas p
 
 2. Faça logon com uma entidade de serviço.
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     Para obter a TenantId, faça logon interativamente e obtenha a TenantId da sua assinatura.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Para saber mais informações sobre identidades gerenciadas para recursos do Azu
 
 Os Serviços de Nuvem do Azure oferecem ambientes diferentes que estão de acordo com as regulamentações de manipulação de dados de diversos governos. Caso sua conta do Azure esteja em uma das nuvens de governo, será necessário especificar o ambiente ao se conectar. Por exemplo, se sua conta está na nuvem da China, faça logon usando o seguinte comando:
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Use o seguinte comando para obter uma lista de ambientes disponíveis:
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 
