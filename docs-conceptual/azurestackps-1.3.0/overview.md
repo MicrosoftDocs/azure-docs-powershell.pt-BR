@@ -9,30 +9,30 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211971"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274323"
 ---
-# <a name="azure-stack-module-130"></a><span data-ttu-id="b52ef-103">Módulo Azure Stack 1.3.0</span><span class="sxs-lookup"><span data-stu-id="b52ef-103">Azure Stack Module 1.3.0</span></span>
+# <a name="azure-stack-module-130"></a><span data-ttu-id="10d07-103">Módulo Azure Stack 1.3.0</span><span class="sxs-lookup"><span data-stu-id="10d07-103">Azure Stack Module 1.3.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="b52ef-104">Requisitos:</span><span class="sxs-lookup"><span data-stu-id="b52ef-104">Requirements:</span></span>
-<span data-ttu-id="b52ef-105">A versão mínima suportada do Azure Stack é 1804.</span><span class="sxs-lookup"><span data-stu-id="b52ef-105">Minimum supported Azure Stack version is 1804.</span></span>
+## <a name="requirements"></a><span data-ttu-id="10d07-104">Requisitos:</span><span class="sxs-lookup"><span data-stu-id="10d07-104">Requirements:</span></span>
+<span data-ttu-id="10d07-105">A versão mínima suportada do Azure Stack é 1804.</span><span class="sxs-lookup"><span data-stu-id="10d07-105">Minimum supported Azure Stack version is 1804.</span></span>
 
-<span data-ttu-id="b52ef-106">Nota: se você estiver usando uma versão anterior, instale a versão 1.2.11</span><span class="sxs-lookup"><span data-stu-id="b52ef-106">Note: If you are using an earlier version install version 1.2.11</span></span>
+<span data-ttu-id="10d07-106">Nota: se você estiver usando uma versão anterior, instale a versão 1.2.11</span><span class="sxs-lookup"><span data-stu-id="10d07-106">Note: If you are using an earlier version install version 1.2.11</span></span>
 
-## <a name="known-issues"></a><span data-ttu-id="b52ef-107">Problemas conhecidos:</span><span class="sxs-lookup"><span data-stu-id="b52ef-107">Known issues:</span></span>
+## <a name="known-issues"></a><span data-ttu-id="10d07-107">Problemas conhecidos:</span><span class="sxs-lookup"><span data-stu-id="10d07-107">Known issues:</span></span>
 
-- <span data-ttu-id="b52ef-108">Fechar o Alerta requer a versão Azure Stack 1803</span><span class="sxs-lookup"><span data-stu-id="b52ef-108">Close Alert requires Azure Stack version 1803</span></span>
-- <span data-ttu-id="b52ef-109">Alguns cmdlets de armazenamento requerem a versão Azure Stack 1804</span><span class="sxs-lookup"><span data-stu-id="b52ef-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
-- <span data-ttu-id="b52ef-110">O New-AzsOffer não permite criar uma oferta com o estado público.</span><span class="sxs-lookup"><span data-stu-id="b52ef-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="b52ef-111">O cmdlet Set-AzsOffer precisa ser chamado depois para alterar o estado.</span><span class="sxs-lookup"><span data-stu-id="b52ef-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
-- <span data-ttu-id="b52ef-112">Um Pool de IPs não pode ser removido sem uma reimplantação</span><span class="sxs-lookup"><span data-stu-id="b52ef-112">An IP Pool cannot be removed without a redeployment</span></span>
+- <span data-ttu-id="10d07-108">Fechar o Alerta requer a versão Azure Stack 1803</span><span class="sxs-lookup"><span data-stu-id="10d07-108">Close Alert requires Azure Stack version 1803</span></span>
+- <span data-ttu-id="10d07-109">Alguns cmdlets de armazenamento requerem a versão Azure Stack 1804</span><span class="sxs-lookup"><span data-stu-id="10d07-109">Some Storage cmdlets do require Azure Stack version 1804</span></span>
+- <span data-ttu-id="10d07-110">O New-AzsOffer não permite criar uma oferta com o estado público.</span><span class="sxs-lookup"><span data-stu-id="10d07-110">New-AzsOffer does not allow to create an offer with state public.</span></span> <span data-ttu-id="10d07-111">O cmdlet Set-AzsOffer precisa ser chamado depois para alterar o estado.</span><span class="sxs-lookup"><span data-stu-id="10d07-111">The Set-AzsOffer cmdlet needs to be called afterwards to change the state.</span></span>
+- <span data-ttu-id="10d07-112">Um Pool de IPs não pode ser removido sem uma reimplantação</span><span class="sxs-lookup"><span data-stu-id="10d07-112">An IP Pool cannot be removed without a redeployment</span></span>
 
-## <a name="breaking-changes"></a><span data-ttu-id="b52ef-113">Alterações significativas</span><span class="sxs-lookup"><span data-stu-id="b52ef-113">Breaking Changes</span></span>
-<span data-ttu-id="b52ef-114">Todas as alterações significativas migrando de 1.2.11 estão documentadas aqui https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="b52ef-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
+## <a name="breaking-changes"></a><span data-ttu-id="10d07-113">Alterações significativas</span><span class="sxs-lookup"><span data-stu-id="10d07-113">Breaking Changes</span></span>
+<span data-ttu-id="10d07-114">Todas as alterações significativas migrando de 1.2.11 estão documentadas aqui https://aka.ms/azspowershellmigration</span><span class="sxs-lookup"><span data-stu-id="10d07-114">All breaking changes migrating from 1.2.11 are documented here https://aka.ms/azspowershellmigration</span></span>
 
-## <a name="install"></a><span data-ttu-id="b52ef-115">Instalar</span><span class="sxs-lookup"><span data-stu-id="b52ef-115">Install</span></span>
+## <a name="install"></a><span data-ttu-id="10d07-115">Instalar</span><span class="sxs-lookup"><span data-stu-id="10d07-115">Install</span></span>
 ```
 # Remove previous Versions
 Uninstall-Module AzureRM.AzureStackAdmin -Force
@@ -49,70 +49,70 @@ Use-AzureRmProfile -Profile 2017-03-09-profile -Force
 # Install Azure Stack Admin Module
 Install-Module -Name AzureStack -RequiredVersion 1.3.0
 ```
-## <a name="content"></a><span data-ttu-id="b52ef-116">Conteúdo:</span><span class="sxs-lookup"><span data-stu-id="b52ef-116">Content:</span></span>
-### <a name="azure-bridge"></a><span data-ttu-id="b52ef-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="b52ef-117">Azure Bridge</span></span>
-<span data-ttu-id="b52ef-118">Versão prévia do módulo administrador do Azure Stack AzureBridge que permite distribuir imagens do Azure.</span><span class="sxs-lookup"><span data-stu-id="b52ef-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
+## <a name="content"></a><span data-ttu-id="10d07-116">Conteúdo:</span><span class="sxs-lookup"><span data-stu-id="10d07-116">Content:</span></span>
+### <a name="azure-bridge"></a><span data-ttu-id="10d07-117">Azure Bridge</span><span class="sxs-lookup"><span data-stu-id="10d07-117">Azure Bridge</span></span>
+<span data-ttu-id="10d07-118">Versão prévia do módulo administrador do Azure Stack AzureBridge que permite distribuir imagens do Azure.</span><span class="sxs-lookup"><span data-stu-id="10d07-118">Preview release of the Azure Stack AzureBridge administrator module which allows you to syndicate images from Azure.</span></span>
 
-### <a name="backup"></a><span data-ttu-id="b52ef-119">Backup</span><span class="sxs-lookup"><span data-stu-id="b52ef-119">Backup</span></span>
-<span data-ttu-id="b52ef-120">Versão prévia do módulo administrador de Backup que permite aos administradores:</span><span class="sxs-lookup"><span data-stu-id="b52ef-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
-- <span data-ttu-id="b52ef-121">Configurarem onde os backups são armazenados</span><span class="sxs-lookup"><span data-stu-id="b52ef-121">Configure where backups are stored</span></span>
-- <span data-ttu-id="b52ef-122">Executarem backups</span><span class="sxs-lookup"><span data-stu-id="b52ef-122">Perform backups</span></span>
-- <span data-ttu-id="b52ef-123">Listarem e restaurarem o backup completo</span><span class="sxs-lookup"><span data-stu-id="b52ef-123">List and restore completed backup</span></span>
+### <a name="backup"></a><span data-ttu-id="10d07-119">Backup</span><span class="sxs-lookup"><span data-stu-id="10d07-119">Backup</span></span>
+<span data-ttu-id="10d07-120">Versão prévia do módulo administrador de Backup que permite aos administradores:</span><span class="sxs-lookup"><span data-stu-id="10d07-120">Preview release of the Backup administrator module that allows administrators to:</span></span>
+- <span data-ttu-id="10d07-121">Configurarem onde os backups são armazenados</span><span class="sxs-lookup"><span data-stu-id="10d07-121">Configure where backups are stored</span></span>
+- <span data-ttu-id="10d07-122">Executarem backups</span><span class="sxs-lookup"><span data-stu-id="10d07-122">Perform backups</span></span>
+- <span data-ttu-id="10d07-123">Listarem e restaurarem o backup completo</span><span class="sxs-lookup"><span data-stu-id="10d07-123">List and restore completed backup</span></span>
 
-### <a name="commerce"></a><span data-ttu-id="b52ef-124">Comércio</span><span class="sxs-lookup"><span data-stu-id="b52ef-124">Commerce</span></span>
-<span data-ttu-id="b52ef-125">Versão prévia do módulo administrador do Azure Stack Commerce que fornece uma maneira de exibir o uso de agregação de dados no sistema do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
+### <a name="commerce"></a><span data-ttu-id="10d07-124">Comércio</span><span class="sxs-lookup"><span data-stu-id="10d07-124">Commerce</span></span>
+<span data-ttu-id="10d07-125">Versão prévia do módulo administrador do Azure Stack Commerce que fornece uma maneira de exibir o uso de agregação de dados no sistema do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-125">Preview release of the Azure Stack Commerce administrator module which provides a way to view aggregate data usage across your Azure Stack system.</span></span>
 
-### <a name="compute"></a><span data-ttu-id="b52ef-126">Computação</span><span class="sxs-lookup"><span data-stu-id="b52ef-126">Compute</span></span>
-<span data-ttu-id="b52ef-127">Versão prévia do módulo administrador do Azure Stack Compute que fornece funcionalidade para gerenciar cotas de computação, imagens da plataforma e extensões da máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="b52ef-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
+### <a name="compute"></a><span data-ttu-id="10d07-126">Computação</span><span class="sxs-lookup"><span data-stu-id="10d07-126">Compute</span></span>
+<span data-ttu-id="10d07-127">Versão prévia do módulo administrador do Azure Stack Compute que fornece funcionalidade para gerenciar cotas de computação, imagens da plataforma e extensões da máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="10d07-127">Preview release of the Azure Stack Compute administrator module which provides functionality to manage compute quotas, platform images, and virtual machine extensions.</span></span>
 
-### <a name="fabric"></a><span data-ttu-id="b52ef-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="b52ef-128">Fabric</span></span>
-<span data-ttu-id="b52ef-129">Versão prévia do módulo administrador do Azure Stack Fabric que permite que os administradores exibam e gerenciem os componentes de infraestrutura:</span><span class="sxs-lookup"><span data-stu-id="b52ef-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
-- <span data-ttu-id="b52ef-130">Parar, Iniciar e Desligar os nós da unidade de escala</span><span class="sxs-lookup"><span data-stu-id="b52ef-130">Stop, Start and Shutdown of scale unit nodes</span></span>
-- <span data-ttu-id="b52ef-131">Esvaziar e Retomar os nós da unidade de escala para as atividades relacionadas a FRU</span><span class="sxs-lookup"><span data-stu-id="b52ef-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
-- <span data-ttu-id="b52ef-132">Reparar nós da unidade de escala</span><span class="sxs-lookup"><span data-stu-id="b52ef-132">Repair of scale unit nodes</span></span>
-- <span data-ttu-id="b52ef-133">Reinicializar função de Infraestrutura</span><span class="sxs-lookup"><span data-stu-id="b52ef-133">Restart of Infrastructure role</span></span>
-- <span data-ttu-id="b52ef-134">Parar, Iniciar e Desligar instâncias da função de Infraestrutura</span><span class="sxs-lookup"><span data-stu-id="b52ef-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
-- <span data-ttu-id="b52ef-135">Criar novos Pools de IPs</span><span class="sxs-lookup"><span data-stu-id="b52ef-135">Create new IP Pools</span></span>
+### <a name="fabric"></a><span data-ttu-id="10d07-128">Fabric</span><span class="sxs-lookup"><span data-stu-id="10d07-128">Fabric</span></span>
+<span data-ttu-id="10d07-129">Versão prévia do módulo administrador do Azure Stack Fabric que permite que os administradores exibam e gerenciem os componentes de infraestrutura:</span><span class="sxs-lookup"><span data-stu-id="10d07-129">Preview release of the Azure Stack Fabric administrator module which allows administrators to view and manage infrastructure components:</span></span>
+- <span data-ttu-id="10d07-130">Parar, Iniciar e Desligar os nós da unidade de escala</span><span class="sxs-lookup"><span data-stu-id="10d07-130">Stop, Start and Shutdown of scale unit nodes</span></span>
+- <span data-ttu-id="10d07-131">Esvaziar e Retomar os nós da unidade de escala para as atividades relacionadas a FRU</span><span class="sxs-lookup"><span data-stu-id="10d07-131">Drain and Resume of scale unit nodes for FRU related activities</span></span>
+- <span data-ttu-id="10d07-132">Reparar nós da unidade de escala</span><span class="sxs-lookup"><span data-stu-id="10d07-132">Repair of scale unit nodes</span></span>
+- <span data-ttu-id="10d07-133">Reinicializar função de Infraestrutura</span><span class="sxs-lookup"><span data-stu-id="10d07-133">Restart of Infrastructure role</span></span>
+- <span data-ttu-id="10d07-134">Parar, Iniciar e Desligar instâncias da função de Infraestrutura</span><span class="sxs-lookup"><span data-stu-id="10d07-134">Stop, Start and Shutdown of Infrastructure role instances</span></span>
+- <span data-ttu-id="10d07-135">Criar novos Pools de IPs</span><span class="sxs-lookup"><span data-stu-id="10d07-135">Create new IP Pools</span></span>
 
 
-### <a name="gallery"></a><span data-ttu-id="b52ef-136">Galeria</span><span class="sxs-lookup"><span data-stu-id="b52ef-136">Gallery</span></span>
-<span data-ttu-id="b52ef-137">Versão prévia do módulo administrador do Azure Stack Gallery que fornece funcionalidade para gerenciar os itens da galeria no marketplace do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
+### <a name="gallery"></a><span data-ttu-id="10d07-136">Galeria</span><span class="sxs-lookup"><span data-stu-id="10d07-136">Gallery</span></span>
+<span data-ttu-id="10d07-137">Versão prévia do módulo administrador do Azure Stack Gallery que fornece funcionalidade para gerenciar os itens da galeria no marketplace do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-137">Preview release of the Azure Stack Gallery administrator module which provides functionality to manage gallery items in the Azure Stack marketplace.</span></span>
 
-### <a name="infrastructure-insights"></a><span data-ttu-id="b52ef-138">Infrastructure Insights</span><span class="sxs-lookup"><span data-stu-id="b52ef-138">Infrastructure Insights</span></span>
-<span data-ttu-id="b52ef-139">Versão prévia do módulo administrador do Infrastructure Insights que permite aos administradores:</span><span class="sxs-lookup"><span data-stu-id="b52ef-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
-- <span data-ttu-id="b52ef-140">Exibirem a integridade de seus recursos de carimbo do Azure Stack</span><span class="sxs-lookup"><span data-stu-id="b52ef-140">View the health of their Azure Stack stamp resources</span></span>
-- <span data-ttu-id="b52ef-141">Exibirem e gerenciarem alertas</span><span class="sxs-lookup"><span data-stu-id="b52ef-141">View and manage alerts</span></span>
+### <a name="infrastructure-insights"></a><span data-ttu-id="10d07-138">Infrastructure Insights</span><span class="sxs-lookup"><span data-stu-id="10d07-138">Infrastructure Insights</span></span>
+<span data-ttu-id="10d07-139">Versão prévia do módulo administrador do Infrastructure Insights que permite aos administradores:</span><span class="sxs-lookup"><span data-stu-id="10d07-139">Preview release of the Infrastructure Insights administrator module which allows administrators:</span></span>
+- <span data-ttu-id="10d07-140">Exibirem a integridade de seus recursos de carimbo do Azure Stack</span><span class="sxs-lookup"><span data-stu-id="10d07-140">View the health of their Azure Stack stamp resources</span></span>
+- <span data-ttu-id="10d07-141">Exibirem e gerenciarem alertas</span><span class="sxs-lookup"><span data-stu-id="10d07-141">View and manage alerts</span></span>
 
-### <a name="keyvault"></a><span data-ttu-id="b52ef-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="b52ef-142">KeyVault</span></span>
-<span data-ttu-id="b52ef-143">Versão prévia do módulo administrador do Azure Stack KeyVault que permite ao administrador exibir as cotas de KeyVault.</span><span class="sxs-lookup"><span data-stu-id="b52ef-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
+### <a name="keyvault"></a><span data-ttu-id="10d07-142">KeyVault</span><span class="sxs-lookup"><span data-stu-id="10d07-142">KeyVault</span></span>
+<span data-ttu-id="10d07-143">Versão prévia do módulo administrador do Azure Stack KeyVault que permite ao administrador exibir as cotas de KeyVault.</span><span class="sxs-lookup"><span data-stu-id="10d07-143">Preview release of the Azure Stack KeyVault administrator module which allows administrator to view KeyVault quotas.</span></span>
 
-### <a name="network"></a><span data-ttu-id="b52ef-144">Rede</span><span class="sxs-lookup"><span data-stu-id="b52ef-144">Network</span></span>
-<span data-ttu-id="b52ef-145">Versão prévia do módulo administrador da Rede que permite:</span><span class="sxs-lookup"><span data-stu-id="b52ef-145">Preview release of the Network administrator module which allows:</span></span>
-- <span data-ttu-id="b52ef-146">Gerenciar as cotas de rede</span><span class="sxs-lookup"><span data-stu-id="b52ef-146">Management of network quotas</span></span>
-- <span data-ttu-id="b52ef-147">Exibir os recursos de rede alocados, como endereços IP públicos, redes virtuais, balanceadores de carga</span><span class="sxs-lookup"><span data-stu-id="b52ef-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
-- <span data-ttu-id="b52ef-148">Fornecer um cmdlet que exibe uma visão geral do administrador</span><span class="sxs-lookup"><span data-stu-id="b52ef-148">Provides a cmdlet which displays an administrator overview</span></span>
+### <a name="network"></a><span data-ttu-id="10d07-144">Rede</span><span class="sxs-lookup"><span data-stu-id="10d07-144">Network</span></span>
+<span data-ttu-id="10d07-145">Versão prévia do módulo administrador da Rede que permite:</span><span class="sxs-lookup"><span data-stu-id="10d07-145">Preview release of the Network administrator module which allows:</span></span>
+- <span data-ttu-id="10d07-146">Gerenciar as cotas de rede</span><span class="sxs-lookup"><span data-stu-id="10d07-146">Management of network quotas</span></span>
+- <span data-ttu-id="10d07-147">Exibir os recursos de rede alocados, como endereços IP públicos, redes virtuais, balanceadores de carga</span><span class="sxs-lookup"><span data-stu-id="10d07-147">View allocated network resources such as public IP addresses, virtual networks, load balancers</span></span>
+- <span data-ttu-id="10d07-148">Fornecer um cmdlet que exibe uma visão geral do administrador</span><span class="sxs-lookup"><span data-stu-id="10d07-148">Provides a cmdlet which displays an administrator overview</span></span>
 
-### <a name="storage"></a><span data-ttu-id="b52ef-149">Armazenamento</span><span class="sxs-lookup"><span data-stu-id="b52ef-149">Storage</span></span>
-<span data-ttu-id="b52ef-150">Versão prévia do módulo administrador do Armazenamento do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="b52ef-151">Nessa versão, fornecemos funcionalidade para:</span><span class="sxs-lookup"><span data-stu-id="b52ef-151">In this release we provide the functionality to:</span></span>
-- <span data-ttu-id="b52ef-152">Gerenciar as cotas de armazenamento</span><span class="sxs-lookup"><span data-stu-id="b52ef-152">Manage storage quotas</span></span>
-- <span data-ttu-id="b52ef-153">Coletar o lixo dos recursos de armazenamento excluídos</span><span class="sxs-lookup"><span data-stu-id="b52ef-153">Garbage collect deleted storage resources</span></span>
-- <span data-ttu-id="b52ef-154">Restaurar as contas de armazenamento excluídas</span><span class="sxs-lookup"><span data-stu-id="b52ef-154">Restore deleted storage accounts</span></span>
-- <span data-ttu-id="b52ef-155">Migrar os contêineres de um compartilhamento para outro</span><span class="sxs-lookup"><span data-stu-id="b52ef-155">Migrate containers from one share to another</span></span>
-- <span data-ttu-id="b52ef-156">Exibir informações sobre os componentes de armazenamento individuais</span><span class="sxs-lookup"><span data-stu-id="b52ef-156">View information about the individual storage components</span></span>
-- <span data-ttu-id="b52ef-157">Exibir informações de uso e desempenho</span><span class="sxs-lookup"><span data-stu-id="b52ef-157">View usage and performance information</span></span>
+### <a name="storage"></a><span data-ttu-id="10d07-149">Armazenamento</span><span class="sxs-lookup"><span data-stu-id="10d07-149">Storage</span></span>
+<span data-ttu-id="10d07-150">Versão prévia do módulo administrador do Armazenamento do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-150">Preview release of the Azure Stack Storage administrator module.</span></span>  <span data-ttu-id="10d07-151">Nessa versão, fornecemos funcionalidade para:</span><span class="sxs-lookup"><span data-stu-id="10d07-151">In this release we provide the functionality to:</span></span>
+- <span data-ttu-id="10d07-152">Gerenciar as cotas de armazenamento</span><span class="sxs-lookup"><span data-stu-id="10d07-152">Manage storage quotas</span></span>
+- <span data-ttu-id="10d07-153">Coletar o lixo dos recursos de armazenamento excluídos</span><span class="sxs-lookup"><span data-stu-id="10d07-153">Garbage collect deleted storage resources</span></span>
+- <span data-ttu-id="10d07-154">Restaurar as contas de armazenamento excluídas</span><span class="sxs-lookup"><span data-stu-id="10d07-154">Restore deleted storage accounts</span></span>
+- <span data-ttu-id="10d07-155">Migrar os contêineres de um compartilhamento para outro</span><span class="sxs-lookup"><span data-stu-id="10d07-155">Migrate containers from one share to another</span></span>
+- <span data-ttu-id="10d07-156">Exibir informações sobre os componentes de armazenamento individuais</span><span class="sxs-lookup"><span data-stu-id="10d07-156">View information about the individual storage components</span></span>
+- <span data-ttu-id="10d07-157">Exibir informações de uso e desempenho</span><span class="sxs-lookup"><span data-stu-id="10d07-157">View usage and performance information</span></span>
 
-### <a name="subscription-admin"></a><span data-ttu-id="b52ef-158">Administrador de assinatura</span><span class="sxs-lookup"><span data-stu-id="b52ef-158">Subscription Admin</span></span>
-<span data-ttu-id="b52ef-159">Versão prévia do módulo administrador de Assinatura do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="b52ef-160">Esse módulo fornece funcionalidade para os administradores:</span><span class="sxs-lookup"><span data-stu-id="b52ef-160">This module provides functionality for administrators to:</span></span>
-- <span data-ttu-id="b52ef-161">Gerenciarem planos e ofertas</span><span class="sxs-lookup"><span data-stu-id="b52ef-161">Manage plans and offers</span></span>
-- <span data-ttu-id="b52ef-162">Exibirem informações de uso e desempenho</span><span class="sxs-lookup"><span data-stu-id="b52ef-162">View usage and performance information</span></span>
-- <span data-ttu-id="b52ef-163">Gerenciar o RBAC</span><span class="sxs-lookup"><span data-stu-id="b52ef-163">Manage RBAC</span></span>
+### <a name="subscription-admin"></a><span data-ttu-id="10d07-158">Administrador de assinatura</span><span class="sxs-lookup"><span data-stu-id="10d07-158">Subscription Admin</span></span>
+<span data-ttu-id="10d07-159">Versão prévia do módulo administrador de Assinatura do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-159">Preview release of the Azure Stack Subscription administrator module.</span></span>  <span data-ttu-id="10d07-160">Esse módulo fornece funcionalidade para os administradores:</span><span class="sxs-lookup"><span data-stu-id="10d07-160">This module provides functionality for administrators to:</span></span>
+- <span data-ttu-id="10d07-161">Gerenciarem planos e ofertas</span><span class="sxs-lookup"><span data-stu-id="10d07-161">Manage plans and offers</span></span>
+- <span data-ttu-id="10d07-162">Exibirem informações de uso e desempenho</span><span class="sxs-lookup"><span data-stu-id="10d07-162">View usage and performance information</span></span>
+- <span data-ttu-id="10d07-163">Gerenciar o RBAC</span><span class="sxs-lookup"><span data-stu-id="10d07-163">Manage RBAC</span></span>
 
-### <a name="subscription"></a><span data-ttu-id="b52ef-164">Assinatura</span><span class="sxs-lookup"><span data-stu-id="b52ef-164">Subscription</span></span>
-<span data-ttu-id="b52ef-165">Versão prévia do módulo de Assinatura do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="b52ef-166">Esse módulo fornece funcionalidade para os Usuários:</span><span class="sxs-lookup"><span data-stu-id="b52ef-166">This module provides functionality for Users to:</span></span>
-- <span data-ttu-id="b52ef-167">Criar, Excluir e Atualizar Assinaturas</span><span class="sxs-lookup"><span data-stu-id="b52ef-167">Create, Delete and Update Subscriptions</span></span>
+### <a name="subscription"></a><span data-ttu-id="10d07-164">Assinatura</span><span class="sxs-lookup"><span data-stu-id="10d07-164">Subscription</span></span>
+<span data-ttu-id="10d07-165">Versão prévia do módulo de Assinatura do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-165">Preview release of the Azure Stack Subscription module.</span></span>  <span data-ttu-id="10d07-166">Esse módulo fornece funcionalidade para os Usuários:</span><span class="sxs-lookup"><span data-stu-id="10d07-166">This module provides functionality for Users to:</span></span>
+- <span data-ttu-id="10d07-167">Criar, Excluir e Atualizar Assinaturas</span><span class="sxs-lookup"><span data-stu-id="10d07-167">Create, Delete and Update Subscriptions</span></span>
 
-### <a name="update"></a><span data-ttu-id="b52ef-168">Atualizar</span><span class="sxs-lookup"><span data-stu-id="b52ef-168">Update</span></span>
-<span data-ttu-id="b52ef-169">Versão prévia do módulo administrador de Atualização do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="b52ef-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="b52ef-170">Nesse módulo, os administradores podem:</span><span class="sxs-lookup"><span data-stu-id="b52ef-170">In this module administrators can:</span></span>
-- <span data-ttu-id="b52ef-171">Listar e instalar as atualizações disponíveis</span><span class="sxs-lookup"><span data-stu-id="b52ef-171">List and install available updates</span></span>
-- <span data-ttu-id="b52ef-172">Retomar as atualizações interrompidas</span><span class="sxs-lookup"><span data-stu-id="b52ef-172">Resume interrupted updates</span></span>
-- <span data-ttu-id="b52ef-173">Exibir as atualizações instaladas</span><span class="sxs-lookup"><span data-stu-id="b52ef-173">View installed updates</span></span>
+### <a name="update"></a><span data-ttu-id="10d07-168">Atualizar</span><span class="sxs-lookup"><span data-stu-id="10d07-168">Update</span></span>
+<span data-ttu-id="10d07-169">Versão prévia do módulo administrador de Atualização do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="10d07-169">Preview release of the Azure Stack Update administrator module.</span></span>  <span data-ttu-id="10d07-170">Nesse módulo, os administradores podem:</span><span class="sxs-lookup"><span data-stu-id="10d07-170">In this module administrators can:</span></span>
+- <span data-ttu-id="10d07-171">Listar e instalar as atualizações disponíveis</span><span class="sxs-lookup"><span data-stu-id="10d07-171">List and install available updates</span></span>
+- <span data-ttu-id="10d07-172">Retomar as atualizações interrompidas</span><span class="sxs-lookup"><span data-stu-id="10d07-172">Resume interrupted updates</span></span>
+- <span data-ttu-id="10d07-173">Exibir as atualizações instaladas</span><span class="sxs-lookup"><span data-stu-id="10d07-173">View installed updates</span></span>
