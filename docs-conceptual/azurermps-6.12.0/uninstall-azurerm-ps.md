@@ -1,40 +1,29 @@
 ---
 title: Desinstalar o Azure PowerShell
 description: Como desinstalar completamente o Azure PowerShell
-ms.date: 06/20/2018
+ms.date: 09/11/2018
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
+ms.openlocfilehash: 3543dbb692a41bd3b417bb3d771e67c52d57c340
 ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274034"
+ms.locfileid: "51274646"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo Azure PowerShell
 
 Este artigo informa como desinstalar uma versão mais antiga do Azure PowerShell ou removê-la completamente do sistema. Se você decidiu desinstalar completamente o Azure PowerShell, envie-nos seus comentários por meio do cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Se você encontrou um erro, agradeceríamos se [registrasse um problema do GitHub](https://github.com/azure/azure-powershell/issues).
 
-## <a name="uninstall-msi-or-web-platform-installer"></a>Desinstalar o MSI ou o Web Platform Installer
-
-Se você instalou o Azure PowerShell usando o pacote MSI ou o Web Platform Installer, desinstale por meio do sistema do Windows em vez de usar o PowerShell.
-
-| Plataforma | Instruções |
-|----------|--------------|
-| Windows 10 | Iniciar > Configurações > Aplicativos |
-| Windows 7 </br>Windows 8 | Iniciar > Painel de Controle > Programas > Desinstalar um programa |
-
-Nessa tela, você deverá ver "Azure PowerShell" na lista de programas e poderá desinstalar a partir daí.
-
 ## <a name="uninstall-from-powershell"></a>Desinstalar pelo PowerShell
 
-Se você instalou o Azure PowerShell usando o PowerShellGet, use o cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). No entanto, `Uninstall-Module` desinstala apenas um módulo. Para remover completamente o Azure PowerShell, desinstale cada módulo individualmente. A desinstalação pode ser complicada se você tiver várias versões do Azure PowerShell instaladas.
+Se você instalou o Azure PowerShell usando o PowerShellGet, use o cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). No entanto, `Uninstall-Module` desinstala apenas um módulo. Para remover completamente o Azure PowerShell, desinstale cada módulo individualmente. A desinstalação poderá ser complicada se você tiver mais de uma versão instalada do Azure PowerShell.
 
-O script a seguir pode ser usado para remover completamente uma única versão do Azure PowerShell. O script consulta a Galeria do PowerShell para obter uma lista de submódulos dependentes. Em seguida, o script desinstala a versão correta de cada submódulo.
+O script a seguir consulta a Galeria do PowerShell para obter uma lista de submódulos dependentes. Em seguida, o script desinstala a versão correta de cada submódulo.
 
 ```powershell-interactive
 function Uninstall-AllModules {
@@ -85,4 +74,20 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 ...
 ```
 
-Execute o comando para cada versão do Azure PowerShell que você deseja desinstalar.
+Execute o comando para cada versão do Azure PowerShell que você deseja desinstalar. Para sua conveniência, o script a seguir irá desinstalar todas as versões do AzureRM __exceto__ a versão mais recente.
+
+```powershell-interactive
+$versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
+$versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
+```
+
+## <a name="uninstall-msi"></a>Desinstalar o MSI
+
+Se você instalou o Azure PowerShell usando o pacote MSI, desinstale por meio do sistema do Windows, em vez do PowerShell.
+
+| Plataforma | Instruções |
+|----------|--------------|
+| Windows 10 | Iniciar > Configurações > Aplicativos |
+| Windows 7 </br>Windows 8 | Iniciar > Painel de Controle > Programas > Desinstalar um programa |
+
+Nessa tela, você deverá ver "Azure PowerShell" na lista de programas e poderá desinstalar a partir daí.
