@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.openlocfilehash: f9293d2715b36161c3e6d0d9469b6f18ab35d6c8
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51574899"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52257492"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Instalar o Azure PowerShell no Windows com a MSI ou com o Web Platform Installer
 

@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51575919"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52258274"
 ---
 # <a name="log-in-with-azure-powershell"></a>Fazer logon com o Azure PowerShell
 

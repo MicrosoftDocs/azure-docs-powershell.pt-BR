@@ -1,19 +1,18 @@
 ---
-title: Gerenciar assinaturas do Aure com o Azure PowerShell | Microsoft Docs
+title: Gerenciar assinaturas do Azure com o Azure PowerShell
 description: Gerenciar assinaturas do Azure com o Azure PowerShell
-keywords: Azure PowerShell, assinatura
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258597"
+ms.locfileid: "52259401"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerenciar várias assinaturas do Azure
 
@@ -21,7 +20,7 @@ Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas 
 
 1. Obtenha uma lista de todas as assinaturas em sua conta.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas 
 
 2. Defina o padrão.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Verifique a alteração ao executar o cmdlet `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas 
     CurrentStorageAccount :
     ```
 
-Depois que você configurar sua assinatura padrão, todos os comandos subsequentes do Azure PowerShell serão executados nessa assinatura.
+Depois que você configurar sua assinatura padrão, todos os comandos do Azure PowerShell serão executados nessa assinatura.

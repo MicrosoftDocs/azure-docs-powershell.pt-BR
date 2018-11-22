@@ -7,43 +7,43 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 2333338a1c2de9dd2d1f3231918399190e249575
+ms.date: 09/09/2018
+ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257611"
+ms.locfileid: "52259362"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar uma entidade de serviço do Azure com o Azure PowerShell
 
-Se você planeja gerenciar seu aplicativo ou serviço com o Azure PowerShell, execute-o em uma entidade de serviço do Azure Active Directory (AAD), em vez de suas próprias credenciais. Este tópico orienta você pela criação de uma entidade de segurança com o Azure PowerShell.
+Se você planeja gerenciar seu aplicativo ou serviço com o Azure PowerShell, execute-o em uma entidade de serviço do Azure Active Directory (AAD), em vez de suas próprias credenciais. Este artigo serve de guia para você criar uma entidade de segurança com o Azure PowerShell.
 
 > [!NOTE]
 > Você também pode criar uma entidade de serviço por meio do Portal do Azure. Leia [Usar o portal para criar um aplicativo e entidade de serviço do Active Directory que pode acessar recursos](/azure/azure-resource-manager/resource-group-create-service-principal-portal) para obter mais detalhes.
 
 ## <a name="what-is-a-service-principal"></a>O que é uma ‘entidade de serviço’?
 
-Uma entidade de serviço do Azure é uma identidade de segurança usada por aplicativos criados pelo usuário, serviços e ferramentas de automação para acessar recursos específicos do Azure. Pense nela como uma “identidade de usuário” (nome de usuário e senha ou certificado) com uma função específica e permissões rigidamente controladas. Ela só precisa ser capaz de fazer coisas específicas, ao contrário de uma identidade de usuário geral. A segurança aumenta se você só conceder a ela o nível mínimo de permissões necessárias para realizar suas tarefas de gerenciamento.
+Uma entidade de serviço do Azure é uma identidade de segurança usada por aplicativos criados pelo usuário, serviços e ferramentas de automação para acessar recursos específicos do Azure. Pense nela como uma “identidade de usuário” (nome de usuário e senha ou certificado) com uma função específica e permissões rigidamente controladas. Uma entidade de serviço só precisa fazer coisas específicas, ao contrário de uma identidade de usuário geral. A segurança aumenta se você só conceder a ela o nível mínimo de permissões necessárias para realizar suas tarefas de gerenciamento.
 
 ## <a name="verify-your-own-permission-level"></a>Verificar seu próprio nível de permissão
 
-Primeiro, você deve ter permissões suficientes no Azure Active Directory e em sua assinatura do Azure. Especificamente, você deve ser capaz de criar um aplicativo no Active Directory e atribuir uma função à entidade de serviço.
+Primeiro, você deve ter permissões suficientes no Azure Active Directory e em sua assinatura do Azure. Você deve ser capaz de criar um aplicativo no Active Directory e atribuir uma função à entidade de serviço.
 
-A maneira mais fácil de verificar se a sua conta tem as permissões adequadas é por meio do portal. Consulte [Verificar permissão necessária no portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+A maneira mais fácil de verificar se a sua conta tem as permissões certas é por meio do portal. Consulte [Verificar permissão necessária no portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-your-app"></a>Criar uma entidade de serviço para seu aplicativo
 
-Depois de fazer logon em sua conta do Azure, é possível criar a entidade de serviço. Você deve ter uma das maneiras a seguir para identificar seu aplicativo implantado:
+Após entrar na sua conta do Azure, você poderá criar a entidade de serviço. Você deve ter uma das maneiras a seguir para identificar seu aplicativo implantado:
 
 * O nome exclusivo do seu aplicativo implantado, como "MyDemoWebApp" nos exemplos a seguir ou
 * A ID do Aplicativo, o GUID exclusivo associado ao seu aplicativo, serviço ou objeto implantado
 
 ### <a name="get-information-about-your-application"></a>Obter informações sobre seu aplicativo
 
-O cmdlet `Get-AzureRmADApplication` pode ser usado para descobrir informações sobre seu aplicativo.
+O cmdlet `Get-AzureRmADApplication` pode ser usado para obter informações sobre seu aplicativo.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 O cmdlet `New-AzureRmADServicePrincipal` é usado para criar a entidade de serviço.
 
-```powershell-interactive
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Obter informações sobre a entidade de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -92,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Entrar usando a entidade de serviço
 
-Agora você pode entrar como a nova entidade de serviço para seu aplicativo usando a *appId* e a *senha* fornecidas. Você precisa fornecer a Id do Locatário para sua conta. Sua Id do Locatário é exibida quando você entra no Azure com suas credenciais pessoais.
+Agora você pode entrar como a nova entidade de serviço para seu aplicativo usando a *appId* e a *senha* fornecidas. Você também precisa da ID do Locatário para a entidade de serviço. Sua ID do Locatário é exibida quando você entra no Azure com suas credenciais pessoais. Para entrar com uma entidade de serviço, use os seguintes comandos:
 
-```powershell-interactive
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Execute este comando de uma nova sessão do PowerShell. Após uma entrada bem-sucedida, você verá uma saída semelhante a esta:
+Após conseguir entrar, você verá um resultado do tipo:
 
 ```output
 Environment           : AzureCloud
@@ -128,7 +129,7 @@ A função **Leitor** é mais restritiva e pode ser uma boa opção para aplicat
 
 Neste exemplo, adicionamos a função **Leitor** ao nosso exemplo anterior e excluímos a função **Colaborador**:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Para exibir as funções atuais atribuídas:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ Outros cmdlets do Azure PowerShell para gerenciamento de funções:
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Adicionar uma nova senha para a entidade de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Obter uma lista de credenciais para a entidade de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Remover a senha antiga da entidade de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Verificar a lista de credenciais para a entidade de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 

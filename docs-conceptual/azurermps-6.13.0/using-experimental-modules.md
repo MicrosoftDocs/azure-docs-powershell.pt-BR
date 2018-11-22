@@ -6,21 +6,21 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258444"
+ms.locfileid: "52259349"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Usando módulos experimentais do Azure PowerShell
+# <a name="use-experimental-azure-powershell-modules"></a>Usar módulos experimentais do Azure PowerShell
 
 Com ênfase nas ferramentas do desenvolvedor (especialmente as CLIs) no Azure, a equipe do Azure PowerShell está experimentando várias melhorias na experiência do Azure PowerShell.
 
 ## <a name="experimentation-methodology"></a>Metodologia de experimentação
 
-Para facilitar a experimentação, estamos criando novos módulos do Azure PowerShell que implementam a funcionalidade existente do SDK do Azure de formas novas e mais fáceis usar. Na maioria dos casos, os cmdlets espelham exatamente os cmdlets existentes. No entanto, os cmdlets experimentais fornecem uma notação abreviada e valores padrão mais inteligentes que facilitam criar e gerenciar os recursos do Azure.
+Para facilitar a experimentação, estamos criando novos módulos do Azure PowerShell que implementam a funcionalidade existente do SDK do Azure de formas novas e mais fáceis de usar. Na maioria dos casos, os cmdlets espelham exatamente os cmdlets existentes. No entanto, os cmdlets experimentais fornecem uma notação abreviada e valores padrão mais inteligentes que facilitam criar e gerenciar os recursos do Azure.
 
 Esses módulos podem ser instalados lado a lado com os módulos existentes do Azure PowerShell. Os nomes do cmdlet foram reduzidos para fornecer nomes mais curtos e evitar conflitos de nomenclatura com os cmdlets existentes e não experimentais.
 
@@ -30,11 +30,11 @@ Os módulos experimentais usam a seguinte convenção de nomenclatura: `AzureRM.
 
 Os módulos experimentais são publicados na Galeria do PowerShell como módulos existentes do Azure PowerShell. Para ver uma lista de módulos experimentais, execute o seguinte comando:
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Para instalar o módulo experimental, use os seguintes comandos de uma sessão do PowerShell com privilégios elevados:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -80,7 +80,7 @@ As melhorias experimentais apresentam uma alteração significativa que a equipe
 
 - "Criação Inteligente" - todos que criam cenários que implementam a "Criação Inteligente" _não_ teriam parâmetros obrigatórios: todas as informações necessárias seriam escolhidas pelo Azure PowerShell de forma dogmática.
 
-- Parâmetros cinzas - em muitos casos, alguns parâmetros podem ser "cinza" ou semiopcionais. Se o parâmetro não for especificado, será perguntado ao usuário se deseja o parâmetro gerado para ele. Também faz sentido que os parâmetros cinzas deduzam um valor com base no contexto, com a autorização do usuário.
+- Parâmetros cinzas - em muitos casos, alguns parâmetros podem ser "cinza" ou semiopcionais. Se o parâmetro não for especificado, será perguntado ao usuário se este deseja o parâmetro gerado para ele. Também faz sentido que os parâmetros cinzas deduzam um valor com base no contexto, com a autorização do usuário.
   Por exemplo, talvez faça sentido que o parâmetro cinza sugira o valor usado mais recentemente.
 
 - `-Auto`Argumento - o argumento `-Auto` forneceria uma maneira de "aceitação" para que os usuários _tenham como padrão tudo_, mantendo a integridade dos parâmetros necessários no caminho principal.
@@ -89,8 +89,8 @@ As melhorias experimentais apresentam uma alteração significativa que a equipe
 
 Por exemplo, o cenário de "Criar aplicativo Web" pode ter um argumento `-Git` ou `-AddRemote` que adicionaria automaticamente um "azure" remoto a um repositório git existente.
 
-- Padrões configuráveis - os usuários devem ter a capacidade de ter como padrão determinados parâmetros onipresentes como `-ResourceGroupName` e `-Location`.
+- Padrões configuráveis - Os usuários devem ser capazes de definir padrões para parâmetros comuns como `-ResourceGroupName` e `-Location`.
 
-- Padrões de tamanho - o recurso "tamanhos" pode confundir os usuários, pois muitos Provedores de Recursos usam nomes diferentes (por exemplo, "Standard\_DS1\_v2" ou "S1"). No entanto, a maioria dos usuários se importa mais com o custo. Portanto, faz sentido para definir tamanhos "universais" com base em um agendamento de preços. Os usuários podem escolher um tamanho específico ou deixar que o Azure PowerShell escolher a _melhor opção_ com base no recurso do orçamento.
+- Padrões de tamanho - o recurso "tamanhos" pode confundir os usuários, pois muitos Provedores de Recursos usam nomes diferentes (por exemplo, "Standard\_DS1\_v2" ou "S1"). No entanto, a maioria dos usuários se importa mais com o custo. Portanto, faz sentido definir tamanhos “universais” com base em um agendamento de preços. Os usuários podem escolher um tamanho específico ou deixar que o Azure PowerShell escolher a _melhor opção_ com base no recurso do orçamento.
 
-- Formato da saída - o Azure PowerShell atualmente retorna `PSObject`s e há pouca saída do console. O Azure PowerShell pode precisar exibir algumas informações para o usuário em relação os "padrões inteligentes" usados.
+- Formato da saída - o Azure PowerShell atualmente retorna `PSObject`s e há pouca saída do console. O Azure PowerShell pode precisar exibir algumas informações para o usuário sobre os “padrões inteligentes” usados.
