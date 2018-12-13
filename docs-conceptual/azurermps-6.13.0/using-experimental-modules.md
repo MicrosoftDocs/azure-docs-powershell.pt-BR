@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828443"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216255"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usar módulos experimentais do Azure PowerShell
 
