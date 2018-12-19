@@ -8,16 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826537"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217738"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o PowerShell do Azure
 
 Este artigo explica as etapas para instalar os módulos do Azure PowerShell em um ambiente Windows.
-Se você quiser usar o Azure PowerShell em macOS ou Linux, consulte o seguinte artigo: [Instalar e configurar o Azure PowerShell em macOS e Linux](install-azurermps-maclinux.md).
+Se você quiser usar o Azure PowerShell no macOS ou no Linux, confira o seguinte artigo: [Instalar e configurar o Azure PowerShell em macOS e Linux](install-azurermps-maclinux.md).
 
 Instalar o Azure PowerShell na Galeria do PowerShell é o método preferencial de instalação.
 
@@ -54,7 +54,7 @@ Se você não tiver o PowerShellGet instalado, consulte a seção [Como obter o 
 > [!IMPORTANT]
 > O módulo descrito neste documento, AzureRM, usa o .NET Framework. Isso o torna incompatível com o PowerShell 6.0, que usa o .NET Core. Se você estiver usando o PowerShell 6.0, siga as [instruções de instalação para o macOS e o Linux](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>Etapa 2: instalar o Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Etapa 2: Instalar o Azure PowerShell
 
 Instalando o Azure PowerShell a partir da Galeria do PowerShell requer privilégios elevados. Execute o comando a seguir em uma sessão do PowerShell com privilégios elevados:
 

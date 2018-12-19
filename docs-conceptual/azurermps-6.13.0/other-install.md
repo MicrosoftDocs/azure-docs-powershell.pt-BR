@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: b442da364a01cd6022c14cbb32a9b633676ca8c7
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 0976fd51b26010702d200cee445d93269405416c
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828851"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216922"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com a MSI
 
@@ -26,7 +26,7 @@ Para instalar em ambientes Linux ou macOS, confira [Instalar o Azure PowerShell 
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows usando o pacote MSI
 
-O Azure PowerShell pode ser instalado usando o arquivo MSI disponível no [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Se você tiver versões anteriores dos módulos do Azure instaladas como uma MSI, o instalador as removerá automaticamente. O pacote de MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`. Os módulos `AzureRM` e `Azure` são instalados.
+O Azure PowerShell para o PowerShell do Windows 5.x pode ser instalado usando o arquivo MSI disponível no [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v6.13.1-November2018). Se você tiver versões anteriores dos módulos do Azure instaladas como uma MSI, o instalador as removerá automaticamente. O pacote de MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`. Os módulos `AzureRM` e `Azure` são instalados.
 
 > [!NOTE]
 > Use o módulo `Azure` apenas se estiver trabalhando com o modelo de implantação clássico do Azure.
