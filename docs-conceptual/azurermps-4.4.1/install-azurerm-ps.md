@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: fac77e88612091c09106dffea6aa6d3765c1416b
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217738"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982987"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o PowerShell do Azure
 
@@ -21,12 +21,14 @@ Se você quiser usar o Azure PowerShell no macOS ou no Linux, confira o seguinte
 
 Instalar o Azure PowerShell na Galeria do PowerShell é o método preferencial de instalação.
 
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+
 ## <a name="step-1-install-powershellget"></a>Etapa 1: Instalar o PowerShellGet
 
 Instalar os itens da Galeria do PowerShell requer o módulo PowerShellGet. Verifique se que você tem a versão apropriada do PowerShellGet e outros requisitos do sistema. Execute o seguinte comando para ver se você tem o PowerShellGet instalado em seu sistema.
 
 ```powershell-interactive
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
 Você deverá ver algo semelhante à seguinte saída:
@@ -114,10 +116,10 @@ Se você encontrar erros com a ferramenta, emita um problema na seção [Problem
 
 ### <a name="div-idhelpmechoosechecking-the-version-of-azure-powershell"></a><div id="helpmechoose"/>Verificando a versão do Azure PowerShell
 
-Embora recomendemos que você atualize para a última versão o mais cedo possível, várias versões do Azure PowerShell têm suporte. Para determinar a versão do Azure PowerShell instalada, execute `Get-Module AzureRM` na linha de comando.
+Embora recomendemos que você atualize para a última versão o mais cedo possível, várias versões do Azure PowerShell têm suporte. Para determinar a versão do Azure PowerShell instalada, execute `Get-InstalledModule AzureRM` na linha de comando.
 
 ```powershell-interactive
-Get-Module AzureRM -ListAvailable | Select-Object -Property Name,Version,Path
+Get-InstalledModule AzureRM -AllVersions | Select-Object -Property Name,Version,Path
 ```
 
 ### <a name="support-for-classic-deployment-methods"></a>Suporte para métodos de implantação clássicos

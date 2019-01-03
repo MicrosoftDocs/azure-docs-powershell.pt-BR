@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 5016c7e768aba94308d0e78785481fafbac36c74
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 836b586f9b537d5ca4147cea01f9192f890bb544
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53216340"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982970"
 ---
 # <a name="other-installation-methods"></a>Outros métodos de instalação
 
 O Azure PowerShell tem vários métodos de instalação. O uso do PowerShellGet com a Galeria do PowerShell é o método preferencial. O Azure PowerShell pode ser instalado no Windows usando o Web Platform Installer (WebPI) ou usando o MSI de arquivo disponível no GitHub.
+
+[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Instalar no Windows usando o Web Platform Installer
 
@@ -34,7 +36,7 @@ Quando a instalação for concluída, a configuração do `$env:PSModulePath` de
 
 ```powershell-interactive
 # To make sure the Azure PowerShell module is available after you install
-Get-Module -ListAvailable Azure* | Select-Object Name, Version, Path
+Get-InstalledModule -Name AzureRM -AllVersions | Select-Object Name, Version, Path
 ```
 
 > [!NOTE]
