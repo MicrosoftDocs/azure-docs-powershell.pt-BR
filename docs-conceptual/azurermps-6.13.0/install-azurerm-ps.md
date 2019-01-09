@@ -7,22 +7,20 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 198c9476b06c818fd3f7cb5ac3ac465497cac9cf
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: 97f79c01cce90d92febfd9d36f9c112918b48599
+ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53216578"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982800"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
-Este artigo explica as etapas para instalar os módulos do Azure PowerShell em um ambiente Windows usando o PowerShellGet. O PowerShellGet e o gerenciamento de módulos são os modos preferidos de instalação do Azure PowerShell, mas se você quiser instalar com o Web Platform Installer ou o pacote do MSI, consulte [Outros métodos de instalação](other-install.md).
+Esse artigo explica as etapas para instalar os módulos do Azure PowerShell para o PowerShell 5.x do Windows usando o PowerShellGet. O PowerShellGet e o gerenciamento de módulos são os modos preferidos de instalação do Azure PowerShell, mas se você quiser instalar com o Web Platform Installer ou o pacote do MSI, consulte [Outros métodos de instalação](other-install.md).
 
 Para obter instruções de instalação do Azure PowerShell em outras plataformas, consulte [Instalar e configurar o Azure PowerShell no macOS e no Linux](install-azurermps-maclinux.md).
 
 Não há suporte para o modelo de implantação clássico do Azure desta versão do Azure PowerShell. Para obter suporte com as implantações clássicas, siga as instruções em [Instalar o módulo de Gerenciamento de Serviços do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
-
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="requirements"></a>Requisitos
 
@@ -95,7 +93,7 @@ Se quiser remover as versões mais antigas do Azure PowerShell do sistema, consu
 É possível instalar mais de uma versão do Azure PowerShell. Para verificar se você tem diversas versões do Azure PowerShell instaladas, use o seguinte comando:
 
 ```powershell-interactive
-Get-Module -Name AzureRM -ListAvailable | select Name,Version
+Get-InstalledModule -Name AzureRM -AllVersions | select Name,Version
 ```
 
 Para remover uma versão do Azure PowerShell, confira [Desinstalar módulo do Azure PowerShell](uninstall-azurerm-ps.md).
