@@ -7,16 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/29/2018
-ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
-ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
+ms.openlocfilehash: 80c59a10666c6e3a01e6c33716fce40094fb14be
+ms.sourcegitcommit: b5635e291cdc324e66c936aa16c5772507fc78e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53786672"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055669"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
-O Azure PowerShell dá suporte a vários métodos de autenticação. É a maneira mais simples para entrar interativamente na linha de comando.
+O Azure PowerShell dá suporte a vários métodos de autenticação. A maneira mais fácil de começar é com o [Azure Cloud Shell](/azure/cloud-shell/overview) que conecta você automaticamente. Em uma instalação local, você pode entrar interativamente com seu navegador. Ao escrever scripts para automação, a abordagem recomendada é usar uma [entidade de serviço](create-azure-service-principal-azureps.md) com as permissões necessárias. Ao restringir as permissões de logon o máximo possível para seu caso de uso, você ajuda a proteger os recursos do Azure.
+
+Após a conexão, os comandos são executados em sua assinatura padrão. Para mudar sua assinatura ativa para uma sessão, use o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para mudar a assinatura padrão usada ao fazer logon no Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+
+> [!IMPORTANT]
+>
+> Suas credenciais são compartilhadas entre várias sessões do PowerShell, desde que você permaneça conectado.
+> Para obter mais informações, consulte o artigo sobre [Credenciais Persistentes](context-persistence.md).
 
 ## <a name="sign-in-interactively"></a>Entrar no modo interativo
 
@@ -26,12 +33,20 @@ Para entrar no modo interativo, use o cmdlet [Connect-AzAccount](/powershell/mod
 Connect-AzAccount
 ```
 
-Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Para fazer logon, copie essa cadeia de caracteres e cole-a na https://microsoft.com/devicelogin em um navegador. Sua sessão do PowerShell, em seguida, será autenticada para se conectar ao Azure. Essa autenticação dura o tempo da sessão atual do PowerShell.
+Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Para fazer logon, copie essa cadeia de caracteres e cole-a em https://microsoft.com/devicelogin no navegador. Sua sessão do PowerShell será autenticada para conectar o Azure.
 
-> [!IMPORTANT]
->
-> Suas credenciais são compartilhadas entre várias sessões do PowerShell, desde que você permaneça conectado.
-> Para obter mais informações, consulte o artigo sobre [Credenciais Persistentes](context-persistence.md).
+## <a name="sign-in-with-credentials"></a>Entrar com credenciais
+
+Você também pode entrar com um objeto `PSCredential` autorizado para conectar-se ao Azure.
+A maneira mais fácil de obter um objeto de credencial é com o cmdlet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential). Quando executado, esse cmdlet solicitará um par de credenciais com o nome de usuário/senha.
+
+> [!Note]
+> Essa abordagem não funciona com contas da Microsoft ou contas que tenham a autenticação de dois fatores habilitada.
+
+```azurepowershell-interactive
+$creds = Get-Credential
+Connect-AzAccount -Credential $creds
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Entrar com uma entidade de serviço
 
@@ -46,15 +61,17 @@ $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-managed-service-identity"></a>Entre usando uma Identidade de Serviço Gerenciada do Azure
+## <a name="sign-in-using-a-managed-identity"></a>Entrar usando uma identidade gerenciada 
 
-Identidades gerenciadas para recursos do Azure é um recurso do Azure Active Directory. Você pode usar uma entidade de serviço de identidade gerenciada para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. As identidades gerenciadas só estão disponíveis em máquinas virtuais em execução em uma nuvem do Azure.
+As identidades gerenciadas são um recurso do Azure Active Directory. Elas são entidades de serviço atribuídas aos recursos executados no Azure. Você pode usar uma entidade de serviço de identidade gerenciada para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. As identidades gerenciadas só estão disponíveis nos recursos executados em uma nuvem do Azure.
 
-Para saber mais informações sobre identidades gerenciadas para recursos do Azure, consulte [Como usar identidades gerenciadas para recursos do Azure em uma VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Para saber mais sobre as identidades gerenciadas dos recursos do Azure, confira [Como usar identidades gerenciadas dos recursos do Azure em uma VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
-## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Entrar como um Provedor de Soluções na Nuvem (CSP)
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Entrar com um locatário diferente do padrão ou como um Provedor de Soluções na Nuvem (CSP)
 
-Entrar no [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) requer o uso de `-TenantId`. Normalmente, esse parâmetro pode ser fornecido como uma ID de locatário ou nome de domínio. No entanto, para entrar no CSP, deve ser fornecido uma **ID de locatário**.
+Se sua conta estiver associada a mais de um locatário, entrar requer o uso do parâmetro `-TenantId` na conexão. Esse parâmetro funcionará com qualquer outro método de entrada. Ao fazer logon, esse valor de parâmetro pode ser a ID de objeto do Azure do locatário (ID do Locatário) ou o nome de domínio totalmente qualificado do locatário.
+
+Se você for um [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), o valor `-TenantId` **deverá** ser uma ID de locatário.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -62,7 +79,7 @@ Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Entre em outra Nuvem
 
-Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com os regulamentos de manipulação de dados regionais.
+Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com as leis de manipulação de dados regionais.
 Para contas em uma nuvem regional, configure o ambiente quando você entrar com o argumento `-Environment`.
 Por exemplo, se sua conta estiver em uma nuvem da China:
 
@@ -75,17 +92,3 @@ O seguinte comando obtém uma lista de ambientes disponíveis:
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
 ```
-
-## <a name="learn-more-about-managing-azure-role-based-access"></a>Saiba mais sobre como gerenciar o acesso baseado em função do Azure
-
-Para obter mais informações sobre o gerenciamento de autenticação e assinatura no Azure, consulte [Gerenciar contas, assinaturas e funções administrativas](/azure/active-directory/role-based-access-control-configure) (a página pode estar em inglês).
-
-Cmdlets do Azure PowerShell para gerenciamento de função:
-
-* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
-* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
-* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
-* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
-* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
-* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
-* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
