@@ -6,17 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/11/2018
-ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
+ms.date: 12/13/2018
+ms.openlocfilehash: ae2fecf73271a34a08ac66de03962a7a529e353b
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144003"
+ms.locfileid: "56144042"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usar módulos experimentais do Azure PowerShell
 
-Com ênfase nas ferramentas do desenvolvedor (especialmente as CLIs) no Azure, a equipe do Azure PowerShell está experimentando várias melhorias na experiência do Azure PowerShell.
+Com ênfase nas ferramentas do desenvolvedor no Azure, a equipe do Azure PowerShell testa várias melhorias na experiência do Azure PowerShell. Esse artigo descreve como participar de experimentos com o Azure PowerShell e fornecer comentários à equipe de desenvolvimento.
 
 ## <a name="experimentation-methodology"></a>Metodologia de experimentação
 
@@ -24,29 +24,17 @@ Para facilitar a experimentação, estamos criando novos módulos do Azure Power
 
 Esses módulos podem ser instalados lado a lado com os módulos existentes do Azure PowerShell. Os nomes do cmdlet foram reduzidos para fornecer nomes mais curtos e evitar conflitos de nomenclatura com os cmdlets existentes e não experimentais.
 
-Os módulos experimentais usam a seguinte convenção de nomenclatura: `AzureRM.*.Experiments`. Essa convenção de nomenclatura é semelhante à nomenclatura dos módulos de Visualização: `AzureRM.*.Preview`. Os módulos de Visualização são diferentes dos módulos experimentais. Os módulos de Visualização implementam a nova funcionalidade de serviços do Azure, só disponível como uma oferta de Visualização. Os módulos de Visualização substituem os módulos existentes do Azure PowerShell e usam os mesmos nomes do cmdlet e do parâmetro.
+Os módulos experimentais usam a seguinte convenção de nomenclatura: `Az.*.Experiments`. Essa convenção de nomenclatura é semelhante à nomenclatura dos módulos de Visualização: `Az.*.Preview`. Os módulos de Visualização são diferentes dos módulos experimentais. Os módulos de Visualização implementam a nova funcionalidade de serviços do Azure, só disponível como uma oferta de Visualização. Os módulos de Visualização substituem os módulos existentes do Azure PowerShell e usam os mesmos nomes do cmdlet e do parâmetro.
 
 ## <a name="how-to-install-an-experimental-module"></a>Como instalar um módulo experimental
 
 Os módulos experimentais são publicados na Galeria do PowerShell como módulos existentes do Azure PowerShell. Para ver uma lista de módulos experimentais, execute o seguinte comando:
 
 ```azurepowershell-interactive
-Find-Module AzureRM.*.Experiments
+Find-Module Az.*.Experiments
 ```
 
-```output
-Version Name                         Repository Description
-------- ----                         ---------- -----------
-1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
-1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
-```
-
-Para instalar o módulo experimental, use os seguintes comandos de uma sessão do PowerShell com privilégios elevados:
-
-```azurepowershell-interactive
-Install-Module AzureRM.Compute.Experiments
-Install-Module AzureRM.Websites.Experiments
-```
+Para instalar um módulo experimental, use o cmdlet `Install-Module`.
 
 ### <a name="documentation-and-support"></a>Documentação e suporte
 
@@ -56,16 +44,17 @@ Incentivamos você a testar esses módulos. Seus comentários nos permitam aumen
 
 ## <a name="experiments-and-areas-of-improvement"></a>Experimentos e áreas de aprimoramento
 
-Esses aperfeiçoamentos foram selecionados com base nos principais diferenciais dos produtos concorrentes. Por exemplo,a CLI do Azure 2.0 fez questão de basear os comandos nos _cenários_, em vez da _área de superfície de API_.
-A CLI do Azure 2.0 usa vários padrões inteligentes que facilitam os cenários de "introdução" para os usuários finais.
+Esses aperfeiçoamentos foram selecionados com base nos principais diferenciais dos produtos concorrentes. Por exemplo, a CLI do Azure fez questão de basear os comandos nos _cenários_ em vez da _área de superfície da API_.
+A CLI do Azure usa vários padrões inteligentes que facilitam os cenários de "introdução" para os usuários finais.
 
 ### <a name="core-improvements"></a>Principais melhorias
 
 As principais melhorias são consideradas de "bom senso" e pouca experimentação é necessária para continuar a implementar essas atualizações.
 
-- Cmdlets baseados em cenário - <em>*All</em>- os cmdlets devem ser criados com base nos cenários, não no serviço REST do Azure.
+- Cmdlets baseados em cenário - **Todos*- os cmdlets devem ser criados com base em cenários, não no serviço REST do Azure.
 
-- Menor nomes - isso inclui os nomes dos cmdlets (por exemplo, `New-AzureRmVM` => `New-AzVm`) e os nomes dos parâmetros (por exemplo, `-ResourceGroupName` => `-Rg`). Use aliases para ter compatibilidade com os cmdlets "antigos". Forneça conjuntos de parâmetros _compatíveis com as versões anteriores_.
+- Nomes menores: isso inclui os nomes dos cmdlets e os nomes dos parâmetros.
+  Use aliases para ter compatibilidade com os cmdlets "antigos". Forneça conjuntos de parâmetros _compatíveis com as versões anteriores_.
 
 - Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo: 
   - Grupo de recursos
