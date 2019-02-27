@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 7456e45fe9a94d3c1e809dfd075a090448001607
-ms.sourcegitcommit: 6685809f054203bd733c84f68acc69e53e5cca8c
+ms.openlocfilehash: a0afae1ba51fdb34425c91049e08d7388f434d7d
+ms.sourcegitcommit: 0b5b0434fba7a752b0199256e04fa34f06aaf33a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982803"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56464971"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo Azure PowerShell
 
@@ -20,7 +20,7 @@ Este artigo informa como desinstalar uma versão mais antiga do Azure PowerShell
 Se você encontrar um bug, agradeceríamos se [registrasse um problema do GitHub](https://github.com/azure/azure-powershell/issues).
 
 
-## <a name="uninstall-msi"></a>Desinstalar o MSI
+## <a name="uninstall-azure-powershell-msi"></a>Desinstale o MSI do Azure PowerShell
 
 Se você instalou o Azure PowerShell usando o pacote MSI, desinstale por meio do sistema do Windows, em vez do PowerShell.
 
@@ -29,7 +29,7 @@ Se você instalou o Azure PowerShell usando o pacote MSI, desinstale por meio do
 | Windows 10 | Iniciar > Configurações > Aplicativos |
 | Windows 7 </br>Windows 8 | Iniciar > Painel de Controle > Programas > Desinstalar um programa |
 
-Nessa tela, você deverá ver "Azure PowerShell" na lista de programas e poderá desinstalar a partir daí.
+Nessa tela, você deverá ver __Azure PowerShell__ na lista de programas. Esse é o aplicativo a ser desinstalado.
 
 ## <a name="uninstall-from-powershell"></a>Desinstalar pelo PowerShell
 
