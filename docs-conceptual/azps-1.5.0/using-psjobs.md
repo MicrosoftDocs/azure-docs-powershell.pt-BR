@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 65d3a1d206d7318173a87a4e53c579155a85426c
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 58aa777ca599c2a6181f0ecc5c20f6db7a89b75f
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882117"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192898"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Executar os cmdlets em paralelo usando trabalhos do PowerShell
 
@@ -25,7 +25,7 @@ Como os PSJobs são executados como processos separados, a sua conexão do Azure
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzureRmContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
+$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
 ```
 
 No entanto, se você tiver optado por ter seu contexto automaticamente salvo com `Enable-AzContextAutosave`, o contexto é automaticamente compartilhado com qualquer trabalho que você criar.
