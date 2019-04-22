@@ -218,7 +218,7 @@ ms.locfileid: "59363954"
 * Correção de bug que impede a criação repetida de KeyCredentials
 
 #### <a name="azsql"></a>Az.Sql
-* Adição de suporte para a camada de hiperescala do banco de dados SQL
+* Adição de suporte para a camada de Hiperescala do banco de dados SQL
 * Correção do bug em que a restauração pode falhar devido à configuração de propriedades desnecessárias na solicitação de restauração
 
 #### <a name="azwebsites"></a>Az.Websites
@@ -687,11 +687,11 @@ Adicionado suporte para a configuração de RewriteRuleSets no Gateway de Aplica
 * Adicionado o finalizador do argumento ResourceName para todos os cmdlets.
 
 #### <a name="azdatalakestore"></a>Az.DataLakeStore
-* Adicionar suporte às Regras de Rede Virtual
+* Adicionar suporte às Regras da Rede Virtual
     - Get-AzDataLakeStoreVirtualNetworkRule: Obtém ou lista a regra da rede virtual do Azure Data Lake Store.
-    - Add-AzDataLakeStoreVirtualNetworkRule: Adiciona uma regra de rede virtual à conta do Data Lake Store especificada.
-    - Set-AzDataLakeStoreVirtualNetworkRule: Modifica a regra de rede virtual especificada na conta do Data Lake Store especificada.
-    - Remove-AzDataLakeStoreVirtualNetworkRule: Exclui uma regra de rede virtual do Azure Data Lake Store.
+    - Add-AzDataLakeStoreVirtualNetworkRule: Adiciona uma regra da rede virtual à conta do Data Lake Store especificada.
+    - Set-AzDataLakeStoreVirtualNetworkRule: Modifica a regra da rede virtual especificada na conta do Data Lake Store especificada.
+    - Remove-AzDataLakeStoreVirtualNetworkRule: Exclui uma regra da rede virtual do Azure Data Lake Store.
 
 #### <a name="aznetwork"></a>Az.Network
 * Atualizar o cmdlet Test-AzNetworkWatcherConnectivity, passar o valor de protocolo para o back-end.

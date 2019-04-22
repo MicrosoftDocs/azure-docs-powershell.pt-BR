@@ -183,11 +183,11 @@ ms.locfileid: "56152928"
     - Cmdlet Remove-AzureRmManagedApplicationDefinition para excluir uma definição de aplicativo gerenciado
     - Cmdlet Set-AzureRmManagedApplicationDefinition para atualizar uma definição de aplicativo gerenciado existente
 * Sql
-  * Adicionar suporte às Regras de Rede Virtual
-    - Adicionar o cmdlet Get-AzureRmSqlServerVirtualNetworkRule que obtém as regras de rede virtual através do nome de uma regra específica ou uma lista de regras de rede virtual em um SQL Server do Azure.
+  * Adicionar suporte às Regras da Rede Virtual
+    - Adicionar o cmdlet Get-AzureRmSqlServerVirtualNetworkRule que obtém as regras da rede virtual através do nome de uma regra específica ou uma lista de regras da rede virtual em um SQL Server do Azure.
     - Adicionar o cmdlet Set-AzureRmSqlServerVirtualNetworkRule que altera a rede virtual para a qual a regra aponta.
-    - Adicionar o cmdlet Remove-AzureRmSqlServerVirtualNetworkRule que remove uma regra de rede virtual para um SQL Server do Azure.
-    - Adicionar o cmdlet New-AzureRmSqlServerVirtualNetworkRule que cria uma regra de rede virtual para um SQL Server do Azure.
+    - Adicionar o cmdlet Remove-AzureRmSqlServerVirtualNetworkRule que remove uma regra da rede virtual para um SQL Server do Azure.
+    - Adicionar o cmdlet New-AzureRmSqlServerVirtualNetworkRule que cria uma regra da rede virtual para um SQL Server do Azure.
 * Sites
   * Adicionar camada PremiumV2 para Planos de Serviço de Aplicativo
 * Azure.Storage

@@ -165,11 +165,11 @@ ms.locfileid: "56152900"
 * Adicionado o finalizador do argumento ResourceName para todos os cmdlets.
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
-* Adicionar suporte às Regras de Rede Virtual
+* Adicionar suporte às Regras da Rede Virtual
     - Get-AzureRmDataLakeStoreVirtualNetworkRule: Obtém ou lista a regra da rede virtual do Azure Data Lake Store.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Adiciona uma regra de rede virtual à conta do Data Lake Store especificada.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Modifica a regra de rede virtual especificada na conta do Data Lake Store especificada.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Exclui uma regra de rede virtual do Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Adiciona uma regra da rede virtual à conta do Data Lake Store especificada.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Modifica a regra da rede virtual especificada na conta do Data Lake Store especificada.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Exclui uma regra da rede virtual do Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Atualize o cmdlet Test-AzureRmNetworkWatcherConnectivity, passe o valor de protocolo para o back-end.
