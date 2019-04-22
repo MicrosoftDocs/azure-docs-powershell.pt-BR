@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
 ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363952"
 ---
 # <a name="get-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
@@ -87,13 +87,13 @@ Também há guias de início rápido do Azure PowerShell para outros serviços p
 * [Criar e recuperar segredos do Azure Key Vault](/azure/key-vault/quick-create-powershell)
 * [Criar um firewall e um banco de dados SQL do Azure](/azure/sql-database/scripts/sql-database-create-and-configure-database-powershell)
 * [Executar um contêiner em Instâncias de Contêiner do Azure](/azure/container-instances/container-instances-quickstart-powershell)
-* [Criar um VMSS (Conjunto de Dimensionamento de Máquinas Virtuais)](/azure/virtual-machine-scale-sets/quick-create-powershell)
+* [Criar um VMSS (Conjunto de Dimensionamento de Máquina Virtual)](/azure/virtual-machine-scale-sets/quick-create-powershell)
 * [Criar um balanceador de carga padrão](/azure/load-balancer/quickstart-create-standard-load-balancer-powershell)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Entrar com o Azure PowerShell](authenticate-azureps.md)
-* [Gerenciar assinaturas do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
+* [Gerenciar as assinaturas do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
 * [Criar entidades de serviço com o Azure PowerShell](create-azure-service-principal-azureps.md)
 * Obtenha ajuda da comunidade:
   * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)

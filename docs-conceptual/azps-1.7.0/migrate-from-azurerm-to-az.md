@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59363972"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Migrar do AzureRM para o Az do Azure PowerShell
@@ -43,7 +43,7 @@ Para instalar o módulo Az do Azure PowerShell, siga estas etapas:
 
 * __RECOMENDÁVEL__: [Desinstale o módulo AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Certifique-se de remover _todas_ as versões instaladas do AzureRM, não apenas a versão mais recente.
-* [Instalar o módulo Az](install-az-ps.md)
+* [Instale o módulo Az](install-az-ps.md)
 
 ## <a name="a-namealiasesenable-azurerm-compatibility-aliases"></a><a name="aliases"/>Habilitar o alias de compatibilidade do AzureRM 
 
@@ -68,7 +68,7 @@ Após habilitar o modo de alias, execute seus scripts novamente para confirmar q
 ## <a name="change-module-imports-and-cmdlet-names"></a>Alterar os nomes de cmdlets e as importações de módulos
 
 Em geral, os nomes de módulos foram alterados para que `AzureRM` e `Azure` tornem-se `Az`, e o mesmo ocorreu com os cmdlets.
-Por exemplo, o módulo `AzureRM.Compute` foi renomeado para `Az.Compute`. `New-AzureRMVM` se tornou `New-AzVM` e `Get-AzureStorageBlob` agora é `Get-AzStorageBlob`.
+Por exemplo, o módulo `AzureRM.Compute` foi renomeado para `Az.Compute`. `New-AzureRMVM` se tornou `New-AzVM`, e `Get-AzureStorageBlob` agora é `Get-AzStorageBlob`.
 
 Há exceções para essa alteração de nomenclatura e você deve estar atento. Alguns módulos foram renomeados ou mesclados em módulos existentes sem que isso afetasse o sufixo de seus cmdlets, além de alterar `AzureRM` ou `Azure` para `Az`. Caso contrário, o sufixo completo do cmdlet foi alterado para refletir o novo nome do módulo.
 

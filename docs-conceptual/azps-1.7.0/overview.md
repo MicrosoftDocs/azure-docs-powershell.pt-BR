@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59363968"
 ---
 # <a name="overview-of-azure-powershell"></a>Visão geral do Azure PowerShell
@@ -47,7 +47,7 @@ Para saber mais sobre a versão mais recente do Azure PowerShell, confira as [no
 Leia o artigo [Introdução ao Azure PowerShell](get-started-azureps.md) para aprender as noções básicas do Azure PowerShell. Se não estiver familiarizado com o PowerShell, uma introdução poderá ser útil:
 
 * [Instalar o PowerShell](/powershell/scripting/install/installing-powershell)
-* [Script com o PowerShell](/powershell/scripting/powershell-scripting)
+* [Scripting with PowerShell](/powershell/scripting/powershell-scripting) (Script com o PowerShell)
 * [Conceitos básicos do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
 * [Introdução ao PowerShell Jumpstart](https://mva.microsoft.com/liveevents/powershell-jumpstart) da Microsoft Virtual Academy
 
@@ -56,7 +56,7 @@ Os exemplos a seguir podem ajudar você com alguns usos comuns do Azure:
 * [Máquinas Virtuais do Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Máquinas Virtuais do Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Aplicativos Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
-* [BANCOS DE DADOS SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
+* [Bancos de dados SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Desenvolva suas habilidades com o Microsoft Learn
 
@@ -67,4 +67,4 @@ Os exemplos a seguir podem ajudar você com alguns usos comuns do Azure:
 
 * [Azure Active Directory](/powershell/azure/active-directory/)
 * [Azure Service Fabric](/powershell/azure/service-fabric/)
-* [Bando de Dados Elástico do Azure](/powershell/azure/elasticdbjobs/)
+* [ElasticDB do Azure](/powershell/azure/elasticdbjobs/)

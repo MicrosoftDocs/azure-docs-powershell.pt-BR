@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363624"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Manter credenciais do usuário entre as sessões do PowerShell
@@ -92,8 +92,7 @@ E, por último, para remover um contexto, use o cmdlet `Remove-AzContext`.  Por 
 PS C:\> Remove-AzContext Contoso2
 ```
 
-Você se esquece do contexto que foi nomeado 'Contoso2'. É possível recriar este contexto usando
-`Set-AzContext`
+Você se esquece do contexto que foi nomeado 'Contoso2'. É possível recriar este contexto usando `Set-AzContext`
 
 ## <a name="removing-credentials"></a>Removendo credenciais
 

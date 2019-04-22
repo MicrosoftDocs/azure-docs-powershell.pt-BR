@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59363956"
 ---
 # <a name="migration-guide-for-az-100"></a>Guia de Migração para 1.0.0
@@ -21,7 +21,7 @@ Este documento descreve as alterações entre as versões 6.x do AzureRM e da ve
 ## <a name="table-of-contents"></a>Sumário
 - [Alterações da falha gerais](#general-breaking-changes)
   - [Alterações de prefixo de substantivo do cmdlet](#cmdlet-noun-prefix-changes)
-  - [Alterações no nome do módulo](#module-name-changes)
+  - [Alterações de nome de módulo](#module-name-changes)
   - [Módulos removidos](#removed-modules)
   - [Windows PowerShell 5.1 e .NET 4.7.2](#windows-powershell-51-and-net-472)
   - [Remoção temporária de logon de usuário usando PSCredential](#temporary-removal-of-user-login-using-pscredential)
@@ -188,9 +188,9 @@ Não há mais suporte ativo para as ferramentas para esses serviços.  Os client
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (anteriormente AzureRM.Compute)
 - `IdentityIds` foram removidos da propriedade `Identity` nos Scripts dos objetos `PSVirtualMachine` e `PSVirtualMachineScaleSet`, que não devem mais usar o valor desse campo para tomar decisões de processamento.
 - O tipo de propriedade `InstanceView` do objeto `PSVirtualMachineScaleSetVM` foi alterado de `VirtualMachineInstanceView` para `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` e as propriedades `AutomaticOSUpgrade` foram removidas da propriedade `UpgradePolicy`
-- O tipo de propriedade `Sku` no objeto `PSSnapshotUpdate` foi alterado de `DiskSku` para `SnapshotSku`
-- `VmScaleSetVMParameterSet` foi removido do cmdlet `Add-AzVMDataDisk`. Você não pode mais adicionar um disco de dados individualmente em uma VM do conjunto de dimensionamento.
+- As propriedades `AutoOSUpgradePolicy` e `AutomaticOSUpgrade` foram removidas da propriedade `UpgradePolicy`
+- O tipo de propriedade `Sku` do objeto `PSSnapshotUpdate` foi alterado de `DiskSku` para `SnapshotSku`
+- `VmScaleSetVMParameterSet` foi removido do cmdlet `Add-AzVMDataDisk`, você não pode mais adicionar um disco de dados individualmente em uma VM ScaleSet.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (anteriormente AzureRM.DataFactories e AzureRM.DataFactoryV2)
 - O parâmetro `GatewayName` agora é obrigatório no cmdlet `New-AzDataFactoryEncryptValue`
@@ -198,7 +198,7 @@ Não há mais suporte ativo para as ferramentas para esses serviços.  Os client
 - Removido o parâmetro `LinkedServiceName` dos Scripts cmdlet `Get-AzDataFactoryV2ActivityRun`, que não devem mais usar o valor desse campo para tomar decisões de processamento.
 
 ### <a name="azdatalakeanalytics-previously-azurermdatalakeanalytics"></a>Az.DataLakeAnalytics (anteriormente AzureRM.DataLakeAnalytics)
-- Removidos os cmdlets preteridos: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret` e `Set-AzDataLakeAnalyticsCatalogSecret`
+- Removidos os cmdlets preteridos: `New-AzDataLakeAnalyticsCatalogSecret`, `Remove-AzDataLakeAnalyticsCatalogSecret`, e `Set-AzDataLakeAnalyticsCatalogSecret`
 
 ### <a name="azdatalakestore-previously-azurermdatalakestore"></a>Az.DataLakeStore (anteriormente AzureRM.DataLakeStore)
 - Os cmdlets a seguir tiveram o parâmetro `Encoding` alterado do tipo `FileSystemCmdletProviderEncoding` para `System.Text.Encoding`. Essa alteração remove os valores de codificação `String` e `Oem`. Todos os outros valores de codificação anteriores permanecem.
@@ -264,7 +264,7 @@ Os scripts não devem mais tomar decisões de processamento com base nos valores
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (anteriormente AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup e AzureRM.RecoveryServices.SiteRecovery)
 - Removido o parâmetro `Encryption` do cmdlet `New/Set-AzRecoveryServicesAsrPolicy`
-- `TargetStorageAccountName` o parâmetro agora é obrigatório para as restaurações de disco gerenciado no cmdlet `Restore-AzRecoveryServicesBackupItem`
+- O parâmetro `TargetStorageAccountName` agora é obrigatório para restaurações de disco gerenciado no cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Removidos os parâmetros `StorageAccountName` e `StorageAccountResourceGroupName` no cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Removido o parâmetro `Name` no cmdlet `Get-AzRecoveryServicesBackupContainer`
 
