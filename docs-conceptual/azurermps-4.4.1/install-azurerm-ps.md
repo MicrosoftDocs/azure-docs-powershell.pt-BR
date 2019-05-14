@@ -7,25 +7,28 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: fac77e88612091c09106dffea6aa6d3765c1416b
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: a8f79a5b24e790731a1ee962a1e80fb5ad89561a
+ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153012"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511578"
 ---
-# <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o PowerShell do Azure
+# <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
-Este artigo explica as etapas para instalar os módulos do Azure PowerShell em um ambiente Windows.
-Se você quiser usar o Azure PowerShell no macOS ou no Linux, confira o seguinte artigo: [Instalar e configurar o Azure PowerShell em macOS e Linux](install-azurermps-maclinux.md).
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-Instalar o Azure PowerShell na Galeria do PowerShell é o método preferencial de instalação.
+Esse artigo explica as etapas para instalar os módulos do Azure PowerShell para o PowerShell 5.x do Windows usando o PowerShellGet. O PowerShellGet e o gerenciamento de módulos são os modos preferidos de instalação do Azure PowerShell, mas se você quiser instalar com o Web Platform Installer ou o pacote do MSI, consulte [Outros métodos de instalação](other-install.md).
 
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+Não há suporte para o modelo de implantação clássico do Azure desta versão do Azure PowerShell. Para obter suporte com as implantações clássicas, siga as instruções em [Instalar o módulo de Gerenciamento de Serviços do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
+
+> [!IMPORTANT]
+> Não há suporte para o módulo do AzureRM para macOS ou Linux. Para usar os cmdlets do Azure PowerShell nessas plataformas, [Instalar o módulo Az](/powershell/azure/install-az-ps).
 
 ## <a name="step-1-install-powershellget"></a>Etapa 1: Instalar o PowerShellGet
 
 Instalar os itens da Galeria do PowerShell requer o módulo PowerShellGet. Verifique se que você tem a versão apropriada do PowerShellGet e outros requisitos do sistema. Execute o seguinte comando para ver se você tem o PowerShellGet instalado em seu sistema.
+
 
 ```powershell-interactive
 Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path

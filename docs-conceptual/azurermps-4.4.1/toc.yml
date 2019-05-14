@@ -1,47 +1,41 @@
 - name: Azure PowerShell
   href: overview.md
+- name: Instalar
   items:
-    - name: Instalar
+    - name: Instalar com PowerShellGet
       href: install-azurerm-ps.md
-      items:
-        - name: Instalar no macOS e Linux
-          href: install-azurermps-maclinux.md
-        - name: Outros métodos de instalação
-          href: other-install.md
-    - name: Introdução
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Entrar
+    - name: Instalar com MSI ou WebPI
+      href: other-install.md
+- name: Introdução
+  href: get-started-azureps.md
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Entrar
+  items:
+    - name: Métodos de autenticação
       href: authenticate-azureps.md
-      items:
-        - name: Criar uma entidade de serviço
-          href: create-azure-service-principal-azureps.md
-        - name: Credenciais persistentes
-          href: context-persistence.md
-    - name: Consultas
-      href: queries-azureps.md
-    - name: Formato de saída
-      href: formatting-output.md
-    - name: Gerenciar Assinaturas
-      href: manage-subscriptions-azureps.md
-    - name: Implantar
-      items:
-        - name: Implantar modelos do Resource Manager
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Exportar modelos do Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Implantar modelos privados do Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Conceitos
-      items:
-        - name: Módulos experimentais
-          href: using-experimental-modules.md
-    - name: Notas de versão
-      href: release-notes-azureps.md
-      items:
-        - name: Alterações interruptivas no Azure PowerShell 4.x
-          href: migration-guide.4.0.0.md
+    - name: Criar uma entidade de serviço
+      href: create-azure-service-principal-azureps.md
+    - name: Credenciais persistentes
+      href: context-persistence.md
+- name: Consultas
+  href: queries-azureps.md
+- name: Formato de saída
+  href: formatting-output.md
+- name: Gerenciar Assinaturas
+  href: manage-subscriptions-azureps.md
+- name: Implantar
+  items:
+    - name: Implantar modelos do Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Exportar modelos do Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Implantar modelos privados do Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Conceitos
+  items:
+    - name: Módulos experimentais
+      href: using-experimental-modules.md
 - name: Exemplos de Scripts
   items:
     - name: Máquinas Virtuais do Linux
@@ -54,3 +48,7 @@
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+- name: Notas de versão
+  href: release-notes-azureps.md
+- name: Alterações interruptivas no Azure PowerShell 4.x
+  href: migration-guide.4.0.0.md
