@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/07/2018
-ms.openlocfilehash: e3f603b69aa7fef2de034416b9e352b05bea71b6
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 982073768a04bf31c14f9e89665822014cb72a9e
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156179"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534738"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Formatar saída de cmdlet do AzurePowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Por padrão, cada cmdlet do Azure PowerShell tem formatação predefinida de saída, facilitando a leitura.  O PowerShell também oferece a flexibilidade para ajustar a saída ou converter a saída do cmdlet em um formato diferente com os seguintes cmdlets:
 

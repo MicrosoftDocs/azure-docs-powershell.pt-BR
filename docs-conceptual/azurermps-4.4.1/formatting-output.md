@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 0e94d30467c5a11bccfa71630f736bedf0d93112
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144052"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535046"
 ---
 # <a name="formatting-query-results"></a>Formatação de resultados da consulta
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Por padrão, cada cmdlet do PowerShell tem formatação predefinida de saída, facilitando a leitura.  O PowerShell também oferece a flexibilidade para ajustar a saída ou converter a saída do cmdlet em um formato diferente com os seguintes cmdlets:
 

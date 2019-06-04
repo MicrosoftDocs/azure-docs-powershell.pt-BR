@@ -7,7 +7,7 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: azurepowershell
-  ms.date: 02/08/2018
+  ms.date: 12/13/2018
   ms.author: sttramer
   author: sptramer
   manager: carmonm
@@ -16,15 +16,22 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 099418c1fe481ec6ab6262ebb164616612fb18c9
-  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+  ms.openlocfilehash: 98fa4e7428104a4b2e61029e04655b8682743cca
+  ms.sourcegitcommit: 0c012450805bef75472f48c74fe488baf6ba53bb
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 05/11/2019
-  ms.locfileid: "65534568"
+  ms.lasthandoff: 06/04/2019
+  ms.locfileid: "66498079"
 items:
 - durationInMinutes: 1
-  content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nNeste tutorial, você aprenderá todas as etapas envolvidas na configuração de uma máquina virtual com o Azure PowerShell. O tutorial também abrange consultas de saída, a reutilização de recursos do Azure e a limpeza de recursos.\n\nEste tutorial pode ser concluído com a experiência interativa oferecida por meio do Azure Cloud Shell ou você pode [instalar o Azure PowerShell](install-azurerm-ps.md) localmente.\n\nUse __ctrl-shift-v__ (__cmd-shift-v__ no macOS) para colar o texto do tutorial no Azure Cloud Shell."
+  content: >-
+    Neste tutorial, você aprenderá todas as etapas envolvidas na configuração de uma máquina virtual com o Azure PowerShell. O tutorial também abrange consultas de saída, a reutilização de recursos do Azure e a limpeza de recursos.
+
+
+    Este tutorial pode ser concluído com a experiência interativa oferecida por meio do Azure Cloud Shell ou você pode [instalar o Azure PowerShell](install-az-ps.md) localmente.
+
+
+    Use __ctrl-shift-v__ (__cmd-shift-v__ no macOS) para colar o texto do tutorial no Azure Cloud Shell.
 - durationInMinutes: 1
   title: Entrar
   content: >-
@@ -33,7 +40,7 @@ items:
 
     ```powershell-interactive
 
-    Connect-AzureRmAccount
+    Connect-AzAccount
 
     ```
 
@@ -49,7 +56,7 @@ items:
 
     ```powershell-interactive
 
-    New-AzureRmResourceGroup -Name TutorialResources -Location eastus
+    New-AzResourceGroup -Name TutorialResources -Location eastus
 
     ```
 
@@ -115,7 +122,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM1 = New-AzureRmVM @vmParams
+    $newVM1 = New-AzVM @vmParams
 
     ```
 
@@ -202,13 +209,13 @@ items:
 
     ```powershell-interactive
 
-    $newVM1 | Get-AzureRmNetworkInterface |
+    $newVM1 | Get-AzNetworkInterface |
       Select-Object -ExpandProperty IpConfigurations |
         Select-Object Name,PrivateIpAddress
     ```
 
 
-    Neste exemplo, estamos usando o pipeline do PowerShell para enviar o objeto \$newVM1 para o cmdlet `Get-AzureRmNetworkInterface`. Do objeto do adaptador de rede resultante, estamos selecionando o objeto aninhado IpConfigurations. Do objeto IpConfigurations, estamos selecionando as propriedades Nome e PrivateIpAddress.
+    Neste exemplo, estamos usando o pipeline do PowerShell para enviar o objeto \$newVM1 para o cmdlet `Get-AzNetworkInterface`. Do objeto do adaptador de rede resultante, estamos selecionando o objeto aninhado IpConfigurations. Do objeto IpConfigurations, estamos selecionando as propriedades Nome e PrivateIpAddress.
 
 
     ```Output
@@ -227,7 +234,7 @@ items:
 
     ```powershell-interactive
 
-    $publicIp = Get-AzureRmPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
+    $publicIp = Get-AzPublicIpAddress -Name tutorialPublicIp -ResourceGroupName TutorialResources
 
 
     $publicIp | Select-Object Name,IpAddress,@{label='FQDN';expression={$_.DnsSettings.Fqdn}}
@@ -235,7 +242,7 @@ items:
     ```
 
 
-    Neste exemplo, usamos o `Get-AzureRmPublicIpAddress` e armazenamos os resultados na variável \$publicIp. Dessa variável, estamos selecionando Propriedades e usando uma expressão para recuperar a propriedade aninhada Fqdn.
+    Neste exemplo, usamos o `Get-AzPublicIpAddress` e armazenamos os resultados na variável \$publicIp. Dessa variável, estamos selecionando Propriedades e usando uma expressão para recuperar a propriedade aninhada Fqdn.
 
 
     ```Output
@@ -279,7 +286,7 @@ items:
       OpenPorts = 3389
     }
 
-    $newVM2 = New-AzureRmVM @vm2Params
+    $newVM2 = New-AzVM @vm2Params
 
 
     $newVM2
@@ -329,12 +336,12 @@ items:
 - durationInMinutes: 4
   title: Limpeza
   content: >-
-    Agora que o tutorial está completo, é hora de limpar os recursos criados. É possível excluir recursos individuais com o comando `Remove-AzureRmResource`, mas a maneira mais segura de remover todos os recursos em um grupo de recursos é excluindo o grupo usando o comando `Remove-AzureRmResourceGroup`.
+    Agora que o tutorial está completo, é hora de limpar os recursos criados. É possível excluir recursos individuais com o comando `Remove-AzResource`, mas a maneira mais segura de remover todos os recursos em um grupo de recursos é excluindo o grupo usando o comando `Remove-AzResourceGroup`.
 
 
     ```powershell-interactive
 
-    $job = Remove-AzureRmResourceGroup -Name TutorialResources -Force -AsJob
+    $job = Remove-AzResourceGroup -Name TutorialResources -Force -AsJob
 
 
     $job
@@ -348,7 +355,7 @@ items:
 
     --     ----            -------------   -----         -----------     --------             -------
 
-    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzureRmResource...
+    1      Long Running... AzureLongRun... Running       True            localhost            Remove-AzResource...
 
     ```
 
@@ -366,4 +373,4 @@ items:
     Com a limpeza concluída, o tutorial está encerrado. Continue para obter um resumo de tudo o que você aprendeu e links para recursos que ajudarão nas próximas etapas.
 - durationInMinutes: 1
   title: Resumo
-  content: "\nParabéns! Você aprendeu a criar VMs com recursos novos ou existentes, usou expressões e outros comandos do Azure PowerShell para capturar dados a serem armazenados em variáveis do shell e analisou alguns dos recursos que são criados para VMs do Azure.\n\nO que você vai fazer a seguir depende de como você planeja usar o Azure PowerShell. Há uma variedade de materiais que se aprofundam nos recursos abordados neste tutorial.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Documentação detalhada do Azure PowerShell\n\nTalvez você queira um tempo para explorar o conjunto completo da [documentação do Azure PowerShell](overview.md).\n\nPara obter mais informações sobre os comandos usados neste tutorial, consulte os artigos a seguir.\n\n- [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-AzureRmPublicIpAddress)\n- [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nTambém há artigos que se aprofundam nos recursos que foram mostrados no tutorial.\n\n- [Nivelamento do PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Consultas](queries-azureps.md)\n- [Formatação](formatting-output.md)\n- [Usando tarefas do PowerShell](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Scripts de exemplo\n\nSe você quiser iniciar imediatamente com tarefas específicas, examine alguns scripts de exemplo.\n\n- [Máquinas Virtuais do Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Máquinas Virtuais do Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Aplicativos Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Bancos de dados SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Comentários\n\nCaso queira enviar comentários, sugestões ou perguntas, há várias maneiras de entrar em contato.\n\n* `Send-Feedback` é um comando interno do Azure PowerShell que permite enviar comentários de formato livre para a equipe.\n* Arquive uma solicitação de recurso ou um relatório de bugs no [repositório do Azure PowerShell](https://github.com/Azure/azure-powershell/issues).\n* Faça uma pergunta ou obtenha esclarecimentos preenchendo um formulário de problemas no [repositório de documentação do Azure PowerShell](https://github.com/MicrosoftDocs/azure-docs-powershell/issues).\n\nEsperamos que você aproveite o Azure PowerShell!"
+  content: "\nParabéns! Você aprendeu a criar VMs com recursos novos ou existentes, usou expressões e outros comandos do Azure PowerShell para capturar dados a serem armazenados em variáveis do shell e analisou alguns dos recursos que são criados para VMs do Azure.\n\nO que você vai fazer a seguir depende de como você planeja usar o Azure PowerShell. Há uma variedade de materiais que se aprofundam nos recursos abordados neste tutorial.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Documentação detalhada do Azure PowerShell\n\nTalvez você queira um tempo para explorar o conjunto completo da [documentação do Azure PowerShell](overview.md).\n\nPara obter mais informações sobre os comandos usados neste tutorial, consulte os artigos a seguir.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nTambém há artigos que se aprofundam nos recursos que foram mostrados no tutorial.\n\n- [Nivelamento do PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Consultas](queries-azureps.md)\n- [Formatação](formatting-output.md)\n- [Usando tarefas do PowerShell](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Scripts de exemplo\n\nSe você quiser iniciar imediatamente com tarefas específicas, examine alguns scripts de exemplo.\n\n- [Máquinas Virtuais do Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Máquinas Virtuais do Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Aplicativos Web](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Bancos de dados SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Comentários\n\nCaso queira enviar comentários, sugestões ou perguntas, há várias maneiras de entrar em contato.\n\n* `Send-Feedback` é um comando interno do Azure PowerShell que permite enviar comentários de formato livre para a equipe.\n* Arquive uma solicitação de recurso ou um relatório de bugs no [repositório do Azure PowerShell](https://github.com/Azure/azure-powershell/issues).\n* Faça uma pergunta ou obtenha esclarecimentos preenchendo um formulário de problemas no [repositório de documentação do Azure PowerShell](https://github.com/MicrosoftDocs/azure-docs-powershell/issues).\n\nEsperamos que você aproveite o Azure PowerShell!"
