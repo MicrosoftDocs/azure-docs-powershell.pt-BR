@@ -7,28 +7,30 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 30778a650e7e6769cac814f8da581371a7943de4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: dae1db158f940587d81a3fe47dfad8524f136d56
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144008"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534659"
 ---
-# <a name="query-output-of-azure-powershell-cmdlets"></a><span data-ttu-id="a3dab-103">Consultar a saída de cmdlets do Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a3dab-103">Query output of Azure PowerShell cmdlets</span></span>
+# <a name="query-output-of-azure-powershell-cmdlets"></a><span data-ttu-id="1dfe0-103">Consultar a saída de cmdlets do Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="1dfe0-103">Query output of Azure PowerShell cmdlets</span></span>
 
-<span data-ttu-id="a3dab-104">A consulta no PowerShell pode ser concluída usando cmdlets internos.</span><span class="sxs-lookup"><span data-stu-id="a3dab-104">Querying in PowerShell can be completed by using built-in cmdlets.</span></span> <span data-ttu-id="a3dab-105">No PowerShell, os nomes de cmdlet assumem a forma de  **_Verbo-Substantivo_**.</span><span class="sxs-lookup"><span data-stu-id="a3dab-105">In PowerShell, cmdlet names take the form of **_Verb-Noun_**.</span></span> <span data-ttu-id="a3dab-106">Os cmdlets que usam o verbo **_Get_** são os cmdlets de consulta.</span><span class="sxs-lookup"><span data-stu-id="a3dab-106">The cmdlets using the verb **_Get_** are the query cmdlets.</span></span> <span data-ttu-id="a3dab-107">Os substantivos do cmdlet são os tipos de recursos do Azure que são influenciados pelos verbos do cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a3dab-107">The cmdlet nouns are the types of Azure resources that are acted upon by the cmdlet verbs.</span></span>
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-## <a name="select-simple-properties"></a><span data-ttu-id="a3dab-108">Selecionar propriedades simples</span><span class="sxs-lookup"><span data-stu-id="a3dab-108">Select simple properties</span></span>
+<span data-ttu-id="1dfe0-104">A consulta no PowerShell pode ser concluída usando cmdlets internos.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-104">Querying in PowerShell can be completed by using built-in cmdlets.</span></span> <span data-ttu-id="1dfe0-105">No PowerShell, os nomes de cmdlet assumem a forma de  **_Verbo-Substantivo_** .</span><span class="sxs-lookup"><span data-stu-id="1dfe0-105">In PowerShell, cmdlet names take the form of **_Verb-Noun_**.</span></span> <span data-ttu-id="1dfe0-106">Os cmdlets que usam o verbo **_Get_** são os cmdlets de consulta.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-106">The cmdlets using the verb **_Get_** are the query cmdlets.</span></span> <span data-ttu-id="1dfe0-107">Os substantivos do cmdlet são os tipos de recursos do Azure que são influenciados pelos verbos do cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-107">The cmdlet nouns are the types of Azure resources that are acted upon by the cmdlet verbs.</span></span>
 
-<span data-ttu-id="a3dab-109">O Azure PowerShell tem formatação padrão definidos para cada cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a3dab-109">Azure PowerShell has default formatting defined for each cmdlet.</span></span> <span data-ttu-id="a3dab-110">As propriedades mais comuns para cada tipo de recurso são automaticamente exibidas em um formato de tabela ou de lista.</span><span class="sxs-lookup"><span data-stu-id="a3dab-110">The most common properties for each resource type are displayed in a table or list format automatically.</span></span> <span data-ttu-id="a3dab-111">Para saber mais sobre formatação de saída, veja [Formatação de resultados da consulta](formatting-output.md).</span><span class="sxs-lookup"><span data-stu-id="a3dab-111">For more information about formatting output, see [Formatting query results](formatting-output.md).</span></span>
+## <a name="select-simple-properties"></a><span data-ttu-id="1dfe0-108">Selecionar propriedades simples</span><span class="sxs-lookup"><span data-stu-id="1dfe0-108">Select simple properties</span></span>
 
-<span data-ttu-id="a3dab-112">Use o cmdlet `Get-AzureRmVM` para consultar uma lista de máquinas virtuais em sua conta.</span><span class="sxs-lookup"><span data-stu-id="a3dab-112">Use the `Get-AzureRmVM` cmdlet to query for a list of VMs in your account.</span></span>
+<span data-ttu-id="1dfe0-109">O Azure PowerShell tem formatação padrão definidos para cada cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-109">Azure PowerShell has default formatting defined for each cmdlet.</span></span> <span data-ttu-id="1dfe0-110">As propriedades mais comuns para cada tipo de recurso são automaticamente exibidas em um formato de tabela ou de lista.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-110">The most common properties for each resource type are displayed in a table or list format automatically.</span></span> <span data-ttu-id="1dfe0-111">Para saber mais sobre formatação de saída, veja [Formatação de resultados da consulta](formatting-output.md).</span><span class="sxs-lookup"><span data-stu-id="1dfe0-111">For more information about formatting output, see [Formatting query results](formatting-output.md).</span></span>
+
+<span data-ttu-id="1dfe0-112">Use o cmdlet `Get-AzureRmVM` para consultar uma lista de máquinas virtuais em sua conta.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-112">Use the `Get-AzureRmVM` cmdlet to query for a list of VMs in your account.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
-<span data-ttu-id="a3dab-113">A saída padrão é formatada automaticamente como uma tabela.</span><span class="sxs-lookup"><span data-stu-id="a3dab-113">The default output is automatically formatted as a table.</span></span>
+<span data-ttu-id="1dfe0-113">A saída padrão é formatada automaticamente como uma tabela.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-113">The default output is automatically formatted as a table.</span></span>
 
 ```output
 ResourceGroupName          Name   Location          VmSize  OsType              NIC ProvisioningState
@@ -37,7 +39,7 @@ MYWESTEURG        MyUnbuntu1610 westeurope Standard_DS1_v2   Linux myunbuntu1610
 MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm880         Succeeded
 ```
 
-<span data-ttu-id="a3dab-114">O cmdlet `Select-Object` pode ser usado para selecionar as propriedades específicas que são interessantes para você.</span><span class="sxs-lookup"><span data-stu-id="a3dab-114">The `Select-Object` cmdlet can be used to select the specific properties that are interesting to you.</span></span>
+<span data-ttu-id="1dfe0-114">O cmdlet `Select-Object` pode ser usado para selecionar as propriedades específicas que são interessantes para você.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-114">The `Select-Object` cmdlet can be used to select the specific properties that are interesting to you.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select Name,ResourceGroupName,Location
@@ -50,9 +52,9 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="select-complex-nested-properties"></a><span data-ttu-id="a3dab-115">Selecionar propriedades aninhadas complexas</span><span class="sxs-lookup"><span data-stu-id="a3dab-115">Select complex nested properties</span></span>
+## <a name="select-complex-nested-properties"></a><span data-ttu-id="1dfe0-115">Selecionar propriedades aninhadas complexas</span><span class="sxs-lookup"><span data-stu-id="1dfe0-115">Select complex nested properties</span></span>
 
-<span data-ttu-id="a3dab-116">Se a propriedade que você deseja selecionar estiver aninhada profundamente na saída JSON, será necessário fornecer o caminho completo para a propriedade aninhada.</span><span class="sxs-lookup"><span data-stu-id="a3dab-116">If the property you want to select is nested deep in the JSON output you need to supply the full path to that nested property.</span></span> <span data-ttu-id="a3dab-117">O exemplo a seguir mostra como selecionar o nome da VM e o tipo do SO do cmdlet `Get-AzureRmVM`.</span><span class="sxs-lookup"><span data-stu-id="a3dab-117">The following example shows how to select the VM Name and the OS type from the `Get-AzureRmVM` cmdlet.</span></span>
+<span data-ttu-id="1dfe0-116">Se a propriedade que você deseja selecionar estiver aninhada profundamente na saída JSON, será necessário fornecer o caminho completo para a propriedade aninhada.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-116">If the property you want to select is nested deep in the JSON output you need to supply the full path to that nested property.</span></span> <span data-ttu-id="1dfe0-117">O exemplo a seguir mostra como selecionar o nome da VM e o tipo do SO do cmdlet `Get-AzureRmVM`.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-117">The following example shows how to select the VM Name and the OS type from the `Get-AzureRmVM` cmdlet.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}
@@ -65,9 +67,9 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-results-with-the-where-object-cmdlet"></a><span data-ttu-id="a3dab-118">Filtrar resultados com o cmdlet Where-Object</span><span class="sxs-lookup"><span data-stu-id="a3dab-118">Filter results with the Where-Object cmdlet</span></span>
+## <a name="filter-results-with-the-where-object-cmdlet"></a><span data-ttu-id="1dfe0-118">Filtrar resultados com o cmdlet Where-Object</span><span class="sxs-lookup"><span data-stu-id="1dfe0-118">Filter results with the Where-Object cmdlet</span></span>
 
-<span data-ttu-id="a3dab-119">O cmdlet `Where-Object` permite filtrar o resultados com base em qualquer valor de propriedade.</span><span class="sxs-lookup"><span data-stu-id="a3dab-119">The `Where-Object` cmdlet allows you to filter the result based on any property value.</span></span> <span data-ttu-id="a3dab-120">No exemplo a seguir, o filtro seleciona apenas as VMs com o texto "RGD" em seu nome.</span><span class="sxs-lookup"><span data-stu-id="a3dab-120">In the following example, the filter selects only VMs that have the text "RGD" in their name.</span></span>
+<span data-ttu-id="1dfe0-119">O cmdlet `Where-Object` permite filtrar o resultados com base em qualquer valor de propriedade.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-119">The `Where-Object` cmdlet allows you to filter the result based on any property value.</span></span> <span data-ttu-id="1dfe0-120">No exemplo a seguir, o filtro seleciona apenas as VMs com o texto "RGD" em seu nome.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-120">In the following example, the filter selects only VMs that have the text "RGD" in their name.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Where ResourceGroupName -like RGD* | Select ResourceGroupName,Name
@@ -80,7 +82,7 @@ RGDEMO001          KBDemo001VM
 RGDEMO001          KBDemo020
 ```
 
-<span data-ttu-id="a3dab-121">Com o exemplo a seguir, os resultados retornarão as VMs com o vmSize 'Standard_DS1_V2'.</span><span class="sxs-lookup"><span data-stu-id="a3dab-121">With the next example, the results will return the VMs that have the vmSize 'Standard_DS1_V2'.</span></span>
+<span data-ttu-id="1dfe0-121">Com o exemplo a seguir, os resultados retornarão as VMs com o vmSize 'Standard_DS1_V2'.</span><span class="sxs-lookup"><span data-stu-id="1dfe0-121">With the next example, the results will return the VMs that have the vmSize 'Standard_DS1_V2'.</span></span>
 
 ```azurepowershell-interactive
 Get-AzureRmVM | Where vmSize -eq Standard_DS1_V2
