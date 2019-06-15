@@ -1,6 +1,0 @@
-- name: Azure PowerShell para Azure Stack
-  href: overview.md
-- name: Instalar
-  href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
-- name: Configurar
-  href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'
