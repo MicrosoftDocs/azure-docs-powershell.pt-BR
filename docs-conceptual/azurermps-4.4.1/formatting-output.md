@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 0e94d30467c5a11bccfa71630f736bedf0d93112
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 7f6cf61eef9c5549dfe78d2d801ab1278db40c17
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535046"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863561"
 ---
 # <a name="formatting-query-results"></a>Formatação de resultados da consulta
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 ## <a name="converting-to-other-data-types"></a>Conversão em outros tipos de dados
 
-O PowerShell também oferece vários formatos de saída que você pode usar para atender às suas necessidades.  No exemplo a seguir, podemos usar o cmdlet `Select-Object` para obter os atributos das máquinas virtuais na nossa assinatura e converter a saída em formato CSV para simplificar a importação para um banco de dados ou uma planilha.
+O PowerShell também oferece vários formatos de saída que você pode usar para atender às suas necessidades.  No exemplo a seguir, usamos o cmdlet `Select-Object` para obter os atributos das máquinas virtuais na nossa assinatura e converter a saída em formato CSV para simplificar a importação para um banco de dados ou uma planilha.
 
 ```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
