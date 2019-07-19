@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ac8513b3eee4adfcaf0be8bf7b4e8d09190811df
-ms.sourcegitcommit: a4e527d3deba004007cfa22fa536e8255dd23b37
+ms.openlocfilehash: f357a17f698d68c1a29dcb78f83671973fd6ecad
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516633"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863733"
 ---
 ## <a name="240---july-2019"></a>2.4.0 – Julho de 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -614,7 +614,7 @@ ms.locfileid: "67516633"
 
 #### <a name="azresources"></a>Az.Resources
 * Aperfeiçoar o tratamento de provedores para “Get-AzResource” ao fornecer os parâmetros “-ResourceId” ou “-ResourceGroupName”, “-Name” e “-ResourceType”
-* Melhorar o tratamento de erros para “Test-AzDeployment” e “Test-AzResourceGroupDeployment”
+* Melhorar o tratamento de erro para 'Test-AzDeployment' e 'Test-AzResourceGroupDeployment'
     - Controlar erros lançados fora da validação de implantação e incluí-los na saída do comando
     - Mais informações podem ser obtidas aqui: https://github.com/Azure/azure-powershell/issues/6856
 * Adicionar parâmetro do argumento “-IgnoreDynamicParameters” ao conjunto de cmdlets de implantação para ignorar o prompt no script e nos cenários de trabalho
