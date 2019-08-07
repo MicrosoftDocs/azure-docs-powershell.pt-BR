@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345369"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807385"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar uma entidade de serviço do Azure com o Azure PowerShell
 
@@ -40,7 +40,14 @@ Sem outros parâmetros de autenticação, usa-se a autenticação baseada em sen
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-O objeto retornado contém o membro `Secret`, que é um `SecureString` que contém a senha gerada. Armazene esse valor em algum lugar seguro para autenticar com a entidade de serviço. Seu valor __não__ será exibido na saída do console. Se você perder a senha, [redefina as credenciais da entidade de serviço](#reset-credentials). 
+O objeto retornado contém o membro `Secret`, que é um `SecureString` que contém a senha gerada. Armazene esse valor em algum lugar seguro para autenticar com a entidade de serviço. Seu valor __não__ será exibido na saída do console. Se você perder a senha, [redefina as credenciais da entidade de serviço](#reset-credentials).
+
+O código a seguir permitirá que você exporte o segredo:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 Para senhas fornecidas pelo usuário, o argumento `-PasswordCredential` usa os objetos `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Esses objetos devem ter uma validade `StartDate` e `EndDate`, além de usar um texto sem formatação `Password`. Quando criar uma senha, certifique-se de seguir as [Regras e restrições de senha do Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Não use uma senha fraca, nem reutilize uma senha.
 

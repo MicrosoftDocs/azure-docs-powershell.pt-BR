@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346553"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807528"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Usar várias assinaturas do Azure
 
 A maioria dos usuários do Azure terá somente uma assinatura. No entanto, se você fizer parte de mais de uma organização ou se sua organização tiver dividido o acesso a determinados recursos nos agrupamentos, poderá ter várias assinaturas no Azure. A CLI é compatível com a escolha de uma assinatura globalmente e por comando.
+
+Para obter informações detalhadas sobre assinaturas, cobrança e gerenciamento de custos, confira a [documentação sobre cobrança e gerenciamento de custos](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Locatários, usuários e assinaturas
 

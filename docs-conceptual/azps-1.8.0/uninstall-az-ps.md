@@ -1,18 +1,18 @@
 ---
 title: Desinstalar o Azure PowerShell
 description: Como desinstalar completamente o Azure PowerShell
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037758"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807444"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo Azure PowerShell
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> Se esse script não puder corresponder a uma versão exata do módulo dependente a desinstalar, ele não desinstalará _nenhuma_ versão desse módulo. Isso ocorre porque pode haver outras versões do `Az` no sistema que dependem desses módulos. Nesse caso, as versões do módulo que não puderam ser encontradas serão listadas, caso haja alguma instalada. Então, você poderá remover qualquer uma das versões antigas manualmente com o `Uninstall-Module`.
+> Se esse script não puder corresponder a uma dependência exata com a mesma versão a desinstalar, ele não desinstalará _nenhuma_ versão dessa dependência. Isso ocorre porque pode haver outras versões do módulo de destino no sistema que contam com essas dependências. Nesse caso, as versões disponíveis da dependência são listadas.
+> Então, você poderá remover qualquer uma das versões antigas manualmente com o `Uninstall-Module`.
 
 Execute o comando para cada versão do Azure PowerShell que você deseja desinstalar. Para sua conveniência, o script a seguir desinstala todas as versões do Az __exceto__ a versão mais recente.
 
