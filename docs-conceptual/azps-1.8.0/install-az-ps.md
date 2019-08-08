@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: d99265c7f156622d876d700106e2b06dd729e8b8
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365741"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807510"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar módulo do Azure PowerShell
 
@@ -37,23 +37,19 @@ Não há nenhum requisito adicional para o Azure PowerShell ao usar o PowerShell
 
 ## <a name="install-the-azure-powershell-module"></a>Instalar módulo do Azure PowerShell
 
-> [!IMPORTANT]
->
-> É possível ter ambos os módulos AzureRM e Az instalados ao mesmo tempo. Caso tenha ambos os módulos instalados, __não habilite aliases__.
-> Habilitar aliases causará conflitos entre os cmdlets AzureRM e os aliases de comando Az, podendo levar a comportamentos inesperados.
-> Antes de instalar o módulo Az, recomenda-se desinstalar o AzureRM. É possível desinstalar o AzureRM ou habilitar aliases a qualquer momento. Para saber mais sobre os aliases de comando do AzureRM, confira [Migrar do AzureRM para Az](migrate-from-azurerm-to-az.md).
-> Para obter instruções de desinstalação, confira [Desinstalar o módulo AzureRM](uninstall-az-ps.md#uninstall-the-azurerm-module). 
+> [!WARNING]
+> __Não__ é possível instalar os módulos AzureRM e Az para o PowerShell 5.1 para Windows ao mesmo tempo. Caso você precise manter o AzureRM disponível no sistema, instale o módulo Az para o PowerShell Core 6.x ou posterior. Para fazer isso, [instale o PowerShell Core 6.x ou posterior](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) e, depois, siga estas instruções em um terminal do PowerShell Core.
 
-Para instalar os módulos em um escopo global, você precisa de privilégios elevados para instalar os módulos da Galeria do PowerShell. Para instalar o Azure PowerShell, execute o seguinte comando em uma sessão elevada ("Executar como Administrador" no Windows ou com privilégios de superusuário no macOS ou no Linux):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Se você não tiver acesso aos privilégios de administrador, você pode instalar para o usuário atual adicionando o argumento `-Scope`.
+O método de instalação recomendado deve apenas ser instalado para o usuário ativo:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Se desejar instalar para todos os usuários em um sistema, isso requererá privilégios de administrador. Em uma sessão do PowerShell com privilégios elevados executada como administrador ou com o comando `sudo` em macOS ou Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 Por padrão, a galeria do PowerShell não está configurada como um repositório confiável para o PowerShellGet. Na primeira vez em que a PSGallery for utilizada, o prompt a seguir será exibido:
@@ -71,6 +67,28 @@ Are you sure you want to install the modules from 'PSGallery'?
 Responda `Yes` ou `Yes to All` para continuar a instalação.
 
 O módulo Az é um módulo de rollup para os cmdlets do Azure PowerShell. A instalação dele baixa todos os módulos disponíveis do Azure Resource Manager e possibilita usar seus cmdlets.
+
+## <a name="troubleshooting"></a>solução de problemas
+
+Estes são alguns problemas comuns observados durante a instalação do módulo do Azure PowerShell. Caso você tenha um problema que não foi listado aqui, [registre um problema no GitHub](https://github.com/azure/azure-powershell/issues).
+
+### <a name="proxy-blocks-connection"></a>Conexão de blocos de proxy
+
+Se você obtiver erros de `Install-Module` que indicam que a Galeria do PowerShell está inacessível, talvez você esteja protegido por um proxy. Sistemas operacionais diferentes terão requisitos diferentes para configurar um proxy de todo o sistema, que não são abordados detalhadamente aqui. Entre em contato com o administrador do sistema para obter as configurações de proxy e saber como defini-las para seu sistema operacional.
+
+O PowerShell em si pode não ser configurado para usar esse proxy automaticamente. Com o PowerShell 5.1 e posterior, configure o proxy a ser usado para uma sessão do PowerShell com o seguinte comando:
+
+```powershell
+(New-Object System.Net.WebClient).Proxy.Credentials = `
+  [System.Net.CredentialCache]::DefaultNetworkCredentials
+```
+
+Caso suas credenciais do sistema operacional estejam configuradas corretamente, isso roteará as solicitações do PowerShell por meio do proxy.
+Para manter essa configuração entre as sessões, adicione o comando a um [perfil do PowerShell](/powershell/module/microsoft.powershell.core/about/about_profiles).
+
+Para instalar o pacote, o proxy precisa permitir conexões HTTPS para o seguinte endereço:
+
+* `https://www.powershellgallery.com`
 
 ## <a name="sign-in"></a>Entrar
 

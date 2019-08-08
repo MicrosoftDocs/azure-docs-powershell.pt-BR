@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: da1d7ec9a196068db237d871834b92f8b077b42c
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365687"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807492"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Apresentação do novo módulo Az do Azure PowerShell
 
-A partir de dezembro de 2018, o módulo Az do Azure PowerShell foi lançado e é agora o módulo do PowerShell utilizado para interagir com o Azure. O Az oferece comandos menores, maior estabilidade e dá suporte à plataforma cruzada. O Az também oferece paridade de recursos e um caminho de migração fácil do AzureRM.
+A partir de dezembro de 2018, o módulo Az do Azure PowerShell foi lançado e é agora o módulo do PowerShell utilizado para interagir com o Azure. O Az oferece comandos menores, maior estabilidade e dá suporte à plataforma cruzada. O Az também tem paridade de recursos com o AzureRM, oferecendo um fácil caminho de migração.
 
 Com o módulo Az, o Azure PowerShell agora é compatível com o PowerShell 5.1 no Windows e com o PowerShell Core 6.x e posterior em todas as plataformas compatíveis – incluindo Windows, macOS e Linux.
 
@@ -67,6 +67,4 @@ O módulo Az tem um modo de compatibilidade para ajudá-lo a usar os scripts exi
 
 ## <a name="continued-support-for-azurerm"></a>Suporte contínuo para o AzureRM
 
-O módulo AzureRM existente deixará de receber novos cmdlets ou recursos. No entanto, o AzureRM ainda é oficialmente mantido e terá correções de bugs até, pelo menos, dezembro de 2020.
-
-Caso você tenha dúvidas se o módulo Az é completo, testado ou está pronto para produção: Todo o trabalho de engenharia utilizado no AzureRM agora foi concentrado no Az, incluindo o máximo possível de reutilização de código dos módulos existentes e testes abrangentes para tornar os novos módulos compatíveis com o recurso. A migração para o Az deve ser influenciada somente pelo cronograma de sua organização, sem a necessidade de aguardar a introdução de recursos específicos.
+O AzureRM deixará de receber novos cmdlets ou recursos. No entanto, o módulo AzureRM ainda será oficialmente mantido e terá correções de bugs até dezembro de 2020.
