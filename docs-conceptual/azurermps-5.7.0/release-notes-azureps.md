@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535062"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863289"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -669,7 +669,7 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
   - Novo Cmdlet Update-AzureRmPowerBIEmbeddedCapacity - Modifica uma instância da Capacidade do Power BI Embedded
 * Perfil
   - Atualização de USGovernmentActiveDirectoryEndpoint para https://login.microsoftonline.us/
-    - Para obter mais informações sobre os mapeamentos de ponto de extremidade do Azure Governamental, consulte: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
+    - Para obter mais informações sobre os mapeamentos de ponto de extremidade do Azure Governamental, consulte: https://docs.microsoft.com/azure/azure-government/documentation-government-developer-guide#endpoint-mapping
     - O suporte -AsJob foi adicionado para cmdlets, permitindo que cmdlets selecionados sejam executados em segundo plano e devolvam um trabalho para rastreamento e controle de progresso
     - O parâmetro -AsJob foi adicionado ao cmdlet Get-AzureRmSubscription
 * RecoveryServices.Backup

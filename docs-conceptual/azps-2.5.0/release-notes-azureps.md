@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657953"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861182"
 ---
 ## <a name="250---july-2019"></a>2.5.0 – julho de 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657953"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Mais](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
+    - [Mais](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
     - Az.Monitor.md atualizado para incluir os cmdlets para a regra de alerta com base em métrica GenV2 (não clássica)
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657953"
 ### <a name="highlights-since-the-last-major-release"></a>Destaques desde a última versão principal
 * Disponibilidade geral do módulo `Az`
 * Para obter mais informações sobre o módulo `Az`, visite o seguinte: https://aka.ms/azps-announce
-* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Suporte a caracteres curinga adicionado aos cmdlets Get para Az.Compute e Az.Network
 * Autenticação interativa e do nome de usuário/senha adicionada somente para o Windows PowerShell 5.1
 * Suporte adicionado para runbooks do Python 2 em Az.Automation
@@ -693,7 +693,7 @@ ms.locfileid: "68657953"
 ### <a name="highlights-since-the-last-major-release"></a>Destaques desde a última versão principal
 * Disponibilidade geral do módulo `Az`
 * Para obter mais informações sobre o módulo `Az`, visite o seguinte: https://aka.ms/azps-announce
-* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Suporte a caracteres curinga adicionado aos cmdlets Get para Az.Compute e Az.Network
 * Autenticação interativa e do nome de usuário/senha adicionada somente para o Windows PowerShell 5.1
 * Suporte adicionado para runbooks do Python 2 em Az.Automation
@@ -750,7 +750,7 @@ ms.locfileid: "68657953"
 ### <a name="highlights-since-the-last-major-release"></a>Destaques desde a última versão principal
 * Disponibilidade geral do módulo `Az`
 * Para obter mais informações sobre o módulo `Az`, visite o seguinte: https://aka.ms/azps-announce
-* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Recurso de conclusão Location, ResourceGroup e ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Suporte a caracteres curinga adicionado aos cmdlets Get para Az.Compute e Az.Network
 * Autenticação interativa e do nome de usuário/senha adicionada somente para o Windows PowerShell 5.1
 * Suporte adicionado para runbooks do Python 2 em Az.Automation

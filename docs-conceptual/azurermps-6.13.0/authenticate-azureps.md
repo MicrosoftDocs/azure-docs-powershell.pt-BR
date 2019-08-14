@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: d6545f18115e4162bb716def79f6b4cae8953a9c
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 464d7efa640f1d1ffd1c34bfbe6cf13cbe5202b6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534706"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863232"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -54,7 +54,7 @@ Para saber mais informações sobre identidades gerenciadas para recursos do Azu
 
 ## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Entrar como um Provedor de Soluções na Nuvem (CSP)
 
-Entrar no [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) requer o uso de `-TenantId`. Normalmente, esse parâmetro pode ser fornecido como uma ID de locatário ou nome de domínio. No entanto, para entrar no CSP, deve ser fornecido uma **ID de locatário**.
+Entrar no [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/) requer o uso de `-TenantId`. Normalmente, esse parâmetro pode ser fornecido como uma ID de locatário ou nome de domínio. No entanto, para entrar no CSP, deve ser fornecido uma **ID de locatário**.
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
