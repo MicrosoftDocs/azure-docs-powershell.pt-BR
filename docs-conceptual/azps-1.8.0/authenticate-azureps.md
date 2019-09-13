@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861230"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386809"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -54,7 +54,7 @@ Para obter as credenciais da entidade de serviço como o objeto apropriado, use 
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Para cenários de automação, você precisa criar as credenciais usando um nome de usuário e uma cadeia de caracteres segura:
@@ -62,7 +62,7 @@ Para cenários de automação, você precisa criar as credenciais usando um nome
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Verifique se que você está usando boas práticas de armazenamento de senha ao automatizar as conexões de entidade de serviço.
@@ -71,7 +71,13 @@ Verifique se que você está usando boas práticas de armazenamento de senha ao 
 
 A autenticação baseada em certificado exige que o Azure PowerShell possa recuperar informações de um repositório de certificados local com base em uma impressão digital do certificado.
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID da entidade de serviço como o valor do parâmetro `-ApplicationId`.
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 No PowerShell 5.1, o repositório de certificados pode ser gerenciado e inspecionado com o módulo [PKI](/powershell/module/pkiclient). Para o PowerShell Core 6.x e posterior, o processo é mais complicado. Os scripts a seguir mostram como importar um certificado existente no repositório de certificados acessível pelo PowerShell.
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>Entrar usando uma identidade gerenciada 
+## <a name="sign-in-using-a-managed-identity"></a>Entrar usando uma identidade gerenciada
 
 As identidades gerenciadas são um recurso do Azure Active Directory. Elas são entidades de serviço atribuídas aos recursos executados no Azure. Você pode usar uma entidade de serviço de identidade gerenciada para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. As identidades gerenciadas só estão disponíveis nos recursos executados em uma nuvem do Azure.
 
@@ -108,19 +114,19 @@ Para saber mais sobre as identidades gerenciadas dos recursos do Azure, confira 
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Entrar com um locatário diferente do padrão ou como um Provedor de Soluções na Nuvem (CSP)
 
-Se sua conta estiver associada a mais de um locatário, entrar requer o uso do parâmetro `-TenantId` na conexão. Esse parâmetro funcionará com qualquer outro método de entrada. Ao fazer logon, esse valor de parâmetro pode ser a ID de objeto do Azure do locatário (ID do Locatário) ou o nome de domínio totalmente qualificado do locatário.
+Se sua conta estiver associada a mais de um locatário, entrar requer o uso do parâmetro `-Tenant` na conexão. Esse parâmetro funcionará com qualquer método de entrada. Ao fazer logon, esse valor de parâmetro pode ser a ID de objeto do Azure do locatário (ID do Locatário) ou o nome de domínio totalmente qualificado do locatário.
 
-Se você for um [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), o valor `-TenantId` **deverá** ser uma ID de locatário.
+Se você for um [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), o valor `-Tenant` **deverá** ser uma ID de locatário.
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Entre em outra Nuvem
 
 Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com as leis de manipulação de dados regionais.
 Para contas em uma nuvem regional, configure o ambiente quando você entrar com o argumento `-Environment`.
-Por exemplo, se sua conta estiver em uma nuvem da China:
+Esse parâmetro funcionará com qualquer método de entrada. Por exemplo, se sua conta estiver em uma nuvem da China:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
