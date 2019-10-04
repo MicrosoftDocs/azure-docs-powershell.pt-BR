@@ -1,10 +1,18 @@
 ---
-ms.openlocfilehash: 96e6d7bc0cc29adc1c0e49ba344d27349454c214
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+title: Notas sobre a versão do Azure PowerShell
+description: Saiba mais sobre todas as atualizações mais recentes dos módulos do Azure PowerShell.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.devlang: powershell
+ms.topic: conceptual
+ms.date: 09/25/2019
+ms.openlocfilehash: b879d970d3237098e481dba0419ee65efa8d51cd
+ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226432"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71319323"
 ---
 ## <a name="270---september-2019"></a>2.7.0 – Setembro de 2019
 #### <a name="azapimanagement"></a>Az.ApiManagement
