@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 04c520a3171d0b06ceaaa96f1c77bda6b03952ae
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365722"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035822"
 ---
 # <a name="breaking-changes-for-az-100"></a>Alterações da falha para Az 1.0.0
 
@@ -227,7 +227,7 @@ Esta seção fornece detalhes sobre alterações específicas da falha para cmdl
 - O tipo de propriedade `InstanceView` do objeto `PSVirtualMachineScaleSetVM` foi alterado de `VirtualMachineInstanceView` para `VirtualMachineScaleSetVMInstanceView`
 - As propriedades `AutoOSUpgradePolicy` e `AutomaticOSUpgrade` foram removidas da propriedade `UpgradePolicy`
 - O tipo de propriedade `Sku` do objeto `PSSnapshotUpdate` foi alterado de `DiskSku` para `SnapshotSku`
-- `VmScaleSetVMParameterSet` foi removido do cmdlet `Add-AzVMDataDisk`, você não pode mais adicionar um disco de dados individualmente em uma VM ScaleSet.
+- `VmScaleSetVMParameterSet` foi removido do cmdlet `Add-AzVMDataDisk`. Não é mais possível adicionar um disco de dados individualmente em uma VM ScaleSet.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (anteriormente AzureRM.DataFactories e AzureRM.DataFactoryV2)
 
@@ -272,7 +272,7 @@ Esta seção fornece detalhes sobre alterações específicas da falha para cmdl
 
   Deve ser alterado para
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (anteriormente AzureRM.Insights)
@@ -292,7 +292,7 @@ Esta seção fornece detalhes sobre alterações específicas da falha para cmdl
 - Removido o parâmetro preterido `ResourceId` do cmdlet `Get-AzServiceEndpointPolicyDefinition`
 - Removida a propriedade preterida `EnableVmProtection` do objeto `PSVirtualNetwork`
 - Removido o cmdlet preteridos `Set-AzVirtualNetworkGatewayVpnClientConfig`
-  
+
 Os scripts não devem mais tomar decisões de processamento com base nos valores desses campos.
 
 ### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a>Az.OperationalInsights (anteriormente AzureRM.OperationalInsights)
