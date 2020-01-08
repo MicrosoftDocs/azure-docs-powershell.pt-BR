@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.openlocfilehash: a4911e72f687c07b31805c07fd23263a6b7f33b4
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863227"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75718790"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Instalação do módulo de Gerenciamento de Serviços do Azure PowerShell
 
@@ -74,7 +74,7 @@ Módulos do Azure PowerShell são atualizados com frequência. Se você perceber
 
 Para obter exemplos de scripts que podem ajudar você a automatizar algumas tarefas comuns no Azure, consulte o [Centro de Script do Windows Azure](http://www.windowsazure.com/documentation/scripts/).
 
-Para obter informações gerais sobre como instalar, aprender, usar e personalizar o Windows PowerShell, consulte [Criar scripts com o Windows PowerShell](http://go.microsoft.com/fwlink/p/?linkid=320210).
+Para obter informações gerais sobre como instalar, aprender, usar e personalizar o Windows PowerShell, consulte [Criar scripts com o Windows PowerShell](https://go.microsoft.com/fwlink/p/?linkid=320210).
 
 ### <a name="how-to-get-powershellget"></a>Como obter o PowerShellGet
 
@@ -82,7 +82,7 @@ Para obter informações gerais sobre como instalar, aprender, usar e personaliz
 |---|---|
 |Tenho o Windows 10 ou o Windows Server 2016|Compilado no Windows Management Framework (WMF) 5.0 incluído no SO|
 |Desejo fazer uma atualização para o PowerShell 5|[Instalar a versão mais recente do WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
-|Estou executando uma versão do Windows com o PowerShell 3 ou 4|[Obter os módulos PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
+|Estou executando uma versão do Windows com o PowerShell 3 ou 4|[Obter os módulos PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
 

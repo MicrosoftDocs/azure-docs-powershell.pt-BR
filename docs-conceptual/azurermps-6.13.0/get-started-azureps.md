@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: a6256bf17d9f94cf362138275c577e74a1210e99
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 61d6d19336dd0e1885570c3a4e8874a849317fa3
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534945"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75722417"
 ---
 # <a name="get-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -374,5 +374,5 @@ Para saber mais sobre como usar o Azure PowerShell, confira nossos scripts mais 
 * [Criar entidades de serviço no Azure usando o Azure PowerShell](create-azure-service-principal-azureps.md)
 * Leia as notas de versão sobre como migrar a partir de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Obtenha ajuda da comunidade:
-  * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Fórum do Azure no MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)

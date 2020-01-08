@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: a4c8792f2ff27e1b6d3cee97144c26455356b7fd
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370390"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720439"
 ---
 # <a name="get-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -97,5 +97,5 @@ Também há guias de início rápido do Azure PowerShell para outros serviços p
 * [Gerenciar as assinaturas do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
 * [Criar entidades de serviço com o Azure PowerShell](create-azure-service-principal-azureps.md)
 * Obtenha ajuda da comunidade:
-  * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Stack Overflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Fórum do Azure no MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stack Overflow](https://go.microsoft.com/fwlink/?LinkId=320213)

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 77a66b3d218bbbfb230ed993b2a34eb3e845b1f1
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 564a3e70e3f6d1803cdff9976bace119f6e20f48
+ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534892"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75720388"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "65534892"
 
 O Azure PowerShell foi projetado para gerenciar e administrar os recursos do Azure da linha de comando e para a compilação de scripts de automação que funcionam no Azure Resource Manager. Você pode usá-lo em seu navegador com o [Azure Cloud Shell](/azure/cloud-shell/overview), ou você pode instalá-lo em seu computador local e usá-lo em qualquer sessão do PowerShell. Este artigo ajuda você a começar a usá-lo, além de ensinar os conceitos básicos por trás dele.
 
-## <a name="connect"></a>Connect
+## <a name="connect"></a>Conectar
 
 A maneira mais simples de começar é [iniciar o Cloud Shell](/azure/cloud-shell/quickstart).
 
@@ -369,5 +369,5 @@ Para saber mais sobre como usar o Azure PowerShell, confira nossos scripts mais 
 * [Criar entidades de serviço no Azure usando o Azure PowerShell](create-azure-service-principal-azureps.md)
 * Leia as Notas de versão sobre como migrar a partir de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Obtenha ajuda da comunidade:
-  * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
-  * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
+  * [Fórum do Azure no MSDN](https://go.microsoft.com/fwlink/p/?LinkId=320212)
+  * [Stackoverflow](https://go.microsoft.com/fwlink/?LinkId=320213)
