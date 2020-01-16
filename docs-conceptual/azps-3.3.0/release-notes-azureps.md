@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718977"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831637"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 
@@ -31,19 +31,19 @@ ms.locfileid: "75718977"
 
 #### <a name="azdataboxedge"></a>Az.DataBoxEdge
 * Cmdlet adicionado 'Get-AzDataBoxEdgeStorageContainer'
-  - Obter o Contêiner de Armazenamento do Edge
+  - Obter o Contêiner de armazenamento do Edge
 * Cmdlet adicionado 'New-AzDataBoxEdgeStorageContainer'
-  - Criar novo Contêiner de Armazenamento do Edge
+  - Criar Contêiner de armazenamento do Edge
 * Cmdlet adicionado 'Remove-AzDataBoxEdgeStorageContainer'
-  - Remover o Contêiner de Armazenamento do Edge
+  - Remover o Contêiner de armazenamento do Edge
 * Cmdlet adicionado 'Invoke-AzDataBoxEdgeStorageContainer'
-  - Invocar ação para atualizar dados no Contêiner de Armazenamento do Edge
+  - Invocar ação para atualizar dados no Contêiner de armazenamento do Edge
 * Cmdlet adicionado 'Get-AzDataBoxEdgeStorageAccount'
-  - Obter a Conta de Armazenamento do Edge
+  - Obter a Conta de armazenamento do Edge
 * Cmdlet adicionado 'New-AzDataBoxEdgeStorageAccount'
-  - Criar nova Conta de Armazenamento do Edge
+  - Criar uma Conta de armazenamento do Edge
 * Cmdlet adicionado 'Remove-AzDataBoxEdgeStorageAccount'
-  - Remover a Conta de Armazenamento do Edge
+  - Remover a Conta de armazenamento do Edge
 * Invocar o cmdlet 'Invoke-AzDataBoxEdgeShare'
   - Invocar ação para atualizar dados no compartilhamento
 * Cmdlet adicionado 'Set-AzDataBoxEdgeStorageAccountCredential'
@@ -74,7 +74,7 @@ ms.locfileid: "75718977"
   - Update-AzMlOpClusterSystemService
 
 #### <a name="aznetwork"></a>Az.Network
-* Atualizar a dependência de Microsoft.Azure.Management.Sql de 1.36-preview para 1.37-preview
+* Atualizar a dependência do Microsoft.Azure.Management.Sql de 1.36-preview para 1.37-preview
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
 * O Azure Site Recovery altera o suporte para VMs de disco gerenciado criptografadas em repouso com chaves gerenciadas pelo cliente do Azure para o provedor do Azure.
