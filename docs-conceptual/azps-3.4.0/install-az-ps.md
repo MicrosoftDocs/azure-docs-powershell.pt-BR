@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 88861b63846db04e901d2a216657307c456c48fe
-ms.sourcegitcommit: 9181f20c2c5eaa271150de9e25b9cb30ba5e6cb0
+ms.openlocfilehash: 66d755384e532d434811f3e6122dcba97d5c48b5
+ms.sourcegitcommit: 0654679cd4141add6d12c02fb8c689efcbad428d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002921"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77154751"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar módulo do Azure PowerShell
 
@@ -119,7 +119,7 @@ Será necessário repetir essas etapas para cada sessão nova do PowerShell que 
 
 ## <a name="update-the-azure-powershell-module"></a>Atualizar o módulo do Azure PowerShell
 
-Caso tenha usado o Install-Module originalmente, deverá usar [Update-Module](/powershell/module/powershellget/update-module) para obter a versão mais recente. Caso tenha usado originalmente o pacote MSI, deverá baixar e instalar o novo MSI para atualizar. Caso tenha problemas com a atualização usando o pacote do PowershellGet, será necessário __reinstalar__, em vez de apenas __atualizar__. Isso é feito da mesma forma que a instalação, mas talvez você precise adicionar o argumento `-Force`:
+Caso tenha usado o Install-Module originalmente, deverá usar [Update-Module](/powershell/module/powershellget/update-module) para obter a versão mais recente. Caso tenha usado originalmente o pacote MSI, você deverá baixar e instalar o novo MSI para atualizar. Caso tenha problemas com a atualização usando o pacote do PowershellGet, será necessário __reinstalar__, em vez de apenas __atualizar__. Isso é feito da mesma forma que a instalação, mas talvez você precise adicionar o argumento `-Force`:
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force
