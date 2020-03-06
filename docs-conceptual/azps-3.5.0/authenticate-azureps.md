@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 614cce77deb4390ea158a48ae2d48b7b983224f2
-ms.sourcegitcommit: a321ef9d134c684fa24ababcbd898f86b00d9364
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77477430"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78264376"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -75,7 +75,7 @@ A autenticação baseada em certificado exige que o Azure PowerShell possa recup
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID da entidade de serviço como o valor do parâmetro `-ApplicationId`.
+Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID do aplicativo da entidade de serviço como o valor do parâmetro `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
