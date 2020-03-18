@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
 ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402775"
+ms.locfileid: "79402741"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -70,11 +70,12 @@ Verifique se que você está usando boas práticas de armazenamento de senha ao 
 ### <a name="certificate-based-authentication"></a>Autenticação baseada em certificado
 
 A autenticação baseada em certificado exige que o Azure PowerShell possa recuperar informações de um repositório de certificados local com base em uma impressão digital do certificado.
+
 ```azurepowershell-interactive
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID da entidade de serviço como o valor do parâmetro `-ApplicationId`.
+Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID do aplicativo da entidade de serviço como o valor do parâmetro `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -110,7 +111,11 @@ $store.Close()
 
 As identidades gerenciadas são um recurso do Azure Active Directory. Elas são entidades de serviço atribuídas aos recursos executados no Azure. Você pode usar uma entidade de serviço de identidade gerenciada para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. As identidades gerenciadas só estão disponíveis nos recursos executados em uma nuvem do Azure.
 
-Para saber mais sobre as identidades gerenciadas dos recursos do Azure, confira [Como usar identidades gerenciadas dos recursos do Azure em uma VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Esse comando se conecta usando a identidade gerenciada do ambiente de host. Por exemplo, se executado em uma VirtualMachine com uma Identidade de Serviço Gerenciada atribuída, isso permitirá que o código entre usando essa identidade atribuída.
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity 
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Entrar com um locatário diferente do padrão ou como um Provedor de Soluções na Nuvem (CSP)
 
