@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: 0e8dd4f766307d9ab2e27e2cf8bec6bbd34f5e51
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791420"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
@@ -154,7 +154,7 @@ Para limpar contextos e credenciais do Azure:
 
   Se remover o contexto ativo, você será desconectado do Azure e precisará autenticar-se novamente com `Connect-AzAccount`.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 * [Executar cmdlets do Azure PowerShell nos Trabalhos do PowerShell](using-psjobs.md)
 * [Terminologia do Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology)

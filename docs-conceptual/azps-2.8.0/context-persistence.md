@@ -8,15 +8,15 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791460"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
 
-O Azure PowerShell usa _objetos de contexto do Azure PowerShell_ (contextos do Azure) para armazenar as informações de assinatura e autenticação. Se você tiver mais de uma assinatura, os contextos do Azure permitirão que você selecione a assinatura na qual executar os cmdlets do Azure PowerShell. Os contextos do Azure também são usados para armazenar informações de conexão em várias sessões do PowerShell e executar tarefas em segundo plano.
+O Azure PowerShell usa _objetos de contexto do Azure PowerShell_ (contextos do Azure) para armazenar as informações de assinatura e autenticação. Se tiver mais de uma assinatura, os contextos do Azure permitirão que você selecione a assinatura na qual executar os cmdlets do Azure PowerShell. Os contextos do Azure também são usados para armazenar informações de conexão em várias sessões do PowerShell e executar tarefas em segundo plano.
 
 Este artigo aborda o gerenciamento de contextos do Azure, não o gerenciamento de assinaturas ou contas. Se você estiver procurando gerenciar usuários, assinaturas, locatários ou outras informações de conta, confira a documentação do [Azure Active Directory](/azure/active-directory). Para saber mais sobre como usar contextos para executar tarefas em segundo plano ou em paralelo, confira [Usar cmdlets do Azure PowerShell em trabalhos do PowerShell](using-psjobs.md) depois de se familiarizar com os contextos do Azure.
 
@@ -154,7 +154,7 @@ Para limpar contextos e credenciais do Azure:
 
   Se remover o contexto ativo, você será desconectado do Azure e precisará autenticar-se novamente com `Connect-AzAccount`.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 * [Executar cmdlets do Azure PowerShell nos Trabalhos do PowerShell](using-psjobs.md)
 * [Terminologia do Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology)
