@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "79402775"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
@@ -40,7 +40,7 @@ Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Pa
 > A autorização da credencial de nome de usuário/senha foi removida no Azure PowerShell devido a alterações nas implementações de autorização do Active Directory e questões de segurança.
 > Caso você use autorização de credenciais para fins de automação, em vez disso, [crie uma entidade de serviço](create-azure-service-principal-azureps.md).
 
-## <a name="sign-in-with-a-service-principal-a-namesp-signin"></a>Entrar com uma entidade de serviço <a name="sp-signin"/>
+## <a name="sign-in-with-a-service-principal"></a>Entrar com uma entidade de serviço <a name="sp-signin"/>
 
 Entidades de serviço são contas do Azure não interativas. Como outras contas de usuário, as suas permissões são gerenciadas com o Azure Active Directory. Ao conceder a uma entidade de serviço somente as permissões necessárias, você manterá os scripts de automação protegidos.
 
