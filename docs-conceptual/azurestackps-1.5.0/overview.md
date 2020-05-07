@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153016"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053351"
 ---
 # <a name="azure-stack-module-150"></a>Módulo do Azure Stack 1.5.0
 
 ## <a name="requirements"></a>Requisitos:
 A versão mínima do Azure Stack com suporte é 1808.
 
-Observação: Se você estiver usando uma versão anterior, instale a versão 1.4.0
+Nota: se você estiver usando uma versão anterior, instale a versão 1.4.0
 
 ## <a name="known-issues"></a>Problemas conhecidos:
 
@@ -115,7 +115,7 @@ Versão prévia do módulo administrador do Armazenamento do Azure Stack.  Nessa
 - Restaurar as contas de armazenamento excluídas
 - Migrar os contêineres de um compartilhamento para outro
 - Exibir informações sobre os componentes de armazenamento individuais
-- Exibir informações de uso e desempenho
+- Exibirem informações de uso e desempenho
 
 ### <a name="subscription-admin"></a>Administrador de assinatura
 Versão prévia do módulo administrador de Assinatura do Azure Stack.  Esse módulo fornece funcionalidade para os administradores:
@@ -123,7 +123,7 @@ Versão prévia do módulo administrador de Assinatura do Azure Stack.  Esse mó
 - Exibirem informações de uso e desempenho
 - Gerenciar o RBAC
 
-### <a name="subscription"></a>Assinatura
+### <a name="subscription"></a>Subscription
 Versão prévia do módulo de Assinatura do Azure Stack.  Esse módulo fornece funcionalidade para os Usuários:
 - Criar, Excluir e Atualizar Assinaturas
 

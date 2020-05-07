@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.openlocfilehash: 8a9a399f72ed9e3e9a3cbc09c8a4abaa91339c24
-ms.sourcegitcommit: f0f09eee03ef9dd7fe07432252a3dc8ca93e3a7b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "71319303"
 ---
 ## <a name="180---april-2019"></a>1.8.0 – abril de 2019
@@ -42,7 +42,7 @@ ms.locfileid: "71319303"
 * Corrigir a documentação para caracteres curinga
 
 #### <a name="azdatafactory"></a>Az.DataFactory
-* Adicionar SsisProperties se NodeCount não for nulo para o tempo de execução de integração gerenciado.
+* Adicionar SsisProperties se NodeCount não for nulo para o runtime de integração gerenciado.
 
 #### <a name="azdatalakestore"></a>Az.DataLakeStore
 * Cmdlets atualizados com substantivos plurais no singular e nomes no plural preteridos.
@@ -858,4 +858,4 @@ Adicionado suporte para a configuração de RewriteRuleSets no Gateway de Aplica
 * Novos cmdlets New-AzWebAppContainerPSSession e Enter-WebAppContainerPSSession: iniciam a sessão remota do PowerShell em um aplicativo contêiner do Windows
 
 ## <a name="020---september-2018"></a>0.2.0 - Setembro de 2018
- Versão Inicial
+ Versão inicial

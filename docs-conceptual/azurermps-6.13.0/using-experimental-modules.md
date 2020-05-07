@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534361"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usar módulos experimentais do Azure PowerShell
@@ -69,9 +69,9 @@ As principais melhorias são consideradas de "bom senso" e pouca experimentaçã
 
 - Menor nomes - isso inclui os nomes dos cmdlets (por exemplo, `New-AzureRmVM` => `New-AzVm`) e os nomes dos parâmetros (por exemplo, `-ResourceGroupName` => `-Rg`). Use aliases para ter compatibilidade com os cmdlets "antigos". Forneça conjuntos de parâmetros _compatíveis com as versões anteriores_.
 
-- Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo:
+- Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo: 
   - Grupo de recursos
-  - Local padrão
+  - Location
   - Recursos dependentes
 
 ### <a name="experimental-improvements"></a>Melhorias experimentais

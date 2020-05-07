@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
 ms.openlocfilehash: b260abb91de26dadac31340f17f97ff378813fac
-ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "67863215"
 ---
 # <a name="overview-of-azure-powershell"></a>Visão geral do Azure PowerShell
@@ -37,7 +37,7 @@ Se você não estiver familiarizado com o PowerShell, uma introdução ao PowerS
 * [Instalando o PowerShell](/powershell/scripting/installing-windows-powershell)
 * [Scripting with PowerShell](/powershell/scripting/scripting-with-windows-powershell) (Script com o PowerShell)
 
-Você também pode assistir a esse vídeo: [Conceitos básicos do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Você também pode assistir a este vídeo: [Noções básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="other-azure-powershell-modules"></a>Outros módulos do Azure PowerShell
 
