@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
-ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65854158"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Manter credenciais do usuário entre as sessões do PowerShell
@@ -81,7 +81,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 O exemplo anterior adiciona um novo contexto com 'Assinatura Contoso 1' como destino usando suas credenciais atuais. O novo contexto é denominado 'Contoso1'. Se você não fornecer um nome para o contexto, será usado um nome padrão usando a ID da conta e a ID da assinatura.
 
-Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo:
+Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo: 
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -89,7 +89,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Este exemplo renomeia o contexto com o nome automático `[user1@contoso.org; 123456-7890-1234-564321]` por um nome simples nome 'Contoso2'. Os cmdlets que gerenciam contextos também usam o preenchimento de guia e isso permite escolher rapidamente o contexto.
 
-E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo:
+E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo: 
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
@@ -129,20 +129,20 @@ Quando definido como “true”, o contexto é salvo automaticamente. Se definid
 
 Novos cmdlets para gerenciar contextos
 
-- [Enable-AzureRmContextAutosave][enable] - Permite salvar o contexto entre sessões do Powershell.
+- [Enable-AzureRmContextAutosave][enable]: permite salvar o contexto entre sessões do PowerShell.
   Qualquer alteração feita afetará o contexto global.
-- [Disable-AzureRmContextAutosave][disable] - Desativa o salvamento automático do contexto. É necessário entrar novamente em cada nova sessão do PowerShell.
-- [Select-AzureRmContext][select] - Seleciona um contexto como o padrão. Todos os cmdlets usam as credenciais neste contexto para autenticação.
-- [Disconnect-AzureRmAccount][remove-cred] - Remove todas as credenciais e contextos associados a uma conta.
-- [Remove-AzureRmContext][remove-context] - Remove um contexto nomeado.
-- [Rename-AzureRmContext][rename] - Renomeia um contexto existente.
+- [Disable-AzureRmContextAutosave][disable]: desliga o salvamento automático do contexto. É necessário entrar novamente em cada nova sessão do PowerShell.
+- [Select-AzureRmContext][select]: seleciona um contexto como padrão. Todos os cmdlets usam as credenciais neste contexto para autenticação.
+- [Disconnect-AzureRmAccount][remove-cred]: remove todas as credenciais e todos os contextos associados a uma conta.
+- [Remove-AzureRmContext][remove-context]: remove um contexto nomeado.
+- [Rename-AzureRmContext][rename]: renomeia um contexto existente.
 
 Alterações em cmdlets de perfil existentes
 
-- [Add-AzureRmAccount][login] - Permite o escopo da conexão para o processo ou o usuário atual.
+- [Add-AzureRmAccount][login]: permite definir o escopo da entrada para o processo ou para o usuário atual.
   Permite nomear o contexto padrão após a autenticação.
-- [Import-AzureRmContext][import] - Permite o escopo da conexão para o processo ou o usuário atual.
-- [Set-AzureRmContext][set-context] - Permite a seleção de contextos nomeados existentes e alterações no escopo do processo ou do usuário atual.
+- [Import-AzureRmContext][import]: permite a definição do escopo da entrada para o processo ou para o usuário atual.
+- [Set-AzureRmContext][set-context]: permite a seleção de contextos nomeados existentes e as alterações de escopo no processo ou no usuário atual.
 
 <!-- Hyperlinks -->
 [enable]: /powershell/module/azurerm.profile/Enable-AzureRmContextAutosave

@@ -4,16 +4,16 @@ description: Como instalar o Azure PowerShell com o PowerShellGet
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: af088f428ce383faa7df6be2cc7d48350893be5b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740245"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587951"
 ---
 # <a name="install-azure-powershell"></a>Instalar o Azure PowerShell
 
-Este artigo explica como instalar os módulos do Azure PowerShell usando o PowerShellGet. Essas instruções funcionam nas plataformas Windows, macOS e Linux.
+Este artigo explica como instalar os módulos do Azure PowerShell usando o [PowerShellGet](/powershell/scripting/gallery/installing-psget). Essas instruções funcionam nas plataformas Windows, macOS e Linux.
 
 O Azure PowerShell também está disponível no Azure [Cloud Shell](/azure/cloud-shell/overview) e agora é pré-instalado em [imagens do Docker](azureps-in-docker.md).
 
@@ -31,7 +31,7 @@ Para usar o Azure PowerShell no PowerShell 5.1 no Windows:
 
 1. Atualize para o [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) se necessário. Se você estiver usando o Windows 10, você já tem o PowerShell 5.1 instalado.
 2. Instale o [.NET Framework 4.7.2 ou posterior](/dotnet/framework/install).
-3. Verifique se tem a versão mais recente do PowerShellGet. Execute `Update-Module PowerShellGet -Force`.
+3. Verifique se tem a versão mais recente do PowerShellGet. Execute `Install-Module -Name PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Instalar módulo do Azure PowerShell
 
