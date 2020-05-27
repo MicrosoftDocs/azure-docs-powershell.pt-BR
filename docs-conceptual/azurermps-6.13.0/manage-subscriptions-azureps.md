@@ -1,18 +1,15 @@
 ---
 title: Gerenciar assinaturas do Azure com o Azure PowerShell
 description: Gerenciar assinaturas do Azure com o Azure PowerShell
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 8c2b6fd641e1ea96490db0f2f2ffcc6243740abb
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9721baff069d2255481a3c993e82db49ba36d9ac
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534963"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387897"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerenciar várias assinaturas do Azure
 

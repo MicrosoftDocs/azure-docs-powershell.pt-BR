@@ -1,18 +1,15 @@
 ---
 title: Instalar o Azure PowerShell com o PowerShellGet
 description: Como instalar o Azure PowerShell com o PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 1ed7c9055b471ddc266ede7a8e2ca6359c01f8c3
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72814376"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387047"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar módulo do Azure PowerShell
 
@@ -80,7 +77,7 @@ Em alguns ambientes, não é possível se conectar à Galeria do PowerShell. Nes
   Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
   ```
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Estes são alguns problemas comuns observados durante a instalação do módulo do Azure PowerShell. Caso você tenha um problema que não foi listado aqui, [registre um problema no GitHub](https://github.com/azure/azure-powershell/issues).
 

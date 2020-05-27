@@ -1,18 +1,15 @@
 ---
 title: Todas as alterações do AzureRM para o Azure PowerShell Az 1.0.0
 description: Este guia de migração contém uma lista de alterações significativas criadas para o Azure PowerShell na versão de lançamento 1 do Az.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035822"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387013"
 ---
 # <a name="breaking-changes-for-az-100"></a>Alterações da falha para Az 1.0.0
 
@@ -55,7 +52,7 @@ Esta seção fornece detalhes sobre as alterações gerais da falha que fazem pa
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Alterações de prefixo de substantivo do cmdlet
 
-No módulo AzureRM, os cmdlets usavam `AzureRM` ou `Azure` como prefixo de substantivo.  O Az simplifica e normaliza os nomes dos cmdlets, de modo que todos os cmdlets usem 'Az' como seu prefixo de substantivo do cmdlet. Por exemplo: 
+No módulo AzureRM, os cmdlets usavam `AzureRM` ou `Azure` como prefixo de substantivo.  O Az simplifica e normaliza os nomes dos cmdlets, de modo que todos os cmdlets usem 'Az' como seu prefixo de substantivo do cmdlet. Por exemplo:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -122,7 +119,7 @@ As alterações nos nomes dos módulos significam que qualquer script que usa `#
 
 #### <a name="migrating-requires-and-import-module-statements"></a>Como migrar as instruções #Requires e Import-Module
 
-Os scripts que usam `#Requires` ou `Import-Module` para declarar uma dependência de módulos AzureRM precisam ser atualizados para usar os novos nomes de módulos. Por exemplo: 
+Os scripts que usam `#Requires` ou `Import-Module` para declarar uma dependência de módulos AzureRM precisam ser atualizados para usar os novos nomes de módulos. Por exemplo:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute

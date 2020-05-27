@@ -1,24 +1,21 @@
 ---
 title: Consulta de recursos do Azure e formatação de resultados | Microsoft Docs
 description: Como consultar recursos no Azure e formatar os resultados.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: db161bb0ec1b25b1cb7445724cc5758599dbc674
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 23cc0d13e9ecb17bef04cedc8a0f395a04e89390
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534635"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386435"
 ---
 # <a name="querying-for-azure-resources"></a>Consultar recursos do Azure
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-A consulta no PowerShell pode ser concluída usando cmdlets internos. No PowerShell, os nomes de cmdlet assumem a forma de **_Verbo-Substantivo_** . Os cmdlets que usam o verbo **_Get_** são os cmdlets de consulta. Os substantivos do cmdlet são os tipos de recursos do Azure que são influenciados pelos verbos do cmdlet.
+A consulta no PowerShell pode ser concluída usando cmdlets internos. No PowerShell, os nomes de cmdlet assumem a forma de **_Verbo-Substantivo_**. Os cmdlets que usam o verbo **_Get_** são os cmdlets de consulta. Os substantivos do cmdlet são os tipos de recursos do Azure que são influenciados pelos verbos do cmdlet.
 
 ## <a name="selecting-simple-properties"></a>Seleção de propriedades simples
 

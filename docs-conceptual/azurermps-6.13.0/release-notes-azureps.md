@@ -1,19 +1,16 @@
 ---
 title: Log de Alterações do Azure PowerShell | Microsoft Docs
 description: É um histórico das alterações feitas na versão mais recente do Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534447"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387319"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -168,10 +165,10 @@ ms.locfileid: "65534447"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Adicionar suporte às Regras da Rede Virtual
-    - Get-AzureRmDataLakeStoreVirtualNetworkRule: obtém ou lista regras da rede virtual do Azure Data Lake Store.
-    - Add-AzureRmDataLakeStoreVirtualNetworkRule: adiciona uma regra da rede virtual para a conta do Data Lake Store especificada.
-    - Set-AzureRmDataLakeStoreVirtualNetworkRule: modifica a regra da rede virtual especificada na conta do Data Lake Store especificada.
-    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: exclui uma regra da rede virtual do Azure Data Lake Store.
+    - Get-AzureRmDataLakeStoreVirtualNetworkRule: Obtém ou lista a regra da rede virtual do Azure Data Lake Store.
+    - Add-AzureRmDataLakeStoreVirtualNetworkRule: Adiciona uma regra da rede virtual à conta do Data Lake Store especificada.
+    - Set-AzureRmDataLakeStoreVirtualNetworkRule: Modifica a regra da rede virtual especificada na conta do Data Lake Store especificada.
+    - Remove-AzureRmDataLakeStoreVirtualNetworkRule: Exclui uma regra da rede virtual do Azure Data Lake Store.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Atualize o cmdlet Test-AzureRmNetworkWatcherConnectivity, passe o valor de protocolo para o back-end.
@@ -273,7 +270,7 @@ ms.locfileid: "65534447"
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Nova propriedade HostedWorkloads adicionada para PSNetworkInterface
-* Novos cmdlets adicionados para o recurso: Firewall do Azure via ARM
+* Adicionados novos cmdlets para o recurso: Firewall do Azure por meio do ARM
   - Get-AzureRmFirewall adicionado
   - Set-AzureRmFirewall adicionado
   - New-AzureRmFirewall adicionado
@@ -325,9 +322,9 @@ ms.locfileid: "65534447"
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
 * Adicionando cmdlets para delegação da sub-rede.
-  - New-AzureRmDelegation: cria uma nova delegação que pode ser adicionada a uma sub-rede
-  - Remove-AzureRmDelegation: usa uma sub-rede e remove o nome de delegação fornecido dela
-  - Add-AzureRmDelegation: usa uma sub-rede e adiciona o nome do serviço fornecido como uma delegação para essa sub-rede
+  - New-AzureRmDelegation: Cria uma nova delegação que pode ser adicionada a uma sub-rede
+  - Remove-AzureRmDelegation: Usa uma sub-rede e remove o nome de delegação fornecido dessa sub-rede
+  - Add-AzureRmDelegation: Usa uma sub-rede e adiciona o nome do serviço fornecido como uma delegação a essa sub-rede
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -366,7 +363,7 @@ ms.locfileid: "65534447"
     - Lock-AzureRmStorageContainerImmutabilityPolicy
 
 #### <a name="azurermwebsites"></a>AzureRM.Websites
-* Dois novos cmdlets adicionados: Get-AzureRmDeletedWebApp e Restore-AzureRmDeletedWebApp
+* Adicionados dois novos cmdlets: Get-AzureRmDeletedWebApp e Restore-AzureRmDeletedWebApp
 * O argumento New-AzureRmAppServicePlan-HyperV é adicionado para criar um plano do serviço de aplicativo com o contêiner do Windows
 * New-AzureRmWebApp/New-AzureRmWebAppSlot/ Set-AzureRmWebApp/Set-AzureRmWebAppSlot: Novos parâmetros (–ContainerRegistryUser string -ContainerRegistryPassword secureString -EnableContainerContinuousDeployment) adicionados para criar e gerenciar o aplicativo de contêiner do Windows
 
@@ -778,9 +775,9 @@ ms.locfileid: "65534447"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Habilitar o emparelhamento entre redes virtuais em vários locatários para o Add/Set-AzureRmVirtualNetworkPeering
 * Atualizados os cmdlets abaixo para o Gateway de Aplicativo
-    - New-AzureRmApplicationGateway: Adicionado o sinalizador EnableFIPS e suporte a Zonas
-    - New-AzureRmApplicationGatewaySku: Adicionados novos skus Standard_v2 e WAF_v2
-    - Set-AzureRmApplicationGatewaySku: Adicionados novos skus Standard_v2 e WAF_v2
+    - New-AzureRmApplicationGateway: Adicionados o sinalizador de EnableFIPS e suporte a zonas
+    - New-AzureRmApplicationGatewaySku: Adicionadas novas SKUs Standard_v2 e WAF_v2
+    - Set-AzureRmApplicationGatewaySku: Adicionadas novas SKUs Standard_v2 e WAF_v2
 * Cmdlets de RouteTable regenerados com a versão mais recente do gerador
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -854,7 +851,7 @@ ms.locfileid: "65534447"
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Expor novas Skus para VirtualNetworkGateways com Redundância de Zona
-* Novos comandos adicionados do recurso: APIs de Parceiro do ExpressRoute via ARM
+* Adicionados novos comandos para o recurso: APIs de parceiro do ExpressRoute por meio do ARM
     - Get-AzureRmExpressRouteCrossConnection adicionado
     - Set-AzureRmExpressRouteCrossConnection adicionado
     - Add-AzureRmExpressRouteCrossConnectionPeering adicionado
@@ -1008,7 +1005,7 @@ ms.locfileid: "65534447"
 * Suporte adicionado para instalar os Certificados emitidos pela autoridade de certificação privada como Raiz ou CA
 * Suporte adicionado para aceitar certificados SSL Personalizados via KeyVault e vários nomes de host do proxy
 * Suporte adicionado para a identidade MSI
-* Suporte adicionado para aceitar Políticas via Url OBSERVAÇÃO: os cmdlets a seguir serão preteridos na futura versão
+* Suporte adicionado para aceitar políticas por meio da Observação do Url: Os cmdlets a seguir serão preteridos na versão futura
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

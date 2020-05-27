@@ -1,18 +1,15 @@
 ---
 title: Manter credenciais do usuário entre as sessões do PowerShell
 description: Aprenda a reutilizar as credenciais do Azure e outras informações em várias sessões do PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 946920c22d7f6faeae8d3192e9f37a276a34d11f
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65854158"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83388016"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Manter credenciais do usuário entre as sessões do PowerShell
 
@@ -81,7 +78,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 O exemplo anterior adiciona um novo contexto com 'Assinatura Contoso 1' como destino usando suas credenciais atuais. O novo contexto é denominado 'Contoso1'. Se você não fornecer um nome para o contexto, será usado um nome padrão usando a ID da conta e a ID da assinatura.
 
-Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo: 
+Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -89,7 +86,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Este exemplo renomeia o contexto com o nome automático `[user1@contoso.org; 123456-7890-1234-564321]` por um nome simples nome 'Contoso2'. Os cmdlets que gerenciam contextos também usam o preenchimento de guia e isso permite escolher rapidamente o contexto.
 
-E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo: 
+E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2

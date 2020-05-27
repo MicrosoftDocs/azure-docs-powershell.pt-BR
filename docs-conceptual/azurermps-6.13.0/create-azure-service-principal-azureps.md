@@ -2,18 +2,15 @@
 title: Criar uma entidade de serviço do Azure com o Azure PowerShell
 description: Saiba como criar uma entidade de serviço para seu aplicativo ou serviço com o Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure Active directory, AD, RBAC
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: 38bb4345a9e4d2d9e450e74f99fb2c320c3ca4d8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 285d766c473a4f17aee4cf0fbd306a930064d5f2
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534909"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387965"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar uma entidade de serviço do Azure com o Azure PowerShell
 
@@ -112,7 +109,7 @@ Parabéns! Você pode usar essas credenciais para executar seu aplicativo. Em se
 ## <a name="managing-roles"></a>Gerenciamento de funções
 
 > [!NOTE]
-> O RBAC (Controle de Acesso do Azure Baseado em Função) é um modelo para definir e gerenciar funções para entidades de usuário e de serviço. As funções têm conjuntos de permissões associados a elas, que determinam os recursos que uma entidade pode ler, acessar, gravar ou gerenciar. Para saber mais sobre funções e RBAC, veja [RBAC: funções internas](/azure/active-directory/role-based-access-built-in-roles).
+> O RBAC (Controle de Acesso do Azure Baseado em Função) é um modelo para definir e gerenciar funções para entidades de usuário e de serviço. As funções têm conjuntos de permissões associados a elas, que determinam os recursos que uma entidade pode ler, acessar, gravar ou gerenciar. Para saber mais sobre RBAC e funções, veja [RBAC: funções internas](/azure/active-directory/role-based-access-built-in-roles).
 
 O Azure PowerShell fornece os seguintes cmdlets para gerenciar atribuições de função:
 

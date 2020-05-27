@@ -1,18 +1,15 @@
 ---
 title: Usar as entidades de serviço do Azure com o Azure PowerShell
 description: Saiba como criar e usar entidades de serviço com o Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 4c47d2bac2c63f13ac0ebbccda3e2eed12cd658f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2e4ae053df3e3a22e22ec40206cbce98ab5d6ff8
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72370429"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384939"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar uma entidade de serviço do Azure com o Azure PowerShell
 

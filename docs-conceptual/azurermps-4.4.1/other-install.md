@@ -1,18 +1,15 @@
 ---
 title: Outras maneiras de instalar o Azure PowerShell | Microsoft Docs
 description: Como instalar o Azure PowerShell usando o pacote MSI ou o Web Platform Installer.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: c0ac4f6cfb803519b8dd711d3cca0d4a4f7e6f8b
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 3f8963c98b26f971c1259dc89d5da1f35ce3015a
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722451"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386690"
 ---
 # <a name="other-installation-methods"></a>Outros métodos de instalação
 
@@ -56,7 +53,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado. Por exemplo: 
+Esse erro pode ser corrigido ao reiniciar o computador ou importar o módulo usando o caminho totalmente qualificado. Por exemplo:
 
 ```powershell-interactive
 Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.psd1"

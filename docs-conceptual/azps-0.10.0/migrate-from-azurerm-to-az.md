@@ -1,18 +1,15 @@
 ---
 title: Migrar os scripts do Azure PowerShell do AzureRM para o Az
 description: Saiba mais sobre as etapas e as ferramentas para a migração de scripts do módulo AzureRM para o novo módulo Az.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 02b39653ebb4aa0f74d2340a7be7b35e08d5e44d
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 0b0b951d540ed91e15472853bba46e4f302921bc
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446029"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387642"
 ---
 # <a name="migrate-azure-powershell-from-azurerm-to-az"></a>Migrar o Azure PowerShell do AzureRM para o Az
 

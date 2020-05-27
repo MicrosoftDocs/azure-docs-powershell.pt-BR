@@ -1,18 +1,15 @@
 ---
 title: Alterações interruptivas no Microsoft Azure PowerShell 6.0.0
 description: Este guia de migração contém uma lista de alterações da falha criadas para o Azure PowerShell na versão de lançamento 6.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 1fbd24996da2fbc7d4e95c2a63f828aea6cb3145
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534936"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387200"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações interruptivas no Microsoft Azure PowerShell 6.0.0
 

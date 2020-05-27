@@ -1,18 +1,15 @@
 ---
 title: Alterações interruptivas no Microsoft Azure PowerShell 5.0.0
 description: Este guia de migração contém uma lista de alterações da falha criadas para o Azure PowerShell na versão de lançamento 5.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: f8dc413a91876e53e62d25cc38ac3b3ef6afda8e
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 375aadbf34a452b7fb6d4c1f69a03ec25a3b0e23
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534577"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83385005"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Alterações interruptivas no Microsoft Azure PowerShell 5.0.0
 
