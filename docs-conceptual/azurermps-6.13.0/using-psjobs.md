@@ -1,18 +1,15 @@
 ---
 title: Executar os cmdlets em paralelo usando trabalhos do PowerShell
 description: Como executar os cmdlets em paralelo usando o parâmetro -AsJob.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: beb7f0a89d2e254b348b79daf4f8d3bfdc562de5
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d312812ff3c9e4934ed2bfa7371a9e420668e852
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534200"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83384973"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Executar os cmdlets em paralelo usando trabalhos do PowerShell
 
