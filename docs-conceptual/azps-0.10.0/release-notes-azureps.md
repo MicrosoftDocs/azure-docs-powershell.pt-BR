@@ -4,12 +4,12 @@ description: Saiba mais sobre todas as atualizações mais recentes dos módulos
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446046"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121923"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0–versão prévia – abril de 2020
@@ -29,7 +29,7 @@ ms.locfileid: "81446046"
   - Az.Websites
 * Três novos módulos do PowerShell para az foram introduzidos e funcionam com o Azure Stack Hub, que são Az.Databox, Az.IotHub e Az.EventHub
 * Os comandos permanecem relativamente os mesmos com pequenas alterações, como a alteração do AzureRM para Az
-* O link atualizado para a documentação do PowerShell para o Azure Stack Hub pode ser encontrado [aqui](aka.ms/InstallASHPowerShell)
+* O link atualizado para a documentação do PowerShell para o Azure Stack Hub pode ser encontrado [aqui](https://aka.ms/InstallASHPowerShell)
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Atualização da ADAL para a MSAL
@@ -40,7 +40,7 @@ ms.locfileid: "81446046"
 * Corrigida a geração de NullReferenceException por 'Get-AzTenant'/'Get-AzDefault'/'Set-AzDefault' quando o logon não era realizado [nº 10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* Foram adicionados os seguintes parâmetros ao cmdlet 'New-AzDiskConfig': 
+* Foram adicionados os seguintes parâmetros ao cmdlet 'New-AzDiskConfig':
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Propriedade de criptografia permitida para o parâmetro de destino do cmdlet 'New-AzGalleryImageVersion'.
 * Corrigido o problema de tempDisk para os cmdlets 'Set-AzVmss' -Reimage e 'Invoke-AzVMReimage'. [nº 11354]
