@@ -55,7 +55,7 @@ Esta seção fornece detalhes sobre as alterações gerais da falha que fazem pa
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Alterações de prefixo de substantivo do cmdlet
 
-No módulo AzureRM, os cmdlets usavam `AzureRM` ou `Azure` como prefixo de substantivo.  O Az simplifica e normaliza os nomes dos cmdlets, de modo que todos os cmdlets usem 'Az' como seu prefixo de substantivo do cmdlet. Por exemplo: 
+No módulo AzureRM, os cmdlets usavam `AzureRM` ou `Azure` como prefixo de substantivo.  O Az simplifica e normaliza os nomes dos cmdlets, de modo que todos os cmdlets usem 'Az' como seu prefixo de substantivo do cmdlet. Por exemplo:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -122,7 +122,7 @@ As alterações nos nomes dos módulos significam que qualquer script que usa `#
 
 #### <a name="migrating-requires-and-import-module-statements"></a>Como migrar as instruções #Requires e Import-Module
 
-Os scripts que usam `#Requires` ou `Import-Module` para declarar uma dependência de módulos AzureRM precisam ser atualizados para usar os novos nomes de módulos. Por exemplo: 
+Os scripts que usam `#Requires` ou `Import-Module` para declarar uma dependência de módulos AzureRM precisam ser atualizados para usar os novos nomes de módulos. Por exemplo:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
