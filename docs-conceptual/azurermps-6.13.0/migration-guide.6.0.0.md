@@ -4,12 +4,12 @@ description: Este guia de migração contém uma lista de alterações da falha 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387200"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122247"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações interruptivas no Microsoft Azure PowerShell 6.0.0
 
@@ -20,9 +20,9 @@ Este documento serve como uma notificação de alterações interruptivas e como
 ## <a name="table-of-contents"></a>Sumário
 
 - [Alterações da falha gerais](#general-breaking-changes)
-    - [Versão mínima do PowerShell necessária aumentada para 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Salvamento automático de contexto habilitado por padrão](#context-autosave-enabled-by-default)
-    - [Remoção do alias Marcas](#removal-of-tags-alias)
+  - [Versão mínima do PowerShell necessária aumentada para 5.0](#minimum-powershell-version-required-bumped-to-50)
+  - [Salvamento automático de contexto habilitado por padrão](#context-autosave-enabled-by-default)
+  - [Remoção do alias Marcas](#removal-of-tags-alias)
 - [Alterações de falha nos cmdlets do AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Alterações de falha nos cmdlets do AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)
 - [Alterações de falha nos cmdlets do AzureRM.Dns](#breaking-changes-to-azurermdns-cmdlets)
@@ -33,22 +33,23 @@ Este documento serve como uma notificação de alterações interruptivas e como
 - [Alterações de falha nos cmdlets do AzureRM.Resources](#breaking-changes-to-azurermresources-cmdlets)
 - [Alterações de falha nos cmdlets do AzureRM.Storage](#breaking-changes-to-azurermstorage-cmdlets)
 - [Módulos removidos](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
 ## <a name="general-breaking-changes"></a>Alterações da falha gerais
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Versão mínima do PowerShell necessária aumentada para 5.0
 
-Anteriormente, o Azure PowerShell precisava de _pelo menos_ a versão 3.0 do PowerShell para executar qualquer cmdlet. Mais para frente, este requisito será aumentado para a versão 5.0 do PowerShell. Para informações sobre a atualização para o PowerShell 5.0, consulte [esta tabela](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Anteriormente, o Azure PowerShell precisava de _pelo menos_ a versão 3.0 do PowerShell para executar qualquer cmdlet. Mais para frente, este requisito será aumentado para a versão 5.0 do PowerShell. Para informações sobre a atualização para o PowerShell 5.0, consulte [esta tabela](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Salvamento automático de contexto habilitado por padrão
 
-O salvamento automático do contexto é o armazenamento de informações de conexão do Azure que pode ser usado entre novas e diferentes sessões do PowerShell. Para obter mais informações sobre o salvamento automático de contexto, consulte [este documento](https://docs.microsoft.com/powershell/azure/context-persistence).
+O salvamento automático do contexto é o armazenamento de informações de conexão do Azure que pode ser usado entre novas e diferentes sessões do PowerShell. Para obter mais informações sobre o salvamento automático de contexto, consulte [este documento](/powershell/azure/context-persistence).
 
 Anteriormente, por padrão, o salvamento automático do contexto era desabilitado, significando que as informações de autenticação do Azure do usuário não eram armazenadas entre as sessões até o `Enable-AzureRmContextAutosave` cmdlet ser executado para ativar a persistência do contexto. Mais adiante, o salvamento automático do contexto será habilitado por padrão, significando que os usuários _sem nenhuma configuração de salvamento automático gravada_  terão seu contexto armazenado na próxima vez que entrarem. Os usuários podem recusar essa funcionalidade usando o cmdlet `Disable-AzureRmContextAutosave`.
 
-_Observação_: os usuários que desabilitaram previamente o salvamento automático de contexto ou os usuários com salvamento automático de contexto habilitado e contextos existentes não serão afetados por essa alteração
+> [!NOTE]
+> Os usuários que desabilitaram previamente o salvamento automático de contexto ou os usuários com salvamento automático de contexto habilitado e contextos existentes não serão afetados por essa alteração.
 
 ### <a name="removal-of-tags-alias"></a>Remoção do alias Marcas
 
@@ -96,6 +97,7 @@ O alias `Tags` para o parâmetro `Tag` foi removido de vários cmdlets. Abaixo e
 ## <a name="breaking-changes-to-azurermcompute-cmdlets"></a>Alterações de falha nos cmdlets do AzureRM.Compute
 
 **Diversos**
+
 - A propriedade de nome do sku aninhados em tipos `PSDisk` e `PSSnapshot` alterado de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respectivamente
 
 ```powershell-interactive
@@ -114,12 +116,15 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 ```
 
 **Add-AzureRmImageDataDisk**
+
 - Os valores aceitos para o parâmetro `StorageAccountType` alterado de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respectivamente
 
 **Add-AzureRmVMDataDisk**
+
 - Os valores aceitos para o parâmetro `StorageAccountType` alterado de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respectivamente
 
 **Add-AzureRmVmssDataDisk**
+
 - Os valores aceitos para o parâmetro `StorageAccountType` alterado de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respectivamente
 
 **New-AzureRmAvailabilitySet**
@@ -254,8 +259,9 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - O cmdlet não aceita parâmetros individuais que compõem o token de acesso. Em vez disso, o cmdlet substitui parâmetros explícitos de token, como `Service` ou `Permissions`, com um parâmetro `TemplateUri` genérico, correspondente a um token de acesso de exemplo definido em outro lugar (supostamente usando cmdlets do PowerShell de armazenamento ou composto manualmente, de acordo com a documentação de armazenamento). O cmdlet retém o parâmetro `ValidityPeriod`.
 
 Para obter mais informações sobre a composição de tokens de acesso compartilhados para o Armazenamento do Azure, consulte as páginas de documentação, respectivamente:
-- [Constructing a Service SAS (Criação de uma SAS de serviço)](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Constructing an Account SAS (Criação de uma SAS de conta)](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+
+- [Constructing a Service SAS (Criação de uma SAS de serviço)](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Constructing an Account SAS (Criação de uma SAS de conta)](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -282,7 +288,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - A permissão `all` foi removida do `PermissionsToKeys`, `PermissionsToSecrets`, e `PermissionsToCertificates`.
 
 **Geral**
-- A propriedade `ValueFromPipelineByPropertyName` foi removida de todos os cmdlets nos quais foram habilitados o direcionamento por `InputObject`.  Os cmdlets afetados são:
+- A propriedade `ValueFromPipelineByPropertyName` foi removida de todos os cmdlets nos quais foram habilitados o direcionamento por `InputObject`. Os cmdlets afetados são:
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`

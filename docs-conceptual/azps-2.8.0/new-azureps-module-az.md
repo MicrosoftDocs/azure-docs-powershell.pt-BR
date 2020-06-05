@@ -4,12 +4,12 @@ description: Apresentação do novo módulo Az do Azure PowerShell, a substitui�
 ms.date: 05/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a74b7fecdb108d45c09edb9939e9a8fa04a15bff
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ff2bae3264a6ddadd1d4464ae7a9fb79218e1d1a
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387693"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121904"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Apresentação do novo módulo Az do Azure PowerShell
 
@@ -23,12 +23,12 @@ O Az é um novo módulo, portanto, a versão foi redefinida para 1.0.0.
 
 Atualizações importantes podem ser inconvenientes. Dessa forma, é importante informá-lo por que a decisão de introduzir um novo conjunto de módulos foi tomada, com novos cmdlets para interagir com o Azure por meio do PowerShell.
 
-A maior e mais importante alteração é que o PowerShell tem sido um produto multiplataforma desde a introdução do [PowerShell Core 6.x](/powershell/scripting/overview), com base na biblioteca .NET Standard.
+A maior e mais importante alteração é que o PowerShell tem sido um produto multiplataforma desde a introdução do [PowerShell](/powershell/scripting/overview), com base na biblioteca .NET Standard.
 Estamos comprometidos em levar o suporte do Azure a todas as plataformas, o que significa que os módulos do Azure PowerShell precisavam ser atualizados para usarem o .NET Standard e serem compatíveis com o PowerShell Core. Em vez de usar o módulo AzureRM existente e introduzir alterações complexas para adicionar esse suporte, o módulo Az foi criado.
 
 A criação de um módulo também deu a nossos engenheiros a oportunidade de tornar consistentes o design e a nomeação de cmdlets e módulos. Todos os módulos agora começam com o prefixo `Az.` e todos os cmdlets usam o formato _Verbo_-`Az`_Substantivo_. Anteriormente, os nomes dos cmdlets não eram só mais longos, mas continham inconsistências.
 
-O número de módulos também foi reduzido: Alguns módulos que funcionavam com os mesmos serviços foram revertidos juntos, e os cmdlets do plano de dados e do plano de gerenciamento agora estão contidos em módulos únicos para seus serviços. Para aqueles que gerenciam dependências e importações manualmente, isso simplifica muito as tarefas.
+O número de módulos também foi reduzido: Alguns módulos que funcionaram com os mesmos serviços foram combinados. Os cmdlets plano de gerenciamento e plano de dados agora estão contidos em módulos únicos para seus serviços. Para aqueles que gerenciam dependências e importações manualmente, isso simplifica muito as tarefas.
 
 Ao fazer essas alterações importantes que precisavam da criação de um módulo do Azure PowerShell, a equipe se comprometeu em tornar o uso do Azure com cmdlets do PowerShell mais fácil do que nunca e em mais plataformas do que o que era possível anteriormente.
 
@@ -36,26 +36,25 @@ Ao fazer essas alterações importantes que precisavam da criação de um módul
 
 Para se manter atualizado com os recursos mais recentes do Azure no PowerShell, você deverá migrar para o módulo Az assim que possível. Caso você não esteja pronto para instalar o módulo Az como uma substituição para o AzureRM, você terá duas opções disponíveis para experimentar o Az:
 
-* Usar um ambiente do `PowerShell` com o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-  O Azure Cloud Shell é um ambiente de shell baseado em navegador que vem com o módulo Az instalado e aliases de compatibilidade com o `Enable-AzureRM` habilitados.
-* Manter o módulo AzureRM instalado com o PowerShell 5.1 para Windows, mas instalar o módulo Az para o PowerShell Core 6.x ou posterior. O PowerShell 5.1 para Windows e o PowerShell Core usam coleções separadas de módulos. Siga as instruções para [instalar o PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows) e, em seguida, [instalar o módulo Az](install-az-ps.md) em um terminal do PowerShell Core.
+- Usar um ambiente do `PowerShell` com o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). O Azure Cloud Shell é um ambiente de shell baseado em navegador que vem com o módulo Az instalado e aliases de compatibilidade com o `Enable-AzureRM` habilitados.
+- Manter o módulo AzureRM instalado com o PowerShell 5.1 para Windows, mas instalar o módulo Az para o PowerShell 6.2.4 ou posterior. O PowerShell 5.1 para Windows e o PowerShell 6.2.4 e posterior usam coleções separadas de módulos. Siga as instruções para instalar a [versão mais recente do PowerShell](/powershell/scripting/install/installing-powershell) e [instale o módulo Az](install-az-ps.md) do PowerShell 6.2.4 ou posterior.
 
 Para atualizar de uma instalação existente do AzureRM:
 
 1. [Desinstalar o módulo AzureRM do Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Instalar o módulo Az do Azure PowerShell](install-az-ps.md)
-3. __OPCIONAL__: Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
+3. **OPCIONAL**: Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Migrar os scripts existentes para o Az
 
 Os novos nomes de cmdlets foram projetados para serem fáceis de aprender. Em vez de usar `AzureRm` ou `Azure` nos nomes de cmdlets, use `Az`. Por exemplo, o comando antigo `New-AzureRMVm` tornou-se `New-AzVm`.
 Apesar disso, a migração é mais do que apenas se familiarizar com os novos nomes de cmdlets: Há módulos e parâmetros renomeados, além de outras alterações importantes.
 
-Para ajudá-lo com o processo de migração do AzureRM para o Az, temos uma série de recursos:
+Temos diversos recursos para ajudar você com o processo de migração do AzureRM para o Az:
 
-* [Introdução à migração do AzureRM para o Az](migrate-from-azurerm-to-az.md)
-* [Lista completa das alterações da falha do AzureRM para o Az 1.0.0](migrate-az-1.0.0.md)
-* O cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias)
+- [Introdução à migração do AzureRM para o Az](migrate-from-azurerm-to-az.md)
+- [Lista completa das alterações da falha do AzureRM para o Az 1.0.0](migrate-az-1.0.0.md)
+- O cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias)
 
 O módulo Az tem um modo de compatibilidade para ajudá-lo a usar os scripts existentes enquanto você atualiza para a nova sintaxe. O cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) habilita um modo de compatibilidade por meio de aliases, para permitir que você use os scripts existentes com modificação mínima enquanto estiver trabalhando para realizar uma migração completa para o Az.
 

@@ -1,18 +1,18 @@
 ---
-title: Log de Alterações do Azure PowerShell | Microsoft Docs
+title: Log de Alterações do Azure PowerShell
 description: É um histórico das alterações feitas na versão mais recente do Azure PowerShell.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 795aa938ec179bb6d845774cf25778bd2b7c1442
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: cf8d1fc76feb07e075339255de63e09f59187dc6
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387744"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122048"
 ---
-# <a name="release-notes"></a>Notas de versão
+# <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
@@ -20,7 +20,7 @@ ms.locfileid: "83387744"
 
 ---
 
-# <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
+## <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
 
 Instalador do Azure PowerShell 5.7.0: [link](https://github.com/Azure/azure-powershell/releases/download/v5.7.0-April2018/azure-powershell.5.7.0.msi)
 
@@ -38,7 +38,7 @@ Para atualizar a partir de uma versão mais antiga do `AzureRM`, execute o segui
 Update-Module -Name AzureRM
 ```
 
-## <a name="changes-since-last-release"></a>Alterações desde a última versão
+### <a name="changes-since-last-release"></a>Alterações desde a última versão
 
 #### <a name="general"></a>Geral
 * Atualização para a versão mais recente do ClientRuntime do Azure
@@ -790,17 +790,17 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
 * DataLakeAnalytics
   * Confira o guia de migração para ver as alterações significativas feitas no DataLakeAnalytics desta versão
   * Um dos dois OutputTypes de Get-AzureRmDataLakeAnalyticsAccount foi alterado
-    - Liste\<DataLakeAnalyticsAccount> para listar\<PSDataLakeAnalyticsAccountBasic>
+    - List\<DataLakeAnalyticsAccount> para List\<PSDataLakeAnalyticsAccountBasic>
     - As propriedades de PSDataLakeAnalyticsAccountBasic são um subconjunto exato das propriedades de DataLakeAnalyticsAccount
     - As propriedades adicionais que estão em DataLakeAnalyticsAccount não são retornadas pelo serviço.  Portanto, essa alteração é para refletir isso com precisão. Essas propriedades adicionais ainda estão em PSDataLakeAnalyticsAccountBasic, mas são marcadas como Obsoleto.
   * Um dos dois OutputTypes de Get-AzureRmDataLakeAnalyticsJob foi alterado
-    - Liste \<JobInformation> para listar \<PSJobInformationBasic>
+    - List\<JobInformation> para List\<PSJobInformationBasic>
     - As propriedades de PSJobInformationBasic são um subconjunto exato das propriedades de JobInformation
     - As propriedades adicionais que estão em JobInformation não são retornadas pelo serviço.  Portanto, essa alteração é para refletir isso com precisão. Essas propriedades adicionais ainda estão em PSJobInformationBasic, mas são marcadas como Obsoleto.
 * DataLakeStore
   * Confira o guia de migração para ver as alterações significativas feitas no DataLakeStore desta versão
   * Um dos dois OutputTypes de Get-AzureRmDataLakeStoreAccount foi alterado
-    - Liste\<PSDataLakeStoreAccount> para listar\<PSDataLakeStoreAccountBasic>
+    - List\<PSDataLakeStoreAccount> para List\<PSDataLakeStoreAccountBasic>
     - As propriedades de PSDataLakeStoreAccountBasic são um subconjunto exato das propriedades de PSDataLakeStoreAccount
     - As propriedades adicionais que estão em PSDataLakeStoreAccount não são retornadas pelo serviço.  Portanto, essa alteração é para refletir isso com precisão. Essas propriedades adicionais ainda estão em PSDataLakeStoreAccountBasic, mas são marcadas como Obsoleto.
 * DNS
