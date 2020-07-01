@@ -86,3 +86,5 @@
       href: migrate-az-2.0.0.md
     - name: Alterações da falha do Az 3.0.0
       href: migrate-az-3.0.0.md
+    - name: Alterações da falha do Az 4.1.0
+      href: migrate-az-4.1.0.md
