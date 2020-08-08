@@ -1,0 +1,9 @@
+- name: Azure Stack PowerShell
+  href: overview.md
+  items:
+    - name: Instalar
+      href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
+    - name: Conectar – Operador de Nuvem
+      href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-configure-admin'
+    - name: Conectar – Usuário
+      href: 'https://docs.microsoft.com/azure/azure-stack/user/azure-stack-powershell-configure-user'
