@@ -56,6 +56,8 @@
       href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
 - name: Conceitos
   items:
+    - name: Gerenciar recursos do Azure com Invoke-AzRestMethod
+      href: manage-azure-resources-invoke-azrestmethod.md
     - name: Trabalhos do PowerShell
       href: using-psjobs.md
       displayName: 'background, task, scripting, automation, context, process'
@@ -88,3 +90,5 @@
       href: migrate-az-3.0.0.md
     - name: Alterações da falha do Az 4.1.0
       href: migrate-az-4.1.0.md
+- name: Perguntas frequentes
+  href: faq.md
