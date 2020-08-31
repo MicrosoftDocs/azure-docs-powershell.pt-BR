@@ -3,13 +3,13 @@ title: Gerenciar recursos do Azure com Invoke-AzRestMethod
 description: Como usar o Azure PowerShell para gerenciar recursos com o cmdlet Invoke-AzRestMethod.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: 380fd818a3af2474ce192c7a1da8a6798795cf21
-ms.sourcegitcommit: bd7edc4d48b6a8a8bec864edc876e16af0a49505
+ms.date: 08/24/2020
+ms.openlocfilehash: 6a267e28ec8e2540ce7d6431ffd9aab0b2090c6a
+ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512948"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821356"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Gerenciar recursos do Azure com Invoke-AzRestMethod
 
@@ -19,8 +19,7 @@ Esse cmdlet é útil quando você deseja gerenciar os serviços do Azure para re
 
 ## <a name="how-to-use-invoke-azrestmethod"></a>Como usar Invoke-AzRestMethod
 
-Por exemplo, você pode permitir o acesso ao ACR (Registro de Contêiner do Azure) somente para redes específicas ou negar o acesso público. Este recurso ainda não está disponível no [módulo Az.ContainerRegistry do PowerShell](/powershell/module/Az.ContainerRegistry/).
-No entanto, ele pode ser gerenciado, enquanto isso, com `Invoke-AzRestMethod`.
+Por exemplo, você pode permitir o acesso ao ACR (Registro de Contêiner do Azure) somente para redes específicas ou negar o acesso público. A partir da versão 4.5.0 do módulo Az PowerShell, esse recurso ainda não está disponível no [módulo Az.ContainerRegistry do PowerShell](/powershell/module/Az.ContainerRegistry/). No entanto, ele pode ser gerenciado, enquanto isso, com `Invoke-AzRestMethod`.
 
 ## <a name="using-invoke-azrestmethod-with-get-operations"></a>Usar Invoke-AzRestMethod com operações GET
 
@@ -51,7 +50,7 @@ Você pode encontrar a definição para a versão 2019-12-01-preview do ACR no s
 
 ## <a name="using-invoke-azrestmethod-with-patch-operations"></a>Usar Invoke-AzRestMethod com operações PATCH
 
-Você pode desabilitar o acesso público ao ACR existente chamado `myacr` no grupo de recursos `myresourcegroup` usando o cmdlet Invoke-AzRestMethod.
+Desabilite o acesso público ao ACR existente chamado `myacr` no grupo de recursos `myresourcegroup` usando o cmdlet `Invoke-AzRestMethod`.
 
 Para desabilitar o acesso à rede pública, você precisa fazer uma chamada **PATCH** à API que altera o valor do parâmetro `publicNetwokAccess`, conforme mostrado no seguinte exemplo:
 
@@ -100,11 +99,11 @@ Invoke-AzRestMethod @specificIpParams
 
 ## <a name="comparison-to-get-azresource-new-azresource-and-remove-azresource"></a>Comparação com Get-AzResource, New-AzResource e Remove-AzResource
 
-Os cmdlets `*-AzResource` permitem que você personalize a chamada à API REST para o Azure especificando o tipo de recurso, a versão da API e as propriedades a serem atualizadas. No entanto, as propriedades precisam ser um `PSObject` que pode facilmente complicar a criação.
+Os cmdlets `*-AzResource` permitem que você personalize a chamada à API REST para o Azure especificando o tipo de recurso, a versão da API e as propriedades a serem atualizadas. No entanto, as propriedades precisam ser criadas primeiro como um `PSObject`. Esse processo adiciona um nível extra de complexidade e pode facilmente se tornar complicado.
 
-`Invoke-AzRestMethod` oferece uma forma mais simples de gerenciar recursos do Azure. No exemplo anterior, você pode ver que o conteúdo é uma cadeia de caracteres JSON. Você não precisa ter dificuldades com a conversão entre JSON e `PSObjects`.
+`Invoke-AzRestMethod` oferece uma forma mais simples de gerenciar os recursos do Azure. Conforme mostrado no exemplo anterior, você pode criar uma cadeia de caracteres JSON e usá-la para personalizar a chamada à API REST sem precisar criar nenhum `PSObjects`.
 
-Se você já conhece os cmdlets `*-AzResource`, pode continuar usando-os. Não temos planos para interromper o suporte a eles. Com `Invoke-AzRestMethod`, adicionamos um novo cmdlet à família.
+Se você já conhece os cmdlets `*-AzResource`, pode continuar usando-os. Não temos planos para interromper o suporte a eles. Com `Invoke-AzRestMethod`, adicionamos um novo cmdlet ao kit de ferramentas.
 
 ## <a name="see-also"></a>Consulte Também
 
