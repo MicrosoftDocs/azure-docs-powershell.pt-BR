@@ -8,12 +8,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 55f19ac5e6767df1312e0b531184e8621b60a011
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 4b72bbd1bda93767251e0ba3d488f798575d9115
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67038186"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244306"
 ---
 # <a name="azurerm-module-250"></a>AzureRM Módulo 2.5.0
 
@@ -119,7 +120,7 @@ Versão prévia do módulo administrador de Assinatura do Azure Stack.  Esse mó
 - Exibirem informações de uso e desempenho
 - Gerenciar o RBAC
 
-### <a name="subscription"></a>Subscription
+### <a name="subscription"></a>Assinatura
 Versão prévia do módulo de Assinatura do Azure Stack.  Esse módulo fornece funcionalidade para os Usuários:
 - Criar, Excluir e Atualizar Assinaturas
 

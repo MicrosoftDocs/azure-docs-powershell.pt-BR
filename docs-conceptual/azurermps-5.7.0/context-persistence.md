@@ -4,16 +4,17 @@ description: Aprenda a reutilizar as credenciais do Azure e outras informações
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 5e16922b4f944a56c5a232f5e04541bc2eeb9aa8
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 73f8401fa3fe405d21b654bf8e7df628af9773e9
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387268"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243847"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Manter credenciais do usuário entre as sessões do PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 O Azure PowerShell oferece um recurso chamado **Salvamento Automático do contexto do Azure**, que oferece os seguintes recursos:
 
@@ -80,7 +81,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 O exemplo anterior adiciona um novo contexto com 'Assinatura Contoso 1' como destino usando suas credenciais atuais. O novo contexto é denominado 'Contoso1'. Se você não fornecer um nome para o contexto, um nome padrão, usando a ID da conta e a ID da assinatura será usado.
 
-Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo: 
+Para renomear um contexto já existente, use o cmdlet `Rename-AzureRmContext`. Por exemplo:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -88,7 +89,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Este exemplo renomeia o contexto com o nome automático `[user1@contoso.org; 123456-7890-1234-564321]` por um nome simples nome 'Contoso2'. Os cmdlets que gerenciam contextos também usam o preenchimento de guia e isso permite escolher rapidamente o contexto.
 
-E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo: 
+E, por último, para remover um contexto, use o cmdlet `Remove-AzureRmContext`.  Por exemplo:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2

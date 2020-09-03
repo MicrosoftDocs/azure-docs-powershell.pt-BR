@@ -4,16 +4,17 @@ description: Gerenciar assinaturas do Azure com o Azure PowerShell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 757d908de765d60428a3df17ba7c827f50360f3b
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e6a327528b0add9b6ca3cb7d35825376ff8c37aa
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387880"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243762"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerenciar várias assinaturas do Azure
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Se você for novo no Azure, provavelmente tem apenas uma única assinatura. Mas se você já usa o Azure por algum tempo, poderá criar várias assinaturas do Azure. Você pode configurar o Azure PowerShell para executar comandos em uma assinatura específica.
 

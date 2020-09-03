@@ -4,16 +4,17 @@ description: Este guia de migração contém uma lista de alterações da falha 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 375aadbf34a452b7fb6d4c1f69a03ec25a3b0e23
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 81f52ee8b84f60d59a7f2d53b6675129ac054fd6
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83385005"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243728"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-500"></a>Alterações interruptivas no Microsoft Azure PowerShell 5.0.0
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Este documento serve como uma notificação de alterações interruptivas e como um guia de migração para consumidores dos cmdlets do Microsoft Azure PowerShell. Cada seção descreve o motivo da alteração significativa e o caminho de migração de menor resistência. Para obter um contexto detalhado, consulte a solicitação de pull associada a cada alteração.
 
@@ -296,106 +297,106 @@ Set-AzureRmVMAccessExtension [other required parameters] -Credential $PSCredenti
 
 ### <a name="new-azurermeventhubnamespaceauthorizationrule"></a>**New-AzureRmEventHubNamespaceAuthorizationRule**
 - O cmdlet 'New-AzureRmEventHubNamespaceAuthorizationRule' foi removido. Use o cmdlet 'New-AzureRmEventHubAuthorizationRule'
-    
+
 ### <a name="get-azurermeventhubnamespaceauthorizationrule"></a>**Get-AzureRmEventHubNamespaceAuthorizationRule**
 - O cmdlet 'Get-AzureRmEventHubNamespaceAuthorizationRule' foi removido. Use o cmdlet 'Get-AzureRmEventHubAuthorizationRule'
-    
+
 ### <a name="set-azurermeventhubnamespaceauthorizationrule"></a>**Set-AzureRmEventHubNamespaceAuthorizationRule**
 - O cmdlet 'Set-AzureRmEventHubNamespaceAuthorizationRule' foi removido. Use o cmdlet 'Set-AzureRmEventHubAuthorizationRule'
-    
+
 ### <a name="remove-azurermeventhubnamespaceauthorizationrule"></a>**Remove-AzureRmEventHubNamespaceAuthorizationRule**
 - O cmdlet 'Remove-AzureRmEventHubNamespaceAuthorizationRule' foi removido. Use o cmdlet 'Remove-AzureRmEventHubAuthorizationRule'
-    
+
 ### <a name="new-azurermeventhubnamespacekey"></a>**New-AzureRmEventHubNamespaceKey**
 - O cmdlet 'New-AzureRmEventHubNamespaceKey' foi removido. Use o cmdlet 'New-AzureRmEventHubKey'
-    
+
 ### <a name="get-azurermeventhubnamespacekey"></a>**Get-AzureRmEventHubNamespaceKey**
 - O cmdlet 'Get-AzureRmEventHubNamespaceKey' foi removido. Use o cmdlet 'Get-AzureRmEventHubKey'
-    
+
 ### <a name="new-azurermeventhubnamespace"></a>**New-AzureRmEventHubNamespace**
-- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas. 
+- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas.
 
 ```powershell-interactive
 # Old
-# The $namespace has Status and Enabled property  
+# The $namespace has Status and Enabled property
 $namespace = New-AzureRmEventHubNamespace <parameters>
 $namespace.Status
 $namespace.Enabled
 
 # New
-# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property    
+# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
-    
+
 ### <a name="get-azurermeventhubnamespace"></a>**Get-AzureRmEventHubNamespace**
-- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas. 
+- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas.
 
 ```powershell-interactive
 # Old
-# The $namespace has Status and Enabled property 
+# The $namespace has Status and Enabled property
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 $namespace.Status
 $namespace.Enabled
 
 # New
-# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property    
+# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property
 $namespace = Get-AzureRmEventHubNamespace <parameters>
 ```
-    
+
 ### <a name="set-azurermeventhubnamespace"></a>**Set-AzureRmEventHubNamespace**
-- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas. 
+- As propriedades 'Status' e 'Enabled' de NamespceAttributes serão removidas.
 
 ```powershell-interactive
 # Old
-# The $namespace has Status and Enabled property 
+# The $namespace has Status and Enabled property
 $namespace = Set-AzureRmEventHubNamespace <parameters>
 $namespace.Status
 $namespace.Enabled
 
 # New
-# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property    
+# The call remains the same, but the returned values NameSpace object will not have the Status and Enabled property
 $namespace = Set-AzureRmEventHubNamespace <parameters>
-``` 
-  
+```
+
 ### <a name="new-azurermeventhubconsumergroup"></a>**New-AzureRmEventHubConsumerGroup**
 - A propriedade 'EventHubPath' de ConsumerGroupAttributes será removida.
 
 ```powershell-interactive
 # Old
-# The $consumergroup has EventHubPath property 
+# The $consumergroup has EventHubPath property
 $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
 $consumergroup.EventHubPath
 
 # New
-# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property    
+# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property
 $consumergroup = New-AzureRmEventHubConsumerGroup <parameters>
 ```
-    
+
 ### <a name="set-azurermeventhubconsumergroup"></a>**Set-AzureRmEventHubConsumerGroup**
 - A propriedade 'EventHubPath' de ConsumerGroupAttributes será removida.
 
 ```powershell-interactive
 # Old
-# The $consumergroup has EventHubPath property 
+# The $consumergroup has EventHubPath property
 $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
 $consumergroup.EventHubPath
 
 # New
-# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property    
+# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property
 $consumergroup = Set-AzureRmEventHubConsumerGroup <parameters>
 ```
-    
+
 ### <a name="get-azurermeventhubconsumergroup"></a>**Get-AzureRmEventHubConsumerGroup**
 - A propriedade 'EventHubPath' de ConsumerGroupAttributes será removida.
 
 ```powershell-interactive
 # Old
-# The $consumergroup has EventHubPath property 
+# The $consumergroup has EventHubPath property
 $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 $consumergroup.EventHubPath
 
 # New
-# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property    
+# The call remains the same, but the returned values ConsumerGroup object will not have the EventHubPath property
 $consumergroup = Get-AzureRmEventHubConsumerGroup <parameters>
 ```
 
@@ -434,7 +435,7 @@ if ($rules -and $rules.count -ge 1)
 
     # Properties will remain for a while
     Write-Host $rules[0].Properties.IsEnabled
-      
+
     # But the properties will be at the top level too. Later Properties will be removed
     Write-Host $rules[0].IsEnabled
     Write-Host $rules[0].Condition
@@ -454,9 +455,9 @@ if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
 
 # New
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
-    
+
 # there won't be a AutoscaleSettingResourceName
-Write-Host $s1.Name    
+Write-Host $s1.Name
 ```
 
 ### <a name="remove-azurermalertrule--remove-azurermlogprofile"></a>**Remove-AzureRmAlertRule** / **Remove-AzureRmLogProfile**
@@ -583,7 +584,7 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 ## <a name="breaking-changes-to-servicebus-cmdlets"></a>Alterações interruptivas em cmdlets do ServiceBus
 
 ### <a name="get-azurermservicebustopicauthorizationrule"></a>**Get-AzureRmServiceBusTopicAuthorizationRule**
-- O cmdlet 'Get-AzureRmServiceBusTopicAuthorizationRule' foi removido. Use o cmdlet 'Get-AzureRmServiceBusAuthorizationRule'.    
+- O cmdlet 'Get-AzureRmServiceBusTopicAuthorizationRule' foi removido. Use o cmdlet 'Get-AzureRmServiceBusAuthorizationRule'.
 
 ### <a name="get-azurermservicebustopickey"></a>**Get-AzureRmServiceBusTopicKey**
 - O cmdlet 'Get-AzureRmServiceBusTopicKey' foi removido. Use o cmdlet 'Get-AzureRmServiceBusKey'.
@@ -640,16 +641,16 @@ Set-AzureRmADUser [other required parameters] -Password $SecureStringVariable
 - As propriedades a seguir foram removidas
     - habilitado
     - Status
-   
+
 ```powershell-interactive
 # Old
-# The $namespace has Status and Enabled property 
+# The $namespace has Status and Enabled property
 $namespace = Get-AzureRmServiceBusNamespace <parameters>
 $namespace.Status
 $namespace.Enabled
 
 # New
-# The call remains the same, but the returned values NameSpace object will not have the Enabled and Status properties    
+# The call remains the same, but the returned values NameSpace object will not have the Enabled and Status properties
 $namespace = Get-AzureRmServiceBusNamespace <parameters>
 ```
 
@@ -667,13 +668,13 @@ $queue = Get-AzureRmServiceBusQueue <parameters>
 $queue.EntityAvailabilityStatus
 $queue.EnableBatchedOperations
 $queue.IsAnonymousAccessible
-$queue.SupportOrdering  
+$queue.SupportOrdering
 
 # New
-# The call remains the same, but the returned values Queue object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties    
+# The call remains the same, but the returned values Queue object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties
 $queue = Get-AzureRmServiceBusQueue <parameters>
 ```
-   
+
 ### <a name="type-topicattribute"></a>**Tipo TopicAttribute**
 - As seguintes propriedades foram marcadas como obsoletas:
     - Location
@@ -695,17 +696,17 @@ $topic.FilteringMessagesBeforePublishing
 $topic.Location
 
 # New
-# The call remains the same, but the returned values Topic object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties    
+# The call remains the same, but the returned values Topic object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties
 $topic = Get-AzureRmServiceBusTopic <parameters>
 ```
-   
+
 ### <a name="type-subscriptionattribute"></a>**Tipo SubscriptionAttribute**
 - As seguintes propriedades foram marcadas como obsoletas
     - DeadLetteringOnFilterEvaluationExceptions
     - EntityAvailabilityStatus
     - IsReadOnly
     - Location
-   
+
 ```powershell-interactive
 # Old
 # The $subscription has EntityAvailabilityStatus, EnableSubscriptionPartitioning, IsAnonymousAccessible, IsExpress, Location and FilteringMessagesBeforePublishing properties
@@ -718,6 +719,6 @@ $subscription.FilteringMessagesBeforePublishing
 $subscription.Location
 
 # New
-# The call remains the same, but the returned values Topic object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties    
+# The call remains the same, but the returned values Topic object will not have the EntityAvailabilityStatus, EnableBatchedOperations, IsAnonymousAccessible and SupportOrdering properties
 $subscription = Get-AzureRmServiceBussubscription <parameters>
 ```

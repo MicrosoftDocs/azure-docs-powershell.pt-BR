@@ -4,12 +4,13 @@ description: Como instalar o Azure PowerShell sem o PowerShellGet usando uma MSI
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 1bae6879dcf3cd56f9a8d6400bcd516e0cbf6a19
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7e36765f34a689640e1ed82f5fa221e71d3e08ec
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121653"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244204"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com a MSI
 

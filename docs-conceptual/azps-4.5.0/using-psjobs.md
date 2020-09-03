@@ -4,12 +4,13 @@ description: Saiba como executar os cmdlets do Azure PowerShell em paralelo ou c
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: 36fcfc42fed91c5a0c8eff200c662e1e31cacfb9
-ms.sourcegitcommit: edfe63c6949cd59127028ac8a13bb4a8827d555c
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 5d9028c0a433149c8f6cc346651bb8bf875bb42a
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87566042"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244561"
 ---
 # <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>Executar cmdlets do Azure PowerShell nos Trabalhos do PowerShell
 

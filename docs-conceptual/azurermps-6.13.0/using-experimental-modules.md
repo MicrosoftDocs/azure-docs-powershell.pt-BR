@@ -4,16 +4,17 @@ description: Entenda a filosofia e o uso dos módulos experimentais do Azure Pow
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2a44d29cb0770bf1517993606358c3669b2ee982
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387285"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244238"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Usar módulos experimentais do Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Com ênfase nas ferramentas do desenvolvedor (especialmente as CLIs) no Azure, a equipe do Azure PowerShell está experimentando várias melhorias na experiência do Azure PowerShell.
 
@@ -66,7 +67,7 @@ As principais melhorias são consideradas de "bom senso" e pouca experimentaçã
 
 - Menor nomes - isso inclui os nomes dos cmdlets (por exemplo, `New-AzureRmVM` => `New-AzVm`) e os nomes dos parâmetros (por exemplo, `-ResourceGroupName` => `-Rg`). Use aliases para ter compatibilidade com os cmdlets "antigos". Forneça conjuntos de parâmetros _compatíveis com as versões anteriores_.
 
-- Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo: 
+- Padrões Inteligente - criam padrões inteligentes preencher as informações "obrigatórias". Por exemplo:
   - Grupo de recursos
   - Location
   - Recursos dependentes
