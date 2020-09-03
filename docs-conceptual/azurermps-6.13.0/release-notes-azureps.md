@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387319"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241348"
 ---
 # <a name="release-notes"></a>Notas de versão
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 É uma lista das alterações feitas nesta versão do Azure PowerShell.
 
@@ -46,7 +47,7 @@ ms.locfileid: "83387319"
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Cmdlets New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError adicionados
 * ICMP adicionado aos Protocolos de Rede do AzureFirewall com suporte
-* Atualizar cmdlet Test-AzureRmNetworkWatcherConnectivity, adicionar validação no id de destino, endereço e porta. 
+* Atualizar cmdlet Test-AzureRmNetworkWatcherConnectivity, adicionar validação no id de destino, endereço e porta.
 * Corrigir problemas com o uso da memória no mapa VirtualNetwork
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ ms.locfileid: "83387319"
 #### <a name="azurermprofile"></a>AzureRM.profile
 * Pequenas alterações no código comum de armazenamento
 * Arquivos de ajuda atualizados para incluir tipos de parâmetro completos.
-* Alterado: ServicePrincipal como não obrigatório no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId 
+* Alterado: ServicePrincipal como não obrigatório no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId
 
 #### <a name="azurestorage"></a>Azure.Storage
-* Suporte à criação do Contexto de Armazenamento com OAuth. 
+* Suporte à criação do Contexto de Armazenamento com OAuth.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* Standard_Microsoft adicionado à SKU de preços da CDN. 
+* Standard_Microsoft adicionado à SKU de preços da CDN.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * Mover dependências em Keyvault e Armazenamento para as dependências em comum
@@ -349,7 +350,7 @@ ms.locfileid: "83387319"
 * Adicionar campo de versão ao objeto PSSignalRResource e a cadeia de conexão ao objeto PSSignalRKeys.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Suporte à Política de Imutabilidade no AzureRm.Storage 
+* Suporte à Política de Imutabilidade no AzureRm.Storage
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ ms.locfileid: "83387319"
 * Atualizar exemplo de New-AzureRmDisk
 * Adicionar exemplo de 'New-AzureRmVM'
 * Atualizar descrição de Set-AzureRmVMOSDisk
-* Atualizar exemplo 1 de Set-AzureRmVMBginfoExtension para corrigir a ortografia e o prefixo. 
+* Atualizar exemplo 1 de Set-AzureRmVMBginfoExtension para corrigir a ortografia e o prefixo.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * Atualizado a versão do SDK do .NET do ADF para 1.1.0.
@@ -897,7 +898,7 @@ ms.locfileid: "83387319"
 * Outras informações adicionadas sobre o parâmetro -Permissions nos arquivos de ajuda.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* “Get-AzureRmVmDiskEncryptionStatus” corrige um problema observado por VMs sem discos de dados 
+* “Get-AzureRmVmDiskEncryptionStatus” corrige um problema observado por VMs sem discos de dados
 * Atualizar versão da Biblioteca do cliente de computação para corrigir os cmdlets a seguir
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ ms.locfileid: "83387319"
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Corrigir exemplo para Export-AzureRmDataLakeStoreChildItemProperties
-* Corrigir exceção do parâmetro nulo para Recurse, caso esteja em Set-AzureRmDataLakeStoreItemAclEntry 
-* Corrigir arquivos de ajuda para Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry 
+* Corrigir exceção do parâmetro nulo para Recurse, caso esteja em Set-AzureRmDataLakeStoreItemAclEntry
+* Corrigir arquivos de ajuda para Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Aumentar a versão do SDK de Rede de 18.0.0-preview para 19.0.0-preview
@@ -1041,7 +1042,7 @@ ms.locfileid: "83387319"
 * Cmdlets de auditoria atualizados para permitir a remoção de AuditActions ou AuditActionGroups
 * Problema corrigido com Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy ao definir uma nova política de retenção flexível onde o comando falharia com “Configurar política de retenção de longo prazo com o cofre de serviços de recuperação do azure e não há mais suporte para a política. Envie a solicitação com a nova política de retenção flexível”.
 * Atualizar todos os cmdlets relacionados ao Banco de Dados Sql do Azure/Criação do ElasticPool/Atualização para usar a nova API do Banco de Dados, que suporta a propriedade Sku para o dimensionamento e as propriedades relacionadas à camada.
-* Os cmdlets atualizados, incluindo: 
+* Os cmdlets atualizados, incluindo:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy

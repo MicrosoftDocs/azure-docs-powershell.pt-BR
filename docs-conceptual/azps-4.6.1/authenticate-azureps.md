@@ -3,23 +3,22 @@ title: Entrar com o Azure PowerShell
 description: Como entrar com o Azure PowerShell como um usuário, entidade de serviço, ou com identidades gerenciadas para recursos do Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 7/7/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8dd0048a40f505522e84e5bd13e2cac6436fbc1f
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241076"
+ms.locfileid: "89242164"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
 O Azure PowerShell dá suporte a vários métodos de autenticação. A maneira mais fácil de começar é com o [Azure Cloud Shell](/azure/cloud-shell/overview) que conecta você automaticamente. Em uma instalação local, você pode entrar interativamente com seu navegador. Ao escrever scripts para automação, a abordagem recomendada é usar uma [entidade de serviço](create-azure-service-principal-azureps.md) com as permissões necessárias. Ao restringir as permissões de logon o máximo possível para seu caso de uso, você ajuda a proteger os recursos do Azure.
 
-Após a conexão, os comandos são executados em sua assinatura padrão. Para mudar sua assinatura ativa para uma sessão, use o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para mudar a assinatura padrão usada ao fazer logon no Azure PowerShell, use [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+Inicialmente, você está conectado à primeira assinatura que o Azure retorna se você tem acesso a mais de uma assinatura. Por padrão, os comandos são executados para essa assinatura. Para mudar sua assinatura ativa para uma sessão, use o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para alterar sua assinatura ativa e fazer com que ela persista entre as sessões no mesmo sistema, use o cmdlet [Select-AzContext](/powershell/module/az.accounts/select-azcontext).
 
 > [!IMPORTANT]
->
 > Suas credenciais são compartilhadas entre várias sessões do PowerShell, desde que você permaneça conectado.
 > Para obter mais informações, consulte o artigo sobre [Credenciais Persistentes](context-persistence.md).
 
@@ -31,12 +30,16 @@ Para entrar no modo interativo, use o cmdlet [Connect-AzAccount](/powershell/mod
 Connect-AzAccount
 ```
 
-Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Para fazer logon, copie essa cadeia de caracteres e cole-a em https://microsoft.com/devicelogin no navegador. Sua sessão do PowerShell será autenticada para conectar o Azure.
+Quando executado do PowerShell versão 6 e superior, esse cmdlet apresenta uma cadeia de caracteres de token. Para entrar, copie essa cadeia de caracteres e cole-a em [microsoft.com/devicelogin](https://microsoft.com/devicelogin) em um navegador da Web. Sua sessão do PowerShell será autenticada para conectar o Azure. Você pode especificar o parâmetro `UseDeviceAuthentication` para receber uma cadeia de caracteres de token no Windows PowerShell.
 
 > [!IMPORTANT]
->
-> A autorização da credencial de nome de usuário/senha foi removida no Azure PowerShell devido a alterações nas implementações de autorização do Active Directory e questões de segurança.
-> Caso você use autorização de credenciais para fins de automação, em vez disso, [crie uma entidade de serviço](create-azure-service-principal-azureps.md).
+> A autorização da credencial de nome de usuário/senha foi removida no Azure PowerShell devido a alterações nas implementações de autorização do Active Directory e questões de segurança. Caso você use autorização de credenciais para fins de automação, em vez disso, [crie uma entidade de serviço](create-azure-service-principal-azureps.md).
+
+Use o cmdlet [Get-AzContext](/powershell/module/az.accounts/get-azcontext) para armazenar a sua ID de locatário em uma variável a ser usada nas próximas duas seções deste artigo.
+
+```azurepowershell-interactive
+$tenantId = (Get-AzContext).Tenant.Id
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Entrar com uma entidade de serviço <a name="sp-signin"/>
 
@@ -44,22 +47,30 @@ Entidades de serviço são contas do Azure não interativas. Como outras contas 
 
 Para saber como criar uma entidade de serviço para usar com o Azure PowerShell, consulte [Criar uma entidade de serviço do Azure com o Azure PowerShell](create-azure-service-principal-azureps.md).
 
-Para entrar com uma entidade de serviço, use o cmdlet `-ServicePrincipal`argumento com o `Connect-AzAccount`. Você também precisará da ID do aplicativo da entidade de serviço, credenciais de entrada e da ID de locatário associada à entidade de serviço. A forma como você entra com uma entidade de serviço dependerá de se ela está configurada para autenticação baseada em certificado ou em senha.
+Para entrar com uma entidade de serviço, use o cmdlet `-ServicePrincipal`argumento com o `Connect-AzAccount`. Você também precisará da ID do aplicativo da entidade de serviço, credenciais de entrada e da ID de locatário associada à entidade de serviço. A forma como você entra com uma entidade de serviço depende de se ela está configurada para autenticação baseada em certificado ou em senha.
 
 ### <a name="password-based-authentication"></a>Autenticação baseada em senha
 
-Para obter as credenciais da entidade de serviço como o objeto apropriado, use o cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Esse cmdlet apresentará um prompt para nome de usuário e senha. Use a ID da entidade de serviço para o nome de usuário.
+Crie uma entidade de serviço a ser usada nos exemplos nesta seção. Para obter mais informações sobre como criar as entidades de serviço, confira [Criar uma entidade de serviço do Azure com o Azure PowerShell](/powershell/azure/create-azure-service-principal-azureps).
 
 ```azurepowershell-interactive
-$pscredential = Get-Credential
+$sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
+```
+
+Para obter as credenciais da entidade de serviço como o objeto apropriado, use o cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential). Esse cmdlet apresenta um prompt para um nome de usuário e uma senha. Use o `applicationID` da entidade de serviço para o nome de usuário e converta o `secret` em texto sem formatação para a senha.
+
+```azurepowershell-interactive
+# Retrieve the plain text password for use with `Get-Credential` in the next command.
+$sp.secret | ConvertFrom-SecureString -AsPlainText
+
+$pscredential = Get-Credential -UserName $sp.ApplicationId
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
-Para cenários de automação, você precisa criar as credenciais usando um nome de usuário e uma cadeia de caracteres segura:
+Para cenários de automação, você precisa criar as credenciais de `applicationId` e `secret` de uma entidade de serviço:
 
 ```azurepowershell-interactive
-$passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
-$pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
+$pscredential = New-Object -TypeName System.Management.Automation.PSCredential($sp.ApplicationId, $sp.Secret)
 Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
@@ -73,7 +84,7 @@ A autenticação baseada em certificado exige que o Azure PowerShell possa recup
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID da entidade de serviço como o valor do parâmetro `-ApplicationId`.
+Ao usar uma entidade de serviço em vez de um aplicativo registrado, adicione o argumento `-ServicePrincipal` e forneça a ID do aplicativo da entidade de serviço como o valor do parâmetro `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -93,15 +104,15 @@ Import-PfxCertificate -FilePath <path to certificate> -Password $credentials.Pas
 
 ```azurepowershell-interactive
 # Import a PFX
-$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My 
-$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser 
-$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation) 
+$storeName = [System.Security.Cryptography.X509Certificates.StoreName]::My
+$storeLocation = [System.Security.Cryptography.X509Certificates.StoreLocation]::CurrentUser
+$store = [System.Security.Cryptography.X509Certificates.X509Store]::new($storeName, $storeLocation)
 $certPath = <path to certificate>
 $credentials = Get-Credential -Message "Provide PFX private key password"
-$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable 
-$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag) 
-$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite) 
-$store.Add($Certificate) 
+$flag = [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable
+$certificate = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new($certPath, $credentials.Password, $flag)
+$store.Open([System.Security.Cryptography.X509Certificates.OpenFlags]::ReadWrite)
+$store.Add($Certificate)
 $store.Close()
 ```
 
@@ -109,11 +120,15 @@ $store.Close()
 
 As identidades gerenciadas são um recurso do Azure Active Directory. Elas são entidades de serviço atribuídas aos recursos executados no Azure. Você pode usar uma entidade de serviço de identidade gerenciada para conexão e adquirir um token de acesso somente de aplicativo para acessar outros recursos. As identidades gerenciadas só estão disponíveis nos recursos executados em uma nuvem do Azure.
 
-Para saber mais sobre as identidades gerenciadas dos recursos do Azure, confira [Como usar identidades gerenciadas dos recursos do Azure em uma VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Esse exemplo se conecta usando a identidade gerenciada do ambiente de host. Por exemplo, se executado em uma VirtualMachine com uma Identidade de Serviço Gerenciada atribuída, isso permitirá que o código entre usando essa identidade atribuída.
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Entrar com um locatário diferente do padrão ou como um Provedor de Soluções na Nuvem (CSP)
 
-Se sua conta estiver associada a mais de um locatário, entrar requer o uso do parâmetro `-Tenant` na conexão. Esse parâmetro funcionará com qualquer método de entrada. Ao fazer logon, esse valor de parâmetro pode ser a ID de objeto do Azure do locatário (ID do Locatário) ou o nome de domínio totalmente qualificado do locatário.
+Se a sua conta está associada a mais de um locatário, é preciso que o parâmetro `-Tenant` seja especificado na conexão para entrar. Esse parâmetro funciona com qualquer método de conexão. Ao fazer logon, esse valor de parâmetro pode ser a ID de objeto do Azure do locatário (ID do Locatário) ou o nome de domínio totalmente qualificado do locatário.
 
 Se você for um [Provedor de Soluções na Nuvem (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), o valor `-Tenant`**deverá** ser uma ID de locatário.
 
@@ -123,9 +138,7 @@ Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Entre em outra Nuvem
 
-Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com as leis de manipulação de dados regionais.
-Para contas em uma nuvem regional, configure o ambiente quando você entrar com o argumento `-Environment`.
-Esse parâmetro funcionará com qualquer método de entrada. Por exemplo, se sua conta estiver em uma nuvem da China:
+Os serviços de nuvem do Azure oferecem ambientes que estão em conformidade com as leis de manipulação de dados regionais. Para contas em uma nuvem regional, configure o ambiente quando você entrar com o argumento `-Environment`. Esse parâmetro funciona com qualquer método de conexão. Por exemplo, se sua conta estiver em uma nuvem da China:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
@@ -134,5 +147,5 @@ Connect-AzAccount -Environment AzureChinaCloud
 O seguinte comando obtém uma lista de ambientes disponíveis:
 
 ```azurepowershell-interactive
-Get-AzEnvironment | Select-Object Name
+Get-AzEnvironment | Select-Object -Property Name
 ```

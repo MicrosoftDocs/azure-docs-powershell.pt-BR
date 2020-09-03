@@ -3,12 +3,13 @@ title: Visão geral do módulo Gerenciamento de Serviços do Azure PowerShell | 
 description: Visão geral do Azure PowerShell com links para instalação e configuração.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 32e98196d1b23e96b9846e9cd4da93bca15448cb
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 84f0d176ce01d267824ce4f3e94bdca4cd09c9ff
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83384735"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241212"
 ---
 # <a name="overview-of-the-azure-powershell-service-management-module"></a>Visão geral do módulo de Gerenciamento de Serviços do Azure PowerShell
 

@@ -4,12 +4,13 @@ description: Como usar o Azure PowerShell que é pré-instalado em uma imagem do
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/20/2020
-ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2b487abeecbffa6cd8b7b64276ab301619348385
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740585"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241450"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Como usar o Azure PowerShell no Docker
 

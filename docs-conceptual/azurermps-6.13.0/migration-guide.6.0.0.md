@@ -4,16 +4,17 @@ description: Este guia de migração contém uma lista de alterações da falha 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7b14df54d521c12c43663a1a3601e4cb671317b3
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122247"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241620"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações interruptivas no Microsoft Azure PowerShell 6.0.0
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Este documento serve como uma notificação de alterações interruptivas e como um guia de migração para consumidores dos cmdlets do Microsoft Azure PowerShell. Cada seção descreve o motivo da alteração significativa e o caminho de migração de menor resistência. Para obter um contexto detalhado, consulte a solicitação de pull associada a cada alteração.
 
