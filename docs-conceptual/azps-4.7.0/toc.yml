@@ -1,0 +1,94 @@
+- name: Azure PowerShell
+  href: index.yml
+- name: Apresentando o novo módulo Az
+  href: new-azureps-module-az.md
+  displayName: 'intro, introduction, azurerm'
+- name: Instalar
+  items:
+    - name: Instalar com PowerShellGet
+      href: install-az-ps.md
+    - name: Instalar com MSI
+      href: install-az-ps-msi.md
+    - name: Azure PowerShell no Docker
+      href: azureps-in-docker.md
+- name: Desinstalar
+  href: uninstall-az-ps.md
+- name: Migrar do AzureRM
+  items:
+    - name: Etapas da migração
+      href: migrate-from-azurerm-to-az.md
+      displayName: 'migrate, azurerm, az'
+    - name: Alterações entre o AzureRM e o Az
+      href: migrate-az-1.0.0.md
+      displayName: 'breaking, cmdlet, module, names'
+- name: Introdução
+  href: get-started-azureps.md
+  displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Entrar
+  items:
+    - name: Métodos de autenticação
+      href: authenticate-azureps.md
+      displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
+    - name: Criar uma entidade de serviço
+      href: create-azure-service-principal-azureps.md
+      displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
+    - name: Contextos de credencial
+      href: context-persistence.md
+      displayName: 'sign in, signin, log in, login, process, session, context, persist, jobs, background, automation, scripting, task'
+- name: Consultas
+  href: queries-azureps.md
+  displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
+- name: Formato de saída
+  href: formatting-output.md
+  displayName: 'object, table, yaml, json, xml, csv, html, list'
+- name: Gerenciar Assinaturas
+  href: manage-subscriptions-azureps.md
+  displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
+- name: Implantar
+  items:
+    - name: Implantar modelos do Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Exportar modelos do Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Implantar modelos privados do Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Conceitos
+  items:
+    - name: Gerenciar recursos do Azure com Invoke-AzRestMethod
+      href: manage-azure-resources-invoke-azrestmethod.md
+    - name: Trabalhos do PowerShell
+      href: using-psjobs.md
+      displayName: 'background, task, scripting, automation, context, process'
+- name: Tutoriais
+  items:
+    - name: Criar máquinas virtuais
+      href: azureps-vm-tutorial.yml
+- name: Exemplos de Scripts
+  items:
+    - name: Máquinas Virtuais do Linux
+      href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Máquinas Virtuais do Windows
+      href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
+    - name: Aplicativos Web
+      href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: BANCOS DE DADOS SQL
+      href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+      displayName: 'database, nosql, mongodb, couchdb'
+- name: Notas de versão
+  items:
+    - name: Notas de versão
+      href: release-notes-azureps.md
+    - name: Alterações da falha do Az 2.0.0
+      href: migrate-az-2.0.0.md
+    - name: Alterações da falha do Az 3.0.0
+      href: migrate-az-3.0.0.md
+    - name: Alterações da falha do Az 4.1.0
+      href: migrate-az-4.1.0.md
+- name: Perguntas frequentes
+  href: faq.md
