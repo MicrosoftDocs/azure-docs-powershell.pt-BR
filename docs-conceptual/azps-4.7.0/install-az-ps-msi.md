@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90927897"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833266"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com a MSI
 
@@ -31,7 +31,14 @@ Para usar o Azure PowerShell no PowerShell 5.1, é necessário:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows usando o pacote MSI
 
-O pacote MSI para o Azure PowerShell está disponível no [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Se você tiver instalado versões anteriores do Azure PowerShell usando o MSI, o instalador as removerá automaticamente. O pacote de MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+O pacote MSI para o Azure PowerShell está disponível no [GitHub](https://github.com/Azure/azure-powershell/releases):
+
+1. Acesse https://github.com/Azure/azure-powershell/releases.
+2. Procure o Módulo da Galeria mais recente para Azure PowerShell (eles estão listados cronologicamente e normalmente são apenas uma versão de lançamento sem nome, como "4.7.0").
+3. Role para baixo até a parte inferior das observações de patch e clique na seta ao lado de "Ativos" para revelar as opções de MSI.
+4. Clique no MSI Az-Cmdlets de sua escolha para iniciar o download.
+
+Se você tiver instalado versões anteriores do Azure PowerShell usando o MSI, o instalador as removerá automaticamente. O pacote de MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Para começar a trabalhar com o Azure PowerShell, entre com suas credenciais do Azure.
 
