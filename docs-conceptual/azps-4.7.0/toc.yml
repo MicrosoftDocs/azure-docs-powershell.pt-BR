@@ -18,6 +18,9 @@
     - name: Etapas da migração
       href: migrate-from-azurerm-to-az.md
       displayName: 'migrate, azurerm, az'
+    - name: Migrar automaticamente scripts do PowerShell
+      href: quickstart-migrate-azurerm-to-az-automatically.md
+      displayName: 'automatically migrate, azurerm, az'
     - name: Alterações entre o AzureRM e o Az
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
