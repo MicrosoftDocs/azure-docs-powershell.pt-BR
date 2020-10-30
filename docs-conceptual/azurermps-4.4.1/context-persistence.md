@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9c9d6a028d3a28f99320aef5a574d868b2fd9bc1
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 77f5bcc478228a9d860039983640ff0e7ff31ab2
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244595"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523182"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Manter credenciais do usuário entre as sessões do PowerShell
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-O Azure PowerShell oferece um recurso chamado **Salvamento Automático do contexto do Azure**, que oferece os seguintes recursos:
+O Azure PowerShell oferece um recurso chamado **Salvamento Automático do contexto do Azure** , que oferece os seguintes recursos:
 
 - Retenção das informações de conexão para a reutilização em novas sessões do PowerShell.
 - Facilitar o uso de tarefas em segundo plano para executar os cmdlets de execução longa.
@@ -61,7 +61,7 @@ O recurso de **Salvamento Automático de Contexto do Azure** também permite com
 
 - Usando o contexto padrão com Salvamento Automático habilitado
 
-  Se você tiver habilitado o **Salvamento Automático de Contexto**, os trabalhos em segundo plano automaticamente usarão o contexto padrão salvo.
+  Se você tiver habilitado o **Salvamento Automático de Contexto** , os trabalhos em segundo plano automaticamente usarão o contexto padrão salvo.
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -141,7 +141,7 @@ Alterações em cmdlets de perfil existentes
 
 - [Add-AzureRmAccount][login]: permite definir o escopo da entrada para o processo ou para o usuário atual.
   Permite nomear o contexto padrão após a autenticação.
-- [Import-AzureRmContext][import]: permite definir o escopo da entrada para o processo ou para o usuário atual.
+- [Import-AzureRmContext][import] – Permite definir um escopo da entrada para o processo ou usuário atual.
 - [Set-AzureRmContext][set-context]: permite a seleção de contextos nomeados existentes e as alterações de escopo no processo ou no usuário atual.
 
 <!-- Hyperlinks -->
@@ -154,5 +154,4 @@ Alterações em cmdlets de perfil existentes
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Add-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
