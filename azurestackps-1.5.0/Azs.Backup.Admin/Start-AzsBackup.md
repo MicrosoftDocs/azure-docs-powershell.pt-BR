@@ -1,0 +1,163 @@
+---
+external help file: Azs.Backup.Admin-help.xml
+Module Name: Azs.Backup.Admin
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: c7dff6c2d9c191d852420ab2c2017a0b9d1cf8d3
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93601774"
+---
+# <span data-ttu-id="5c6a3-101">Start-AzsBackup</span><span class="sxs-lookup"><span data-stu-id="5c6a3-101">Start-AzsBackup</span></span>
+
+## <span data-ttu-id="5c6a3-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="5c6a3-102">SYNOPSIS</span></span>
+<span data-ttu-id="5c6a3-103">Fazer backup de um local específico.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-103">Back up a specific location.</span></span>
+
+## <span data-ttu-id="5c6a3-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="5c6a3-104">SYNTAX</span></span>
+
+### <span data-ttu-id="5c6a3-105">CreateBackup (padrão)</span><span class="sxs-lookup"><span data-stu-id="5c6a3-105">CreateBackup (Default)</span></span>
+```
+Start-AzsBackup [-ResourceGroupName <String>] [-Location <String>] [-AsJob] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="5c6a3-106">CreateBackup_FromResourceId</span><span class="sxs-lookup"><span data-stu-id="5c6a3-106">CreateBackup_FromResourceId</span></span>
+```
+Start-AzsBackup -ResourceId <String> [-AsJob] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5c6a3-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="5c6a3-107">DESCRIPTION</span></span>
+<span data-ttu-id="5c6a3-108">Fazer backup de um local específico.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-108">Back up a specific location.</span></span>
+
+## <span data-ttu-id="5c6a3-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="5c6a3-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="5c6a3-110">--------------------------EXEMPLO 1--------------------------</span><span class="sxs-lookup"><span data-stu-id="5c6a3-110">-------------------------- EXAMPLE 1 --------------------------</span></span>
+```
+Start-AzsBackup
+```
+
+<span data-ttu-id="5c6a3-111">Inicie um backup do Azure Stack.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-111">Start an Azure Stack backup.</span></span>
+
+## <span data-ttu-id="5c6a3-112">OS</span><span class="sxs-lookup"><span data-stu-id="5c6a3-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="5c6a3-113">-AsJob</span><span class="sxs-lookup"><span data-stu-id="5c6a3-113">-AsJob</span></span>
+<span data-ttu-id="5c6a3-114">Executar assíncrono como um trabalho e retornar o objeto de trabalho.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-114">Run asynchronous as a job and return the job object.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-115">-Force</span><span class="sxs-lookup"><span data-stu-id="5c6a3-115">-Force</span></span>
+<span data-ttu-id="5c6a3-116">Não peça confirmação.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-116">Don't ask for confirmation.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-117">-Local</span><span class="sxs-lookup"><span data-stu-id="5c6a3-117">-Location</span></span>
+<span data-ttu-id="5c6a3-118">Nome do local de backup.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-118">Name of the backup location.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: CreateBackup
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-119">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5c6a3-119">-ResourceGroupName</span></span>
+<span data-ttu-id="5c6a3-120">Nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-120">Name of the resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: CreateBackup
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-121">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="5c6a3-121">-ResourceId</span></span>
+<span data-ttu-id="5c6a3-122">A ID do recurso.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-122">The resource id.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: CreateBackup_FromResourceId
+Aliases: id
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-123">-Confirme</span><span class="sxs-lookup"><span data-stu-id="5c6a3-123">-Confirm</span></span>
+<span data-ttu-id="5c6a3-124">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-124">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-125">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5c6a3-125">-WhatIf</span></span>
+<span data-ttu-id="5c6a3-126">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-126">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5c6a3-127">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-127">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5c6a3-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5c6a3-128">CommonParameters</span></span>
+<span data-ttu-id="5c6a3-129">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5c6a3-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5c6a3-130">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5c6a3-130">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5c6a3-131">SENSORES</span><span class="sxs-lookup"><span data-stu-id="5c6a3-131">INPUTS</span></span>
+
+## <span data-ttu-id="5c6a3-132">EXIBE</span><span class="sxs-lookup"><span data-stu-id="5c6a3-132">OUTPUTS</span></span>
+
+### <span data-ttu-id="5c6a3-133">Microsoft. AzureStack. Management. backup. admin. Models. LongRunningOperationStatus</span><span class="sxs-lookup"><span data-stu-id="5c6a3-133">Microsoft.AzureStack.Management.Backup.Admin.Models.LongRunningOperationStatus</span></span>
+
+## <span data-ttu-id="5c6a3-134">INFORMA</span><span class="sxs-lookup"><span data-stu-id="5c6a3-134">NOTES</span></span>
+
+## <span data-ttu-id="5c6a3-135">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="5c6a3-135">RELATED LINKS</span></span>
+
