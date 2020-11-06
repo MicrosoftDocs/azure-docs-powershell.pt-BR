@@ -1,0 +1,389 @@
+---
+external help file: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.dll-Help.xml
+ms.assetid: 93005775-3AB9-43C5-B353-45B82124ADB7
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.apimanagement/set-azurermapimanagementauthorizationserver
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Set-AzureRmApiManagementAuthorizationServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ApiManagement/Commands.ApiManagement/help/Set-AzureRmApiManagementAuthorizationServer.md
+ms.openlocfilehash: 6424ad453d7e2ee3c4933127cc58e6d3e1193e76
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93440144"
+---
+# Set-AzureRmApiManagementAuthorizationServer
+
+## Sinopse
+Modifica um servidor de autorização.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SYNTAX
+
+```
+Set-AzureRmApiManagementAuthorizationServer -Context <PsApiManagementContext> -ServerId <String> -Name <String>
+ [-Description <String>] -ClientRegistrationPageUrl <String> -AuthorizationEndpointUrl <String>
+ -TokenEndpointUrl <String> -ClientId <String> [-ClientSecret <String>]
+ [-AuthorizationRequestMethods <PsApiManagementAuthorizationRequestMethod[]>]
+ -GrantTypes <PsApiManagementGrantType[]>
+ -ClientAuthenticationMethods <PsApiManagementClientAuthenticationMethod[]> [-TokenBodyParameters <Hashtable>]
+ [-SupportState <Boolean>] [-DefaultScope <String>]
+ -AccessTokenSendingMethods <PsApiManagementAccessTokenSendingMethod[]> [-ResourceOwnerUsername <String>]
+ [-ResourceOwnerPassword <String>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **set-AzureRmApiManagementAuthorizationServer** modifica os detalhes do servidor de autorização do gerenciamento de API do Azure.
+
+## EXEMPLOS
+
+### Exemplo 1: modificar um servidor de autorização
+```
+PS C:\>$ApiMgmtContext = New-AzureRmApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Set-AzureRmApiManagementAuthrizarionServer -Context $ApiMgmtContext -ServerId 0123456789 -Name "Contoso OAuth2 server" -ClientRegistrationPageUrl "https://contoso/signupv2" -AuthorizationEndpointUrl "https://contoso/authv2" -TokenEndpointUrl "https://contoso/tokenv2" -ClientId "clientid" -ClientSecret "e041ed1b660b4eadbad5a29d066e6e88" -AuthorizationRequestMethods @('Get') -GrantTypes @( 'AuthorizationCode', 'Implicit', 'ClientCredentials') -ClientAuthenticationMethods @('Basic') -TokenBodyParameters @{'par1'='val1'} -AccessTokenSendingMethods @('AuthorizationHeader')
+```
+
+Esse comando modifica o servidor de autorização de gerenciamento de API especificado.
+
+## OS
+
+### -AccessTokenSendingMethods
+Especifica uma matriz de métodos para enviar um token de acesso.
+psdx_paramvalues AuthorizationHeader e consulta.
+
+```yaml
+Type: PsApiManagementAccessTokenSendingMethod[]
+Parameter Sets: (All)
+Aliases: 
+Accepted values: AuthorizationHeader, Query
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -AuthorizationEndpointUrl
+Especifica o ponto de extremidade de autorização para autenticar proprietários de recursos e obter autorizações de autorização.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -AuthorizationRequestMethods
+Especifica uma matriz de métodos de solicitação de autorização.
+psdx_paramvalues GET e POST.
+O valor padrão é GET.
+
+```yaml
+Type: PsApiManagementAuthorizationRequestMethod[]
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Get, Post
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClientAuthenticationMethods
+Especifica uma matriz de métodos de autenticação de cliente.
+psdx_paramvalues Basic e corpo.
+
+```yaml
+Type: PsApiManagementClientAuthenticationMethod[]
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Basic, Body
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClientId
+Especifica a ID do cliente do console de desenvolvedor que é o aplicativo cliente.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClientRegistrationPageUrl
+Especifica o ponto de extremidade de registro do cliente para registrar clientes com o servidor de autorização e obter credenciais do cliente.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ClientSecret
+Especifica o segredo do cliente do console de desenvolvedor que é o aplicativo cliente.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Contexto
+Especifica um objeto **PsApiManagementContext** .
+
+```yaml
+Type: PsApiManagementContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+ 
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultScope
+Especifica o escopo padrão do servidor de autorização.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Descrição
+Especifica uma descrição para um servidor de autorização.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -GrantTypes
+Especifica uma matriz de tipos de concessão.
+psdx_paramvalues
+
+- AuthorizationCode
+- ClientCredentials 
+- Implícito 
+- ResourceOwnerPassword
+
+```yaml
+Type: PsApiManagementGrantType[]
+Parameter Sets: (All)
+Aliases: 
+Accepted values: AuthorizationCode, Implicit, ResourceOwnerPassword, ClientCredentials
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Nome
+Especifica o nome do servidor de autorização a ser modificado.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+PassThru
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceOwnerPassword
+Especifica a senha de proprietário do recurso.
+Você deve especificar esse parâmetro se ResourceOwnerPassword for especificado pelo parâmetro *GrantTypes* .
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceOwnerUsername
+Especifica o nome de usuário do proprietário do recurso.
+Você deve especificar esse parâmetro se ResourceOwnerPassword for especificado pelo parâmetro *GrantTypes* .
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ServerID
+Especifica a ID do servidor de autorização a ser modificada.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Supportstate
+Indica se o parâmetro de *estado* deve ser compatível.
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TokenBodyParameters
+Especifica parâmetros de corpo adicionais usando o formato application/x-www-form-urlencoded.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TokenEndpointUrl
+Especifica o ponto de extremidade do token para os clientes obterem tokens de acesso no Exchange para apresentar as autorizações de autorização ou atualizar tokens.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## SENSORES
+
+### Nenhuma
+Esse cmdlet não aceita nenhuma entrada.
+
+## EXIBE
+
+### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementOAuth2AuthrozationServer
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[Get-AzureRmApiManagementAuthorizationServer](./Get-AzureRmApiManagementAuthorizationServer.md)
+
+[New-AzureRmApiManagementAuthorizationServer](./New-AzureRmApiManagementAuthorizationServer.md)
+
+[Remove-AzureRmApiManagementAuthorizationServer](./Remove-AzureRmApiManagementAuthorizationServer.md)
+
+

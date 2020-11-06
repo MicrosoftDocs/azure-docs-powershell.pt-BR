@@ -1,0 +1,112 @@
+---
+external help file: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.dll-Help.xml
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/RecoveryServices.SiteRecovery/Commands.RecoveryServices.SiteRecovery/help/Get-AzureRmRecoveryServicesAsrStorageClassification.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/RecoveryServices.SiteRecovery/Commands.RecoveryServices.SiteRecovery/help/Get-AzureRmRecoveryServicesAsrStorageClassification.md
+ms.openlocfilehash: d79a717fcf5d2422f86df4184d9c0344ebc32d28
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93440573"
+---
+# Get-AzureRmRecoveryServicesAsrStorageClassification
+
+## Sinopse
+Obtém as classificações de armazenamento ASR disponíveis (detectadas) no cofre de serviços de recuperação.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SYNTAX
+
+### ByFabricObject (padrão)
+```
+Get-AzureRmRecoveryServicesAsrStorageClassification -Fabric <ASRFabric> [<CommonParameters>]
+```
+
+### ByObjectWithName
+```
+Get-AzureRmRecoveryServicesAsrStorageClassification -Name <String> -Fabric <ASRFabric> [<CommonParameters>]
+```
+
+### ByObjectWithFriendlyName
+```
+Get-AzureRmRecoveryServicesAsrStorageClassification -FriendlyName <String> -Fabric <ASRFabric>
+ [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **Get-AzureRmRecoveryServicesAsrStorageClassification** Obtém detalhes das classificações de armazenamento ASR descobertos no cofre de serviços de recuperação.
+
+## EXEMPLOS
+
+### Exemplo 1
+```
+PS C:\> $StorageClassifications = Get-AzureRmRecoveryServicesAsrStorageClassification -Fabric $Fabric
+```
+
+Listar as classificações de armazenamento descobertas correspondentes à malha ASR especificada. 
+
+## OS
+
+### -Fabric
+Especifica um objeto de malha ASR. O cmdlet obtém os detalhes das classificações de armazenamento descobertas correspondentes à malha ASR especificada. 
+
+```yaml
+Type: ASRFabric
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -FriendlyName
+Especifica o nome amigável do objeto de classificação de armazenamento a ser obtido.
+
+```yaml
+Type: String
+Parameter Sets: ByObjectWithFriendlyName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Especifica o nome do objeto de classificação de armazenamento a ser obtido.
+
+```yaml
+Type: String
+Parameter Sets: ByObjectWithName
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## SENSORES
+
+### Microsoft. Azure. Commands. Recoveryservices. SiteRecovery. ASRFabric
+
+## EXIBE
+
+### System. Collections. Generic. IEnumerable ' 1 [[Microsoft. Azure. Commands. Recoveryservices. SiteRecovery. ASRStorageClassification, Microsoft. Azure. Commands. Recoveryservices. SiteRecovery, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = null]]
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
