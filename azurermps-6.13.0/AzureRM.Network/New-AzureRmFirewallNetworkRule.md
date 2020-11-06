@@ -1,0 +1,218 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: C0E1D4DF-232F-49C6-BE4C-05C8E8038329
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermfirewallnetworkrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmFirewallNetworkRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Network/Commands.Network/help/New-AzureRmFirewallNetworkRule.md
+ms.openlocfilehash: 1100e42934c493bf8aea30e7372acc683b46b60b
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93428467"
+---
+# New-AzureRmFirewallNetworkRule
+
+## Sinopse
+Cria uma regra de rede de firewall.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## SYNTAX
+
+```
+New-AzureRmFirewallNetworkRule -Name <String> [-Description <String>]
+ -SourceAddress <System.Collections.Generic.List`1[System.String]>
+ -DestinationAddress <System.Collections.Generic.List`1[System.String]>
+ -DestinationPort <System.Collections.Generic.List`1[System.String]>
+ -Protocol <System.Collections.Generic.List`1[System.String]> [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **New-AzureRmFirewallNetworkRule** cria uma regra de rede para o Firewall do Azure.
+
+## EXEMPLOS
+
+### 1: criar uma regra para todo o tráfego de TCP
+```
+$rule = New-AzureRmFirewallNetworkRule -Name "all-tcp-traffic" -Description "Rule for all TCP traffic" -Protocol TCP -SourceAddress "*" -DestinationAddress "*" -DestinationPort "*"
+```
+
+Este exemplo cria uma regra para todo o tráfego TCP. O usuário impõe a autorização ou negação do tráfego para uma regra baseada na coleção de regras à qual ele está associado.
+
+### 2: criar uma regra para todo o tráfego TCP de 10.0.0.0 a 60.1.5.0:4040
+```
+$rule = New-AzureRmFirewallNetworkRule -Name "partial-tcp-rule" -Description "Rule for all TCP traffic from 10.0.0.0 to 60.1.5.0:4040" -Protocol TCP -SourceAddress "10.0.0.0" -DestinationAddress "60.1.5.0" -DestinationPort "4040"
+```
+
+Este exemplo cria uma regra para todo o tráfego TCP de 10.0.0.0 a 60.1.5.0:4040. O usuário impõe a autorização ou negação do tráfego para uma regra baseada na coleção de regras à qual ele está associado.
+
+### 3: criar uma regra para todo o tráfego de TCP e ICMP de qualquer fonte para 10.0.0.0/16
+```
+$rule = New-AzureRmFirewallNetworkRule -Name "tcp-and-icmp-rule" -Description "Rule for all TCP and ICMP traffic from any source to 10.0.0.0/16" -Protocol TCP,ICMP -SourceAddress * -DestinationAddress "10.0.0.0/16" -DestinationPort *
+```
+
+Este exemplo cria uma regra para todo o tráfego TCP de 10.0.0.0 a 60.1.5.0:4040. O usuário impõe a autorização ou negação do tráfego para uma regra baseada na coleção de regras à qual ele está associado.
+
+## OS
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Descrição
+Especifica uma descrição opcional desta regra.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationAddress
+Os endereços de destino da regra
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationPort
+As portas de destino da regra
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Especifica o nome desta regra de rede. O nome deve ser exclusivo dentro de uma coleção de regras.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Protocolo
+Especifica o tipo de tráfego a ser filtrado por essa regra. Os valores possíveis são TCP, UDP, ICMP e any.
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceAddress
+Os endereços de origem da regra
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirme
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado.
+O cmdlet não é executado.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## SENSORES
+
+### Nenhuma
+Esse cmdlet não aceita nenhuma entrada.
+
+## EXIBE
+
+### Microsoft. Azure. Commands. Network. Models. PSFirewallNetworkRule
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[New-AzureRmFirewallNetworkRuleCollection](./New-AzureRmFirewallNetworkRuleCollection.md)
+
+[New-AzureRmFirewall](./New-AzureRmFirewall.md)
+
+[Get-AzureRmFirewall](./Get-AzureRmFirewall.md)

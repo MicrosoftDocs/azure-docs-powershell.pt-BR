@@ -1,0 +1,208 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.Storage.dll-Help.xml
+ms.assetid: FF2BFE34-4A12-49F9-9BE5-4084A36BC272
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: d517ca49f0be3b6add58d151b3b2f79dad17611c
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93426202"
+---
+# Set-AzureStorageTableStoredAccessPolicy
+
+## Sinopse
+Define a política de acesso armazenado para uma tabela de armazenamento do Azure.
+
+## SYNTAX
+
+```
+Set-AzureStorageTableStoredAccessPolicy [-Table] <String> [-Policy] <String> [-Permission <String>]
+ [-StartTime <DateTime>] [-ExpiryTime <DateTime>] [-NoStartTime] [-NoExpiryTime] [-Context <IStorageContext>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **set-AzureStorageTableStoredAccessPolicy** define a política de acesso armazenada para uma tabela de armazenamento do Azure.
+
+## EXEMPLOS
+
+### Exemplo 1: definir uma política de acesso armazenado em tabela com permissão completa
+```
+PS C:\>Set-AzureStorageTableStoredAccessPolicy -Table "MyTable" -Policy "Policy08"
+```
+
+Esse comando define uma política de acesso chamada Policy08 para a tabela de armazenamento chamada MyTable.
+
+## OS
+
+### -Contexto
+Especifica um contexto de armazenamento do Azure.
+Para obter um contexto de armazenamento, use o cmdlet New-AzureStorageContext.
+
+```yaml
+Type: IStorageContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -ExpiryTime
+Especifica a hora em que a política de acesso armazenado expira.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NoExpiryTime
+Indica que a política de acesso não tem data de expiração.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nostarttime
+Indica que a hora de início está definida como $Null.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Permissão
+Especifica o nível de acesso público a essa tabela de armazenamento.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Política
+Especifica uma política de acesso armazenado, que inclui as permissões para esse token SAS.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartTime
+Especifica a hora em que a política de acesso armazenado se torna válida.
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tabela
+Especifica o nome da tabela de armazenamento do Azure.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: N, Name
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Confirme
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## SENSORES
+
+## EXIBE
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[Get-AzureStorageTableStoredAccessPolicy](./Get-AzureStorageTableStoredAccessPolicy.md)
+
+[New-AzureStorageContext](./New-AzureStorageContext.md)
+
+[New-AzureStorageTableStoredAccessPolicy](./New-AzureStorageTableStoredAccessPolicy.md)
+
+[Remove-AzureStorageTableStoredAccessPolicy](./Remove-AzureStorageTableStoredAccessPolicy.md)
