@@ -1,0 +1,481 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+ms.assetid: D2DB7821-A7D2-4017-8522-78793DDE040E
+online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-azsqldatabase
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlDatabase.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlDatabase.md
+ms.openlocfilehash: ff474116854838c40a4862cf93f4d017ccdf4527
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93598908"
+---
+# New-AzSqlDatabase
+
+## Sinopse
+Cria um banco de dados ou um banco de dados elástico.
+
+## SYNTAX
+
+### DtuBasedDatabase (padrão)
+```
+New-AzSqlDatabase -DatabaseName <String> [-CollationName <String>] [-CatalogCollation <String>]
+ [-MaxSizeBytes <Int64>] [-Edition <String>] [-RequestedServiceObjectiveName <String>]
+ [-ElasticPoolName <String>] [-ReadScale <DatabaseReadScale>] [-Tags <Hashtable>] [-SampleName <String>]
+ [-ZoneRedundant] [-AsJob] [-LicenseType <String>] [-ServerName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### VcoreBasedDatabase
+```
+New-AzSqlDatabase -DatabaseName <String> [-CollationName <String>] [-CatalogCollation <String>]
+ [-MaxSizeBytes <Int64>] -Edition <String> [-ReadScale <DatabaseReadScale>] [-Tags <Hashtable>]
+ [-SampleName <String>] [-ZoneRedundant] [-AsJob] -VCore <Int32> -ComputeGeneration <String>
+ [-LicenseType <String>] [-ServerName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **New-AzSqlDatabase** cria um banco de dados SQL do Azure.
+Você também pode criar um banco de dados elástico definindo o parâmetro *ElasticPoolName* como um pool elástico existente.
+
+## EXEMPLOS
+
+### Exemplo 1: criar um banco de dados em um servidor especificado
+```
+PS C:\>New-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01"
+ResourceGroupName             : ResourceGroup01
+ServerName                    : Server01
+DatabaseName                  : Database01
+Location                      : Central US
+DatabaseId                    : a1e6bd1a-735a-4d48-8b98-afead5ef1218
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 7/3/2015 7:33:37 AM
+CurrentServiceObjectiveId     : f1173c43-91bd-4aaa-973c-54e79e15235b
+CurrentServiceObjectiveName   : S0
+RequestedServiceObjectiveId   : f1173c43-91bd-4aaa-973c-54e79e15235b
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           :
+LicenseType                   :
+Tags                          :
+```
+
+Esse comando cria um banco de dados denominado Database01 no servidor Server01.
+
+### Exemplo 2: criar um banco de dados elástico em um servidor especificado
+```
+PS C:\>New-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -ElasticPoolName "ElasticPool01"
+ResourceGroupName             : ResourceGroup01
+ServerName                    : Server01
+DatabaseName                  : Database02
+Location                      : Central US
+DatabaseId                    : 7bd9d561-42a7-484e-bf05-62ddef8015ab
+Edition                       : Standard
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 8/26/2015 10:04:29 PM
+CurrentServiceObjectiveId     : d1737d22-a8ea-4de7-9bd0-33395d2a7419
+CurrentServiceObjectiveName   : ElasticPool
+RequestedServiceObjectiveId   : d1737d22-a8ea-4de7-9bd0-33395d2a7419
+RequestedServiceObjectiveName :
+ElasticPoolName               : ElasticPool01
+EarliestRestoreDate           :
+LicenseType                   :
+Tags                          :
+```
+
+Esse comando cria um banco de dados denominado Database02 no pool elástico chamado ElasticPool01 no servidor Server01.
+
+### Exemplo 3: criar um banco de dados VCORE em um servidor especificado
+```
+PS C:\>New-AzSqlDatabase -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database03" -Edition "GeneralPurpose" -Vcore 2 -ComputeGeneration "Gen4"
+ResourceGroupName             : ResourceGroup01
+ServerName                    : Server01
+DatabaseName                  : Database03
+Location                      : Central US
+DatabaseId                    : 34d9d561-42a7-484e-bf05-62ddef8000ab
+Edition                       : GeneralPurpose
+CollationName                 : SQL_Latin1_General_CP1_CI_AS
+CatalogCollation              :
+MaxSizeBytes                  : 268435456000
+Status                        : Online
+CreationDate                  : 8/26/2015 10:04:29 PM
+CurrentServiceObjectiveName   : GP_Gen4_2
+RequestedServiceObjectiveName :
+ElasticPoolName               :
+EarliestRestoreDate           :
+LicenseType                   : LicenseIncluded
+Tags                          :
+```
+
+Esse comando cria um banco de dados VCORE chamado Database03 no servidor Server01.
+
+## OS
+
+### -AsJob
+Executar o cmdlet em segundo plano
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CatalogCollation
+Especifica o nome do agrupamento do catálogo do banco de dados SQL.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CollationName
+Especifica o nome do agrupamento de banco de dados SQL.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ComputeGeneration
+A geração de computação a ser atribuída.
+
+```yaml
+Type: System.String
+Parameter Sets: VcoreBasedDatabase
+Aliases: Family
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DatabaseName
+Especifica o nome do banco de dados.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Edição
+Especifica a edição a ser atribuída ao banco de dados. Os valores aceitáveis para esse parâmetro são:
+- Nenhuma
+- Basic
+- Oficial
+- Gratifica
+- DataWarehouse
+- Gratuito
+- Automático
+- GeneralPurpose
+- BusinessCritical
+
+```yaml
+Type: System.String
+Parameter Sets: DtuBasedDatabase
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: VcoreBasedDatabase
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ElasticPoolName
+Especifica o nome do pool elástico no qual colocar o banco de dados.
+
+```yaml
+Type: System.String
+Parameter Sets: DtuBasedDatabase
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LicenseType
+O tipo de licença para o banco de dados SQL do Azure. Os valores possíveis são:
+- BasePrice-o benefício híbrido do Azure (AHB) foi aplicado o preço com desconto para os proprietários de licenças existentes do SQL Server. O preço do banco de dados será descontado para os proprietários de licença existentes do SQL Server.
+- LicenseIncluded-o AHB (benefício híbrido do Azure) não é aplicado com o preço de desconto dos proprietários de licenças existentes do SQL Server. O preço do banco de dados incluirá um novo custo de licença do SQL Server.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxSizeBytes
+Especifica o tamanho máximo do banco de dados em bytes.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReadScale
+A opção de escala de leitura para atribuir ao banco de dados SQL do Azure. (Habilitado/desabilitado)
+
+```yaml
+Type: Microsoft.Azure.Commands.Sql.Database.Model.DatabaseReadScale
+Parameter Sets: (All)
+Aliases:
+Accepted values: Disabled, Enabled
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequestedServiceObjectiveName
+Especifica o nome do objetivo de serviço a ser atribuído ao banco de dados.
+
+```yaml
+Type: System.String
+Parameter Sets: DtuBasedDatabase
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Especifica o nome do grupo de recursos ao qual o servidor está atribuído.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Samplename
+O nome do esquema de exemplo a ser aplicado ao criar este banco de dados.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: AdventureWorksLT
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nomedoservidor
+Especifica o nome do servidor que hospeda o banco de dados.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Marcas
+Especifica um dicionário de pares de chave-valor na forma de uma tabela de hash que este cmdlet associa ao novo banco de dados. Por exemplo: @ {Key0 = "value0"; key1 = $null; Key2 = "value2"}
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tag
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VCore
+O número VCORE do banco de dados SQL do Azure
+
+```yaml
+Type: System.Int32
+Parameter Sets: VcoreBasedDatabase
+Aliases: Capacity
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ZoneRedundant
+A redundância de zona para associar ao banco de dados SQL do Azure
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirme
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
+## SENSORES
+
+### System. String
+
+## EXIBE
+
+### Microsoft. Azure. Commands. Sql. Database. Model. AzureSqlDatabaseModel
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[Get-AzSqlDatabase](./Get-AzSqlDatabase.md)
+
+[New-AzSqlElasticPool](./New-AzSqlElasticPool.md)
+
+[New-AzSqlServer](./New-AzSqlServer.md)
+
+[Remove-AzSqlDatabase](./Remove-AzSqlDatabase.md)
+
+[Currículo-AzSqlDatabase](./Resume-AzSqlDatabase.md)
+
+[Set-AzSqlDatabase](./Set-AzSqlDatabase.md)
+
+[Suspender-AzSqlDatabase](./Suspend-AzSqlDatabase.md)
+
+[Documentação do banco de dados SQL](https://docs.microsoft.com/azure/sql-database/)
+
