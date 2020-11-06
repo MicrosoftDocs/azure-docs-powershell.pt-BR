@@ -1,0 +1,396 @@
+---
+external help file: Microsoft.Azure.Commands.ResourceManager.Automation.dll-Help.xml
+Module Name: AzureRM.Automation
+ms.assetid: CB621890-EF8A-4F14-8F18-D8806E624DAB
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/New-AzureRMAutomationSchedule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Automation/Commands.Automation/help/New-AzureRMAutomationSchedule.md
+ms.openlocfilehash: d82e63d21e18b7fb75282da9ac12be7644b0535a
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93602885"
+---
+# <span data-ttu-id="d794b-101">New-AzureRmAutomationSchedule</span><span class="sxs-lookup"><span data-stu-id="d794b-101">New-AzureRmAutomationSchedule</span></span>
+
+## <span data-ttu-id="d794b-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="d794b-102">SYNOPSIS</span></span>
+<span data-ttu-id="d794b-103">Cria um cronograma de automação.</span><span class="sxs-lookup"><span data-stu-id="d794b-103">Creates an Automation schedule.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="d794b-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d794b-104">SYNTAX</span></span>
+
+### <span data-ttu-id="d794b-105">ByDaily (padrão)</span><span class="sxs-lookup"><span data-stu-id="d794b-105">ByDaily (Default)</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>]
+ [-ExpiryTime <DateTimeOffset>] -DayInterval <Byte> [-TimeZone <String>] [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d794b-106">ByWeekly</span><span class="sxs-lookup"><span data-stu-id="d794b-106">ByWeekly</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>]
+ [-DaysOfWeek <DayOfWeek[]>] [-ExpiryTime <DateTimeOffset>] -WeekInterval <Byte> [-TimeZone <String>]
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="d794b-107">ByMonthlyDaysOfMonth</span><span class="sxs-lookup"><span data-stu-id="d794b-107">ByMonthlyDaysOfMonth</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>]
+ [-DaysOfMonth <DaysOfMonth[]>] [-ExpiryTime <DateTimeOffset>] -MonthInterval <Byte> [-TimeZone <String>]
+ [-ResourceGroupName] <String> [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="d794b-108">ByMonthlyDayOfWeek</span><span class="sxs-lookup"><span data-stu-id="d794b-108">ByMonthlyDayOfWeek</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>]
+ [-DayOfWeek <DayOfWeek>] [-DayOfWeekOccurrence <DayOfWeekOccurrence>] [-ExpiryTime <DateTimeOffset>]
+ -MonthInterval <Byte> [-TimeZone <String>] [-ResourceGroupName] <String> [-AutomationAccountName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d794b-109">ByOneTime</span><span class="sxs-lookup"><span data-stu-id="d794b-109">ByOneTime</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>] [-OneTime]
+ [-TimeZone <String>] [-ResourceGroupName] <String> [-AutomationAccountName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d794b-110">ByHourly</span><span class="sxs-lookup"><span data-stu-id="d794b-110">ByHourly</span></span>
+```
+New-AzureRmAutomationSchedule [-Name] <String> [-StartTime] <DateTimeOffset> [-Description <String>]
+ [-ExpiryTime <DateTimeOffset>] -HourInterval <Byte> [-TimeZone <String>] [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="d794b-111">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="d794b-111">DESCRIPTION</span></span>
+<span data-ttu-id="d794b-112">O cmdlet **New-AzureRmAutomationSchedule** cria um cronograma na automação do Azure.</span><span class="sxs-lookup"><span data-stu-id="d794b-112">The **New-AzureRmAutomationSchedule** cmdlet creates a schedule in Azure Automation.</span></span>
+
+## <span data-ttu-id="d794b-113">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="d794b-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="d794b-114">Exemplo 1: criar um cronograma único na hora local</span><span class="sxs-lookup"><span data-stu-id="d794b-114">Example 1: Create a one-time schedule in local time</span></span>
+```
+PS C:\>$TimeZone = ([System.TimeZoneInfo]::Local)Id
+PS C:\> New-AzureRmAutomationSchedule -AutomationAccountName "Contoso17" -Name "Schedule01" -StartTime "23:00" -OneTime -ResourceGroupName "ResourceGroup01" -TimeZone $TimeZone
+```
+
+<span data-ttu-id="d794b-115">O primeiro comando obtém a ID de fuso horário do sistema e a armazena na variável $TimeZone.</span><span class="sxs-lookup"><span data-stu-id="d794b-115">The first command gets the time zone ID from the system and stores it in the $TimeZone variable.</span></span>
+<span data-ttu-id="d794b-116">O segundo comando cria uma agenda que é executada uma vez na data atual em 11:00 PM no fuso horário especificado...</span><span class="sxs-lookup"><span data-stu-id="d794b-116">The second command creates a schedule that runs one time on the current date at 11:00 PM in the specified time zone..</span></span>
+
+### <span data-ttu-id="d794b-117">Exemplo 2: criar um cronograma recorrente</span><span class="sxs-lookup"><span data-stu-id="d794b-117">Example 2: Create a recurring schedule</span></span>
+```
+PS C:\>$StartTime = Get-Date "13:00:00"
+PS C:\> $EndTime = $StartTime.AddYears(1)
+PS C:\> New-AzureRmAutomationSchedule -AutomationAccountName "Contoso17" -Name "Schedule02" -StartTime $StartTime -ExpiryTime $EndTime -DailyInterval 1 -ResourceGroupName "ResourceGroup01"
+```
+
+<span data-ttu-id="d794b-118">O primeiro comando cria um objeto Date usando o cmdlet **Get-Date** e, em seguida, armazena o objeto na variável $StartDate.</span><span class="sxs-lookup"><span data-stu-id="d794b-118">The first command creates a date object by using the **Get-Date** cmdlet, and then stores the object in the $StartDate variable.</span></span>
+<span data-ttu-id="d794b-119">Especifique uma hora que tenha pelo menos cinco minutos no futuro.</span><span class="sxs-lookup"><span data-stu-id="d794b-119">Specify a time that is at least five minutes in the future.</span></span>
+
+<span data-ttu-id="d794b-120">O segundo comando cria um objeto Date usando o cmdlet **Get-Date** e, em seguida, armazena o objeto na variável $EndDate.</span><span class="sxs-lookup"><span data-stu-id="d794b-120">The second command creates a date object by using the **Get-Date** cmdlet, and then stores the object in the $EndDate variable.</span></span>
+<span data-ttu-id="d794b-121">O comando especifica um tempo futuro.</span><span class="sxs-lookup"><span data-stu-id="d794b-121">The command specifies a future time.</span></span>
+
+<span data-ttu-id="d794b-122">O comando final cria um cronograma diário chamado Schedule01 para começar no horário armazenado no $StartDate e expirar no horário armazenado no $EndDate.</span><span class="sxs-lookup"><span data-stu-id="d794b-122">The final command creates a daily schedule named Schedule01 to begin at the time stored in $StartDate and expire at the time stored in $EndDate.</span></span>
+
+## <span data-ttu-id="d794b-123">OS</span><span class="sxs-lookup"><span data-stu-id="d794b-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="d794b-124">-AutomationAccountName</span><span class="sxs-lookup"><span data-stu-id="d794b-124">-AutomationAccountName</span></span>
+<span data-ttu-id="d794b-125">Especifica o nome de uma conta de automação para a qual esse cmdlet cria um cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-125">Specifies the name of an Automation account for which this cmdlet creates a schedule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-126">-DayInterval</span><span class="sxs-lookup"><span data-stu-id="d794b-126">-DayInterval</span></span>
+<span data-ttu-id="d794b-127">Especifica um intervalo, em dias, para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-127">Specifies an interval, in days, for the schedule.</span></span>
+<span data-ttu-id="d794b-128">Se você não especificar esse parâmetro e não especificar o parâmetro *OneTime* , o valor padrão será um (1).</span><span class="sxs-lookup"><span data-stu-id="d794b-128">If you do not specify this parameter, and you do not specify the *OneTime* parameter, the default value is one (1).</span></span>
+
+```yaml
+Type: System.Byte
+Parameter Sets: ByDaily
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-129">-DayOfWeek</span><span class="sxs-lookup"><span data-stu-id="d794b-129">-DayOfWeek</span></span>
+<span data-ttu-id="d794b-130">Especifica uma lista de dias da semana para o cronograma semanal.</span><span class="sxs-lookup"><span data-stu-id="d794b-130">Specifies a list of days of the week for the weekly schedule.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DayOfWeek]
+Parameter Sets: ByMonthlyDayOfWeek
+Aliases: 
+Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-131">-DayOfWeekOccurrence</span><span class="sxs-lookup"><span data-stu-id="d794b-131">-DayOfWeekOccurrence</span></span>
+<span data-ttu-id="d794b-132">Especifica a ocorrência da semana no mês em que a agenda é executada.</span><span class="sxs-lookup"><span data-stu-id="d794b-132">Specifies the occurrence of the week within the month that the schedule runs.</span></span>
+<span data-ttu-id="d794b-133">psdx_paramvalues</span><span class="sxs-lookup"><span data-stu-id="d794b-133">psdx_paramvalues</span></span>
+
+- <span data-ttu-id="d794b-134">um</span><span class="sxs-lookup"><span data-stu-id="d794b-134">1</span></span>
+- <span data-ttu-id="d794b-135">2</span><span class="sxs-lookup"><span data-stu-id="d794b-135">2</span></span>
+- <span data-ttu-id="d794b-136">3D</span><span class="sxs-lookup"><span data-stu-id="d794b-136">3</span></span>
+- <span data-ttu-id="d794b-137">4</span><span class="sxs-lookup"><span data-stu-id="d794b-137">4</span></span>
+- <span data-ttu-id="d794b-138">-1</span><span class="sxs-lookup"><span data-stu-id="d794b-138">-1</span></span>
+- <span data-ttu-id="d794b-139">Primeiros</span><span class="sxs-lookup"><span data-stu-id="d794b-139">First</span></span>
+- <span data-ttu-id="d794b-140">Secundária</span><span class="sxs-lookup"><span data-stu-id="d794b-140">Second</span></span>
+- <span data-ttu-id="d794b-141">Terceiriza</span><span class="sxs-lookup"><span data-stu-id="d794b-141">Third</span></span>
+- <span data-ttu-id="d794b-142">Fourth</span><span class="sxs-lookup"><span data-stu-id="d794b-142">Fourth</span></span>
+- <span data-ttu-id="d794b-143">LastDay</span><span class="sxs-lookup"><span data-stu-id="d794b-143">LastDay</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence
+Parameter Sets: ByMonthlyDayOfWeek
+Aliases: 
+Accepted values: First, Second, Third, Fourth, Last
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-144">-DaysOfMonth</span><span class="sxs-lookup"><span data-stu-id="d794b-144">-DaysOfMonth</span></span>
+<span data-ttu-id="d794b-145">Especifica uma lista de dias do mês para o cronograma mensal.</span><span class="sxs-lookup"><span data-stu-id="d794b-145">Specifies a list of days of the month for the monthly schedule.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[]
+Parameter Sets: ByMonthlyDaysOfMonth
+Aliases: 
+Accepted values: One, Two, Three, Four, Five, Six, Seventh, Eighth, Ninth, Tenth, Eleventh, Twelfth, Thirteenth, Fourteenth, Fifteenth, Sixteenth, Seventeenth, Eighteenth, Nineteenth, Twentieth, TwentyFirst, TwentySecond, TwentyThird, TwentyFourth, TwentyFifth, TwentySixth, TwentySeventh, TwentyEighth, TwentyNinth, Thirtieth, ThirtyFirst, LastDay
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-146">-DaysOfWeek</span><span class="sxs-lookup"><span data-stu-id="d794b-146">-DaysOfWeek</span></span>
+<span data-ttu-id="d794b-147">Especifica uma lista de dias da semana para o cronograma semanal.</span><span class="sxs-lookup"><span data-stu-id="d794b-147">Specifies a list of days of the week for the weekly schedule.</span></span>
+
+```yaml
+Type: System.DayOfWeek[]
+Parameter Sets: ByWeekly
+Aliases: 
+Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-148">-Descrição</span><span class="sxs-lookup"><span data-stu-id="d794b-148">-Description</span></span>
+<span data-ttu-id="d794b-149">Especifica uma descrição para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-149">Specifies a description for the schedule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-150">-ExpiryTime</span><span class="sxs-lookup"><span data-stu-id="d794b-150">-ExpiryTime</span></span>
+<span data-ttu-id="d794b-151">Especifica o tempo de expiração de um cronograma como um objeto **DateTimeOffest** .</span><span class="sxs-lookup"><span data-stu-id="d794b-151">Specifies the expiry time of a schedule as a **DateTimeOffest** object.</span></span>
+<span data-ttu-id="d794b-152">Você pode especificar uma cadeia de caracteres que pode ser convertida em um **DateTimeOffset** válido.</span><span class="sxs-lookup"><span data-stu-id="d794b-152">You can specify a string that can be converted to a valid **DateTimeOffset**.</span></span>
+
+```yaml
+Type: System.DateTimeOffset
+Parameter Sets: ByDaily, ByWeekly, ByMonthlyDaysOfMonth, ByMonthlyDayOfWeek, ByHourly
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-153">-HourInterval</span><span class="sxs-lookup"><span data-stu-id="d794b-153">-HourInterval</span></span>
+<span data-ttu-id="d794b-154">Especifica um intervalo, em horas, para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-154">Specifies an interval, in hours, for the schedule.</span></span>
+
+```yaml
+Type: System.Byte
+Parameter Sets: ByHourly
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-155">-MonthInterval</span><span class="sxs-lookup"><span data-stu-id="d794b-155">-MonthInterval</span></span>
+<span data-ttu-id="d794b-156">Especifica um intervalo, em meses, para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-156">Specifies an interval, in Months, for the schedule.</span></span>
+
+```yaml
+Type: System.Byte
+Parameter Sets: ByMonthlyDaysOfMonth, ByMonthlyDayOfWeek
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-157">-Nome</span><span class="sxs-lookup"><span data-stu-id="d794b-157">-Name</span></span>
+<span data-ttu-id="d794b-158">Especifica um nome para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-158">Specifies a name for the schedule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-159">-OneTime</span><span class="sxs-lookup"><span data-stu-id="d794b-159">-OneTime</span></span>
+<span data-ttu-id="d794b-160">Especifica que o cmdlet cria um agendamento de uma vez.</span><span class="sxs-lookup"><span data-stu-id="d794b-160">Specifies that the cmdlet creates a one-time schedule.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByOneTime
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-161">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d794b-161">-ResourceGroupName</span></span>
+<span data-ttu-id="d794b-162">Especifica o nome de um grupo de recursos para o qual esse cmdlet cria um cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-162">Specifies the name of a resource group for which this cmdlet creates a schedule.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-163">-StartTime</span><span class="sxs-lookup"><span data-stu-id="d794b-163">-StartTime</span></span>
+<span data-ttu-id="d794b-164">Especifica a hora de início de um cronograma como um objeto **DateTimeOffset** .</span><span class="sxs-lookup"><span data-stu-id="d794b-164">Specifies the start time of a schedule as a **DateTimeOffset** object.</span></span>
+<span data-ttu-id="d794b-165">Você pode especificar uma cadeia de caracteres que pode ser convertida em um **DateTimeOffset** válido.</span><span class="sxs-lookup"><span data-stu-id="d794b-165">You can specify a string that can be converted to a valid **DateTimeOffset**.</span></span>
+<span data-ttu-id="d794b-166">.</span><span class="sxs-lookup"><span data-stu-id="d794b-166">.</span></span> <span data-ttu-id="d794b-167">Se o parâmetro *timezone* for especificado, o deslocamento será ignorado e o fuso horário especificado será usado.</span><span class="sxs-lookup"><span data-stu-id="d794b-167">If the *TimeZone* parameter is specified, the offset will be ignored and the time zone specified is used.</span></span>
+
+```yaml
+Type: System.DateTimeOffset
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-168">-Fuso horário</span><span class="sxs-lookup"><span data-stu-id="d794b-168">-TimeZone</span></span>
+<span data-ttu-id="d794b-169">Especifica o fuso horário do cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-169">Specifies the time zone for the schedule.</span></span>
+<span data-ttu-id="d794b-170">Esta cadeia de caracteres pode ser a ID da IANA ou a ID do fuso horário do Windows.</span><span class="sxs-lookup"><span data-stu-id="d794b-170">This string can be the IANA ID or the Windows Time Zone ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-171">-WeekInterval</span><span class="sxs-lookup"><span data-stu-id="d794b-171">-WeekInterval</span></span>
+<span data-ttu-id="d794b-172">Especifica um intervalo, em semanas, para o cronograma.</span><span class="sxs-lookup"><span data-stu-id="d794b-172">Specifies an interval, in weeks, for the schedule.</span></span>
+
+```yaml
+Type: System.Byte
+Parameter Sets: ByWeekly
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-173">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d794b-173">-DefaultProfile</span></span>
+<span data-ttu-id="d794b-174">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="d794b-174">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d794b-175">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d794b-175">CommonParameters</span></span>
+<span data-ttu-id="d794b-176">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d794b-176">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d794b-177">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="d794b-177">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d794b-178">SENSORES</span><span class="sxs-lookup"><span data-stu-id="d794b-178">INPUTS</span></span>
+
+## <span data-ttu-id="d794b-179">EXIBE</span><span class="sxs-lookup"><span data-stu-id="d794b-179">OUTPUTS</span></span>
+
+### <span data-ttu-id="d794b-180">Microsoft. Azure. Commands. Automation. Model. Schedule</span><span class="sxs-lookup"><span data-stu-id="d794b-180">Microsoft.Azure.Commands.Automation.Model.Schedule</span></span>
+
+## <span data-ttu-id="d794b-181">INFORMA</span><span class="sxs-lookup"><span data-stu-id="d794b-181">NOTES</span></span>
+
+## <span data-ttu-id="d794b-182">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="d794b-182">RELATED LINKS</span></span>
+
+[<span data-ttu-id="d794b-183">Get-AzureRmAutomationSchedule</span><span class="sxs-lookup"><span data-stu-id="d794b-183">Get-AzureRmAutomationSchedule</span></span>](./Get-AzureRMAutomationSchedule.md)
+
+[<span data-ttu-id="d794b-184">Remove-AzureRmAutomationSchedule</span><span class="sxs-lookup"><span data-stu-id="d794b-184">Remove-AzureRmAutomationSchedule</span></span>](./Remove-AzureRMAutomationSchedule.md)
+
+[<span data-ttu-id="d794b-185">Set-AzureRmAutomationSchedule</span><span class="sxs-lookup"><span data-stu-id="d794b-185">Set-AzureRmAutomationSchedule</span></span>](./Set-AzureRMAutomationSchedule.md)
+
+
