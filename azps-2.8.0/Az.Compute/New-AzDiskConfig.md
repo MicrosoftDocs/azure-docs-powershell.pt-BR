@@ -1,0 +1,419 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/new-azdiskconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzDiskConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/New-AzDiskConfig.md
+ms.openlocfilehash: c37ed947441789951d8523f38e7950ad6d9d2066
+ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "93597385"
+---
+# <span data-ttu-id="c29a2-101">New-AzDiskConfig</span><span class="sxs-lookup"><span data-stu-id="c29a2-101">New-AzDiskConfig</span></span>
+
+## <span data-ttu-id="c29a2-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="c29a2-102">SYNOPSIS</span></span>
+<span data-ttu-id="c29a2-103">Cria um objeto de disco configurável.</span><span class="sxs-lookup"><span data-stu-id="c29a2-103">Creates a configurable disk object.</span></span>
+
+## <span data-ttu-id="c29a2-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="c29a2-104">SYNTAX</span></span>
+
+```
+New-AzDiskConfig [[-SkuName] <String>] [[-OsType] <OperatingSystemTypes>] [[-DiskSizeGB] <Int32>]
+ [[-Location] <String>] [-Zone <String[]>] [-HyperVGeneration <String>] [-DiskIOPSReadWrite <Int32>]
+ [-DiskMBpsReadWrite <Int32>] [-Tag <Hashtable>] [-CreateOption <String>] [-StorageAccountId <String>]
+ [-ImageReference <ImageDiskReference>] [-SourceUri <String>] [-SourceResourceId <String>]
+ [-UploadSizeInBytes <Int64>] [-EncryptionSettingsEnabled <Boolean>]
+ [-DiskEncryptionKey <KeyVaultAndSecretReference>] [-KeyEncryptionKey <KeyVaultAndKeyReference>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c29a2-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="c29a2-105">DESCRIPTION</span></span>
+<span data-ttu-id="c29a2-106">O cmdlet **New-AzDiskConfig** cria um objeto de disco configurável.</span><span class="sxs-lookup"><span data-stu-id="c29a2-106">The **New-AzDiskConfig** cmdlet creates a configurable disk object.</span></span>
+
+## <span data-ttu-id="c29a2-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="c29a2-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="c29a2-108">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="c29a2-108">Example 1</span></span>
+```
+PS C:\> $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 5 -AccountType Standard_LRS -OsType Windows -CreateOption Empty -EncryptionSettingsEnabled $true;
+PS C:\> $secretUrl = https://myvault.vault-int.azure-int.net/secrets/123/;
+PS C:\> $secretId = '/subscriptions/0000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup01/providers/Microsoft.KeyVault/vaults/TestVault123';
+PS C:\> $keyUrl = https://myvault.vault-int.azure-int.net/keys/456;
+PS C:\> $keyId = '/subscriptions/0000000-0000-0000-0000-000000000000/resourceGroups/ResourceGroup01/providers/Microsoft.KeyVault/vaults/TestVault456';
+PS C:\> $diskconfig = Set-AzDiskDiskEncryptionKey -Disk $diskconfig -SecretUrl $secretUrl -SourceVaultId $secretId;
+PS C:\> $diskconfig = Set-AzDiskKeyEncryptionKey -Disk $diskconfig -KeyUrl $keyUrl -SourceVaultId $keyId;
+PS C:\> New-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -Disk $diskconfig;
+```
+
+<span data-ttu-id="c29a2-109">O primeiro comando cria um objeto de disco vazio local com o tamanho de 5 GB em Standard_LRS tipo de conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="c29a2-109">The first command creates a local empty disk object with size 5GB in Standard_LRS storage account type.</span></span> <span data-ttu-id="c29a2-110">Ele também define o tipo de sistema operacional Windows e habilita as configurações de criptografia.</span><span class="sxs-lookup"><span data-stu-id="c29a2-110">It also sets Windows OS type and enables encryption settings.</span></span> <span data-ttu-id="c29a2-111">O segundo e o terceiro comandos definem as configurações de chave de criptografia de disco e chave de criptografia de chave para o objeto de disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-111">The second and third commands set the disk encryption key and key encryption key settings for the disk object.</span></span> <span data-ttu-id="c29a2-112">O último comando pega o objeto de disco e cria um disco com o nome "Disk01" no grupo de recursos "ResourceGroup01".</span><span class="sxs-lookup"><span data-stu-id="c29a2-112">The last command takes the disk object and creates a disk with name 'Disk01' in resource group 'ResourceGroup01'.</span></span>
+
+### <span data-ttu-id="c29a2-113">Exemplo 2</span><span class="sxs-lookup"><span data-stu-id="c29a2-113">Example 2</span></span>
+```
+PS C:\> $diskconfig = New-AzDiskConfig -Location 'Central US' -DiskSizeGB 1023 -SkuName Standard_LRS -OsType Windows -CreateOption Upload -DiskIOPSReadWrite 500 -DiskMBpsReadWrite 8;
+PS C:\> New-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -Disk $diskconfig;
+PS C:\> $diskSas = Grant-AzDiskAccess -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01' -DurationInSecond 86400 -Access 'Write'
+PS C:\> $disk = Get-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01'
+# $disk.DiskState == 'ReadyToUpload'
+PS C:\> AzCopy /Source:https://myaccount.blob.core.windows.net/mycontainer1 /Dest:$diskSas
+PS C:\> $disk = Get-AzDisk -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01'
+# $disk.DiskState == 'ActiveUpload'
+PS C:\> Revoke-AzDiskAccess -ResourceGroupName 'ResourceGroup01' -DiskName 'Disk01'
+```
+
+<span data-ttu-id="c29a2-114">O primeiro comando cria um objeto de disco local para carregamento.</span><span class="sxs-lookup"><span data-stu-id="c29a2-114">The first command creates a local disk object for Upload.</span></span>
+<span data-ttu-id="c29a2-115">O segundo comando leva o objeto de disco e cria um disco com o nome "Disk01" no grupo de recursos "ResourceGroup01".</span><span class="sxs-lookup"><span data-stu-id="c29a2-115">The second command takes the disk object and creates a disk with name 'Disk01' in resource group 'ResourceGroup01'.</span></span>
+<span data-ttu-id="c29a2-116">O terceiro comando obtém a URL SAS para o disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-116">The third command gets SAS Url for the disk.</span></span>
+<span data-ttu-id="c29a2-117">O quarto comando obtém o estado do disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-117">The fourth command gets the state of the disk.</span></span>
+<span data-ttu-id="c29a2-118">Se o estado do disco for ' ReadyToUpload ', um usuário pode carregar um disco do armazenamento de BLOB para a URL SAS de disco usando AzCopy.</span><span class="sxs-lookup"><span data-stu-id="c29a2-118">If the disk state is 'ReadyToUpload', a user can upload a disk from blob storage to the disk SAS Url using AzCopy.</span></span>
+<span data-ttu-id="c29a2-119">Durante o upload, o estado do disco é alterado para ' ActiveUpload '.</span><span class="sxs-lookup"><span data-stu-id="c29a2-119">During uploading, the disk state is changed to 'ActiveUpload'.</span></span>
+<span data-ttu-id="c29a2-120">O último comando revoga o acesso ao disco para a URL SAS.</span><span class="sxs-lookup"><span data-stu-id="c29a2-120">The last command revokes the disk access for the SAS Url.</span></span>
+
+## <span data-ttu-id="c29a2-121">OS</span><span class="sxs-lookup"><span data-stu-id="c29a2-121">PARAMETERS</span></span>
+
+### <span data-ttu-id="c29a2-122">-Createoption</span><span class="sxs-lookup"><span data-stu-id="c29a2-122">-CreateOption</span></span>
+<span data-ttu-id="c29a2-123">Especifica se esse cmdlet cria um disco na máquina virtual a partir de uma plataforma ou de uma imagem de usuário, cria um disco vazio ou anexa um disco existente.</span><span class="sxs-lookup"><span data-stu-id="c29a2-123">Specifies whether this cmdlet creates a disk in the virtual machine from a platform or user image, creates an empty disk, or attaches an existing disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c29a2-124">-DefaultProfile</span></span>
+<span data-ttu-id="c29a2-125">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="c29a2-125">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-126">-DiskEncryptionKey</span><span class="sxs-lookup"><span data-stu-id="c29a2-126">-DiskEncryptionKey</span></span>
+<span data-ttu-id="c29a2-127">Especifica o objeto da chave de criptografia do disco em um disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-127">Specifies the disk encryption key object on a disk.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.Compute.Models.KeyVaultAndSecretReference
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-128">-DiskIOPSReadWrite</span><span class="sxs-lookup"><span data-stu-id="c29a2-128">-DiskIOPSReadWrite</span></span>
+<span data-ttu-id="c29a2-129">O número de IOPS permitidos para este disco; somente settable para discos UltraSSD.</span><span class="sxs-lookup"><span data-stu-id="c29a2-129">The number of IOPS allowed for this disk; only settable for UltraSSD disks.</span></span> <span data-ttu-id="c29a2-130">Uma operação pode ser transferida entre 4K e 256K de bytes.</span><span class="sxs-lookup"><span data-stu-id="c29a2-130">One operation can transfer between 4k and 256k bytes.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-131">-DiskMBpsReadWrite</span><span class="sxs-lookup"><span data-stu-id="c29a2-131">-DiskMBpsReadWrite</span></span>
+<span data-ttu-id="c29a2-132">A largura de banda permitida para este disco; somente settable para discos UltraSSD.</span><span class="sxs-lookup"><span data-stu-id="c29a2-132">The bandwidth allowed for this disk; only settable for UltraSSD disks.</span></span> <span data-ttu-id="c29a2-133">MBps significa milhões de bytes por segundo-MB aqui usa a notação ISO, das potências de 10.</span><span class="sxs-lookup"><span data-stu-id="c29a2-133">MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-134">-DiskSizeGB</span><span class="sxs-lookup"><span data-stu-id="c29a2-134">-DiskSizeGB</span></span>
+<span data-ttu-id="c29a2-135">Especifica o tamanho do disco em GB.</span><span class="sxs-lookup"><span data-stu-id="c29a2-135">Specifies the size of the disk in GB.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-136">-EncryptionSettingsEnabled</span><span class="sxs-lookup"><span data-stu-id="c29a2-136">-EncryptionSettingsEnabled</span></span>
+<span data-ttu-id="c29a2-137">Habilite as configurações de criptografia.</span><span class="sxs-lookup"><span data-stu-id="c29a2-137">Enable encryption settings.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-138">-HyperVGeneration</span><span class="sxs-lookup"><span data-stu-id="c29a2-138">-HyperVGeneration</span></span>
+<span data-ttu-id="c29a2-139">A geração de hipervisor da máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="c29a2-139">The hypervisor generation of the Virtual Machine.</span></span> <span data-ttu-id="c29a2-140">Aplicável somente a discos do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="c29a2-140">Applicable to OS disks only.</span></span>  <span data-ttu-id="c29a2-141">Os valores permitidos são v1 e v2.</span><span class="sxs-lookup"><span data-stu-id="c29a2-141">Allowed values are V1 and V2.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-142">-ImageReference</span><span class="sxs-lookup"><span data-stu-id="c29a2-142">-ImageReference</span></span>
+<span data-ttu-id="c29a2-143">Especifica a referência de imagem em um disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-143">Specifies the image reference on a disk.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.Compute.Models.ImageDiskReference
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-144">-KeyEncryptionKey</span><span class="sxs-lookup"><span data-stu-id="c29a2-144">-KeyEncryptionKey</span></span>
+<span data-ttu-id="c29a2-145">Especifica a chave de criptografia da chave em um disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-145">Specifies the Key encryption key on a disk.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.Compute.Models.KeyVaultAndKeyReference
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-146">-Local</span><span class="sxs-lookup"><span data-stu-id="c29a2-146">-Location</span></span>
+<span data-ttu-id="c29a2-147">Especifica um local.</span><span class="sxs-lookup"><span data-stu-id="c29a2-147">Specifies a location.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-148">-OsType</span><span class="sxs-lookup"><span data-stu-id="c29a2-148">-OsType</span></span>
+<span data-ttu-id="c29a2-149">Especifica o tipo de sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="c29a2-149">Specifies the OS type.</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.OperatingSystemTypes]
+Parameter Sets: (All)
+Aliases:
+Accepted values: Windows, Linux
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-150">-SkuName</span><span class="sxs-lookup"><span data-stu-id="c29a2-150">-SkuName</span></span>
+<span data-ttu-id="c29a2-151">Especifica o nome do SKU da conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="c29a2-151">Specifies the Sku name of the storage account.</span></span>  <span data-ttu-id="c29a2-152">Os valores disponíveis são Standard_LRS, Premium_LRS, StandardSSD_LRS e UltraSSD_LRS.</span><span class="sxs-lookup"><span data-stu-id="c29a2-152">Available values are Standard_LRS, Premium_LRS, StandardSSD_LRS, and UltraSSD_LRS.</span></span>  <span data-ttu-id="c29a2-153">UltraSSD_LRS só pode ser usado com um valor vazio para o parâmetro createoption.</span><span class="sxs-lookup"><span data-stu-id="c29a2-153">UltraSSD_LRS can only be used with Empty value for CreateOption parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: AccountType
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-154">-SourceResourceId</span><span class="sxs-lookup"><span data-stu-id="c29a2-154">-SourceResourceId</span></span>
+<span data-ttu-id="c29a2-155">Especifica a ID do recurso de origem.</span><span class="sxs-lookup"><span data-stu-id="c29a2-155">Specifies the  source resource ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-156">-SourceUri</span><span class="sxs-lookup"><span data-stu-id="c29a2-156">-SourceUri</span></span>
+<span data-ttu-id="c29a2-157">Especifica o URI de origem.</span><span class="sxs-lookup"><span data-stu-id="c29a2-157">Specifies the source Uri.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-158">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="c29a2-158">-StorageAccountId</span></span>
+<span data-ttu-id="c29a2-159">Especifica a ID da conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="c29a2-159">Specifies the storage account ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-160">-Marca</span><span class="sxs-lookup"><span data-stu-id="c29a2-160">-Tag</span></span>
+<span data-ttu-id="c29a2-161">Pares de valores chave na forma de uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="c29a2-161">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="c29a2-162">Por exemplo: @ {Key0 = "value0"; key1 = $null; Key2 = "value2"}</span><span class="sxs-lookup"><span data-stu-id="c29a2-162">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-163">-UploadSizeInBytes</span><span class="sxs-lookup"><span data-stu-id="c29a2-163">-UploadSizeInBytes</span></span>
+<span data-ttu-id="c29a2-164">Especifica o tamanho do conteúdo do carregamento incluindo o rodapé do VHD quando createoption é carregado.</span><span class="sxs-lookup"><span data-stu-id="c29a2-164">Specifies the size of the contents of the upload including the VHD footer when CreateOption is Upload.</span></span>  <span data-ttu-id="c29a2-165">Esse valor deve estar entre 20972032 (20 MiB + 512 bytes para o rodapé VHD) e 35183298347520 bytes (32 TiB + 512 bytes para o rodapé VHD).</span><span class="sxs-lookup"><span data-stu-id="c29a2-165">This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-166">-Zone</span><span class="sxs-lookup"><span data-stu-id="c29a2-166">-Zone</span></span>
+<span data-ttu-id="c29a2-167">Especifica a lista de zonas lógicas do disco.</span><span class="sxs-lookup"><span data-stu-id="c29a2-167">Specifies the logical zone list for Disk.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-168">-Confirme</span><span class="sxs-lookup"><span data-stu-id="c29a2-168">-Confirm</span></span>
+<span data-ttu-id="c29a2-169">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c29a2-169">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-170">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c29a2-170">-WhatIf</span></span>
+<span data-ttu-id="c29a2-171">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="c29a2-171">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="c29a2-172">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="c29a2-172">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c29a2-173">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c29a2-173">CommonParameters</span></span>
+<span data-ttu-id="c29a2-174">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c29a2-174">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c29a2-175">Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="c29a2-175">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c29a2-176">SENSORES</span><span class="sxs-lookup"><span data-stu-id="c29a2-176">INPUTS</span></span>
+
+### <span data-ttu-id="c29a2-177">System. String</span><span class="sxs-lookup"><span data-stu-id="c29a2-177">System.String</span></span>
+
+### <span data-ttu-id="c29a2-178">System. Nullable ' 1 [[Microsoft. Azure. Management. COMPUTE. Models. OperatingSystemTypes, Microsoft. Azure. Management. Compute, Version = 23.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35]]</span><span class="sxs-lookup"><span data-stu-id="c29a2-178">System.Nullable\`1[[Microsoft.Azure.Management.Compute.Models.OperatingSystemTypes, Microsoft.Azure.Management.Compute, Version=23.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]]</span></span>
+
+### <span data-ttu-id="c29a2-179">System. Int32</span><span class="sxs-lookup"><span data-stu-id="c29a2-179">System.Int32</span></span>
+
+### <span data-ttu-id="c29a2-180">System. String []</span><span class="sxs-lookup"><span data-stu-id="c29a2-180">System.String[]</span></span>
+
+### <span data-ttu-id="c29a2-181">System. Collections. Hashtable</span><span class="sxs-lookup"><span data-stu-id="c29a2-181">System.Collections.Hashtable</span></span>
+
+### <span data-ttu-id="c29a2-182">Microsoft. Azure. Management. COMPUTE. Models. ImageDiskReference</span><span class="sxs-lookup"><span data-stu-id="c29a2-182">Microsoft.Azure.Management.Compute.Models.ImageDiskReference</span></span>
+
+### <span data-ttu-id="c29a2-183">System. Nullable ' 1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="c29a2-183">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+### <span data-ttu-id="c29a2-184">Microsoft. Azure. Management. COMPUTE. Models. KeyVaultAndSecretReference</span><span class="sxs-lookup"><span data-stu-id="c29a2-184">Microsoft.Azure.Management.Compute.Models.KeyVaultAndSecretReference</span></span>
+
+### <span data-ttu-id="c29a2-185">Microsoft. Azure. Management. COMPUTE. Models. KeyVaultAndKeyReference</span><span class="sxs-lookup"><span data-stu-id="c29a2-185">Microsoft.Azure.Management.Compute.Models.KeyVaultAndKeyReference</span></span>
+
+## <span data-ttu-id="c29a2-186">EXIBE</span><span class="sxs-lookup"><span data-stu-id="c29a2-186">OUTPUTS</span></span>
+
+### <span data-ttu-id="c29a2-187">Microsoft.Azure.Commands.Compute.Automation.Models.PSDISK</span><span class="sxs-lookup"><span data-stu-id="c29a2-187">Microsoft.Azure.Commands.Compute.Automation.Models.PSDisk</span></span>
+
+## <span data-ttu-id="c29a2-188">INFORMA</span><span class="sxs-lookup"><span data-stu-id="c29a2-188">NOTES</span></span>
+
+## <span data-ttu-id="c29a2-189">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="c29a2-189">RELATED LINKS</span></span>
