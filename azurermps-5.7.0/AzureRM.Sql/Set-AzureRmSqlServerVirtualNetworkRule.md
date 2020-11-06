@@ -1,0 +1,195 @@
+---
+external help file: Microsoft.Azure.Commands.Sql.dll-Help.xml
+Module Name: AzureRM.Sql
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.sql/set-azurermsqlservervirtualnetworkrule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Set-AzureRmSqlServerVirtualNetworkRule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/Set-AzureRmSqlServerVirtualNetworkRule.md
+ms.openlocfilehash: 07b0f4aa0bcf5dd052256cdc020f6bff2c50193d
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93427406"
+---
+# <span data-ttu-id="1bc18-101">Set-AzureRmSqlServerVirtualNetworkRule</span><span class="sxs-lookup"><span data-stu-id="1bc18-101">Set-AzureRmSqlServerVirtualNetworkRule</span></span>
+
+## <span data-ttu-id="1bc18-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="1bc18-102">SYNOPSIS</span></span>
+<span data-ttu-id="1bc18-103">Modifica a configuração de uma regra de rede virtual do Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="1bc18-103">Modifies the configuration of an Azure SQL Server Virtual Network Rule.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="1bc18-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="1bc18-104">SYNTAX</span></span>
+
+```
+Set-AzureRmSqlServerVirtualNetworkRule -VirtualNetworkRuleName <String> -VirtualNetworkSubnetId <String>
+ [-IgnoreMissingVnetServiceEndpoint] [-AsJob] -ServerName <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="1bc18-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="1bc18-105">DESCRIPTION</span></span>
+<span data-ttu-id="1bc18-106">Esse comando modifica a configuração de uma regra de rede virtual do Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="1bc18-106">This command modifies the configuration of an Azure SQL Server Virtual Network Rule.</span></span>
+
+
+<span data-ttu-id="1bc18-107">Para controlar o conjunto de regras de rede virtual no servidor, use "Add-AzureRmSqlServerVirtualNetworkRule" e "Remove-AzureRmSqlServerVirtualNetworkRule" em vez disso.</span><span class="sxs-lookup"><span data-stu-id="1bc18-107">To control the set of virtual network rules in the server, use 'Add-AzureRmSqlServerVirtualNetworkRule' and 'Remove-AzureRmSqlServerVirtualNetworkRule' instead.</span></span>
+
+## <span data-ttu-id="1bc18-108">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="1bc18-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="1bc18-109">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="1bc18-109">Example 1</span></span>
+```
+PS C:\> $virtualNetworkRule = Set-AzureRmSqlServerVirtualNetworkRule -ResourceGroupName rg -ServerName serverName -VirtualNetworkRuleName virtualNetworkRuleName -VirtualNetworkSubnetId virtualNetworkSubnetId
+```
+
+<span data-ttu-id="1bc18-110">Modifica uma regra de rede virtual existente com a nova ID de sub-rede de rede virtual que contém informações sobre a nova rede virtual</span><span class="sxs-lookup"><span data-stu-id="1bc18-110">Modifies an existing virtual network rule with the new virtual network subnet id which contains information about the new virtual network</span></span>
+
+## <span data-ttu-id="1bc18-111">OS</span><span class="sxs-lookup"><span data-stu-id="1bc18-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="1bc18-112">-AsJob</span><span class="sxs-lookup"><span data-stu-id="1bc18-112">-AsJob</span></span>
+<span data-ttu-id="1bc18-113">Executar o cmdlet em segundo plano</span><span class="sxs-lookup"><span data-stu-id="1bc18-113">Run cmdlet in the background</span></span>
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1bc18-114">-DefaultProfile</span></span>
+<span data-ttu-id="1bc18-115">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="1bc18-115">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-116">-IgnoreMissingVnetServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="1bc18-116">-IgnoreMissingVnetServiceEndpoint</span></span>
+<span data-ttu-id="1bc18-117">Crie uma regra de firewall antes da rede virtual ter ponto de extremidade do serviço vnet habilitado.</span><span class="sxs-lookup"><span data-stu-id="1bc18-117">Create firewall rule before the virtual network has vnet service endpoint enabled.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-118">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="1bc18-118">-ResourceGroupName</span></span>
+<span data-ttu-id="1bc18-119">O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="1bc18-119">The name of the resource group.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-120">-Nomedoservidor</span><span class="sxs-lookup"><span data-stu-id="1bc18-120">-ServerName</span></span>
+<span data-ttu-id="1bc18-121">O nome do SQL Server do Azure.</span><span class="sxs-lookup"><span data-stu-id="1bc18-121">The Azure Sql Server name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-122">-VirtualNetworkRuleName</span><span class="sxs-lookup"><span data-stu-id="1bc18-122">-VirtualNetworkRuleName</span></span>
+<span data-ttu-id="1bc18-123">O nome da regra de rede virtual do Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="1bc18-123">The name of the Azure Sql Server Virtual Network Rule.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-124">-VirtualNetworkSubnetId</span><span class="sxs-lookup"><span data-stu-id="1bc18-124">-VirtualNetworkSubnetId</span></span>
+<span data-ttu-id="1bc18-125">A ID de sub-rede da rede virtual para a regra.</span><span class="sxs-lookup"><span data-stu-id="1bc18-125">The Virtual Network Subnet Id for the rule.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-126">-Confirme</span><span class="sxs-lookup"><span data-stu-id="1bc18-126">-Confirm</span></span>
+<span data-ttu-id="1bc18-127">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1bc18-127">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1bc18-128">-WhatIf</span></span>
+<span data-ttu-id="1bc18-129">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="1bc18-129">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="1bc18-130">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="1bc18-130">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1bc18-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1bc18-131">CommonParameters</span></span>
+<span data-ttu-id="1bc18-132">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1bc18-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1bc18-133">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="1bc18-133">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="1bc18-134">SENSORES</span><span class="sxs-lookup"><span data-stu-id="1bc18-134">INPUTS</span></span>
+
+### <span data-ttu-id="1bc18-135">System. String</span><span class="sxs-lookup"><span data-stu-id="1bc18-135">System.String</span></span>
+
+## <span data-ttu-id="1bc18-136">EXIBE</span><span class="sxs-lookup"><span data-stu-id="1bc18-136">OUTPUTS</span></span>
+
+### <span data-ttu-id="1bc18-137">Microsoft. Azure. Commands. Sql. VirtualNetworkRule. Model. AzureSqlServerVirtualNetworkRuleModel</span><span class="sxs-lookup"><span data-stu-id="1bc18-137">Microsoft.Azure.Commands.Sql.VirtualNetworkRule.Model.AzureSqlServerVirtualNetworkRuleModel</span></span>
+
+## <span data-ttu-id="1bc18-138">INFORMA</span><span class="sxs-lookup"><span data-stu-id="1bc18-138">NOTES</span></span>
+
+## <span data-ttu-id="1bc18-139">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="1bc18-139">RELATED LINKS</span></span>
