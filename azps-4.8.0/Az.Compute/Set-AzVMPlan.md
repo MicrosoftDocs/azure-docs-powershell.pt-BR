@@ -1,0 +1,155 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+ms.assetid: A1EA7D34-A8B4-4FA0-BD8C-3E846715AFBA
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/set-azvmplan
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMPlan.md
+ms.openlocfilehash: 93837ff6618523f71fdd2b0a3b933b50892af429
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "93948392"
+---
+# Set-AzVMPlan
+
+## Sinopse
+Define as informações do plano do Marketplace em uma máquina virtual.
+
+## SYNTAX
+
+```
+Set-AzVMPlan [-VM] <PSVirtualMachine> [-Name] <String> [[-Product] <String>] [[-PromotionCode] <String>]
+ [[-Publisher] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **set-AzVMPlan** define as informações de plano do Azure Marketplace para uma máquina virtual.
+Antes de poder implantar uma imagem do Marketplace por meio da linha de comando, o acesso programático deve ser habilitado ou a máquina virtual deve ser implantada usando o portal do Azure.
+
+## EXEMPLOS
+
+## OS
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Especifica o nome da imagem do Marketplace.
+Esse é o mesmo valor retornado pelo cmdlet Get-AzVMImageSku.
+Para obter mais informações sobre como localizar informações sobre a imagem, consulte navegando e selecionando as imagens da máquina virtual do Azure com o PowerShell e a CLI do Azure https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/ ( https://azure.microsoft.com/documentation/articles/resource-groups-vm-searching/) na documentação do Microsoft Azure.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Produto
+Especifica o produto da imagem do Marketplace.
+Essas são as mesmas informações do valor **offer** do elemento **imageReference** .
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PromotionCode
+Especifica um código promocional.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Publisher
+Especifica o fornecedor da imagem.
+Você pode encontrar essas informações usando o cmdlet Get-AzVMImagePublisher.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -VM
+Especifica o objeto da máquina virtual para o qual definir um plano do Marketplace.
+Você pode usar o cmdlet Get-AzVM para obter um objeto de máquina virtual.
+Você pode usar o cmdlet New-AzVMConfig para criar um objeto de máquina virtual.
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Parameter Sets: (All)
+Aliases: VMProfile
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## SENSORES
+
+### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+
+### System. String
+
+## EXIBE
+
+### Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[Get-AzVM](./Get-AzVM.md)
+
+[Get-AzVMImagePublisher](./Get-AzVMImagePublisher.md)
+
+[Get-AzVMImageSku](./Get-AzVMImageSku.md)
+
+[New-AzVMConfig](./New-AzVMConfig.md)
