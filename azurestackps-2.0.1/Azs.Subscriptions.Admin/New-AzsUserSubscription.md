@@ -1,0 +1,316 @@
+---
+external help file: ''
+Module Name: Azs.Subscriptions.Admin
+online version: https://docs.microsoft.com/en-us/powershell/module/azs.subscriptions.admin/new-azsusersubscription
+schema: 2.0.0
+ms.openlocfilehash: 6ccc47c6b6254e23050cf4341cae355bda78d8df
+ms.sourcegitcommit: 199e9c800e58e88c4cbfd3f221bafe02b3e8294d
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "93945179"
+---
+# New-AzsUserSubscription
+
+## Sinopse
+Cria ou atualiza a assinatura especificada.
+
+## SYNTAX
+
+### Createexpanded (padrão)
+```
+New-AzsUserSubscription -OfferId <String> -Owner <String> [-TargetSubscriptionId <String>]
+ [-DelegatedProviderSubscriptionId <String>] [-DisplayName <String>] [-ExternalReferenceId <String>]
+ [-Id <String>] [-RoutingResourceManagerType <ResourceManagerType>] [-State <SubscriptionState>]
+ [-TenantId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Criados
+```
+New-AzsUserSubscription -SubscriptionDefinition <ISubscriptionDefinition> [-TargetSubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## DESCRITIVO
+Cria ou atualiza a assinatura especificada.
+
+## EXEMPLOS
+
+### Exemplo 1
+```powershell
+PS C:\> New-AzsUserSubscription -Owner "user@contoso.com" -OfferId "/subscriptions/d77ed1d7-cb62-4658-a777-386a8ae523dd/resourceGroups/TenantResourceGroup/providers/Microsoft.Subscriptions.Admin/offers/TenantOffer" | fl *
+
+DelegatedProviderSubscriptionId : d77ed1d7-cb62-4658-a777-386a8ae523dd
+DisplayName                     : 
+ExternalReferenceId             : 
+Id                              : /subscriptions/d77ed1d7-cb62-4658-a777-386a8ae523dd/providers/Microsoft.Subscriptions.Admin/subscriptions/398466a8-7d43-455a-b842-772d356d119e
+OfferId                         : /subscriptions/d77ed1d7-cb62-4658-a777-386a8ae523dd/resourceGroups/TenantResourceGroup/providers/Microsoft.Subscriptions.Admin/offers/TenantOff
+                                  er
+Owner                           : user@contoso.com
+RoutingResourceManagerType      : Default
+State                           : Enabled
+SubscriptionId                  : 398466a8-7d43-455a-b842-772d356d119e
+TenantId                        : 6ca57aaf-0074-498a-9c96-2b097515e8cb
+```
+
+Cria uma nova assinatura de usuário
+
+## OS
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -DelegatedProviderSubscriptionId
+Identificador de assinatura do DelegatedProvider pai.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -DisplayName
+Nome da assinatura.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -ExternalReferenceId
+Identificador de referência externa.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -ID
+Identificador totalmente qualificado.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -OfferId
+Identificador da oferta sob o escopo de um provedor delegado.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Proprietário
+Proprietário da assinatura.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -RoutingResourceManagerType
+Tipo de Gerenciador de recursos de roteamento.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Support.ResourceManagerType
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: Write-Output "Default"
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Estado
+Estado da assinatura.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Support.SubscriptionState
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: Write-Output "Enabled"
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -SubscriptionDefinition
+Propriedades do objeto de assinatura.
+Para construir, consulte a seção notas para propriedades SUBSCRIPTIONDEFINITION e crie uma tabela de hash.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.SubscriptionsAdmin.Models.Api20151101.ISubscriptionDefinition
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### -TargetSubscriptionId
+A ID da assinatura de destino.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: $([Guid]::NewGuid().ToString())
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Tenantid
+Identificador de locatário de diretório.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -Confirme
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## SENSORES
+
+### Microsoft. Azure. PowerShell. cmdlets. SubscriptionsAdmin. Models. Api20151101. ISubscriptionDefinition
+
+## EXIBE
+
+### Microsoft. Azure. PowerShell. cmdlets. SubscriptionsAdmin. Models. Api20151101. ISubscriptionDefinition
+
+ALIASES
+
+## INFORMA
+
+Propriedades de parâmetros complexas para criar os parâmetros descritos abaixo, construa uma tabela de hash contendo as propriedades adequadas. Para obter informações sobre tabelas de hash, execute Get-Help about_Hash_Tables.
+
+SUBSCRIPTIONDEFINITION <ISubscriptionDefinition> : propriedades do objeto de assinatura.
+  - `[DelegatedProviderSubscriptionId <String>]`: Identificador de assinatura do DelegatedProvider pai.
+  - `[DisplayName <String>]`: Nome da assinatura.
+  - `[ExternalReferenceId <String>]`: Identificador de referência externa.
+  - `[Id <String>]`: Identificador totalmente qualificado.
+  - `[OfferId <String>]`: Identificador da oferta sob o escopo de um provedor delegado.
+  - `[Owner <String>]`: Proprietário da assinatura.
+  - `[RoutingResourceManagerType <ResourceManagerType?>]`: Tipo de Gerenciador de recursos de roteamento.
+  - `[State <SubscriptionState?>]`: Estado da assinatura.
+  - `[SubscriptionId <String>]`: Identificador de assinatura.
+  - `[TenantId <String>]`: Identificador de locatário de diretório.
+
+## LINKS RELACIONADOS
+

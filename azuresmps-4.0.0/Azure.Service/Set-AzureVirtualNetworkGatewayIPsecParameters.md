@@ -1,0 +1,159 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.ServiceManagement.Network.dll-Help.xml
+ms.assetid: 150EE0DC-07CD-4E24-AF70-0C1A7BB61433
+online version: ''
+schema: 2.0.0
+ms.openlocfilehash: 8b663ced66318335afb1fe4c3bf0e6a1520ede7b
+ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "93946412"
+---
+# Set-AzureVirtualNetworkGatewayIPsecParameters
+
+## Sinopse
+Define os parâmetros IPsec para um gateway de rede virtual.
+
+## SYNTAX
+
+```
+Set-AzureVirtualNetworkGatewayIPsecParameters -GatewayId <String> -ConnectedEntityId <String>
+ [-EncryptionType <String>] [-PfsGroup <String>] [-SADataSizeKilobytes <Int32>] [-SALifetimeSeconds <Int32>]
+ [-Profile <AzureSMProfile>] [<CommonParameters>]
+```
+
+## DESCRITIVO
+O cmdlet **set-AzureVirtualNetworkGatewayIPsecParameters** define parâmetros IPSec para um gateway de rede virtual.
+
+## EXEMPLOS
+
+## OS
+
+### -ConnectedEntityId
+Especifica a ID de uma entidade conectada.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionType
+Especifica o tipo de criptografia do gateway de rede virtual.
+Os valores aceitáveis para esse parâmetro são:
+
+- Descriptografia
+- RequireEncryption
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Gatewayid
+Especifica a ID de um gateway.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PfsGroup
+Especifica o grupo sigilo total na transferência (PFS).
+Os valores aceitáveis para esse parâmetro são:
+
+- PFS1
+- Nenhuma
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Perfil
+Especifica o perfil do Azure do qual este cmdlet lê. Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+
+```yaml
+Type: AzureSMProfile
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SADataSizeKilobytes
+Especifica o tamanho, em kilobytes, da Associação de segurança (SA).
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SALifetimeSeconds
+Especifica o período, em segundos, da Associação de segurança.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## SENSORES
+
+## EXIBE
+
+## INFORMA
+
+## LINKS RELACIONADOS
+
+[Get-AzureVirtualNetworkGatewayIPsecParameters](./Get-AzureVirtualNetworkGatewayIPsecParameters.md)
+
+
