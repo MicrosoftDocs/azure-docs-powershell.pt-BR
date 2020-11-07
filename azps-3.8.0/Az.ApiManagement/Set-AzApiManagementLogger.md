@@ -1,0 +1,243 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 5B4ADD38-FA22-4C25-9B9C-FD7861883811
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/set-azapimanagementlogger
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementLogger.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Set-AzApiManagementLogger.md
+ms.openlocfilehash: 6ad32b3bd9bef4f4e684125b280db941da7a7b3f
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "93944180"
+---
+# <span data-ttu-id="148bb-101">Set-AzApiManagementLogger</span><span class="sxs-lookup"><span data-stu-id="148bb-101">Set-AzApiManagementLogger</span></span>
+
+## <span data-ttu-id="148bb-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="148bb-102">SYNOPSIS</span></span>
+<span data-ttu-id="148bb-103">Modifica um agente de gerenciamento de API.</span><span class="sxs-lookup"><span data-stu-id="148bb-103">Modifies an API Management Logger.</span></span>
+
+## <span data-ttu-id="148bb-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="148bb-104">SYNTAX</span></span>
+
+### <span data-ttu-id="148bb-105">EventHubLoggerSet (padrão)</span><span class="sxs-lookup"><span data-stu-id="148bb-105">EventHubLoggerSet (Default)</span></span>
+```
+Set-AzApiManagementLogger -Context <PsApiManagementContext> -LoggerId <String> [-Name <String>]
+ [-ConnectionString <String>] [-Description <String>] [-IsBuffered] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="148bb-106">ApplicationInsightsLoggerSet</span><span class="sxs-lookup"><span data-stu-id="148bb-106">ApplicationInsightsLoggerSet</span></span>
+```
+Set-AzApiManagementLogger -Context <PsApiManagementContext> -LoggerId <String> [-InstrumentationKey <String>]
+ [-Description <String>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="148bb-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="148bb-107">DESCRIPTION</span></span>
+<span data-ttu-id="148bb-108">O cmdlet **set-AzApiManagementLogger** modifica as configurações de um **agente** de gerenciamento de API do Azure.</span><span class="sxs-lookup"><span data-stu-id="148bb-108">The **Set-AzApiManagementLogger** cmdlet modifies settings of an Azure API Management **Logger**.</span></span>
+
+## <span data-ttu-id="148bb-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="148bb-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="148bb-110">Exemplo 1: modificar o agente do EventHub</span><span class="sxs-lookup"><span data-stu-id="148bb-110">Example 1: Modify EventHub logger</span></span>
+```powershell
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Set-AzApiManagementLogger -Context $apimContext -LoggerId "Logger123" -Name "ContosoSdkEventHub" -ConnectionString "Endpoint=sb://ContosoSdkEventHubs.servicebus.windows.net/;SharedAccessKeyName=SendKey;SharedAccessKey=<key>" -Description "updated SDK event hub logger" -PassThru
+```
+
+<span data-ttu-id="148bb-111">Esse comando modifica um logger que tem a ID Logger123.</span><span class="sxs-lookup"><span data-stu-id="148bb-111">This command modifies a logger that has the ID Logger123.</span></span>
+
+## <span data-ttu-id="148bb-112">OS</span><span class="sxs-lookup"><span data-stu-id="148bb-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="148bb-113">-ConnectionString</span><span class="sxs-lookup"><span data-stu-id="148bb-113">-ConnectionString</span></span>
+<span data-ttu-id="148bb-114">Especifica uma cadeia de conexão de hubs de eventos do Azure que inclui direitos de política de envio.</span><span class="sxs-lookup"><span data-stu-id="148bb-114">Specifies an Azure Event Hubs connection string that includes Send policy rights.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: EventHubLoggerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-115">-Contexto</span><span class="sxs-lookup"><span data-stu-id="148bb-115">-Context</span></span>
+<span data-ttu-id="148bb-116">Especifica um objeto **PsApiManagementContext** .</span><span class="sxs-lookup"><span data-stu-id="148bb-116">Specifies a **PsApiManagementContext** object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="148bb-117">-DefaultProfile</span></span>
+<span data-ttu-id="148bb-118">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="148bb-118">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-119">-Descrição</span><span class="sxs-lookup"><span data-stu-id="148bb-119">-Description</span></span>
+<span data-ttu-id="148bb-120">Especifica uma descrição.</span><span class="sxs-lookup"><span data-stu-id="148bb-120">Specifies a description.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-121">-InstrumentationKey</span><span class="sxs-lookup"><span data-stu-id="148bb-121">-InstrumentationKey</span></span>
+<span data-ttu-id="148bb-122">Chave de instrumentação dos insights do aplicativo.</span><span class="sxs-lookup"><span data-stu-id="148bb-122">Instrumentation Key of the application Insights.</span></span> <span data-ttu-id="148bb-123">Este parâmetro é opcional.</span><span class="sxs-lookup"><span data-stu-id="148bb-123">This parameter is optional.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ApplicationInsightsLoggerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-124">-IsBuffered</span><span class="sxs-lookup"><span data-stu-id="148bb-124">-IsBuffered</span></span>
+<span data-ttu-id="148bb-125">Especifica que os registros no logger são armazenados em buffer antes da publicação.</span><span class="sxs-lookup"><span data-stu-id="148bb-125">Specifies that the records in the logger are buffered before publishing.</span></span>
+<span data-ttu-id="148bb-126">Quando os registros são armazenados em buffer, eles são enviados para hubs de eventos a cada 15 segundos ou sempre que o buffer recebe 256 KB de mensagens.</span><span class="sxs-lookup"><span data-stu-id="148bb-126">When records are buffered, they are sent to Event Hubs every 15 seconds, or whenever the buffer receives 256 KB of messages.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: EventHubLoggerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-127">-Loggerid</span><span class="sxs-lookup"><span data-stu-id="148bb-127">-LoggerId</span></span>
+<span data-ttu-id="148bb-128">Especifica a ID do agente a ser atualizado.</span><span class="sxs-lookup"><span data-stu-id="148bb-128">Specifies the ID of the logger to update.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-129">-Nome</span><span class="sxs-lookup"><span data-stu-id="148bb-129">-Name</span></span>
+<span data-ttu-id="148bb-130">Especifica o nome da entidade de um hub de eventos do portal clássico do Azure.</span><span class="sxs-lookup"><span data-stu-id="148bb-130">Specifies the entity name of an event hub from Azure classic portal.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: EventHubLoggerSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-131">-PassThru</span><span class="sxs-lookup"><span data-stu-id="148bb-131">-PassThru</span></span>
+<span data-ttu-id="148bb-132">Indica que esse cmdlet retorna o  **PsApiManagementLogger** que esse cmdlet modifica.</span><span class="sxs-lookup"><span data-stu-id="148bb-132">Indicates that this cmdlet returns the  **PsApiManagementLogger** that this cmdlet modifies.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-133">-Confirme</span><span class="sxs-lookup"><span data-stu-id="148bb-133">-Confirm</span></span>
+<span data-ttu-id="148bb-134">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="148bb-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="148bb-135">-WhatIf</span></span>
+<span data-ttu-id="148bb-136">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="148bb-136">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="148bb-137">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="148bb-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="148bb-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="148bb-138">CommonParameters</span></span>
+<span data-ttu-id="148bb-139">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="148bb-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="148bb-140">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="148bb-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="148bb-141">SENSORES</span><span class="sxs-lookup"><span data-stu-id="148bb-141">INPUTS</span></span>
+
+### <span data-ttu-id="148bb-142">Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="148bb-142">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+
+### <span data-ttu-id="148bb-143">System. String</span><span class="sxs-lookup"><span data-stu-id="148bb-143">System.String</span></span>
+
+### <span data-ttu-id="148bb-144">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="148bb-144">System.Management.Automation.SwitchParameter</span></span>
+
+## <span data-ttu-id="148bb-145">EXIBE</span><span class="sxs-lookup"><span data-stu-id="148bb-145">OUTPUTS</span></span>
+
+### <span data-ttu-id="148bb-146">Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementLogger</span><span class="sxs-lookup"><span data-stu-id="148bb-146">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementLogger</span></span>
+
+## <span data-ttu-id="148bb-147">INFORMA</span><span class="sxs-lookup"><span data-stu-id="148bb-147">NOTES</span></span>
+
+## <span data-ttu-id="148bb-148">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="148bb-148">RELATED LINKS</span></span>
+
+[<span data-ttu-id="148bb-149">Get-AzApiManagementLogger</span><span class="sxs-lookup"><span data-stu-id="148bb-149">Get-AzApiManagementLogger</span></span>](./Get-AzApiManagementLogger.md)
+
+[<span data-ttu-id="148bb-150">New-AzApiManagementLogger</span><span class="sxs-lookup"><span data-stu-id="148bb-150">New-AzApiManagementLogger</span></span>](./New-AzApiManagementLogger.md)
+
+[<span data-ttu-id="148bb-151">Remove-AzApiManagementLogger</span><span class="sxs-lookup"><span data-stu-id="148bb-151">Remove-AzApiManagementLogger</span></span>](./Remove-AzApiManagementLogger.md)
+
+
