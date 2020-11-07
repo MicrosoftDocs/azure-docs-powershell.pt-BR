@@ -1,0 +1,156 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/get-aztenantdeployment
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzTenantDeployment.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzTenantDeployment.md
+ms.openlocfilehash: c3218141e495bb92216e254830ddaa7dd7a0a0c9
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "93955294"
+---
+# <span data-ttu-id="d87af-101">Get-AzTenantDeployment</span><span class="sxs-lookup"><span data-stu-id="d87af-101">Get-AzTenantDeployment</span></span>
+
+## <span data-ttu-id="d87af-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="d87af-102">SYNOPSIS</span></span>
+<span data-ttu-id="d87af-103">Obter implantação em escopo do locatário</span><span class="sxs-lookup"><span data-stu-id="d87af-103">Get deployment at tenant scope</span></span>
+
+## <span data-ttu-id="d87af-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d87af-104">SYNTAX</span></span>
+
+### <span data-ttu-id="d87af-105">GetByDeploymentName (padrão)</span><span class="sxs-lookup"><span data-stu-id="d87af-105">GetByDeploymentName (Default)</span></span>
+```
+Get-AzTenantDeployment [[-Name] <String>] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d87af-106">GetByDeploymentId</span><span class="sxs-lookup"><span data-stu-id="d87af-106">GetByDeploymentId</span></span>
+```
+Get-AzTenantDeployment -Id <String> [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="d87af-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="d87af-107">DESCRIPTION</span></span>
+<span data-ttu-id="d87af-108">O cmdlet **Get-AzTenantDeployment** Obtém as implantações no escopo do locatário.</span><span class="sxs-lookup"><span data-stu-id="d87af-108">The **Get-AzTenantDeployment** cmdlet gets the deployments at the tenant scope.</span></span>
+<span data-ttu-id="d87af-109">Especifique o *nome* ou o parâmetro *ID* para filtrar os resultados.</span><span class="sxs-lookup"><span data-stu-id="d87af-109">Specify the *Name* or *Id* parameter to filter the results.</span></span>
+<span data-ttu-id="d87af-110">Por padrão, **Get-AzTenantDeployment** obtém todas as implantações no escopo do locatário.</span><span class="sxs-lookup"><span data-stu-id="d87af-110">By default, **Get-AzTenantDeployment** gets all deployments at the tenant scope.</span></span>
+
+## <span data-ttu-id="d87af-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="d87af-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="d87af-112">Exemplo 1: obter todas as implantações no escopo do locatário</span><span class="sxs-lookup"><span data-stu-id="d87af-112">Example 1: Get all deployments at the tenant scope</span></span>
+```
+PS C:\>Get-AzTenantDeployment
+```
+
+<span data-ttu-id="d87af-113">Este comando obtém todas as implantações no escopo do locatário atual.</span><span class="sxs-lookup"><span data-stu-id="d87af-113">This command gets all deployments at the current tenant scope.</span></span>
+
+### <span data-ttu-id="d87af-114">Exemplo 2: obter uma implantação por nome</span><span class="sxs-lookup"><span data-stu-id="d87af-114">Example 2: Get a deployment by name</span></span>
+```
+PS C:\>Get-AzDeployment -Name "Deploy01"
+```
+
+<span data-ttu-id="d87af-115">Esse comando obtém a implantação "Deploy01" no escopo do locatário atual.</span><span class="sxs-lookup"><span data-stu-id="d87af-115">This command gets the "Deploy01" deployment at the current tenant scope.</span></span>
+<span data-ttu-id="d87af-116">Você pode atribuir um nome a uma implantação ao criá-lo usando cmdlets **New-AzTenantDeployment** .</span><span class="sxs-lookup"><span data-stu-id="d87af-116">You can assign a name to a deployment when you create it by using the **New-AzTenantDeployment** cmdlets.</span></span>
+<span data-ttu-id="d87af-117">Se você não atribuir um nome, os cmdlets fornecerão um nome padrão com base no modelo usado para criar a implantação.</span><span class="sxs-lookup"><span data-stu-id="d87af-117">If you do not assign a name, the cmdlets provide a default name based on the template that is used to create the deployment.</span></span>
+
+### <span data-ttu-id="d87af-118">Exemplo 3: obter uma implantação por ID</span><span class="sxs-lookup"><span data-stu-id="d87af-118">Example 3: Get a deployment by ID</span></span>
+```
+PS C:\>Get-AzDeployment -Id "/providers/Microsoft.Resources/deployments/Deploy01"
+```
+
+<span data-ttu-id="d87af-119">Esse comando obtém a implantação "Deploy01" no escopo do locatário.</span><span class="sxs-lookup"><span data-stu-id="d87af-119">This command gets the "Deploy01" deployment at the tenant scope.</span></span>
+
+## <span data-ttu-id="d87af-120">OS</span><span class="sxs-lookup"><span data-stu-id="d87af-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="d87af-121">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="d87af-121">-ApiVersion</span></span>
+<span data-ttu-id="d87af-122">Quando definido, indica a versão da API do provedor de recursos a ser usada.</span><span class="sxs-lookup"><span data-stu-id="d87af-122">When set, indicates the version of the resource provider API to use.</span></span>
+<span data-ttu-id="d87af-123">Se não for especificado, a versão da API será automaticamente determinada como a mais recente disponível.</span><span class="sxs-lookup"><span data-stu-id="d87af-123">If not specified, the API version is automatically determined as the latest available.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d87af-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d87af-124">-DefaultProfile</span></span>
+<span data-ttu-id="d87af-125">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="d87af-125">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d87af-126">-ID</span><span class="sxs-lookup"><span data-stu-id="d87af-126">-Id</span></span>
+<span data-ttu-id="d87af-127">A ID de recurso totalmente qualificado da implantação.</span><span class="sxs-lookup"><span data-stu-id="d87af-127">The fully qualified resource Id of the deployment.</span></span>
+<span data-ttu-id="d87af-128">exemplo:/providers/Microsoft.Resources/deployments/{deploymentName}</span><span class="sxs-lookup"><span data-stu-id="d87af-128">example: /providers/Microsoft.Resources/deployments/{deploymentName}</span></span>
+
+```yaml
+Type: String
+Parameter Sets: GetByDeploymentId
+Aliases: DeploymentId, ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d87af-129">-Nome</span><span class="sxs-lookup"><span data-stu-id="d87af-129">-Name</span></span>
+<span data-ttu-id="d87af-130">O nome da implantação.</span><span class="sxs-lookup"><span data-stu-id="d87af-130">The name of deployment.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: GetByDeploymentName
+Aliases: DeploymentName
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d87af-131">-Pre</span><span class="sxs-lookup"><span data-stu-id="d87af-131">-Pre</span></span>
+<span data-ttu-id="d87af-132">Quando definido, indica que o cmdlet deve usar versões de API de pré-lançamento ao determinar automaticamente qual versão usar.</span><span class="sxs-lookup"><span data-stu-id="d87af-132">When set, indicates that the cmdlet should use pre-release API versions when automatically determining which version to use.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d87af-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d87af-133">CommonParameters</span></span>
+<span data-ttu-id="d87af-134">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d87af-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d87af-135">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="d87af-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d87af-136">SENSORES</span><span class="sxs-lookup"><span data-stu-id="d87af-136">INPUTS</span></span>
+
+### <span data-ttu-id="d87af-137">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="d87af-137">None</span></span>
+
+## <span data-ttu-id="d87af-138">EXIBE</span><span class="sxs-lookup"><span data-stu-id="d87af-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="d87af-139">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSDEployment</span><span class="sxs-lookup"><span data-stu-id="d87af-139">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSDeployment</span></span>
+
+## <span data-ttu-id="d87af-140">INFORMA</span><span class="sxs-lookup"><span data-stu-id="d87af-140">NOTES</span></span>
+
+## <span data-ttu-id="d87af-141">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="d87af-141">RELATED LINKS</span></span>
