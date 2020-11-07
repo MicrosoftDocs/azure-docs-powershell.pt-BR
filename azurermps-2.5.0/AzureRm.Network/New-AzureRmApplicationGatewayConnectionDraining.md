@@ -1,0 +1,107 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/new-azurermapplicationgatewayconnectiondraining
+schema: 2.0.0
+ms.openlocfilehash: 6e17db790cd776e8662c4c445e53604dcb8929de
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93785685"
+---
+# <span data-ttu-id="f56a7-101">New-AzureRmApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="f56a7-101">New-AzureRmApplicationGatewayConnectionDraining</span></span>
+
+## <span data-ttu-id="f56a7-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="f56a7-102">SYNOPSIS</span></span>
+<span data-ttu-id="f56a7-103">Cria uma nova configuração de descarga da configuração para as configurações HTTP de back-end.</span><span class="sxs-lookup"><span data-stu-id="f56a7-103">Creates a new connection draining configuration for back-end HTTP settings.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="f56a7-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="f56a7-104">SYNTAX</span></span>
+
+```
+New-AzureRmApplicationGatewayConnectionDraining -Enabled <Boolean> -DrainTimeoutInSec <Int32>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f56a7-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="f56a7-105">DESCRIPTION</span></span>
+<span data-ttu-id="f56a7-106">O cmdlet **New-AzureRmApplicationGatewayConnectionDraining** cria uma nova conexão para descarregar a configuração de http back-end.</span><span class="sxs-lookup"><span data-stu-id="f56a7-106">The **New-AzureRmApplicationGatewayConnectionDraining** cmdlet creates a new connection draining configuration for back-end HTTP settings.</span></span>
+
+## <span data-ttu-id="f56a7-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="f56a7-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="f56a7-108">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="f56a7-108">Example 1</span></span>
+```
+PS C:\> $connectionDraining = New-AzureRmApplicationGatewayConnectionDraining -Enabled $True -DrainTimeoutInSec 42
+```
+
+<span data-ttu-id="f56a7-109">O comando cria uma nova configuração de descarregamento de conexão com enabled definido como true e DrainTimeoutInSec definido como 42 segundos e a armazena em $connectionDraining.</span><span class="sxs-lookup"><span data-stu-id="f56a7-109">The command creates a new connection draining configuration with Enabled set to True and DrainTimeoutInSec set to 42 seconds and stores it in $connectionDraining.</span></span>
+
+## <span data-ttu-id="f56a7-110">OS</span><span class="sxs-lookup"><span data-stu-id="f56a7-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="f56a7-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f56a7-111">-DefaultProfile</span></span>
+<span data-ttu-id="f56a7-112">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="f56a7-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f56a7-113">-DrainTimeoutInSec</span><span class="sxs-lookup"><span data-stu-id="f56a7-113">-DrainTimeoutInSec</span></span>
+<span data-ttu-id="f56a7-114">O número de segundos que a conexão drenada está ativa.</span><span class="sxs-lookup"><span data-stu-id="f56a7-114">The number of seconds connection draining is active.</span></span>
+<span data-ttu-id="f56a7-115">Os valores aceitáveis variam de 1 segundo a 3600 segundos.</span><span class="sxs-lookup"><span data-stu-id="f56a7-115">Acceptable values are from 1 second to 3600 seconds.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f56a7-116">Habilitado para o</span><span class="sxs-lookup"><span data-stu-id="f56a7-116">-Enabled</span></span>
+<span data-ttu-id="f56a7-117">Se a descarga de conexão está habilitada ou não.</span><span class="sxs-lookup"><span data-stu-id="f56a7-117">Whether connection draining is enabled or not.</span></span>
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f56a7-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f56a7-118">CommonParameters</span></span>
+<span data-ttu-id="f56a7-119">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f56a7-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f56a7-120">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="f56a7-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f56a7-121">SENSORES</span><span class="sxs-lookup"><span data-stu-id="f56a7-121">INPUTS</span></span>
+
+### <span data-ttu-id="f56a7-122">Nenhuma</span><span class="sxs-lookup"><span data-stu-id="f56a7-122">None</span></span>
+
+## <span data-ttu-id="f56a7-123">EXIBE</span><span class="sxs-lookup"><span data-stu-id="f56a7-123">OUTPUTS</span></span>
+
+### <span data-ttu-id="f56a7-124">Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="f56a7-124">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining</span></span>
+
+## <span data-ttu-id="f56a7-125">INFORMA</span><span class="sxs-lookup"><span data-stu-id="f56a7-125">NOTES</span></span>
+
+## <span data-ttu-id="f56a7-126">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="f56a7-126">RELATED LINKS</span></span>
+
+[<span data-ttu-id="f56a7-127">Get-AzureRmApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="f56a7-127">Get-AzureRmApplicationGatewayConnectionDraining</span></span>](./Get-AzureRmApplicationGatewayConnectionDraining.md)
+
+[<span data-ttu-id="f56a7-128">Remove-AzureRmApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="f56a7-128">Remove-AzureRmApplicationGatewayConnectionDraining</span></span>](./Remove-AzureRmApplicationGatewayConnectionDraining.md)
+
+[<span data-ttu-id="f56a7-129">Set-AzureRmApplicationGatewayConnectionDraining</span><span class="sxs-lookup"><span data-stu-id="f56a7-129">Set-AzureRmApplicationGatewayConnectionDraining</span></span>](./Set-AzureRmApplicationGatewayConnectionDraining.md)
+

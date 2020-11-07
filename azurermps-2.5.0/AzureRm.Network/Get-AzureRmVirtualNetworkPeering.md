@@ -1,0 +1,121 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: 463DDBA8-0F93-483D-A4B6-3B055968CDE8
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/get-azurermvirtualnetworkpeering
+schema: 2.0.0
+ms.openlocfilehash: b5e3cf083f003a643639635c61ca8e3f13e16eaf
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93785694"
+---
+# <span data-ttu-id="c5259-101">Get-AzureRmVirtualNetworkPeering</span><span class="sxs-lookup"><span data-stu-id="c5259-101">Get-AzureRmVirtualNetworkPeering</span></span>
+
+## <span data-ttu-id="c5259-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="c5259-102">SYNOPSIS</span></span>
+<span data-ttu-id="c5259-103">Obtém o emparelhamento de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="c5259-103">Gets the virtual network peering.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="c5259-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="c5259-104">SYNTAX</span></span>
+
+```
+Get-AzureRmVirtualNetworkPeering -VirtualNetworkName <String> -ResourceGroupName <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c5259-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="c5259-105">DESCRIPTION</span></span>
+<span data-ttu-id="c5259-106">O cmdlet **Get-AzureRmVirtualNetworkPeering** Obtém o emparelhamento de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="c5259-106">The **Get-AzureRmVirtualNetworkPeering** cmdlet gets the virtual network peering.</span></span>
+
+## <span data-ttu-id="c5259-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="c5259-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="c5259-108">Exemplo 1: obter um emparelhamento entre duas redes virtuais</span><span class="sxs-lookup"><span data-stu-id="c5259-108">Example 1: Get a peering between two virtual networks</span></span>
+```
+# Get virtual network peering named myVnet1TomyVnet2 located in myVirtualNetwork in the resource group named myResourceGroup.
+
+Get-AzureRmVirtualNetworkPeering -Name "myVnet1TomyVnet2" -VirtualNetwork "myVnet" -ResourceGroupName "myResourceGroup"
+```
+
+## <span data-ttu-id="c5259-109">OS</span><span class="sxs-lookup"><span data-stu-id="c5259-109">PARAMETERS</span></span>
+
+### <span data-ttu-id="c5259-110">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c5259-110">-DefaultProfile</span></span>
+<span data-ttu-id="c5259-111">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="c5259-111">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c5259-112">-Nome</span><span class="sxs-lookup"><span data-stu-id="c5259-112">-Name</span></span>
+<span data-ttu-id="c5259-113">Especifica o nome de emparelhamento da rede virtual.</span><span class="sxs-lookup"><span data-stu-id="c5259-113">Specifies the virtual network peering name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c5259-114">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c5259-114">-ResourceGroupName</span></span>
+<span data-ttu-id="c5259-115">Especifica o nome do grupo de recursos ao qual o emparelhamento de rede virtual pertence.</span><span class="sxs-lookup"><span data-stu-id="c5259-115">Specifies the resource group name that the virtual network peering belongs to.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c5259-116">-VirtualNetworkName</span><span class="sxs-lookup"><span data-stu-id="c5259-116">-VirtualNetworkName</span></span>
+<span data-ttu-id="c5259-117">Especifica o nome da rede virtual que esse cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="c5259-117">Specifies the virtual network name that this cmdlet gets.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c5259-118">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c5259-118">CommonParameters</span></span>
+<span data-ttu-id="c5259-119">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c5259-119">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c5259-120">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="c5259-120">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c5259-121">SENSORES</span><span class="sxs-lookup"><span data-stu-id="c5259-121">INPUTS</span></span>
+
+## <span data-ttu-id="c5259-122">EXIBE</span><span class="sxs-lookup"><span data-stu-id="c5259-122">OUTPUTS</span></span>
+
+### <span data-ttu-id="c5259-123">Microsoft. Azure. Commands. Network. Models. PSVirtualNetworkPeering</span><span class="sxs-lookup"><span data-stu-id="c5259-123">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkPeering</span></span>
+
+## <span data-ttu-id="c5259-124">INFORMA</span><span class="sxs-lookup"><span data-stu-id="c5259-124">NOTES</span></span>
+
+## <span data-ttu-id="c5259-125">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="c5259-125">RELATED LINKS</span></span>
+
+[<span data-ttu-id="c5259-126">Add-AzureRmVirtualNetworkPeering</span><span class="sxs-lookup"><span data-stu-id="c5259-126">Add-AzureRmVirtualNetworkPeering</span></span>](./Add-AzureRmVirtualNetworkPeering.md)
+
+[<span data-ttu-id="c5259-127">Remove-AzureRmVirtualNetworkPeering</span><span class="sxs-lookup"><span data-stu-id="c5259-127">Remove-AzureRmVirtualNetworkPeering</span></span>](./Remove-AzureRmVirtualNetworkPeering.md)
+
+[<span data-ttu-id="c5259-128">Set-AzureRmVirtualNetworkPeering</span><span class="sxs-lookup"><span data-stu-id="c5259-128">Set-AzureRmVirtualNetworkPeering</span></span>](./Set-AzureRmVirtualNetworkPeering.md)
+
+
