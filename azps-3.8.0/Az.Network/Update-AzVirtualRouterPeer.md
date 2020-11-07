@@ -1,0 +1,270 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/update-azvirtualrouterpeer
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzVirtualRouterPeer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Update-AzVirtualRouterPeer.md
+ms.openlocfilehash: 8d7bbf361ee2fc2bf06e1bf3ce6a9bfe1e295338
+ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "93778449"
+---
+# <span data-ttu-id="6ca38-101">Update-AzVirtualRouterPeer</span><span class="sxs-lookup"><span data-stu-id="6ca38-101">Update-AzVirtualRouterPeer</span></span>
+
+## <span data-ttu-id="6ca38-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="6ca38-102">SYNOPSIS</span></span>
+<span data-ttu-id="6ca38-103">Atualizar um par em um VirtualRouter do Azure</span><span class="sxs-lookup"><span data-stu-id="6ca38-103">Update a Peer in an Azure VirtualRouter</span></span>
+
+## <span data-ttu-id="6ca38-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="6ca38-104">SYNTAX</span></span>
+
+### <span data-ttu-id="6ca38-105">VirtualRouterNameParameterSet (padrão)</span><span class="sxs-lookup"><span data-stu-id="6ca38-105">VirtualRouterNameParameterSet (Default)</span></span>
+```
+Update-AzVirtualRouterPeer -ResourceGroupName <String> -VirtualRouterName <String> [-Force] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="6ca38-106">VirtualRouterPeerNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ca38-106">VirtualRouterPeerNameParameterSet</span></span>
+```
+Update-AzVirtualRouterPeer -ResourceGroupName <String> -PeerName <String> -PeerIp <String> -PeerAsn <UInt32>
+ -VirtualRouterName <String> [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="6ca38-107">VirtualRouterPeerObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ca38-107">VirtualRouterPeerObjectParameterSet</span></span>
+```
+Update-AzVirtualRouterPeer -ResourceGroupName <String> -VirtualRouterName <String>
+ -InputObject <PSVirtualRouterPeer> [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="6ca38-108">VirtualRouterPeerResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="6ca38-108">VirtualRouterPeerResourceIdParameterSet</span></span>
+```
+Update-AzVirtualRouterPeer -ResourceGroupName <String> -VirtualRouterName <String> -ResourceId <String>
+ [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="6ca38-109">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="6ca38-109">DESCRIPTION</span></span>
+<span data-ttu-id="6ca38-110">O cmdlet **Update-AzVirtualRouterPeer** atualiza um par VirtualRouter para um VirtualRouter do Azure</span><span class="sxs-lookup"><span data-stu-id="6ca38-110">The **Update-AzVirtualRouterPeer** cmdlet updates a VirtualRouter Peer to an Azure VirtualRouter</span></span>
+
+## <span data-ttu-id="6ca38-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="6ca38-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="6ca38-112">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="6ca38-112">Example 1</span></span>
+```powershell
+Update-AzVirtualRouterPeer -PeerName csr -PeerIp 10.0.1.5 -PeerAsn 63000  -VirtualRouterName virtualRouter -ResourceGroupName virtualRouterRG
+```
+
+### <span data-ttu-id="6ca38-113">Exemplo 2</span><span class="sxs-lookup"><span data-stu-id="6ca38-113">Example 2</span></span>
+```powershell
+$virtualRouterPeerId = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/virtualRouterRG/providers/Microsoft.Network/virtualRouters/testVirtualRouter/peerings/csr'
+Update-AzVirtualRouterPeer -ResourceId $virtualRouterPeerId  -VirtualRouterName virtualRouter -ResourceGroupName virtualRouterRG
+```
+
+### <span data-ttu-id="6ca38-114">Exemplo 3</span><span class="sxs-lookup"><span data-stu-id="6ca38-114">Example 3</span></span>
+```powershell
+$virtualRouterPeer = Get-AzVirtualRouterPeer -ResourceGroupName testVirtualRouter -RouterName virtualRouter -PeerName csr
+Update-AzVirtualRouterPeer -ResourceGroupName virtualRouterRG -InputObject $virtualRouterPeer  -VirtualRouterName virtualRouter
+```
+
+## <span data-ttu-id="6ca38-115">OS</span><span class="sxs-lookup"><span data-stu-id="6ca38-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="6ca38-116">-AsJob</span><span class="sxs-lookup"><span data-stu-id="6ca38-116">-AsJob</span></span>
+<span data-ttu-id="6ca38-117">Executar o cmdlet em segundo plano</span><span class="sxs-lookup"><span data-stu-id="6ca38-117">Run cmdlet in the background</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6ca38-118">-DefaultProfile</span></span>
+<span data-ttu-id="6ca38-119">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="6ca38-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-120">-Force</span><span class="sxs-lookup"><span data-stu-id="6ca38-120">-Force</span></span>
+<span data-ttu-id="6ca38-121">Não pedir confirmação se quiser substituir um recurso</span><span class="sxs-lookup"><span data-stu-id="6ca38-121">Do not ask for confirmation if you want to overwrite a resource</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="6ca38-122">-InputObject</span></span>
+<span data-ttu-id="6ca38-123">O objeto de entrada de par do roteador virtual.</span><span class="sxs-lookup"><span data-stu-id="6ca38-123">The virtual router peer input object.</span></span>
+
+```yaml
+Type: PSVirtualRouterPeer
+Parameter Sets: VirtualRouterPeerObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-124">-PeerAsn</span><span class="sxs-lookup"><span data-stu-id="6ca38-124">-PeerAsn</span></span>
+<span data-ttu-id="6ca38-125">ASN peer.</span><span class="sxs-lookup"><span data-stu-id="6ca38-125">Peer ASN.</span></span>
+
+```yaml
+Type: UInt32
+Parameter Sets: VirtualRouterPeerNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-126">-PeerIp</span><span class="sxs-lookup"><span data-stu-id="6ca38-126">-PeerIp</span></span>
+<span data-ttu-id="6ca38-127">IP de par.</span><span class="sxs-lookup"><span data-stu-id="6ca38-127">Peer Ip.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: VirtualRouterPeerNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-128">-PeerName</span><span class="sxs-lookup"><span data-stu-id="6ca38-128">-PeerName</span></span>
+<span data-ttu-id="6ca38-129">O nome do par de roteador virtual.</span><span class="sxs-lookup"><span data-stu-id="6ca38-129">The name of the virtual router Peer.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: VirtualRouterPeerNameParameterSet
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-130">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6ca38-130">-ResourceGroupName</span></span>
+<span data-ttu-id="6ca38-131">O nome do grupo de recursos do roteador virtual/par.</span><span class="sxs-lookup"><span data-stu-id="6ca38-131">The resource group name of the virtual router/peer.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-132">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="6ca38-132">-ResourceId</span></span>
+<span data-ttu-id="6ca38-133">A ID do recurso par do roteador virtual.</span><span class="sxs-lookup"><span data-stu-id="6ca38-133">The virtual router peer resource Id.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: VirtualRouterPeerResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-134">-VirtualRouterName</span><span class="sxs-lookup"><span data-stu-id="6ca38-134">-VirtualRouterName</span></span>
+<span data-ttu-id="6ca38-135">O roteador virtual em que existe o par.</span><span class="sxs-lookup"><span data-stu-id="6ca38-135">The virtual router where peer exists.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-136">-Confirme</span><span class="sxs-lookup"><span data-stu-id="6ca38-136">-Confirm</span></span>
+<span data-ttu-id="6ca38-137">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6ca38-137">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-138">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="6ca38-138">-WhatIf</span></span>
+<span data-ttu-id="6ca38-139">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="6ca38-139">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="6ca38-140">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="6ca38-140">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="6ca38-141">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6ca38-141">CommonParameters</span></span>
+<span data-ttu-id="6ca38-142">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6ca38-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6ca38-143">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="6ca38-143">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="6ca38-144">SENSORES</span><span class="sxs-lookup"><span data-stu-id="6ca38-144">INPUTS</span></span>
+
+### <span data-ttu-id="6ca38-145">System. String</span><span class="sxs-lookup"><span data-stu-id="6ca38-145">System.String</span></span>
+
+### <span data-ttu-id="6ca38-146">System. UInt32</span><span class="sxs-lookup"><span data-stu-id="6ca38-146">System.UInt32</span></span>
+
+### <span data-ttu-id="6ca38-147">Microsoft. Azure. Commands. Network. Models. PSVirtualRouterPeer</span><span class="sxs-lookup"><span data-stu-id="6ca38-147">Microsoft.Azure.Commands.Network.Models.PSVirtualRouterPeer</span></span>
+
+## <span data-ttu-id="6ca38-148">EXIBE</span><span class="sxs-lookup"><span data-stu-id="6ca38-148">OUTPUTS</span></span>
+
+### <span data-ttu-id="6ca38-149">Microsoft. Azure. Commands. Network. Models. PSVirtualRouter</span><span class="sxs-lookup"><span data-stu-id="6ca38-149">Microsoft.Azure.Commands.Network.Models.PSVirtualRouter</span></span>
+
+## <span data-ttu-id="6ca38-150">INFORMA</span><span class="sxs-lookup"><span data-stu-id="6ca38-150">NOTES</span></span>
+
+## <span data-ttu-id="6ca38-151">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="6ca38-151">RELATED LINKS</span></span>
