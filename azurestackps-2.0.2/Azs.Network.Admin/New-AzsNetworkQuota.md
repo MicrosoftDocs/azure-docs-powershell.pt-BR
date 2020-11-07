@@ -1,0 +1,369 @@
+---
+external help file: ''
+Module Name: Azs.Network.Admin
+online version: https://docs.microsoft.com/powershell/module/azs.network.admin/new-azsnetworkquota
+schema: 2.0.0
+ms.openlocfilehash: 554ebe0e6c4ef8a4b0d262071595c0dc6336f482
+ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "93946870"
+---
+# <span data-ttu-id="40a75-101">New-AzsNetworkQuota</span><span class="sxs-lookup"><span data-stu-id="40a75-101">New-AzsNetworkQuota</span></span>
+
+## <span data-ttu-id="40a75-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="40a75-102">SYNOPSIS</span></span>
+<span data-ttu-id="40a75-103">Criar ou atualizar uma cota.</span><span class="sxs-lookup"><span data-stu-id="40a75-103">Create or update a quota.</span></span>
+
+## <span data-ttu-id="40a75-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="40a75-104">SYNTAX</span></span>
+
+### <span data-ttu-id="40a75-105">Createexpanded (padrão)</span><span class="sxs-lookup"><span data-stu-id="40a75-105">CreateExpanded (Default)</span></span>
+```
+New-AzsNetworkQuota -Name <String> [-Location <String>] [-SubscriptionId <String>]
+ [-MaxLoadBalancersPerSubscription <Int64>] [-MaxNicsPerSubscription <Int64>]
+ [-MaxPublicIpsPerSubscription <Int64>] [-MaxSecurityGroupsPerSubscription <Int64>]
+ [-MaxVirtualNetworkGatewayConnectionsPerSubscription <Int64>]
+ [-MaxVirtualNetworkGatewaysPerSubscription <Int64>] [-MaxVnetsPerSubscription <Int64>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="40a75-106">Criados</span><span class="sxs-lookup"><span data-stu-id="40a75-106">Create</span></span>
+```
+New-AzsNetworkQuota -Name <String> -Quota <IQuota> [-Location <String>] [-SubscriptionId <String>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="40a75-107">CreateViaIdentity</span><span class="sxs-lookup"><span data-stu-id="40a75-107">CreateViaIdentity</span></span>
+```
+New-AzsNetworkQuota -InputObject <INetworkAdminIdentity> -Quota <IQuota> [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="40a75-108">CreateViaIdentityExpanded</span><span class="sxs-lookup"><span data-stu-id="40a75-108">CreateViaIdentityExpanded</span></span>
+```
+New-AzsNetworkQuota -InputObject <INetworkAdminIdentity> [-MaxLoadBalancersPerSubscription <Int64>]
+ [-MaxNicsPerSubscription <Int64>] [-MaxPublicIpsPerSubscription <Int64>]
+ [-MaxSecurityGroupsPerSubscription <Int64>] [-MaxVirtualNetworkGatewayConnectionsPerSubscription <Int64>]
+ [-MaxVirtualNetworkGatewaysPerSubscription <Int64>] [-MaxVnetsPerSubscription <Int64>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="40a75-109">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="40a75-109">DESCRIPTION</span></span>
+<span data-ttu-id="40a75-110">Criar ou atualizar uma cota.</span><span class="sxs-lookup"><span data-stu-id="40a75-110">Create or update a quota.</span></span>
+
+## <span data-ttu-id="40a75-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="40a75-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="40a75-112">--------------------------EXEMPLO 1--------------------------</span><span class="sxs-lookup"><span data-stu-id="40a75-112">-------------------------- EXAMPLE 1 --------------------------</span></span>
+```
+New-AzsNetworkQuota -Name NetworkQuotaDefaultValues
+```
+
+<span data-ttu-id="40a75-113">Crie uma nova cota de rede com todos os valores padrão.</span><span class="sxs-lookup"><span data-stu-id="40a75-113">Create a new network quota with all the default values.</span></span>
+
+### <span data-ttu-id="40a75-114">--------------------------EXEMPLO 2--------------------------</span><span class="sxs-lookup"><span data-stu-id="40a75-114">-------------------------- EXAMPLE 2 --------------------------</span></span>
+```
+New-AzsNetworkQuota -Name NetworkQuota1 -MaxNicsPerSubscription 150 -MaxPublicIpsPerSubscription 150
+```
+<span data-ttu-id="40a75-115">Crie uma nova cota de rede com valores não padrão para a cota.</span><span class="sxs-lookup"><span data-stu-id="40a75-115">Create a new network quota with non default values for quota.</span></span>
+
+
+
+## <span data-ttu-id="40a75-116">OS</span><span class="sxs-lookup"><span data-stu-id="40a75-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="40a75-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="40a75-117">-DefaultProfile</span></span>
+<span data-ttu-id="40a75-118">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="40a75-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-119">-InputObject</span><span class="sxs-lookup"><span data-stu-id="40a75-119">-InputObject</span></span>
+<span data-ttu-id="40a75-120">Parâmetro de identidade para construir, consulte a seção de observações para as propriedades INPUTobject e crie uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="40a75-120">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.INetworkAdminIdentity
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-121">-Local</span><span class="sxs-lookup"><span data-stu-id="40a75-121">-Location</span></span>
+<span data-ttu-id="40a75-122">Local do recurso.</span><span class="sxs-lookup"><span data-stu-id="40a75-122">Location of the resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzLocation)[0].Name
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-123">-MaxLoadBalancersPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-123">-MaxLoadBalancersPerSubscription</span></span>
+<span data-ttu-id="40a75-124">Número máximo de balanceadores de carga que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-124">Maximum number of load balancers a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 50
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-125">-MaxNicsPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-125">-MaxNicsPerSubscription</span></span>
+<span data-ttu-id="40a75-126">Número máximo de NICs que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-126">Maximum number of NICs a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 100
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-127">-MaxPublicIpsPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-127">-MaxPublicIpsPerSubscription</span></span>
+<span data-ttu-id="40a75-128">Número máximo de endereços IP públicos que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-128">Maximum number of public IP addresses a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 50
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-129">-MaxSecurityGroupsPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-129">-MaxSecurityGroupsPerSubscription</span></span>
+<span data-ttu-id="40a75-130">Número máximo de grupos de segurança que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-130">Maximum number of security groups a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 50
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-131">-MaxVirtualNetworkGatewayConnectionsPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-131">-MaxVirtualNetworkGatewayConnectionsPerSubscription</span></span>
+<span data-ttu-id="40a75-132">Número máximo de conexões de gateway de rede virtual que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-132">Maximum number of virtual network gateway Connections a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 2
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-133">-MaxVirtualNetworkGatewaysPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-133">-MaxVirtualNetworkGatewaysPerSubscription</span></span>
+<span data-ttu-id="40a75-134">Número máximo de gateways de rede virtual que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-134">Maximum number of virtual network gateways a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-135">-MaxVnetsPerSubscription</span><span class="sxs-lookup"><span data-stu-id="40a75-135">-MaxVnetsPerSubscription</span></span>
+<span data-ttu-id="40a75-136">Número máximo de redes virtuais que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-136">Maximum number of virtual networks a tenant subscription can provision.</span></span>
+
+```yaml
+Type: System.Int64
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: 50
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-137">-Nome</span><span class="sxs-lookup"><span data-stu-id="40a75-137">-Name</span></span>
+<span data-ttu-id="40a75-138">Nome do recurso.</span><span class="sxs-lookup"><span data-stu-id="40a75-138">Name of the resource.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-139">-Quota</span><span class="sxs-lookup"><span data-stu-id="40a75-139">-Quota</span></span>
+<span data-ttu-id="40a75-140">Recurso de cota de rede.</span><span class="sxs-lookup"><span data-stu-id="40a75-140">Network quota resource.</span></span>
+<span data-ttu-id="40a75-141">Para construir, consulte a seção de notas para propriedades de cota e crie uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="40a75-141">To construct, see NOTES section for QUOTA properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.Api20150615.IQuota
+Parameter Sets: Create, CreateViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-142">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="40a75-142">-SubscriptionId</span></span>
+<span data-ttu-id="40a75-143">Credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="40a75-143">Subscription credentials which uniquely identify Microsoft Azure subscription.</span></span>
+<span data-ttu-id="40a75-144">A ID da assinatura forma a parte do URI para cada chamada de serviço.</span><span class="sxs-lookup"><span data-stu-id="40a75-144">The subscription ID forms part of the URI for every service call.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-145">-Marca</span><span class="sxs-lookup"><span data-stu-id="40a75-145">-Tag</span></span>
+<span data-ttu-id="40a75-146">Lista de pares de valores chave.</span><span class="sxs-lookup"><span data-stu-id="40a75-146">List of key value pairs.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-147">-Confirme</span><span class="sxs-lookup"><span data-stu-id="40a75-147">-Confirm</span></span>
+<span data-ttu-id="40a75-148">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="40a75-148">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-149">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="40a75-149">-WhatIf</span></span>
+<span data-ttu-id="40a75-150">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="40a75-150">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="40a75-151">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="40a75-151">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+
+```
+
+### <span data-ttu-id="40a75-152">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="40a75-152">CommonParameters</span></span>
+<span data-ttu-id="40a75-153">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="40a75-153">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="40a75-154">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="40a75-154">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="40a75-155">SENSORES</span><span class="sxs-lookup"><span data-stu-id="40a75-155">INPUTS</span></span>
+
+### <span data-ttu-id="40a75-156">Microsoft. Azure. PowerShell. cmdlets. NetworkAdmin. Models. Api20150615. IQuota</span><span class="sxs-lookup"><span data-stu-id="40a75-156">Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.Api20150615.IQuota</span></span>
+
+### <span data-ttu-id="40a75-157">Microsoft. Azure. PowerShell. cmdlets. NetworkAdmin. Models. INetworkAdminIdentity</span><span class="sxs-lookup"><span data-stu-id="40a75-157">Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.INetworkAdminIdentity</span></span>
+
+## <span data-ttu-id="40a75-158">EXIBE</span><span class="sxs-lookup"><span data-stu-id="40a75-158">OUTPUTS</span></span>
+
+### <span data-ttu-id="40a75-159">Microsoft. Azure. PowerShell. cmdlets. NetworkAdmin. Models. Api20150615. IQuota</span><span class="sxs-lookup"><span data-stu-id="40a75-159">Microsoft.Azure.PowerShell.Cmdlets.NetworkAdmin.Models.Api20150615.IQuota</span></span>
+
+
+
+## <span data-ttu-id="40a75-160">INFORMA</span><span class="sxs-lookup"><span data-stu-id="40a75-160">NOTES</span></span>
+
+<span data-ttu-id="40a75-161">Propriedades de parâmetros complexas para criar os parâmetros descritos abaixo, construa uma tabela de hash contendo as propriedades adequadas.</span><span class="sxs-lookup"><span data-stu-id="40a75-161">COMPLEX PARAMETER PROPERTIES To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="40a75-162">Para obter informações sobre tabelas de hash, execute Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="40a75-162">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+<span data-ttu-id="40a75-163">INPUTobject <INetworkAdminIdentity> : parâmetro de identidade</span><span class="sxs-lookup"><span data-stu-id="40a75-163">INPUTOBJECT <INetworkAdminIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="40a75-164">`[Id <String>]`: Caminho de identidade do recurso</span><span class="sxs-lookup"><span data-stu-id="40a75-164">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="40a75-165">`[Location <String>]`: Local do recurso.</span><span class="sxs-lookup"><span data-stu-id="40a75-165">`[Location <String>]`: Location of the resource.</span></span>
+  - <span data-ttu-id="40a75-166">`[ResourceName <String>]`: Nome do recurso.</span><span class="sxs-lookup"><span data-stu-id="40a75-166">`[ResourceName <String>]`: Name of the resource.</span></span>
+  - <span data-ttu-id="40a75-167">`[SubscriptionId <String>]`: Credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="40a75-167">`[SubscriptionId <String>]`: Subscription credentials which uniquely identify Microsoft Azure subscription.</span></span> <span data-ttu-id="40a75-168">A ID da assinatura forma a parte do URI para cada chamada de serviço.</span><span class="sxs-lookup"><span data-stu-id="40a75-168">The subscription ID forms part of the URI for every service call.</span></span>
+
+<span data-ttu-id="40a75-169">COTA <IQuota> : recurso de cota de rede.</span><span class="sxs-lookup"><span data-stu-id="40a75-169">QUOTA <IQuota>: Network quota resource.</span></span>
+  - <span data-ttu-id="40a75-170">`[Tag <IResourceTags>]`: Lista de pares de valores chave.</span><span class="sxs-lookup"><span data-stu-id="40a75-170">`[Tag <IResourceTags>]`: List of key value pairs.</span></span>
+    - <span data-ttu-id="40a75-171">`[(Any) <String>]`: Isso indica que qualquer propriedade pode ser adicionada a esse objeto.</span><span class="sxs-lookup"><span data-stu-id="40a75-171">`[(Any) <String>]`: This indicates any property can be added to this object.</span></span>
+  - <span data-ttu-id="40a75-172">`[MaxLoadBalancersPerSubscription <Int64?>]`: Número máximo de balanceadores de carga que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-172">`[MaxLoadBalancersPerSubscription <Int64?>]`: Maximum number of load balancers a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-173">`[MaxNicsPerSubscription <Int64?>]`: Número máximo de NICs que podem ser provisionadas por uma assinatura de locatário.</span><span class="sxs-lookup"><span data-stu-id="40a75-173">`[MaxNicsPerSubscription <Int64?>]`: Maximum number of NICs a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-174">`[MaxPublicIpsPerSubscription <Int64?>]`: Número máximo de endereços IP públicos que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-174">`[MaxPublicIpsPerSubscription <Int64?>]`: Maximum number of public IP addresses a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-175">`[MaxSecurityGroupsPerSubscription <Int64?>]`: Número máximo de grupos de segurança que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-175">`[MaxSecurityGroupsPerSubscription <Int64?>]`: Maximum number of security groups a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-176">`[MaxVirtualNetworkGatewayConnectionsPerSubscription <Int64?>]`: Número máximo de conexões de gateway de rede virtual que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-176">`[MaxVirtualNetworkGatewayConnectionsPerSubscription <Int64?>]`: Maximum number of virtual network gateway Connections a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-177">`[MaxVirtualNetworkGatewaysPerSubscription <Int64?>]`: Número máximo de gateways de rede virtual que uma assinatura de locatário pode provisionar.</span><span class="sxs-lookup"><span data-stu-id="40a75-177">`[MaxVirtualNetworkGatewaysPerSubscription <Int64?>]`: Maximum number of virtual network gateways a tenant subscription can provision.</span></span>
+  - <span data-ttu-id="40a75-178">`[MaxVnetsPerSubscription <Int64?>]`: Número máximo de redes virtuais que podem ser provisionadas por uma assinatura de locatário.</span><span class="sxs-lookup"><span data-stu-id="40a75-178">`[MaxVnetsPerSubscription <Int64?>]`: Maximum number of virtual networks a tenant subscription can provision.</span></span>
+
+## <span data-ttu-id="40a75-179">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="40a75-179">RELATED LINKS</span></span>
+
