@@ -1,0 +1,229 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataShare.dll-Help.xml
+Module Name: Az.DataShare
+online version: https://docs.microsoft.com/en-us/powershell/module/az.datashare/set-azdatashare
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataShare/DataShare/help/Set-AzDataShare.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataShare/DataShare/help/Set-AzDataShare.md
+ms.openlocfilehash: 69d44ea88b34aba027933cb3015a203bf06070fd
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94113645"
+---
+# <span data-ttu-id="ca9cb-101">Set-AzDataShare</span><span class="sxs-lookup"><span data-stu-id="ca9cb-101">Set-AzDataShare</span></span>
+
+## <span data-ttu-id="ca9cb-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="ca9cb-102">SYNOPSIS</span></span>
+<span data-ttu-id="ca9cb-103">Atualiza um compartilhamento de dados existente</span><span class="sxs-lookup"><span data-stu-id="ca9cb-103">Updates an existing data share</span></span>
+
+## <span data-ttu-id="ca9cb-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ca9cb-104">SYNTAX</span></span>
+
+### <span data-ttu-id="ca9cb-105">ByFieldsParameterSet (padrão)</span><span class="sxs-lookup"><span data-stu-id="ca9cb-105">ByFieldsParameterSet (Default)</span></span>
+```
+Set-AzDataShare -ResourceGroupName <String> -AccountName <String> -Name <String> [-Description <String>]
+ [-TermsOfUse <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ca9cb-106">ByResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="ca9cb-106">ByResourceIdParameterSet</span></span>
+```
+Set-AzDataShare -ResourceId <String> [-Description <String>] [-TermsOfUse <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ca9cb-107">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="ca9cb-107">ByObjectParameterSet</span></span>
+```
+Set-AzDataShare -InputObject <PSDataShare> [-Description <String>] [-TermsOfUse <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="ca9cb-108">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="ca9cb-108">DESCRIPTION</span></span>
+<span data-ttu-id="ca9cb-109">O cmdlet **set-AzDataShare** atualiza um compartilhamento de dados que existe em uma conta do Azure data share especificada.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-109">The **Set-AzDataShare** cmdlet updates a data share that exists within a specified azure data share account.</span></span>
+
+## <span data-ttu-id="ca9cb-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="ca9cb-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="ca9cb-111">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="ca9cb-111">Example 1</span></span>
+```
+PS C:\> Set-AzDataShare -ResourceGroupName "ADS" -AccountName "WikiAdsAccount" -Name "AdsShare" -Description "Updated description" -TermsOfUse "Updated terms"
+Name                : AdsShare
+Id                  : /subscriptions/f3ead1ff-d0ab-4cf4-9a5a-86f1661d4685/resourceGroups/ADS/providers/Microsoft.DataShare/accounts/WikiAdsAccount/shares/AdsShare
+Type                : Microsoft.DataShare/shares
+CreatedAt           : 6/11/2019 12:00:00 AM
+CreatedBy           : Contoso ADS
+ShareKind           : CopyBased
+Description         : Updated description
+ProvisioningState   : Succeeded
+Terms               : Updated terms
+```
+
+<span data-ttu-id="ca9cb-112">Este comando atualiza um compartilhamento de dados existente chamado AdsShare</span><span class="sxs-lookup"><span data-stu-id="ca9cb-112">This command updates an existing data share named AdsShare</span></span>
+
+## <span data-ttu-id="ca9cb-113">OS</span><span class="sxs-lookup"><span data-stu-id="ca9cb-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="ca9cb-114">-AccountName</span><span class="sxs-lookup"><span data-stu-id="ca9cb-114">-AccountName</span></span>
+<span data-ttu-id="ca9cb-115">Nome da conta do compartilhamento de dados do Azure</span><span class="sxs-lookup"><span data-stu-id="ca9cb-115">Azure data share account name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ca9cb-116">-DefaultProfile</span></span>
+<span data-ttu-id="ca9cb-117">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-118">-Descrição</span><span class="sxs-lookup"><span data-stu-id="ca9cb-118">-Description</span></span>
+<span data-ttu-id="ca9cb-119">Descrição do compartilhamento de dados</span><span class="sxs-lookup"><span data-stu-id="ca9cb-119">Description of Data Share</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="ca9cb-120">-InputObject</span></span>
+<span data-ttu-id="ca9cb-121">Objeto de compartilhamento de dados do Azure</span><span class="sxs-lookup"><span data-stu-id="ca9cb-121">Azure data share object</span></span>
+
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-122">-Nome</span><span class="sxs-lookup"><span data-stu-id="ca9cb-122">-Name</span></span>
+<span data-ttu-id="ca9cb-123">Nome do compartilhamento de dados do Azure</span><span class="sxs-lookup"><span data-stu-id="ca9cb-123">Azure data share name</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-124">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ca9cb-124">-ResourceGroupName</span></span>
+<span data-ttu-id="ca9cb-125">O nome do grupo de recursos da conta do Azure data share</span><span class="sxs-lookup"><span data-stu-id="ca9cb-125">The resource group name of the azure data share account</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-126">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="ca9cb-126">-ResourceId</span></span>
+<span data-ttu-id="ca9cb-127">A ID do recurso do compartilhamento de dados do Azure</span><span class="sxs-lookup"><span data-stu-id="ca9cb-127">The resource id of the azure data share</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-128">-TermsOfUse</span><span class="sxs-lookup"><span data-stu-id="ca9cb-128">-TermsOfUse</span></span>
+<span data-ttu-id="ca9cb-129">Termos de uso do compartilhamento de dados</span><span class="sxs-lookup"><span data-stu-id="ca9cb-129">Terms of Use for Data Share</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-130">-Confirme</span><span class="sxs-lookup"><span data-stu-id="ca9cb-130">-Confirm</span></span>
+<span data-ttu-id="ca9cb-131">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ca9cb-132">-WhatIf</span></span>
+<span data-ttu-id="ca9cb-133">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-133">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ca9cb-134">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-134">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca9cb-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ca9cb-135">CommonParameters</span></span>
+<span data-ttu-id="ca9cb-136">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ca9cb-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ca9cb-137">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ca9cb-137">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="ca9cb-138">SENSORES</span><span class="sxs-lookup"><span data-stu-id="ca9cb-138">INPUTS</span></span>
+
+### <span data-ttu-id="ca9cb-139">System. String</span><span class="sxs-lookup"><span data-stu-id="ca9cb-139">System.String</span></span>
+
+### <span data-ttu-id="ca9cb-140">Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare</span><span class="sxs-lookup"><span data-stu-id="ca9cb-140">Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare</span></span>
+
+## <span data-ttu-id="ca9cb-141">EXIBE</span><span class="sxs-lookup"><span data-stu-id="ca9cb-141">OUTPUTS</span></span>
+
+### <span data-ttu-id="ca9cb-142">Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare</span><span class="sxs-lookup"><span data-stu-id="ca9cb-142">Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare</span></span>
+
+## <span data-ttu-id="ca9cb-143">INFORMA</span><span class="sxs-lookup"><span data-stu-id="ca9cb-143">NOTES</span></span>
+
+## <span data-ttu-id="ca9cb-144">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="ca9cb-144">RELATED LINKS</span></span>

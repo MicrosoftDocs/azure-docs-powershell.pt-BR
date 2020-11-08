@@ -1,0 +1,218 @@
+---
+external help file: ''
+Module Name: Az.DesktopVirtualization
+online version: https://docs.microsoft.com/en-us/powershell/module/az.desktopvirtualization/remove-azwvdhostpool
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DesktopVirtualization/help/Remove-AzWvdHostPool.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DesktopVirtualization/help/Remove-AzWvdHostPool.md
+ms.openlocfilehash: 7b0cdf0cbe0aecdb2e1b6829ed1ec22b1e485e92
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94114556"
+---
+# <span data-ttu-id="fb007-101">Remove-AzWvdHostPool</span><span class="sxs-lookup"><span data-stu-id="fb007-101">Remove-AzWvdHostPool</span></span>
+
+## <span data-ttu-id="fb007-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="fb007-102">SYNOPSIS</span></span>
+<span data-ttu-id="fb007-103">Remover um pool de hosts.</span><span class="sxs-lookup"><span data-stu-id="fb007-103">Remove a host pool.</span></span>
+
+## <span data-ttu-id="fb007-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="fb007-104">SYNTAX</span></span>
+
+### <span data-ttu-id="fb007-105">Excluir (padrão)</span><span class="sxs-lookup"><span data-stu-id="fb007-105">Delete (Default)</span></span>
+```
+Remove-AzWvdHostPool -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>] [-Force]
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="fb007-106">DeleteViaIdentity</span><span class="sxs-lookup"><span data-stu-id="fb007-106">DeleteViaIdentity</span></span>
+```
+Remove-AzWvdHostPool -InputObject <IDesktopVirtualizationIdentity> [-Force] [-DefaultProfile <PSObject>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="fb007-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="fb007-107">DESCRIPTION</span></span>
+<span data-ttu-id="fb007-108">Remover um pool de hosts.</span><span class="sxs-lookup"><span data-stu-id="fb007-108">Remove a host pool.</span></span>
+
+## <span data-ttu-id="fb007-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="fb007-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="fb007-110">Exemplo 1: excluir um HostPool da área de trabalho virtual do Windows por nome</span><span class="sxs-lookup"><span data-stu-id="fb007-110">Example 1: Delete a Windows Virtual Desktop HostPool by name</span></span>
+```powershell
+PS C:\> Remove-AzWvdHostPool -ResourceGroupName ResourceGroupName -Name HostPoolName
+```
+
+<span data-ttu-id="fb007-111">Esse comando exclui uma HostPool da área de trabalho virtual do Windows em um grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="fb007-111">This command deletes a Windows Virtual Desktop HostPool in a Resource Group.</span></span>
+
+## <span data-ttu-id="fb007-112">OS</span><span class="sxs-lookup"><span data-stu-id="fb007-112">PARAMETERS</span></span>
+
+### <span data-ttu-id="fb007-113">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="fb007-113">-DefaultProfile</span></span>
+<span data-ttu-id="fb007-114">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="fb007-114">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-115">-Force</span><span class="sxs-lookup"><span data-stu-id="fb007-115">-Force</span></span>
+<span data-ttu-id="fb007-116">Force o sinalizador para excluir o sessionHost.</span><span class="sxs-lookup"><span data-stu-id="fb007-116">Force flag to delete sessionHost.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-117">-InputObject</span><span class="sxs-lookup"><span data-stu-id="fb007-117">-InputObject</span></span>
+<span data-ttu-id="fb007-118">Parâmetro de identidade para construir, consulte a seção de observações para as propriedades INPUTobject e crie uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="fb007-118">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.IDesktopVirtualizationIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-119">-Nome</span><span class="sxs-lookup"><span data-stu-id="fb007-119">-Name</span></span>
+<span data-ttu-id="fb007-120">O nome do pool de hosts dentro do grupo de recursos especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-120">The name of the host pool within the specified resource group</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases: HostPoolName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-121">-PassThru</span><span class="sxs-lookup"><span data-stu-id="fb007-121">-PassThru</span></span>
+<span data-ttu-id="fb007-122">Retorna verdadeiro quando o comando é bem-sucedido</span><span class="sxs-lookup"><span data-stu-id="fb007-122">Returns true when the command succeeds</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="fb007-123">-ResourceGroupName</span></span>
+<span data-ttu-id="fb007-124">O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="fb007-124">The name of the resource group.</span></span>
+<span data-ttu-id="fb007-125">O nome não diferencia maiúsculas de minúsculas.</span><span class="sxs-lookup"><span data-stu-id="fb007-125">The name is case insensitive.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-126">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="fb007-126">-SubscriptionId</span></span>
+<span data-ttu-id="fb007-127">A ID da assinatura de destino.</span><span class="sxs-lookup"><span data-stu-id="fb007-127">The ID of the target subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-128">-Confirme</span><span class="sxs-lookup"><span data-stu-id="fb007-128">-Confirm</span></span>
+<span data-ttu-id="fb007-129">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="fb007-129">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="fb007-130">-WhatIf</span></span>
+<span data-ttu-id="fb007-131">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="fb007-131">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="fb007-132">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="fb007-132">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="fb007-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="fb007-133">CommonParameters</span></span>
+<span data-ttu-id="fb007-134">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="fb007-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="fb007-135">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="fb007-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="fb007-136">SENSORES</span><span class="sxs-lookup"><span data-stu-id="fb007-136">INPUTS</span></span>
+
+### <span data-ttu-id="fb007-137">Microsoft. Azure. PowerShell. cmdlets. DesktopVirtualization. Models. IDesktopVirtualizationIdentity</span><span class="sxs-lookup"><span data-stu-id="fb007-137">Microsoft.Azure.PowerShell.Cmdlets.DesktopVirtualization.Models.IDesktopVirtualizationIdentity</span></span>
+
+## <span data-ttu-id="fb007-138">EXIBE</span><span class="sxs-lookup"><span data-stu-id="fb007-138">OUTPUTS</span></span>
+
+### <span data-ttu-id="fb007-139">System. Boolean</span><span class="sxs-lookup"><span data-stu-id="fb007-139">System.Boolean</span></span>
+
+## <span data-ttu-id="fb007-140">INFORMA</span><span class="sxs-lookup"><span data-stu-id="fb007-140">NOTES</span></span>
+
+<span data-ttu-id="fb007-141">ALIASES</span><span class="sxs-lookup"><span data-stu-id="fb007-141">ALIASES</span></span>
+
+<span data-ttu-id="fb007-142">PROPRIEDADES DE PARÂMETROS COMPLEXAS</span><span class="sxs-lookup"><span data-stu-id="fb007-142">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="fb007-143">Para criar os parâmetros descritos abaixo, construa uma tabela de hash contendo as propriedades adequadas.</span><span class="sxs-lookup"><span data-stu-id="fb007-143">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="fb007-144">Para obter informações sobre tabelas de hash, execute Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="fb007-144">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="fb007-145">INPUTobject <IDesktopVirtualizationIdentity> : parâmetro de identidade</span><span class="sxs-lookup"><span data-stu-id="fb007-145">INPUTOBJECT <IDesktopVirtualizationIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="fb007-146">`[ApplicationGroupName <String>]`: O nome do grupo de aplicativos</span><span class="sxs-lookup"><span data-stu-id="fb007-146">`[ApplicationGroupName <String>]`: The name of the application group</span></span>
+  - <span data-ttu-id="fb007-147">`[ApplicationName <String>]`: O nome do aplicativo dentro do grupo de aplicativos especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-147">`[ApplicationName <String>]`: The name of the application within the specified application group</span></span>
+  - <span data-ttu-id="fb007-148">`[DesktopName <String>]`: O nome da área de trabalho dentro do grupo da área de trabalho especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-148">`[DesktopName <String>]`: The name of the desktop within the specified desktop group</span></span>
+  - <span data-ttu-id="fb007-149">`[HostPoolName <String>]`: O nome do pool de hosts dentro do grupo de recursos especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-149">`[HostPoolName <String>]`: The name of the host pool within the specified resource group</span></span>
+  - <span data-ttu-id="fb007-150">`[Id <String>]`: Caminho de identidade do recurso</span><span class="sxs-lookup"><span data-stu-id="fb007-150">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="fb007-151">`[ResourceGroupName <String>]`: O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="fb007-151">`[ResourceGroupName <String>]`: The name of the resource group.</span></span> <span data-ttu-id="fb007-152">O nome não diferencia maiúsculas de minúsculas.</span><span class="sxs-lookup"><span data-stu-id="fb007-152">The name is case insensitive.</span></span>
+  - <span data-ttu-id="fb007-153">`[SessionHostName <String>]`: O nome do host da sessão dentro do pool de hosts especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-153">`[SessionHostName <String>]`: The name of the session host within the specified host pool</span></span>
+  - <span data-ttu-id="fb007-154">`[SubscriptionId <String>]`: A ID da assinatura de destino.</span><span class="sxs-lookup"><span data-stu-id="fb007-154">`[SubscriptionId <String>]`: The ID of the target subscription.</span></span>
+  - <span data-ttu-id="fb007-155">`[UserSessionId <String>]`: O nome da sessão do usuário no host de sessão especificado</span><span class="sxs-lookup"><span data-stu-id="fb007-155">`[UserSessionId <String>]`: The name of the user session within the specified session host</span></span>
+  - <span data-ttu-id="fb007-156">`[WorkspaceName <String>]`: O nome do espaço de trabalho</span><span class="sxs-lookup"><span data-stu-id="fb007-156">`[WorkspaceName <String>]`: The name of the workspace</span></span>
+
+## <span data-ttu-id="fb007-157">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="fb007-157">RELATED LINKS</span></span>
+
