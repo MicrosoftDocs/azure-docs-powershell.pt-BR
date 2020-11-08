@@ -1,0 +1,298 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/update-azmanagedhsmkey
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzManagedHsmKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Update-AzManagedHsmKey.md
+ms.openlocfilehash: 79d01f96fe776432f650d827b16ba83f48b84ddd
+ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "94124980"
+---
+# <span data-ttu-id="76fa8-101">Update-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-101">Update-AzManagedHsmKey</span></span>
+
+## <span data-ttu-id="76fa8-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="76fa8-102">SYNOPSIS</span></span>
+<span data-ttu-id="76fa8-103">Atualiza os atributos de uma chave em um HSM gerenciado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-103">Updates the attributes of a key in a managed HSM.</span></span>
+
+## <span data-ttu-id="76fa8-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="76fa8-104">SYNTAX</span></span>
+
+### <span data-ttu-id="76fa8-105">Padrão (padrão)</span><span class="sxs-lookup"><span data-stu-id="76fa8-105">Default (Default)</span></span>
+```
+Update-AzManagedHsmKey [-HsmName] <String> [-Name] <String> [[-Version] <String>] [-Enable <Boolean>]
+ [-Expires <DateTime>] [-NotBefore <DateTime>] [-KeyOps <String[]>] [-Tag <Hashtable>] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="76fa8-106">InputObject</span><span class="sxs-lookup"><span data-stu-id="76fa8-106">InputObject</span></span>
+```
+Update-AzManagedHsmKey [-InputObject] <PSKeyVaultKeyIdentityItem> [[-Version] <String>] [-Enable <Boolean>]
+ [-Expires <DateTime>] [-NotBefore <DateTime>] [-KeyOps <String[]>] [-Tag <Hashtable>] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="76fa8-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="76fa8-107">DESCRIPTION</span></span>
+<span data-ttu-id="76fa8-108">O cmdlet **Update-AzManagedHsmKey** atualiza os atributos editáveis de uma chave em um HSM gerenciado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-108">The **Update-AzManagedHsmKey** cmdlet updates the editable attributes of a key in a managed HSM.</span></span>
+
+## <span data-ttu-id="76fa8-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="76fa8-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="76fa8-110">Exemplo 1: modificar uma chave para habilitá-la e definir a data de expiração e as marcas</span><span class="sxs-lookup"><span data-stu-id="76fa8-110">Example 1: Modify a key to enable it, and set the expiration date and tags</span></span>
+```powershell
+PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
+PS C:\> $Tags = @{'Severity' = 'high'; 'Accounting' = 'true'}
+PS C:\> Update-AzManagedHsmKey -HsmName testmhsm -Name testkey001 -Expires $Expires -Enable $True -Tag $Tags -PassThru
+
+Vault/HSM Name : testmhsm
+Name           : testkey001
+Version        : 49b74a39dab605bd336628dc094dc31b
+Id             : https://testmhsm.managedhsm.azure.net:443/keys/testkey001/49b74a39dab605bd336628dc094dc31b
+Enabled        : True
+Expires        : 10/14/2022 9:46:55 AM
+Not Before     :
+Created        : 10/14/2020 3:39:16 AM
+Updated        : 10/14/2020 9:47:06 AM
+Recovery Level : Recoverable+Purgeable
+Tags           : Name        Value
+                 Severity    high
+                 Accounting  true
+```
+
+<span data-ttu-id="76fa8-111">O primeiro comando cria um objeto **DateTime** usando o cmdlet **Get-Date** .</span><span class="sxs-lookup"><span data-stu-id="76fa8-111">The first command creates a **DateTime** object by using the **Get-Date** cmdlet.</span></span> <span data-ttu-id="76fa8-112">Esse objeto especifica um tempo dois anos no futuro.</span><span class="sxs-lookup"><span data-stu-id="76fa8-112">That object specifies a time two years in the future.</span></span> <span data-ttu-id="76fa8-113">O comando armazena essa data na variável $Expires.</span><span class="sxs-lookup"><span data-stu-id="76fa8-113">The command stores that date in the $Expires variable.</span></span>
+<span data-ttu-id="76fa8-114">Para obter mais informações, digite `Get-Help Get-Date` .</span><span class="sxs-lookup"><span data-stu-id="76fa8-114">For more information, type `Get-Help Get-Date`.</span></span>
+<span data-ttu-id="76fa8-115">O segundo comando cria uma variável para armazenar valores de marca de alta gravidade e contabilidade.</span><span class="sxs-lookup"><span data-stu-id="76fa8-115">The second command creates a variable to store tag values of high severity and Accounting.</span></span>
+<span data-ttu-id="76fa8-116">O comando final modifica uma chave chamada testkey001.</span><span class="sxs-lookup"><span data-stu-id="76fa8-116">The final command modifies a key named testkey001.</span></span> <span data-ttu-id="76fa8-117">O comando habilita a chave, define seu tempo de expiração para a hora armazenada em $Expires e define as marcas armazenadas no $Tags.</span><span class="sxs-lookup"><span data-stu-id="76fa8-117">The command enables the key, sets its expiration time to the time stored in $Expires, and sets the tags that are stored in $Tags.</span></span>
+
+## <span data-ttu-id="76fa8-118">OS</span><span class="sxs-lookup"><span data-stu-id="76fa8-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="76fa8-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="76fa8-119">-DefaultProfile</span></span>
+<span data-ttu-id="76fa8-120">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="76fa8-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-121">-Habilitar</span><span class="sxs-lookup"><span data-stu-id="76fa8-121">-Enable</span></span>
+<span data-ttu-id="76fa8-122">O valor de true permite que a chave e um valor false desativassem a chave.</span><span class="sxs-lookup"><span data-stu-id="76fa8-122">Value of true enables the key and a value of false disabless the key.</span></span>
+<span data-ttu-id="76fa8-123">Se não for especificado, o estado Enabled/Disabled existente permanecerá inalterado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-123">If not specified, the existing enabled/disabled state remains unchanged.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-124">-Expira em</span><span class="sxs-lookup"><span data-stu-id="76fa8-124">-Expires</span></span>
+<span data-ttu-id="76fa8-125">O tempo de expiração de uma chave no horário UTC.</span><span class="sxs-lookup"><span data-stu-id="76fa8-125">The expiration time of a key in UTC time.</span></span>
+<span data-ttu-id="76fa8-126">Se não for especificado, o tempo de expiração existente da chave permanecerá inalterado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-126">If not specified, the existing expiration time of the key remains unchanged.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-127">-HsmName</span><span class="sxs-lookup"><span data-stu-id="76fa8-127">-HsmName</span></span>
+<span data-ttu-id="76fa8-128">Nome do HSM.</span><span class="sxs-lookup"><span data-stu-id="76fa8-128">HSM name.</span></span> <span data-ttu-id="76fa8-129">O cmdlet constrói o FQDN de um HSM gerenciado com base no nome e no ambiente selecionado no momento.</span><span class="sxs-lookup"><span data-stu-id="76fa8-129">Cmdlet constructs the FQDN of a managed HSM based on the name and currently selected environment.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Default
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="76fa8-130">-InputObject</span></span>
+<span data-ttu-id="76fa8-131">Objeto-chave</span><span class="sxs-lookup"><span data-stu-id="76fa8-131">Key object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
+Parameter Sets: InputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-132">-KeyOps</span><span class="sxs-lookup"><span data-stu-id="76fa8-132">-KeyOps</span></span>
+<span data-ttu-id="76fa8-133">As operações que podem ser executadas com a chave.</span><span class="sxs-lookup"><span data-stu-id="76fa8-133">The operations that can be performed with the key.</span></span>
+<span data-ttu-id="76fa8-134">Se não for especificado, as operações de chave existentes da chave permanecerão inalteradas.</span><span class="sxs-lookup"><span data-stu-id="76fa8-134">If not specified, the existing key operations of the key remain unchanged.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-135">-Nome</span><span class="sxs-lookup"><span data-stu-id="76fa8-135">-Name</span></span>
+<span data-ttu-id="76fa8-136">Nome da chave.</span><span class="sxs-lookup"><span data-stu-id="76fa8-136">Key name.</span></span>
+<span data-ttu-id="76fa8-137">O cmdlet constrói o FQDN de uma chave do nome gerenciado do HSM, o ambiente selecionado no momento e o nome da chave.</span><span class="sxs-lookup"><span data-stu-id="76fa8-137">Cmdlet constructs the FQDN of a key from managed HSM name, currently selected environment and key name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Default
+Aliases: KeyName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-138">-Não antes</span><span class="sxs-lookup"><span data-stu-id="76fa8-138">-NotBefore</span></span>
+<span data-ttu-id="76fa8-139">A hora UTC antes da qual a chave não pode ser usada.</span><span class="sxs-lookup"><span data-stu-id="76fa8-139">The UTC time before which key can't be used.</span></span>
+<span data-ttu-id="76fa8-140">Se não for especificado, o atributo nobefore existente da chave permanecerá inalterado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-140">If not specified, the existing NotBefore attribute of the key remains unchanged.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.DateTime]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-141">-PassThru</span><span class="sxs-lookup"><span data-stu-id="76fa8-141">-PassThru</span></span>
+<span data-ttu-id="76fa8-142">O cmdlet não retorna um objeto por padrão.</span><span class="sxs-lookup"><span data-stu-id="76fa8-142">Cmdlet does not return an object by default.</span></span>
+<span data-ttu-id="76fa8-143">Se essa opção for especificada, retornará o objeto do pacote de chaves atualizado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-143">If this switch is specified, returns the updated key bundle object.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-144">-Marca</span><span class="sxs-lookup"><span data-stu-id="76fa8-144">-Tag</span></span>
+<span data-ttu-id="76fa8-145">Uma Hashtable representa as marcas de tecla.</span><span class="sxs-lookup"><span data-stu-id="76fa8-145">A hashtable represents key tags.</span></span>
+<span data-ttu-id="76fa8-146">Se não for especificado, as marcas existentes da tecla permanecerão inalteradas.</span><span class="sxs-lookup"><span data-stu-id="76fa8-146">If not specified, the existings tags of the key remain unchanged.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-147">-Versão</span><span class="sxs-lookup"><span data-stu-id="76fa8-147">-Version</span></span>
+<span data-ttu-id="76fa8-148">Versão principal.</span><span class="sxs-lookup"><span data-stu-id="76fa8-148">Key version.</span></span>
+<span data-ttu-id="76fa8-149">O cmdlet constrói o FQDN de uma chave do nome gerenciado do HSM, o ambiente selecionado no momento, o nome da chave e a versão da chave.</span><span class="sxs-lookup"><span data-stu-id="76fa8-149">Cmdlet constructs the FQDN of a key from managed HSM name, currently selected environment, key name and key version.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: KeyVersion
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-150">-Confirme</span><span class="sxs-lookup"><span data-stu-id="76fa8-150">-Confirm</span></span>
+<span data-ttu-id="76fa8-151">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="76fa8-151">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-152">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="76fa8-152">-WhatIf</span></span>
+<span data-ttu-id="76fa8-153">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-153">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="76fa8-154">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="76fa8-154">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="76fa8-155">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="76fa8-155">CommonParameters</span></span>
+<span data-ttu-id="76fa8-156">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="76fa8-156">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="76fa8-157">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="76fa8-157">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="76fa8-158">SENSORES</span><span class="sxs-lookup"><span data-stu-id="76fa8-158">INPUTS</span></span>
+
+### <span data-ttu-id="76fa8-159">Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKeyIdentityItem</span><span class="sxs-lookup"><span data-stu-id="76fa8-159">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem</span></span>
+
+## <span data-ttu-id="76fa8-160">EXIBE</span><span class="sxs-lookup"><span data-stu-id="76fa8-160">OUTPUTS</span></span>
+
+### <span data-ttu-id="76fa8-161">Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-161">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey</span></span>
+
+## <span data-ttu-id="76fa8-162">INFORMA</span><span class="sxs-lookup"><span data-stu-id="76fa8-162">NOTES</span></span>
+
+## <span data-ttu-id="76fa8-163">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="76fa8-163">RELATED LINKS</span></span>
+
+[<span data-ttu-id="76fa8-164">Add-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-164">Add-AzManagedHsmKey</span></span>](./Add-AzManagedHsmKey.md)
+
+[<span data-ttu-id="76fa8-165">Backup-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-165">Backup-AzManagedHsmKey</span></span>](./Backup-AzManagedHsmKey.md)
+
+[<span data-ttu-id="76fa8-166">Remove-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-166">Remove-AzManagedHsmKey</span></span>](./Remove-AzManagedHsmKey.md)
+
+[<span data-ttu-id="76fa8-167">Desfazer-AzManagedHsmKeyRemoval</span><span class="sxs-lookup"><span data-stu-id="76fa8-167">Undo-AzManagedHsmKeyRemoval</span></span>](./Undo-AzManagedHsmKeyRemoval.md)
+
+[<span data-ttu-id="76fa8-168">Get-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-168">Get-AzManagedHsmKey</span></span>](./Get-AzManagedHsmKey.md)
+
+[<span data-ttu-id="76fa8-169">Restore-AzManagedHsmKey</span><span class="sxs-lookup"><span data-stu-id="76fa8-169">Restore-AzManagedHsmKey</span></span>](./Restore-AzManagedHsmKey.md)
