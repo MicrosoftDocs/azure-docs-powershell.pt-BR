@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753325"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134855"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753325"
 * Adição dos parâmetros opcionais 'Tier', 'MaxSharesCount', 'DiskIOPSReadOnly' e 'DiskMBpsReadOnly' ao cmdlet 'New-AzDiskUpdateConfig'. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Alteração da Falha] Atualiza a versão da API para 2020-05-01
+* [Alteração da Falha] Atualiza a versão da API para a 2019-05-01
 * [Alteração da Falha] Remoção do SKU 'Classic' e do parâmetro 'StorageAccountName' de 'New-AzContainerRegistry'
 * Adição de novos cmdlets: 'Connect-AzContainerRegistry', 'Import-AzContainerRegistry', 'Get-AzContainerRegistryUsage', 'New-AzContainerRegistryNetworkRule' e 'Set-AzContainerRegistryNetworkRule'
 * Adição do novo parâmetro 'NetworkRuleSet' ao 'Update-AzContainerRegistry'
@@ -68,7 +68,7 @@ ms.locfileid: "92753325"
 #### <a name="azfunctions"></a>Az.Functions
 * [Alteração da Falha] Remoção do parâmetro de opção 'IncludeSlot' de todos os parâmetros, exceto de um conjunto de parâmetros de 'Get-AzFunctionApp'. O cmdlet agora é compatível com a recuperação de slots de implantação nos resultados em que '-IncludeSlot' for especificado. 
 * Atualização do 'New-AzFunctionApp':
-  - Correção do -DisableApplicationInsights para que nenhum projeto do Application Insights seja criado quando essa opção for especificada. [#12728]
+  - Correção do -DisableApplicationInsights para que nenhum projeto do Application Insights seja criado quando essa opção for especificada. [Nº 12728]
   - [Alteração da Falha] Remoção do suporte para criar aplicativos de funções do PowerShell 6.2.
   - [Alteração da Falha] Alteração da versão de runtime padrão da 6.2 para a 7.0 do Functions versão 3 no Windows para aplicativos de funções do PowerShell quando o parâmetro RuntimeVersion não for especificado.
   - [Alteração da Falha] Alteração da versão de runtime padrão da 10 para a 12 no Functions versão 3 no Windows e Linux para aplicativos de funções do Node quando o parâmetro RuntimeVersion não for especificado.
@@ -98,7 +98,7 @@ ms.locfileid: "92753325"
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * [Alteração da Falha] O parâmetro DisableSoftDelete foi preterido em 'New-AzKeyVault', bem como EnableSoftDelete em 'Update-AzKeyVault'
-* [Alteração da Falha] Remoção do atributo SecretValueText para evitar a exibição de SecretValue de modo direto [#12266]
+* [Alteração da Falha] Remoção do atributo SecretValueText para evitar a exibição de SecretValue de modo direto [Nº 12266]
 * Um novo tipo de recurso é compatível: HSM gerenciado
     - Comandos CRUD de cmdlets e do HSM gerenciado para operar chaves no HSM gerenciado
     - Backup/restauração completos do HSM, criação de chave AES, backup/restauração do domínio de segurança e RBAC
@@ -131,7 +131,7 @@ ms.locfileid: "92753325"
 #### <a name="azresources"></a>Az.Resources
 * Correção de um bug de análise
 * Atualização de cmdlets What-If do modelo do ARM para remover uma mensagem de visualização dos resultados
-* Correção de um problema em que ocorria falha nos cmdlets de implantação de modelo caso '-WhatIf' fosse definido em um escopo maior [#13038]
+* Correção de um problema em que ocorria falha nos cmdlets de implantação de modelo caso '-WhatIf' fosse definido em um escopo maior [Nº13038]
 * Correção de um problema em que cmdlets de implantação de modelo não preservavam maiúsculas e minúsculas para parâmetros de modelo
 * Adição de uma versão de API padrão para ser usada no cmdlet 'Export-AzResourceGroup'
 * Adição de cmdlets às Especificações de Modelo ('Get-AzTemplateSpec', 'Set-AzTemplateSpec', 'New-AzTemplateSpec', 'Remove-AzTemplateSpec' e 'Export-AzTemplateSpec')
@@ -141,8 +141,8 @@ ms.locfileid: "92753325"
 
 #### <a name="azsql"></a>Az.Sql
 * Adição de DiffBackupIntervalInHours a 'Set-AzSqlDatabaseBackupShortTermRetentionPolicy' 
-* Correção de um problema em que ocorria uma falha de New-AzSqlDatabaseExport caso networkIsolation não fosse especificado [#13097]
-* Correção de um problema em que New-AzSqlDatabaseExport e New-AzSqlDatabaseImport não retornavam OperationStatusLink no objeto de resultado [#13097]
+* Correção de um problema em que ocorria uma falha de New-AzSqlDatabaseExport caso networkIsolation não fosse especificado [Nº 13097]
+* Correção de um problema em que New-AzSqlDatabaseExport e New-AzSqlDatabaseImport não retornavam OperationStatusLink no objeto de resultado [Nº 13097]
 * Atualizar a URL de regiões emparelhadas do Azure em avisos de redundância de armazenamento de backup 
 
 #### <a name="azstorage"></a>Az.Storage
@@ -1762,15 +1762,15 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 
 #### <a name="azbatch"></a>Az.Batch
 * `CoreQuota` renomeado em `BatchAccountContext` para `DedicatedCoreQuota`. Também há um novo `LowPriorityCoreQuota`.
-  - Isso afeta o **Get-AzBatchAccount** .
-* O parâmetro **New-AzBatchTask** `-ResourceFile` agora usa uma coleção de objetos `PSResourceFile`, que podem ser construídos usando o novo cmdlet **New-AzBatchResourceFile** .
+  - Isso afeta o **Get-AzBatchAccount**.
+* O parâmetro **New-AzBatchTask** `-ResourceFile` agora usa uma coleção de objetos `PSResourceFile`, que podem ser construídos usando o novo cmdlet **New-AzBatchResourceFile**.
 * Novo cmdlet **New-AzBatchResourceFile** para ajudar a criar `PSResourceFile` objetos. Eles podem ser fornecidos para **New-AzBatchTask** no parâmetro `-ResourceFile`.
   - Isso é compatível com dois novos tipos de arquivo de recurso, além da maneira `HttpUrl` existente:
     - Os arquivos de recursos baseados em `AutoStorageContainerName` baixam um contêiner de armazenamento automático inteiro para o nó do Lote.
     - Os arquivos de recursos baseados em `StorageContainerUrl` baixam o contêiner especificado na URL para o nó do Lote.
-* Propriedade `ApplicationPackages` removida de `PSApplication` retornada por **Get-AzBatchApplication** .
-  - Os pacotes específicos dentro de um aplicativo agora podem ser recuperados usando o **Get-AzBatchApplicationPackage** . Por exemplo: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **Set-AzBatchApplication** .
+* Propriedade `ApplicationPackages` removida de `PSApplication` retornada por **Get-AzBatchApplication**.
+  - Os pacotes específicos dentro de um aplicativo agora podem ser recuperados usando o **Get-AzBatchApplicationPackage**. Por exemplo: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **Set-AzBatchApplication**.
   - `ApplicationId` agora é um alias de `ApplicationName`.
 * Nova propriedade `PSWindowsUserConfiguration` adicionada a `PSUserAccount`.
 * `Version` renomeado para `Name` em `PSApplicationPackage`.
@@ -1780,10 +1780,10 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 * `TargetOSVersion` removido de `PSCloudServiceConfiguration`.
 * `CurrentOSVersion` renomeado para `OSVersion` em `PSCloudServiceConfiguration`.
 * `DataEgressGiB` e `DataIngressGiB` removidos de `PSPoolUsageMetrics`.
-* O **Get-AzBatchNodeAgentSku** foi removido e substituído por **Get-AzBatchSupportedImage** .
+* O **Get-AzBatchNodeAgentSku** foi removido e substituído por **Get-AzBatchSupportedImage**.
   - **Get-AzBatchSupportedImage** retorna os mesmos dados que **Get-AzBatchNodeAgentSku** , mas em um formato mais amigável.
   - Novas imagens não verificadas agora também são retornadas. Informações adicionais sobre `Capabilities` e `BatchSupportEndOfLife` para cada imagem também estão incluídas.
-* Foi adicionada a capacidade de montar sistemas de arquivos remotos em cada nó de um pool por meio do novo parâmetro `MountConfiguration` de **New-AzBatchPool** .
+* Foi adicionada a capacidade de montar sistemas de arquivos remotos em cada nó de um pool por meio do novo parâmetro `MountConfiguration` de **New-AzBatchPool**.
 * Agora, dê suporte às regras de segurança de rede bloqueando o acesso à rede para um pool com base na porta de origem do tráfego. Isso é feito por meio da propriedade `SourcePortRanges` em `PSNetworkSecurityGroupRule`.
 * Ao executar um contêiner, o Lote agora é compatível com a execução da tarefa no diretório de trabalho do contêiner ou no diretório de trabalho da tarefa do Lote. Isso é controlado pela propriedade `WorkingDirectory` em `PSTaskContainerSettings`.
 * Capacidade adicional para especificar uma coleção de IPs públicos em `PSNetworkConfiguration` por meio da nova propriedade `PublicIPs`. Isso garante que os nós no Pool terão um IP da lista de IPs fornecidos pelo usuário.
@@ -2079,8 +2079,8 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 #### <a name="azmonitor"></a>Az.Monitor
 * Aponta para o SDK mais recente do Monitor, por exemplo, a versão prévia 0.24.1
    - Acrescenta alterações não relacionadas à falha aos cmdlets Metrics, por exemplo, a enumeração de unidades é compatível com vários novos valores. São cmdlets somente leitura, então não haveria alteração na entrada deles.
-   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019** , antes, eram de **01/03/2018** . Os testes de cenário foram atualizados para acomodar essa alterar.
-   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema** . No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO** : é uma alteração temporária que precisa ser validada pela equipe de Alertas.
+   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019** , antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
+   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO** : é uma alteração temporária que precisa ser validada pela equipe de Alertas.
    - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
    - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
 * Compatibilidade com os critérios de Limite Dinâmico para o alerta de métrica V2
