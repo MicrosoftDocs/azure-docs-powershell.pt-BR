@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3c876454560e4ad421e6d32a8ca8b30a651fd8af
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 20a58253e3f9435a9d33c700435f77fbb42df7ea
+ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001668"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365102"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar uma entidade de serviço do Azure com o Azure PowerShell
 
@@ -19,6 +19,11 @@ Ferramentas automatizadas que usam os serviços do Azure devem sempre ter permis
 Uma entidade de serviço do Azure é uma identidade criada para uso com aplicativos, serviços hospedados e ferramentas automatizadas para acessar os recursos do Azure. Esse acesso é restrito pelas funções atribuídas à entidade de serviço, oferecendo a você o controle sobre quais recursos poderão ser acessados e em qual nível. Por motivos de segurança, é sempre recomendado usar entidades de serviço com ferramentas automatizadas em vez de permitir a entrada com uma identidade de usuário.
 
 Este artigo mostra as etapas para criar, obter informações e redefinir uma entidade de serviço com o Azure PowerShell.
+
+> [!WARNING]
+> Quando você cria uma entidade de serviço usando o comando [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), a saída inclui as credenciais que você precisa proteger. Lembre-se de não incluir essas credenciais em seu código ou de verificar as credenciais em seu controle do código-fonte. Como alternativa, considere usar [identidades gerenciadas](/azure/active-directory/managed-identities-azure-resources/overview) para evitar a necessidade de usar credenciais.
+>
+> Por padrão, [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) atribui a função [Colaborador](/azure/role-based-access-control/built-in-roles#contributor) à entidade de serviço no escopo da assinatura. Para reduzir o risco de uma entidade de serviço comprometida, atribua uma função mais específica e restrinja o escopo a um recurso ou grupo de recursos. Confira [Etapas para adicionar uma atribuição de função](/azure/role-based-access-control/role-assignments-steps) para obter mais informações.
 
 ## <a name="create-a-service-principal"></a>Criar uma entidade de serviço
 
@@ -114,7 +119,7 @@ O Azure PowerShell tem os seguintes cmdlets para gerenciar atribuições de fun�
 
 A função padrão de uma entidade de serviço de autenticação baseada em senha é **Colaborador**. Essa função tem permissões completas para ler e gravar em uma conta do Azure. A função **Leitor** é mais restritiva, com acesso somente leitura. Para obter mais informações sobre o Controle de Acesso Baseado em Função (RBAC) e funções, confira [RBAC: funções internas](/azure/active-directory/role-based-access-built-in-roles).
 
-Esse exemplo adiciona a função **Leitor** e exclui a função **Colaborador**:
+Esse exemplo adiciona a função **Leitor** e exclui a função **Colaborador** :
 
 ```azurepowershell-interactive
 New-AzRoleAssignment -ApplicationId <service principal application ID> -RoleDefinitionName 'Reader'
