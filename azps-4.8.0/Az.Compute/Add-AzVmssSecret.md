@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
-ms.openlocfilehash: c5bc6295db0346b12f42093a2e03f8de137a4146
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 6f9f1f29f23906442d7c9c8187b9bab3bf41403b
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93948462"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395248"
 ---
 # Add-AzVmssSecret
 
@@ -30,7 +30,7 @@ Add-AzVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceV
 O cmdlet **Add-AzVmssSecret** adiciona um segredo ao conjunto de dimensionamento de máquina virtual (VMSS).
 O segredo deve ser armazenado em um cofre de chaves do Azure.
 Para obter mais informações sobre o Key Vault, consulte [o que é o cofre de chave do Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/) (https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) ( https://msdn.microsoft.com/library/azure/dn868052.aspx) na biblioteca Microsoft Developer Network ou cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
+Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](/powershell/module/az.keyvault) ou o cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## EXEMPLOS
 

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: 281b74aa14431a0bcfe0d138a78db73e28bcfeb4
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: f17da705ed65484e789a803308bcaddb60e409f3
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93777094"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395128"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ O cmdlet **Add-AzVMSecret** adiciona um segredo a uma máquina virtual.
 Esse valor permite adicionar um certificado à máquina virtual.
 O segredo deve ser armazenado em um cofre de chaves.
 Para obter mais informações sobre o Key Vault, consulte [o que é o cofre de chaves do Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) na biblioteca do Microsoft Developer Network ou o cmdlet [set-AzureKeyVaultSecret](/powershell/module/azurerm.keyvault/set-azurekeyvaultsecret) .
+Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](/powershell/module/az.keyvault) ou o cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## EXEMPLOS
 
@@ -90,7 +90,7 @@ Especifica a URL que aponta para um segredo do cofre de chaves que contém um ce
 
 O certificado é a codificação base64 do objeto JSON (JavaScript Object Notation) seguinte, que é codificada em UTF-8:
 
-{"dados": " \< Base64-codificado-arquivo \> "," tipo de dados ":" \< arquivo-formato \> "," senha ":" \< pfx-arquivo-senha \> "}
+{"dados": " \<Base64-encoded-file\> ", "tipo de dados": " \<file-format\> ", "senha": " \<pfx-file-password\> "}
 
 
 Atualmente, dataType aceita somente arquivos. pfx.

@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: b2209b3e9d7c7dcf01a05af277dd5106e70fd8b2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 059aedf6ca3b5c229092f9ce536d23a8fc602830
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93943447"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395451"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ O cmdlet **Add-AzVMSecret** adiciona um segredo a uma máquina virtual.
 Esse valor permite adicionar um certificado à máquina virtual.
 O segredo deve ser armazenado em um cofre de chaves.
 Para obter mais informações sobre o Key Vault, consulte [o que é o cofre de chaves do Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) na biblioteca do Microsoft Developer Network ou o cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
+Para obter mais informações sobre os cmdlets, consulte [cmdlets do compartimento de chave do Azure](/powershell/module/az.keyvault) ou o cmdlet [set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## EXEMPLOS
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl
 Especifica a URL que aponta para um segredo do cofre de chaves que contém um certificado.
-O certificado é a codificação base64 do objeto JSON (JavaScript Object Notation) seguinte, que é codificado em UTF-8: {"dados": "objeto- \< Encoded-codificado \> ", "tipo de dados": " \< arquivo-Format \> ", "senha": " \< pfx-File-password \> "} Atualmente, DataType aceita somente arquivos. pfx.
+O certificado é a codificação base64 do objeto JSON (JavaScript Object Notation) seguinte, que é codificado em UTF-8: {"dados": " \<Base64-encoded-file\> ", "DataType": " \<file-format\> ", "senha": " \<pfx-file-password\> "} Atualmente, DataType aceita somente arquivos. pfx.
 
 ```yaml
 Type: System.String
