@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b75382d09e01dc242acf37a1652ec265266eaf7f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: e428106fcc525cc8836af954897faa3f6c169990
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242997"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408781"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
 
@@ -24,9 +25,9 @@ Os contextos do Azure são objetos do PowerShell que representam sua assinatura 
 
 * Pela _conta_ que foi usada para entrar no Azure com [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Os contextos do Azure tratam usuários, IDs de aplicativo e entidades de serviço da mesma maneira de uma perspectiva de conta.
 * Pela _assinatura_ ativa, um contrato de serviço com a Microsoft para criar e executar recursos do Azure, que estão associados a um _locatário_. Os locatários costumam ser chamados de _organizações_ na documentação ou ao trabalhar com o Active Directory.
-* Por uma referência a um _cache de token_, um token de autenticação armazenado para acessar uma nuvem do Azure. O local em que esse token é armazenado e por quanto tempo ele persiste é determinado pelas [configurações de salvamento automático de contexto](#save-azure-contexts-across-powershell-sessions).
+* Por uma referência a um _cache de token_ , um token de autenticação armazenado para acessar uma nuvem do Azure. O local em que esse token é armazenado e por quanto tempo ele persiste é determinado pelas [configurações de salvamento automático de contexto](#save-azure-contexts-across-powershell-sessions).
 
-Para obter mais informações sobre esses termos, confira [Terminologia do Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Os tokens de autenticação usados por contextos do Azure são os mesmos que outros tokens armazenados que fazem parte de uma sessão persistente. 
+Para obter mais informações sobre esses termos, confira [Terminologia do Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Os tokens de autenticação usados por contextos do Azure são os mesmos que outros tokens armazenados que fazem parte de uma sessão persistente.
 
 Quando você entra com `Connect-AzAccount`, pelo menos um contexto do Azure é criado para sua assinatura padrão. O objeto retornado por `Connect-AzAccount` é o contexto padrão do Azure usado para o restante da sessão do PowerShell.
 
@@ -47,11 +48,11 @@ $context = Get-Context -Name "mycontext"
 Os nomes de contexto podem ser diferentes do nome da assinatura associada.
 
 > [!IMPORTANT]
-> Os contextos do Azure disponíveis __nem__ sempre são suas assinaturas disponíveis. Os contextos do Azure representam apenas informações armazenadas localmente. Você pode obter suas assinaturas com o cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
+> Os contextos do Azure disponíveis __nem__ sempre são suas assinaturas disponíveis. Os contextos do Azure representam apenas informações armazenadas localmente. Você pode obter suas assinaturas com o cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Criar um contexto do Azure com base em informações de assinatura
 
-O cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) é usado para criar contextos do Azure e defini-los como o contexto ativo.
+O cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) é usado para criar contextos do Azure e defini-los como o contexto ativo.
 A maneira mais fácil de criar um contexto do Azure é usar informações de assinatura existentes. O cmdlet é criado para usar o objeto de saída de `Get-AzSubscription` como um valor de pipe e configurar um novo contexto do Azure:
 
 ```azurepowershell-interactive
@@ -68,7 +69,7 @@ Se o argumento `-Name` for omitido, o nome e a ID da assinatura serão usados co
 
 ## <a name="change-the-active-azure-context"></a>Alterar o contexto do Azure ativo
 
-Tanto `Set-AzContext` quanto [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0) podem ser usados para alterar o contexto do Azure ativo. Conforme descrito em [Criar um contexto do Azure](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` criará um contexto do Azure para uma assinatura se não existir um e alternará para usar esse contexto como o ativo.
+Tanto `Set-AzContext` quanto [Select-AzContext](/powershell/module/az.accounts/set-azcontext) podem ser usados para alterar o contexto do Azure ativo. Conforme descrito em [Criar um contexto do Azure](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` criará um contexto do Azure para uma assinatura se não existir um e alternará para usar esse contexto como o ativo.
 
 O `Select-AzContext` destina-se a ser usado somente com contextos existentes do Azure e funciona de forma semelhante ao uso de `Set-AzContext -Context`, mas foi projetado para uso com o redirecionamento:
 
@@ -134,7 +135,7 @@ Para limpar contextos e credenciais do Azure:
   Você pode sair de qualquer conta por conta ou contexto:
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ Para limpar contextos e credenciais do Azure:
   A desconexão sempre remove tokens de autenticação armazenados e limpa contextos salvos associados ao usuário desconectado ou ao contexto.
 * Use [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Esse cmdlet tem a garantia de sempre remover contextos armazenados e tokens de autenticação e também desconectará você.
 * Remova um contexto com [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object

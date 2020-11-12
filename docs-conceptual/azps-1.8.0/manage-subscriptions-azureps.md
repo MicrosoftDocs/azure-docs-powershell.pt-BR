@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cfe5833bd8bbfac53f65695f8bdfbd7b946a8852
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a8fa4e04d316b48a6d7c6f6c496504727fd2aaf3
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241195"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408472"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Usar várias assinaturas do Azure
 
@@ -21,7 +22,7 @@ Para obter informações detalhadas sobre assinaturas, cobrança e gerenciamento
 ## <a name="tenants-users-and-subscriptions"></a>Locatários, usuários e assinaturas
 
 Talvez você tenha alguma confusão sobre a diferença entre locatários, usuários e assinaturas no Azure. Um _locatário_ é a entidade do Azure Active Directory que abrange toda a organização. Esse locatário tem pelo menos uma _assinatura_ e _usuário_. Um usuário é um indivíduo e é associado a somente um locatário: a organização à qual pertence. Os usuários são as contas que se conectam ao Azure para criar, gerenciar e usar recursos.
-Um usuário pode ter acesso a várias _assinaturas_, que são contratos com a Microsoft para usar os serviços de nuvem, incluindo o Azure. Cada recurso é associado a uma assinatura.
+Um usuário pode ter acesso a várias _assinaturas_ , que são contratos com a Microsoft para usar os serviços de nuvem, incluindo o Azure. Cada recurso é associado a uma assinatura.
 
 Para saber mais sobre as diferenças entre locatários, usuários e assinaturas, confira o [dicionário de terminologia de nuvem do Azure](/azure/azure-glossary-cloud-terminology).  Para saber como adicionar uma nova assinatura ao seu locatário do Azure Active Directory, confira [Como adicionar uma assinatura do Azure ao Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
 Para saber como se conectar a um locatário específico, confira [Entrar com o Azure PowerShell](/powershell/azure/authenticate-azureps).

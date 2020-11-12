@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 249780d2bfe53929b7c50cbdc8850a01fd9b53dc
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: ea374b23e85c16393e5de16b043ae0c28545cb61
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001700"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408064"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 
@@ -1292,7 +1293,7 @@ ms.locfileid: "92001700"
 
 #### <a name="azapimanagement"></a>Az.ApiManagement
 * **Get-AzApiManagementApiSchema** Correção da associação do Esquema Open-Api a uma API https://github.com/Azure/azure-powershell/issues/10626
-* **New-AzApiManagementProduct*** e **Set-AzApiManagementProduct**
+* **New-AzApiManagementProduct** _ e _ *Set-AzApiManagementProduct**
   - Corrigir a documentação de https://github.com/Azure/azure-powershell/issues/10472
 * **Set-AzApiManagementApi** Adição de exemplo para mostrar como atualizar ServiceUrl usando o cmdlet
 
@@ -1595,7 +1596,7 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
     - Os arquivos de recursos baseados em `StorageContainerUrl` baixam o contêiner especificado na URL para o nó do Lote.
 * Propriedade `ApplicationPackages` removida de `PSApplication` retornada por **Get-AzBatchApplication**.
   - Os pacotes específicos dentro de um aplicativo agora podem ser recuperados usando o **Get-AzBatchApplicationPackage**. Por exemplo: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** e **Set-AzBatchApplication**.
+* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **Set-AzBatchApplication**.
   - `ApplicationId` agora é um alias de `ApplicationName`.
 * Nova propriedade `PSWindowsUserConfiguration` adicionada a `PSUserAccount`.
 * `Version` renomeado para `Name` em `PSApplicationPackage`.
@@ -1606,7 +1607,7 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 * `CurrentOSVersion` renomeado para `OSVersion` em `PSCloudServiceConfiguration`.
 * `DataEgressGiB` e `DataIngressGiB` removidos de `PSPoolUsageMetrics`.
 * O **Get-AzBatchNodeAgentSku** foi removido e substituído por **Get-AzBatchSupportedImage**.
-  - **Get-AzBatchSupportedImage** retorna os mesmos dados que **Get-AzBatchNodeAgentSku**, mas em um formato mais amigável.
+  - **Get-AzBatchSupportedImage** retorna os mesmos dados que **Get-AzBatchNodeAgentSku** , mas em um formato mais amigável.
   - Novas imagens não verificadas agora também são retornadas. Informações adicionais sobre `Capabilities` e `BatchSupportEndOfLife` para cada imagem também estão incluídas.
 * Foi adicionada a capacidade de montar sistemas de arquivos remotos em cada nó de um pool por meio do novo parâmetro `MountConfiguration` de **New-AzBatchPool**.
 * Agora, dê suporte às regras de segurança de rede bloqueando o acesso à rede para um pool com base na porta de origem do tráfego. Isso é feito por meio da propriedade `SourcePortRanges` em `PSNetworkSecurityGroupRule`.
@@ -1904,10 +1905,10 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 #### <a name="azmonitor"></a>Az.Monitor
 * Aponta para o SDK mais recente do Monitor, por exemplo, a versão prévia 0.24.1
    - Acrescenta alterações não relacionadas à falha aos cmdlets Metrics, por exemplo, a enumeração de unidades é compatível com vários novos valores. São cmdlets somente leitura, então não haveria alteração na entrada deles.
-   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019**, antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
-   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO**: é uma alteração temporária que precisa ser validada pela equipe de Alertas.
-   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
-   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019** , antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
+   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO** : é uma alteração temporária que precisa ser validada pela equipe de Alertas.
+   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
 * Compatibilidade com os critérios de Limite Dinâmico para o alerta de métrica V2
     - New-AzMetricAlertRuleV2Criteria: agora também cria critérios de limite dinâmico
     - Add-AzMetricAlertRuleV2: agora também aceita critérios de limite dinâmico

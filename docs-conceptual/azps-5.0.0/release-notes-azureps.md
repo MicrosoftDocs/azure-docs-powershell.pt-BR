@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
-ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
+ms.service: azure-powershell
+ms.openlocfilehash: 27073db862b83c5b95f2364355037c1ebd34a3b5
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93134855"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407486"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 
@@ -140,7 +141,6 @@ ms.locfileid: "93134855"
 * Remoção do parâmetro '-ApiVersion' de cmdlets '*-AzDeployment'.
 
 #### <a name="azsql"></a>Az.Sql
-* Adição de DiffBackupIntervalInHours a 'Set-AzSqlDatabaseBackupShortTermRetentionPolicy' 
 * Correção de um problema em que ocorria uma falha de New-AzSqlDatabaseExport caso networkIsolation não fosse especificado [Nº 13097]
 * Correção de um problema em que New-AzSqlDatabaseExport e New-AzSqlDatabaseImport não retornavam OperationStatusLink no objeto de resultado [Nº 13097]
 * Atualizar a URL de regiões emparelhadas do Azure em avisos de redundância de armazenamento de backup 
