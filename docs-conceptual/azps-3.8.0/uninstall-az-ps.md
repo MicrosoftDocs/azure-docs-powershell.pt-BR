@@ -5,12 +5,13 @@ ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
-ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
+ms.service: azure-powershell
+ms.openlocfilehash: ff9135839b01ad9a1bf10e5969cd3226fe492145
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91381370"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410138"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo Azure PowerShell
 
@@ -146,7 +147,7 @@ Para usar essa função, copie e cole o código em sua sessão do PowerShell. O 
 Uninstall-AzModule -Name Az -Version 1.8.0
 ```
 
-À medida que o script for executado, ele exibirá o **Nome**, a **Versão** e o **Estado** de cada submódulo que está sendo desinstalado. Para executar o script para ver apenas o que seria excluído, sem removê-lo, especifique o parâmetro `-WhatIf`.
+À medida que o script for executado, ele exibirá o **Nome** , a **Versão** e o **Estado** de cada submódulo que está sendo desinstalado. Para executar o script para ver apenas o que seria excluído, sem removê-lo, especifique o parâmetro `-WhatIf`.
 
 ```output
 ModuleName              Version  State

@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/14/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a263f1d363b3d1a1cce433a6112c55afe65262a4
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: f7a1658cdcafd1e8d6cba51ead26f9ddaa8c4c56
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753346"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410240"
 ---
 # <a name="install-azure-powershell"></a>Instalar o Azure PowerShell
 
@@ -134,7 +135,7 @@ Será necessário repetir essas etapas para cada sessão nova do PowerShell que 
 
 Para atualizar qualquer módulo do PowerShell, você deve usar o mesmo método usado para instalar o módulo. Por exemplo, caso tenha usado `Install-Module` originalmente, você deverá usar [Update-Module](/powershell/module/powershellget/update-module) para obter a versão mais recente. Caso tenha usado originalmente o pacote MSI, você deverá baixar e instalar o novo pacote MSI.
 
-Os cmdlets do PowerShellGet não podem atualizar os módulos que foram instalados por meio de um pacote MSI. Os pacotes MSI não atualizam módulos que foram instalados usando o PowerShellGet. Se você tiver problemas ao atualizar usando o PowershellGet, deverá **reinstalar** em vez de **atualizar** . A reinstalação é feita da mesma forma que a instalação, mas você precisa adicionar o parâmetro `-Force`:
+Os cmdlets do PowerShellGet não podem atualizar os módulos que foram instalados por meio de um pacote MSI. Os pacotes MSI não atualizam módulos que foram instalados usando o PowerShellGet. Se você tiver problemas ao atualizar usando o PowershellGet, deverá **reinstalar** em vez de **atualizar**. A reinstalação é feita da mesma forma que a instalação, mas você precisa adicionar o parâmetro `-Force`:
 
 ```powershell
 if ($PSVersionTable.PSEdition -eq 'Desktop' -and (Get-Module -Name AzureRM -ListAvailable)) {
