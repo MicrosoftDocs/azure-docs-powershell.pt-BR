@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
 ms.date: 09/11/2020
-ms.openlocfilehash: d342ca65baf7664f430de3b7d294c0fc9815c0a0
-ms.sourcegitcommit: d81c3b0f0f7289104be03869eb675128b61db7d3
+ms.openlocfilehash: 5945b573d467f1ff64e327c52124ffed1e4305aa
+ms.sourcegitcommit: ec731e58b7de3eb14df6d3bf308df92154125bbb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94715139"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95005850"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Início Rápido: Migrar automaticamente os scripts do PowerShell do AzureRM para o módulo Az do PowerShell
 
@@ -103,4 +103,4 @@ $Results | Where-Object UpgradeResult -ne UpgradeCompleted | Format-List
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre o módulo Az do PowerShell, confira a [documentação do Azure PowerShell](https://docs.microsoft.com/powershell/azure/)
+Para obter mais informações sobre o módulo Az do PowerShell, confira a [documentação do Azure PowerShell](/powershell/azure/)
