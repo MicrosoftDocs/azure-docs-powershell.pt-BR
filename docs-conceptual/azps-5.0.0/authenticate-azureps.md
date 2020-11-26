@@ -3,15 +3,15 @@ title: Entrar com o Azure PowerShell
 description: Como entrar com o Azure PowerShell como um usuário, entidade de serviço, ou com identidades gerenciadas para recursos do Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: a5bff1a5c22d5cd93cc3548a470e123daf5e129e
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407656"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515068"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Entrar com o Azure PowerShell
 
@@ -31,7 +31,7 @@ Para entrar no modo interativo, use o cmdlet [Connect-AzAccount](/powershell/mod
 Connect-AzAccount
 ```
 
-Quando executado do PowerShell versão 6 e superior, esse cmdlet apresenta uma cadeia de caracteres de token. Para entrar, copie essa cadeia de caracteres e cole-a em [microsoft.com/devicelogin](https://microsoft.com/devicelogin) em um navegador da Web. Sua sessão do PowerShell será autenticada para conectar o Azure. Você pode especificar o parâmetro `UseDeviceAuthentication` para receber uma cadeia de caracteres de token no Windows PowerShell.
+Do módulo do Az PowerShell versão 5.0.0 em diante, esse cmdlet apresenta um prompt de logon interativo baseado em navegador por padrão. Você pode especificar o parâmetro `UseDeviceAuthentication` para receber uma cadeia de caracteres de token que anteriormente era o padrão para o PowerShell versão 6 e superior.
 
 > [!IMPORTANT]
 > A autorização da credencial de nome de usuário/senha foi removida no Azure PowerShell devido a alterações nas implementações de autorização do Active Directory e questões de segurança. Caso você use autorização de credenciais para fins de automação, em vez disso, [crie uma entidade de serviço](create-azure-service-principal-azureps.md).
