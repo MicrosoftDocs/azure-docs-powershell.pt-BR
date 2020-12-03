@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2643c1fbbe9be06112d2a1a377838a8cb1e7737b
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 4bf05058f576e7a4844f693384b4fa4aea08a042
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409577"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427031"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Apresentação do novo módulo Az do Azure PowerShell
 
@@ -41,14 +41,14 @@ Ao fazer essas alterações importantes que precisavam da criação de um módul
 
 Para se manter atualizado com os recursos mais recentes do Azure no PowerShell, você deverá migrar para o módulo Az assim que possível. Caso você não esteja pronto para instalar o módulo Az como uma substituição para o AzureRM, você terá duas opções disponíveis para experimentar o Az:
 
-- Usar um ambiente do `PowerShell` com o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). O Azure Cloud Shell é um ambiente de shell baseado em navegador que vem com o módulo Az instalado e aliases de compatibilidade com o `Enable-AzureRM` habilitados.
+- Usar um ambiente do `PowerShell` com o [Azure Cloud Shell](/azure/cloud-shell/overview). O Azure Cloud Shell é um ambiente de shell baseado em navegador que vem com o módulo Az instalado e aliases de compatibilidade com o `Enable-AzureRM` habilitados.
 - Manter o módulo AzureRM instalado com o PowerShell 5.1 para Windows, mas instalar o módulo Az para o PowerShell 6.2.4 ou posterior. O PowerShell 5.1 para Windows e o PowerShell 6.2.4 e posterior usam coleções separadas de módulos. Siga as instruções para instalar a [versão mais recente do PowerShell](/powershell/scripting/install/installing-powershell) e [instale o módulo Az](install-az-ps.md) do PowerShell 6.2.4 ou posterior.
 
 Para atualizar de uma instalação existente do AzureRM:
 
 1. [Desinstalar o módulo AzureRM do Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Instalar o módulo Az do Azure PowerShell](install-az-ps.md)
-3. **OPCIONAL** : Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
+3. **OPCIONAL**: Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Migrar os scripts existentes para o Az
 

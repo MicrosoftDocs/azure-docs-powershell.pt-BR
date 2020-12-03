@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2e824dbbf593e0da9a2a8735aaa094b1944e306c
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: ab367ed41c77629122d6a4a9a79b96c7c66d09cb
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408863"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427574"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0–versão prévia – abril de 2020
 ### <a name="general"></a>Geral
-* Os módulos Az já estão disponíveis no Azure Stack Hub em versão prévia. Isso permite a compatibilidade entre plataformas com o Linux e o macOs. O Azure Stack Hub agora é compatível com o PowerShell Core com os módulos Az. Mais informações podem ser encontradas [aqui](https://aka.ms/az4AzureStack)
+* Os módulos Az já estão disponíveis no Azure Stack Hub em versão prévia. Isso permite a compatibilidade entre plataformas com o Linux e o macOs. O Azure Stack Hub agora é compatível com o PowerShell Core com os módulos Az. Mais informações podem ser encontradas [aqui](/azure-stack/operator/powershell-install-az-module)
 * Os módulos Az são compatíveis com o perfil 2019-03-01-híbrido:
   - Az.Billing
   - Az.Compute
@@ -31,7 +31,7 @@ ms.locfileid: "93408863"
   - Az.Websites
 * Três novos módulos do PowerShell para az foram introduzidos e funcionam com o Azure Stack Hub, que são Az.Databox, Az.IotHub e Az.EventHub
 * Os comandos permanecem relativamente os mesmos com pequenas alterações, como a alteração do AzureRM para Az
-* O link atualizado para a documentação do PowerShell para o Azure Stack Hub pode ser encontrado [aqui](https://aka.ms/InstallASHPowerShell)
+* O link atualizado para a documentação do PowerShell para o Azure Stack Hub pode ser encontrado [aqui](/azure-stack/operator/powershell-install-az-module)
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Atualização da ADAL para a MSAL
@@ -583,7 +583,7 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
     - Os arquivos de recursos baseados em `StorageContainerUrl` baixam o contêiner especificado na URL para o nó do Lote.
 * Propriedade `ApplicationPackages` removida de `PSApplication` retornada por **Get-AzBatchApplication**.
   - Os pacotes específicos dentro de um aplicativo agora podem ser recuperados usando o **Get-AzBatchApplicationPackage**. Por exemplo: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** e **Set-AzBatchApplication**.
+* `ApplicationId` renomeado para `ApplicationName` em **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** e **Set-AzBatchApplication**.
   - `ApplicationId` agora é um alias de `ApplicationName`.
 * Nova propriedade `PSWindowsUserConfiguration` adicionada a `PSUserAccount`.
 * `Version` renomeado para `Name` em `PSApplicationPackage`.
@@ -594,7 +594,7 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 * `CurrentOSVersion` renomeado para `OSVersion` em `PSCloudServiceConfiguration`.
 * `DataEgressGiB` e `DataIngressGiB` removidos de `PSPoolUsageMetrics`.
 * O **Get-AzBatchNodeAgentSku** foi removido e substituído por **Get-AzBatchSupportedImage**.
-  - **Get-AzBatchSupportedImage** retorna os mesmos dados que **Get-AzBatchNodeAgentSku** , mas em um formato mais amigável.
+  - **Get-AzBatchSupportedImage** retorna os mesmos dados que **Get-AzBatchNodeAgentSku**, mas em um formato mais amigável.
   - Novas imagens não verificadas agora também são retornadas. Informações adicionais sobre `Capabilities` e `BatchSupportEndOfLife` para cada imagem também estão incluídas.
 * Foi adicionada a capacidade de montar sistemas de arquivos remotos em cada nó de um pool por meio do novo parâmetro `MountConfiguration` de **New-AzBatchPool**.
 * Agora, dê suporte às regras de segurança de rede bloqueando o acesso à rede para um pool com base na porta de origem do tráfego. Isso é feito por meio da propriedade `SourcePortRanges` em `PSNetworkSecurityGroupRule`.
@@ -892,10 +892,10 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
 #### <a name="azmonitor"></a>Az.Monitor
 * Aponta para o SDK mais recente do Monitor, por exemplo, a versão prévia 0.24.1
    - Acrescenta alterações não relacionadas à falha aos cmdlets Metrics, por exemplo, a enumeração de unidades é compatível com vários novos valores. São cmdlets somente leitura, então não haveria alteração na entrada deles.
-   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019** , antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
-   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO** : é uma alteração temporária que precisa ser validada pela equipe de Alertas.
-   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
-   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019**, antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
+   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO**: é uma alteração temporária que precisa ser validada pela equipe de Alertas.
+   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
 * Compatibilidade com os critérios de Limite Dinâmico para o alerta de métrica V2
     - New-AzMetricAlertRuleV2Criteria: agora também cria critérios de limite dinâmico
     - Add-AzMetricAlertRuleV2: agora também aceita critérios de limite dinâmico
@@ -1618,7 +1618,7 @@ Corrija o cmdlet New-AzSqlDatabaseSecondary para verificar a existência de Part
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Mais](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
+    - [Mais](/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
     - Az.Monitor.md atualizado para incluir os cmdlets para a regra de alerta com base em métrica GenV2 (não clássica)
 
 #### <a name="aznetwork"></a>Az.Network

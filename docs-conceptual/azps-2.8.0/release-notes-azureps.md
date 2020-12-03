@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: c6880e4c09339ec6a3e192480fde9e1f85cbca5f
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 656e61e7f208367fc7fae28f73d1b6f289831d77
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93409492"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427727"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas sobre a versão do Azure PowerShell
 ## <a name="280---october-2019"></a>2.8.0 – outubro de 2019
@@ -136,10 +136,10 @@ ms.locfileid: "93409492"
 #### <a name="azmonitor"></a>Az.Monitor
 * Aponta para o SDK mais recente do Monitor, por exemplo, a versão prévia 0.24.1
    - Acrescenta alterações não relacionadas à falha aos cmdlets Metrics, por exemplo, a enumeração de unidades é compatível com vários novos valores. São cmdlets somente leitura, então não haveria alteração na entrada deles.
-   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019** , antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
-   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO** : é uma alteração temporária que precisa ser validada pela equipe de Alertas.
-   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
-   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource** ) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A versão de API das solicitações **ActionGroups** agora são de **01/06/2019**, antes, eram de **01/03/2018**. Os testes de cenário foram atualizados para acomodar essa alterar.
+   - Os construtores das classes **EmailReceiver** e **WebhookReceiver** têm um novo argumento obrigatório, por exemplo, um valor booliano chamado **useCommonAlertSchema**. No momento, o valor é fixado como **false** para ocultar a alteração da falha dos cmdlets. **OBSERVAÇÃO**: é uma alteração temporária que precisa ser validada pela equipe de Alertas.
+   - A ordem dos argumentos do construtor da classe **Source** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
+   - A ordem dos argumentos do construtor da classe **AlertingAction** (relacionada à classe **ScheduledQueryRuleSource**) foi alterada em relação ao SDK anterior. Com essa alteração, foram necessários dois testes de unidade para a correção: elas foram compiladas, mas não passaram nos testes.
 * Compatibilidade com os critérios de Limite Dinâmico para o alerta de métrica V2
     - New-AzMetricAlertRuleV2Criteria: agora também cria critérios de limite dinâmico
     - Add-AzMetricAlertRuleV2: agora também aceita critérios de limite dinâmico
@@ -862,7 +862,7 @@ ms.locfileid: "93409492"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Mais](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
+    - [Mais](/rest/api/monitor/scheduledqueryrules) informações sobre a API SQR
     - Az.Monitor.md atualizado para incluir os cmdlets para a regra de alerta com base em métrica GenV2 (não clássica)
 
 #### <a name="aznetwork"></a>Az.Network

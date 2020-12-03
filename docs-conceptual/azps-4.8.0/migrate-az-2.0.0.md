@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: ebe18c24881f146b7cf885892c7869cd7167d511
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: d6dac1514fffa140f6d785be9a1a0e8be58476eb
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407469"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427608"
 ---
 # <a name="migration-guide-for-az-200"></a>Guia de migração para o Az 2.0.0
 
@@ -328,7 +328,7 @@ Este documento descreve as alterações entre as versões 1.0.0 e 2.0.0 do Az
     - Os usuários com as funções Operador do Cluster HDInsight, Colaborador ou Proprietário não serão afetados.
     - Os usuários com apenas a função Leitor precisarão especificar o parâmetro `DefaultStorageAccountKey` explicitamente.
 
-Para obter mais informações sobre essas alterações de acesso baseado em função, confira [aka.ms/hdi-config-update](https://aka.ms/hdi-config-update)
+Para obter mais informações sobre essas alterações de acesso baseado em função, confira [aka.ms/hdi-config-update](/azure/hdinsight/hdinsight-migrate-granular-access-cluster-configurations)
 
   #### <a name="before"></a>Antes de
 
