@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/24/2020
-ms.openlocfilehash: ec406c80de6b457f7e340a23fe8caf2ab83be46a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e19fea440025e7a00a037e360ac95ff8e0e62129
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "78264403"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428003"
 ---
 # <a name="azure-stack-module-180"></a>Módulo do Azure Stack 1.8.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "78264403"
 
 A versão mínima do Azure Stack compatível é a 1910.
 
-Observação: Para as versões anteriores de verificação do Azure Stack [Instalar o Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+Observação: Para as versões anteriores de verificação do Azure Stack [Instalar o Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>Instalar
 
@@ -40,7 +40,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.8.0
 ## <a name="release-notes"></a>Notas de versão
 
 * Compatível com a atualização 1910
-* As alterações incluem:
+* Alterações incluem:
 
     - **Novo módulo de administrador de DRP**: O DRP (provedor de recursos de implantação) permite implantações orquestradas de provedores de recursos para o Azure Stack Hub. Esses comandos interagem com a camada de Azure Resource Manager para interagir com o DRP.
 
