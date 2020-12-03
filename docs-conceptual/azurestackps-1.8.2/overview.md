@@ -8,22 +8,22 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 08/06/2020
-ms.openlocfilehash: e314374eff433d1869378bdaa9a0370c3fd3d8d1
-ms.sourcegitcommit: 09eb4dbfcad6fce303b793dafe9bebdef589db03
+ms.openlocfilehash: 5e30e1b4a21f62c00419cfa77e1d875e110eebec
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88022921"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427985"
 ---
-# <a name="azure-stack-module-182"></a><span data-ttu-id="138c1-103">Módulo do Azure Stack 1.8.2</span><span class="sxs-lookup"><span data-stu-id="138c1-103">Azure Stack Module 1.8.2</span></span>
+# <a name="azure-stack-module-182"></a><span data-ttu-id="0516e-103">Módulo do Azure Stack 1.8.2</span><span class="sxs-lookup"><span data-stu-id="0516e-103">Azure Stack Module 1.8.2</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="138c1-104">Requisitos:</span><span class="sxs-lookup"><span data-stu-id="138c1-104">Requirements:</span></span>
+## <a name="requirements"></a><span data-ttu-id="0516e-104">Requisitos:</span><span class="sxs-lookup"><span data-stu-id="0516e-104">Requirements:</span></span>
 
-<span data-ttu-id="138c1-105">A versão mínima do Azure Stack compatível é a 1910.</span><span class="sxs-lookup"><span data-stu-id="138c1-105">Minimum supported Azure Stack version is 1910.</span></span>
+<span data-ttu-id="0516e-105">A versão mínima do Azure Stack compatível é a 1910.</span><span class="sxs-lookup"><span data-stu-id="0516e-105">Minimum supported Azure Stack version is 1910.</span></span>
 
-<span data-ttu-id="138c1-106">Observação: Para as versões anteriores de verificação do Azure Stack [Instalar o Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="138c1-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
+<span data-ttu-id="0516e-106">Observação: Para as versões anteriores de verificação do Azure Stack [Instalar o Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="0516e-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
 
-## <a name="install"></a><span data-ttu-id="138c1-107">Instalar</span><span class="sxs-lookup"><span data-stu-id="138c1-107">Install</span></span>
+## <a name="install"></a><span data-ttu-id="0516e-107">Instalar</span><span class="sxs-lookup"><span data-stu-id="0516e-107">Install</span></span>
 
 ```powershell
 # Remove previous versions of AzureStack and AzureRM modules
@@ -37,6 +37,6 @@ Use-AzureRmProfile -Profile 2019-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.8.2
 ```
 
-## <a name="release-notes"></a><span data-ttu-id="138c1-108">Notas de versão</span><span class="sxs-lookup"><span data-stu-id="138c1-108">Release Notes</span></span>
+## <a name="release-notes"></a><span data-ttu-id="0516e-108">Notas de versão</span><span class="sxs-lookup"><span data-stu-id="0516e-108">Release Notes</span></span>
 
-* <span data-ttu-id="138c1-109">Compatível com a atualização 1910</span><span class="sxs-lookup"><span data-stu-id="138c1-109">Supported with 1910 update</span></span>
+* <span data-ttu-id="0516e-109">Compatível com a atualização 1910</span><span class="sxs-lookup"><span data-stu-id="0516e-109">Supported with 1910 update</span></span>
