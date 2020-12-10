@@ -1,0 +1,87 @@
+---
+title: Introdução do módulo Az PowerShell do Azure
+description: Introdução do módulo Az PowerShell, recomendado para interagir com o Azure e como substituição para o módulo AzureRM PowerShell.
+ms.date: 12/1/2020
+ms.devlang: powershell
+ms.topic: conceptual
+ms.custom: devx-track-azurepowershell
+ms.service: azure-powershell
+ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: HT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96856073"
+---
+# <a name="introducing-the-azure-az-powershell-module"></a><span data-ttu-id="a92f7-103">Introdução do módulo Az PowerShell do Azure</span><span class="sxs-lookup"><span data-stu-id="a92f7-103">Introducing the Azure Az PowerShell module</span></span>
+
+## <a name="overview"></a><span data-ttu-id="a92f7-104">Visão geral</span><span class="sxs-lookup"><span data-stu-id="a92f7-104">Overview</span></span>
+
+<span data-ttu-id="a92f7-105">O módulo Az PowerShell é um conjunto de cmdlets para gerenciar recursos do Azure diretamente do PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a92f7-105">The Az PowerShell module is a set of cmdlets for managing Azure resources directly from PowerShell.</span></span> <span data-ttu-id="a92f7-106">O PowerShell fornece recursos avançados para automação que podem ser aproveitados para gerenciar os recursos do Azure a fim de obter exemplos no contexto de um pipeline de CI/CD.</span><span class="sxs-lookup"><span data-stu-id="a92f7-106">PowerShell provides powerful features for automation that can be leveraged for managing your Azure resources for examples in the context of a CI/CD pipeline.</span></span>
+
+<span data-ttu-id="a92f7-107">O módulo Az PowerShell é a substituição do AzureRM e é a versão recomendada a ser usada para interagir com o Azure.</span><span class="sxs-lookup"><span data-stu-id="a92f7-107">The Az PowerShell module is the replacement of AzureRM and is the recommended version to use for interacting with Azure.</span></span>
+
+<span data-ttu-id="a92f7-108">Você pode usar o módulo Az PowerShell com um dos seguintes métodos:</span><span class="sxs-lookup"><span data-stu-id="a92f7-108">You can use the Az PowerShell module with one of the following methods:</span></span>
+
+* <span data-ttu-id="a92f7-109">[Instalar o módulo Az PowerShell por meio do PowerShellGet](install-az-ps.md) (opção recomendada).</span><span class="sxs-lookup"><span data-stu-id="a92f7-109">[Install the Az PowerShell module via PowerShellGet](install-az-ps.md) (recommended option).</span></span>
+* <span data-ttu-id="a92f7-110">[Instalar o módulo Az PowerShell com MSI](install-az-ps-msi.md).</span><span class="sxs-lookup"><span data-stu-id="a92f7-110">[Install the Az PowerShell module with MSI](install-az-ps-msi.md).</span></span>
+* <span data-ttu-id="a92f7-111">[Usar o Azure Cloud Shell](/azure/cloud-shell/overview).</span><span class="sxs-lookup"><span data-stu-id="a92f7-111">[Use Azure Cloud Shell](/azure/cloud-shell/overview).</span></span>
+* <span data-ttu-id="a92f7-112">[Usar o contêiner do Docker do Az PowerShell](azureps-in-docker.md).</span><span class="sxs-lookup"><span data-stu-id="a92f7-112">[Use the Az PowerShell Docker container](azureps-in-docker.md).</span></span>
+
+## <a name="features"></a><span data-ttu-id="a92f7-113">Recursos</span><span class="sxs-lookup"><span data-stu-id="a92f7-113">Features</span></span>
+
+<span data-ttu-id="a92f7-114">O módulo Az PowerShell apresenta os seguintes benefícios:</span><span class="sxs-lookup"><span data-stu-id="a92f7-114">The Az PowerShell module features the following benefits:</span></span>
+
+* <span data-ttu-id="a92f7-115">Segurança e estabilidade</span><span class="sxs-lookup"><span data-stu-id="a92f7-115">Security and stability</span></span>
+  * <span data-ttu-id="a92f7-116">Criptografia de cache de token</span><span class="sxs-lookup"><span data-stu-id="a92f7-116">Token cache encryption</span></span>
+  * <span data-ttu-id="a92f7-117">Suporte para ADFS 2019</span><span class="sxs-lookup"><span data-stu-id="a92f7-117">Support for ADFS 2019</span></span>
+  * <span data-ttu-id="a92f7-118">Mecanismo de segurança que impede tipos de ataque man-in-the-Middle</span><span class="sxs-lookup"><span data-stu-id="a92f7-118">Security mechanism preventing man-in-the-middle attack types</span></span>
+  * <span data-ttu-id="a92f7-119">Suporte para recursos como avaliação contínua de acesso (chegando em 2021)</span><span class="sxs-lookup"><span data-stu-id="a92f7-119">Support for features like continuous access evaluation (coming in 2021)</span></span>
+* <span data-ttu-id="a92f7-120">Suporte para todos os serviços do Azure</span><span class="sxs-lookup"><span data-stu-id="a92f7-120">Support for all Azure services</span></span>
+  * <span data-ttu-id="a92f7-121">Há um módulo disponível para cada serviço do Azure</span><span class="sxs-lookup"><span data-stu-id="a92f7-121">A module is available for each Azure service</span></span>
+  * <span data-ttu-id="a92f7-122">Várias correções de bug e atualizações de versão de API desde o AzureRM</span><span class="sxs-lookup"><span data-stu-id="a92f7-122">Multiple bug fixes and API version upgrades since AzureRM</span></span>
+* <span data-ttu-id="a92f7-123">Vários novos recursos adicionais</span><span class="sxs-lookup"><span data-stu-id="a92f7-123">Several additional new capabilities</span></span>
+  * <span data-ttu-id="a92f7-124">Suporte no Cloud Shell e em multiplataforma</span><span class="sxs-lookup"><span data-stu-id="a92f7-124">Support in Cloud Shell and cross-platform</span></span>
+  * <span data-ttu-id="a92f7-125">Pode obter e usar o token de acesso para acessar recursos do Azure</span><span class="sxs-lookup"><span data-stu-id="a92f7-125">Can get and use access token to access Azure resources</span></span>
+  * <span data-ttu-id="a92f7-126">Cmdlet genérico do Az para operações do tipo hachura de escape</span><span class="sxs-lookup"><span data-stu-id="a92f7-126">Generic Az cmdlet for escape hatch type operations</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="a92f7-127">O PowerShell 7 e posterior é a versão recomendada do PowerShell para uso com o Az PowerShell em todas as plataformas.</span><span class="sxs-lookup"><span data-stu-id="a92f7-127">PowerShell 7 and later is the recommended version of PowerShell for use with Az PowerShell on all platforms.</span></span>
+
+<span data-ttu-id="a92f7-128">O módulo Az PowerShell é baseado na biblioteca de .NET Standard e funciona com o PowerShell 7 e posterior em todas as plataformas, incluindo Windows, macOS e Linux.</span><span class="sxs-lookup"><span data-stu-id="a92f7-128">The Az PowerShell module is based on the .NET Standard library and works with PowerShell 7 and later on all platforms including Windows, macOS, and Linux.</span></span> <span data-ttu-id="a92f7-129">Também é compatível com o Windows PowerShell 5.1.</span><span class="sxs-lookup"><span data-stu-id="a92f7-129">It's also compatible with Windows PowerShell 5.1.</span></span>
+
+<span data-ttu-id="a92f7-130">Estamos comprometidos em oferecer o suporte do Azure em todas as plataformas e todos os módulos Az PowerShell são multiplataforma.</span><span class="sxs-lookup"><span data-stu-id="a92f7-130">We're committed to bringing Azure support to all platforms and all Az PowerShell modules are cross-platforms.</span></span>
+
+## <a name="upgrade-your-environment-to-az"></a><span data-ttu-id="a92f7-131">Atualizar o ambiente para o Az</span><span class="sxs-lookup"><span data-stu-id="a92f7-131">Upgrade your environment to Az</span></span>
+
+<span data-ttu-id="a92f7-132">Para se manter atualizado com os recursos mais recentes do Azure no PowerShell, você deverá migrar para o módulo Az.</span><span class="sxs-lookup"><span data-stu-id="a92f7-132">To keep up with the latest Azure features in PowerShell, you should migrate to the Az module.</span></span> <span data-ttu-id="a92f7-133">Caso você não esteja pronto para instalar o módulo Az como uma substituição para o AzureRM, você terá duas opções disponíveis para experimentar o Az:</span><span class="sxs-lookup"><span data-stu-id="a92f7-133">If you're not ready to install the Az module as a replacement for AzureRM, you have a couple of options available to experiment with Az:</span></span>
+
+* <span data-ttu-id="a92f7-134">Usar um ambiente do `PowerShell` com o [Azure Cloud Shell](/azure/cloud-shell/overview).</span><span class="sxs-lookup"><span data-stu-id="a92f7-134">Use a `PowerShell` environment with [Azure Cloud Shell](/azure/cloud-shell/overview).</span></span> <span data-ttu-id="a92f7-135">O Azure Cloud Shell é um ambiente de shell baseado em navegador que vem com o módulo Az instalado e aliases de compatibilidade com o `Enable-AzureRM` habilitados.</span><span class="sxs-lookup"><span data-stu-id="a92f7-135">Azure Cloud Shell is a browser-based shell environment that comes with the Az module installed and `Enable-AzureRM` compatibility aliases enabled.</span></span>
+* <span data-ttu-id="a92f7-136">Mantenha o módulo AzureRM instalado no Windows PowerShell 5.1 e instale o módulo Az no PowerShell 7 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="a92f7-136">Keep the AzureRM module installed in Windows PowerShell 5.1 and install the Az module in PowerShell 7 or later.</span></span> <span data-ttu-id="a92f7-137">O Windows PowerShell 5.1, o Windows PowerShell 7 e as versões posteriores usam coleções separadas de módulos.</span><span class="sxs-lookup"><span data-stu-id="a92f7-137">Windows PowerShell 5.1 and PowerShell 7 and later use separate collections of modules.</span></span> <span data-ttu-id="a92f7-138">Siga as instruções para instalar a [última versão do PowerShell](/powershell/scripting/install/installing-powershell) e [instale o módulo Az](install-az-ps.md) do PowerShell 7 ou posterior.</span><span class="sxs-lookup"><span data-stu-id="a92f7-138">Follow the instructions to install the [latest version of PowerShell](/powershell/scripting/install/installing-powershell) and then [install the Az module](install-az-ps.md) from PowerShell 7 or later.</span></span>
+
+<span data-ttu-id="a92f7-139">Para atualizar de uma instalação existente do AzureRM:</span><span class="sxs-lookup"><span data-stu-id="a92f7-139">To upgrade from an existing AzureRM install:</span></span>
+
+1. [<span data-ttu-id="a92f7-140">Desinstalar o módulo AzureRM do Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a92f7-140">Uninstall the Azure PowerShell AzureRM module</span></span>](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
+1. [<span data-ttu-id="a92f7-141">Instalar o módulo Az do Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a92f7-141">Install the Azure PowerShell Az module</span></span>](install-az-ps.md)
+1. <span data-ttu-id="a92f7-142">**OPCIONAL**: Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos.</span><span class="sxs-lookup"><span data-stu-id="a92f7-142">**OPTIONAL**: Enable compatibility mode to add aliases for AzureRM cmdlets with [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) while you become familiar with the new command set.</span></span> <span data-ttu-id="a92f7-143">Para obter mais informações, confira a próxima seção ou [Inicie a migração do AzureRM para o Az](migrate-from-azurerm-to-az.md).</span><span class="sxs-lookup"><span data-stu-id="a92f7-143">For more information, see the next section or [Start migration from AzureRM to Az](migrate-from-azurerm-to-az.md).</span></span>
+
+## <a name="migrate-existing-scripts-from-azurerm-to-az"></a><span data-ttu-id="a92f7-144">Migrar os scripts existentes do AzureRM para o Az</span><span class="sxs-lookup"><span data-stu-id="a92f7-144">Migrate existing scripts from AzureRM to Az</span></span>
+
+<span data-ttu-id="a92f7-145">Se os scripts ainda estiverem baseados no módulo AzureRM, temos vários recursos para ajudar você na migração:</span><span class="sxs-lookup"><span data-stu-id="a92f7-145">If your scripts are still based on the AzureRM module, we have several resources to help you with the migration:</span></span>
+
+* [<span data-ttu-id="a92f7-146">Introdução à migração do AzureRM para o Az</span><span class="sxs-lookup"><span data-stu-id="a92f7-146">Get started with migration from AzureRM to Az</span></span>](migrate-from-azurerm-to-az.md)
+* [<span data-ttu-id="a92f7-147">Lista completa das alterações da falha do AzureRM para o Az 1.0.0</span><span class="sxs-lookup"><span data-stu-id="a92f7-147">Full list of breaking changes from AzureRM to Az 1.0.0</span></span>](migrate-az-1.0.0.md)
+* <span data-ttu-id="a92f7-148">O cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias)</span><span class="sxs-lookup"><span data-stu-id="a92f7-148">The [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) cmdlet</span></span>
+
+## <a name="supportability"></a><span data-ttu-id="a92f7-149">Capacidade de suporte</span><span class="sxs-lookup"><span data-stu-id="a92f7-149">Supportability</span></span>
+
+<span data-ttu-id="a92f7-150">O Az é o módulo do PowerShell mais atual para o Azure.</span><span class="sxs-lookup"><span data-stu-id="a92f7-150">Az is the most current PowerShell module for Azure.</span></span> <span data-ttu-id="a92f7-151">Problemas ou solicitações de recursos podem ser registrados diretamente no [repositório do GitHub](https://github.com/Azure/azure-powershell) ou por meio do suporte da Microsoft se você tiver um contrato de suporte.</span><span class="sxs-lookup"><span data-stu-id="a92f7-151">Issues or feature requests can be logged directly on the [GitHub repository](https://github.com/Azure/azure-powershell), or via Microsoft support if you have a support contract.</span></span> <span data-ttu-id="a92f7-152">As solicitações de recursos serão implementadas na última versão do Az.</span><span class="sxs-lookup"><span data-stu-id="a92f7-152">Feature requests will be implemented in the latest version of Az.</span></span> <span data-ttu-id="a92f7-153">Problemas críticos serão implementados nas duas últimas versões do Az.</span><span class="sxs-lookup"><span data-stu-id="a92f7-153">Critical issues will be implemented on the last two versions of Az.</span></span>
+
+<span data-ttu-id="a92f7-154">O AzureRM deixará de receber novos cmdlets ou recursos.</span><span class="sxs-lookup"><span data-stu-id="a92f7-154">AzureRM will no longer receive new cmdlets or features.</span></span> <span data-ttu-id="a92f7-155">No entanto, o módulo AzureRM ainda está oficialmente mantido e receberá correções críticas até fevereiro de 2021.</span><span class="sxs-lookup"><span data-stu-id="a92f7-155">However, the AzureRM module is still officially maintained and will receive critical fixes through February 2021.</span></span>
+
+## <a name="data-collection"></a><span data-ttu-id="a92f7-156">Coleta de dados</span><span class="sxs-lookup"><span data-stu-id="a92f7-156">Data collection</span></span>
+
+<span data-ttu-id="a92f7-157">O Azure PowerShell coleta dados telemétricos por padrão.</span><span class="sxs-lookup"><span data-stu-id="a92f7-157">Azure PowerShell collects telemetry data by default.</span></span> <span data-ttu-id="a92f7-158">A Microsoft agrega dados coletados não só para identificar padrões de uso e problemas comuns, mas também para aprimorar a experiência do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a92f7-158">Microsoft aggregates collected data to identify patterns of usage to identify common issues and to improve the experience of Azure PowerShell.</span></span>
+<span data-ttu-id="a92f7-159">O Microsoft Azure PowerShell não coleta dados privados ou pessoais.</span><span class="sxs-lookup"><span data-stu-id="a92f7-159">Microsoft Azure PowerShell does not collect any private or personal data.</span></span> <span data-ttu-id="a92f7-160">Por exemplo, os dados de uso ajudam a identificar problemas – como cmdlets com baixo índice de sucesso – e a priorizar o trabalho.</span><span class="sxs-lookup"><span data-stu-id="a92f7-160">For example, the usage data helps identify issues such as cmdlets with low success and helps prioritize our work.</span></span>
+
+<span data-ttu-id="a92f7-161">Embora apreciemos os insights fornecidos por esses dados, também entendemos que nem todos desejam enviar dados de uso.</span><span class="sxs-lookup"><span data-stu-id="a92f7-161">While we appreciate the insights this data provides, we also understand that not everyone wants to send usage data.</span></span> <span data-ttu-id="a92f7-162">Você pode desabilitar a coleta de dados com o cmdlet [`Disable-AzDataCollection`](/powershell/module/az.accounts/disable-azdatacollection).</span><span class="sxs-lookup"><span data-stu-id="a92f7-162">You can disable data collection with the [`Disable-AzDataCollection`](/powershell/module/az.accounts/disable-azdatacollection) cmdlet.</span></span> <span data-ttu-id="a92f7-163">Você também pode ler a nossa [política de privacidade](https://privacy.microsoft.com/privacystatement) para saber mais.</span><span class="sxs-lookup"><span data-stu-id="a92f7-163">You can also read our [privacy statement](https://privacy.microsoft.com/privacystatement) to learn more.</span></span>
