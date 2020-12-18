@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
+ms.sourcegitcommit: a6d92493a8d1b81b85f4db2a38f271134be5e6c5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856073"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353845"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Introdução do módulo Az PowerShell do Azure
 
@@ -34,16 +34,17 @@ O módulo Az PowerShell apresenta os seguintes benefícios:
 
 * Segurança e estabilidade
   * Criptografia de cache de token
-  * Suporte para ADFS 2019
-  * Mecanismo de segurança que impede tipos de ataque man-in-the-Middle
+  * Prevenção de ataque do tipo man-in-the-middle
+  * Suporte à autenticação com o ADFS 2019
+  * Autenticação de nome de usuário e senha no PowerShell 7
   * Suporte para recursos como avaliação contínua de acesso (chegando em 2021)
 * Suporte para todos os serviços do Azure
-  * Há um módulo disponível para cada serviço do Azure
+  * Todos os serviços do Azure em disponibilidade geral têm um módulo PowerShell correspondente com suporte
   * Várias correções de bug e atualizações de versão de API desde o AzureRM
-* Vários novos recursos adicionais
+* Novos recursos
   * Suporte no Cloud Shell e em multiplataforma
   * Pode obter e usar o token de acesso para acessar recursos do Azure
-  * Cmdlet genérico do Az para operações do tipo hachura de escape
+  * Cmdlet disponível para operações REST avançadas com recursos do Azure
 
 > [!NOTE]
 > O PowerShell 7 e posterior é a versão recomendada do PowerShell para uso com o Az PowerShell em todas as plataformas.
