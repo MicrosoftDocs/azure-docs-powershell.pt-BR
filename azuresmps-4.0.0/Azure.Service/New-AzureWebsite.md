@@ -3,54 +3,54 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: FBB55071-454D-4473-93BA-D97F33067785
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 0f83489d21fba97bb50145de1fedc1ac9a7195a1
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 768eff2dda32c6dfa0bad14f028338d3c5fa1abd
+ms.sourcegitcommit: 87730c7ea4f98f628d3fe1b40aa4a9d2885e1c75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93946184"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98110471"
 ---
 # New-AzureWebsite
 
-## Sinopse
+## SYNOPSIS
 Crie um novo site para ser executado no Azure.
 
-## SYNTAX
+## SINTAXE
 
 ```
 New-AzureWebsite [-Location <String>] [-Hostname <String>] [-PublishingUsername <String>] [-Git] [-GitHub]
- [-GithubCredentials <PSCredential>] [-GithubRepository <String>] [-Name <String>] [-Slot <String>]
+ [-GitHubCredentials <PSCredential>] [-GitHubRepository <String>] [-Name <String>] [-Slot <String>]
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Este tópico descreve o cmdlet na versão 0.8.10 do módulo do Microsoft Azure PowerShell.
-Para obter a versão do módulo que você está usando, no console do PowerShell do Azure, digite `(Get-Module -Name Azure).Version` .
+## DESCRIÇÃO
+Este tópico descreve o cmdlet na versão 0.8.10 do módulo Microsoft Azure PowerShell.
+Para obter a versão do módulo que você está usando, no console do Azure PowerShell, digite `(Get-Module -Name Azure).Version` .
 
-O cmdlet cria um novo site para ser executado no Azure e se prepara para a implantação pelo github.
+O cmdlet cria um novo site para ser executado no Azure e se prepara para implantação por meio do GitHub.
 
 ## EXEMPLOS
 
-### Exemplo 1: criar um novo site com git
+### Exemplo 1: Criar um novo site com o Git
 ```
 PS C:\> New-AzureWebsite mySite -Git
 ```
 
-Este exemplo cria um novo site no Azure e um repositório local do git para usar para implantar arquivos no novo site.
+Este exemplo cria um novo site no Azure e um repositório git local a ser usado para implantar arquivos no novo site.
 
-### Exemplo 2: criar um site integrado ao github
+### Exemplo 2: Criar site integrado ao GitHub
 ```
-PS C:\> New-AzureWebsite mysite -Github -GithubRepository myaccount/myrepo
+PS C:\> New-AzureWebsite mysite -GitHub -GitHubRepository myaccount/myrepo
 ```
 
-Este exemplo cria um novo site vinculado a um repositório GitHub nomeado myaccount/myrepositório.
-As confirmações no repositório do GitHub são enviadas para o site do Azure.
+Este exemplo cria um novo site vinculado a um repositório do GitHub chamado myaccount/myrepo.
+As confirmações no repositório do GitHub são adiadas para o site no Azure.
 
-## OS
+## PARÂMETROS
 
 ### -Git
-Configura um repositório local do git e o vincula ao site.
-Se especificado, esse parâmetro configurará um repositório git no diretório local e adicionará um repositório remoto denominado ' Azure ' vinculado ao site do Azure.
+Configura um repositório local do Git e o vincula ao site.
+Se especificado, este parâmetro configura um repositório git no diretório local e adiciona um repositório remoto chamado 'azure' que se vincula ao site no Azure.
 
 ```yaml
 Type: SwitchParameter
@@ -65,8 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -GitHub
-Indica que esse cmdlet vincula o novo site a um repositório GitHub existente.
-As confirmações no repositório do Giuthub são enviadas para o site do Azure.
+Indica que esse cmdlet vincula o novo site a um repositório existente do GitHub.
+Confirmações para o repositório Giuthub são pressionadas para o site no Azure.
 
 ```yaml
 Type: SwitchParameter
@@ -80,8 +80,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubCredentials
-Especifica as credenciais de nome de usuário e senha para se conectar ao github.
+### -GitHubCredentials
+Especifica as credenciais de nome de usuário e senha para se conectar ao GitHub.
 
 ```yaml
 Type: PSCredential
@@ -95,7 +95,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubRepository
+### -GitHubRepository
 Especifica o nome completo do repositório do GitHub para vincular a este site.
 Por exemplo, `myaccount/myrepo` .
 
@@ -126,8 +126,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Local
-Especifica o local do centro de dados onde você deseja implantar o site.
+### -Location
+Especifica o local do data center onde você deseja implantar o site.
 
 ```yaml
 Type: String
@@ -141,7 +141,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Especifica um nome para o site.
 
 ```yaml
@@ -156,9 +156,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Perfil
+### -Profile
 Especifica o perfil do Azure do qual este cmdlet lê.
-Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+Se você não especificar um perfil, este cmdlet lê do perfil padrão local.
 
 ```yaml
 Type: AzureSMProfile
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishingUsername
-Especifica o nome de usuário que você especificou no portal do Azure para implantação do git.
+Especifica o nome de usuário especificado na implantação do Portal do Azure para Git.
 
 ```yaml
 Type: String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -Slot
-Especifica o nome de um slot para o site.
+Especifica um nome de slot para o site.
 
 ```yaml
 Type: String
@@ -203,13 +203,13 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet oferece suporte aos parâmetros comuns: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## ENTRADAS
 
-## EXIBE
+## SAÍDAS
 
-## INFORMA
+## OBSERVAÇÕES
 
 ## LINKS RELACIONADOS
 
