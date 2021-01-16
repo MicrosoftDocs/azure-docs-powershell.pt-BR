@@ -1,0 +1,399 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.CognitiveServices.dll-Help.xml
+Module Name: Az.CognitiveServices
+ms.assetid: 11E2D82A-1DF1-4E19-8328-44674641D1BB
+online version: https://docs.microsoft.com/en-us/powershell/module/az.cognitiveservices/set-azcognitiveservicesaccount
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Set-AzCognitiveServicesAccount.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CognitiveServices/CognitiveServices/help/Set-AzCognitiveServicesAccount.md
+ms.openlocfilehash: 5cfbfa0452fba4d01d2af5aa8e6acc3a141a4426
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98262384"
+---
+# <span data-ttu-id="3b99f-101">Set-AzCognitiveServicesAccount</span><span class="sxs-lookup"><span data-stu-id="3b99f-101">Set-AzCognitiveServicesAccount</span></span>
+
+## <span data-ttu-id="3b99f-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="3b99f-102">SYNOPSIS</span></span>
+<span data-ttu-id="3b99f-103">Modifica uma conta.</span><span class="sxs-lookup"><span data-stu-id="3b99f-103">Modifies an account.</span></span>
+
+## <span data-ttu-id="3b99f-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="3b99f-104">SYNTAX</span></span>
+
+### <span data-ttu-id="3b99f-105">CognitiveServicesEncryption (padrão)</span><span class="sxs-lookup"><span data-stu-id="3b99f-105">CognitiveServicesEncryption (Default)</span></span>
+```
+Set-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-SkuName <String>]
+ [-Tag <Hashtable[]>] [-CustomSubdomainName <String>] [-AssignIdentity] [-IdentityType <IdentityType>]
+ [-StorageAccountId <String[]>] [-CognitiveServicesEncryption] [-NetworkRuleSet <PSNetworkRuleSet>]
+ [-PublicNetworkAccess <String>] [-ApiProperty <CognitiveServicesAccountApiProperties>] [-Force]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3b99f-106">KeyVaultEncryption</span><span class="sxs-lookup"><span data-stu-id="3b99f-106">KeyVaultEncryption</span></span>
+```
+Set-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-SkuName <String>]
+ [-Tag <Hashtable[]>] [-CustomSubdomainName <String>] [-AssignIdentity] [-IdentityType <IdentityType>]
+ [-StorageAccountId <String[]>] [-KeyVaultEncryption] -KeyName <String> -KeyVersion <String>
+ -KeyVaultUri <String> [-NetworkRuleSet <PSNetworkRuleSet>] [-PublicNetworkAccess <String>]
+ [-ApiProperty <CognitiveServicesAccountApiProperties>] [-Force] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="3b99f-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="3b99f-107">DESCRIPTION</span></span>
+<span data-ttu-id="3b99f-108">O cmdlet **set-AzCognitiveServicesAccount** modifica a SKU ou marca da conta de serviços cognitivas especificada.</span><span class="sxs-lookup"><span data-stu-id="3b99f-108">The **Set-AzCognitiveServicesAccount** cmdlet modifies the SKU or tags of the specified Cognitive Services account.</span></span>
+
+## <span data-ttu-id="3b99f-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="3b99f-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="3b99f-110">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="3b99f-110">Example 1</span></span>
+```powershell
+PS C:\> Set-AzCognitiveServicesAccount -ResourceGroupName cognitive-services-resource-group -name myluis -SkuName S0
+
+
+ResourceGroupName : cognitive-services-resource-group
+AccountName       : myluis
+Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/cognitive-services-resource-group/providers/Microsoft.Cog
+                    nitiveServices/accounts/myluis
+Endpoint          : https://westus.api.cognitive.microsoft.com/luis/v2.0
+Location          : WESTUS
+Sku               : Microsoft.Azure.Management.CognitiveServices.Models.Sku
+AccountType       : LUIS
+ResourceType      : Microsoft.CognitiveServices/accounts
+Etag              : "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+ProvisioningState : Succeeded
+Tags              :
+```
+
+## <span data-ttu-id="3b99f-111">OS</span><span class="sxs-lookup"><span data-stu-id="3b99f-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="3b99f-112">-ApiProperty</span><span class="sxs-lookup"><span data-stu-id="3b99f-112">-ApiProperty</span></span>
+<span data-ttu-id="3b99f-113">O ApiProperties de uma conta de serviços cognitiva.</span><span class="sxs-lookup"><span data-stu-id="3b99f-113">The ApiProperties of Cognitive Services Account.</span></span> <span data-ttu-id="3b99f-114">Exigido por tipos específicos de conta.</span><span class="sxs-lookup"><span data-stu-id="3b99f-114">Required by specific account types.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Management.CognitiveServices.Models.CognitiveServicesAccountApiProperties
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-115">-AssignIdentity</span><span class="sxs-lookup"><span data-stu-id="3b99f-115">-AssignIdentity</span></span>
+<span data-ttu-id="3b99f-116">Gerar e atribuir uma nova identidade de conta de serviços cognitiva para esta conta de armazenamento para uso com os serviços de gerenciamento de chaves como o repositório de chaves do Azure.</span><span class="sxs-lookup"><span data-stu-id="3b99f-116">Generate and assign a new Cognitive Services Account Identity for this storage account for use with key management services like Azure KeyVault.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-117">-CognitiveServicesEncryption</span><span class="sxs-lookup"><span data-stu-id="3b99f-117">-CognitiveServicesEncryption</span></span>
+<span data-ttu-id="3b99f-118">Se você deve definir a fonte de origem de criptografia de conta de serviços cognitiva para Microsoft. Cognitivaservices ou not.</span><span class="sxs-lookup"><span data-stu-id="3b99f-118">Whether to set Cognitive Services Account Encryption KeySource to Microsoft.CognitiveServices or not.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CognitiveServicesEncryption
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-119">-CustomSubdomainName</span><span class="sxs-lookup"><span data-stu-id="3b99f-119">-CustomSubdomainName</span></span>
+<span data-ttu-id="3b99f-120">Nome de subdomínio da conta de serviços cognitiva.</span><span class="sxs-lookup"><span data-stu-id="3b99f-120">Cognitive Services Account Subdomain Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3b99f-121">-DefaultProfile</span></span>
+<span data-ttu-id="3b99f-122">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="3b99f-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-123">-Force</span><span class="sxs-lookup"><span data-stu-id="3b99f-123">-Force</span></span>
+<span data-ttu-id="3b99f-124">Força o comando a ser executado sem pedir confirmação do usuário.</span><span class="sxs-lookup"><span data-stu-id="3b99f-124">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-125">-IdentityType</span><span class="sxs-lookup"><span data-stu-id="3b99f-125">-IdentityType</span></span>
+<span data-ttu-id="3b99f-126">Tipo de identidade de serviço gerenciado.</span><span class="sxs-lookup"><span data-stu-id="3b99f-126">Type of managed service identity.</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.CognitiveServices.Models.IdentityType]
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, SystemAssigned, UserAssigned
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-127">-KeyName</span><span class="sxs-lookup"><span data-stu-id="3b99f-127">-KeyName</span></span>
+<span data-ttu-id="3b99f-128">O KeyName do cofre da fonte de criptografia de conta de serviços cognitiva</span><span class="sxs-lookup"><span data-stu-id="3b99f-128">Cognitive Services Account encryption keySource KeyVault KeyName</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-129">-KeyVaultEncryption</span><span class="sxs-lookup"><span data-stu-id="3b99f-129">-KeyVaultEncryption</span></span>
+<span data-ttu-id="3b99f-130">Se você deve definir a fonte de origem de criptografia de conta de serviços cognitiva para a Microsoft. keyvault ou não.</span><span class="sxs-lookup"><span data-stu-id="3b99f-130">Whether to set Cognitive Services Account encryption keySource to Microsoft.KeyVault or not.</span></span> <span data-ttu-id="3b99f-131">Se você especificar a KeyName, a keyversion e o KeyVaultUri, a origem de criptografia da conta de serviços cognitiva também será definida como Microsoft. Weather Weather esse parâmetro está definido ou não.</span><span class="sxs-lookup"><span data-stu-id="3b99f-131">If you specify KeyName, KeyVersion and KeyVaultUri, Cognitive Services Account Encryption KeySource will also be set to Microsoft.KeyVault weather this parameter is set or not.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-132">-KeyVaultUri</span><span class="sxs-lookup"><span data-stu-id="3b99f-132">-KeyVaultUri</span></span>
+<span data-ttu-id="3b99f-133">KeyVaultUri de uma fonte de código de criptografia de conta de serviços cognitiva</span><span class="sxs-lookup"><span data-stu-id="3b99f-133">Cognitive Services Account encryption keySource KeyVault KeyVaultUri</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-134">-Keyversion</span><span class="sxs-lookup"><span data-stu-id="3b99f-134">-KeyVersion</span></span>
+<span data-ttu-id="3b99f-135">Subversão do cofre de conta de criptografia de conta de serviços cognitiva</span><span class="sxs-lookup"><span data-stu-id="3b99f-135">Cognitive Services Account encryption keySource KeyVault KeyVersion</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-136">-Nome</span><span class="sxs-lookup"><span data-stu-id="3b99f-136">-Name</span></span>
+<span data-ttu-id="3b99f-137">Especifica o nome da conta a ser modificada.</span><span class="sxs-lookup"><span data-stu-id="3b99f-137">Specifies the name of the account to modify.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: CognitiveServicesAccountName, AccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-138">-NetworkRuleSet</span><span class="sxs-lookup"><span data-stu-id="3b99f-138">-NetworkRuleSet</span></span>
+<span data-ttu-id="3b99f-139">NetworkRuleSet é usado para definir um conjunto de regras de configuração para firewalls e redes virtuais, bem como para definir valores para propriedades de rede, como manipular solicitações que não correspondem a nenhuma das regras definidas</span><span class="sxs-lookup"><span data-stu-id="3b99f-139">NetworkRuleSet is used to define a set of configuration rules for firewalls and virtual networks, as well as to set values for network properties such as how to handle requests that don't match any of the defined rules</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.CognitiveServices.Models.PSNetworkRuleSet
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-140">-PublicNetworkAccess</span><span class="sxs-lookup"><span data-stu-id="3b99f-140">-PublicNetworkAccess</span></span>
+<span data-ttu-id="3b99f-141">O tipo de acesso à rede para a conta de serviços cognitiva.</span><span class="sxs-lookup"><span data-stu-id="3b99f-141">The network access type for Cognitive Services Account.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Enabled, Disabled
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-142">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="3b99f-142">-ResourceGroupName</span></span>
+<span data-ttu-id="3b99f-143">Especifica o nome do grupo de recursos ao qual a conta está atribuída.</span><span class="sxs-lookup"><span data-stu-id="3b99f-143">Specifies the name of the resource group the account is assigned to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-144">-SkuName</span><span class="sxs-lookup"><span data-stu-id="3b99f-144">-SkuName</span></span>
+<span data-ttu-id="3b99f-145">Especifica a SKU da conta.</span><span class="sxs-lookup"><span data-stu-id="3b99f-145">Specifies the SKU for the account.</span></span>
+<span data-ttu-id="3b99f-146">Os valores aceitáveis para esse parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="3b99f-146">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="3b99f-147">F0 (nível gratuito)</span><span class="sxs-lookup"><span data-stu-id="3b99f-147">F0 (free tier)</span></span>
+- <span data-ttu-id="3b99f-148">S0</span><span class="sxs-lookup"><span data-stu-id="3b99f-148">S0</span></span>
+- <span data-ttu-id="3b99f-149">Eles</span><span class="sxs-lookup"><span data-stu-id="3b99f-149">S1</span></span>
+- <span data-ttu-id="3b99f-150">S2</span><span class="sxs-lookup"><span data-stu-id="3b99f-150">S2</span></span>
+- <span data-ttu-id="3b99f-151">S3</span><span class="sxs-lookup"><span data-stu-id="3b99f-151">S3</span></span>
+- <span data-ttu-id="3b99f-152">S4</span><span class="sxs-lookup"><span data-stu-id="3b99f-152">S4</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-153">-StorageAccountId</span><span class="sxs-lookup"><span data-stu-id="3b99f-153">-StorageAccountId</span></span>
+<span data-ttu-id="3b99f-154">Lista de contas de armazenamento pertencentes ao usuário.</span><span class="sxs-lookup"><span data-stu-id="3b99f-154">List of User Owned Storage Accounts.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-155">-Marca</span><span class="sxs-lookup"><span data-stu-id="3b99f-155">-Tag</span></span>
+<span data-ttu-id="3b99f-156">Especifica uma marca como um par de nome/valor.</span><span class="sxs-lookup"><span data-stu-id="3b99f-156">Specifies a tag as a name/value pair.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable[]
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-157">-Confirme</span><span class="sxs-lookup"><span data-stu-id="3b99f-157">-Confirm</span></span>
+<span data-ttu-id="3b99f-158">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="3b99f-158">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-159">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="3b99f-159">-WhatIf</span></span>
+<span data-ttu-id="3b99f-160">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="3b99f-160">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="3b99f-161">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="3b99f-161">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3b99f-162">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3b99f-162">CommonParameters</span></span>
+<span data-ttu-id="3b99f-163">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3b99f-163">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3b99f-164">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3b99f-164">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="3b99f-165">SENSORES</span><span class="sxs-lookup"><span data-stu-id="3b99f-165">INPUTS</span></span>
+
+### <span data-ttu-id="3b99f-166">System. String</span><span class="sxs-lookup"><span data-stu-id="3b99f-166">System.String</span></span>
+
+### <span data-ttu-id="3b99f-167">System. Collections. Hashtable []</span><span class="sxs-lookup"><span data-stu-id="3b99f-167">System.Collections.Hashtable[]</span></span>
+
+## <span data-ttu-id="3b99f-168">EXIBE</span><span class="sxs-lookup"><span data-stu-id="3b99f-168">OUTPUTS</span></span>
+
+### <span data-ttu-id="3b99f-169">Microsoft. Azure. Commands. Management. Cognitivaservices. Models. PSCognitiveServicesAccount</span><span class="sxs-lookup"><span data-stu-id="3b99f-169">Microsoft.Azure.Commands.Management.CognitiveServices.Models.PSCognitiveServicesAccount</span></span>
+
+## <span data-ttu-id="3b99f-170">INFORMA</span><span class="sxs-lookup"><span data-stu-id="3b99f-170">NOTES</span></span>
+
+## <span data-ttu-id="3b99f-171">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="3b99f-171">RELATED LINKS</span></span>
+
+[<span data-ttu-id="3b99f-172">Get-AzCognitiveServicesAccount</span><span class="sxs-lookup"><span data-stu-id="3b99f-172">Get-AzCognitiveServicesAccount</span></span>](./Get-AzCognitiveServicesAccount.md)
+
+[<span data-ttu-id="3b99f-173">New-AzCognitiveServicesAccount</span><span class="sxs-lookup"><span data-stu-id="3b99f-173">New-AzCognitiveServicesAccount</span></span>](./New-AzCognitiveServicesAccount.md)
+
+[<span data-ttu-id="3b99f-174">Remove-AzCognitiveServicesAccount</span><span class="sxs-lookup"><span data-stu-id="3b99f-174">Remove-AzCognitiveServicesAccount</span></span>](./Remove-AzCognitiveServicesAccount.md)
