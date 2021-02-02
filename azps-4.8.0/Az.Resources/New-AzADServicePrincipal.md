@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: 3c96ab0cdcc25e0e1c9b4a343cd68420654d934c
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: 9fc7b3de271188c2f8ebd0be3293892a6fae56e3
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "94284383"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251770"
 ---
 # New-AzADServicePrincipal
 
 ## Sinopse
 Cria uma nova entidade de serviço do Azure Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### SimpleParameterSet (padrão)
+### SimpleParameterSet (Padrão)
 
 ```
 New-AzADServicePrincipal [-ApplicationId <Guid>] [-DisplayName <String>] [-StartDate <DateTime>]
@@ -126,20 +126,20 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 
-Cria uma nova entidade de serviço do Azure Active Directory. O conjunto de parâmetros padrão usa valores padrão para parâmetros se não forem fornecidos. Para obter mais informações sobre valores padrão, consulte a descrição para cada parâmetro. Esse cmdlet tem a capacidade de atribuir uma função à entidade de serviço com os parâmetros **role** e **Scope** . Se ambos forem omitidos, a função de colaborador será atribuída à entidade de serviço. Os valores padrão para os parâmetros **role** e **Scope** são **colaboradores** para a assinatura atual. O cmdlet cria um aplicativo e define suas propriedades se um ApplicationId não for fornecido. Para atualizar os parâmetros específicos do aplicativo, use o cmdlet [Update-AzADApplication](./update-azadapplication.md) .
+Cria uma nova entidade de serviço do Azure Active Directory. O conjunto de parâmetros padrão usará valores padrão para parâmetros, caso não sejam fornecidos. Para obter mais informações sobre valores padrão, consulte a descrição de cada parâmetro. Esse cmdlet tem a capacidade de atribuir uma função à entidade de serviço com os parâmetros **Função** **e** Escopo. Se ambos são omitidos, a função de colaborador é atribuída à entidade de serviço. Os valores padrão para os parâmetros **Função** **e Escopo** são **Colaborador** para a assinatura atual. O cmdlet cria um aplicativo e define suas propriedades se um ApplicationId não for fornecido. Para atualizar os parâmetros específicos do aplicativo, use o cmdlet [Update-AzADApplication.](./update-azadapplication.md)
 
 > [!WARNING]
-> Quando você cria uma entidade de serviço usando o comando **New-AzADServicePrincipal** , a saída inclui credenciais que você deve proteger. Certifique-se de que você não inclui essas credenciais em seu código ou verifique as credenciais em seu controle de origem. Como alternativa, considere o uso de [identidades gerenciadas](/azure/active-directory/managed-identities-azure-resources/overview) para evitar a necessidade de usar credenciais.
+> Quando você cria uma entidade de serviço usando o comando **New-AzADServicePrincipal,** a saída inclui credenciais que você deve proteger. Como alternativa, considere usar identidades [gerenciadas](/azure/active-directory/managed-identities-azure-resources/overview) para evitar a necessidade de usar credenciais.
 >
-> Por padrão, **New-AzADServicePrincipal** atribui a função de [colaborador](/azure/role-based-access-control/built-in-roles#contributor) à entidade de serviço no escopo da assinatura. Para reduzir o risco de uma entidade de serviço comprometida, atribua uma função mais específica e restrinja o escopo a um recurso ou grupo de recursos. Consulte [as etapas para adicionar uma atribuição de função](/azure/role-based-access-control/role-assignments-steps) para obter mais informações.
+> Por padrão, **o New-AzADServicePrincipal** atribui a função Colaborador à entidade de serviço no escopo da assinatura. [](/azure/role-based-access-control/built-in-roles#contributor) Para reduzir o risco de uma entidade de serviço comprometida, atribua uma função mais específica e restria o escopo a um grupo de recursos ou recursos. Consulte [Etapas para adicionar uma atribuição de função](/azure/role-based-access-control/role-assignments-steps) para obter mais informações.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: criação de entidade de serviço de anúncio simples
+### Exemplo 1: Criação de entidade de serviço AD simples
 
-O exemplo a seguir cria uma entidade de serviço de anúncio usando valores padrão para parâmetros não especificados. Como uma ID de aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. Como nenhum valor é fornecido para a **função** ou o **escopo** , a entidade de serviço criada é atribuída à função **colaborador** da assinatura atual.
+O exemplo a seguir cria uma entidade de serviço AD usando valores padrão para parâmetros não especificados. Como uma ID de aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. Como nenhum valor é fornecido para **Função** **ou** Escopo,  a entidade de serviço criada recebe a função de colaborador para a assinatura atual.
 
 ```powershell
 New-AzADServicePrincipal
@@ -154,9 +154,9 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### Exemplo 2: criação de entidade de serviço de anúncio simples com função especificada e escopo padrão
+### Exemplo 2: Criação de entidade de serviço AD simples com uma função especificada e escopo padrão
 
-O exemplo a seguir cria uma entidade de serviço de anúncio usando os valores padrão para os parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada com permissões de **leitor** para a assinatura atual, pois nenhum valor é fornecido para o parâmetro de **escopo** .
+O exemplo a seguir cria uma entidade de serviço AD usando os valores padrão para parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada **com permissões de** Leitor para a assinatura atual, uma vez que nenhum valor é fornecido para o parâmetro **Escopo.**
 
 ```powershell
 New-AzADServicePrincipal -Role Reader
@@ -173,9 +173,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/00000000-0000-0000-0000-000000000000' to the new service principal.
 ```
 
-### Exemplo 3: criação de entidade de serviço de anúncio simples com um escopo e função padrão especificados
+### Exemplo 3: Criação de entidade de serviço AD simples com um escopo especificado e uma função padrão
 
-O exemplo a seguir cria uma entidade de serviço de anúncio usando os valores padrão para os parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada com permissões de **colaborador** para o escopo do grupo de recursos fornecido, pois nenhum valor é fornecido para o parâmetro **role** .
+O exemplo a seguir cria uma entidade de serviço AD usando os valores padrão para parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada com **permissões** de Colaborador para o escopo do grupo de recursos fornecido, uma vez que nenhum valor é fornecido para o **parâmetro** Função.
 
 ```powershell
 New-AzADServicePrincipal -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup
@@ -192,9 +192,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-### Exemplo 4: criação de entidade de serviço de anúncio simples com um escopo e função especificado
+### Exemplo 4: Criação de entidade de serviço AD simples com um escopo e função especificados
 
-O exemplo a seguir cria uma entidade de serviço de anúncio usando os valores padrão para os parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada com permissões de **leitor** para o escopo do grupo de recursos fornecido.
+O exemplo a seguir cria uma entidade de serviço AD usando os valores padrão para parâmetros não especificados. Como a ID do aplicativo não é fornecida, um aplicativo é criado para a entidade de serviço. A entidade de serviço é criada com **permissões de Leitor** para o escopo do grupo de recursos fornecido.
 
 ```powershell
 New-AzADServicePrincipal -Role Reader -Scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup
@@ -211,9 +211,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-### Exemplo 5: criar uma nova entidade de serviço de anúncio usando a ID do aplicativo com atribuição de função
+### Exemplo 5: Criar uma nova entidade de serviço AD usando a ID do aplicativo com atribuição de função
 
-O exemplo a seguir cria uma nova entidade de serviço de anúncio para o aplicativo com a ID de aplicativo ' 00000000-0000-0000-0000-000000000000 '. Como nenhum valor é fornecido para a **função** ou o **escopo** , a entidade de serviço criada é atribuída à função **colaborador** da assinatura atual.
+O exemplo a seguir cria uma nova entidade de serviço do AD para o aplicativo com a ID do aplicativo '000000000-0000-0000-00000000000'. Como nenhum valor é fornecido para **Função** **ou** Escopo,  a entidade de serviço criada recebe a função de colaborador para a assinatura atual.
 
 ```powershell
 New-AzADServicePrincipal -ApplicationId 00000000-0000-0000-0000-000000000000
@@ -227,17 +227,17 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  : ServicePrincipal
 ```
 
-### Exemplo 6: criar uma nova entidade de serviço de anúncio usando o encanamento
+### Exemplo 6: Criar uma nova entidade de serviço AD usando a canalização
 
-O exemplo a seguir recupera o aplicativo com a ID de objeto ' 3ede3c26-b443-4e0b-9efc-b05e68338dc3 ' usando o cmdlet [Get-AzADApplication](./get-azadapplication.md) . Os resultados são canalizados para o `New-AzADServicePrincipal` cmdlet para criar uma nova entidade de serviço de anúncio para esse aplicativo.
+O exemplo a seguir recupera o aplicativo com a ID do objeto '3ede3c26-b443-4e0b-9efc-b05e68338dc3' usando o cmdlet [Get-AzADApplication.](./get-azadapplication.md) Os resultados são canalados para o `New-AzADServicePrincipal` cmdlet para criar uma nova entidade de serviço do AD para esse aplicativo.
 
 ```powershell
 Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-### Exemplo 7: criar uma nova entidade de serviço de anúncio usando DisplayName e credenciais de senha
+### Exemplo 7: Criar uma nova entidade de serviço AD usando o NomeDe Exibição e a credencial de senha
 
-O exemplo a seguir cria um novo aplicativo com o nome **servicePrincipalName** e uma senha de **StrongPassworld! 23**. Ele cria a entidade de serviço com base no aplicativo criado. A data de início e a data de término são adicionadas à credencial de senha.
+O exemplo a seguir cria um novo aplicativo com o nome **ServicePrincipalName** e uma senha **de StrongPassworld!23.** Ele cria a entidade de serviço com base no aplicativo criado. A data de início e a data de término são adicionadas à credencial de senha.
 
 ```powershell
 $credentials = New-Object -TypeName Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential -Property @{
@@ -254,9 +254,9 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  :
 ```
 
-### Exemplo 8: criar uma nova entidade de serviço de anúncio usando uma credencial de chave simples e DisplayName
+### Exemplo 8: Criar uma nova entidade de serviço AD usando o DisplayName e a credencial de chave simples
 
-O exemplo a seguir cria um novo aplicativo com o nome **servicePrincipalName** e um certificado **$CERT**. Ele cria a entidade de serviço com base no aplicativo criado. A data de término é adicionada à credencial de chave.
+O exemplo a seguir cria um novo aplicativo com o nome **ServicePrincipalName** e um certificado **$cert.** Ele cria a entidade de serviço com base no aplicativo criado. A data de término é adicionada à credencial de chave.
 
 ```powershell
 $cert = 'public certificate as Base64 encoded string'
@@ -272,11 +272,11 @@ Id                    : 00000000-0000-0000-0000-000000000000
 Type                  :
 ```
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
 
-A ID do aplicativo exclusivo para uma entidade de serviço em um locatário. Uma vez criado, essa propriedade não pode ser alterada. Se uma ID de aplicativo de um aplicativo existente não for especificada, um aplicativo será criado.
+A ID de aplicativo exclusiva de uma entidade de serviço em um locatário. Depois de criada, essa propriedade não pode ser alterada. Se uma ID de aplicativo para um aplicativo existente não for especificada, um aplicativo será criado.
 
 ```yaml
 Type: System.Guid
@@ -318,9 +318,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Certvalue
+### -CertValue
 
-O valor do tipo de credencial assimétrica. Ele representa o certificado codificado em base64.
+O valor do tipo de credencial assimétrica. Ele representa o certificado codificado da Base64.
 
 ```yaml
 Type: System.String
@@ -348,7 +348,7 @@ Accept wildcard characters: False
 
 ### -DefaultProfile
 
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -364,7 +364,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 
-O nome amigável da entidade de serviço. Se um nome de exibição não for fornecido, esse valor será definido como padrão **Azure-PowerShell-mm-dd-yyyy-hh-mm-SS** em que o sufixo é a hora da criação do aplicativo.
+O nome amigável da entidade de serviço. Se um nome de exibição não for fornecido, esse valor será padrão para **azure-powershell-MM-dd-yyyy-HH-mm-ss** onde o sufixo é o momento de criação do aplicativo.
 
 ```yaml
 Type: System.String
@@ -392,8 +392,8 @@ Accept wildcard characters: False
 
 ### -EndDate
 
-A data de término efetiva do uso da credencial. O valor padrão de data de término é um ano a partir de hoje.
-Para uma credencial de tipo assimétrico, isso deve ser definido como em ou antes da data em que o certificado X509 é válido.
+A data de término efetiva do uso das credenciais. O valor de data de término padrão é de um ano a partir de hoje.
+Para uma credencial de tipo assimétrica, ela deve ser definida como em ou antes da data em que o certificado X509 é válido.
 
 ```yaml
 Type: System.DateTime
@@ -419,9 +419,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Keycredential
+### -KeyCredential
 
-A coleção de credenciais de chave associadas ao aplicativo.
+O conjunto de credenciais de chave associadas ao aplicativo.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
@@ -449,7 +449,7 @@ Accept wildcard characters: False
 
 ### -PasswordCredential
 
-A coleção de credenciais de senha associadas ao aplicativo.
+O conjunto de credenciais de senha associadas ao aplicativo.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
@@ -477,7 +477,7 @@ Accept wildcard characters: False
 
 ### -Função
 
-A função que a entidade de serviço tem sobre o escopo. Se nenhum valor for fornecido, o padrão da **função** será a função **colaborador** .
+A função que a entidade de serviço tem sobre o escopo. Se nenhum valor for fornecido, **a função** será padrão para **a função** Colaborador.
 
 ```yaml
 Type: System.String
@@ -493,7 +493,7 @@ Accept wildcard characters: False
 
 ### -Escopo
 
-O escopo ao qual a entidade de serviço tem permissões. Se nenhum valor for fornecido, o **escopo** será definido como padrão para a assinatura atual.
+O escopo para o que a entidade de serviço tem permissões. Se nenhum valor for fornecido, **o escopo** será padrão para a assinatura atual.
 
 ```yaml
 Type: System.String
@@ -523,9 +523,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartDate
+### -Data Inicial
 
-A data de início efetiva do uso da credencial. O valor da data de início padrão é hoje. Para uma credencial de tipo assimétrico, isso deve ser definido como ligado ou posterior à data a partir da qual o certificado X509 é válido.
+A data de início efetiva do uso das credenciais. O valor de data de início padrão é hoje. Para uma credencial de tipo assimétrica, ela deve ser definida como em ou após a data da qual o certificado X509 é válido.
 
 ```yaml
 Type: System.DateTime
@@ -551,7 +551,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 
 Solicita confirmação antes de executar o cmdlet.
 
@@ -569,7 +569,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -584,30 +584,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters).
-## SENSORES
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](/powershell/module/microsoft.powershell.core/about/about_commonparameters)
+## Entradas
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADPasswordCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADKeyCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
 
-### System. DateTime
+### System.DateTime
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Commands. Resources. Models. Authorization. PSADServicePrincipalWrapper
+### Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper
 
-## INFORMA
+## Notas
 
-Palavras-chave: Azure, azurerm, braço, recurso, gerenciamento, gerente, recurso, grupo, modelo, implantação
+Palavras-chave: azure, azurerm, arm, resource, management, manager, resource, group, template, deployment
 
 ## LINKS RELACIONADOS
 
@@ -621,6 +621,6 @@ Palavras-chave: Azure, azurerm, braço, recurso, gerenciamento, gerente, recurso
 
 [Get-AzADSpCredential](./Get-AzADSpCredential.md)
 
-[New-AzADSpCredential](./New-AzADSpCredential.md)
+[Novo-AzADSpCredential](./New-AzADSpCredential.md)
 
 [Remove-AzADSpCredential](./Remove-AzADSpCredential.md)
