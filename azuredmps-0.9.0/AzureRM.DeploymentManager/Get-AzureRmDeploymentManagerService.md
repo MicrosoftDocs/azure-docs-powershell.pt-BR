@@ -3,22 +3,21 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93426188"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572098"
 ---
 # Get-AzureRmDeploymentManagerService
 
 ## Sinopse
 Obtém um serviço em uma topologia de serviço.
 
-## SYNTAX
+## Sintaxe
 
-### Interativo (padrão)
+### Interativo (Padrão)
 ```
 Get-AzureRmDeploymentManagerService [-ResourceGroupName] <String> [-ServiceTopologyName] <String>
  [-Name] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -36,51 +35,51 @@ Get-AzureRmDeploymentManagerService [-ResourceGroupName] <String> [-Name] <Strin
  [-ServiceTopologyResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Identificação
+### Resourceid
 ```
 Get-AzureRmDeploymentManagerService [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### InputObject
+### Inputobject
 ```
 Get-AzureRmDeploymentManagerService [-Service] <PSServiceResource> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzureRmDeploymentManagerService** Obtém um serviço em uma topologia de serviço e retorna um objeto que representa esse serviço.
-Especifique o serviço pelo nome, topologia de serviço em que ele se encontra e o nome do grupo de recursos. Como alternativa, você pode fornecer o objeto de serviço ou a ResourceId.
+## Descrição
+O cmdlet **Get-AzureRmDeploymentManagerService** obtém um serviço em uma topologia de serviço e retorna um objeto que representa esse serviço.
+Especifique o serviço pelo nome, topologia do serviço em que ele está e o nome do grupo de recursos. Como alternativa, você pode fornecer o objeto Serviço ou o ResourceId.
 
-Você pode modificar esse objeto localmente e, em seguida, aplicar as alterações ao serviço usando o cmdlet Set-AzureRmDeploymentManagerService.
+Você pode modificar esse objeto localmente e aplicar alterações ao serviço usando o cmdlet Set-AzureRmDeploymentManagerService usuário.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceGroupName ContosoResourceGroup -ServiceTopologyName ContosoServiceTopology -Name ContosoService1
 ```
 
-Esse comando obtém um serviço denominado ContosoService1 em uma topologia de serviço chamada ContosoServiceTopology no ContosoResourceGroup.
+Esse comando obtém um serviço chamado ContosoService1 em uma topologia de serviço chamada ContosoServiceTopology no Grupo ContosoResource.
 
-### Exemplo 2: obter um serviço usando o identificador de recursos.
+### Exemplo 2: Obter um serviço usando o identificador de recurso.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/serviceTopologies/ContosoServiceTopology/services/ContosoService1"
 ```
 
-Esse comando obtém um serviço denominado ContosoService1 em uma topologia de serviço chamada ContosoServiceTopology no ContosoResourceGroup.
+Esse comando obtém um serviço chamado ContosoService1 em uma topologia de serviço chamada ContosoServiceTopology no Grupo ContosoResource.
 
-### Exemplo 3: obter um serviço usando o objeto de serviço.
+### Exemplo 3: Obter um serviço usando o objeto de serviço.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -Service $serviceObject
 ```
 
-Esse comando obtém um serviço cujo nome, o nome da topologia de serviço e o nome do contato correspondem às propriedades Name, imtopologyname e ResourceGroupName da $serviceObject, respectivamente.
+Esse comando obtém um serviço cujo nome, nome de topologia de serviço e Grupo de Recursos corresponderem às propriedades Nome, ServiceTopologyName e ResourceGroupName do $serviceObject, respectivamente.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -125,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-O identificador do recurso.
+O identificador de recurso.
 
 ```yaml
 Type: System.String
@@ -154,7 +153,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Outtopology
+### -ServiceTopology
 O objeto de topologia de serviço no qual o serviço deve ser criado.
 
 ```yaml
@@ -169,8 +168,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Imtopologyname
-O nome da topologia de serviço.
+### -ServiceTopologyName
+O nome da topologia do serviço.
 
 ```yaml
 Type: System.String
@@ -185,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyResourceId
-O identificador de recursos de topologia de serviço no qual o serviço deve ser criado.
+O identificador de recurso de topologia de serviço no qual o serviço deve ser criado.
 
 ```yaml
 Type: System.String
@@ -200,17 +199,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Nenhuma
+### Nenhum
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. DeploymentManager. Models. PSServiceResource
+### Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
