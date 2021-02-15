@@ -1,0 +1,156 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: CD582654-1B0C-4960-9E18-454F857B56E7
+online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/remove-azapimanagement
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagement.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagement.md
+ms.openlocfilehash: f54998dc0d5ec8570a573870148a8cf05c265618
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100112307"
+---
+# Remove-AzApiManagement
+
+## Sinopse
+Remove um serviço de Gerenciamento de API.
+
+## Sintaxe
+
+```
+Remove-AzApiManagement -ResourceGroupName <String> -Name <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Descrição
+O cmdlet **Remove-AzApiManagement** remove um serviço de Gerenciamento de API do Azure.
+
+## Exemplos
+
+### Exemplo 1: Remover um serviço de Gerenciamento de API
+```
+PS C:\>Remove-AzApiManagement -ResourceGroupName "ContosoGroup02" -Name "ContosoApi"
+```
+
+Esse comando remove o serviço de Gerenciamento de API chamado ContosoApi.
+
+## Parâmetros
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Nome
+Especifica o nome da implantação de Gerenciamento de API que este cmdlet remove.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Indica que esse cmdlet retorna um valor de $True se a operação for bem-sucedida.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Especifica o nome do grupo de recursos no qual existe a implantação de Gerenciamento de API.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirmar
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que acontece se o cmdlet for executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## Entradas
+
+### System.String
+
+## Saídas
+
+### System.Boolean
+
+## Notas
+
+## LINKS RELACIONADOS
+
+[Backup-AzApiManagement](./Backup-AzApiManagement.md)
+
+[Get-AzApiManagement](./Get-AzApiManagement.md)
+
+[New-AzApiManagement](./New-AzApiManagement.md)
+
+[Restore-AzApiManagement](./Restore-AzApiManagement.md)
+
+
