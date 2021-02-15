@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 1bd5906ac4736fc2aace122070edfebe1e59fe3f
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: baa3e3d4b272bccab5fe33b9af05edc9ed254236
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100115688"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398896"
 ---
 # Update-AzSqlDatabaseAdvancedThreatProtectionSetting
 
@@ -28,7 +28,7 @@ Update-AzSqlDatabaseAdvancedThreatProtectionSetting [-PassThru] [-NotificationRe
 ```
 
 ## Descrição
-O cmdlet **Update-AzSqlDatabaseAdvancedThreatProtectionSetting define** uma configuração avançada de proteção contra ameaças em um banco de dados SQL do Azure.
+O cmdlet **Update-AzSqlDatabaseAdvancedThreatProtectionSetting define** configurações avançadas de proteção contra ameaças em um banco de dados SQL do Azure.
 Para habilitar a proteção avançada contra ameaças em um banco de dados, é necessário habilitar as configurações de auditoria nesse banco de dados.
 Para usar esse cmdlet, especifique os parâmetros *ResourceGroupName,* *ServerName* e *DatabaseName* para identificar o banco de dados.
 Esse cmdlet também é suportado pelo serviço Banco de Dados de Extensão do SQL Server no Azure.
@@ -92,9 +92,9 @@ Accept wildcard characters: False
 ### -ExcludedDetectionType
 Especifica uma matriz de tipos de detecção a ser excluída das configurações.
 Os valores aceitáveis para este parâmetro são:
-- Sql_Injection 
-- Sql_Injection_Vulnerability 
-- Access_Anomaly 
+- Sql_Injection
+- Sql_Injection_Vulnerability
+- Access_Anomaly
 - Nenhum
 
 ```yaml
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-Especifica uma lista separada por ponto e vírgula de endereços de email para os quais as configurações enviam alertas.
+Especifica uma lista separada por ponto e vírgula dos endereços de email para os quais as configurações enviam alertas.
 
 ```yaml
 Type: System.String
@@ -252,10 +252,4 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[Get-AzSqlDatabaseThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlDatabaseThreatDetectionsettings](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
-
 [Documentação do banco de dados SQL](https://docs.microsoft.com/azure/sql-database/)
-
-
