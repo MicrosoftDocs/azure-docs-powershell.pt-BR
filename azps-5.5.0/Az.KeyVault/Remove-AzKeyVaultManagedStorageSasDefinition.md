@@ -1,0 +1,229 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.KeyVault.dll-Help.xml
+Module Name: Az.KeyVault
+online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/remove-azkeyvaultmanagedstoragesasdefinition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageSasDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultManagedStorageSasDefinition.md
+ms.openlocfilehash: 392c8aa5259419851d3cb85967ddf85afa3c94de
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100114804"
+---
+# <span data-ttu-id="f3f80-101">Remove-AzKeyVaultManagedStorageSasDefinition</span><span class="sxs-lookup"><span data-stu-id="f3f80-101">Remove-AzKeyVaultManagedStorageSasDefinition</span></span>
+
+## <span data-ttu-id="f3f80-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="f3f80-102">SYNOPSIS</span></span>
+<span data-ttu-id="f3f80-103">Remove as definições do Azure Storage SAS gerenciadas do Cofre de Chave.</span><span class="sxs-lookup"><span data-stu-id="f3f80-103">Removes a Key Vault managed Azure Storage SAS definitions.</span></span>
+
+## <span data-ttu-id="f3f80-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="f3f80-104">SYNTAX</span></span>
+
+### <span data-ttu-id="f3f80-105">ByDefinitionName (Default)</span><span class="sxs-lookup"><span data-stu-id="f3f80-105">ByDefinitionName (Default)</span></span>
+```
+Remove-AzKeyVaultManagedStorageSasDefinition [-VaultName] <String> [-AccountName] <String> [-Name] <String>
+ [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="f3f80-106">ByInputObject</span><span class="sxs-lookup"><span data-stu-id="f3f80-106">ByInputObject</span></span>
+```
+Remove-AzKeyVaultManagedStorageSasDefinition [-InputObject] <PSKeyVaultManagedStorageSasDefinitionIdentityItem>
+ [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="f3f80-107">Descrição</span><span class="sxs-lookup"><span data-stu-id="f3f80-107">DESCRIPTION</span></span>
+<span data-ttu-id="f3f80-108">Remove as definições do Azure Storage SAS gerenciadas do Cofre de Chave.</span><span class="sxs-lookup"><span data-stu-id="f3f80-108">Removes a Key Vault managed Azure Storage SAS definitions.</span></span> <span data-ttu-id="f3f80-109">Isso também remove o segredo usado para obter o token SAS por esta definição SAS.</span><span class="sxs-lookup"><span data-stu-id="f3f80-109">This also removes the secret used to get the SAS token per this SAS definition.</span></span>
+
+## <span data-ttu-id="f3f80-110">Exemplos</span><span class="sxs-lookup"><span data-stu-id="f3f80-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="f3f80-111">Exemplo 1: Remover uma definição SAS gerenciada do Azure Storage do Azure.</span><span class="sxs-lookup"><span data-stu-id="f3f80-111">Example 1: Remove a Key Vault managed Azure Storage SAS definition.</span></span>
+```powershell
+PS C:\> Remove-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasdef' -PassThru
+
+Id          : https://myvault.vault.azure.net:443/storage/mystorageaccount/sas/mysasdef
+Vault Name  : myvault
+AccountName : mystorageaccount
+Name        : mysasdef
+Enabled     : True
+Created     : 5/24/2018 9:11:08 PM
+Updated     : 5/24/2018 9:11:08 PM
+Tags        :
+```
+
+<span data-ttu-id="f3f80-112">Remove uma definição de armazenamento gerenciado do Cofre de Chave ,'mysasdef' associada à conta 'mystorageaccount' no cofre 'myvault'.</span><span class="sxs-lookup"><span data-stu-id="f3f80-112">Removes a Key Vault managed Storage SAS definition 'mysasdef' associated with the account 'mystorageaccount' in vault 'myvault'.</span></span>
+
+### <span data-ttu-id="f3f80-113">Exemplo 2: Remover uma definição SAS gerenciada pelo Azure Storage do Azure sem confirmação do usuário.</span><span class="sxs-lookup"><span data-stu-id="f3f80-113">Example 2: Remove a Key Vault managed Azure Storage SAS definition without user confirmation.</span></span>
+```powershell
+PS C:\> Remove-AzKeyVaultManagedStorageSasDefinition -VaultName 'myvault' -AccountName 'mystorageaccount' -Name 'mysasdef' -PassThru -Force
+
+Id          : https://myvault.vault.azure.net:443/storage/mystorageaccount/sas/mysasdef
+Vault Name  : myvault
+AccountName : mystorageaccount
+Name        : mysasdef
+Enabled     : True
+Created     : 5/24/2018 9:11:08 PM
+Updated     : 5/24/2018 9:11:08 PM
+Tags        :
+```
+
+<span data-ttu-id="f3f80-114">Remove uma definição de armazenamento gerenciado do Cofre de Chave ,'mysasdef' associada à conta 'mystorageaccount' no cofre 'myvault'.</span><span class="sxs-lookup"><span data-stu-id="f3f80-114">Removes a Key Vault managed Storage SAS definition 'mysasdef' associated with the account 'mystorageaccount' in vault 'myvault'.</span></span>
+
+## <span data-ttu-id="f3f80-115">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="f3f80-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="f3f80-116">-NomedaEm conta</span><span class="sxs-lookup"><span data-stu-id="f3f80-116">-AccountName</span></span>
+<span data-ttu-id="f3f80-117">Nome da conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="f3f80-117">Storage account name.</span></span>
+<span data-ttu-id="f3f80-118">O Cmdlet construirá o FQDN de um nome de conta de armazenamento gerenciado a partir do nome do cofre, do ambiente selecionado no momento e do nome da conta de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="f3f80-118">Cmdlet constructs the FQDN of a managed storage account name from vault name, currently selected environment and storage account name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases: StorageAccountName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f3f80-119">-DefaultProfile</span></span>
+<span data-ttu-id="f3f80-120">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="f3f80-120">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-121">-Forçar</span><span class="sxs-lookup"><span data-stu-id="f3f80-121">-Force</span></span>
+<span data-ttu-id="f3f80-122">Não peça confirmação.</span><span class="sxs-lookup"><span data-stu-id="f3f80-122">Do not ask for confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f3f80-123">-InputObject</span></span>
+<span data-ttu-id="f3f80-124">Objeto ManagedStorageSasDefinition.</span><span class="sxs-lookup"><span data-stu-id="f3f80-124">ManagedStorageSasDefinition object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageSasDefinitionIdentityItem
+Parameter Sets: ByInputObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-125">-Nome</span><span class="sxs-lookup"><span data-stu-id="f3f80-125">-Name</span></span>
+<span data-ttu-id="f3f80-126">Nome de definição de sas de armazenamento.</span><span class="sxs-lookup"><span data-stu-id="f3f80-126">Storage sas definition name.</span></span>
+<span data-ttu-id="f3f80-127">O Cmdlet constrói o FQDN de uma definição de sas de armazenamento do nome do cofre, ambiente selecionado no momento, nome da conta de armazenamento e nome de definição SAS.</span><span class="sxs-lookup"><span data-stu-id="f3f80-127">Cmdlet constructs the FQDN of a storage sas definition from vault name, currently selected environment, storage account name and sas definition name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases: SasDefinitionName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="f3f80-128">-PassThru</span></span>
+<span data-ttu-id="f3f80-129">O Cmdlet não retorna um objeto por padrão.</span><span class="sxs-lookup"><span data-stu-id="f3f80-129">Cmdlet does not return an object by default.</span></span>
+<span data-ttu-id="f3f80-130">Se essa opção for especificada, o cmdlet retornará a conta de armazenamento gerenciado que foi excluída.</span><span class="sxs-lookup"><span data-stu-id="f3f80-130">If this switch is specified, cmdlet returns the managed storage account that was deleted.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-131">-Nomedo Cofre</span><span class="sxs-lookup"><span data-stu-id="f3f80-131">-VaultName</span></span>
+<span data-ttu-id="f3f80-132">Nome do cofre.</span><span class="sxs-lookup"><span data-stu-id="f3f80-132">Vault name.</span></span>
+<span data-ttu-id="f3f80-133">O Cmdlet construirá o FQDN de um cofre com base no nome e no ambiente selecionado no momento.</span><span class="sxs-lookup"><span data-stu-id="f3f80-133">Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByDefinitionName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-134">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="f3f80-134">-Confirm</span></span>
+<span data-ttu-id="f3f80-135">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="f3f80-135">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-136">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="f3f80-136">-WhatIf</span></span>
+<span data-ttu-id="f3f80-137">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="f3f80-137">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="f3f80-138">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="f3f80-138">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f3f80-139">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f3f80-139">CommonParameters</span></span>
+<span data-ttu-id="f3f80-140">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f3f80-140">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f3f80-141">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="f3f80-141">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f3f80-142">Entradas</span><span class="sxs-lookup"><span data-stu-id="f3f80-142">INPUTS</span></span>
+
+### <span data-ttu-id="f3f80-143">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageSasDefinitionIdentityItem</span><span class="sxs-lookup"><span data-stu-id="f3f80-143">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultManagedStorageSasDefinitionIdentityItem</span></span>
+
+## <span data-ttu-id="f3f80-144">Saídas</span><span class="sxs-lookup"><span data-stu-id="f3f80-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="f3f80-145">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultManagedStorageSasDefinition</span><span class="sxs-lookup"><span data-stu-id="f3f80-145">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultManagedStorageSasDefinition</span></span>
+
+## <span data-ttu-id="f3f80-146">Notas</span><span class="sxs-lookup"><span data-stu-id="f3f80-146">NOTES</span></span>
+
+## <span data-ttu-id="f3f80-147">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="f3f80-147">RELATED LINKS</span></span>
+
+[https://msdn.microsoft.com/en-us/library/dn868052.aspx](https://msdn.microsoft.com/en-us/library/dn868052.aspx)
+
