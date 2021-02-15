@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementRegion.md
-ms.openlocfilehash: fce2d356b7da56d2b93fa8634e737f96f54da178
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 3f9c88177d3f791acdd0be5c81eec2fb5bc6911c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93771316"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400698"
 ---
 # Update-AzApiManagementRegion
 
 ## Sinopse
 Atualiza a região de implantação existente na instância PsApiManagement.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> -Sku <PsApiManagementSku>
@@ -26,14 +26,14 @@ Update-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String>
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Update-AzApiManagementRegion** atualiza uma instância existente do tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementRegion** em uma coleção de objetos **AdditionalRegions** de uma instância fornecida do tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement**.
-Esse cmdlet não implanta nada, mas atualiza uma instância de **PsApiManagement** na memória.
-Para atualizar uma implantação de um gerenciamento de API, use o **PsApiManagementInstance** modificado para o cmdlet Update-AzApiManagementDeployment.
+## Descrição
+O cmdlet **Update-AzApiManagementRegion** atualiza uma instância existente do tipo **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementRegion** em um conjunto de objetos **AdditionalRegions** de uma instância fornecida do tipo **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement.**
+Este cmdlet não implanta nada, mas atualiza uma instância **do PsApiManagement** na memória.
+Para atualizar uma implantação de um Gerenciamento de API, use o **PsApiManagementInstance** modificado para o cmdlet Set-AzApiManagement api.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: aumenta a capacidade de região adicional em uma instância de PsApiManagement
+### Exemplo 1: aumenta a capacidade de região adicional em uma instância PsApiManagement
 ```powershell
 PS C:\>$apimService = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -Location "North Central US" -Capacity 2 -Sku Premium
@@ -42,12 +42,12 @@ PS C:\>$apimService = Update-AzApiManagementRegion -ApiManagement $apimService -
 PS C:\>$updatedService = Set-AzApiManagement -InputObject $apimService -PassThru
 ```
 
-Esse comando obtém o serviço de gerenciamento de API Premium SKU, com regiões no centro-oeste dos EUA e centro norte. Em seguida, ele aumenta a capacidade da região central norte dos EUA para 2 usando a **atualização-AzApiManagementRegion**. O próximo cmdlet Set-AzApiManagement aplica a alteração de configuração ao serviço de gerenciamento de API.
+Esse comando obtém o serviço SKU premium de gerenciamento de API, com regiões na Central Sul dos EUA e na Central Norte dos EUA. Em seguida, ele aumenta a capacidade da região norte-central dos EUA para 2 usando o **Update-AzApiManagementRegion.** O próximo cmdlet Set-AzApiManagement aplica a alteração de configuração ao serviço de Gerenciamento de Api.
 
-## OS
+## Parâmetros
 
 ### -ApiManagement
-Especifica a instância **PsApiManagement** para atualizar uma região de implantação existente no.
+Especifica a instância **PsApiManagement** para atualizar uma região de implantação existente.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Capacidade
-Especifica o novo valor de capacidade de SKU para a região de implantação.
+Especifica o novo valor de capacidade da SKU para a região de implantação.
 
 ```yaml
 Type: System.Int32
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 
 ### -Local
 Especifica o local da região de implantação a ser atualizada.
-Especifica o local da nova região de implantação entre a região com suporte para o serviço de gerenciamento de API.
-Para obter locais válidos, use o cmdlet Get-AzResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | em que {$ _. ResourceTypes [0]. ResourceTypename-EQ "serviço"} | Locais do Select-Object
+Especifica o local da nova região de implantação entre a região com suporte para o serviço de Gerenciamento de Api.
+Para obter locais válidos, use o cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | onde {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object locais
 
 ```yaml
 Type: System.String
@@ -111,9 +111,9 @@ Accept wildcard characters: False
 ### -SKU
 Especifica o novo valor de camada para a região de implantação.
 Os valores válidos são:
-- Event
-- Oficial
-- Gratifica
+- Desenvolvedor
+- Padrão
+- Premium
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 
 ### -VirtualNetwork
 Especifica uma configuração de rede virtual para a região de implantação.
-Passar $null removerá a configuração de rede virtual para a região.
+Passar $null removerá a configuração de rede virtual da região.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -145,25 +145,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementSku
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku
 
-### System. Int32
+### System.Int32
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementVirtualNetwork
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -171,4 +171,4 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Remove-AzApiManagementRegion](./Remove-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
