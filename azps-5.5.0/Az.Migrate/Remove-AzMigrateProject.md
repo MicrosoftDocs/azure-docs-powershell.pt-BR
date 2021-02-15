@@ -1,0 +1,182 @@
+---
+external help file: ''
+Module Name: Az.Migrate
+online version: https://docs.microsoft.com/en-us/powershell/module/az.migrate/remove-azmigrateproject
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Remove-AzMigrateProject.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Migrate/help/Remove-AzMigrateProject.md
+ms.openlocfilehash: e0918573b7fc1190d32aaaaa4bfe73ed9fe05fe6
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100112983"
+---
+# <span data-ttu-id="8ba7f-101">Remove-AzMigrateProject</span><span class="sxs-lookup"><span data-stu-id="8ba7f-101">Remove-AzMigrateProject</span></span>
+
+## <span data-ttu-id="8ba7f-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="8ba7f-102">SYNOPSIS</span></span>
+<span data-ttu-id="8ba7f-103">Exclua o projeto de migração.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-103">Delete the migrate project.</span></span>
+<span data-ttu-id="8ba7f-104">Excluir projeto não existente é uma operação não operacional.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-104">Deleting non-existent project is a no-operation.</span></span>
+
+## <span data-ttu-id="8ba7f-105">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="8ba7f-105">SYNTAX</span></span>
+
+```
+Remove-AzMigrateProject -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-AcceptLanguage <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="8ba7f-106">Descrição</span><span class="sxs-lookup"><span data-stu-id="8ba7f-106">DESCRIPTION</span></span>
+<span data-ttu-id="8ba7f-107">Exclua o projeto de migração.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-107">Delete the migrate project.</span></span>
+<span data-ttu-id="8ba7f-108">Excluir projeto não existente é uma operação não operacional.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-108">Deleting non-existent project is a no-operation.</span></span>
+
+## <span data-ttu-id="8ba7f-109">Exemplos</span><span class="sxs-lookup"><span data-stu-id="8ba7f-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="8ba7f-110">Exemplo 1: Excluir (Padrão)</span><span class="sxs-lookup"><span data-stu-id="8ba7f-110">Example 1: Delete (Default)</span></span>
+```powershell
+PS C:\> Remove-AzMigrateProject -SubscriptionId xxx-xxx-xxx -ResourceGroupName BugBashAVSVMware -Name BugBashAVSVMware
+
+--No output--
+```
+
+<span data-ttu-id="8ba7f-111">Exclua o projeto de migração.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-111">Delete the migrate project.</span></span>
+<span data-ttu-id="8ba7f-112">Excluir projeto não existente é uma operação não operacional.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-112">Deleting non-existent project is a no-operation.</span></span>
+
+## <span data-ttu-id="8ba7f-113">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="8ba7f-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="8ba7f-114">-AcceptLanguage</span><span class="sxs-lookup"><span data-stu-id="8ba7f-114">-AcceptLanguage</span></span>
+<span data-ttu-id="8ba7f-115">Header de solicitação padrão.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-115">Standard request header.</span></span>
+<span data-ttu-id="8ba7f-116">Usado pelo serviço para responder ao cliente no idioma apropriado.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-116">Used by service to respond to client in appropriate language.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8ba7f-117">-DefaultProfile</span></span>
+<span data-ttu-id="8ba7f-118">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-119">-Nome</span><span class="sxs-lookup"><span data-stu-id="8ba7f-119">-Name</span></span>
+<span data-ttu-id="8ba7f-120">Nome do projeto migrar do Azure.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-120">Name of the Azure Migrate project.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: MigrateProjectName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-121">-PassThru</span><span class="sxs-lookup"><span data-stu-id="8ba7f-121">-PassThru</span></span>
+<span data-ttu-id="8ba7f-122">Retorna verdadeiro quando o comando é bem-sucedido</span><span class="sxs-lookup"><span data-stu-id="8ba7f-122">Returns true when the command succeeds</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="8ba7f-123">-ResourceGroupName</span></span>
+<span data-ttu-id="8ba7f-124">O nome do Grupo de Recursos do Azure que migra o projeto faz parte.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-124">Name of the Azure Resource Group that migrate project is part of.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-125">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="8ba7f-125">-SubscriptionId</span></span>
+<span data-ttu-id="8ba7f-126">ID de Assinatura do Azure no qual o projeto de migração foi criado.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-126">Azure Subscription Id in which migrate project was created.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-127">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="8ba7f-127">-Confirm</span></span>
+<span data-ttu-id="8ba7f-128">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-128">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-129">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="8ba7f-129">-WhatIf</span></span>
+<span data-ttu-id="8ba7f-130">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-130">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="8ba7f-131">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-131">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="8ba7f-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8ba7f-132">CommonParameters</span></span>
+<span data-ttu-id="8ba7f-133">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8ba7f-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8ba7f-134">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="8ba7f-134">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="8ba7f-135">Entradas</span><span class="sxs-lookup"><span data-stu-id="8ba7f-135">INPUTS</span></span>
+
+## <span data-ttu-id="8ba7f-136">Saídas</span><span class="sxs-lookup"><span data-stu-id="8ba7f-136">OUTPUTS</span></span>
+
+### <span data-ttu-id="8ba7f-137">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="8ba7f-137">System.Boolean</span></span>
+
+## <span data-ttu-id="8ba7f-138">Notas</span><span class="sxs-lookup"><span data-stu-id="8ba7f-138">NOTES</span></span>
+
+<span data-ttu-id="8ba7f-139">Aliases</span><span class="sxs-lookup"><span data-stu-id="8ba7f-139">ALIASES</span></span>
+
+## <span data-ttu-id="8ba7f-140">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="8ba7f-140">RELATED LINKS</span></span>
+
