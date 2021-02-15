@@ -4,14 +4,14 @@ Module Name: Az.Monitor
 ms.assetid: B5F2388E-0136-4F8A-8577-67CE2A45671E
 online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/disable-azactivitylogalert
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-ms.openlocfilehash: b37c3dde3a2f9566a4991111a53aeac72e44cce7
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
+ms.openlocfilehash: bdd854d3f9cc17071e17fea232b1d872b0a5fe8a
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100398794"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100117539"
 ---
 # Disable-AzActivityLogAlert
 
@@ -199,6 +199,6 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [New-AzActionGroup](./New-AzActionGroup.md)
 
-
+[New-AzActivityLogAlertCondition](./New-AzActivityLogAlertCondition.md)
 
 [Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)

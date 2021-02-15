@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/Az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 40514bdd6ed8d37679d3002f80146e622a0614e9
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: babd3d8a42ddbd740c8189a41de76c78170ecae5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93775803"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398811"
 ---
 # Get-AzKeyVaultCertificate
 
 ## Sinopse
 Obtém um certificado de um cofre de chaves.
 
-## SYNTAX
+## Sintaxe
 
-### ByVaultName (padrão)
+### ByVaultName (Padrão)
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
@@ -44,12 +44,12 @@ Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedSt
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzKeyVaultCertificate** Obtém o certificado especificado ou as versões de um certificado de um cofre de chaves no cofre de chaves do Azure.
+## Descrição
+O cmdlet **Get-AzKeyVaultCertificate** obtém o certificado especificado ou as versões de um certificado de um cofre de chave no Cofre de Teclas do Azure.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter um certificado
+### Exemplo 1: Obter um certificado
 ```
 PS C:\>Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -78,27 +78,27 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-Esse comando obtém o certificado chamado TestCert01 do cofre de chaves chamado ContosoKV01.
+Esse comando obtém o certificado testCert01 do cofre de chave chamado ContosoKV01.
 
-### Exemplo 2: obter todos os certificados que foram excluídos, mas não foram removidos deste cofre de chaves.
+### Exemplo 2: Obter todos os certificados que foram excluídos, mas não limpos para esse cofre de chave.
 ```
 PS C:\>Get-AzKeyVaultCertificate -VaultName 'Contoso' -InRemovedState
 ```
 
-Esse comando obtém todos os certificados que foram excluídos anteriormente, mas não foram removidos, no cofre de chaves chamado contoso.
+Esse comando obtém todos os certificados que foram excluídos anteriormente, mas não limpos, no cofre de chave chamado Contoso.
 
-### Exemplo 3: Obtém o certificado MyCert que foi excluído, mas não foi removido para este cofre de chaves.
+### Exemplo 3: Obtém o certificado MyCert que foi excluído, mas não limpo para este cofre de chave.
 ```
 PS C:\>Get-AzKeyVaultCertificate -VaultName 'Contoso' -Name 'MyCert' -InRemovedState
 ```
 
-Esse comando obtém o certificado chamado ' MyCert ' que foi excluído anteriormente, mas não foi removido, no cofre de chaves chamado contoso.
-Esse comando retornará metadados como a data de exclusão e a data de descarte programada desse certificado excluído.
+Esse comando obtém o certificado chamado "MeuCert" que foi excluído anteriormente, mas não limpo, no cofre de chave chamado Contoso.
+Esse comando retornará metadados, como a data de exclusão e a data de purgação agendada deste certificado excluído.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: IAzureContextContainer
@@ -127,8 +127,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inremovestate
-Especifica se devem ser incluídos certificados excluídos anteriormente na saída
+### -InRemovedState
+Especifica se você deve incluir certificados excluídos anteriormente na saída
 
 ```yaml
 Type: SwitchParameter
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome do certificado a ser obtido.
+Especifica o nome do certificado a ser obter.
 
 ```yaml
 Type: String
@@ -169,8 +169,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Cofrename
-Especifica o nome de um cofre de chaves.
+### -Nomedo Cofre
+Especifica o nome de um cofre de chave.
 
 ```yaml
 Type: String
@@ -200,20 +200,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Nenhuma
-Esse cmdlet não aceita nenhuma entrada.
+### Nenhum
+Este cmdlet não aceita nenhuma entrada.
 
-## EXIBE
+## Saídas
 
-### System. Collections. Generic. List ' 1 [Microsoft. Azure. Commands. keyvault. Models. CertificateIdentityItem]
+### System.Collections.Generic.List'1[Microsoft.Azure.Commands.KeyVault.Models.CertificateIdentityItem]
 
-### Microsoft. Azure. Commands. keyvault. Models. KeyVaultCertificate
+### Microsoft.Azure.Commands.KeyVault.Models.KeyVaultCertificate
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -223,4 +223,3 @@ Esse cmdlet não aceita nenhuma entrada.
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[Desfazer-AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)

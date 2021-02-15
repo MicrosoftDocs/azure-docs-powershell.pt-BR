@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 42ef63d9884cef45b107b9c959b264402e4347d1
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 31e36048587ba6faeee42ab1c2bf15afe1ae1e71
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93775753"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398743"
 ---
 # Get-AzActivityLogAlert
 
 ## Sinopse
-Obtém um ou mais recursos de alerta de log de atividades.
+Recebe um ou mais recursos de alerta de log de atividades.
 
-## SYNTAX
+## Sintaxe
 
 ### GetByNameAndResourceGroup
 ```
@@ -32,36 +32,36 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzActivityLogAlert** Obtém um ou mais recursos de alerta de log de atividades.
+## Descrição
+O **cmdlet Get-AzActivityLogAlert** recebe um ou mais recursos de alerta de log de atividades.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter alertas de log de atividades por ID de assinatura
+### Exemplo 1: Obter alertas de log de atividades por ID da assinatura
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-Esse comando lista todos os alertas de log de atividades para a assinatura atual.
+Esse comando lista todos os alertas de log de atividades da assinatura atual.
 
-### Exemplo 2: obter alertas de log de atividade para o grupo de recursos especificado
+### Exemplo 2: Obter alertas de log de atividades para determinado grupo de recursos
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-Este comando lista os alertas de log de atividades para o grupo de recursos específico.
+Esse comando lista alertas de log de atividades para o determinado grupo de recursos.
 
-### Exemplo 3: obter um alerta de log de atividades.
+### Exemplo 3: Obter um alerta de log de atividades.
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-Esse comando lista um alerta de registro de atividades (um único elemento com um único elemento).
+Esse comando lista um alerta de log de atividades (uma lista com um único elemento).
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-O nome do alerta de log de atividades.
+O nome do alerta do log de atividades.
 
 ```yaml
 Type: System.String
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos onde existe o recurso de alerta.
-Se o nome não for nulo ou estiver vazio, esse parâmetro deverá conter uma cadeia de caracteres não vazia.
+O nome do grupo de recursos onde o recurso de alerta existe.
+Se Nome não for nulo ou vazio, esse parâmetro deverá conter e não a cadeia de caracteres vazia.
 
 ```yaml
 Type: System.String
@@ -119,26 +119,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
-
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
 [New-AzActionGroup](./New-AzActionGroup.md)
-
-[New-AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
