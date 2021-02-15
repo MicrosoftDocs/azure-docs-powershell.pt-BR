@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 03459cedbebaeba46331edf7aeb9a7972711912a
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 8410ca475ed17376e01a526512d758c4712f2726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100114764"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395649"
 ---
 # New-AzAlertRuleWebhook
 
@@ -26,7 +26,7 @@ New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
 ```
 
 ## Descrição
-O **cmdlet New-AzAlertRuleWebweblet** cria uma webwebert de regra de alerta.
+O **cmdlet New-AzAlertRuleWebweblet** cria uma weberte de regra de alerta.
 
 ## Exemplos
 
@@ -42,7 +42,7 @@ Esse comando cria uma webião de regra de alerta especificando apenas o URI do s
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-Esse comando cria uma web Contoso.com de regra de alerta que tem uma propriedade e a armazena na variável $Actual alerta.
+Esse comando cria um web Contoso.com de regra de alerta que tem uma propriedade e a armazena na variável $Actual alerta.
 
 ## Parâmetros
 
@@ -108,7 +108,6 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
