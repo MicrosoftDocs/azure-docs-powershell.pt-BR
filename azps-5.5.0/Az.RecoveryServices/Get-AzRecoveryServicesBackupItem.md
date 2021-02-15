@@ -1,0 +1,311 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
+Module Name: Az.RecoveryServices
+ms.assetid: DEB3D7B5-D974-472B-B8B4-9A19CA6AECCC
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesBackupItem.md
+ms.openlocfilehash: 8124122b59dcee8a654d52c6f1d9382cb90e2a10
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100118187"
+---
+# <span data-ttu-id="aac4b-101">Get-AzRecoveryServicesBackupItem</span><span class="sxs-lookup"><span data-stu-id="aac4b-101">Get-AzRecoveryServicesBackupItem</span></span>
+
+## <span data-ttu-id="aac4b-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="aac4b-102">SYNOPSIS</span></span>
+
+<span data-ttu-id="aac4b-103">Obtém os itens de um contêiner no Backup.</span><span class="sxs-lookup"><span data-stu-id="aac4b-103">Gets the items from a container in Backup.</span></span>
+
+## <span data-ttu-id="aac4b-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="aac4b-104">SYNTAX</span></span>
+
+### <span data-ttu-id="aac4b-105">GetItemsForContainer (Padrão)</span><span class="sxs-lookup"><span data-stu-id="aac4b-105">GetItemsForContainer (Default)</span></span>
+```
+Get-AzRecoveryServicesBackupItem [-Container] <ContainerBase> [[-Name] <String>]
+ [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
+ [-WorkloadType] <WorkloadType> [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+```
+
+### <span data-ttu-id="aac4b-106">GetItemsForVault</span><span class="sxs-lookup"><span data-stu-id="aac4b-106">GetItemsForVault</span></span>
+```
+Get-AzRecoveryServicesBackupItem [-BackupManagementType] <BackupManagementType> [[-Name] <String>]
+ [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
+ [-WorkloadType] <WorkloadType> [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+```
+
+### <span data-ttu-id="aac4b-107">GetItemsForPolicy</span><span class="sxs-lookup"><span data-stu-id="aac4b-107">GetItemsForPolicy</span></span>
+```
+Get-AzRecoveryServicesBackupItem [-Policy] <PolicyBase> [[-Name] <String>]
+ [[-ProtectionStatus] <ItemProtectionStatus>] [[-ProtectionState] <ItemProtectionState>]
+ [[-DeleteState] <ItemDeleteState>] [-FriendlyName <String>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>]  [-UseSecondaryRegion] [<CommonParameters>]
+```
+
+## <span data-ttu-id="aac4b-108">Descrição</span><span class="sxs-lookup"><span data-stu-id="aac4b-108">DESCRIPTION</span></span>
+
+<span data-ttu-id="aac4b-109">O cmdlet **Get-AzRecoveryServicesBackupItem** obtém a lista de itens protegidos em um contêiner e o status de proteção dos itens.</span><span class="sxs-lookup"><span data-stu-id="aac4b-109">The **Get-AzRecoveryServicesBackupItem** cmdlet gets the list of protected items in a container and the protection status of the items.</span></span>
+<span data-ttu-id="aac4b-110">Um contêiner registrado em um cofre dos Serviços de Recuperação do Azure pode ter um ou mais itens que podem ser protegidos.</span><span class="sxs-lookup"><span data-stu-id="aac4b-110">A container that is registered to an Azure Recovery Services vault can have one or more items that can be protected.</span></span>
+<span data-ttu-id="aac4b-111">Para máquinas virtuais do Azure, pode haver apenas um item de backup no contêiner de máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="aac4b-111">For Azure virtual machines, there can be only one backup item in the virtual machine container.</span></span>
+<span data-ttu-id="aac4b-112">De definir o contexto do cofre usando o parâmetro -VaultId.</span><span class="sxs-lookup"><span data-stu-id="aac4b-112">Set the vault context by using the -VaultId parameter.</span></span>
+
+## <span data-ttu-id="aac4b-113">Exemplos</span><span class="sxs-lookup"><span data-stu-id="aac4b-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="aac4b-114">Exemplo 1: Obter um item de um contêiner de Backup</span><span class="sxs-lookup"><span data-stu-id="aac4b-114">Example 1: Get an item from a Backup container</span></span>
+
+```powershell
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "resourceGroup" -Name "vaultName"
+PS C:\> $Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered -FriendlyName "V2VM" -VaultId $vault.ID
+PS C:\> $BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureVM -VaultId $vault.ID
+```
+
+<span data-ttu-id="aac4b-115">O primeiro comando obtém o contêiner do tipo AzureVM e o armazena na variável $Container dados.</span><span class="sxs-lookup"><span data-stu-id="aac4b-115">The first command gets the container of type AzureVM, and then stores it in the $Container variable.</span></span>
+<span data-ttu-id="aac4b-116">O segundo comando obtém o item de Backup chamado V2VM no $Container e o armazena na variável $BackupItem dados.</span><span class="sxs-lookup"><span data-stu-id="aac4b-116">The second command gets the Backup item named V2VM in $Container, and then stores it in the $BackupItem variable.</span></span>
+
+### <span data-ttu-id="aac4b-117">Exemplo 2: Obter um item de compartilhamento de arquivo do Azure do Nome Amigável</span><span class="sxs-lookup"><span data-stu-id="aac4b-117">Example 2: Get an Azure File Share Item from FriendlyName</span></span>
+
+```powershell
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "resourceGroup" -Name "vaultName"
+PS C:\> $Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureStorage -Status Registered -FriendlyName "StorageAccount1" -VaultId $vault.ID
+PS C:\> $BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureFiles -VaultId $vault.ID -FriendlyName "FileShareName"
+```
+
+<span data-ttu-id="aac4b-118">O primeiro comando obtém o contêiner do tipo AzureStorage e o armazena na variável $Container dados.</span><span class="sxs-lookup"><span data-stu-id="aac4b-118">The first command gets the container of type AzureStorage, and then stores it in the $Container variable.</span></span>
+<span data-ttu-id="aac4b-119">O segundo comando obtém o item backup cujo nome amigável corresponde ao valor passado no Parâmetro FriendlyName e o armazena na variável $BackupItem nome.</span><span class="sxs-lookup"><span data-stu-id="aac4b-119">The second command gets the Backup item whose friendlyName matches the value passed in FriendlyName Parameter, and then stores it in the $BackupItem variable.</span></span>
+<span data-ttu-id="aac4b-120">Usar o parâmetro FriendlyName pode resultar em retornar mais de um Compartilhamento de Arquivos do Azure.</span><span class="sxs-lookup"><span data-stu-id="aac4b-120">Using FriendlyName parameter can result in returning more than one Azure File Share.</span></span> <span data-ttu-id="aac4b-121">Nesses casos, execute o cmdlet passando o valor para o parâmetro -Name como a propriedade Name retornada no conjunto de resultados de $BackupItem.</span><span class="sxs-lookup"><span data-stu-id="aac4b-121">In such cases, execute the cmdlet by passing value for -Name parameter as the Name property returned in the result set of $BackupItem.</span></span>
+
+## <span data-ttu-id="aac4b-122">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="aac4b-122">PARAMETERS</span></span>
+
+### <span data-ttu-id="aac4b-123">-BackupManagementType</span><span class="sxs-lookup"><span data-stu-id="aac4b-123">-BackupManagementType</span></span>
+
+<span data-ttu-id="aac4b-124">A classe de recursos que está sendo protegida.</span><span class="sxs-lookup"><span data-stu-id="aac4b-124">The class of resources being protected.</span></span> <span data-ttu-id="aac4b-125">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="aac4b-125">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="aac4b-126">AzureVM</span><span class="sxs-lookup"><span data-stu-id="aac4b-126">AzureVM</span></span>
+- <span data-ttu-id="aac4b-127">Mab</span><span class="sxs-lookup"><span data-stu-id="aac4b-127">MAB</span></span>
+- <span data-ttu-id="aac4b-128">AzureStorage</span><span class="sxs-lookup"><span data-stu-id="aac4b-128">AzureStorage</span></span>
+- <span data-ttu-id="aac4b-129">AzureWorkload</span><span class="sxs-lookup"><span data-stu-id="aac4b-129">AzureWorkload</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.BackupManagementType
+Parameter Sets: GetItemsForVault
+Aliases:
+Accepted values: AzureVM, MARS, AzureStorage, AzureWorkload
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-130">-Contêiner</span><span class="sxs-lookup"><span data-stu-id="aac4b-130">-Container</span></span>
+
+<span data-ttu-id="aac4b-131">Especifica um objeto de contêiner do qual este cmdlet obtém itens de backup.</span><span class="sxs-lookup"><span data-stu-id="aac4b-131">Specifies a container object from which this cmdlet gets backup items.</span></span>
+<span data-ttu-id="aac4b-132">Para obter um **AzureRmRecoveryServicesBackupContainer,** use o cmdlet **Get-AzRecoveryServicesBackupContainer.**</span><span class="sxs-lookup"><span data-stu-id="aac4b-132">To obtain an **AzureRmRecoveryServicesBackupContainer**, use the **Get-AzRecoveryServicesBackupContainer** cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase
+Parameter Sets: GetItemsForContainer
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-133">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="aac4b-133">-DefaultProfile</span></span>
+
+<span data-ttu-id="aac4b-134">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="aac4b-134">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-135">-DeleteState</span><span class="sxs-lookup"><span data-stu-id="aac4b-135">-DeleteState</span></span>
+<span data-ttu-id="aac4b-136">Especifica o estado de exclusão do item Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="aac4b-136">Specifies the deletestate of the item The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="aac4b-137">ToBeDeleted</span><span class="sxs-lookup"><span data-stu-id="aac4b-137">ToBeDeleted</span></span>
+- <span data-ttu-id="aac4b-138">NotDeleted</span><span class="sxs-lookup"><span data-stu-id="aac4b-138">NotDeleted</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemDeleteState
+Parameter Sets: (All)
+Aliases:
+Accepted values: ToBeDeleted, NotDeleted
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-139">-Nome Amigável</span><span class="sxs-lookup"><span data-stu-id="aac4b-139">-FriendlyName</span></span>
+<span data-ttu-id="aac4b-140">Nome Amigável do item com backup</span><span class="sxs-lookup"><span data-stu-id="aac4b-140">FriendlyName of the backed up item</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-141">-Nome</span><span class="sxs-lookup"><span data-stu-id="aac4b-141">-Name</span></span>
+
+<span data-ttu-id="aac4b-142">Especifica o nome do item de backup.</span><span class="sxs-lookup"><span data-stu-id="aac4b-142">Specifies the name of backup item.</span></span> <span data-ttu-id="aac4b-143">Para o compartilhamento de arquivos, especifique a ID exclusiva do compartilhamento de arquivos protegidos.</span><span class="sxs-lookup"><span data-stu-id="aac4b-143">For file share, specify the unique ID of protected file share.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-144">-Política</span><span class="sxs-lookup"><span data-stu-id="aac4b-144">-Policy</span></span>
+
+<span data-ttu-id="aac4b-145">Objeto de política de proteção.</span><span class="sxs-lookup"><span data-stu-id="aac4b-145">Protection policy object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.PolicyBase
+Parameter Sets: GetItemsForPolicy
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-146">-ProtectionState</span><span class="sxs-lookup"><span data-stu-id="aac4b-146">-ProtectionState</span></span>
+
+<span data-ttu-id="aac4b-147">Especifica o estado de proteção.</span><span class="sxs-lookup"><span data-stu-id="aac4b-147">Specifies the state of protection.</span></span>
+<span data-ttu-id="aac4b-148">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="aac4b-148">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="aac4b-149">IRPending.</span><span class="sxs-lookup"><span data-stu-id="aac4b-149">IRPending.</span></span>
+<span data-ttu-id="aac4b-150">A sincronização inicial não começou e ainda não há um ponto de recuperação.</span><span class="sxs-lookup"><span data-stu-id="aac4b-150">Initial synchronization has not started and there is no recovery point yet.</span></span>
+- <span data-ttu-id="aac4b-151">Protegido.</span><span class="sxs-lookup"><span data-stu-id="aac4b-151">Protected.</span></span>
+<span data-ttu-id="aac4b-152">A proteção está em andamento.</span><span class="sxs-lookup"><span data-stu-id="aac4b-152">Protection is ongoing.</span></span>
+- <span data-ttu-id="aac4b-153">ProtectionError.</span><span class="sxs-lookup"><span data-stu-id="aac4b-153">ProtectionError.</span></span>
+<span data-ttu-id="aac4b-154">Há um erro de proteção.</span><span class="sxs-lookup"><span data-stu-id="aac4b-154">There is a protection error.</span></span>
+- <span data-ttu-id="aac4b-155">ProtectionStopped.</span><span class="sxs-lookup"><span data-stu-id="aac4b-155">ProtectionStopped.</span></span>
+<span data-ttu-id="aac4b-156">A proteção está desabilitada.</span><span class="sxs-lookup"><span data-stu-id="aac4b-156">Protection is disabled.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemProtectionState
+Parameter Sets: (All)
+Aliases:
+Accepted values: IRPending, ProtectionError, Protected, ProtectionStopped
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-157">-ProtectionStatus</span><span class="sxs-lookup"><span data-stu-id="aac4b-157">-ProtectionStatus</span></span>
+
+<span data-ttu-id="aac4b-158">Especifica o status de proteção geral de um item no contêiner.</span><span class="sxs-lookup"><span data-stu-id="aac4b-158">Specifies the overall protection status of an item in the container.</span></span>
+<span data-ttu-id="aac4b-159">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="aac4b-159">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="aac4b-160">Saudável</span><span class="sxs-lookup"><span data-stu-id="aac4b-160">Healthy</span></span>
+- <span data-ttu-id="aac4b-161">Insalubre</span><span class="sxs-lookup"><span data-stu-id="aac4b-161">Unhealthy</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemProtectionStatus
+Parameter Sets: (All)
+Aliases:
+Accepted values: Healthy, Unhealthy
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-162">-VaultId</span><span class="sxs-lookup"><span data-stu-id="aac4b-162">-VaultId</span></span>
+
+<span data-ttu-id="aac4b-163">ID arm do Cofre de Serviços de Recuperação.</span><span class="sxs-lookup"><span data-stu-id="aac4b-163">ARM ID of the Recovery Services Vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-164">-WorkloadType</span><span class="sxs-lookup"><span data-stu-id="aac4b-164">-WorkloadType</span></span>
+
+<span data-ttu-id="aac4b-165">Tipo de carga de trabalho do recurso.</span><span class="sxs-lookup"><span data-stu-id="aac4b-165">Workload type of the resource.</span></span> <span data-ttu-id="aac4b-166">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="aac4b-166">The acceptable values for this parameter are:</span></span>
+
+- <span data-ttu-id="aac4b-167">AzureVM</span><span class="sxs-lookup"><span data-stu-id="aac4b-167">AzureVM</span></span>
+- <span data-ttu-id="aac4b-168">AzureFiles</span><span class="sxs-lookup"><span data-stu-id="aac4b-168">AzureFiles</span></span>
+- <span data-ttu-id="aac4b-169">Mssql</span><span class="sxs-lookup"><span data-stu-id="aac4b-169">MSSQL</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.WorkloadType
+Parameter Sets: GetItemsForContainer, GetItemsForVault
+Aliases:
+Accepted values: AzureVM, AzureFiles, MSSQL
+
+Required: True
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="aac4b-170">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="aac4b-170">CommonParameters</span></span>
+<span data-ttu-id="aac4b-171">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="aac4b-171">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="aac4b-172">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="aac4b-172">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="aac4b-173">Entradas</span><span class="sxs-lookup"><span data-stu-id="aac4b-173">INPUTS</span></span>
+
+### <span data-ttu-id="aac4b-174">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase</span><span class="sxs-lookup"><span data-stu-id="aac4b-174">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase</span></span>
+
+### <span data-ttu-id="aac4b-175">System.String</span><span class="sxs-lookup"><span data-stu-id="aac4b-175">System.String</span></span>
+
+## <span data-ttu-id="aac4b-176">Saídas</span><span class="sxs-lookup"><span data-stu-id="aac4b-176">OUTPUTS</span></span>
+
+### <span data-ttu-id="aac4b-177">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemBase</span><span class="sxs-lookup"><span data-stu-id="aac4b-177">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemBase</span></span>
+
+## <span data-ttu-id="aac4b-178">Notas</span><span class="sxs-lookup"><span data-stu-id="aac4b-178">NOTES</span></span>
+
+## <span data-ttu-id="aac4b-179">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="aac4b-179">RELATED LINKS</span></span>
+
+[<span data-ttu-id="aac4b-180">Backup-AzRecoveryServicesBackupItem</span><span class="sxs-lookup"><span data-stu-id="aac4b-180">Backup-AzRecoveryServicesBackupItem</span></span>](./Backup-AzRecoveryServicesBackupItem.md)
+
+[<span data-ttu-id="aac4b-181">Disable-AzRecoveryServicesBackupProtection</span><span class="sxs-lookup"><span data-stu-id="aac4b-181">Disable-AzRecoveryServicesBackupProtection</span></span>](./Disable-AzRecoveryServicesBackupProtection.md)
+
+[<span data-ttu-id="aac4b-182">Get-AzRecoveryServicesBackupRecoveryPoint</span><span class="sxs-lookup"><span data-stu-id="aac4b-182">Get-AzRecoveryServicesBackupRecoveryPoint</span></span>](./Get-AzRecoveryServicesBackupRecoveryPoint.md)
+
+[<span data-ttu-id="aac4b-183">Restore-AzRecoveryServicesBackupItem</span><span class="sxs-lookup"><span data-stu-id="aac4b-183">Restore-AzRecoveryServicesBackupItem</span></span>](./Restore-AzRecoveryServicesBackupItem.md)
