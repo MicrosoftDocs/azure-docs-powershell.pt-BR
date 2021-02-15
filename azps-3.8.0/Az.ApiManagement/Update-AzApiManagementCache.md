@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
-ms.openlocfilehash: 86eb7842bbd0dc29beb8572f4f34d53190ca06e0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2ac2eb7cb40cb7df4324aff276137527d4b148a5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93944159"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398913"
 ---
 # Update-AzApiManagementCache
 
 ## Sinopse
-atualiza um cache no serviço de gerenciamento de API.
+atualiza um cache no serviço de Gerenciamento de Api.
 
-## SYNTAX
+## Sintaxe
 
-### ExpandedParameter (padrão)
+### ExpandedParameter (Padrão)
 ```
 Update-AzApiManagementCache -Context <PsApiManagementContext> -CacheId <String> [-ConnectionString <String>]
  [-AzureRedisResourceId <String>] [-Description <String>] [-PassThru]
@@ -40,12 +40,12 @@ Update-AzApiManagementCache -ResourceId <String> [-ConnectionString <String>] [-
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 O cmdlet **Update-AzApiManagementCache** atualiza um cache no serviço ApiManagement.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: atualiza a descrição do cache em centralus
+### Exemplo 1: atualiza a Descrição do Cache no centro
 ```powershell
 PS D:\github\azure-powershell> $context=New-AzApiManagementContext -ResourceGroupName Api-Default-Central-US -ServiceName contoso
 PS D:\github\azure-powershell> Update-AzApiManagementCache -Context $context -CacheId centralus -Description "Team new cache" -PassThru
@@ -61,12 +61,12 @@ ResourceGroupName    : Api-Default-Central-US
 ServiceName          : contoso
 ```
 
-Atualiza a descrição do cache no centro dos EUA.
+Atualiza a descrição do Cache na Central dos EUA.
 
-## OS
+## Parâmetros
 
 ### -AzureRedisResourceId
-Resourcebinding da instância de cache do Azure Redis.
+Arm ResourceId da instância do Cache de Redis do Azure.
 Este parâmetro é opcional.
 
 ```yaml
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ### -CacheId
 Identificador do novo cache.
-Esse parâmetro é obrigatório.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionString
-Cadeia de conexão Redis.
+Redis Connection String.
 Este parâmetro é opcional.
 
 ```yaml
@@ -114,8 +114,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -Descrição
-Descrição do cache.
+Descrição do Cache.
 Este parâmetro é opcional.
 
 ```yaml
@@ -161,8 +161,8 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Instância do PsApiManagementCache.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementCache.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se especificado, a instância do tipo Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementCache que representa o cache modificado será gravada para output.
+Se especificado, a instância do Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache que representa o cache modificado será escrita na saída.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -192,8 +192,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Resourcebinding do cache.
-Esse parâmetro é obrigatório.
+Arm ResourceId of Cache.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -207,7 +207,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -239,27 +239,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[New-AzApiManagementCache](./New-AzApiManagementCache)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
