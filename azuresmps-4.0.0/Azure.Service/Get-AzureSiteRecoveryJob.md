@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 2957C0DE-3A2F-4337-A778-2B95654972E7
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: d0b272732cf6c1e1b2025c8e7f48b58e4807cdb3
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8a7c99e2ce307d700e43094ffa9be47e5449acc0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93945595"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411646"
 ---
 # Get-AzureSiteRecoveryJob
 
 ## Sinopse
-Obtém as informações de operação para um cofre de recuperação de site.
+Obtém as informações de operação de um cofre de Recuperação de Site.
 
-## SYNTAX
+## Sintaxe
 
-### ByParam (padrão)
+### ByParam (Padrão)
 ```
 Get-AzureSiteRecoveryJob [-StartTime <DateTime>] [-EndTime <DateTime>] [-TargetObjectId <String>]
  [-State <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
@@ -33,13 +33,13 @@ Get-AzureSiteRecoveryJob -Id <String> [-Profile <AzureSMProfile>] [<CommonParame
 Get-AzureSiteRecoveryJob -Job <ASRJob> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzureSiteRecoveryJob** Obtém trabalhos do Azure site Recovery.
-Você pode usar esse cmdlet para exibir as informações de operação do cofre de recuperação do site atual.
+## Descrição
+O **cmdlet Get-AzureSiteRecoveryJob** obtém trabalhos de Recuperação de Site do Azure.
+Você pode usar esse cmdlet para exibir as informações de operação do cofre de Recuperação de Site atual.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter um trabalho especificando uma ID
+### Exemplo 1: Obter um trabalho especificando uma ID
 ```
 PS C:\> Get-AzureSiteRecoveryJob -Id "033785cc-9f72-4f07-8e78-e4d1e942a7ae" 
 Name             : SaveRecoveryPlan
@@ -57,7 +57,7 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Este comando obtém o trabalho de recuperação do site do Azure com a ID especificada.
+Esse comando obtém o trabalho de Recuperação de Site do Azure com a ID especificada.
 
 ### Exemplo 2: Obtém um trabalho com base no tempo
 ```
@@ -77,14 +77,14 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-Esse comando obtém trabalhos de recuperação de site que estão entre a hora de início e a hora de término especificadas.
+Esse comando obtém trabalhos de Recuperação de Site que estão entre a hora de início e a hora de término especificadas.
 
-## OS
+## Parâmetros
 
 ### -EndTime
 Especifica a hora de término dos trabalhos.
-Esse cmdlet obtém todos os trabalhos que começarem antes do tempo especificado.
-Para obter um objeto **DateTime** , use o cmdlet **Get-Date** .
+Esse cmdlet obtém todos os trabalhos que começaram antes do horário especificado.
+Para obter um **objeto DateTime,** use o cmdlet **Get-Date.**
 Para obter mais informações, digite `Get-Help Get-Date` .
 
 ```yaml
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -ID
-Especifica a ID de um trabalho a ser obtido.
+Especifica a ID de um trabalho a ser feito.
 
 ```yaml
 Type: String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -Trabalho
-Especifica um trabalho a ser obtido.
+Especifica um trabalho a ser feito.
 
 ```yaml
 Type: ASRJob
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 ```
 
 ### -Perfil
-Especifica o perfil do Azure do qual este cmdlet lê.
-Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+Especifica o perfil do Azure a partir do qual este cmdlet é lido.
+Se você não especificar um perfil, esse cmdlet será lido do perfil padrão local.
 
 ```yaml
 Type: AzureSMProfile
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -StartTime
 Especifica a hora de início dos trabalhos.
-Esse cmdlet obtém todos os trabalhos que iniciaram após a hora especificada.
+Esse cmdlet obtém todos os trabalhos que começaram após o tempo especificado.
 
 ```yaml
 Type: DateTime
@@ -162,17 +162,17 @@ Accept wildcard characters: False
 ```
 
 ### -Estado
-Especifica o estado de entrada para um trabalho de recuperação de site.
-Esse cmdlet obtém todos os trabalhos que correspondem ao estado especificado.
-Os valores aceitáveis para esse parâmetro são:
+Especifica o estado de entrada para um trabalho de Recuperação de Site.
+Este cmdlet obtém todos os trabalhos que corresponderem ao estado especificado.
+Os valores aceitáveis para este parâmetro são:
 
-- Não iniciado
-- InProgress
-- Foi
-- Demais
+- Notstarted
+- Inprogress
 - Conseguiu
-- Cela
-- Interrompido
+- Outros
+- Falhou
+- Cancelado
+- Suspenso
 
 ```yaml
 Type: String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetObjectId
-Especifica a ID do objeto de destino do trabalho.
+Especifica a ID do objeto direcionado pelo trabalho.
 
 ```yaml
 Type: String
@@ -202,22 +202,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-## EXIBE
+## Saídas
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Cmdlets de serviços de recuperação do site do Azure](./Azure.SiteRecoveryServices.md)
+
 
 [Restart-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Currículo-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+[Resume-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
 
-[Parar-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
+[Stop-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
 
 
