@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 666d63d6b40e6b031d3439adde8f3f843c3cdd93
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 762b0540c9e6483aebbc58bbe9fe71701fb390fa
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100117535"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398505"
 ---
 # Get-AzAlertHistory
 
@@ -26,7 +26,7 @@ Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <Dat
 ```
 
 ## Descrição
-O cmdlet **Get-AzAlertHistory** obtém o histórico de regras de alerta clássicas à medida que elas são habilitadas, desabilitadas, desativadas, resolvidas e assim por diante.
+O **cmdlet Get-AzAlertHistory** obtém o histórico de regras de alerta clássicas à medida que elas são habilitadas, desabilitadas, desativadas, resolvidas e assim por diante.
 
 ## Exemplos
 
@@ -398,7 +398,6 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
