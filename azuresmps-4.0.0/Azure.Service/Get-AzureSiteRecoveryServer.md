@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93945580"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412275"
 ---
 # Get-AzureSiteRecoveryServer
 
 ## Sinopse
-Obtém os servidores de recuperação de site registrados um cofre de recuperação de site.
+Obtém os servidores de Recuperação de Sites registrados em um cofre de Recuperação de Site.
 
-## SYNTAX
+## Sintaxe
 
-### Padrão (padrão)
+### Padrão (Padrão)
 ```
 Get-AzureSiteRecoveryServer [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
@@ -27,17 +27,17 @@ Get-AzureSiteRecoveryServer [-Profile <AzureSMProfile>] [<CommonParameters>]
 Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-### ByName
+### Por Nome
 ```
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzureSiteRecoveryServer** Obtém informações sobre os servidores de recuperação de site do Azure registrados no cofre de recuperação do site atual.
+## Descrição
+O cmdlet **Get-AzureSiteRecoveryServer** obtém informações sobre os servidores de Recuperação de Site do Azure registrados no cofre atual de Recuperação de Site.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter informações sobre um servidor de recuperação de site
+### Exemplo 1: Obter informações sobre um servidor de Recuperação de Site
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,9 +53,9 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-Esse comando obtém informações sobre um servidor do Azure site Recovery.
+Este comando obtém informações sobre um servidor de Recuperação de Site do Azure.
 
-## OS
+## Parâmetros
 
 ### -ID
 Especifica a ID de um servidor.
@@ -88,8 +88,8 @@ Accept wildcard characters: False
 ```
 
 ### -Perfil
-Especifica o perfil do Azure do qual este cmdlet lê.
-Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+Especifica o perfil do Azure a partir do qual este cmdlet é lido.
+Se você não especificar um perfil, esse cmdlet será lido do perfil padrão local.
 
 ```yaml
 Type: AzureSMProfile
@@ -104,16 +104,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-## EXIBE
+## Saídas
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Cmdlets de serviços de recuperação do site do Azure](./Azure.SiteRecoveryServices.md)
+
 
 
