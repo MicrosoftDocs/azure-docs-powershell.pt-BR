@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: de3604a4bf1f9c46bf88b2f3cda25982672e9096
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: f71f7e37e4864de10c5387d63c101cd66ed9fd34
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93944712"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412615"
 ---
 # Import-AzRecoveryServicesAsrVaultSettingsFile
 
 ## Sinopse
-Importa o arquivo de configurações do cofre ASR especificado para definir o contexto do cofre (contexto da sessão do PowerShell) para operações ASR subsequentes na sessão do PowerShell. 
+Importa o arquivo de configurações do cofre ASR especificado para definir o contexto do cofre (contexto de sessão do PowerShell) para operações de ASR subsequentes na sessão do PowerShell. 
 
-## SYNTAX
+## Sintaxe
 
 ```
 Import-AzRecoveryServicesAsrVaultSettingsFile [-Path] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Import-AzRecoveryServicesAsrVaultSettingsFile** importa o arquivo de configurações do cofre do Azure site Recovery. O arquivo de configurações de cofre é usado para definir o contexto do cofre para operações subsequentes de recuperação de site do Azure na sessão atual.
+## Descrição
+O cmdlet **Import-AzRecoveryServicesAsrVaultSettingsFile** importa o arquivo de configurações do cofre de Recuperação de Site do Azure. O arquivo de configurações do cofre é usado para definir o contexto do cofre para as operações subsequentes de Recuperação de Site do Azure na sessão atual.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```
 PS C:\> $VaultSettings = Import-AzRecoveryServicesAsrVaultSettingsFile -Path $FilePath
 ```
 
-Importa o arquivo de configurações do cofre de serviços de recuperação especificado e retorna as configurações do cofre importado.
+Importa o arquivo de configurações do cofre dos Serviços de Recuperação especificado e retorna as configurações do cofre importado.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 
 ```yaml
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 
 ### -Caminho
 Especifica o caminho da pasta do arquivo de configurações do cofre ASR.
-Esse arquivo pode ser baixado do portal de compartimento de serviços de recuperação e armazenado localmente.
+Esse arquivo pode ser baixado do portal do cofre dos Serviços de Recuperação e armazenado localmente.
 
 ```yaml
 Type: System.String
@@ -70,7 +70,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,18 +101,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Recoveryservices. SiteRecovery. ASRVaultSettings
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzRecoveryServicesAsrVaultSettingsFile](./Get-AzRecoveryServicesAsrVaultSettingsFile.md)
