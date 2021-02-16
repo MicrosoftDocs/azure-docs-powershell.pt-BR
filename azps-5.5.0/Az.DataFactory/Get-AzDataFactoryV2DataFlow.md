@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: b4af5eae61e47d8617eb270451f406f349162f50
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 7bd25d444a4277e2aa423026be551fab1c5f360e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100116438"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415148"
 ---
 # Get-AzDataFactoryV2DataFlow
 
@@ -177,6 +177,4 @@ Palavras-chave: azure, azurerm, arm, resource, management, manager, data,
 
 ## LINKS RELACIONADOS
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataDataDataFlow](./Remove-AzDataFactoryDataFlow.md)
