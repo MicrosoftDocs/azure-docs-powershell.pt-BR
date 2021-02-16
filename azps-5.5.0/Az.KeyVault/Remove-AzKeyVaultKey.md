@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: e78b6729061efe5a83f31bd25b9e542c09627ca3
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 3c5435d1a472341d0447ead2f384fa892d6e1202
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100113101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404472"
 ---
 # Remove-AzKeyVaultKey
 
@@ -39,7 +39,7 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
 ```
 
 ## Descrição
-O Remove-AzKeyVaultKey cmdlet exclui uma chave em um cofre de teclas.
+O Remove-AzKeyVaultKey cmdlet exclui uma chave em um cofre de chaves.
 Se a chave foi excluída acidentalmente, a chave pode ser recuperada usando Undo-AzKeyVaultKeyRemoval um usuário com permissões especiais de "recuperar".
 Este cmdlet tem um valor alto para a **propriedade ConfirmImpact.**
 
@@ -73,7 +73,7 @@ PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 Esse comando remove a chave chamada ITSoftware do cofre de teclas chamado Contoso.
 O comando especifica o parâmetro *Forçar* e, portanto, o cmdlet não solicita confirmação.
 
-### Exemplo 3: limpar permanentemente uma chave excluída do cofre de chave
+### Exemplo 3: limpar permanentemente uma chave excluída do cofre de chaves
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Remova permanentemente a chave excluída anteriormente.
+Remova a chave excluída anteriormente permanentemente.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,8 +200,8 @@ Accept wildcard characters: False
 ```
 
 ### -Nomedo Cofre
-Especifica o nome do cofre de chave do qual a chave deve ser removido.
-Esse cmdlet construirá o FQDN de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente atual.
+Especifica o nome do cofre de chave do qual a chave será removido.
+Este cmdlet construirá o FQDN de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente atual.
 
 ```yaml
 Type: System.String
@@ -266,7 +266,6 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Desfazer-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
