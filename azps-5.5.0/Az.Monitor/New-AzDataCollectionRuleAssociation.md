@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md
-ms.openlocfilehash: bdfc576c64b56d11ecf30f32e34f80b0ef6de866
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b174fdec51ece178b2e49a8e6e33d1e74f62c61f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100117518"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402432"
 ---
 # New-AzDataCollectionRuleAssociation
 
@@ -49,7 +49,7 @@ New-AzDataCollectionRuleAssociation
 ## Descrição
 O **cmdlet New-AzDataCollectionRuleAssociation** cria uma DCRA (associação de regras de coleta de dados).
 
-Para aplicar um DCR a uma máquina virtual, crie uma associação para a máquina virtual. Uma máquina virtual pode ter uma associação a várias DCRs, e um DCR pode ter várias máquinas virtuais associadas a ela. Isso permite que você defina um conjunto de DCRs, cada um correspondendo a um requisito específico, e aplicá-los somente às máquinas virtuais em que se aplicam. Aqui está [o artigo "Configurar a coleta de dados para o agente do Monitor do Azure"](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection-rule-azure-monitor-agent) usando o artigo DCRA.
+Para aplicar um DCR a uma máquina virtual, crie uma associação para a máquina virtual. Uma máquina virtual pode ter uma associação a várias DCRs, e um DCR pode ter várias máquinas virtuais associadas a ela. Isso permite que você defina um conjunto de DCRs, cada qual que corresponde a um requisito específico, e aplicá-los somente às máquinas virtuais em que se aplicam. Aqui está [o artigo "Configurar a coleta de dados para o agente do Monitor do Azure"](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection-rule-azure-monitor-agent) usando o artigo DCRA.
 
 ## Exemplos
 
@@ -224,6 +224,5 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[Set-AzDataCollectionRuleAssociation](./Set-AzDataCollectionRuleAssociation.md) 
- [Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
+[Remove-AzDataCollectionRuleAssociation](./Remove-AzDataCollectionRuleAssociation.md) 
  [Get-AzDataCollectionRuleAssociation](./Get-AzDataCollectionRuleAssociation.md)

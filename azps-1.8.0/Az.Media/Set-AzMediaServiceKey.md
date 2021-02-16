@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/set-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/Set-AzMediaServiceKey.md
-ms.openlocfilehash: e9d117e9e81ee1189031b9e1f2f0a4094e9b9fcf
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c80c9b411d360de0b46cd051a3f786bb740b26f2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93770364"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402347"
 ---
 # Set-AzMediaServiceKey
 
 ## Sinopse
-Gera novamente uma chave usada para acessar o ponto de extremidade restante associado ao serviço de mídia.
+Regenera uma chave usada para acessar o ponto de extremidade REST associado ao serviço de mídia.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Set-AzMediaServiceKey [-ResourceGroupName] <String> [-AccountName] <String> [-KeyType] <KeyType>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzMediaServiceKey** regenera uma chave usada para acessar o ponto de extremidade do REST (transferência de estado representational) associado ao serviço de mídia.
+## Descrição
+O cmdlet **Set-AzMediaServiceKey** regenera uma chave usada para acessar o ponto de extremidade REST (Representational State Transfer) associado ao serviço de mídia.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: regenerar a chave primária usada para acessar o serviço de mídia
+### Exemplo 1: Regenerar a chave primária usada para acessar o Serviço de Mídia
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "ResourceGroup004" -AccountName "MediaService001" -KeyType Primary
 ```
 
-Esse comando regenera a chave primária para o serviço de mídia denominado MediaService001 que pertence ao grupo de recursos chamado ResourceGroup004.
+Esse comando regenera a chave primária do serviço de mídia chamado MediaService001 que pertence ao grupo de recursos chamado ResourceGroup004.
 
-### Exemplo 2: regenera a chave secundária usada para acessar o serviço de mídia
+### Exemplo 2: regenera a chave secundária usada para acessar o Serviço de Mídia
 ```
 PS C:\>Set-AzMediaServiceKey -ResourceGroupName "Resourcegroup123" -AccountName "MediaService002" -KeyType Secondary
 ```
 
-Esse comando regenera a chave secundária para o serviço de mídia denominado MediaService002 que pertence ao grupo de recursos chamado Resourcegroup123.
+Esse comando regenera a chave secundária do serviço de mídia chamado MediaService002 que pertence ao grupo de recursos chamado Resourcegroup123.
 
-## OS
+## Parâmetros
 
-### -AccountName
-Especifica o nome do serviço de mídia que este cmdlet gera novamente.
+### -NomedaEm conta
+Especifica o nome do serviço de mídia que este cmdlet regenera.
 
 ```yaml
 Type: System.String
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 
 ### -KeyType
 Especifica o tipo de chave do serviço de mídia.
-Os valores aceitáveis para esse parâmetro são: Primary ou Secondary.
+Os valores aceitáveis para este parâmetro são: Primário ou Secundário.
 
 ```yaml
 Type: Microsoft.Azure.Management.Media.Models.KeyType
@@ -108,7 +108,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -140,20 +140,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Media. Models. PSServiceKey
+### Microsoft.Azure.Commands.Media.Models.PSServiceKey
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzMediaServiceKeys](./Get-AzMediaServiceKeys.md)
 
 
