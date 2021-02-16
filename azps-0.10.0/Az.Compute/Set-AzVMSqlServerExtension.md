@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/Set-AzVMSqlServerExtension.md
-ms.openlocfilehash: 4093e236f84d7587586ba30c8bd4653c4ba7358f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 1795216cbc18da2d503a1e0056d614337cd12785
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776820"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398233"
 ---
 # Set-AzVMSqlServerExtension
 
 ## Sinopse
 Define a extensão do SQL Server do Azure em uma máquina virtual.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [-VMName] <String>
@@ -27,66 +27,66 @@ Set-AzVMSqlServerExtension [[-Version] <String>] [-ResourceGroupName] <String> [
  [[-Location] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzVMSqlServerExtension** define a extensão do servidor AzureSQL em uma máquina virtual.
+## Descrição
+O cmdlet **Set-AzVMSqlServerExtension** define a extensão do AzureSQL Server em uma máquina virtual.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: definir as configurações de correção automática em uma máquina virtual
+### Exemplo 1: Definir configurações automáticas de patch em uma máquina virtual
 ```
 PS C:\> $AutoPatchingConfig = New-AzureVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoPatchingSettings $AutoPatchingConfig | Update-AzVM
 ```
 
-O primeiro comando cria um objeto de configuração usando o cmdlet **New-AzureVMSqlServerAutoPatchingConfig** .
-O comando armazena a configuração na variável $AutoPatchingConfig.
+O primeiro comando cria um objeto de configuração usando o cmdlet **New-AzureVMSqlServerAutoPatchingConfig.**
+O comando armazena a configuração na variável $AutoPatchingConfig dados.
 
-O segundo comando obtém a máquina virtual chamada VirtualMachine11 no serviço chamado Service02 usando o cmdlet Get-AzVM.
-O comando passa o objeto para o cmdlet atual usando o operador pipeline.
+O segundo comando obtém a máquina virtual chamada VirtualMachine11 no serviço chamado Service02 usando o cmdlet Get-AzVM usuário.
+O comando passa esse objeto para o cmdlet atual usando o operador de pipeline.
 
-O cmdlet atual define as configurações de correção automática em $AutoPatchingConfig para a máquina virtual.
-O comando passa a máquina virtual para o cmdlet Update-AzVM.
+O cmdlet atual define as configurações de patch automático $AutoPatchingConfig para a máquina virtual.
+O comando passa a máquina virtual para o Update-AzVM cmdlet.
 
-### Exemplo 2: definir configurações de backup automático em uma máquina virtual
+### Exemplo 2: Definir configurações de backup automático em uma máquina virtual
 ```
 PS C:\> $AutoBackupConfig = New-AzureVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri $StorageUrl -StorageKey $StorageAccountKeySecure
 PS C:\> Get-AzVM -ServiceName "Service02" -Name "VirtualMachine11" | Set-AzVMSqlServerExtension -AutoBackupSettings $AutoBackupConfig | Update-AzVM
 ```
 
-O primeiro comando cria um objeto de configuração usando o cmdlet **New-AzureVMSqlServerAutoBackupConfig** .
-O comando armazena a configuração na variável $AutoBackupConfig.
+O primeiro comando cria um objeto de configuração usando o cmdlet **New-AzureVMSqlServerAutoBackupConfig.**
+O comando armazena a configuração na variável $AutoBackupConfig dados.
 
-O segundo comando obtém a máquina virtual chamada VirtualMachine11 no serviço chamado Service02 e, em seguida, a transmite para o cmdlet atual.
+O segundo comando obtém a máquina virtual chamada VirtualMachine11 no serviço chamado Service02 e passa-a para o cmdlet atual.
 
-O cmdlet atual define as configurações de backup automático em $AutoBackupConfig para a máquina virtual.
-O comando passa a máquina virtual para o cmdlet Update-AzVM.
+O cmdlet atual define as configurações de backup automático $AutoBackupConfig para a máquina virtual.
+O comando passa a máquina virtual para o Update-AzVM cmdlet.
 
-### Exemplo 3: desabilitar uma extensão do SQL Server em uma máquina virtual
+### Exemplo 3: Desabilitar uma extensão do SQL Server em uma máquina virtual
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Disable
 ```
 
-Esse comando obtém uma máquina virtual chamada VirtualMachine08 no Service03 e, em seguida, a transmite para o cmdlet atual.
-O comando desabilita a extensão da máquina virtual do SQL Server nessa máquina virtual.
+Esse comando obtém uma máquina virtual chamada VirtualMachine08 no Service03 e passa-a para o cmdlet atual.
+O comando desabilita a extensão de máquina virtual do SQL Server nessa máquina virtual.
 
-### Exemplo 4: desinstalar uma extensão do SQL Server em uma máquina virtual específica
+### Exemplo 4: Desinstalar uma extensão do SQL Server em uma máquina virtual específica
 ```
 PS C:\> Get-AzVM -ServiceName "Service03" -Name "VirtualMachine08" | Set-AzVMSqlServerExtension -Uninstall
 ```
 
-Esse comando obtém uma máquina virtual chamada VirtualMachine08 no Service03 e, em seguida, a transmite para o cmdlet atual.
+Esse comando obtém uma máquina virtual chamada VirtualMachine08 no Service03 e passa-a para o cmdlet atual.
 O comando desinstala uma extensão de máquina virtual do SQL Server nessa máquina virtual.
 
-## OS
+## Parâmetros
 
 ### -AutoBackupSettings
-Especifica as configurações de backup automático do SQL Server.
-Para criar um objeto **AutoBackupSettings** , use o cmdlet New-AzureVMSqlServerAutoBackupConfig.
+Especifica as configurações automáticas de backup do SQL Server.
+Para criar um **objeto AutoBackupSettings,** use New-AzureVMSqlServerAutoBackupConfig cmdlet.
 
 ```yaml
 Type: AutoBackupSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 6
@@ -96,13 +96,13 @@ Accept wildcard characters: False
 ```
 
 ### -AutoPatchingSettings
-Especifica as configurações de correção automática do SQL Server.
-Para criar um objeto **AutoPatchingSettings** , use o cmdlet New-AzureVMSqlServerAutoPatchingConfig.
+Especifica as configurações automáticas de patch do SQL Server.
+Para criar um **objeto AutoPatchingSettings,** use New-AzureVMSqlServerAutoPatchingConfig cmdlet.
 
 ```yaml
 Type: AutoPatchingSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```yaml
 Type: KeyVaultCredentialSettings
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 7
@@ -140,12 +140,12 @@ Accept wildcard characters: False
 ```
 
 ### -Local
-Especifica o local da máquina virtual.
+Especifica a localização da máquina virtual.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 8
@@ -155,12 +155,12 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome do SQL Server a extensão.
+Especifica o nome da extensão do SQL Server.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -175,7 +175,7 @@ Especifica o nome do grupo de recursos da máquina virtual.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 2
@@ -200,12 +200,12 @@ Accept wildcard characters: False
 ```
 
 ### -VMName
-Especifica o nome da máquina virtual na qual esse cmdlet define a extensão do SQL Server.
+Especifica o nome da máquina virtual na qual este cmdlet define a extensão do SQL Server.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 3
@@ -215,18 +215,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Nenhuma
-Esse cmdlet não aceita nenhuma entrada.
+### Nenhum
+Este cmdlet não aceita nenhuma entrada.
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. COMPUTE. Models. PSAzureOperationResponse
+### Microsoft.Azure.Commands.Compute.Models.PSAzureOperationResponse
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -234,9 +234,9 @@ Esse cmdlet não aceita nenhuma entrada.
 
 [Get-AzVMSqlServerExtension](./Get-AzVMSqlServerExtension.md)
 
-[New-AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
-[New-AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Remove-AzVMSqlServerExtension](./Remove-AzVMSqlServerExtension.md)
 

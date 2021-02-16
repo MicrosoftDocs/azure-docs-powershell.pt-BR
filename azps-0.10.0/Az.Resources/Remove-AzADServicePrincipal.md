@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 966b9baf35f1719f29fda6355a9675739693314f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: bd58a044db49cdd0cedf2872e97e64662a49372c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776364"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398216"
 ---
 # Remove-AzADServicePrincipal
 
 ## Sinopse
 Exclui a entidade de serviço do Azure Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### ObjectIdParameterSet (padrão)
+### ObjectIdParameterSet (Padrão)
 ```
 Remove-AzADServicePrincipal -ObjectId <Guid> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -56,28 +56,28 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 Exclui a entidade de serviço do Azure Active Directory.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-remover uma entidade de serviço por ID do objeto
+### Exemplo 1 - Remover uma entidade de serviço por ID do objeto
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-Remove a entidade de serviço com a ID de objeto ' 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 '.
+Remove a entidade de serviço com a ID do objeto '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.
 
-### Exemplo 2-remover uma entidade de serviço por ID do aplicativo
+### Exemplo 2 - Remover uma entidade de serviço por ID do aplicativo
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-Remove a entidade de serviço com a ID de aplicativo ' 9263469e-d328-4321-8646-3e3e75d20e76 '.
+Remove a entidade de serviço com a ID do aplicativo '9263469e-d328-4321-8646-3e3e75d20e76'.
 
-### Exemplo 3-remover uma entidade de serviço por SPN
+### Exemplo 3 - Remover uma entidade de serviço pelo SPN
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
@@ -85,23 +85,23 @@ PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 
 Remover a entidade de serviço com o nome da entidade de serviço "MyServicePrincipal"
 
-### Exemplo 4-Remova uma entidade de serviço por tubulação
+### Exemplo 4 - Remover uma entidade de serviço por piping
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-Obtém a entidade de serviço com a ID de objeto ' 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 ' e canaliza-a para o cmdlet Remove-AzADServicePrincipal para remover essa entidade de serviço.
+Obtém a entidade de serviço com a ID do objeto '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45' e os canos que estão no cmdlet Remove-AzADServicePrincipal para remover essa entidade de serviço.
 
-### Exemplo 5-remover uma entidade de serviço ao canalizar um aplicativo
+### Exemplo 5 - Remover uma entidade de serviço por meio de um aplicativo
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-Obtém o aplicativo com a ID de aplicativo ' 9263469e-d328-4321-8646-3e3e75d20e76 ' e canaliza-o para o cmdlet Remove-AzADServicePrincipal para remover a entidade de serviço associada a esse aplicativo.
+Obtém o aplicativo com a ID do aplicativo '9263469e-d328-4321-8646-3e3e75d20e76' e os canos que estão no cmdlet Remove-AzADServicePrincipal para remover a entidade de serviço associada a esse aplicativo.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
 A ID do aplicativo principal do serviço.
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-O objeto de aplicativo cuja entidade de serviço está sendo removida.
+O objeto do aplicativo cuja entidade de serviço está sendo removida.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Alternar para excluir entidade de serviço sem confirmação.
+### -Forçar
+Alternar para excluir a entidade de serviço sem uma confirmação.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-O objeto de entidade de serviço.
+O objeto principal do serviço.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A ID de objeto da entidade de serviço a ser excluída.
+A ID do objeto da entidade de serviço a ser excluído.
 
 ```yaml
 Type: System.Guid
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se especificado, retorna a entidade de serviço excluída.
+Se especificado, retornará a entidade de serviço excluída.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,8 +223,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Serviceprincipalnamename
-O nome do serviço principal.
+### -ServicePrincipalName
+O nome da entidade de serviço.
 
 ```yaml
 Type: System.String
@@ -238,7 +238,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -270,26 +270,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
-Parâmetros: inputobject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
+Parâmetros: InputObject (ByValue)
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
-Parâmetros: applicationObject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
+Parâmetros: ApplicationObject (ByValue)
 
-## EXIBE
+## Saídas
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## INFORMA
-Palavras-chave: Azure, AZ, braço, recurso, gerenciamento, gerente, recurso, grupo, modelo, implantação
+## Notas
+Palavras-chave: azure, Az, arm, resource, management, manager, resource, group, template, deployment
 
 ## LINKS RELACIONADOS
 
@@ -297,7 +297,6 @@ Palavras-chave: Azure, AZ, braço, recurso, gerenciamento, gerente, recurso, gru
 
 [Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 

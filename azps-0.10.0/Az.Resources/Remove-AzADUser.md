@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 091f54b69cd713d93def4c727181f9c8e7d5b0d6
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: e16adfe6db006af0c1f49992d5aff39412d4d4d3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776358"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398199"
 ---
 # Remove-AzADUser
 
 ## Sinopse
 Exclui um usuário do Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### UPNOrObjectIdParameterSet (padrão)
+### UPNOrObjectIdParameterSet (Padrão)
 ```
 Remove-AzADUser -UPNOrObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -50,12 +50,12 @@ Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Exclui um usuário do Active Directory (conta corporativa/de estudante também conhecida como identificação da organização).
+## Descrição
+Exclui um usuário do Active Directory (conta de trabalho/escola também conhecida popularmente como id da organização).
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-remover um usuário pelo nome principal do usuário
+### Exemplo 1 - Remover um usuário por nome de entidade de usuário
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
@@ -63,26 +63,26 @@ PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 
 Remove o usuário com o nome de usuário principal " foo@domain.com " do locatário.
 
-### Exemplo 2-remover um usuário por ID de objeto
+### Exemplo 2 - Remover um usuário por ID de objeto
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 ```
 
-Remove o usuário com a ID de objeto ' 7a9582cf-88c4-4319-842b-7a5d60967a69 ' do locatário.
+Remove o usuário com a ID do objeto '7a9582cf-88c4-4319-842b-7a5d60967a69' do locatário.
 
-### Exemplo 3-remover um usuário por meio do encanamento
+### Exemplo 3 - Remover um usuário por piping
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-Obtém o usuário com a ID de objeto ' 7a9582cf-88c4-4319-842b-7a5d60967a69 ' e canaliza-se para o cmdlet Remove-AzADUser para remover o usuário do locatário.
+Obtém o usuário com a ID do objeto '7a9582cf-88c4-4319-842b-7a5d60967a69' e os canos no cmdlet Remove-AzADUser para remover o usuário do locatário.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -111,7 +111,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Forçar
 Se especificado, não solicita confirmação para excluir o usuário.
 
 ```yaml
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-O objeto de usuário a ser excluído.
+O objeto do usuário a ser excluído.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-A ID de objeto do usuário a ser excluído.
+A ID do objeto do usuário a ser excluído.
 
 ```yaml
 Type: System.Guid
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se o comando foi concluído, a especificação será retorna true se o comando foi bem-sucedido.
+Especificar isso retornará verdadeiro se o comando tiver sido bem-sucedido.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UPNOrObjectId
-O nome principal do usuário ou o objectId do usuário a ser excluído.
+O nome principal do usuário ou a ID do objeto do usuário a ser excluído.
 
 ```yaml
 Type: System.String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-O nome UPN do usuário a ser excluído.
+O nome principal do usuário a ser excluído.
 
 ```yaml
 Type: System.String
@@ -201,7 +201,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -233,28 +233,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADUser
-Parâmetros: inputobject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
+Parâmetros: InputObject (ByValue)
 
-## EXIBE
+## Saídas
 
-### System. Boolean
+### System.Boolean
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[New-AzADUser](./New-AzADUser.md)
+[Novo-AzADUser](./New-AzADUser.md)
 
 [Get-AzADUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
