@@ -1,0 +1,210 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Storage.Management.dll-Help.xml
+Module Name: Az.Storage
+online version: https://docs.microsoft.com/en-us/powershell/module/az.storage/enable-azstorageblobdeleteretentionpolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Enable-AzStorageBlobDeleteRetentionPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Storage/Storage.Management/help/Enable-AzStorageBlobDeleteRetentionPolicy.md
+ms.openlocfilehash: ebb379217f9fd040aa3dcbd6c614a45dbdbba8c4
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100118590"
+---
+# <span data-ttu-id="7c321-101">Enable-AzStorageBlobDeleteRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="7c321-101">Enable-AzStorageBlobDeleteRetentionPolicy</span></span>
+
+## <span data-ttu-id="7c321-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="7c321-102">SYNOPSIS</span></span>
+<span data-ttu-id="7c321-103">Habilitar a política de retenção de exclusão para o serviço Blob de Armazenamento do Azure.</span><span class="sxs-lookup"><span data-stu-id="7c321-103">Enable delete retention policy for the Azure Storage Blob service.</span></span>
+
+## <span data-ttu-id="7c321-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="7c321-104">SYNTAX</span></span>
+
+### <span data-ttu-id="7c321-105">Nomeda Conta (Padrão)</span><span class="sxs-lookup"><span data-stu-id="7c321-105">AccountName (Default)</span></span>
+```
+Enable-AzStorageBlobDeleteRetentionPolicy [-ResourceGroupName] <String> [-StorageAccountName] <String>
+ -RetentionDays <Int32> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="7c321-106">AccountObject</span><span class="sxs-lookup"><span data-stu-id="7c321-106">AccountObject</span></span>
+```
+Enable-AzStorageBlobDeleteRetentionPolicy -StorageAccount <PSStorageAccount> -RetentionDays <Int32> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="7c321-107">BlobServicePropertiesResourceId</span><span class="sxs-lookup"><span data-stu-id="7c321-107">BlobServicePropertiesResourceId</span></span>
+```
+Enable-AzStorageBlobDeleteRetentionPolicy [-ResourceId] <String> -RetentionDays <Int32> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="7c321-108">Descrição</span><span class="sxs-lookup"><span data-stu-id="7c321-108">DESCRIPTION</span></span>
+<span data-ttu-id="7c321-109">O cmdlet **Enable-AzStorageBleteRetentionPolicy** habilita a política de retenção de exclusão para o serviço blob de armazenamento do Azure.</span><span class="sxs-lookup"><span data-stu-id="7c321-109">The **Enable-AzStorageBlobDeleteRetentionPolicy** cmdlet enables delete retention policy for the Azure Storage Blob service.</span></span>
+
+## <span data-ttu-id="7c321-110">Exemplos</span><span class="sxs-lookup"><span data-stu-id="7c321-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="7c321-111">Exemplo 1: Habilitar a política de retenção de exclusão para o serviço Blob</span><span class="sxs-lookup"><span data-stu-id="7c321-111">Example 1: Enable delete retention policy for the Blob service</span></span>
+```
+C:\PS>Enable-AzStorageBlobDeleteRetentionPolicy -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -PassThru -RetentionDays 4
+
+Enabled Days
+------- ----
+   True    4
+```
+
+<span data-ttu-id="7c321-112">Esse comando permite excluir a política de retenção do serviço Blob e definir os dias de retenção de blob excluídos como 4.</span><span class="sxs-lookup"><span data-stu-id="7c321-112">This command enables delete retention policy for the Blob service, and set deleted blob retention days to 4.</span></span>
+
+## <span data-ttu-id="7c321-113">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="7c321-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="7c321-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7c321-114">-DefaultProfile</span></span>
+<span data-ttu-id="7c321-115">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="7c321-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-116">-PassThru</span><span class="sxs-lookup"><span data-stu-id="7c321-116">-PassThru</span></span>
+<span data-ttu-id="7c321-117">Exibir ServiceProperties</span><span class="sxs-lookup"><span data-stu-id="7c321-117">Display ServiceProperties</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-118">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="7c321-118">-ResourceGroupName</span></span>
+<span data-ttu-id="7c321-119">Nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="7c321-119">Resource Group Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AccountName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-120">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="7c321-120">-ResourceId</span></span>
+<span data-ttu-id="7c321-121">Inserir uma ID de Recurso de conta de armazenamento ou uma ID de recurso de propriedades do serviço Blob.</span><span class="sxs-lookup"><span data-stu-id="7c321-121">Input a Storage account Resource Id, or a Blob service properties Resource Id.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: BlobServicePropertiesResourceId
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-122">-RetentionDays</span><span class="sxs-lookup"><span data-stu-id="7c321-122">-RetentionDays</span></span>
+<span data-ttu-id="7c321-123">Define o número de dias de retenção para DeleteRetentionPolicy.</span><span class="sxs-lookup"><span data-stu-id="7c321-123">Sets the number of retention days for the DeleteRetentionPolicy.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Days
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-124">-StorageAccount</span><span class="sxs-lookup"><span data-stu-id="7c321-124">-StorageAccount</span></span>
+<span data-ttu-id="7c321-125">Objeto de conta de armazenamento</span><span class="sxs-lookup"><span data-stu-id="7c321-125">Storage account object</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount
+Parameter Sets: AccountObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-126">-StorageAccountName</span><span class="sxs-lookup"><span data-stu-id="7c321-126">-StorageAccountName</span></span>
+<span data-ttu-id="7c321-127">Nome da Conta de Armazenamento.</span><span class="sxs-lookup"><span data-stu-id="7c321-127">Storage Account Name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AccountName
+Aliases: AccountName, Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-128">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="7c321-128">-Confirm</span></span>
+<span data-ttu-id="7c321-129">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7c321-129">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-130">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7c321-130">-WhatIf</span></span>
+<span data-ttu-id="7c321-131">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="7c321-131">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="7c321-132">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="7c321-132">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="7c321-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7c321-133">CommonParameters</span></span>
+<span data-ttu-id="7c321-134">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7c321-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7c321-135">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7c321-135">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="7c321-136">Entradas</span><span class="sxs-lookup"><span data-stu-id="7c321-136">INPUTS</span></span>
+
+### <span data-ttu-id="7c321-137">Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount</span><span class="sxs-lookup"><span data-stu-id="7c321-137">Microsoft.Azure.Commands.Management.Storage.Models.PSStorageAccount</span></span>
+
+### <span data-ttu-id="7c321-138">System.String</span><span class="sxs-lookup"><span data-stu-id="7c321-138">System.String</span></span>
+
+## <span data-ttu-id="7c321-139">Saídas</span><span class="sxs-lookup"><span data-stu-id="7c321-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="7c321-140">Microsoft.Azure.Commands.Management.Storage.Models.PSBserviceProperties</span><span class="sxs-lookup"><span data-stu-id="7c321-140">Microsoft.Azure.Commands.Management.Storage.Models.PSBlobServiceProperties</span></span>
+
+## <span data-ttu-id="7c321-141">Notas</span><span class="sxs-lookup"><span data-stu-id="7c321-141">NOTES</span></span>
+
+## <span data-ttu-id="7c321-142">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="7c321-142">RELATED LINKS</span></span>

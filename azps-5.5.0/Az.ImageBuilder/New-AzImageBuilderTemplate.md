@@ -1,0 +1,472 @@
+---
+external help file: ''
+Module Name: Az.ImageBuilder
+online version: https://docs.microsoft.com/en-us/powershell/module/az.imagebuilder/New-AzImageBuilderTemplate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/New-AzImageBuilderTemplate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImageBuilder/help/New-AzImageBuilderTemplate.md
+ms.openlocfilehash: 337584fb7f960f64ee94c5206f9bf60b0cc6c21a
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100113161"
+---
+# <span data-ttu-id="c4c8a-101">New-AzImageBuilderTemplate</span><span class="sxs-lookup"><span data-stu-id="c4c8a-101">New-AzImageBuilderTemplate</span></span>
+
+## <span data-ttu-id="c4c8a-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="c4c8a-102">SYNOPSIS</span></span>
+<span data-ttu-id="c4c8a-103">Criar um modelo de imagem de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="c4c8a-103">Create a virtual machine image template</span></span>
+
+## <span data-ttu-id="c4c8a-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="c4c8a-104">SYNTAX</span></span>
+
+```
+New-AzImageBuilderTemplate -ImageTemplateName <String> -ResourceGroupName <String>
+ -Distribute <IImageTemplateDistributor[]> -Source <IImageTemplateSource> -UserAssignedIdentityId <String>
+ [-SubscriptionId <String>] [-BuildTimeoutInMinute <Int32>] [-Customize <IImageTemplateCustomizer[]>]
+ [-LastRunStatusEndTime <DateTime>] [-LastRunStatusMessage <String>] [-LastRunStatusRunState <RunState>]
+ [-LastRunStatusRunSubState <RunSubState>] [-LastRunStatusStartTime <DateTime>] [-Location <String>]
+ [-ProvisioningErrorCode <ProvisioningErrorCode>] [-ProvisioningErrorMessage <String>] [-Tag <Hashtable>]
+ [-VMProfileOsdiskSizeInGb <Int32>] [-VMProfileVmSize <String>] [-VnetConfigSubnetId <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c4c8a-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="c4c8a-105">DESCRIPTION</span></span>
+<span data-ttu-id="c4c8a-106">Criar um modelo de imagem de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="c4c8a-106">Create a virtual machine image template</span></span>
+
+## <span data-ttu-id="c4c8a-107">Exemplos</span><span class="sxs-lookup"><span data-stu-id="c4c8a-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="c4c8a-108">Exemplo 1: Criar um modelo de imagem de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="c4c8a-108">Example 1: Create a virtual machine image template</span></span>
+```powershell
+PS C:\> $srcPlatform = New-AzImageBuilderSourceObject -SourceTypePlatformImage -Publisher 'Canonical'  -Offer 'UbuntuServer' -Sku '18.04-LTS' -Version 'latest'
+PS C:\> $disSharedImg = New-AzImageBuilderDistributorObject -SharedImageDistributor -ArtifactTag @{tag='dis-share'} -GalleryImageId '/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourceGroups/wyunchi-imagebuilder/providers/Microsoft.Compute/galleries/testsharedgallery/images/imagedefinition-linux/versions/1.0.0' -ReplicationRegion 'eastus2' -RunOutputName 'runoutput-01'  -ExcludeFromLatest $false
+PS C:\> $customizer = New-AzImageBuilderCustomizerObject -ShellCustomizer -CustomizerName 'CheckSumCompareShellScript' -ScriptUri 'https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript2.sh' -Sha256Checksum 'ade4c5214c3c675e92c66e2d067a870c5b81b9844b3de3cc72c49ff36425fc93'
+PS C:\> $userAssignedIdentity = '/subscriptions/9e223dbe-3399-4e19-88eb-0975f02ac87f/resourcegroups/wyunchi-imagebuilder/providers/Microsoft.ManagedIdentity/userAssignedIdentities/image-builder-user-assign-identity'
+PS C:\> New-AzImageBuilderTemplate -ImageTemplateName platform-shared-img -ResourceGroupName wyunchi-imagebuilder -Source $srcPlatform -Distribute $disSharedImg -Customize $customizer -Location eastus  -UserAssignedIdentityId $userAssignedIdentity
+
+Location Name                Type
+-------- ----                ----
+PlanInfoPlanName      :
+PlanInfoPlanPublisher :
+Sku                   : 18.04-LTS
+Version               : latest
+PlanInfo              : Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.PlatformImagePurchasePlan
+```
+
+<span data-ttu-id="c4c8a-109">Esses comandos criam um modelo de imagem de máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-109">This commands creates a virtual machine image template.</span></span>
+
+## <span data-ttu-id="c4c8a-110">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="c4c8a-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="c4c8a-111">-AsJob</span><span class="sxs-lookup"><span data-stu-id="c4c8a-111">-AsJob</span></span>
+<span data-ttu-id="c4c8a-112">Executar o comando como um trabalho</span><span class="sxs-lookup"><span data-stu-id="c4c8a-112">Run the command as a job</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-113">-BuildTimeoutInMinute</span><span class="sxs-lookup"><span data-stu-id="c4c8a-113">-BuildTimeoutInMinute</span></span>
+<span data-ttu-id="c4c8a-114">Duração máxima para aguardar durante a criação do modelo de imagem.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-114">Maximum duration to wait while building the image template.</span></span>
+<span data-ttu-id="c4c8a-115">Omita ou especifique 0 para usar o padrão (4 horas).</span><span class="sxs-lookup"><span data-stu-id="c4c8a-115">Omit or specify 0 to use the default (4 hours).</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-116">- Personalizar</span><span class="sxs-lookup"><span data-stu-id="c4c8a-116">-Customize</span></span>
+<span data-ttu-id="c4c8a-117">Especifica as propriedades usadas para descrever as etapas de personalização da imagem, como Fonte da imagem etc. Para construir, consulte a seção ANOTAÇÕES para personalizar propriedades e criar uma tabela hash.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-117">Specifies the properties used to describe the customization steps of the image, like Image source etc. To construct, see NOTES section for CUSTOMIZE properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.IImageTemplateCustomizer[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c4c8a-118">-DefaultProfile</span></span>
+<span data-ttu-id="c4c8a-119">Região HideParameter As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-119">region HideParameter The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-120">-Distribuir</span><span class="sxs-lookup"><span data-stu-id="c4c8a-120">-Distribute</span></span>
+<span data-ttu-id="c4c8a-121">Os destinos de distribuição para os quais a saída da imagem precisa ir.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-121">The distribution targets where the image output needs to go to.</span></span>
+<span data-ttu-id="c4c8a-122">Para construir, confira a seção ANOTAÇÕES para as propriedades DISTRIBUTE e crie uma tabela hash.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-122">To construct, see NOTES section for DISTRIBUTE properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.IImageTemplateDistributor[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-123">-ImageTemplateName</span><span class="sxs-lookup"><span data-stu-id="c4c8a-123">-ImageTemplateName</span></span>
+<span data-ttu-id="c4c8a-124">O nome do modelo de imagem.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-124">The name of the image Template.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-125">-LastRunStatusEndTime</span><span class="sxs-lookup"><span data-stu-id="c4c8a-125">-LastRunStatusEndTime</span></span>
+<span data-ttu-id="c4c8a-126">Hora de término da última executar (UTC).</span><span class="sxs-lookup"><span data-stu-id="c4c8a-126">End time of the last run (UTC).</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-127">-LastRunStatusMessage</span><span class="sxs-lookup"><span data-stu-id="c4c8a-127">-LastRunStatusMessage</span></span>
+<span data-ttu-id="c4c8a-128">Informações detalhadas sobre o estado da última executar.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-128">Verbose information about the last run state.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-129">-LastRunStatusRunState</span><span class="sxs-lookup"><span data-stu-id="c4c8a-129">-LastRunStatusRunState</span></span>
+<span data-ttu-id="c4c8a-130">Estado da última executar.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-130">State of the last run.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Support.RunState
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-131">-LastRunStatusRunSubState</span><span class="sxs-lookup"><span data-stu-id="c4c8a-131">-LastRunStatusRunSubState</span></span>
+<span data-ttu-id="c4c8a-132">Sub-estado da última executar.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-132">Sub-state of the last run.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Support.RunSubState
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-133">-LastRunStatusStartTime</span><span class="sxs-lookup"><span data-stu-id="c4c8a-133">-LastRunStatusStartTime</span></span>
+<span data-ttu-id="c4c8a-134">Hora de início da última executar (UTC).</span><span class="sxs-lookup"><span data-stu-id="c4c8a-134">Start time of the last run (UTC).</span></span>
+
+```yaml
+Type: System.DateTime
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-135">-Local</span><span class="sxs-lookup"><span data-stu-id="c4c8a-135">-Location</span></span>
+<span data-ttu-id="c4c8a-136">Local do recurso.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-136">Resource location.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-137">-NoWait</span><span class="sxs-lookup"><span data-stu-id="c4c8a-137">-NoWait</span></span>
+<span data-ttu-id="c4c8a-138">Executar o comando assíncrona</span><span class="sxs-lookup"><span data-stu-id="c4c8a-138">Run the command asynchronously</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-139">-ProvisionandoErrorCode</span><span class="sxs-lookup"><span data-stu-id="c4c8a-139">-ProvisioningErrorCode</span></span>
+<span data-ttu-id="c4c8a-140">Código de erro da falha de provisionamento.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-140">Error code of the provisioning failure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Support.ProvisioningErrorCode
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-141">-ProvisionandoErrorMessage</span><span class="sxs-lookup"><span data-stu-id="c4c8a-141">-ProvisioningErrorMessage</span></span>
+<span data-ttu-id="c4c8a-142">Mensagem de erro detalhada sobre a falha de provisionamento.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-142">Verbose error message about the provisioning failure.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-143">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="c4c8a-143">-ResourceGroupName</span></span>
+<span data-ttu-id="c4c8a-144">O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-144">The name of the resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-145">-Origem</span><span class="sxs-lookup"><span data-stu-id="c4c8a-145">-Source</span></span>
+<span data-ttu-id="c4c8a-146">Descreve uma fonte de imagem de máquina virtual para criar, personalizar e distribuir.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-146">Describes a virtual machine image source for building, customizing and distributing.</span></span>
+<span data-ttu-id="c4c8a-147">Para construir, consulte a seção ANOTAÇÕES para as propriedades SOURCE e crie uma tabela hash.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-147">To construct, see NOTES section for SOURCE properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.IImageTemplateSource
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-148">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="c4c8a-148">-SubscriptionId</span></span>
+<span data-ttu-id="c4c8a-149">Credenciais de assinatura que identificam exclusivamente a assinatura do Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-149">Subscription credentials which uniquely identify Microsoft Azure subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-150">-Tag</span><span class="sxs-lookup"><span data-stu-id="c4c8a-150">-Tag</span></span>
+<span data-ttu-id="c4c8a-151">Marcas de recurso.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-151">Resource tags.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-152">-UserAssignedIdentityId</span><span class="sxs-lookup"><span data-stu-id="c4c8a-152">-UserAssignedIdentityId</span></span>
+<span data-ttu-id="c4c8a-153">A ID da identidade atribuída pelo usuário.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-153">The id of user assigned identity.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-154">-VMProfileOsdiskSizeInGb</span><span class="sxs-lookup"><span data-stu-id="c4c8a-154">-VMProfileOsdiskSizeInGb</span></span>
+<span data-ttu-id="c4c8a-155">Tamanho do disco do sistema operacional em GB.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-155">Size of the OS disk in GB.</span></span>
+<span data-ttu-id="c4c8a-156">Omita ou especifique 0 para usar o tamanho de disco padrão do sistema operacional do Azure.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-156">Omit or specify 0 to use Azure's default OS disk size.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-157">-VMProfileVmSize</span><span class="sxs-lookup"><span data-stu-id="c4c8a-157">-VMProfileVmSize</span></span>
+<span data-ttu-id="c4c8a-158">Tamanho da máquina virtual usada para criar, personalizar e capturar imagens.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-158">Size of the virtual machine used to build, customize and capture images.</span></span>
+<span data-ttu-id="c4c8a-159">Omita ou especifique a cadeia de caracteres vazia para usar o padrão (Standard_D1_v2).</span><span class="sxs-lookup"><span data-stu-id="c4c8a-159">Omit or specify empty string to use the default (Standard_D1_v2).</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-160">-VnetConfigSubnetId</span><span class="sxs-lookup"><span data-stu-id="c4c8a-160">-VnetConfigSubnetId</span></span>
+<span data-ttu-id="c4c8a-161">ID do recurso de uma sub-rede pré-existente.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-161">Resource id of a pre-existing subnet.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-162">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="c4c8a-162">-Confirm</span></span>
+<span data-ttu-id="c4c8a-163">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-163">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-164">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c4c8a-164">-WhatIf</span></span>
+<span data-ttu-id="c4c8a-165">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-165">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="c4c8a-166">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-166">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c4c8a-167">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c4c8a-167">CommonParameters</span></span>
+<span data-ttu-id="c4c8a-168">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-168">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c4c8a-169">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="c4c8a-169">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c4c8a-170">Entradas</span><span class="sxs-lookup"><span data-stu-id="c4c8a-170">INPUTS</span></span>
+
+## <span data-ttu-id="c4c8a-171">Saídas</span><span class="sxs-lookup"><span data-stu-id="c4c8a-171">OUTPUTS</span></span>
+
+### <span data-ttu-id="c4c8a-172">Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.IImageTemplate</span><span class="sxs-lookup"><span data-stu-id="c4c8a-172">Microsoft.Azure.PowerShell.Cmdlets.ImageBuilder.Models.Api20200214.IImageTemplate</span></span>
+
+## <span data-ttu-id="c4c8a-173">Notas</span><span class="sxs-lookup"><span data-stu-id="c4c8a-173">NOTES</span></span>
+
+<span data-ttu-id="c4c8a-174">Aliases</span><span class="sxs-lookup"><span data-stu-id="c4c8a-174">ALIASES</span></span>
+
+<span data-ttu-id="c4c8a-175">PROPRIEDADES DE PARÂMETRO COMPLEXOS</span><span class="sxs-lookup"><span data-stu-id="c4c8a-175">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="c4c8a-176">Para criar os parâmetros descritos abaixo, construa uma tabela hash contendo as propriedades apropriadas.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-176">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="c4c8a-177">Para obter informações sobre tabelas hash, execute Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-177">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="c4c8a-178">CUSTOMIZE <IImageTemplateCus ltd[]>: especifica as propriedades usadas para descrever as etapas de personalização da imagem, como Fonte de Imagem etc.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-178">CUSTOMIZE <IImageTemplateCustomizer[]>: Specifies the properties used to describe the customization steps of the image, like Image source etc.</span></span>
+  - <span data-ttu-id="c4c8a-179">`Type <String>`: o tipo de ferramenta de personalização que você deseja usar na Imagem.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-179">`Type <String>`: The type of customization tool you want to use on the Image.</span></span> <span data-ttu-id="c4c8a-180">Por exemplo, "Shell" pode ser personalizador de shell</span><span class="sxs-lookup"><span data-stu-id="c4c8a-180">For example, "Shell" can be shell customizer</span></span>
+  - <span data-ttu-id="c4c8a-181">`[Name <String>]`: Nome amigável para fornecer contexto sobre o que esta etapa de personalização faz</span><span class="sxs-lookup"><span data-stu-id="c4c8a-181">`[Name <String>]`: Friendly Name to provide context on what this customization step does</span></span>
+
+<span data-ttu-id="c4c8a-182">DISTRIBUTE <IImageTemplateDistributor[]>: os destinos de distribuição para os quais a saída da imagem precisa ir.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-182">DISTRIBUTE <IImageTemplateDistributor[]>: The distribution targets where the image output needs to go to.</span></span>
+  - <span data-ttu-id="c4c8a-183">`RunOutputName <String>`: o nome a ser usado para o RunOutput associado.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-183">`RunOutputName <String>`: The name to be used for the associated RunOutput.</span></span>
+  - <span data-ttu-id="c4c8a-184">`Type <String>`: Tipo de distribuição.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-184">`Type <String>`: Type of distribution.</span></span>
+  - <span data-ttu-id="c4c8a-185">`[ArtifactTag <IImageTemplateDistributorArtifactTags>]`: marcas que serão aplicadas ao artefato depois que ele tiver sido criado/atualizado pelo distribuidor.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-185">`[ArtifactTag <IImageTemplateDistributorArtifactTags>]`: Tags that will be applied to the artifact once it has been created/updated by the distributor.</span></span>
+    - <span data-ttu-id="c4c8a-186">`[(Any) <String>]`: indica que qualquer propriedade pode ser adicionada a este objeto.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-186">`[(Any) <String>]`: This indicates any property can be added to this object.</span></span>
+
+<span data-ttu-id="c4c8a-187"><IImageTemplateSource>ORIGEM: descreve uma fonte de imagem de máquina virtual para criar, personalizar e distribuir.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-187">SOURCE <IImageTemplateSource>: Describes a virtual machine image source for building, customizing and distributing.</span></span>
+  - <span data-ttu-id="c4c8a-188">`Type <String>`: especifica o tipo de imagem de origem com a qual você deseja começar.</span><span class="sxs-lookup"><span data-stu-id="c4c8a-188">`Type <String>`: Specifies the type of source image you want to start with.</span></span>
+
+## <span data-ttu-id="c4c8a-189">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="c4c8a-189">RELATED LINKS</span></span>
+

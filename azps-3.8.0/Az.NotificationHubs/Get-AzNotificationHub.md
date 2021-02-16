@@ -6,47 +6,47 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93944507"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406274"
 ---
-# <span data-ttu-id="754b4-101">Get-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="754b4-101">Get-AzNotificationHub</span></span>
+# <span data-ttu-id="b5b8d-101">Get-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="b5b8d-101">Get-AzNotificationHub</span></span>
 
-## <span data-ttu-id="754b4-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="754b4-102">SYNOPSIS</span></span>
-<span data-ttu-id="754b4-103">Obtém informações sobre seus hubs de notificação.</span><span class="sxs-lookup"><span data-stu-id="754b4-103">Gets information about your notification hubs.</span></span>
+## <span data-ttu-id="b5b8d-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="b5b8d-102">SYNOPSIS</span></span>
+<span data-ttu-id="b5b8d-103">Obtém informações sobre seus hubs de notificação.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-103">Gets information about your notification hubs.</span></span>
 
-## <span data-ttu-id="754b4-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="754b4-104">SYNTAX</span></span>
+## <span data-ttu-id="b5b8d-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="b5b8d-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-NotificationHub] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="754b4-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="754b4-105">DESCRIPTION</span></span>
-<span data-ttu-id="754b4-106">O cmdlet **Get-AzNotificationHub** Obtém informações sobre os hubs de notificação em um namespace especificado e atribuídos a um grupo de recursos especificado.</span><span class="sxs-lookup"><span data-stu-id="754b4-106">The **Get-AzNotificationHub** cmdlet gets information about the notification hubs in a specified namespace and assigned to a specified resource group.</span></span>
-<span data-ttu-id="754b4-107">Por exemplo, você pode obter informações para todos os hubs de notificação no namespace ContosoNamespace e atribuídas ao grupo de recursos ContosoNotificationsGroup.</span><span class="sxs-lookup"><span data-stu-id="754b4-107">For example, you can get information for all the notification hubs in the namespace ContosoNamespace and assigned to the ContosoNotificationsGroup resource group.</span></span>
-<span data-ttu-id="754b4-108">Você também pode usar o parâmetro *NotificationHub* para limitar os dados retornados às informações sobre um hub de notificação específico.</span><span class="sxs-lookup"><span data-stu-id="754b4-108">Alternatively, you can use the *NotificationHub* parameter to limit the returned data to information about a specific notification hub.</span></span>
-<span data-ttu-id="754b4-109">Os hubs de notificação são usados para enviar notificações por push para vários clientes, independentemente da plataforma, como iOS, Android, Windows Phone 8 e Windows Store, usados por esses clientes.</span><span class="sxs-lookup"><span data-stu-id="754b4-109">Notification hubs are used to send push notifications to multiple clients regardless of the platform, such as iOS, Android, Windows Phone 8, and Windows Store, used by those clients.</span></span>
-<span data-ttu-id="754b4-110">Esses hubs são aproximadamente equivalentes a aplicativos individuais e cada um dos seus aplicativos normalmente tem seu próprio Hub de notificação.</span><span class="sxs-lookup"><span data-stu-id="754b4-110">These hubs are roughly equivalent to individual apps and each of your apps will typically have its own notification hub.</span></span>
-<span data-ttu-id="754b4-111">Este cmdlet somente Obtém informações sobre o próprio Hub.</span><span class="sxs-lookup"><span data-stu-id="754b4-111">This cmdlet only gets information about the hub itself.</span></span>
-<span data-ttu-id="754b4-112">Outros cmdlets, como Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials, são necessários para obter informações sobre as regras de autorização de um Hub, cadeias de conexão e credenciais do serviço de notificação de plataforma.</span><span class="sxs-lookup"><span data-stu-id="754b4-112">Other cmdlets, such as Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys, and Get-AzNotificationHubPNSCredentials, are needed to get information about a hub's authorization rules, connection strings, and platform notification service credentials.</span></span>
+## <span data-ttu-id="b5b8d-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="b5b8d-105">DESCRIPTION</span></span>
+<span data-ttu-id="b5b8d-106">O **cmdlet Get-AzNotificationHub** obtém informações sobre os hubs de notificação em um espaço de nome especificado e atribuído a um grupo de recursos especificado.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-106">The **Get-AzNotificationHub** cmdlet gets information about the notification hubs in a specified namespace and assigned to a specified resource group.</span></span>
+<span data-ttu-id="b5b8d-107">Por exemplo, você pode obter informações para todos os hubs de notificação no namespace ContosoNamespace e atribuídas ao grupo de recursos ContosoNotificationsGroup.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-107">For example, you can get information for all the notification hubs in the namespace ContosoNamespace and assigned to the ContosoNotificationsGroup resource group.</span></span>
+<span data-ttu-id="b5b8d-108">Como alternativa, você pode usar o parâmetro *NotificationHub* para limitar os dados retornados a informações sobre um hub de notificação específico.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-108">Alternatively, you can use the *NotificationHub* parameter to limit the returned data to information about a specific notification hub.</span></span>
+<span data-ttu-id="b5b8d-109">Os hubs de notificação são usados para enviar notificações por push para vários clientes independentemente da plataforma, como iOS, Android, Windows Phone 8 e Windows Store, usados por esses clientes.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-109">Notification hubs are used to send push notifications to multiple clients regardless of the platform, such as iOS, Android, Windows Phone 8, and Windows Store, used by those clients.</span></span>
+<span data-ttu-id="b5b8d-110">Esses hubs são aproximadamente equivalentes a aplicativos individuais e cada um dos seus aplicativos normalmente terá seu próprio hub de notificação.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-110">These hubs are roughly equivalent to individual apps and each of your apps will typically have its own notification hub.</span></span>
+<span data-ttu-id="b5b8d-111">Este cmdlet obtém apenas informações sobre o hub em si.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-111">This cmdlet only gets information about the hub itself.</span></span>
+<span data-ttu-id="b5b8d-112">Outros cmdlets, como Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials, são necessários para obter informações sobre regras de autorização do hub, cadeias de conexão e credenciais de serviço de notificação de plataforma.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-112">Other cmdlets, such as Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys, and Get-AzNotificationHubPNSCredentials, are needed to get information about a hub's authorization rules, connection strings, and platform notification service credentials.</span></span>
 
-## <span data-ttu-id="754b4-113">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="754b4-113">EXAMPLES</span></span>
+## <span data-ttu-id="b5b8d-113">Exemplos</span><span class="sxs-lookup"><span data-stu-id="b5b8d-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="754b4-114">Exemplo 1: obter informações para todos os hubs de notificação em um namespace específico</span><span class="sxs-lookup"><span data-stu-id="754b4-114">Example 1: Get information for all notification hubs in a specific namespace</span></span>
+### <span data-ttu-id="b5b8d-114">Exemplo 1: Obter informações para todos os hubs de notificação em um namespace específico</span><span class="sxs-lookup"><span data-stu-id="b5b8d-114">Example 1: Get information for all notification hubs in a specific namespace</span></span>
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-<span data-ttu-id="754b4-115">Esse comando obtém informações para todos os hubs de notificação no namespace chamado ContosoNamespace que foram atribuídos à ContosoNotificationsGroup do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="754b4-115">This command gets information for all the notification hubs in the namespace named ContosoNamespace that have been assigned to the resource group ContosoNotificationsGroup.</span></span>
+<span data-ttu-id="b5b8d-115">Esse comando obtém informações para todos os hubs de notificação no namespace chamado ContosoNamespace que foram atribuídos ao grupo de recursos ContosoNotificationsGroup.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-115">This command gets information for all the notification hubs in the namespace named ContosoNamespace that have been assigned to the resource group ContosoNotificationsGroup.</span></span>
 
-## <span data-ttu-id="754b4-116">OS</span><span class="sxs-lookup"><span data-stu-id="754b4-116">PARAMETERS</span></span>
+## <span data-ttu-id="b5b8d-116">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="b5b8d-116">PARAMETERS</span></span>
 
-### <span data-ttu-id="754b4-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="754b4-117">-DefaultProfile</span></span>
-<span data-ttu-id="754b4-118">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="754b4-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="b5b8d-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b5b8d-117">-DefaultProfile</span></span>
+<span data-ttu-id="b5b8d-118">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="b5b8d-118">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,9 +60,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="754b4-119">-Namespace</span><span class="sxs-lookup"><span data-stu-id="754b4-119">-Namespace</span></span>
-<span data-ttu-id="754b4-120">Especifica o namespace ao qual o Hub de notificações está atribuído.</span><span class="sxs-lookup"><span data-stu-id="754b4-120">Specifies the namespace to which the notification hub is assigned.</span></span>
-<span data-ttu-id="754b4-121">Os namespaces fornecem uma maneira de agrupar e categorizar os hubs de notificação.</span><span class="sxs-lookup"><span data-stu-id="754b4-121">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="b5b8d-119">-Namespace</span><span class="sxs-lookup"><span data-stu-id="b5b8d-119">-Namespace</span></span>
+<span data-ttu-id="b5b8d-120">Especifica o namespace ao qual o hub de notificação está atribuído.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-120">Specifies the namespace to which the notification hub is assigned.</span></span>
+<span data-ttu-id="b5b8d-121">Os namespaces oferecem uma maneira de agrupar e categorizar os hubs de notificação.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-121">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -76,9 +76,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="754b4-122">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="754b4-122">-NotificationHub</span></span>
-<span data-ttu-id="754b4-123">Especifica o nome do hub de notificação que este cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="754b4-123">Specifies the name of the notification hub that this cmdlet gets.</span></span>
-<span data-ttu-id="754b4-124">Os hubs de notificação são usados para enviar notificações por push para vários clientes, independentemente da plataforma usada por esses clientes.</span><span class="sxs-lookup"><span data-stu-id="754b4-124">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
+### <span data-ttu-id="b5b8d-122">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="b5b8d-122">-NotificationHub</span></span>
+<span data-ttu-id="b5b8d-123">Especifica o nome do hub de notificação que este cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-123">Specifies the name of the notification hub that this cmdlet gets.</span></span>
+<span data-ttu-id="b5b8d-124">Os hubs de notificação são usados para enviar notificações por push para vários clientes independentemente da plataforma usada por esses clientes.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-124">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
 
 ```yaml
 Type: System.String
@@ -92,9 +92,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="754b4-125">-Resource</span><span class="sxs-lookup"><span data-stu-id="754b4-125">-ResourceGroup</span></span>
-<span data-ttu-id="754b4-126">Especifica o grupo de recursos ao qual o Hub de notificações está atribuído.</span><span class="sxs-lookup"><span data-stu-id="754b4-126">Specifies the resource group to which the notification hub is assigned.</span></span>
-<span data-ttu-id="754b4-127">Grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente gerenciamento de inventário e administração do Azure.</span><span class="sxs-lookup"><span data-stu-id="754b4-127">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="b5b8d-125">-ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="b5b8d-125">-ResourceGroup</span></span>
+<span data-ttu-id="b5b8d-126">Especifica o grupo de recursos ao qual o hub de notificação está atribuído.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-126">Specifies the resource group to which the notification hub is assigned.</span></span>
+<span data-ttu-id="b5b8d-127">Os grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente o gerenciamento de estoque e a administração do Azure.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-127">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -108,31 +108,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="754b4-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="754b4-128">CommonParameters</span></span>
-<span data-ttu-id="754b4-129">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="754b4-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="754b4-130">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="754b4-130">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="b5b8d-128">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b5b8d-128">CommonParameters</span></span>
+<span data-ttu-id="b5b8d-129">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b5b8d-129">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b5b8d-130">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b5b8d-130">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="754b4-131">SENSORES</span><span class="sxs-lookup"><span data-stu-id="754b4-131">INPUTS</span></span>
+## <span data-ttu-id="b5b8d-131">Entradas</span><span class="sxs-lookup"><span data-stu-id="b5b8d-131">INPUTS</span></span>
 
-### <span data-ttu-id="754b4-132">System. String</span><span class="sxs-lookup"><span data-stu-id="754b4-132">System.String</span></span>
+### <span data-ttu-id="b5b8d-132">System.String</span><span class="sxs-lookup"><span data-stu-id="b5b8d-132">System.String</span></span>
 
-## <span data-ttu-id="754b4-133">EXIBE</span><span class="sxs-lookup"><span data-stu-id="754b4-133">OUTPUTS</span></span>
+## <span data-ttu-id="b5b8d-133">Saídas</span><span class="sxs-lookup"><span data-stu-id="b5b8d-133">OUTPUTS</span></span>
 
-### <span data-ttu-id="754b4-134">Microsoft. Azure. Commands. NotificationHubs. Models. NotificationHubAttributes</span><span class="sxs-lookup"><span data-stu-id="754b4-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span></span>
+### <span data-ttu-id="b5b8d-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span><span class="sxs-lookup"><span data-stu-id="b5b8d-134">Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes</span></span>
 
-## <span data-ttu-id="754b4-135">INFORMA</span><span class="sxs-lookup"><span data-stu-id="754b4-135">NOTES</span></span>
+## <span data-ttu-id="b5b8d-135">Notas</span><span class="sxs-lookup"><span data-stu-id="b5b8d-135">NOTES</span></span>
 
-## <span data-ttu-id="754b4-136">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="754b4-136">RELATED LINKS</span></span>
+## <span data-ttu-id="b5b8d-136">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="b5b8d-136">RELATED LINKS</span></span>
 
-[<span data-ttu-id="754b4-137">Get-AzNotificationHubAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="754b4-137">Get-AzNotificationHubAuthorizationRules</span></span>](./Get-AzNotificationHubAuthorizationRules.md)
 
-[<span data-ttu-id="754b4-138">Get-AzNotificationHubListKeys</span><span class="sxs-lookup"><span data-stu-id="754b4-138">Get-AzNotificationHubListKeys</span></span>](./Get-AzNotificationHubListKeys.md)
 
-[<span data-ttu-id="754b4-139">Get-AzNotificationHubPNSCredentials</span><span class="sxs-lookup"><span data-stu-id="754b4-139">Get-AzNotificationHubPNSCredentials</span></span>](./Get-AzNotificationHubPNSCredentials.md)
 
-[<span data-ttu-id="754b4-140">New-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="754b4-140">New-AzNotificationHub</span></span>](./New-AzNotificationHub.md)
+[<span data-ttu-id="b5b8d-137">New-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="b5b8d-137">New-AzNotificationHub</span></span>](./New-AzNotificationHub.md)
 
-[<span data-ttu-id="754b4-141">Remove-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="754b4-141">Remove-AzNotificationHub</span></span>](./Remove-AzNotificationHub.md)
+[<span data-ttu-id="b5b8d-138">Remove-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="b5b8d-138">Remove-AzNotificationHub</span></span>](./Remove-AzNotificationHub.md)
 
-[<span data-ttu-id="754b4-142">Set-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="754b4-142">Set-AzNotificationHub</span></span>](./Set-AzNotificationHub.md)
+[<span data-ttu-id="b5b8d-139">Set-AzNotificationHub</span><span class="sxs-lookup"><span data-stu-id="b5b8d-139">Set-AzNotificationHub</span></span>](./Set-AzNotificationHub.md)
 
 
