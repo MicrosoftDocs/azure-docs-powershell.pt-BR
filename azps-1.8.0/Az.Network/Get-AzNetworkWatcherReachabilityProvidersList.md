@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherReachabilityProvidersList.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherReachabilityProvidersList.md
-ms.openlocfilehash: cf35292be5005a957e245370a5b15b78bb7d4fa6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 227bd70bd67ff29015223becc6788f5043ae4776
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93600519"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400307"
 ---
 # Get-AzNetworkWatcherReachabilityProvidersList
 
 ## Sinopse
-Lista todos os provedores de serviços de Internet disponíveis para uma região do Azure especificada.
+Lista todos os provedores de serviços de Internet disponíveis para uma região especificada do Azure.
 
-## SYNTAX
+## Sintaxe
 
-### SetByName (padrão)
+### SetByName (Padrão)
 ```
 Get-AzNetworkWatcherReachabilityProvidersList -NetworkWatcherName <String> -ResourceGroupName <String>
  [-Location <String[]>] [-Country <String>] [-State <String>] [-City <String>] [-AsJob]
@@ -46,10 +46,10 @@ Get-AzNetworkWatcherReachabilityProvidersList -ResourceId <String> [-Location <S
  [-State <String>] [-City <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-A Get-AzNetworkWatcherReachabilityProvidersList lista todos os provedores de serviços de Internet disponíveis para uma região do Azure especificada.
+## Descrição
+A Get-AzNetworkWatcherReachabilityProvidersList lista todos os provedores de serviços de Internet disponíveis para uma região especificada do Azure.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```
@@ -79,12 +79,12 @@ PS C:\> Get-AzNetworkWatcherReachabilityProvidersList -NetworkWatcher $nw -Locat
 ]
 ```
 
-Lista todos os provedores disponíveis em Seattle, WA para o Azure Data Center no oeste dos EUA.
+Lista todos os provedores disponíveis em Seattle, WA para o Data Center do Azure no Oeste dos EUA.
 
-## OS
+## Parâmetros
 
 ### -AsJob
-Executar o cmdlet em segundo plano
+Executar cmdlet em segundo plano
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -País
-O nome do país.
+### -País/Região
+O nome do país/região.
 
 ```yaml
 Type: System.String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Local
-Regiões do Azure opcionais para fazer o escopo da consulta.
+Regiões opcionais do Azure para escopo da consulta.
 
 ```yaml
 Type: System.String[]
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-O recurso de Inspetor de rede.
+O recurso de watcher de rede.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherLocation
-Localização do Inspetor de rede.
+Localização do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-O nome do Inspetor de rede.
+O nome do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos do Inspetor de rede.
+O nome do grupo de recursos do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-A ID do recurso de Inspetor de rede.
+A ID do recurso de watcher de rede.
 
 ```yaml
 Type: System.String
@@ -249,20 +249,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSAvailableProvidersList
+### Microsoft.Azure.Commands.Network.Models.PSAvailableProvidersList
 
-## INFORMA
-Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede, observador de rede, próximo, salto 
+## Notas
+Palavras-chave: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, next, hop 
 
 ## LINKS RELACIONADOS
 
@@ -288,7 +288,7 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Parar-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -296,7 +296,7 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Parar-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -316,6 +316,6 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
