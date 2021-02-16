@@ -6,87 +6,86 @@ Help Version: 4.0.0.0
 Locale: en-US
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/EventHub/Commands.EventHub/help/AzureRM.EventHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/EventHub/Commands.EventHub/help/AzureRM.EventHub.md
-gitcommit: https://github.com/Azure/azure-powershell/blob/28baa4a53a4efceb1197c032a8db08e199f0858d
-ms.openlocfilehash: 5d5c9343fc994d94ff9456ca35b5a155a01497f0
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: a416d32f52850f2a3e5c4e024b247a2596bd4eef
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93441103"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398369"
 ---
-# Módulo AzureRM. EventHub
-## Descritivo
-Este tópico exibe ajuda para os cmdlets do Gerenciador de recursos do PowerShell do PowerShell de hubs de eventos do Azure.
+# Módulo AzureRM.EventHub
+## Descrição
+Este tópico exibe ajuda para os cmdlets do Gerenciador de recursos do PowerShell do Hub de Eventos do Azure.
 
-## Cmdlets. AzureRM. EventHub
+## AzureRM.EventHub Cmdlets
 ### [Get-AzureRmEventHub](Get-AzureRmEventHub.md)
-Obtém os detalhes de um único Hub de eventos ou obtém uma lista de hubs de eventos.
+Obtém os detalhes de um único Hub de Eventos ou obtém uma lista de Hubs de Eventos.
 
 ### [Get-AzureRmEventHubAuthorizationRule](Get-AzureRmEventHubAuthorizationRule.md)
 Obtém os detalhes de uma regra de autorização ou obtém uma lista de regras de autorização.
 
 ### [Get-AzureRmEventHubConsumerGroup](Get-AzureRmEventHubConsumerGroup.md)
-Obtém os detalhes de um grupo de consumidores de hubs de eventos especificado ou obtém uma lista de grupos de consumidores em um hub de eventos.
+Obtém os detalhes de um grupo de consumidores de Hubs de Eventos especificados ou obtém uma lista de grupos de consumidores em um Hub de Eventos.
 
 ### [Get-AzureRmEventHubKey](Get-AzureRmEventHubKey.md)
-Obtém os detalhes da chave primária da regra de autorização dos hubs de eventos especificados.
+Obtém os detalhes da chave primária da regra de autorização de Hubs de Eventos especificada.
 
 ### [Get-AzureRmEventHubNamespace](Get-AzureRmEventHubNamespace.md)
-Obtém os detalhes de um namespace de hubs de eventos ou obtém uma lista de todos os namespaces de hubs de eventos na assinatura atual do Azure.
+Obtém os detalhes de um namespace de Hubs de Eventos ou obtém uma lista de todos os namespaces dos Hubs de Eventos na assinatura atual do Azure.
 
 ### [Get-AzureRmEventHubNamespaceAuthorizationRule](Get-AzureRmEventHubNamespaceAuthorizationRule.md)
-Obtém os detalhes de uma regra de autorização de namespace de Hub de eventos ou obtém uma lista de regras de autorização.
+Obtém os detalhes de uma regra de autorização do namespace dos Hubs de Eventos ou obtém uma lista de regras de autorização.
 
 ### [Get-AzureRmEventHubNamespaceKey](Get-AzureRmEventHubNamespaceKey.md)
-Obtém os detalhes da chave primária da regra de autorização de namespace dos hubs de eventos especificados.
+Obtém os detalhes da chave primária da regra de autorização de namespace de Hubs de Eventos especificada.
 
 ### [New-AzureRmEventHub](New-AzureRmEventHub.md)
-Cria um novo hub de eventos.
+Cria um novo Hub de Eventos.
 
 ### [New-AzureRmEventHubAuthorizationRule](New-AzureRmEventHubAuthorizationRule.md)
-Cria uma nova regra de autorização de hubs de eventos.
+Cria uma nova regra de autorização de Hubs de Eventos.
 
 ### [New-AzureRmEventHubConsumerGroup](New-AzureRmEventHubConsumerGroup.md)
-Cria um novo grupo de consumidores para o Hub de eventos especificado.
+Cria um novo grupo de consumidores para o Hub de Eventos especificado.
 
 ### [New-AzureRmEventHubKey](New-AzureRmEventHubKey.md)
-Cria uma nova chave primária ou secundária para a regra de autorização de hubs de eventos especificada.
+Cria uma nova chave primária ou secundária para a regra de autorização de Hubs de Eventos especificada.
 
 ### [New-AzureRmEventHubNamespace](New-AzureRmEventHubNamespace.md)
-Cria um namespace de hubs de eventos.
+Cria um namespace de Hubs de Eventos.
 
 ### [New-AzureRmEventHubNamespaceAuthorizationRule](New-AzureRmEventHubNamespaceAuthorizationRule.md)
 Cria uma nova regra de autorização no namespace especificado.
 
 ### [New-AzureRmEventHubNamespaceKey](New-AzureRmEventHubNamespaceKey.md)
-Remove o Hub de eventos especificado.
+Remove o Hub de Eventos especificado.
 
 ### [Remove-AzureRmEventHub](Remove-AzureRmEventHub.md)
-Remove o Hub de eventos especificado.
+Remove o Hub de Eventos especificado.
 
 ### [Remove-AzureRmEventHubAuthorizationRule](Remove-AzureRmEventHubAuthorizationRule.md)
-Remove a regra de autorização do hub de eventos especificada.
+Remove a regra de autorização especificada do Hub de Eventos.
 
 ### [Remove-AzureRmEventHubConsumerGroup](Remove-AzureRmEventHubConsumerGroup.md)
-Remove o grupo de consumidores dos hubs de eventos especificados.
+Remove o grupo de consumidores de Hubs de Eventos especificado.
 
 ### [Remove-AzureRmEventHubNamespace](Remove-AzureRmEventHubNamespace.md)
-Remove o namespace especificado dos hubs de eventos.
+Remove o namespace de Hubs de Eventos especificado.
 
 ### [Remove-AzureRmEventHubNamespaceAuthorizationRule](Remove-AzureRmEventHubNamespaceAuthorizationRule.md)
-Remove a regra de autorização especificada no namespace de hubs de eventos específico.
+Remove a regra de autorização especificada no namespace de hubs de eventos determinado.
 
 ### [Set-AzureRmEventHub](Set-AzureRmEventHub.md)
-Atualiza o Hub de eventos especificado.
+Atualiza o Hub de Eventos especificado.
 
 ### [Set-AzureRmEventHubAuthorizationRule](Set-AzureRmEventHubAuthorizationRule.md)
-Atualiza a regra de autorização especificada em um hub de eventos.
+Atualiza a regra de autorização especificada em um Hub de Eventos.
 
 ### [Set-AzureRmEventHubConsumerGroup](Set-AzureRmEventHubConsumerGroup.md)
-Atualiza o grupo de consumidores dos hubs de eventos especificados.
+Atualiza o grupo de consumidores de Hubs de Eventos especificado.
 
 ### [Set-AzureRmEventHubNamespace](Set-AzureRmEventHubNamespace.md)
-Atualiza o namespace de hubs de eventos especificado.
+Atualiza o namespace de Hubs de Eventos especificado.
 
 ### [Set-AzureRmEventHubNamespaceAuthorizationRule](Set-AzureRmEventHubNamespaceAuthorizationRule.md)
-Atualiza a regra de autorização no namespace de hubs de eventos especificado.
+Atualiza a regra de autorização no namespace de Hubs de Eventos especificado.
