@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/te
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherConnectivity.md
-ms.openlocfilehash: 8d3a714f2798c4866df39cd63c664228f078c37c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e717c32b817dc86de2bfa1b9de09b95121609f28
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111515"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100416151"
 ---
 # Test-AzNetworkWatcherConnectivity
 
 ## Sinopse
-Retorna informações de conectividade para uma VM de origem especificada e um destino.
+Retorna informações de conectividade para um VM de origem especificado e um destino.
 
-## SYNTAX
+## Sintaxe
 
-### SetByResource (padrão)
+### SetByResource (Padrão)
 ```
 Test-AzNetworkWatcherConnectivity -NetworkWatcher <PSNetworkWatcher> -SourceId <String> [-SourcePort <Int32>]
  [-DestinationId <String>] [-DestinationAddress <String>] [-DestinationPort <Int32>]
@@ -43,12 +43,12 @@ Test-AzNetworkWatcherConnectivity -Location <String> -SourceId <String> [-Source
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet Test-AzNetworkWatcherConnectivity retorna informações de conectividade para uma VM de origem especificada e um destino. Se não for possível estabelecer conectividade entre a origem e o destino, o cmdlet retornará detalhes sobre o problema.
+## Descrição
+O Test-AzNetworkWatcherConnectivity cmdlet retorna informações de conectividade para um VM de origem especificado e um destino. Se a conectividade entre a origem e o destino não puder ser estabelecida, o cmdlet retornará detalhes sobre o problema.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: testar a conectividade do Inspetor de rede de uma VM para um site
+### Exemplo 1: Testar a conectividade do Watcher de Rede de um VM para um site
 ```powershell
 Test-AzNetworkWatcherConnectivity -NetworkWatcherName NetworkWatcher -ResourceGroupName NetworkWatcherRG -SourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0" -DestinationAddress "bing.com" -DestinationPort 80
 
@@ -81,21 +81,21 @@ Hops             : [
                    ]
 ```
 
-Neste exemplo, testamos a conectividade de uma VM no Azure para www.bing.com.
+Neste exemplo, testamos a conectividade de um VM no Azure para www.bing.com.
 
 ### Exemplo 2
 
-Retorna informações de conectividade para uma VM de origem especificada e um destino. (gerado automaticamente)
+Retorna informações de conectividade para um VM de origem especificado e um destino. (gerado automaticamente)
 
 <!-- Aladdin Generated Example -->
 ```powershell
 Test-AzNetworkWatcherConnectivity -DestinationAddress 'bing.com' -DestinationPort 80 -NetworkWatcher <PSNetworkWatcher> -SourceId '/subscriptions/00000000-0000-0000-0000-00000000000000000/resourceGroups/ContosoRG/providers/Microsoft.Compute/virtualMachines/MultiTierApp0'
 ```
 
-## OS
+## Parâmetros
 
 ### -AsJob
-Executar o cmdlet em segundo plano
+Executar cmdlet em segundo plano
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationAddress
-O endereço IP ou URI o recurso para o qual uma tentativa de conexão será feita.
+O endereço IP ou o URI do recurso ao qual uma tentativa de conexão será feita.
 
 ```yaml
 Type: System.String
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationId
-A ID do recurso para o qual uma tentativa de conexão será feita.
+A ID do recurso ao qual uma tentativa de conexão será feita.
 
 ```yaml
 Type: System.String
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPort
-Porta na qual verificação de conectividade será realizada.
+Porta na qual a conectividade de verificação será executada.
 
 ```yaml
 Type: System.Int32
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -Local
-Localização do Inspetor de rede.
+Localização do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-O recurso de Inspetor de rede.
+O recurso de watcher de rede.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-O nome do Inspetor de rede.
+O nome do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtocolConfiguration
-Configuração de protocolo na qual verificação de conectividade será realizada.
+Configuração de protocolo na qual a conectividade de verificação será executada.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcherProtocolConfiguration
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos do Inspetor de rede.
+O nome do grupo de recursos do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -244,7 +244,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SourceID
+### -SourceId
 A ID do recurso a partir do qual uma verificação de conectividade será iniciada.
 
 ```yaml
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -SourcePort
-A porta de origem da qual uma verificação de conectividade será realizada.
+A porta de origem da qual uma verificação de conectividade será executada.
 
 ```yaml
 Type: System.Int32
@@ -275,22 +275,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Int32
+### System.Int32
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSConnectivityInformation
+### Microsoft.Azure.Commands.Network.Models.PSConnectivityInformation
 
-## INFORMA
-Palavras-chave: Azure, azurerm, ARM, recurso, conectividade, gerenciamento, gerente, rede, rede, Inspetor de rede
+## Notas
+Palavras-chave: azure, azurerm, arm, resource, connectivity, management, manager, network, networking, network watcher
 
 ## LINKS RELACIONADOS
 
@@ -307,14 +307,14 @@ Palavras-chave: Azure, azurerm, ARM, recurso, conectividade, gerenciamento, gere
  [New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md) 
  [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md) 
  [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md) 
- [Parar-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+ [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 
 [Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md) 
  [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md) 
  [Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md) 
  [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md) 
- [Parar-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md) 
+ [Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md) 
  [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md) 
  [Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md) 
@@ -324,4 +324,4 @@ Palavras-chave: Azure, azurerm, ARM, recurso, conectividade, gerenciamento, gere
  [Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md) 
  [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md) 
  [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md) 
- [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+ [Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
