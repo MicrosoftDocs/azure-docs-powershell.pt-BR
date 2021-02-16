@@ -1,0 +1,275 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/set-azmanagedapplicationdefinition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzManagedApplicationDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzManagedApplicationDefinition.md
+ms.openlocfilehash: 3f7ee823441910e1e5e79da3901d4114f04fdd67
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100113298"
+---
+# Set-AzManagedApplicationDefinition
+
+## Sinopse
+Atualiza a definição de aplicativo gerenciado
+
+## Sintaxe
+
+### SetByNameAndResourceGroup (Padrão)
+```
+Set-AzManagedApplicationDefinition -Name <String> -ResourceGroupName <String> [-DisplayName <String>]
+ [-Description <String>] [-PackageFileUri <String>] [-Authorization <String[]>] [-Tag <Hashtable>]
+ [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### SetById
+```
+Set-AzManagedApplicationDefinition -Id <String> [-DisplayName <String>] [-Description <String>]
+ [-PackageFileUri <String>] [-Authorization <String[]>] [-Tag <Hashtable>] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## Descrição
+O **cmdlet Set-AzManagedApplicationDefinition** atualiza definições de aplicativo gerenciado
+
+## Exemplos
+
+### Exemplo 1: atualizar a descrição da definição de aplicativo gerenciado
+```powershell
+PS C:\>Set-AzManagedApplicationDefinition -ResourceId "/subscriptions/mySubId/resourcegroups/myRG/Microsoft.Solutions/applicationDefinitions/myAppDef" -Description "Updated description here"
+```
+
+Este comando atualiza a descrição da definição de aplicativo gerenciado
+
+### Exemplo 2
+
+Atualiza a definição de aplicativo gerenciado. (gerado automaticamente)
+
+<!-- Aladdin Generated Example -->
+```powershell
+Set-AzManagedApplicationDefinition -Id '/subscriptions/mySubId/resourcegroups/myRG/Microsoft.Solutions/applicationDefinitions/myAppDef' -PackageFileUri https://sample.blob.core.windows.net/files/myPackage.zip
+```
+
+## Parâmetros
+
+### -ApiVersion
+Quando definido, indica a versão da API do provedor de recursos a ser usada.
+Se não especificado, a versão da API será determinada automaticamente como a mais recente disponível.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Autorização
+A autorização de definição de aplicativo gerenciado.
+Pares de autorização separados por vírgulas em um formato \<principalId\> de:\<roleDefinitionId\>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Descrição
+A descrição da definição de aplicativo gerenciado.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DisplayName
+O nome de exibição de definição de aplicativo gerenciado.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ID
+A ID de definição de aplicativo gerenciado totalmente qualificada, incluindo a assinatura. por exemplo, /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName
+
+```yaml
+Type: System.String
+Parameter Sets: SetById
+Aliases: ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Nome
+O nome de definição de aplicativo gerenciado.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByNameAndResourceGroup
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -PackageFileUri
+O uri de arquivo de pacote de definição de aplicativo gerenciado.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Pré-
+Quando definido, indica que o cmdlet deve usar versões da API de pré-lançamento ao determinar automaticamente qual versão usar.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+O nome do grupo de recursos.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByNameAndResourceGroup
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Tag
+Uma tabela hash que representa marcas de recurso.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: Tags
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirmar
+Solicita confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que acontece se o cmdlet for executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## Entradas
+
+### System.String
+
+### System.String[]
+
+### System.Collections.Hashtable
+
+## Saídas
+
+### System.Management.Automation.PSObject
+
+## Notas
+
+## LINKS RELACIONADOS
