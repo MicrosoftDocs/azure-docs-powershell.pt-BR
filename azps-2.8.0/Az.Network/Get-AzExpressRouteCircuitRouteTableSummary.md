@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitRouteTableSummary.md
-ms.openlocfilehash: cc3057582876dd3836f6b157a8ee31bb5b232539
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bca0dde2947b214d13032b54681f2fc179c26af1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93771768"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411528"
 ---
 # Get-AzExpressRouteCircuitRouteTableSummary
 
 ## Sinopse
 Obtém um resumo da tabela de rota de um circuito do ExpressRoute.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressRouteCircuitName <String>
@@ -26,20 +26,20 @@ Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName <String> -ExpressR
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzExpressRouteCircuitRouteTableSummary** recupera um resumo das informações de vizinho BGP para um contexto de roteamento específico. Essas informações são úteis para determinar por quanto tempo um contexto de roteamento foi estabelecido e o número de prefixos de rota anunciados pelo roteador de emparelhamento.
+## Descrição
+O cmdlet **Get-AzExpressRoute CircuitRouteTableSummary** recupera um resumo das informações do vizinhos BGP para um contexto de roteamento específico. Essas informações são úteis para determinar por quanto tempo um contexto de roteamento foi estabelecido e o número de prefixos de rota anunciados pelo roteador de paridade.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: exibir o resumo da rota para o caminho principal
+### Exemplo 1: Exibir o resumo da rota para o caminho principal
 ```
 Get-AzExpressRouteCircuitRouteTableSummary -ResourceGroupName $RG -ExpressRouteCircuitName $CircuitName -DevicePath 'Primary'
 ```
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -54,7 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### -DevicePath
-Os valores aceitáveis para esse parâmetro são: `Primary` ou `Secondary`
+Os valores aceitáveis para este parâmetro são: `Primary` ou `Secondary`
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.DevicePathEnum
@@ -69,8 +69,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpressRouteCircuitName
-O nome do circuito do ExpressRoute sendo examinado.
+### -ExpressRoute CircuitName
+O nome do circuito do ExpressRoute que está sendo examinado.
 
 ```yaml
 Type: System.String
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeeringType
-Os valores aceitáveis para esse parâmetro são: `AzurePrivatePeering` , `AzurePublicPeering` , e `MicrosoftPeering`
+Os valores aceitáveis para este parâmetro são: `AzurePrivatePeering` `AzurePublicPeering` , e `MicrosoftPeering`
 
 ```yaml
 Type: System.String
@@ -116,22 +116,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuitRoutesTableSummary
+### Microsoft.Azure.Commands.Network.Models.PSExpressRoute CircuitRoutesTableSummary
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzExpressRouteCircuitARPTable](Get-AzExpressRouteCircuitARPTable.md)
+[Tabela Get-AzExpressRoute CircuitARPTable](Get-AzExpressRouteCircuitARPTable.md)
 
-[Get-AzExpressRouteCircuitRouteTable](Get-AzExpressRouteCircuitRouteTable.md)
+[Get-AzExpressRoute CircuitRouteTable](Get-AzExpressRouteCircuitRouteTable.md)
 
-[Get-AzExpressRouteCircuitStats](Get-AzExpressRouteCircuitStats.md)
+[Get-AzExpressRoute CircuitStat](Get-AzExpressRouteCircuitStat.md)
