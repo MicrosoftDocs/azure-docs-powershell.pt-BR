@@ -6,80 +6,80 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: 5935706c341fac5f0b26d3e4965f226342c3dfc8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ccd2762449e24f881a3308c0d11476a1e4626fed
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93596206"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403571"
 ---
-# <span data-ttu-id="bd480-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-101">Get-AzKeyVaultCertificate</span></span>
+# <span data-ttu-id="437e1-101">Get-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-101">Get-AzKeyVaultCertificate</span></span>
 
-## <span data-ttu-id="bd480-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="bd480-102">SYNOPSIS</span></span>
-<span data-ttu-id="bd480-103">Obtém um certificado de um cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="bd480-103">Gets a certificate from a key vault.</span></span>
+## <span data-ttu-id="437e1-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="437e1-102">SYNOPSIS</span></span>
+<span data-ttu-id="437e1-103">Obtém um certificado de um cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="437e1-103">Gets a certificate from a key vault.</span></span>
 
-## <span data-ttu-id="bd480-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="bd480-104">SYNTAX</span></span>
+## <span data-ttu-id="437e1-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="437e1-104">SYNTAX</span></span>
 
-### <span data-ttu-id="bd480-105">ByName (padrão)</span><span class="sxs-lookup"><span data-stu-id="bd480-105">ByName (Default)</span></span>
+### <span data-ttu-id="437e1-105">ByName (Default)</span><span class="sxs-lookup"><span data-stu-id="437e1-105">ByName (Default)</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="bd480-106">ByCertificateNameAndVersion</span></span>
+### <span data-ttu-id="437e1-106">ByCertificateNameAndVersion</span><span class="sxs-lookup"><span data-stu-id="437e1-106">ByCertificateNameAndVersion</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="bd480-107">ByCertificateAllVersions</span></span>
+### <span data-ttu-id="437e1-107">ByCertificateAllVersions</span><span class="sxs-lookup"><span data-stu-id="437e1-107">ByCertificateAllVersions</span></span>
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="bd480-108">ByNameInputObject</span></span>
+### <span data-ttu-id="437e1-108">ByNameInputObject</span><span class="sxs-lookup"><span data-stu-id="437e1-108">ByNameInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="bd480-109">ByCertificateNameAndVersionInputObject</span></span>
+### <span data-ttu-id="437e1-109">ByCertificateNameAndVersionInputObject</span><span class="sxs-lookup"><span data-stu-id="437e1-109">ByCertificateNameAndVersionInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="bd480-110">ByCertificateAllVersionsInputObject</span></span>
+### <span data-ttu-id="437e1-110">ByCertificateAllVersionsInputObject</span><span class="sxs-lookup"><span data-stu-id="437e1-110">ByCertificateAllVersionsInputObject</span></span>
 ```
 Get-AzKeyVaultCertificate [-InputObject] <PSKeyVault> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="bd480-111">ByNameResourceId</span></span>
+### <span data-ttu-id="437e1-111">ByNameResourceId</span><span class="sxs-lookup"><span data-stu-id="437e1-111">ByNameResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="bd480-112">ByCertificateNameAndVersionResourceId</span></span>
+### <span data-ttu-id="437e1-112">ByCertificateNameAndVersionResourceId</span><span class="sxs-lookup"><span data-stu-id="437e1-112">ByCertificateNameAndVersionResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-Version] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="bd480-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="bd480-113">ByCertificateAllVersionsResourceId</span></span>
+### <span data-ttu-id="437e1-113">ByCertificateAllVersionsResourceId</span><span class="sxs-lookup"><span data-stu-id="437e1-113">ByCertificateAllVersionsResourceId</span></span>
 ```
 Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="bd480-114">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="bd480-114">DESCRIPTION</span></span>
-<span data-ttu-id="bd480-115">O cmdlet **Get-AzKeyVaultCertificate** Obtém o certificado especificado ou as versões de um certificado de um cofre de chaves no cofre de chaves do Azure.</span><span class="sxs-lookup"><span data-stu-id="bd480-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
+## <span data-ttu-id="437e1-114">Descrição</span><span class="sxs-lookup"><span data-stu-id="437e1-114">DESCRIPTION</span></span>
+<span data-ttu-id="437e1-115">O cmdlet **Get-AzKeyVaultCertificate** obtém o certificado especificado ou as versões de um certificado de um cofre de chave no Cofre de Teclas do Azure.</span><span class="sxs-lookup"><span data-stu-id="437e1-115">The **Get-AzKeyVaultCertificate** cmdlet gets the specified certificate or the versions of a certificate from a key vault in Azure Key Vault.</span></span>
 
-## <span data-ttu-id="bd480-116">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="bd480-116">EXAMPLES</span></span>
+## <span data-ttu-id="437e1-116">Exemplos</span><span class="sxs-lookup"><span data-stu-id="437e1-116">EXAMPLES</span></span>
 
-### <span data-ttu-id="bd480-117">Exemplo 1: obter um certificado</span><span class="sxs-lookup"><span data-stu-id="bd480-117">Example 1: Get a certificate</span></span>
+### <span data-ttu-id="437e1-117">Exemplo 1: Obter um certificado</span><span class="sxs-lookup"><span data-stu-id="437e1-117">Example 1: Get a certificate</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -108,9 +108,9 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-<span data-ttu-id="bd480-118">Esse comando obtém o certificado chamado TestCert01 do cofre de chaves chamado ContosoKV01.</span><span class="sxs-lookup"><span data-stu-id="bd480-118">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span>
+<span data-ttu-id="437e1-118">Esse comando obtém o certificado testCert01 do cofre de chave chamado ContosoKV01.</span><span class="sxs-lookup"><span data-stu-id="437e1-118">This command gets the certificate named TestCert01 from the key vault named ContosoKV01.</span></span>
 
-### <span data-ttu-id="bd480-119">Exemplo 2: obter todos os certificados que foram excluídos, mas não foram removidos deste cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="bd480-119">Example 2: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="437e1-119">Exemplo 2: Obter todos os certificados que foram excluídos, mas não limpos para esse cofre de chave.</span><span class="sxs-lookup"><span data-stu-id="437e1-119">Example 2: Get all the certificates that have been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -140,9 +140,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-<span data-ttu-id="bd480-120">Esse comando obtém todos os certificados que foram excluídos anteriormente, mas não foram removidos, no cofre de chaves chamado contoso.</span><span class="sxs-lookup"><span data-stu-id="bd480-120">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="437e1-120">Esse comando obtém todos os certificados que foram excluídos anteriormente, mas não limpos, no cofre de chave chamado Contoso.</span><span class="sxs-lookup"><span data-stu-id="437e1-120">This command gets all the certificates that have been previously deleted, but not purged, in the key vault named Contoso.</span></span>
 
-### <span data-ttu-id="bd480-121">Exemplo 3: Obtém o certificado MyCert que foi excluído, mas não foi removido para este cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="bd480-121">Example 3: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
+### <span data-ttu-id="437e1-121">Exemplo 3: Obtém o certificado MyCert que foi excluído, mas não limpo para este cofre de chave.</span><span class="sxs-lookup"><span data-stu-id="437e1-121">Example 3: Gets the certificate MyCert that has been deleted but not purged for this key vault.</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -182,10 +182,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-<span data-ttu-id="bd480-122">Esse comando obtém o certificado chamado ' MyCert ' que foi excluído anteriormente, mas não foi removido, no cofre de chaves chamado contoso.</span><span class="sxs-lookup"><span data-stu-id="bd480-122">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
-<span data-ttu-id="bd480-123">Esse comando retornará metadados como a data de exclusão e a data de descarte programada desse certificado excluído.</span><span class="sxs-lookup"><span data-stu-id="bd480-123">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
+<span data-ttu-id="437e1-122">Esse comando obtém o certificado chamado "MeuCert" que foi excluído anteriormente, mas não limpo, no cofre de chave chamado Contoso.</span><span class="sxs-lookup"><span data-stu-id="437e1-122">This command gets the certificate named 'MyCert' that has been previously deleted, but not purged, in the key vault named Contoso.</span></span>
+<span data-ttu-id="437e1-123">Esse comando retornará metadados, como a data de exclusão e a data de purgação agendada deste certificado excluído.</span><span class="sxs-lookup"><span data-stu-id="437e1-123">This command will return metadata such as the deletion date, and the scheduled purging date of this deleted certificate.</span></span>
 
-### <span data-ttu-id="bd480-124">Exemplo 4: listar certificados usando a filtragem</span><span class="sxs-lookup"><span data-stu-id="bd480-124">Example 4: List certificates using filtering</span></span>
+### <span data-ttu-id="437e1-124">Exemplo 4: Certificados de lista usando filtragem</span><span class="sxs-lookup"><span data-stu-id="437e1-124">Example 4: List certificates using filtering</span></span>
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -214,10 +214,10 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## <span data-ttu-id="bd480-125">OS</span><span class="sxs-lookup"><span data-stu-id="bd480-125">PARAMETERS</span></span>
+## <span data-ttu-id="437e1-125">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="437e1-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="bd480-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bd480-126">-DefaultProfile</span></span>
-<span data-ttu-id="bd480-127">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="bd480-127">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="437e1-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="437e1-126">-DefaultProfile</span></span>
+<span data-ttu-id="437e1-127">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="437e1-127">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -231,8 +231,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-128">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="bd480-128">-IncludePending</span></span>
-<span data-ttu-id="bd480-129">Especifica se devem ser incluídos certificados pendentes na saída</span><span class="sxs-lookup"><span data-stu-id="bd480-129">Specifies whether to include pending certificates in the output</span></span>
+### <span data-ttu-id="437e1-128">-IncludePending</span><span class="sxs-lookup"><span data-stu-id="437e1-128">-IncludePending</span></span>
+<span data-ttu-id="437e1-129">Especifica se você deve incluir certificados pendentes na saída</span><span class="sxs-lookup"><span data-stu-id="437e1-129">Specifies whether to include pending certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,8 +246,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-130">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="bd480-130">-IncludeVersions</span></span>
-<span data-ttu-id="bd480-131">Indica que essa operação obtém todas as versões do certificado.</span><span class="sxs-lookup"><span data-stu-id="bd480-131">Indicates that this operation gets all versions of the certificate.</span></span>
+### <span data-ttu-id="437e1-130">-IncludeVersions</span><span class="sxs-lookup"><span data-stu-id="437e1-130">-IncludeVersions</span></span>
+<span data-ttu-id="437e1-131">Indica que essa operação obtém todas as versões do certificado.</span><span class="sxs-lookup"><span data-stu-id="437e1-131">Indicates that this operation gets all versions of the certificate.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,8 +261,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-132">-InputObject</span><span class="sxs-lookup"><span data-stu-id="bd480-132">-InputObject</span></span>
-<span data-ttu-id="bd480-133">Objeto do keyvault.</span><span class="sxs-lookup"><span data-stu-id="bd480-133">KeyVault object.</span></span>
+### <span data-ttu-id="437e1-132">-InputObject</span><span class="sxs-lookup"><span data-stu-id="437e1-132">-InputObject</span></span>
+<span data-ttu-id="437e1-133">Objeto KeyVault.</span><span class="sxs-lookup"><span data-stu-id="437e1-133">KeyVault object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -276,8 +276,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-134">-Inremovestate</span><span class="sxs-lookup"><span data-stu-id="bd480-134">-InRemovedState</span></span>
-<span data-ttu-id="bd480-135">Especifica se devem ser incluídos certificados excluídos anteriormente na saída</span><span class="sxs-lookup"><span data-stu-id="bd480-135">Specifies whether to include previously deleted certificates in the output</span></span>
+### <span data-ttu-id="437e1-134">-InRemovedState</span><span class="sxs-lookup"><span data-stu-id="437e1-134">-InRemovedState</span></span>
+<span data-ttu-id="437e1-135">Especifica se você deve incluir certificados excluídos anteriormente na saída</span><span class="sxs-lookup"><span data-stu-id="437e1-135">Specifies whether to include previously deleted certificates in the output</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -291,8 +291,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-136">-Nome</span><span class="sxs-lookup"><span data-stu-id="bd480-136">-Name</span></span>
-<span data-ttu-id="bd480-137">Especifica o nome do certificado a ser obtido.</span><span class="sxs-lookup"><span data-stu-id="bd480-137">Specifies the name of the certificate to get.</span></span>
+### <span data-ttu-id="437e1-136">-Nome</span><span class="sxs-lookup"><span data-stu-id="437e1-136">-Name</span></span>
+<span data-ttu-id="437e1-137">Especifica o nome do certificado a ser obter.</span><span class="sxs-lookup"><span data-stu-id="437e1-137">Specifies the name of the certificate to get.</span></span>
 
 ```yaml
 Type: System.String
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="bd480-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="bd480-138">-ResourceId</span></span>
-<span data-ttu-id="bd480-139">ID do recurso do keyvault.</span><span class="sxs-lookup"><span data-stu-id="bd480-139">KeyVault Resource Id.</span></span>
+### <span data-ttu-id="437e1-138">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="437e1-138">-ResourceId</span></span>
+<span data-ttu-id="437e1-139">ID do Recurso KeyVault.</span><span class="sxs-lookup"><span data-stu-id="437e1-139">KeyVault Resource Id.</span></span>
 
 ```yaml
 Type: System.String
@@ -333,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-140">-Cofrename</span><span class="sxs-lookup"><span data-stu-id="bd480-140">-VaultName</span></span>
-<span data-ttu-id="bd480-141">Especifica o nome de um cofre de chaves.</span><span class="sxs-lookup"><span data-stu-id="bd480-141">Specifies the name of a key vault.</span></span>
+### <span data-ttu-id="437e1-140">-Nomedo Cofre</span><span class="sxs-lookup"><span data-stu-id="437e1-140">-VaultName</span></span>
+<span data-ttu-id="437e1-141">Especifica o nome de um cofre de chave.</span><span class="sxs-lookup"><span data-stu-id="437e1-141">Specifies the name of a key vault.</span></span>
 
 ```yaml
 Type: System.String
@@ -348,8 +348,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-142">-Versão</span><span class="sxs-lookup"><span data-stu-id="bd480-142">-Version</span></span>
-<span data-ttu-id="bd480-143">Especifica a versão de um certificado.</span><span class="sxs-lookup"><span data-stu-id="bd480-143">Specifies the version of a certificate.</span></span>
+### <span data-ttu-id="437e1-142">-Versão</span><span class="sxs-lookup"><span data-stu-id="437e1-142">-Version</span></span>
+<span data-ttu-id="437e1-143">Especifica a versão de um certificado.</span><span class="sxs-lookup"><span data-stu-id="437e1-143">Specifies the version of a certificate.</span></span>
 
 ```yaml
 Type: System.String
@@ -363,33 +363,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="bd480-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bd480-144">CommonParameters</span></span>
-<span data-ttu-id="bd480-145">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="bd480-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bd480-146">Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="bd480-146">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="437e1-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="437e1-144">CommonParameters</span></span>
+<span data-ttu-id="437e1-145">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="437e1-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="437e1-146">Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="437e1-146">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="bd480-147">SENSORES</span><span class="sxs-lookup"><span data-stu-id="bd480-147">INPUTS</span></span>
+## <span data-ttu-id="437e1-147">Entradas</span><span class="sxs-lookup"><span data-stu-id="437e1-147">INPUTS</span></span>
 
-### <span data-ttu-id="bd480-148">Microsoft. Azure. Commands. keyvault. Models. PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="bd480-148">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
+### <span data-ttu-id="437e1-148">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span><span class="sxs-lookup"><span data-stu-id="437e1-148">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault</span></span>
 
-### <span data-ttu-id="bd480-149">System. String</span><span class="sxs-lookup"><span data-stu-id="bd480-149">System.String</span></span>
+### <span data-ttu-id="437e1-149">System.String</span><span class="sxs-lookup"><span data-stu-id="437e1-149">System.String</span></span>
 
-## <span data-ttu-id="bd480-150">EXIBE</span><span class="sxs-lookup"><span data-stu-id="bd480-150">OUTPUTS</span></span>
+## <span data-ttu-id="437e1-150">Saídas</span><span class="sxs-lookup"><span data-stu-id="437e1-150">OUTPUTS</span></span>
 
-### <span data-ttu-id="bd480-151">Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="bd480-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="437e1-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="437e1-151">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem</span></span>
 
-### <span data-ttu-id="bd480-152">Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
+### <span data-ttu-id="437e1-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-152">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="bd480-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
+### <span data-ttu-id="437e1-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-153">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate</span></span>
 
-### <span data-ttu-id="bd480-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="bd480-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
+### <span data-ttu-id="437e1-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span><span class="sxs-lookup"><span data-stu-id="437e1-154">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem</span></span>
 
-## <span data-ttu-id="bd480-155">INFORMA</span><span class="sxs-lookup"><span data-stu-id="bd480-155">NOTES</span></span>
+## <span data-ttu-id="437e1-155">Notas</span><span class="sxs-lookup"><span data-stu-id="437e1-155">NOTES</span></span>
 
-## <span data-ttu-id="bd480-156">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="bd480-156">RELATED LINKS</span></span>
+## <span data-ttu-id="437e1-156">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="437e1-156">RELATED LINKS</span></span>
 
-[<span data-ttu-id="bd480-157">Add-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-157">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
+[<span data-ttu-id="437e1-157">Add-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-157">Add-AzKeyVaultCertificate</span></span>](./Add-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="bd480-158">Import-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-158">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
+[<span data-ttu-id="437e1-158">Import-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-158">Import-AzKeyVaultCertificate</span></span>](./Import-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="bd480-159">Remove-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-159">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
+[<span data-ttu-id="437e1-159">Remove-AzKeyVaultCertificate</span><span class="sxs-lookup"><span data-stu-id="437e1-159">Remove-AzKeyVaultCertificate</span></span>](./Remove-AzKeyVaultCertificate.md)
 
-[<span data-ttu-id="bd480-160">Desfazer-AzKeyVaultSecretCertificate</span><span class="sxs-lookup"><span data-stu-id="bd480-160">Undo-AzKeyVaultSecretCertificate</span></span>](./Undo-AzKeyVaultSecretCertificate.md)
