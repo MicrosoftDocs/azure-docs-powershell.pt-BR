@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: b2b9aac6f99cae14ea043ae21f8db8be538eee04
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 7202021c2d18c9b388ad6b51db600fc5b368c76e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93775750"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399066"
 ---
 # Get-AzAlertHistory
 
 ## Sinopse
 Obtém o histórico de alertas.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzAlertHistory** Obtém o histórico de alertas à medida que eles são habilitados, desabilitados, acionados, resolvidos e assim por diante.
+## Descrição
+O cmdlet **Get-AzAlertHistory** obtém o histórico de alertas conforme eles são habilitados, desabilitados, desativados, resolvidos e assim por diante.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter o histórico de alertas
+### Exemplo 1: Obter o histórico de alertas
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Este comando obtém o histórico de alertas do período de tempo especificado para a assinatura atual.
+Esse comando obtém o histórico de alertas do período especificado para a assinatura atual.
 
-### Exemplo 2: obter o histórico de alertas para um recurso especificado
+### Exemplo 2: Obter o histórico de alertas de um recurso especificado
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,9 +268,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-Esse comando obtém os eventos relacionados a regras de alerta para um recurso especificado.
+Esse comando obtém os eventos relacionados à regra de alerta para um recurso especificado.
 
-## OS
+## Parâmetros
 
 ### -Chamador
 Especifica o chamador.
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-Especifica a hora de término da consulta na hora local.
+Especifica a hora de término da consulta em horário local.
 O padrão é a hora atual.
 
 ```yaml
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Especifica a identificação do recurso ao qual a regra está associada.
+Especifica a ID do recurso à que a regra está associada.
 
 ```yaml
 Type: System.String
@@ -349,7 +349,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-Especifica a hora de início da consulta na hora local.
+Especifica a hora de início da consulta em horário local.
 O padrão é a hora local atual menos uma hora.
 
 ```yaml
@@ -380,25 +380,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. Nullable ' 1 [[System. DateTime, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. insights. OutputClasses. PSEventData
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

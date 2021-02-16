@@ -6,47 +6,47 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93944507"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406274"
 ---
 # Get-AzNotificationHub
 
 ## Sinopse
 Obtém informações sobre seus hubs de notificação.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-NotificationHub] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzNotificationHub** Obtém informações sobre os hubs de notificação em um namespace especificado e atribuídos a um grupo de recursos especificado.
+## Descrição
+O **cmdlet Get-AzNotificationHub** obtém informações sobre os hubs de notificação em um espaço de nome especificado e atribuído a um grupo de recursos especificado.
 Por exemplo, você pode obter informações para todos os hubs de notificação no namespace ContosoNamespace e atribuídas ao grupo de recursos ContosoNotificationsGroup.
-Você também pode usar o parâmetro *NotificationHub* para limitar os dados retornados às informações sobre um hub de notificação específico.
-Os hubs de notificação são usados para enviar notificações por push para vários clientes, independentemente da plataforma, como iOS, Android, Windows Phone 8 e Windows Store, usados por esses clientes.
-Esses hubs são aproximadamente equivalentes a aplicativos individuais e cada um dos seus aplicativos normalmente tem seu próprio Hub de notificação.
-Este cmdlet somente Obtém informações sobre o próprio Hub.
-Outros cmdlets, como Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials, são necessários para obter informações sobre as regras de autorização de um Hub, cadeias de conexão e credenciais do serviço de notificação de plataforma.
+Como alternativa, você pode usar o parâmetro *NotificationHub* para limitar os dados retornados a informações sobre um hub de notificação específico.
+Os hubs de notificação são usados para enviar notificações por push para vários clientes independentemente da plataforma, como iOS, Android, Windows Phone 8 e Windows Store, usados por esses clientes.
+Esses hubs são aproximadamente equivalentes a aplicativos individuais e cada um dos seus aplicativos normalmente terá seu próprio hub de notificação.
+Este cmdlet obtém apenas informações sobre o hub em si.
+Outros cmdlets, como Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys e Get-AzNotificationHubPNSCredentials, são necessários para obter informações sobre regras de autorização do hub, cadeias de conexão e credenciais de serviço de notificação de plataforma.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter informações para todos os hubs de notificação em um namespace específico
+### Exemplo 1: Obter informações para todos os hubs de notificação em um namespace específico
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-Esse comando obtém informações para todos os hubs de notificação no namespace chamado ContosoNamespace que foram atribuídos à ContosoNotificationsGroup do grupo de recursos.
+Esse comando obtém informações para todos os hubs de notificação no namespace chamado ContosoNamespace que foram atribuídos ao grupo de recursos ContosoNotificationsGroup.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Especifica o namespace ao qual o Hub de notificações está atribuído.
-Os namespaces fornecem uma maneira de agrupar e categorizar os hubs de notificação.
+Especifica o namespace ao qual o hub de notificação está atribuído.
+Os namespaces oferecem uma maneira de agrupar e categorizar os hubs de notificação.
 
 ```yaml
 Type: System.String
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 
 ### -NotificationHub
 Especifica o nome do hub de notificação que este cmdlet obtém.
-Os hubs de notificação são usados para enviar notificações por push para vários clientes, independentemente da plataforma usada por esses clientes.
+Os hubs de notificação são usados para enviar notificações por push para vários clientes independentemente da plataforma usada por esses clientes.
 
 ```yaml
 Type: System.String
@@ -92,9 +92,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Resource
-Especifica o grupo de recursos ao qual o Hub de notificações está atribuído.
-Grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente gerenciamento de inventário e administração do Azure.
+### -ResourceGroup
+Especifica o grupo de recursos ao qual o hub de notificação está atribuído.
+Os grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente o gerenciamento de estoque e a administração do Azure.
 
 ```yaml
 Type: System.String
@@ -109,25 +109,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. NotificationHubs. Models. NotificationHubAttributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
-[Get-AzNotificationHubListKeys](./Get-AzNotificationHubListKeys.md)
 
-[Get-AzNotificationHubPNSCredentials](./Get-AzNotificationHubPNSCredentials.md)
 
 [New-AzNotificationHub](./New-AzNotificationHub.md)
 
