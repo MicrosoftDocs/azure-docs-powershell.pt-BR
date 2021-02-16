@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: c9c50e26e99493fb693b8bded693bceb24f5a40f
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: da9dd3d7b1ed0a54a34fdf5c8a0c9d65b507a07b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111476"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413975"
 ---
 # Get-AzRecoveryServicesAsrProtectableItem
 
 ## Sinopse
-Obtenha os itens protegidos em um contêiner de proteção ASR.
+Obter os itens protegidos em um contêiner de proteção ASR.
 
-## SYNTAX
+## Sintaxe
 
-### ByObject (padrão)
+### ByObject (Padrão)
 ```
 Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -31,23 +31,23 @@ Get-AzRecoveryServicesAsrProtectableItem -Name <String> -ProtectionContainer <AS
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### ByObjectWithFriendlyName
+### ByObjectWithBjlyName
 ```
 Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzRecoveryServicesAsrProtectableItem** Obtém os itens que protegem em um contêiner de proteção do Azure site Recovery.
+## Descrição
+O cmdlet **Get-AzRecoveryServicesAsrProtectableItem** obtém os itens protegidos em um Contêiner de Proteção de Recuperação de Site do Azure.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-Obtém todos os itens que protegem no contêiner de proteção ASR especificado.
+Obtém todos os itens protegidos no contêiner de proteção ASR especificado.
 
 ### Exemplo 2
 ```
@@ -70,7 +70,7 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-Obtenha os itens protegidos no contêiner de proteção ASR especificado e com o nome amigável fornecido.
+Obter os itens protegidos no contêiner de proteção ASR especificado e com um nome amigável.
 
 ### Exemplo 3
 ```
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-Obtém todos os itens que protegem no contêiner de proteção ASR especificado.
+Obtém todos os itens protegidos no contêiner de proteção ASR especificado.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FriendlyName
-Especifica o nome amigável do item de proteção ASR.
+### -Nome Amigável
+Especifica o nome amigável do item protegido pelo ASR.
 
 ```yaml
 Type: System.String
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome do item de proteção ASR.
+Especifica o nome do item protegido pelo ASR.
 
 ```yaml
 Type: System.String
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProtectionContainer
-Especifica o objeto contêiner da proteção do Azure site Recovery.
+Especifica o objeto Contêiner de Proteção de Recuperação de Site do Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -159,20 +159,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Recoveryservices. SiteRecovery. ASRProtectionContainer
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Recoveryservices. SiteRecovery. ASRProtectableItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzRecoveryServicesAsrProtectionEntity](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[Set-AzRecoveryServicesAsrProtectionEntity](./Set-AzRecoveryServicesAsrProtectionEntity.md)
