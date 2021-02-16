@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.websites/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Set-AzWebApp.md
-ms.openlocfilehash: 0120bd19d1c8930129796e47758bd9f91dccfd5d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 46c5dae54bf4f59556e62256797a43221d0650b7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93955237"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412343"
 ---
 # Set-AzWebApp
 
 ## Sinopse
-Modifica um aplicativo Web do Azure.
+Modifica um Azure Web App.
 
-## SYNTAX
+## Sintaxe
 
-### Eles
+### S1
 ```
 Set-AzWebApp [[-AppServicePlan] <String>] [[-DefaultDocuments] <String[]>] [[-NetFrameworkVersion] <String>]
  [[-PhpVersion] <String>] [[-RequestTracingEnabled] <Boolean>] [[-HttpLoggingEnabled] <Boolean>]
@@ -41,17 +41,17 @@ Set-AzWebApp [[-Use32BitWorkerProcess] <Boolean>] [[-AutoSwapSlotName] <String>]
  [-AsJob] [-WebApp] <PSSite> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzWebApp** define um aplicativo Web do Azure.
+## Descrição
+O **cmdlet Set-AzWebApp** define um Azure Web App.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```powershell
 PS C:\> Set-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -AppServicePlan "ContosoPlan"
 ```
 
-Esse comando altera o plano appservice associado ao aplicativo Web ContosoWebApp associado ao grupo de recursos Default-Web-Oesteus. Use o link para saber mais sobre como alterar o plano appservice e restrições associadas a ele.
+Esse comando altera o plano de serviço de aplicativo associado ao Web App ContosoWebApp associado ao grupo de recursos Default-Web-WestUS. Use o link para saber mais sobre como alterar o plano de serviço de aplicativo e as restrições associadas a ele.
 https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage#move-an-app-to-another-app-service-plan
 
 ### Exemplo 2
@@ -59,20 +59,20 @@ https://docs.microsoft.com/en-us/azure/app-service/app-service-plan-manage#move-
 PS C:\> Set-AzWebApp -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -HttpLoggingEnabled $true
 ```
 
-Esse comando define HttpLoggingEnabled como true para o aplicativo Web ContosoWebApp associado ao grupo de recursos Default-Web-Oesteus
+Este comando define HttpLoggingEnabled como true para o Web App ContosoWebApp associado ao grupo de recursos Default-Web-WestUS
 
 ### Exemplo 3
 
-Modifica um aplicativo Web do Azure. (gerado automaticamente)
+Modifica um Azure Web App. (gerado automaticamente)
 
 ```powershell <!-- Aladdin Generated Example --> 
 Set-AzWebApp -AppSettings <Hashtable> -Name 'ContosoWebApp' -ResourceGroupName 'Default-Web-WestUS'
 ```
 
-## OS
+## Parâmetros
 
 ### -AlwaysOn
-Assegure-se de que o aplicativo Web seja carregado o tempo todo, em vez de não ser descarregado.
+Certifique-se de que o aplicativo Web seja carregado o tempo todo, em vez de ser descarregado após ficar ocioso.
 
 ```yaml
 Type: System.Boolean
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppServicePlan
-Nome do plano do serviço de aplicativo
+Nome do Plano de Serviço de Aplicativo
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppSettings
-HashTable das configurações do aplicativo. As configurações do aplicativo existente serão substituídas, removendo as configurações não fornecidas.
+Tabela Hash de Configurações do Aplicativo. As Configurações de Aplicativo existentes serão substituídas, removendo as configurações que não são fornecidas.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Executar o cmdlet em segundo plano
+Executar cmdlet em segundo plano
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssignIdentity
-Habilitar/desabilitar o MSI em um Azure webapp ou functionapp existente
+Habilitar/desabilitar o MSI em um aplicativo web ou functionapp do azure existente
 
 ```yaml
 Type: System.Boolean
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureStoragePath
-Armazenamento do Azure para montagem dentro de um aplicativo Web para contêiner. Usar o New-AzureRmWebAppAzureStoragePath para criá-lo
+Armazenamento do Azure para montar dentro de um Web App para Contêiner. Use New-AzureRmWebAppAzureStoragePath para criar
 
 ```yaml
 Type: Microsoft.Azure.Commands.WebApps.Models.WebAppAzureStoragePath[]
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionStrings
-HashTable da cadeia de conexão
+HashTable de Cadeias de Conexão
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerImageName
-Nome da imagem do contêiner
+Nome da Imagem do Contêiner
 
 ```yaml
 Type: System.String
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryPassword
-Senha do registro do contêiner privado
+Senha do Registro de Contêiner Particular
 
 ```yaml
 Type: System.Security.SecureString
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryUrl
-URL do servidor do registro do contêiner privado
+Url do Servidor de Registro de Contêiner Particular
 
 ```yaml
 Type: System.String
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContainerRegistryUser
-Nome de usuário do registro do contêiner privado
+Nome de usuário do Registro de Contêiner Particular
 
 ```yaml
 Type: System.String
@@ -251,8 +251,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Defaultdocuments
-Matriz de cadeia de caracteres de documentos padrão
+### -DefaultDocuments
+Matriz de Cadeia de Caracteres de Documentos Padrão
 
 ```yaml
 Type: System.String[]
@@ -267,7 +267,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -282,7 +282,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedErrorLoggingEnabled
-Booliano detalhado de log de erros ativado
+Booliana Habilitada para Log de Erros Detalhado
 
 ```yaml
 Type: System.Boolean
@@ -297,7 +297,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableContainerContinuousDeployment
-Habilita/desabilita o webhook de implantação contínua do contêiner
+Habilitar/Desabilitar contêiner de implantação contínua na Web.
 
 ```yaml
 Type: System.Boolean
@@ -311,8 +311,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Ftpsstate
-Defina o valor do estado de FTPS para um aplicativo. Valores permitidos [permitidos | Desativado | FtpsOnly].
+### -FtpsState
+Definir o valor do estado Ftps para um aplicativo. Valores Permitidos [Todos os Valores Permitidos | Desabilitado | FtpsOnly].
 
 ```yaml
 Type: System.String
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -HandlerMappings
-Mapeamentos de manipuladores IList
+Lista de Mapeamentos de Manipuladores
 
 ```yaml
 Type: System.Collections.Generic.IList`1[Microsoft.Azure.Management.WebSites.Models.HandlerMapping]
@@ -341,8 +341,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nomes de host
-Matriz de cadeia de caracteres de hosts WebApp
+### -Nomes de Host
+Matriz de cadeia de caracteres Nomes de Host do WebApp
 
 ```yaml
 Type: System.String[]
@@ -356,8 +356,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HttpLoggingEnabled
-HttpLoggingEnabled booliano
+### -httpLoggingEnabled
+Booliana httpLoggingEnabled
 
 ```yaml
 Type: System.Boolean
@@ -371,8 +371,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -HttpsOnly
-Habilitar/desabilitar o redirecionamento de todo o tráfego para HTTPS em um Azure webapp ou functionapp existente
+### -httpsOnly
+Habilitar/desabilitar o redirecionamento de todo o tráfego para HTTPS em um aplicativo web ou functionapp do azure existente
 
 ```yaml
 Type: System.Boolean
@@ -386,8 +386,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ManagedPipelineMode
-Nome do modo de pipeline gerenciado
+### -ManagedModlineMode
+Nome do Modo de Pipeline Gerenciado
 
 ```yaml
 Type: System.String
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinTlsVersion
-A versão mínima do TLS necessária para solicitações SSL. Valores permitidos [1,0 | 1,1 | 1,2].
+A versão mínima de TLS necessária para solicitações SSL. Valores permitidos [1,0 | 1,1 | 1,2].
 
 ```yaml
 Type: System.String
@@ -418,7 +418,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Nome do WebApp
+Nome webapp
 
 ```yaml
 Type: System.String
@@ -433,7 +433,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetFrameworkVersion
-Versão do .NET Framework
+Versão do Net Framework
 
 ```yaml
 Type: System.String
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 ```
 
 ### -NumberOfWorkers
-O número de trabalhadores a serem atribuídos
+O número de trabalhadores a serem alocados
 
 ```yaml
 Type: System.Int32
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 ```
 
 ### -PhpVersion
-Versão do php
+Versão Php
 
 ```yaml
 Type: System.String
@@ -478,7 +478,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestTracingEnabled
-Rastreamento de solicitação habilitado
+Solicitar Rastreamento Habilitado
 
 ```yaml
 Type: System.Boolean
@@ -493,7 +493,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nome do grupo de recursos
+Nome do Grupo de Recursos
 
 ```yaml
 Type: System.String
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -Use32BitWorkerProcess
-Usar booliano do processo de trabalho de 32 bits
+Usar booliana do Processo do Trabalhador de 32 bits
 
 ```yaml
 Type: System.Boolean
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebSocketsEnabled
-WebSocketsEnabled booliano
+Booliana WebSocketsEnabled
 
 ```yaml
 Type: System.Boolean
@@ -553,32 +553,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. Int32
+### System.Int32
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. webapps. Models. PSSite
+### Microsoft.Azure.Commands.WebApps.Models.PSSite
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. webapps. Models. PSSite
+### Microsoft.Azure.Commands.WebApps.Models.PSSite
 
-## INFORMA
-Abaixo o cmdlet fornecido vai ajudá-lo a atualizar o Azure Web App para o **DOTNETCORE**
+## Notas
+O cmdlet abaixo fornecido ajudará você a atualizar o Azure Web App para **DOTNETCORE**
 
-$PropertiesObject = @ {"CURRENT_STACK" = "dotnetcore"} New-AzResource-Propertyobject $PropertiesObject-ResourceGroupName "Default-Web-Oesteus"-ResourceType Microsoft. Web/sites/config-resourceName "ContosoWebApp/Metadata"-ApiVersion 2018-02-01-Force
+$PropertiesObject = @{ "CURRENT_STACK" = "dotnetcore" } New-AzResource -PropertyObject $PropertiesObject -ResourceGroupName "Default-Web-WestUS" -ResourceType Microsoft.Web/sites/config -ResourceName "ContosoWebApp/metadados" -ApiVersion 2018-02-01 -Force
 
-Substitua os valores de Default-Web-Oesteus pelo nome do grupo de recursos do webapp e do ContosoWebApp com o nome do webapp.
+Substitua os valores de Default-Web-WestUS pelo nome do grupo de recursos do webapp e contosoWebApp pelo nome do webapp.
  
 ## LINKS RELACIONADOS
 
 [Get-AzWebApp](./Get-AzWebApp.md)
 
-[New-AzWebApp](./New-AzWebApp.md)
+[Novo-AzWebApp](./New-AzWebApp.md)
 
 [Remove-AzWebApp](./Remove-AzWebApp.md)
 
@@ -586,6 +586,5 @@ Substitua os valores de Default-Web-Oesteus pelo nome do grupo de recursos do we
 
 [Start-AzWebApp](./Start-AzWebApp.md)
 
-[Parar-AzWebApp](./Stop-AzWebApp.md)
+[Stop-AzWebApp](./Stop-AzWebApp.md)
 
-[New-AzResource](./New-AzResource.md)
