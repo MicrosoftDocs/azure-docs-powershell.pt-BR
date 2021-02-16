@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: 34a00ed29d40d8824ac0f2d24f5275bb7c0a0164
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b5690dfc1d85483b10fc7cd08606c4555784e8e0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776457"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398726"
 ---
 # Get-AzADUser
 
 ## Sinopse
-Filtra usuários do Active Directory.
+Filtra os usuários do Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### EmptyParameterSet (padrão)
+### EmptyParameterSet (Padrão)
 ```
 Get-AzADUser [-UserPrincipalName <String>] [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
@@ -56,36 +56,36 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Filtra usuários do Active Directory.
+## Descrição
+Filtra os usuários do Active Directory.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-listar todos os usuários
+### Exemplo 1 - Listar todos os usuários
 
 ```
 PS C:\> Get-AzADUser
 ```
 
-Lista todos os usuários do AD em um locatário.
+Lista todos os usuários de AD em um locatário.
 
-### Exemplo 2-listar todos os usuários que usam paginação
+### Exemplo 2 - Listar todos os usuários que usam paging
 
 ```
 PS C:\> Get-AzADUser -First 100
 ```
 
-Lista os primeiros usuários do 100 AD em um locatário.
+Lista os primeiros 100 usuários de AD em um locatário.
 
-### Exemplo 3-obter usuário do AD por nome principal do usuário
+### Exemplo 3 - Obter usuário de AD por nome de entidade de usuário
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Obtém o usuário do anúncio com o nome principal do usuário " foo@domain.com ".
+Obtém o usuário do AD com o nome de usuário principal " foo@domain.com ".
 
-### Exemplo de 4-lista por cadeia de pesquisa
+### Exemplo 4 - Lista por cadeia de caracteres de pesquisa
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
@@ -93,10 +93,10 @@ PS C:\> Get-AzADUser -SearchString Joe
 
 Lista todos os usuários do AD cujo nome de exibição começa com "Joe".
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -125,8 +125,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Primeiro
-O número máximo de objetos a serem retornados.
+### -First
+O número máximo de objetos a retornar.
 
 ```yaml
 Type: System.UInt64
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Informa o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
+Relata o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,7 +155,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Mail
+### -Email
 O email do usuário.
 
 ```yaml
@@ -185,8 +185,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignora os primeiros N objetos e, em seguida, obtém os objetos restantes.
+### -Ignorar
+Ignora os primeiros objetos N e obtém os objetos restantes.
 
 ```yaml
 Type: System.UInt64
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartsWith
-Usado para localizar usuários que começam com a cadeia de caracteres fornecida.
+Usado para encontrar usuários que começam com a cadeia de caracteres fornecida.
 
 ```yaml
 Type: System.String
@@ -243,25 +243,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-## EXIBE
+## Saídas
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADUser
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[New-AzADUser](./New-AzADUser.md)
+[Novo-AzADUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
 [Remove-AzADUser](./Remove-AzADUser.md)
 

@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: a80e2b8603995ba57aada9639b3a6b45e08e2e55
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 01f6b6d6ed119945af7d99bac9227c788976cbab
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776459"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398692"
 ---
 # Get-AzADServicePrincipal
 
 ## Sinopse
-Filtra as entidades de serviço do Active Directory.
+Filtra entidades de serviço do Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### EmptyParameterSet (padrão)
+### EmptyParameterSet (Padrão)
 ```
 Get-AzADServicePrincipal [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -62,52 +62,52 @@ Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzure
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Filtra as entidades de serviço do Active Directory.
+## Descrição
+Filtra entidades de serviço do Active Directory.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-lista de entidades de serviço de anúncios
+### Exemplo 1 - Entidades de serviço de List AD
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-Lista todas as entidades de serviço de anúncio em um locatário.
+Lista todas as entidades de serviço do AD em um locatário.
 
-### Exemplo 2-lista de entidades de serviço de anúncios usando paginação
+### Exemplo 2 - Listar entidades de serviço de AD usando paging
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-Lista as primeiras entidades de serviço do anúncio do 100 em um locatário.
+Lista as primeiras 100 entidades de serviço do AD em um locatário.
 
-### Exemplo de entidades de serviço de 3 listas por SPN
+### Exemplo 3 - Entidades de serviço de lista por SPN
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-Lista as entidades de serviço com o SPN ' 36f81fc3-b00f-48CD-8218-3879f51ff39f '.
+Lista entidades de serviço com o SPN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.
 
-### Exemplo de entidades de serviço de 4 listas por cadeia de pesquisa
+### Exemplo 4 - Listar entidades de serviço por cadeia de caracteres de pesquisa
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-Lista todas as entidades de serviço de anúncio cujo nome para exibição comece com "Web".
+Lista todas as entidades de serviço do AD cujo nome de exibição comece com "Web".
 
-### Exemplo de entidades de serviço de 5 listas por tubulação
+### Exemplo 5 - Listar entidades de serviço por piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-Obtém o aplicativo do anúncio com a ID de objeto ' 39e64ec6-569B-4030-8e1c-c3c519a05d69 ' e a canaliza para o cmdlet Get-AzADServicePrincipal para listar todas as entidades de serviço desse aplicativo.
+Obtém o aplicativo AD com a ID do objeto '39e64ec6-569b-4030-8e1c-c3c519a05d69' e o leva para o cmdlet Get-AzADServicePrincipal para listar todos os princípios de serviço para esse aplicativo.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
 A ID do aplicativo principal do serviço.
@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationObject
-O objeto de aplicativo cuja entidade de serviço está sendo recuperada.
+O objeto do aplicativo cuja entidade de serviço está sendo recuperada.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameBeginsWith
-A cadeia de caracteres de pesquisa principal do serviço.
+A cadeia de caracteres de pesquisa da entidade de serviço.
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Primeiro
-O número máximo de objetos a serem retornados.
+### -First
+O número máximo de objetos a retornar.
 
 ```yaml
 Type: System.UInt64
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Informa o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
+Relata o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-ID de objeto da entidade de serviço.
+ID do objeto da entidade de serviço.
 
 ```yaml
 Type: System.Guid
@@ -229,7 +229,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Serviceprincipalnamename
+### -ServicePrincipalName
 SPN do serviço.
 
 ```yaml
@@ -244,8 +244,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignora os primeiros N objetos e, em seguida, obtém os objetos restantes.
+### -Ignorar
+Ignora os primeiros objetos N e obtém os objetos restantes.
 
 ```yaml
 Type: System.UInt64
@@ -260,28 +260,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
-Parâmetros: applicationObject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
+Parâmetros: ApplicationObject (ByValue)
 
-## EXIBE
+## Saídas
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADServicePrincipal
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADServicePrincipal
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
 [New-AzADServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
