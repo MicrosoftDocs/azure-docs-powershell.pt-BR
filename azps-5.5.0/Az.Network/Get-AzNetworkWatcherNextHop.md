@@ -1,56 +1,65 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcher
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/get-aznetworkwatchernexthop
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
-ms.openlocfilehash: fb2dfd74e4807aab76fb48a4593a8a46c4fe6f3f
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
+ms.openlocfilehash: cf120e8e9ca9e0dad8f4d430c7f207d40fcfab3b
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100406665"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100118364"
 ---
-# Remove-AzNetworkWatcher
+# Get-AzNetworkWatcherNextHop
 
 ## Sinopse
-Remove um Watcher de Rede.
+Obtém o próximo salto de um VM.
 
 ## Sintaxe
 
-### SetByResource
+### SetByResource (Padrão)
 ```
-Remove-AzNetworkWatcher -NetworkWatcher <PSNetworkWatcher> [-PassThru] [-AsJob]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzNetworkWatcherNextHop -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
+ -DestinationIPAddress <String> -SourceIPAddress <String> [-TargetNetworkInterfaceId <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### SetByName
 ```
-Remove-AzNetworkWatcher -Name <String> -ResourceGroupName <String> [-PassThru] [-AsJob]
- [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzNetworkWatcherNextHop -NetworkWatcherName <String> -ResourceGroupName <String>
+ -TargetVirtualMachineId <String> -DestinationIPAddress <String> -SourceIPAddress <String>
+ [-TargetNetworkInterfaceId <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### SetByLocation
 ```
-Remove-AzNetworkWatcher -Location <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-AzNetworkWatcherNextHop -Location <String> -TargetVirtualMachineId <String> -DestinationIPAddress <String>
+ -SourceIPAddress <String> [-TargetNetworkInterfaceId <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## Descrição
-O Remove-AzNetworkWatcher cmdlet remove um recurso do Network Watcher.
+O Get-AzNetworkWatcherNextHop cmdlet recebe o próximo salto de um VM. O próximo salto permite exibir o tipo de recurso do Azure, o endereço IP associado desse recurso e a regra de tabela de roteamento que é responsável pela rota.
 
 ## Exemplos
 
-### Exemplo 1: Criar e excluir um Watcher de Rede
+### Exemplo 1: Obter o Próximo Salto ao se comunicar com um IP da Internet
 ```
-New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
-New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG -Location westcentralus
-Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
+$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
+$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
+$VM = Get-AzVM -ResourceGroupName ContosoResourceGroup -Name VM0
+$Nics = Get-AzNetworkInterface | Where {$_.Id -eq $vm.NetworkInterfaceIDs.ForEach({$_})}
+Get-AzNetworkWatcherNextHop -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id -SourceIPAddress $nics[0].IpConfigurations[0].PrivateIpAddress  -DestinationIPAddress 204.79.197.200
+
+
+NextHopIpAddress NextHopType RouteTableId
+---------------- ----------- ------------
+                 Internet    System Route
 ```
 
-Este exemplo cria um Watcher de Rede em um grupo de recursos e o exclui imediatamente. Observe que somente um Watcher de Rede pode ser criado por região por assinatura.
-Para suprimir o prompt ao excluir a rede virtual, use o sinalizador -Force.
+Obtém o Próximo Salto para comunicação de saída da Interface de Rede principal na Máquina Virtual especificada para 204.79.197.200 (www.bing.com)
 
 ## Parâmetros
 
@@ -84,6 +93,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DestinationIPAddress
+Endereço IP de destino.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Local
 Localização do watcher de rede.
 
@@ -96,21 +120,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Nome
-O nome do recurso.
-
-```yaml
-Type: System.String
-Parameter Sets: SetByName
-Aliases: ResourceName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -129,23 +138,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Retorna um objeto que representa o item com o qual você está trabalhando.
+### -NetworkWatcherName
+O nome do watcher de rede.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
+Type: System.String
+Parameter Sets: SetByName
+Aliases: Name
 
-Required: False
+Required: True
 Position: Named
-Default value: False
-Accept pipeline input: False
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos.
+O nome do grupo de recursos do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -159,39 +168,53 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirmar
-Solicita confirmação antes de executar o cmdlet.
+### -SourceIPAddress
+Endereço IP de origem.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
-Required: False
+Required: True
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-Mostra o que acontece se o cmdlet for executado.
-O cmdlet não é executado.
+### -TargetNetworkInterfaceId
+ID da interface de rede de destino.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetVirtualMachineId
+A ID do computador virtual de destino.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## Entradas
 
@@ -201,10 +224,10 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## Saídas
 
-### System.Boolean
+### Microsoft.Azure.Commands.Network.Models.PSNextHopResult
 
 ## Notas
-Palavras-chave: azure, azurerm, arm, resource, management, manager, network, networking, network watcher
+Palavras-chave: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, next, hop 
 
 ## LINKS RELACIONADOS
 
@@ -260,4 +283,4 @@ Palavras-chave: azure, azurerm, arm, resource, management, manager, network, net
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)

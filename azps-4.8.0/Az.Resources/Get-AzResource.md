@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111947"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398182"
 ---
 # Get-AzResource
 
@@ -19,9 +19,9 @@ ms.locfileid: "94111947"
 
 Obtém recursos.
 
-## SYNTAX
+## Sintaxe
 
-### ByTagNameValueParameterSet (padrão)
+### ByTagNameValueParameterSet (Padrão)
 ```
 Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] [-ResourceGroupName <String>]
  [-TagName <String>] [-TagValue <String>] [-ExpandProperties] [-ApiVersion <String>] [-Pre]
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 
-O cmdlet **Get-AzResource** Obtém os recursos do Azure.
+O **cmdlet Get-AzResource** obtém recursos do Azure.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter todos os recursos na assinatura atual
+### Exemplo 1: Obter todos os recursos da assinatura atual
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-Este comando obtém todos os recursos na assinatura atual.
+Esse comando obtém todos os recursos da assinatura atual.
 
-### Exemplo 2: obter todos os recursos em um grupo de recursos
+### Exemplo 2: Obter todos os recursos em um grupo de recursos
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-Esse comando obtém todos os recursos no grupo de recursos "testRG".
+Esse comando obtém todos os recursos do grupo de recursos "testRG".
 
-### Exemplo 3: obter todos os recursos cujo grupo de recursos corresponde ao curinga fornecido
+### Exemplo 3: Obter todos os recursos cujo grupo de recursos corresponde ao caractere curinga fornecido
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Esse comando obtém todos os recursos cujo grupo de recursos ele pertence a usuários com "outros".
+Esse comando obtém todos os recursos cujo grupo de recursos pertence a eles por "outros".
 
-### Exemplo 4: obter todos os recursos com um nome específico
+### Exemplo 4: Obter todos os recursos com um determinado nome
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-Esse comando obtém todos os recursos cujo nome do recurso é "testVM".
+Esse comando obtém todos os recursos cujo nome de recurso é "testVM".
 
-### Exemplo 5: obter todos os recursos cujo nome corresponde ao curinga fornecido
+### Exemplo 5: Obter todos os recursos cujo nome corresponde ao caractere curinga fornecido
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Esse comando obtém todos os recursos cujo nome do recurso começa com "Test".
+Esse comando obtém todos os recursos cujo nome do recurso começa com "teste".
 
-### Exemplo 6: obter todos os recursos de um determinado tipo de recurso
+### Exemplo 6: Obter todos os recursos de um determinado tipo de recurso
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-Esse comando obtém todos os recursos nas assinaturas atuais que são máquinas virtuais.
+Esse comando obtém todos os recursos das assinaturas atuais que são máquinas virtuais.
 
-### Exemplo 7: obter um recurso por ID do recurso
+### Exemplo 7: Obter um recurso por ID do recurso
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -165,7 +165,7 @@ Tags              :
 
 Esse comando obtém o recurso com a ID de recurso fornecida, que é uma máquina virtual chamada "testVM" no grupo de recursos "testRG".
 
-## OS
+## Parâmetros
 
 ### -ApiVersion
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -196,7 +196,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Expandproperties
+### -ExpandProperties
 Quando especificado, expande as propriedades do recurso.
 
 ```yaml
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-O nome do (s) recurso (s) a serem recuperados. Esse parâmetro dá suporte a caracteres curinga no início e/ou final da cadeia de caracteres.
+O nome dos recursos a serem recuperados. Esse parâmetro dá suporte a caracteres curinga no início e/ou no final da cadeia de caracteres.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Pre
+### -Pré-
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O grupo de recursos ao qual o (s) recurso (s) recuperado (s) pertence. Esse parâmetro dá suporte a caracteres curinga no início e/ou final da cadeia de caracteres.
+O grupo de recursos ao(s) recurso(s) que é recuperado pertence. Esse parâmetro dá suporte a caracteres curinga no início e/ou no final da cadeia de caracteres.
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-Especifica a ID de recurso totalmente qualificado, como no exemplo a seguir `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
+Especifica a ID de recurso totalmente qualificada, como no exemplo a seguir `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-O tipo de recurso do (s) recurso (s) a ser recuperado (s). Por exemplo, Microsoft. Compute/virtualMachines
+O tipo de recurso dos recursos a serem recuperados. Por exemplo, Microsoft.Compute/virtualMachines
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Marca
+### -Tag
 
-Obtém recursos que têm a marca do Azure especificada. Insira uma tabela de hash com uma chave de nome ou um nome e as teclas de valor. Não há suporte para caracteres curinga. Uma "marca" é um par de nome-valor que você pode aplicar a recursos e grupos de recursos. Use marcas para categorizar seus recursos, como por departamento ou centro de custo, ou para controlar anotações ou comentários sobre os recursos. Para adicionar uma marca a um recurso, use o parâmetro Tag dos cmdlets New-AzResource ou Set-AzResource. Para criar uma marca predefinida, use o cmdlet New-AzTag. Para obter ajuda com tabelas de hash no Windows PowerShell, execute ' Get-Help about_Hashtables '.
+Obtém recursos que têm a marca do Azure especificada. Insira uma tabela hash com uma tecla Nome ou as teclas Nome e Valor. Caracteres curinga não são suportados. Uma "marca" é um par de valores de nome que você pode aplicar aos recursos e grupos de recursos. Use marcas para categorizar seus recursos, como por departamento ou centro de custo, ou para controlar anotações ou comentários sobre os recursos. Para adicionar uma marca a um recurso, use o parâmetro Tag dos cmdlets New-AzResource ou Set-AzResource dados. Para criar uma marca predefinida, use New-AzTag cmdlet. Para obter ajuda com tabelas hash no Windows PowerShell, execute "Obter ajuda about_Hashtables".
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-A chave na marca do (s) recurso (s) a ser recuperada (s).
+A chave na marca dos recursos a serem recuperados.
 
 ```yaml
 Type: System.String
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-O valor na marca do (s) recurso (s) a ser recuperado (s).
+O valor na marca dos recursos a serem recuperados.
 
 ```yaml
 Type: System.String
@@ -346,21 +346,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ResourceManager. cmdlets. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Localizar-AzResource](./Find-AzResource.md)
 
 [Mover-AzResource](./Move-AzResource.md)
 
