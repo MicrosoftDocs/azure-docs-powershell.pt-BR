@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherFlowLog.md
-ms.openlocfilehash: 1fe3cb8227751553ac748fb99cf08baa044a6f0d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 3828318840d10e5d88ebda6327ad17b9126bf03d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94114366"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406818"
 ---
 # New-AzNetworkWatcherFlowLog
 
 ## Sinopse
-Crie ou atualize um recurso de log de fluxo para o grupo de segurança de rede especificado.
+Criar ou atualizar um recurso de log de fluxo para o grupo de segurança de rede especificado.
 
-## SYNTAX
+## Sintaxe
 
-### SetByName (padrão)
+### SetByName (Padrão)
 ```
 New-AzNetworkWatcherFlowLog -NetworkWatcherName <String> -ResourceGroupName <String> -Name <String>
  -TargetResourceId <String> -StorageId <String> -Enabled <Boolean> [-EnableRetention <Boolean>]
@@ -70,31 +70,31 @@ New-AzNetworkWatcherFlowLog -Location <String> -Name <String> -TargetResourceId 
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 New-AzNetworkWatcherFlowLog comando cria ou atualiza um recurso de log de fluxo para o grupo de segurança de rede especificado.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```powershell
 PS C:\> New-AzNetworkWatcherFlowLog -Location eastus -Name pstest -TargetResourceId /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/MyFlowLog/providers/Microsoft.Network/networkSecurityGroups/MyNSG -StorageId /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/FlowLogsV2Demo/providers/Microsoft.Storage/storageAccounts/MyStorage -Enabled $true -EnableRetention $true -RetentionPolicyDays 5 -FormatVersion 2 -EnableTrafficAnalytics -TrafficAnalyticsWorkspaceId /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourcegroups/flowlogsv2demo/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace
 ```
 
-Nome: pstest ID:/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ers/Microsoft. Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest ETag: W/"f6047360-d797-4ca6-a9ec-28b5aec5c768" ProvisioningState: localização bem-sucedida: lesteus TargetResourceId:/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/MyFlowLog/provide RS/Microsoft. Network/networkSecurityGroups/MyNSG Storageid:/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/FlowLogsV2Demo/provider s/Microsoft. Storage/storageAccounts/myarmazenamento habilitado: verdadeiro RetentionPolicy: {"dias": 5, "habilitado": verdadeiro} formato: {"Type": "JSON", "Version": 2} FlowAnalyticsConfiguration: {"networkWatcherFlowAnalyticsConfiguration": {"Enabled": true, "workspaceid": "bbbbbbbb-BBBB-BBBB-BBBB-bbbbbbbbbbbb", "workspaceRegion": "lesteus", "workspaceResourceId": "/subscriptions/bbbbbbbb-BBBB-BBBB-BBBB-bbbbbbbbbbbb/resourcegr Oups/FlowLogsV2Demo/provedores/Microsoft. OperationalInsights/espaços de trabalho/MyWorkspace", "trafficAnalyticsInterval": 60}}
+Name : pstest Id : /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest Etag : W/"f6047360-d797-4ca6-a9ec-28b5aec5c768" ProvisioningState : Succeeded Location : eastus TargetResourceId : /subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/MyFlowLog/provide rs/Microsoft.Network/networkSecurityGroups/MyNSG StorageId : /subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/FlowLogsV2Demo/provider s/Microsoft.Storage/storageAccounts/MySTorage Enabled : True RetentionPolicy : { "Days": 5, "Enabled": true } Format : { "Type": "JSON", "Version": 2 } FlowAnalyticsConfiguration : { "networkWatcherFlowAnalyticsConfiguration": { "enabled": true, "workspaceId": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb", "workspaceRegion": "eastus", "workspaceResourceId": "/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourcegr oups/flowlogsv2demo/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace", "trafficAnalyticsInterval": 60 } }
 
 ### Exemplo 2
 ```powershell
 PS C:\> New-AzNetworkWatcherFlowLog -Location eastus -Name pstest -TargetResourceId /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/MyFlowLog/providers/Microsoft.Network/networkSecurityGroups/MyNSG -StorageId /subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/FlowLogsV2Demo/providers/Microsoft.Storage/storageAccounts/MyStorage -Enabled $false -EnableTrafficAnalytics:$false
 ```
 
-Se você quiser desabilitar o recurso flowLog para o qual TrafficAnalytics está configurado, também é necessário desabilitar o TrafficAnalytics. Isso pode ser feito como no exemplo 2.
+Se você quiser desabilitar o recurso flowLog para o qual o TrafficAnalytics está configurado, também será necessário desabilitar o TrafficAnalytics. Isso pode ser feito como no exemplo 2.
 
-Nome: pstest ID:/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ers/Microsoft. Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest ETag: W/"f6047360-d797-4ca6-a9ec-28b5aec5c768" ProvisioningState: localização bem-sucedida: lesteus TargetResourceId:/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/MyFlowLog/provide RS/Microsoft. Networkid de rede/networkSecurityGroups/MyNSG:/subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/FlowLogsV2Demo/provider s/Microsoft. Storage/storageAccounts/mystorage Enabled: false RetentionPolicy: {"Days": 0, "Enabled": false} Format: {"Type": "JSON", "versão": 1} FlowAnalyticsConfiguration: {"networkWatcherFlowAnalyticsConfiguration": {"Enabled": false, "trafficAnalyticsInterval": 60}}
+Nome : ID do teste : /subscriptions/bbbbbb-bbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/NetworkWatcherRG/provid ers/Microsoft.Network/networkWatchers/NetworkWatcher_eastus/FlowLogs/pstest Etag : W/"f6047360-d797-4ca6-a9ec-28b5aec5c768" ProvisioningState: Local bem-sucedido: eastus TargetResourceId : /subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/MyFlowLog/provide rs/Microsoft.Network/networkSecurityGroups/MyNSG StorageId: /subscriptions/56abfbd6-ec72-4ce9-831f-bc2b6f2c5505/resourceGroups/FlowLogsV2Demo/provider s/Microsoft.Storage/storageAccounts/MySTorage Enabled: False RetentionPolicy : { "Days": 0, "Enabled": false } Format: { "Type": "JSON", "Versão": 1 } FlowAnalyticsConfiguration: { "networkWatcherFlowAnalyticsConfiguration": { "enabled": false, "trafficAnalyticsInterval": 60 } }
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: IAzureContextContainer
@@ -108,8 +108,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### Habilitado para o
-Sinalizador para habilitar/desabilitar o registro em log de fluxo.
+### -Habilitado
+Sinalizar para habilitar/desabilitar o registro em log de fluxo.
 
 ```yaml
 Type: Boolean
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-Sinalizar para habilitar/desabilitar TrafficAnalytics
+Sinalizar para habilitar/desabilitar o TrafficAnalytics
 
 ```yaml
 Type: SwitchParameter
@@ -153,8 +153,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Não pedir confirmação se quiser substituir um recurso
+### -Forçar
+Não peça confirmação se quiser substituir um recurso
 
 ```yaml
 Type: SwitchParameter
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 
 ### -FormatType
 O tipo de arquivo do log de fluxo.
-Agora, o único valor com suporte é ' JSON '.
+O único valor com suporte agora é 'JSON'.
 
 ```yaml
 Type: String
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -Local
-Localização do Inspetor de rede.
+Localização do watcher de rede.
 
 ```yaml
 Type: String
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-O recurso de Inspetor de rede.
+O recurso de watcher de rede.
 
 ```yaml
 Type: PSNetworkWatcher
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-O nome do Inspetor de rede.
+O nome do watcher de rede.
 
 ```yaml
 Type: String
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos do Inspetor de rede.
+O nome do grupo de recursos do watcher de rede.
 
 ```yaml
 Type: String
@@ -289,8 +289,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Storageid
-ID da conta de armazenamento que é usada para armazenar o log de fluxo.
+### -StorageId
+ID da conta de armazenamento usada para armazenar o log de fluxo.
 
 ```yaml
 Type: String
@@ -304,8 +304,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Marca
-Uma Hashtable que representa as marcas de recursos.
+### -Tag
+Uma tabela hash que representa marcas de recurso.
 
 ```yaml
 Type: Hashtable
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetResourceId
-ID do grupo de segurança de rede para o qual o log de fluxo será aplicado.
+ID do grupo de segurança de rede ao qual o log de fluxo será aplicado.
 
 ```yaml
 Type: String
@@ -335,7 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficAnalyticsInterval
-O intervalo em minutos que decidiria com que frequência o serviço TA deve fazer análises de fluxo.
+O intervalo em minutos que decidiria com que frequência o serviço TA deve fazer a análise de fluxo.
 
 ```yaml
 Type: Int32
@@ -364,7 +364,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -380,7 +380,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -396,17 +396,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSFlowLogResource
+### Microsoft.Azure.Commands.Network.Models.PSFlowLogResource
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -432,7 +432,7 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Parar-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -440,7 +440,7 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Parar-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -462,9 +462,9 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
-[Get-AzNetworkWatcherFlowLog](./Get-AzNetworkWatcherFlowLog)
+[Get-AzNetworkWatcherFlowLog](./Get-AzNetworkWatcherFlowLog.md)
 
 [Set-AzNetworkWatcherFlowLog](./Set-AzNetworkWatcherFlowLog.md)
 

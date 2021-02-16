@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: 2989a3b50eaf4e7c8993a407823b5a1c42c3503b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: afa9f59520cba9f90f0f5d0a2edb6564b73245bf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93770628"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399236"
 ---
 # Remove-AzKeyVaultKey
 
 ## Sinopse
-Exclui uma chave em um cofre de chaves.
+Exclui uma chave em um cofre de chave.
 
-## SYNTAX
+## Sintaxe
 
-### ByVaultName (padrão)
+### ByVaultName (Padrão)
 ```
 Remove-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -32,14 +32,14 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet Remove-AzKeyVaultKey exclui uma chave em um cofre de chaves.
-Se a chave foi excluída acidentalmente, a chave pode ser recuperada usando Undo-AzKeyVaultKeyRemoval por um usuário com permissões "recuperar" especiais.
-Esse cmdlet tem um valor alto para a propriedade **ConfirmImpact** .
+## Descrição
+O Remove-AzKeyVaultKey cmdlet exclui uma chave em um cofre de chaves.
+Se a chave foi excluída acidentalmente, a chave pode ser recuperada usando Undo-AzKeyVaultKeyRemoval um usuário com permissões especiais de "recuperar".
+Este cmdlet tem um valor alto para a **propriedade ConfirmImpact.**
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover uma chave de um cofre de chaves
+### Exemplo 1: Remover uma chave de um cofre de chave
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Esse comando Remove a chave chamada ITSoftware do cofre de chaves chamado contoso.
+Esse comando remove a chave chamada ITSoftware do cofre de teclas chamado Contoso.
 
-### Exemplo 2: remover uma chave sem confirmação do usuário
+### Exemplo 2: Remover uma chave sem confirmação do usuário
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-Esse comando Remove a chave chamada ITSoftware do cofre de chaves chamado contoso.
-O comando especifica o parâmetro *Force* e, portanto, o cmdlet não solicita a confirmação.
+Esse comando remove a chave chamada ITSoftware do cofre de teclas chamado Contoso.
+O comando especifica o parâmetro *Forçar* e, portanto, o cmdlet não solicita confirmação.
 
-### Exemplo 3: limpar uma chave excluída do cofre de chaves permanentemente
+### Exemplo 3: limpar permanentemente uma chave excluída do cofre de chave
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-Esse comando Remove a chave denominada ITSoftware do cofre de chaves chamado contoso permanentemente.
-A execução deste cmdlet requer a permissão ' limpar ', que deve ter sido concedida anteriormente e explicitamente ao usuário para esse cofre de chaves.
+Esse comando remove permanentemente a chave chamada ITSoftware do cofre de chave chamado Contoso.
+Executar este cmdlet requer a permissão de "limpeza", que deve ter sido concedida explicitamente ao usuário para esse cofre de chave.
 
-### Exemplo 4: remover chaves usando o operador pipeline
+### Exemplo 4: Remover teclas usando o operador de pipeline
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-Esse comando obtém todas as chaves no cofre de chaves chamado contoso e passa-as para o cmdlet **WHERE do objeto** usando o operador pipeline.
-Esse cmdlet passa as chaves que têm um valor de $False para o atributo **Enabled** para o cmdlet atual.
-Esse cmdlet Remove essas chaves.
+Esse comando obtém todas as chaves no cofre de teclas chamado Contoso e passa-as para o cmdlet **Where-Object** usando o operador de pipeline.
+Esse cmdlet passa as teclas que têm um valor de $False para o atributo **Enabled** para o cmdlet atual.
+Esse cmdlet remove essas teclas.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -101,7 +101,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Forçar
 Força o comando a ser executado sem pedir confirmação do usuário.
 
 ```yaml
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Objeto keybundle
+Objeto KeyBundle
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
@@ -131,7 +131,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Inremovestate
+### -InRemovedState
 Remova permanentemente a chave excluída anteriormente.
 
 ```yaml
@@ -147,8 +147,8 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome da chave a ser removida.
-Esse cmdlet constrói o nome de domínio totalmente qualificado (FQDN) de uma chave com base no nome que esse parâmetro especifica, o nome do cofre de chaves e o ambiente atual.
+Especifica o nome da chave a ser removido.
+Este cmdlet construirá o nome de domínio totalmente qualificado (FQDN) de uma chave com base no nome especificado por esse parâmetro, o nome do cofre de chave e seu ambiente atual.
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Indica que esse cmdlet retorna um objeto **Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKey** .
-Por padrão, esse cmdlet não gera nenhuma saída.
+Indica que esse cmdlet retorna um objeto **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey.**
+Por padrão, esse cmdlet não gera saída.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,9 +178,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cofrename
-Especifica o nome do cofre de chaves do qual a chave será removida.
-Esse cmdlet constrói o FQDN de um cofre de chaves com base no nome especificado pelo parâmetro e no seu ambiente atual.
+### -Nomedo Cofre
+Especifica o nome do cofre de chave do qual a chave deve ser removido.
+Esse cmdlet construirá o FQDN de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente atual.
 
 ```yaml
 Type: System.String
@@ -194,7 +194,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -210,8 +210,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
-O cmdlet não é executado. Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
+O cmdlet não é executado. Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -227,17 +227,17 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-## EXIBE
+## Saídas
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -245,7 +245,6 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Desfazer-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
