@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementCache.md
-ms.openlocfilehash: 0e0fa81830264f550531a156260f3a4f2c7827ce
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: a95be9f18c00d72afb6117d1689f62a6bad053b4
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93597991"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398675"
 ---
 # Remove-AzApiManagementCache
 
 ## Sinopse
 Remove a entidade de cache.
 
-## SYNTAX
+## Sintaxe
 
-### ContextParameterSetName (padrão)
+### ContextParameterSetName (Padrão)
 ```
 Remove-AzApiManagementCache -Context <PsApiManagementContext> -CacheId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -37,24 +37,24 @@ Remove-AzApiManagementCache -ResourceId <String> [-PassThru] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Remove-AzApiManagementCache** remove a entidade cache.
+## Descrição
+O cmdlet **Remove-AzApiManagementCache** remove a entidade de cache.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover a entidade de cache
+### Exemplo 1: Remover a entidade Cache
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementCache -Context $apimContext -CacheId "centralus"
 ```
 
-Este cmdlet Remove o cache `centralus` do serviço de gerenciamento de API.
+Este cmdlet remove o cache `centralus` do serviço de Gerenciamento de Api.
 
-## OS
+## Parâmetros
 
 ### -CacheId
-Identificador de CacheId existente.
-Esse parâmetro é obrigatório.
+Identificador de cacheId existente.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -69,8 +69,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Instância do PsApiManagementCache. Esse parâmetro é obrigatório.
+Instância de PsApiManagementCache. Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
@@ -115,9 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se especificado, a operação será gravada true se a operação do caso for bem-sucedida.
+Se especificado, a gravação será verdadeira caso a operação seja bem-sucedida.
 Este parâmetro é opcional.
-O valor padrão é false.
+O valor padrão é falso.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Resourcebinding do cache. Esse parâmetro é obrigatório.
+Arm ResourceId of Cache. Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -178,26 +178,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## EXIBE
+## Saídas
 
-### System. Boolean
+### System.Boolean
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[New-AzApiManagementCache](./New-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
-
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
+
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
