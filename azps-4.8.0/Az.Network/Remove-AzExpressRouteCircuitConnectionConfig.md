@@ -6,38 +6,38 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 0e8a4eeaad1f033377ab11d7361d71c8a63a9dc2
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: fb82b00f998ed0c2b7473d4a3e0bcb9b3dc60630
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94114101"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397842"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
 ## Sinopse
 Remove uma configuração de conexão de circuito do ExpressRoute.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Remove-AzExpressRouteCircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado circuito de rota expressa.
+## Descrição
+O cmdlet **Remove-AzExpressRoute CircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado Circuito de Rota Expressa.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover uma configuração de conexão de circuito de um circuito do ExpressRoute
+### Exemplo 1: Remover uma configuração de conexão de circuito de um circuito do ExpressRoute
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Exemplo 2: remover uma configuração de conexão de circuito usando o encanamento de um circuito do ExpressRoute
+### Exemplo 2: remover uma configuração de conexão de circuito usando o Piping de um Circuito do ExpressRoute
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
@@ -49,15 +49,15 @@ Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -Expre
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Exemplo 4: remover uma configuração de conexão de circuito usando o encanamento de um circuito do ExpressRoute para uma família de endereços específica
+### Exemplo 4: remover uma configuração de conexão de circuito usando o Piping de um Circuito do ExpressRoute para uma família de endereços específica
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -AddressPrefixType IPv6|Set-AzExpressRouteCircuit
 ```
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,8 +71,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpressRouteCircuit
-O circuito do ExpressRoute que contém a configuração de emparelhamento a ser removida.
+### -ExpressRoute Circuit
+O circuito do ExpressRoute que contém a configuração de peering a ser removido.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-O nome da configuração de conexão de circuito a ser removida.
+O nome da configuração de conexão de circuito a ser removido.
 
 ```yaml
 Type: System.String
@@ -101,7 +101,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 ### -AddressPrefixType
-Especifica a família de endereços que precisa ser removida do arquivo config 
+Especifica a família de endereços que precisa ser removida da configuração 
 
 ```yaml
 Type: System.String
@@ -116,7 +116,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,30 +147,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRoute Circuit](Get-AzExpressRouteCircuit.md)
 
-[Get-AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
+[Get-AzExpressRoute CircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
+[Add-AzExpressRoute CircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
+[Set-AzExpressRoute CircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
-[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Set-AzExpressRoute Circuit](Set-AzExpressRouteCircuit.md)
+
+[Get-AzExpressRoute Circuit](Get-AzExpressRouteCircuit.md)
