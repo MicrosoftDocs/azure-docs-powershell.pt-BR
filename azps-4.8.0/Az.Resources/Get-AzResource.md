@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111947"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398182"
 ---
-# <span data-ttu-id="d59dc-101">Get-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-101">Get-AzResource</span></span>
+# <span data-ttu-id="2cc76-101">Get-AzResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-101">Get-AzResource</span></span>
 
-## <span data-ttu-id="d59dc-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="d59dc-102">SYNOPSIS</span></span>
+## <span data-ttu-id="2cc76-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="2cc76-102">SYNOPSIS</span></span>
 
-<span data-ttu-id="d59dc-103">Obtém recursos.</span><span class="sxs-lookup"><span data-stu-id="d59dc-103">Gets resources.</span></span>
+<span data-ttu-id="2cc76-103">Obtém recursos.</span><span class="sxs-lookup"><span data-stu-id="2cc76-103">Gets resources.</span></span>
 
-## <span data-ttu-id="d59dc-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d59dc-104">SYNTAX</span></span>
+## <span data-ttu-id="2cc76-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="2cc76-104">SYNTAX</span></span>
 
-### <span data-ttu-id="d59dc-105">ByTagNameValueParameterSet (padrão)</span><span class="sxs-lookup"><span data-stu-id="d59dc-105">ByTagNameValueParameterSet (Default)</span></span>
+### <span data-ttu-id="2cc76-105">ByTagNameValueParameterSet (Padrão)</span><span class="sxs-lookup"><span data-stu-id="2cc76-105">ByTagNameValueParameterSet (Default)</span></span>
 ```
 Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] [-ResourceGroupName <String>]
  [-TagName <String>] [-TagValue <String>] [-ExpandProperties] [-ApiVersion <String>] [-Pre]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d59dc-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="d59dc-106">ByResourceId</span></span>
+### <span data-ttu-id="2cc76-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="2cc76-106">ByResourceId</span></span>
 ```
 Get-AzResource -ResourceId <String> [-ODataQuery <String>] [-ExpandProperties] [-ApiVersion <String>] [-Pre]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d59dc-107">ByTagObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="d59dc-107">ByTagObjectParameterSet</span></span>
+### <span data-ttu-id="2cc76-107">ByTagObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="2cc76-107">ByTagObjectParameterSet</span></span>
 ```
 Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] [-ResourceGroupName <String>]
  -Tag <Hashtable> [-ExpandProperties] [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d59dc-108">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="d59dc-108">DESCRIPTION</span></span>
+## <span data-ttu-id="2cc76-108">Descrição</span><span class="sxs-lookup"><span data-stu-id="2cc76-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="d59dc-109">O cmdlet **Get-AzResource** Obtém os recursos do Azure.</span><span class="sxs-lookup"><span data-stu-id="d59dc-109">The **Get-AzResource** cmdlet gets Azure resources.</span></span>
+<span data-ttu-id="2cc76-109">O **cmdlet Get-AzResource** obtém recursos do Azure.</span><span class="sxs-lookup"><span data-stu-id="2cc76-109">The **Get-AzResource** cmdlet gets Azure resources.</span></span>
 
-## <span data-ttu-id="d59dc-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="d59dc-110">EXAMPLES</span></span>
+## <span data-ttu-id="2cc76-110">Exemplos</span><span class="sxs-lookup"><span data-stu-id="2cc76-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="d59dc-111">Exemplo 1: obter todos os recursos na assinatura atual</span><span class="sxs-lookup"><span data-stu-id="d59dc-111">Example 1: Get all resources in the current subscription</span></span>
+### <span data-ttu-id="2cc76-111">Exemplo 1: Obter todos os recursos da assinatura atual</span><span class="sxs-lookup"><span data-stu-id="2cc76-111">Example 1: Get all resources in the current subscription</span></span>
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-<span data-ttu-id="d59dc-112">Este comando obtém todos os recursos na assinatura atual.</span><span class="sxs-lookup"><span data-stu-id="d59dc-112">This command gets all of the resources in the current subscription.</span></span>
+<span data-ttu-id="2cc76-112">Esse comando obtém todos os recursos da assinatura atual.</span><span class="sxs-lookup"><span data-stu-id="2cc76-112">This command gets all of the resources in the current subscription.</span></span>
 
-### <span data-ttu-id="d59dc-113">Exemplo 2: obter todos os recursos em um grupo de recursos</span><span class="sxs-lookup"><span data-stu-id="d59dc-113">Example 2: Get all resources in a resource group</span></span>
+### <span data-ttu-id="2cc76-113">Exemplo 2: Obter todos os recursos em um grupo de recursos</span><span class="sxs-lookup"><span data-stu-id="2cc76-113">Example 2: Get all resources in a resource group</span></span>
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-<span data-ttu-id="d59dc-114">Esse comando obtém todos os recursos no grupo de recursos "testRG".</span><span class="sxs-lookup"><span data-stu-id="d59dc-114">This command gets all of the resources in the resource group "testRG".</span></span>
+<span data-ttu-id="2cc76-114">Esse comando obtém todos os recursos do grupo de recursos "testRG".</span><span class="sxs-lookup"><span data-stu-id="2cc76-114">This command gets all of the resources in the resource group "testRG".</span></span>
 
-### <span data-ttu-id="d59dc-115">Exemplo 3: obter todos os recursos cujo grupo de recursos corresponde ao curinga fornecido</span><span class="sxs-lookup"><span data-stu-id="d59dc-115">Example 3: Get all resources whose resource group matches the provided wildcard</span></span>
+### <span data-ttu-id="2cc76-115">Exemplo 3: Obter todos os recursos cujo grupo de recursos corresponde ao caractere curinga fornecido</span><span class="sxs-lookup"><span data-stu-id="2cc76-115">Example 3: Get all resources whose resource group matches the provided wildcard</span></span>
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-<span data-ttu-id="d59dc-116">Esse comando obtém todos os recursos cujo grupo de recursos ele pertence a usuários com "outros".</span><span class="sxs-lookup"><span data-stu-id="d59dc-116">This command gets all of the resources whose resource group they belong in beings with "other".</span></span>
+<span data-ttu-id="2cc76-116">Esse comando obtém todos os recursos cujo grupo de recursos pertence a eles por "outros".</span><span class="sxs-lookup"><span data-stu-id="2cc76-116">This command gets all of the resources whose resource group they belong in beings with "other".</span></span>
 
-### <span data-ttu-id="d59dc-117">Exemplo 4: obter todos os recursos com um nome específico</span><span class="sxs-lookup"><span data-stu-id="d59dc-117">Example 4: Get all resources with a given name</span></span>
+### <span data-ttu-id="2cc76-117">Exemplo 4: Obter todos os recursos com um determinado nome</span><span class="sxs-lookup"><span data-stu-id="2cc76-117">Example 4: Get all resources with a given name</span></span>
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -116,9 +116,9 @@ Tags              :
                     Status  Approved
 ```
 
-<span data-ttu-id="d59dc-118">Esse comando obtém todos os recursos cujo nome do recurso é "testVM".</span><span class="sxs-lookup"><span data-stu-id="d59dc-118">This command gets all of the resources whose resource name is "testVM".</span></span>
+<span data-ttu-id="2cc76-118">Esse comando obtém todos os recursos cujo nome de recurso é "testVM".</span><span class="sxs-lookup"><span data-stu-id="2cc76-118">This command gets all of the resources whose resource name is "testVM".</span></span>
 
-### <span data-ttu-id="d59dc-119">Exemplo 5: obter todos os recursos cujo nome corresponde ao curinga fornecido</span><span class="sxs-lookup"><span data-stu-id="d59dc-119">Example 5: Get all resources whose name matches the provided wildcard</span></span>
+### <span data-ttu-id="2cc76-119">Exemplo 5: Obter todos os recursos cujo nome corresponde ao caractere curinga fornecido</span><span class="sxs-lookup"><span data-stu-id="2cc76-119">Example 5: Get all resources whose name matches the provided wildcard</span></span>
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-<span data-ttu-id="d59dc-120">Esse comando obtém todos os recursos cujo nome do recurso começa com "Test".</span><span class="sxs-lookup"><span data-stu-id="d59dc-120">This command gets all of the resources whose resource name begins with "test".</span></span>
+<span data-ttu-id="2cc76-120">Esse comando obtém todos os recursos cujo nome do recurso começa com "teste".</span><span class="sxs-lookup"><span data-stu-id="2cc76-120">This command gets all of the resources whose resource name begins with "test".</span></span>
 
-### <span data-ttu-id="d59dc-121">Exemplo 6: obter todos os recursos de um determinado tipo de recurso</span><span class="sxs-lookup"><span data-stu-id="d59dc-121">Example 6: Get all resources of a given resource type</span></span>
+### <span data-ttu-id="2cc76-121">Exemplo 6: Obter todos os recursos de um determinado tipo de recurso</span><span class="sxs-lookup"><span data-stu-id="2cc76-121">Example 6: Get all resources of a given resource type</span></span>
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-<span data-ttu-id="d59dc-122">Esse comando obtém todos os recursos nas assinaturas atuais que são máquinas virtuais.</span><span class="sxs-lookup"><span data-stu-id="d59dc-122">This command gets all of the resources in the current subscriptions that are virtual machines.</span></span>
+<span data-ttu-id="2cc76-122">Esse comando obtém todos os recursos das assinaturas atuais que são máquinas virtuais.</span><span class="sxs-lookup"><span data-stu-id="2cc76-122">This command gets all of the resources in the current subscriptions that are virtual machines.</span></span>
 
-### <span data-ttu-id="d59dc-123">Exemplo 7: obter um recurso por ID do recurso</span><span class="sxs-lookup"><span data-stu-id="d59dc-123">Example 7: Get a resource by resource id</span></span>
+### <span data-ttu-id="2cc76-123">Exemplo 7: Obter um recurso por ID do recurso</span><span class="sxs-lookup"><span data-stu-id="2cc76-123">Example 7: Get a resource by resource id</span></span>
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,11 +163,11 @@ Tags              :
                     Status  Approved
 ```
 
-<span data-ttu-id="d59dc-124">Esse comando obtém o recurso com a ID de recurso fornecida, que é uma máquina virtual chamada "testVM" no grupo de recursos "testRG".</span><span class="sxs-lookup"><span data-stu-id="d59dc-124">This command gets the resource with the provided resource id, which is a virtual machine called "testVM" in the resource group "testRG".</span></span>
+<span data-ttu-id="2cc76-124">Esse comando obtém o recurso com a ID de recurso fornecida, que é uma máquina virtual chamada "testVM" no grupo de recursos "testRG".</span><span class="sxs-lookup"><span data-stu-id="2cc76-124">This command gets the resource with the provided resource id, which is a virtual machine called "testVM" in the resource group "testRG".</span></span>
 
-## <span data-ttu-id="d59dc-125">OS</span><span class="sxs-lookup"><span data-stu-id="d59dc-125">PARAMETERS</span></span>
+## <span data-ttu-id="2cc76-125">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="2cc76-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="d59dc-126">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="d59dc-126">-ApiVersion</span></span>
+### <span data-ttu-id="2cc76-126">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="2cc76-126">-ApiVersion</span></span>
 
 ```yaml
 Type: System.String
@@ -181,8 +181,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d59dc-127">-DefaultProfile</span></span>
-<span data-ttu-id="d59dc-128">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="d59dc-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="2cc76-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2cc76-127">-DefaultProfile</span></span>
+<span data-ttu-id="2cc76-128">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="2cc76-128">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -196,8 +196,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-129">-Expandproperties</span><span class="sxs-lookup"><span data-stu-id="d59dc-129">-ExpandProperties</span></span>
-<span data-ttu-id="d59dc-130">Quando especificado, expande as propriedades do recurso.</span><span class="sxs-lookup"><span data-stu-id="d59dc-130">When specified, expands the properties of the resource.</span></span>
+### <span data-ttu-id="2cc76-129">-ExpandProperties</span><span class="sxs-lookup"><span data-stu-id="2cc76-129">-ExpandProperties</span></span>
+<span data-ttu-id="2cc76-130">Quando especificado, expande as propriedades do recurso.</span><span class="sxs-lookup"><span data-stu-id="2cc76-130">When specified, expands the properties of the resource.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,8 +211,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-131">-Nome</span><span class="sxs-lookup"><span data-stu-id="d59dc-131">-Name</span></span>
-<span data-ttu-id="d59dc-132">O nome do (s) recurso (s) a serem recuperados.</span><span class="sxs-lookup"><span data-stu-id="d59dc-132">The name of the resource(s) to be retrieved.</span></span> <span data-ttu-id="d59dc-133">Esse parâmetro dá suporte a caracteres curinga no início e/ou final da cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="d59dc-133">This parameter supports wildcards at the beginning and/or end of the string.</span></span>
+### <span data-ttu-id="2cc76-131">-Nome</span><span class="sxs-lookup"><span data-stu-id="2cc76-131">-Name</span></span>
+<span data-ttu-id="2cc76-132">O nome dos recursos a serem recuperados.</span><span class="sxs-lookup"><span data-stu-id="2cc76-132">The name of the resource(s) to be retrieved.</span></span> <span data-ttu-id="2cc76-133">Esse parâmetro dá suporte a caracteres curinga no início e/ou no final da cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="2cc76-133">This parameter supports wildcards at the beginning and/or end of the string.</span></span>
 
 ```yaml
 Type: System.String
@@ -226,7 +226,7 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="d59dc-134">-ODataQuery</span><span class="sxs-lookup"><span data-stu-id="d59dc-134">-ODataQuery</span></span>
+### <span data-ttu-id="2cc76-134">-ODataQuery</span><span class="sxs-lookup"><span data-stu-id="2cc76-134">-ODataQuery</span></span>
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-135">-Pre</span><span class="sxs-lookup"><span data-stu-id="d59dc-135">-Pre</span></span>
+### <span data-ttu-id="2cc76-135">-Pré-</span><span class="sxs-lookup"><span data-stu-id="2cc76-135">-Pre</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,8 +254,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-136">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d59dc-136">-ResourceGroupName</span></span>
-<span data-ttu-id="d59dc-137">O grupo de recursos ao qual o (s) recurso (s) recuperado (s) pertence.</span><span class="sxs-lookup"><span data-stu-id="d59dc-137">The resource group the resource(s) that is retrieved belongs in.</span></span> <span data-ttu-id="d59dc-138">Esse parâmetro dá suporte a caracteres curinga no início e/ou final da cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="d59dc-138">This parameter supports wildcards at the beginning and/or end of the string.</span></span>
+### <span data-ttu-id="2cc76-136">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="2cc76-136">-ResourceGroupName</span></span>
+<span data-ttu-id="2cc76-137">O grupo de recursos ao(s) recurso(s) que é recuperado pertence.</span><span class="sxs-lookup"><span data-stu-id="2cc76-137">The resource group the resource(s) that is retrieved belongs in.</span></span> <span data-ttu-id="2cc76-138">Esse parâmetro dá suporte a caracteres curinga no início e/ou no final da cadeia de caracteres.</span><span class="sxs-lookup"><span data-stu-id="2cc76-138">This parameter supports wildcards at the beginning and/or end of the string.</span></span>
 
 ```yaml
 Type: System.String
@@ -269,8 +269,8 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="d59dc-139">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="d59dc-139">-ResourceId</span></span>
-<span data-ttu-id="d59dc-140">Especifica a ID de recurso totalmente qualificado, como no exemplo a seguir `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`</span><span class="sxs-lookup"><span data-stu-id="d59dc-140">Specifies the fully qualified resource ID, as in the following example `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`</span></span>
+### <span data-ttu-id="2cc76-139">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="2cc76-139">-ResourceId</span></span>
+<span data-ttu-id="2cc76-140">Especifica a ID de recurso totalmente qualificada, como no exemplo a seguir `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`</span><span class="sxs-lookup"><span data-stu-id="2cc76-140">Specifies the fully qualified resource ID, as in the following example `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`</span></span>
 
 ```yaml
 Type: System.String
@@ -284,8 +284,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-141">-ResourceType</span><span class="sxs-lookup"><span data-stu-id="d59dc-141">-ResourceType</span></span>
-<span data-ttu-id="d59dc-142">O tipo de recurso do (s) recurso (s) a ser recuperado (s).</span><span class="sxs-lookup"><span data-stu-id="d59dc-142">The resource type of the resource(s) to be retrieved.</span></span> <span data-ttu-id="d59dc-143">Por exemplo, Microsoft. Compute/virtualMachines</span><span class="sxs-lookup"><span data-stu-id="d59dc-143">For example, Microsoft.Compute/virtualMachines</span></span>
+### <span data-ttu-id="2cc76-141">-ResourceType</span><span class="sxs-lookup"><span data-stu-id="2cc76-141">-ResourceType</span></span>
+<span data-ttu-id="2cc76-142">O tipo de recurso dos recursos a serem recuperados.</span><span class="sxs-lookup"><span data-stu-id="2cc76-142">The resource type of the resource(s) to be retrieved.</span></span> <span data-ttu-id="2cc76-143">Por exemplo, Microsoft.Compute/virtualMachines</span><span class="sxs-lookup"><span data-stu-id="2cc76-143">For example, Microsoft.Compute/virtualMachines</span></span>
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-144">-Marca</span><span class="sxs-lookup"><span data-stu-id="d59dc-144">-Tag</span></span>
+### <span data-ttu-id="2cc76-144">-Tag</span><span class="sxs-lookup"><span data-stu-id="2cc76-144">-Tag</span></span>
 
-<span data-ttu-id="d59dc-145">Obtém recursos que têm a marca do Azure especificada.</span><span class="sxs-lookup"><span data-stu-id="d59dc-145">Gets resources that have the specified Azure tag.</span></span> <span data-ttu-id="d59dc-146">Insira uma tabela de hash com uma chave de nome ou um nome e as teclas de valor.</span><span class="sxs-lookup"><span data-stu-id="d59dc-146">Enter a hash table with a Name key or Name and Value keys.</span></span> <span data-ttu-id="d59dc-147">Não há suporte para caracteres curinga. Uma "marca" é um par de nome-valor que você pode aplicar a recursos e grupos de recursos.</span><span class="sxs-lookup"><span data-stu-id="d59dc-147">Wildcard characters are not supported.A "tag" is a name-value pair that you can apply to resources and resource groups.</span></span> <span data-ttu-id="d59dc-148">Use marcas para categorizar seus recursos, como por departamento ou centro de custo, ou para controlar anotações ou comentários sobre os recursos.</span><span class="sxs-lookup"><span data-stu-id="d59dc-148">Use tags to categorize your resources, such as by department or cost center, or to track notes or comments about the resources.</span></span> <span data-ttu-id="d59dc-149">Para adicionar uma marca a um recurso, use o parâmetro Tag dos cmdlets New-AzResource ou Set-AzResource.</span><span class="sxs-lookup"><span data-stu-id="d59dc-149">To add a tag to a resource, use the Tag parameter of the New-AzResource or Set-AzResource cmdlets.</span></span> <span data-ttu-id="d59dc-150">Para criar uma marca predefinida, use o cmdlet New-AzTag.</span><span class="sxs-lookup"><span data-stu-id="d59dc-150">To create a predefined tag, use the New-AzTag cmdlet.</span></span> <span data-ttu-id="d59dc-151">Para obter ajuda com tabelas de hash no Windows PowerShell, execute ' Get-Help about_Hashtables '.</span><span class="sxs-lookup"><span data-stu-id="d59dc-151">For help with hash tables in Windows PowerShell, run 'Get-Help about_Hashtables'.</span></span>
+<span data-ttu-id="2cc76-145">Obtém recursos que têm a marca do Azure especificada.</span><span class="sxs-lookup"><span data-stu-id="2cc76-145">Gets resources that have the specified Azure tag.</span></span> <span data-ttu-id="2cc76-146">Insira uma tabela hash com uma tecla Nome ou as teclas Nome e Valor.</span><span class="sxs-lookup"><span data-stu-id="2cc76-146">Enter a hash table with a Name key or Name and Value keys.</span></span> <span data-ttu-id="2cc76-147">Caracteres curinga não são suportados. Uma "marca" é um par de valores de nome que você pode aplicar aos recursos e grupos de recursos.</span><span class="sxs-lookup"><span data-stu-id="2cc76-147">Wildcard characters are not supported.A "tag" is a name-value pair that you can apply to resources and resource groups.</span></span> <span data-ttu-id="2cc76-148">Use marcas para categorizar seus recursos, como por departamento ou centro de custo, ou para controlar anotações ou comentários sobre os recursos.</span><span class="sxs-lookup"><span data-stu-id="2cc76-148">Use tags to categorize your resources, such as by department or cost center, or to track notes or comments about the resources.</span></span> <span data-ttu-id="2cc76-149">Para adicionar uma marca a um recurso, use o parâmetro Tag dos cmdlets New-AzResource ou Set-AzResource dados.</span><span class="sxs-lookup"><span data-stu-id="2cc76-149">To add a tag to a resource, use the Tag parameter of the New-AzResource or Set-AzResource cmdlets.</span></span> <span data-ttu-id="2cc76-150">Para criar uma marca predefinida, use New-AzTag cmdlet.</span><span class="sxs-lookup"><span data-stu-id="2cc76-150">To create a predefined tag, use the New-AzTag cmdlet.</span></span> <span data-ttu-id="2cc76-151">Para obter ajuda com tabelas hash no Windows PowerShell, execute "Obter ajuda about_Hashtables".</span><span class="sxs-lookup"><span data-stu-id="2cc76-151">For help with hash tables in Windows PowerShell, run 'Get-Help about_Hashtables'.</span></span>
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -315,8 +315,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-152">-TagName</span><span class="sxs-lookup"><span data-stu-id="d59dc-152">-TagName</span></span>
-<span data-ttu-id="d59dc-153">A chave na marca do (s) recurso (s) a ser recuperada (s).</span><span class="sxs-lookup"><span data-stu-id="d59dc-153">The key in the tag of the resource(s) to be retrieved.</span></span>
+### <span data-ttu-id="2cc76-152">-TagName</span><span class="sxs-lookup"><span data-stu-id="2cc76-152">-TagName</span></span>
+<span data-ttu-id="2cc76-153">A chave na marca dos recursos a serem recuperados.</span><span class="sxs-lookup"><span data-stu-id="2cc76-153">The key in the tag of the resource(s) to be retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -330,8 +330,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-154">-TagValue</span><span class="sxs-lookup"><span data-stu-id="d59dc-154">-TagValue</span></span>
-<span data-ttu-id="d59dc-155">O valor na marca do (s) recurso (s) a ser recuperado (s).</span><span class="sxs-lookup"><span data-stu-id="d59dc-155">The value in the tag of the resource(s) to be retrieved.</span></span>
+### <span data-ttu-id="2cc76-154">-TagValue</span><span class="sxs-lookup"><span data-stu-id="2cc76-154">-TagValue</span></span>
+<span data-ttu-id="2cc76-155">O valor na marca dos recursos a serem recuperados.</span><span class="sxs-lookup"><span data-stu-id="2cc76-155">The value in the tag of the resource(s) to be retrieved.</span></span>
 
 ```yaml
 Type: System.String
@@ -345,27 +345,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d59dc-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d59dc-156">CommonParameters</span></span>
-<span data-ttu-id="d59dc-157">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d59dc-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d59dc-158">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="d59dc-158">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="2cc76-156">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2cc76-156">CommonParameters</span></span>
+<span data-ttu-id="2cc76-157">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="2cc76-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2cc76-158">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="2cc76-158">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="d59dc-159">SENSORES</span><span class="sxs-lookup"><span data-stu-id="d59dc-159">INPUTS</span></span>
+## <span data-ttu-id="2cc76-159">Entradas</span><span class="sxs-lookup"><span data-stu-id="2cc76-159">INPUTS</span></span>
 
-### <span data-ttu-id="d59dc-160">System. String</span><span class="sxs-lookup"><span data-stu-id="d59dc-160">System.String</span></span>
+### <span data-ttu-id="2cc76-160">System.String</span><span class="sxs-lookup"><span data-stu-id="2cc76-160">System.String</span></span>
 
-## <span data-ttu-id="d59dc-161">EXIBE</span><span class="sxs-lookup"><span data-stu-id="d59dc-161">OUTPUTS</span></span>
+## <span data-ttu-id="2cc76-161">Saídas</span><span class="sxs-lookup"><span data-stu-id="2cc76-161">OUTPUTS</span></span>
 
-### <span data-ttu-id="d59dc-162">Microsoft. Azure. Commands. ResourceManager. cmdlets. SdkModels. PSResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-162">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource</span></span>
+### <span data-ttu-id="2cc76-162">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-162">Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource</span></span>
 
-## <span data-ttu-id="d59dc-163">INFORMA</span><span class="sxs-lookup"><span data-stu-id="d59dc-163">NOTES</span></span>
+## <span data-ttu-id="2cc76-163">Notas</span><span class="sxs-lookup"><span data-stu-id="2cc76-163">NOTES</span></span>
 
-## <span data-ttu-id="d59dc-164">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="d59dc-164">RELATED LINKS</span></span>
+## <span data-ttu-id="2cc76-164">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="2cc76-164">RELATED LINKS</span></span>
 
-[<span data-ttu-id="d59dc-165">Localizar-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-165">Find-AzResource</span></span>](./Find-AzResource.md)
 
-[<span data-ttu-id="d59dc-166">Mover-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-166">Move-AzResource</span></span>](./Move-AzResource.md)
+[<span data-ttu-id="2cc76-165">Mover-AzResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-165">Move-AzResource</span></span>](./Move-AzResource.md)
 
-[<span data-ttu-id="d59dc-167">New-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-167">New-AzResource</span></span>](./New-AzResource.md)
+[<span data-ttu-id="2cc76-166">New-AzResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-166">New-AzResource</span></span>](./New-AzResource.md)
 
-[<span data-ttu-id="d59dc-168">Remove-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-168">Remove-AzResource</span></span>](./Remove-AzResource.md)
+[<span data-ttu-id="2cc76-167">Remove-AzResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-167">Remove-AzResource</span></span>](./Remove-AzResource.md)
 
-[<span data-ttu-id="d59dc-169">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="d59dc-169">Set-AzResource</span></span>](./Set-AzResource.md)
+[<span data-ttu-id="2cc76-168">Set-AzResource</span><span class="sxs-lookup"><span data-stu-id="2cc76-168">Set-AzResource</span></span>](./Set-AzResource.md)
