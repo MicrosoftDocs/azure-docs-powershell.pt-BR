@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: 03459cedbebaeba46331edf7aeb9a7972711912a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 8410ca475ed17376e01a526512d758c4712f2726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93941113"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411272"
 ---
 # New-AzAlertRuleWebhook
 
 ## Sinopse
-Cria um webhook de regra de alerta.
+Cria uma webtareia de regra de alerta.
 
-## SYNTAX
+## Sintaxe
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **New-AzAlertRuleWebhook** cria um webhook de regra de alerta.
+## Descrição
+O **cmdlet New-AzAlertRuleWebweblet** cria uma weberte de regra de alerta.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: criar uma regra de alerta webhook
+### Exemplo 1: Criar uma webtareia de regra de alerta
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-Esse comando cria um webhook de regra de alerta especificando somente o URI do serviço.
+Esse comando cria uma webião de regra de alerta especificando apenas o URI do serviço.
 
-### Exemplo 2: criar um webhook com uma propriedade
+### Exemplo 2: Criar uma webção com uma propriedade
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-Esse comando cria um webhook de regra de alerta para Contoso.com que tem uma propriedade e, em seguida, armazena-o na variável $Actual.
+Esse comando cria uma web Contoso.com de regra de alerta que tem uma propriedade e a armazena na variável $Actual alerta.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Propriedade
-Especifica a lista de propriedades no formato @ (Property1 = "valor1",....).
+Especifica a lista de propriedades no formato @(propriedade1 = 'valor1',....).
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -92,23 +92,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Management. monitor. Management. Models. RuleWebhookAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleWebwebaction
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
@@ -116,6 +115,6 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [New-AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
 
-[New-AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
+[New-AzAutoscaleWebweb](./New-AzAutoscaleWebhook.md)
 
 
