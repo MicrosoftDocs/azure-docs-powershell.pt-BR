@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-Az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 8090ee9cf6ec251668dbeadba6b18a7cde4898c4
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 9035f2a03ac04a9bc99248c48675ab3c69b84207
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93941566"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415182"
 ---
-# <span data-ttu-id="fed47-101">Get-AzSqlDatabaseAdvancedThreatProtectionSetting</span><span class="sxs-lookup"><span data-stu-id="fed47-101">Get-AzSqlDatabaseAdvancedThreatProtectionSetting</span></span>
+# <span data-ttu-id="6e055-101">Get-AzSqlDatabaseAdvancedThreatProtectionSetting</span><span class="sxs-lookup"><span data-stu-id="6e055-101">Get-AzSqlDatabaseAdvancedThreatProtectionSetting</span></span>
 
-## <span data-ttu-id="fed47-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="fed47-102">SYNOPSIS</span></span>
-<span data-ttu-id="fed47-103">Obtém as configurações avançadas de proteção contra ameaças para um banco de dados.</span><span class="sxs-lookup"><span data-stu-id="fed47-103">Gets the advanced threat protection settings for a database.</span></span>
+## <span data-ttu-id="6e055-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="6e055-102">SYNOPSIS</span></span>
+<span data-ttu-id="6e055-103">Obtém as configurações avançadas de proteção contra ameaças para um banco de dados.</span><span class="sxs-lookup"><span data-stu-id="6e055-103">Gets the advanced threat protection settings for a database.</span></span>
 
-## <span data-ttu-id="fed47-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="fed47-104">SYNTAX</span></span>
+## <span data-ttu-id="6e055-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="6e055-104">SYNTAX</span></span>
 
 ```
 Get-AzSqlDatabaseAdvancedThreatProtectionSetting [-ServerName] <String> [-DatabaseName] <String>
@@ -26,13 +26,13 @@ Get-AzSqlDatabaseAdvancedThreatProtectionSetting [-ServerName] <String> [-Databa
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="fed47-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="fed47-105">DESCRIPTION</span></span>
-<span data-ttu-id="fed47-106">O cmdlet **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** Obtém as configurações avançadas de proteção contra ameaças de um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="fed47-106">The **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** cmdlet gets the advanced threat protection settings of an Azure SQL database.</span></span>
-<span data-ttu-id="fed47-107">Para usar esse cmdlet, especifique os parâmetros *ResourceGroupName* , *ServerName* e *DatabaseName* para identificar o banco de dados para o qual esse cmdlet obtém as configurações.</span><span class="sxs-lookup"><span data-stu-id="fed47-107">To use this cmdlet, specify the *ResourceGroupName* , *ServerName* , and *DatabaseName* parameters to identify the database for which this cmdlet gets the settings.</span></span>
+## <span data-ttu-id="6e055-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="6e055-105">DESCRIPTION</span></span>
+<span data-ttu-id="6e055-106">O cmdlet **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** obtém as configurações avançadas de proteção contra ameaças de um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="6e055-106">The **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** cmdlet gets the advanced threat protection settings of an Azure SQL database.</span></span>
+<span data-ttu-id="6e055-107">Para usar esse cmdlet, especifique os parâmetros *ResourceGroupName,* *ServerName* e *DatabaseName* para identificar o banco de dados para o qual esse cmdlet obtém as configurações.</span><span class="sxs-lookup"><span data-stu-id="6e055-107">To use this cmdlet, specify the *ResourceGroupName*, *ServerName*, and *DatabaseName* parameters to identify the database for which this cmdlet gets the settings.</span></span>
 
-## <span data-ttu-id="fed47-108">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="fed47-108">EXAMPLES</span></span>
+## <span data-ttu-id="6e055-108">Exemplos</span><span class="sxs-lookup"><span data-stu-id="6e055-108">EXAMPLES</span></span>
 
-### <span data-ttu-id="fed47-109">Exemplo 1: obter as configurações avançadas de proteção contra ameaças para um banco de dados</span><span class="sxs-lookup"><span data-stu-id="fed47-109">Example 1: Get the advanced threat protection settings for a database</span></span>
+### <span data-ttu-id="6e055-109">Exemplo 1: Obter as configurações avançadas de proteção contra ameaças para um banco de dados</span><span class="sxs-lookup"><span data-stu-id="6e055-109">Example 1: Get the advanced threat protection settings for a database</span></span>
 ```
 PS C:\>Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : Database01
@@ -46,13 +46,13 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-<span data-ttu-id="fed47-110">Este comando obtém as configurações avançadas de proteção contra ameaças para um banco de dados denominado Database01.</span><span class="sxs-lookup"><span data-stu-id="fed47-110">This command gets the advanced threat protection settings for a database named Database01.</span></span>
-<span data-ttu-id="fed47-111">O banco de dados está localizado no servidor chamado Server01, que é atribuído à ResourceGroup11 do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="fed47-111">The database is located on the server named Server01, which is assigned to the resource group ResourceGroup11.</span></span>
+<span data-ttu-id="6e055-110">Esse comando obtém as configurações avançadas de proteção contra ameaças para um banco de dados chamado Banco de Dados01.</span><span class="sxs-lookup"><span data-stu-id="6e055-110">This command gets the advanced threat protection settings for a database named Database01.</span></span>
+<span data-ttu-id="6e055-111">O banco de dados está localizado no servidor chamado Server01, que é atribuído ao grupo de recursos ResourceGroup11.</span><span class="sxs-lookup"><span data-stu-id="6e055-111">The database is located on the server named Server01, which is assigned to the resource group ResourceGroup11.</span></span>
 
-## <span data-ttu-id="fed47-112">OS</span><span class="sxs-lookup"><span data-stu-id="fed47-112">PARAMETERS</span></span>
+## <span data-ttu-id="6e055-112">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="6e055-112">PARAMETERS</span></span>
 
-### <span data-ttu-id="fed47-113">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="fed47-113">-DatabaseName</span></span>
-<span data-ttu-id="fed47-114">Especifica o nome de um banco de dados.</span><span class="sxs-lookup"><span data-stu-id="fed47-114">Specifies the name of a database.</span></span>
+### <span data-ttu-id="6e055-113">-Nomedo Banco de Dados</span><span class="sxs-lookup"><span data-stu-id="6e055-113">-DatabaseName</span></span>
+<span data-ttu-id="6e055-114">Especifica o nome de um banco de dados.</span><span class="sxs-lookup"><span data-stu-id="6e055-114">Specifies the name of a database.</span></span>
 
 ```yaml
 Type: System.String
@@ -66,8 +66,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="fed47-115">-DefaultProfile</span></span>
-<span data-ttu-id="fed47-116">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="fed47-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="6e055-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6e055-115">-DefaultProfile</span></span>
+<span data-ttu-id="6e055-116">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="6e055-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -81,8 +81,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="fed47-117">-ResourceGroupName</span></span>
-<span data-ttu-id="fed47-118">Especifica o nome do grupo de recursos ao qual o servidor está atribuído.</span><span class="sxs-lookup"><span data-stu-id="fed47-118">Specifies the name of the resource group to which the server is assigned.</span></span>
+### <span data-ttu-id="6e055-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6e055-117">-ResourceGroupName</span></span>
+<span data-ttu-id="6e055-118">Especifica o nome do grupo de recursos ao qual o servidor é atribuído.</span><span class="sxs-lookup"><span data-stu-id="6e055-118">Specifies the name of the resource group to which the server is assigned.</span></span>
 
 ```yaml
 Type: System.String
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-119">-Nomedoservidor</span><span class="sxs-lookup"><span data-stu-id="fed47-119">-ServerName</span></span>
-<span data-ttu-id="fed47-120">Especifica o nome de um servidor.</span><span class="sxs-lookup"><span data-stu-id="fed47-120">Specifies the name of a server.</span></span>
+### <span data-ttu-id="6e055-119">-ServerName</span><span class="sxs-lookup"><span data-stu-id="6e055-119">-ServerName</span></span>
+<span data-ttu-id="6e055-120">Especifica o nome de um servidor.</span><span class="sxs-lookup"><span data-stu-id="6e055-120">Specifies the name of a server.</span></span>
 
 ```yaml
 Type: System.String
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-121">-Confirme</span><span class="sxs-lookup"><span data-stu-id="fed47-121">-Confirm</span></span>
-<span data-ttu-id="fed47-122">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="fed47-122">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="6e055-121">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="6e055-121">-Confirm</span></span>
+<span data-ttu-id="6e055-122">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6e055-122">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,9 +126,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="fed47-123">-WhatIf</span></span>
-<span data-ttu-id="fed47-124">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="fed47-124">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="fed47-125">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="fed47-125">The cmdlet is not run.</span></span>
+### <span data-ttu-id="6e055-123">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="6e055-123">-WhatIf</span></span>
+<span data-ttu-id="6e055-124">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="6e055-124">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="6e055-125">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="6e055-125">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -142,22 +142,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="fed47-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="fed47-126">CommonParameters</span></span>
-<span data-ttu-id="fed47-127">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="fed47-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="fed47-128">Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="fed47-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="6e055-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6e055-126">CommonParameters</span></span>
+<span data-ttu-id="6e055-127">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6e055-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6e055-128">Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="6e055-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="fed47-129">SENSORES</span><span class="sxs-lookup"><span data-stu-id="fed47-129">INPUTS</span></span>
+## <span data-ttu-id="6e055-129">Entradas</span><span class="sxs-lookup"><span data-stu-id="6e055-129">INPUTS</span></span>
 
-### <span data-ttu-id="fed47-130">System. String</span><span class="sxs-lookup"><span data-stu-id="fed47-130">System.String</span></span>
+### <span data-ttu-id="6e055-130">System.String</span><span class="sxs-lookup"><span data-stu-id="6e055-130">System.String</span></span>
 
-## <span data-ttu-id="fed47-131">EXIBE</span><span class="sxs-lookup"><span data-stu-id="fed47-131">OUTPUTS</span></span>
+## <span data-ttu-id="6e055-131">Saídas</span><span class="sxs-lookup"><span data-stu-id="6e055-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="fed47-132">Microsoft. Azure. Commands. Sql. ThreatDetection. Model. DatabaseAdvancedThreatProtectionSettingsModel</span><span class="sxs-lookup"><span data-stu-id="fed47-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span></span>
+### <span data-ttu-id="6e055-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span><span class="sxs-lookup"><span data-stu-id="6e055-132">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel</span></span>
 
-## <span data-ttu-id="fed47-133">INFORMA</span><span class="sxs-lookup"><span data-stu-id="fed47-133">NOTES</span></span>
+## <span data-ttu-id="6e055-133">Notas</span><span class="sxs-lookup"><span data-stu-id="6e055-133">NOTES</span></span>
 
-## <span data-ttu-id="fed47-134">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="fed47-134">RELATED LINKS</span></span>
+## <span data-ttu-id="6e055-134">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="6e055-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="fed47-135">Remove-AzSqlDatabaseAdvancedThreatProtectionSetting</span><span class="sxs-lookup"><span data-stu-id="fed47-135">Remove-AzSqlDatabaseAdvancedThreatProtectionSetting</span></span>](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
 
 
 
