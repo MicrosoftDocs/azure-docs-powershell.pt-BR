@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 26bf7b91b330032e05f96f425cb21908fc3df55d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 92c5166794808d08a925c458afc14fe4b6dca834
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93596130"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408722"
 ---
-# <span data-ttu-id="7ef62-101">Undo-AzKeyVaultSecretRemoval</span><span class="sxs-lookup"><span data-stu-id="7ef62-101">Undo-AzKeyVaultSecretRemoval</span></span>
+# <span data-ttu-id="5a506-101">Undo-AzKeyVaultSecretRemoval</span><span class="sxs-lookup"><span data-stu-id="5a506-101">Undo-AzKeyVaultSecretRemoval</span></span>
 
-## <span data-ttu-id="7ef62-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="7ef62-102">SYNOPSIS</span></span>
-<span data-ttu-id="7ef62-103">Recupera um segredo excluído em um cofre de chaves para um estado ativo.</span><span class="sxs-lookup"><span data-stu-id="7ef62-103">Recovers a deleted secret in a key vault into an active state.</span></span>
+## <span data-ttu-id="5a506-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="5a506-102">SYNOPSIS</span></span>
+<span data-ttu-id="5a506-103">Recupera um segredo excluído em um cofre de chave em um estado ativo.</span><span class="sxs-lookup"><span data-stu-id="5a506-103">Recovers a deleted secret in a key vault into an active state.</span></span>
 
-## <span data-ttu-id="7ef62-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="7ef62-104">SYNTAX</span></span>
+## <span data-ttu-id="5a506-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="5a506-104">SYNTAX</span></span>
 
-### <span data-ttu-id="7ef62-105">Padrão (padrão)</span><span class="sxs-lookup"><span data-stu-id="7ef62-105">Default (Default)</span></span>
+### <span data-ttu-id="5a506-105">Padrão (Padrão)</span><span class="sxs-lookup"><span data-stu-id="5a506-105">Default (Default)</span></span>
 ```
 Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="7ef62-106">InputObject</span><span class="sxs-lookup"><span data-stu-id="7ef62-106">InputObject</span></span>
+### <span data-ttu-id="5a506-106">Inputobject</span><span class="sxs-lookup"><span data-stu-id="5a506-106">InputObject</span></span>
 ```
 Undo-AzKeyVaultSecretRemoval [-InputObject] <PSDeletedKeyVaultSecretIdentityItem>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7ef62-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="7ef62-107">DESCRIPTION</span></span>
-<span data-ttu-id="7ef62-108">O cmdlet **Undo-AzKeyVaultSecretRemoval** recuperará um segredo excluído anteriormente.</span><span class="sxs-lookup"><span data-stu-id="7ef62-108">The **Undo-AzKeyVaultSecretRemoval** cmdlet will recover a previously deleted secret.</span></span>
-<span data-ttu-id="7ef62-109">O segredo recuperado estará ativo e poderá ser usado para todas as operações de segredo normal.</span><span class="sxs-lookup"><span data-stu-id="7ef62-109">The recovered secret will be active and can be used for all normal secret operations.</span></span>
-<span data-ttu-id="7ef62-110">O chamador precisa ter a permissão ' recuperar ' para executar essa operação.</span><span class="sxs-lookup"><span data-stu-id="7ef62-110">Caller needs to have 'recover' permission in order to perform this operation.</span></span>
+## <span data-ttu-id="5a506-107">Descrição</span><span class="sxs-lookup"><span data-stu-id="5a506-107">DESCRIPTION</span></span>
+<span data-ttu-id="5a506-108">O cmdlet **Undo-AzKeyVaultSecsecoval** recuperará um segredo excluído anteriormente.</span><span class="sxs-lookup"><span data-stu-id="5a506-108">The **Undo-AzKeyVaultSecretRemoval** cmdlet will recover a previously deleted secret.</span></span>
+<span data-ttu-id="5a506-109">O segredo recuperado estará ativo e poderá ser usado para todas as operações secretas normais.</span><span class="sxs-lookup"><span data-stu-id="5a506-109">The recovered secret will be active and can be used for all normal secret operations.</span></span>
+<span data-ttu-id="5a506-110">O chamador precisa ter permissão de 'recuperar' para executar esta operação.</span><span class="sxs-lookup"><span data-stu-id="5a506-110">Caller needs to have 'recover' permission in order to perform this operation.</span></span>
 
-## <span data-ttu-id="7ef62-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="7ef62-111">EXAMPLES</span></span>
+## <span data-ttu-id="5a506-111">Exemplos</span><span class="sxs-lookup"><span data-stu-id="5a506-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="7ef62-112">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="7ef62-112">Example 1</span></span>
+### <span data-ttu-id="5a506-112">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="5a506-112">Example 1</span></span>
 ```powershell
 PS C:\> Undo-AzKeyVaultSecretRemoval -VaultName 'MyKeyVault' -Name 'MySecret'
 
@@ -55,12 +55,12 @@ Content Type :
 Tags         :
 ```
 
-<span data-ttu-id="7ef62-113">Esse comando recuperará o segredo ' MySecret ', que foi excluído anteriormente, em um estado ativo e utilizável.</span><span class="sxs-lookup"><span data-stu-id="7ef62-113">This command will recover the secret 'MySecret' that was previously deleted, into an active and usable state.</span></span>
+<span data-ttu-id="5a506-113">Esse comando recuperará o segredo "MySecsecsec" que foi excluído anteriormente em um estado ativo e acessível.</span><span class="sxs-lookup"><span data-stu-id="5a506-113">This command will recover the secret 'MySecret' that was previously deleted, into an active and usable state.</span></span>
 
-## <span data-ttu-id="7ef62-114">OS</span><span class="sxs-lookup"><span data-stu-id="7ef62-114">PARAMETERS</span></span>
+## <span data-ttu-id="5a506-114">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="5a506-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="7ef62-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7ef62-115">-DefaultProfile</span></span>
-<span data-ttu-id="7ef62-116">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="7ef62-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="5a506-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5a506-115">-DefaultProfile</span></span>
+<span data-ttu-id="5a506-116">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="5a506-116">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-117">-InputObject</span><span class="sxs-lookup"><span data-stu-id="7ef62-117">-InputObject</span></span>
-<span data-ttu-id="7ef62-118">Objeto secreto excluído</span><span class="sxs-lookup"><span data-stu-id="7ef62-118">Deleted secret object</span></span>
+### <span data-ttu-id="5a506-117">-InputObject</span><span class="sxs-lookup"><span data-stu-id="5a506-117">-InputObject</span></span>
+<span data-ttu-id="5a506-118">Objeto secreto excluído</span><span class="sxs-lookup"><span data-stu-id="5a506-118">Deleted secret object</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
@@ -89,9 +89,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-119">-Nome</span><span class="sxs-lookup"><span data-stu-id="7ef62-119">-Name</span></span>
-<span data-ttu-id="7ef62-120">Nome do segredo.</span><span class="sxs-lookup"><span data-stu-id="7ef62-120">Secret name.</span></span>
-<span data-ttu-id="7ef62-121">O cmdlet constrói o FQDN de um segredo do nome do cofre, do ambiente selecionado no momento e do nome do segredo.</span><span class="sxs-lookup"><span data-stu-id="7ef62-121">Cmdlet constructs the FQDN of a secret from vault name, currently selected environment and secret name.</span></span>
+### <span data-ttu-id="5a506-119">-Nome</span><span class="sxs-lookup"><span data-stu-id="5a506-119">-Name</span></span>
+<span data-ttu-id="5a506-120">Nome secreto.</span><span class="sxs-lookup"><span data-stu-id="5a506-120">Secret name.</span></span>
+<span data-ttu-id="5a506-121">O Cmdlet constrói o FQDN de um segredo do nome do cofre, do ambiente selecionado no momento e do nome secreto.</span><span class="sxs-lookup"><span data-stu-id="5a506-121">Cmdlet constructs the FQDN of a secret from vault name, currently selected environment and secret name.</span></span>
 
 ```yaml
 Type: System.String
@@ -105,9 +105,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-122">-Cofrename</span><span class="sxs-lookup"><span data-stu-id="7ef62-122">-VaultName</span></span>
-<span data-ttu-id="7ef62-123">Nome do cofre.</span><span class="sxs-lookup"><span data-stu-id="7ef62-123">Vault name.</span></span>
-<span data-ttu-id="7ef62-124">O cmdlet constrói o FQDN de um cofre com base no nome e no ambiente selecionado no momento.</span><span class="sxs-lookup"><span data-stu-id="7ef62-124">Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.</span></span>
+### <span data-ttu-id="5a506-122">-Nomedo Cofre</span><span class="sxs-lookup"><span data-stu-id="5a506-122">-VaultName</span></span>
+<span data-ttu-id="5a506-123">Nome do cofre.</span><span class="sxs-lookup"><span data-stu-id="5a506-123">Vault name.</span></span>
+<span data-ttu-id="5a506-124">O Cmdlet construirá o FQDN de um cofre com base no nome e no ambiente selecionado no momento.</span><span class="sxs-lookup"><span data-stu-id="5a506-124">Cmdlet constructs the FQDN of a vault based on the name and currently selected environment.</span></span>
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-125">-Confirme</span><span class="sxs-lookup"><span data-stu-id="7ef62-125">-Confirm</span></span>
-<span data-ttu-id="7ef62-126">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7ef62-126">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="5a506-125">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="5a506-125">-Confirm</span></span>
+<span data-ttu-id="5a506-126">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5a506-126">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-127">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7ef62-127">-WhatIf</span></span>
-<span data-ttu-id="7ef62-128">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="7ef62-128">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="7ef62-129">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="7ef62-129">The cmdlet is not run.</span></span>
+### <span data-ttu-id="5a506-127">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5a506-127">-WhatIf</span></span>
+<span data-ttu-id="5a506-128">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="5a506-128">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5a506-129">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="5a506-129">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -152,23 +152,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7ef62-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7ef62-130">CommonParameters</span></span>
-<span data-ttu-id="7ef62-131">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7ef62-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7ef62-132">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="7ef62-132">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="5a506-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5a506-130">CommonParameters</span></span>
+<span data-ttu-id="5a506-131">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5a506-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5a506-132">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5a506-132">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7ef62-133">SENSORES</span><span class="sxs-lookup"><span data-stu-id="7ef62-133">INPUTS</span></span>
+## <span data-ttu-id="5a506-133">Entradas</span><span class="sxs-lookup"><span data-stu-id="5a506-133">INPUTS</span></span>
 
-### <span data-ttu-id="7ef62-134">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem</span><span class="sxs-lookup"><span data-stu-id="7ef62-134">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem</span></span>
+### <span data-ttu-id="5a506-134">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecitorIdentityItem</span><span class="sxs-lookup"><span data-stu-id="5a506-134">Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem</span></span>
 
-## <span data-ttu-id="7ef62-135">EXIBE</span><span class="sxs-lookup"><span data-stu-id="7ef62-135">OUTPUTS</span></span>
+## <span data-ttu-id="5a506-135">Saídas</span><span class="sxs-lookup"><span data-stu-id="5a506-135">OUTPUTS</span></span>
 
-### <span data-ttu-id="7ef62-136">Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultSecret</span><span class="sxs-lookup"><span data-stu-id="7ef62-136">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret</span></span>
+### <span data-ttu-id="5a506-136">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSec cue</span><span class="sxs-lookup"><span data-stu-id="5a506-136">Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret</span></span>
 
-## <span data-ttu-id="7ef62-137">INFORMA</span><span class="sxs-lookup"><span data-stu-id="7ef62-137">NOTES</span></span>
+## <span data-ttu-id="5a506-137">Notas</span><span class="sxs-lookup"><span data-stu-id="5a506-137">NOTES</span></span>
 
-## <span data-ttu-id="7ef62-138">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="7ef62-138">RELATED LINKS</span></span>
+## <span data-ttu-id="5a506-138">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="5a506-138">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7ef62-139">Remove-AzKeyVaultSecret</span><span class="sxs-lookup"><span data-stu-id="7ef62-139">Remove-AzKeyVaultSecret</span></span>](./Remove-AzKeyVaultSecret.md)
+[<span data-ttu-id="5a506-139">Remove-AzKeyVaultSec cue</span><span class="sxs-lookup"><span data-stu-id="5a506-139">Remove-AzKeyVaultSecret</span></span>](./Remove-AzKeyVaultSecret.md)
 
-[<span data-ttu-id="7ef62-140">Add-AzKeyVaultSecret</span><span class="sxs-lookup"><span data-stu-id="7ef62-140">Add-AzKeyVaultSecret</span></span>](./Add-AzKeyVaultSecret.md)
 
-[<span data-ttu-id="7ef62-141">Get-AzKeyVaultSecret</span><span class="sxs-lookup"><span data-stu-id="7ef62-141">Get-AzKeyVaultSecret</span></span>](./Get-AzKeyVaultSecret.md)
+[<span data-ttu-id="5a506-140">Get-AzKeyVaultSec cue</span><span class="sxs-lookup"><span data-stu-id="5a506-140">Get-AzKeyVaultSecret</span></span>](./Get-AzKeyVaultSecret.md)
