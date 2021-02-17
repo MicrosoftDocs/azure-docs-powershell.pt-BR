@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: 18b5f64426b0a3c458ea489d27781f1a01336b52
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 545722e48095f8b77104bb6ff24b856bd76e3312
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93599461"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399712"
 ---
 # Get-AzADApplication
 
 ## Sinopse
 Lista os aplicativos existentes do Azure Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### EmptyParameterSet (padrão)
+### EmptyParameterSet (Padrão)
 ```
 Get-AzADApplication [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -56,49 +56,49 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 Lista os aplicativos existentes do Azure Active Directory.
-A pesquisa do aplicativo pode ser feita por ObjectId, ApplicationId, IdentifierUri ou DisplayName.
+A procurar aplicativo pode ser feita por ObjectId, ApplicationId, IdentifierUri ou DisplayName.
 Se nenhum parâmetro for fornecido, ele buscará todos os aplicativos sob o locatário.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-listar todos os aplicativos
+### Exemplo 1 - Listar todos os aplicativos
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-Lista todos os aplicativos em um locatário.
+Lista todos os aplicativos sob um locatário.
 
-### Exemplo 2 aplicativos de lista usando paginação
+### Exemplo 2 - Listar aplicativos usando paging
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-Lista os primeiros aplicativos do 100 em um locatário.
+Lista os primeiros 100 aplicativos sob um locatário.
 
-### Exemplo 3-obter aplicativo por URI identificador
+### Exemplo 3 - Obter aplicativo por URI identificador
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-Obtém o aplicativo com URI de identificador como " http://mySecretApp1 ".
+Obtém o aplicativo com uri identificador como " http://mySecretApp1 ".
 
-### Exemplo 4-obter aplicativo por ID do objeto
+### Exemplo 4 - Obter aplicativo por id de objeto
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 ```
 
-Obtém o aplicativo com a ID de objeto ' 39e64ec6-569B-4030-8e1c-c3c519a05d69 '.
+Obtém o aplicativo com a id de objeto '39e64ec6-569b-4030-8e1c-c3c519a05d69'.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
-A ID do aplicativo do aplicativo a ser buscado.
+A ID do aplicativo a ser buscada.
 
 ```yaml
 Type: System.Guid
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-Busque todos os aplicativos que começam com o nome para exibição.
+Buscar todos os aplicativos começando com o nome de exibição.
 
 ```yaml
 Type: System.String
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-URI do identificador exclusivo do aplicativo a ser buscado.
+Uri do identificador exclusivo do aplicativo a ser buscado.
 
 ```yaml
 Type: System.String
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeTotalCount
-Informa o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
+Relata o número de objetos no conjunto de dados. Atualmente, esse parâmetro não faz nada.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -202,8 +202,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignora os primeiros N objetos e, em seguida, obtém os objetos restantes.
+### -Ignorar
+Ignora os primeiros objetos N e obtém os objetos restantes.
 
 ```yaml
 Type: System.UInt64
@@ -217,8 +217,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Primeiro
-O número máximo de objetos a serem retornados.
+### -First
+O número máximo de objetos a retornar.
 
 ```yaml
 Type: System.UInt64
@@ -233,19 +233,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ActiveDirectory. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -257,7 +257,6 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Remove-AzADApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [New-AzADApplication](./New-AzADApplication.md)
 
