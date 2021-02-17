@@ -6,50 +6,50 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93597453"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407090"
 ---
-# <span data-ttu-id="56724-101">Get-AzVMBootDiagnosticsData</span><span class="sxs-lookup"><span data-stu-id="56724-101">Get-AzVMBootDiagnosticsData</span></span>
+# <span data-ttu-id="5239a-101">Get-AzVMBootDiagnosticsData</span><span class="sxs-lookup"><span data-stu-id="5239a-101">Get-AzVMBootDiagnosticsData</span></span>
 
-## <span data-ttu-id="56724-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="56724-102">SYNOPSIS</span></span>
-<span data-ttu-id="56724-103">Obtém dados de diagnóstico de inicialização para uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="56724-103">Gets boot diagnostics data for a virtual machine.</span></span>
+## <span data-ttu-id="5239a-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="5239a-102">SYNOPSIS</span></span>
+<span data-ttu-id="5239a-103">Obtém dados de diagnóstico de inicialização para uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="5239a-103">Gets boot diagnostics data for a virtual machine.</span></span>
 
-## <span data-ttu-id="56724-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="56724-104">SYNTAX</span></span>
+## <span data-ttu-id="5239a-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="5239a-104">SYNTAX</span></span>
 
-### <span data-ttu-id="56724-105">WindowsParamSet (padrão)</span><span class="sxs-lookup"><span data-stu-id="56724-105">WindowsParamSet (Default)</span></span>
+### <span data-ttu-id="5239a-105">WindowsParamSet (Padrão)</span><span class="sxs-lookup"><span data-stu-id="5239a-105">WindowsParamSet (Default)</span></span>
 ```
 Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Windows] [-LocalPath] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="56724-106">LinuxParamSet</span><span class="sxs-lookup"><span data-stu-id="56724-106">LinuxParamSet</span></span>
+### <span data-ttu-id="5239a-106">LinuxParamSet</span><span class="sxs-lookup"><span data-stu-id="5239a-106">LinuxParamSet</span></span>
 ```
 Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Linux] [[-LocalPath] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="56724-107">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="56724-107">DESCRIPTION</span></span>
-<span data-ttu-id="56724-108">O cmdlet **Get-AzVMBootDiagnosticsData** obtém dados de diagnóstico de inicialização para uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="56724-108">The **Get-AzVMBootDiagnosticsData** cmdlet gets boot diagnostics data for a virtual machine.</span></span>
+## <span data-ttu-id="5239a-107">Descrição</span><span class="sxs-lookup"><span data-stu-id="5239a-107">DESCRIPTION</span></span>
+<span data-ttu-id="5239a-108">O **cmdlet Get-AzVMBootDiagnosticsData obtém** dados de diagnóstico de inicialização para uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="5239a-108">The **Get-AzVMBootDiagnosticsData** cmdlet gets boot diagnostics data for a virtual machine.</span></span>
 
-## <span data-ttu-id="56724-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="56724-109">EXAMPLES</span></span>
+## <span data-ttu-id="5239a-109">Exemplos</span><span class="sxs-lookup"><span data-stu-id="5239a-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="56724-110">Exemplo 1: obter dados de diagnóstico de inicialização</span><span class="sxs-lookup"><span data-stu-id="56724-110">Example 1: Get boot diagnostics data</span></span>
+### <span data-ttu-id="5239a-110">Exemplo 1: Obter dados de diagnóstico de inicialização</span><span class="sxs-lookup"><span data-stu-id="5239a-110">Example 1: Get boot diagnostics data</span></span>
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-<span data-ttu-id="56724-111">Este comando obtém dados de diagnóstico de inicialização para a máquina virtual chamada ContosoVM07.</span><span class="sxs-lookup"><span data-stu-id="56724-111">This command gets boot diagnostics data for the virtual machine named ContosoVM07.</span></span>
-<span data-ttu-id="56724-112">Esta máquina virtual executa o sistema operacional Windows.</span><span class="sxs-lookup"><span data-stu-id="56724-112">This virtual machine runs the Windows operating system.</span></span>
-<span data-ttu-id="56724-113">O comando armazena os dados no caminho local especificado.</span><span class="sxs-lookup"><span data-stu-id="56724-113">The command stores the data in specified local path.</span></span>
+<span data-ttu-id="5239a-111">Este comando obtém dados de diagnóstico de inicialização para a máquina virtual chamada ContosoVM07.</span><span class="sxs-lookup"><span data-stu-id="5239a-111">This command gets boot diagnostics data for the virtual machine named ContosoVM07.</span></span>
+<span data-ttu-id="5239a-112">Esta máquina virtual executa o sistema operacional Windows.</span><span class="sxs-lookup"><span data-stu-id="5239a-112">This virtual machine runs the Windows operating system.</span></span>
+<span data-ttu-id="5239a-113">O comando armazena os dados no caminho local especificado.</span><span class="sxs-lookup"><span data-stu-id="5239a-113">The command stores the data in specified local path.</span></span>
 
-## <span data-ttu-id="56724-114">OS</span><span class="sxs-lookup"><span data-stu-id="56724-114">PARAMETERS</span></span>
+## <span data-ttu-id="5239a-114">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="5239a-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="56724-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="56724-115">-DefaultProfile</span></span>
-<span data-ttu-id="56724-116">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="56724-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="5239a-115">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5239a-115">-DefaultProfile</span></span>
+<span data-ttu-id="5239a-116">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="5239a-116">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,8 +63,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-117">-Linux</span><span class="sxs-lookup"><span data-stu-id="56724-117">-Linux</span></span>
-<span data-ttu-id="56724-118">Indica que a máquina virtual executa o sistema operacional Linux.</span><span class="sxs-lookup"><span data-stu-id="56724-118">Indicates that the virtual machine runs the Linux operating system.</span></span>
+### <span data-ttu-id="5239a-117">-Linux</span><span class="sxs-lookup"><span data-stu-id="5239a-117">-Linux</span></span>
+<span data-ttu-id="5239a-118">Indica que a máquina virtual executa o sistema operacional Linux.</span><span class="sxs-lookup"><span data-stu-id="5239a-118">Indicates that the virtual machine runs the Linux operating system.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,8 +78,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-119">-LocalPath</span><span class="sxs-lookup"><span data-stu-id="56724-119">-LocalPath</span></span>
-<span data-ttu-id="56724-120">Especifica o caminho local para os dados de diagnóstico de inicialização.</span><span class="sxs-lookup"><span data-stu-id="56724-120">Specifies the local path for the boot diagnostics data.</span></span>
+### <span data-ttu-id="5239a-119">-LocalPath</span><span class="sxs-lookup"><span data-stu-id="5239a-119">-LocalPath</span></span>
+<span data-ttu-id="5239a-120">Especifica o caminho local para os dados de diagnóstico de inicialização.</span><span class="sxs-lookup"><span data-stu-id="5239a-120">Specifies the local path for the boot diagnostics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-121">-Nome</span><span class="sxs-lookup"><span data-stu-id="56724-121">-Name</span></span>
-<span data-ttu-id="56724-122">Especifica o nome da máquina virtual para a qual esse cmdlet obtém dados de diagnóstico.</span><span class="sxs-lookup"><span data-stu-id="56724-122">Specifies the name of the virtual machine for which this cmdlet gets diagnostics data.</span></span>
+### <span data-ttu-id="5239a-121">-Nome</span><span class="sxs-lookup"><span data-stu-id="5239a-121">-Name</span></span>
+<span data-ttu-id="5239a-122">Especifica o nome da máquina virtual para a qual este cmdlet obtém dados de diagnóstico.</span><span class="sxs-lookup"><span data-stu-id="5239a-122">Specifies the name of the virtual machine for which this cmdlet gets diagnostics data.</span></span>
 
 ```yaml
 Type: System.String
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="56724-123">-ResourceGroupName</span></span>
-<span data-ttu-id="56724-124">Especifica o nome do grupo de recursos da máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="56724-124">Specifies the name of the resource group of the virtual machine.</span></span>
+### <span data-ttu-id="5239a-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5239a-123">-ResourceGroupName</span></span>
+<span data-ttu-id="5239a-124">Especifica o nome do grupo de recursos da máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="5239a-124">Specifies the name of the resource group of the virtual machine.</span></span>
 
 ```yaml
 Type: System.String
@@ -135,8 +135,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-125">-Windows</span><span class="sxs-lookup"><span data-stu-id="56724-125">-Windows</span></span>
-<span data-ttu-id="56724-126">Indica que a máquina virtual executa o sistema operacional Windows.</span><span class="sxs-lookup"><span data-stu-id="56724-126">Indicates that the virtual machine runs the Windows operating system.</span></span>
+### <span data-ttu-id="5239a-125">-Windows</span><span class="sxs-lookup"><span data-stu-id="5239a-125">-Windows</span></span>
+<span data-ttu-id="5239a-126">Indica que a máquina virtual executa o sistema operacional Windows.</span><span class="sxs-lookup"><span data-stu-id="5239a-126">Indicates that the virtual machine runs the Windows operating system.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -150,23 +150,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="56724-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="56724-127">CommonParameters</span></span>
-<span data-ttu-id="56724-128">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="56724-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="56724-129">Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="56724-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="5239a-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5239a-127">CommonParameters</span></span>
+<span data-ttu-id="5239a-128">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5239a-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5239a-129">Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="5239a-129">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="56724-130">SENSORES</span><span class="sxs-lookup"><span data-stu-id="56724-130">INPUTS</span></span>
+## <span data-ttu-id="5239a-130">Entradas</span><span class="sxs-lookup"><span data-stu-id="5239a-130">INPUTS</span></span>
 
-### <span data-ttu-id="56724-131">System. String</span><span class="sxs-lookup"><span data-stu-id="56724-131">System.String</span></span>
+### <span data-ttu-id="5239a-131">System.String</span><span class="sxs-lookup"><span data-stu-id="5239a-131">System.String</span></span>
 
-## <span data-ttu-id="56724-132">EXIBE</span><span class="sxs-lookup"><span data-stu-id="56724-132">OUTPUTS</span></span>
+## <span data-ttu-id="5239a-132">Saídas</span><span class="sxs-lookup"><span data-stu-id="5239a-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="56724-133">Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="56724-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
+### <span data-ttu-id="5239a-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="5239a-133">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
 
-### <span data-ttu-id="56724-134">Microsoft. Azure. Commands. COMPUTE. Models. PSVirtualMachineInstanceView</span><span class="sxs-lookup"><span data-stu-id="56724-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span></span>
+### <span data-ttu-id="5239a-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span><span class="sxs-lookup"><span data-stu-id="5239a-134">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView</span></span>
 
-## <span data-ttu-id="56724-135">INFORMA</span><span class="sxs-lookup"><span data-stu-id="56724-135">NOTES</span></span>
+## <span data-ttu-id="5239a-135">Notas</span><span class="sxs-lookup"><span data-stu-id="5239a-135">NOTES</span></span>
 
-## <span data-ttu-id="56724-136">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="56724-136">RELATED LINKS</span></span>
+## <span data-ttu-id="5239a-136">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="5239a-136">RELATED LINKS</span></span>
 
-[<span data-ttu-id="56724-137">Set-AzVMBootDiagnostics</span><span class="sxs-lookup"><span data-stu-id="56724-137">Set-AzVMBootDiagnostics</span></span>](./Set-AzVMBootDiagnostics.md)
+[<span data-ttu-id="5239a-137">Set-AzVMBootDiagnostic</span><span class="sxs-lookup"><span data-stu-id="5239a-137">Set-AzVMBootDiagnostic</span></span>](./Set-AzVMBootDiagnostic.md)
 
 
