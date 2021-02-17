@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: 7c33c351b7daea7b39fd614a8d842a4ed8be7f2b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6f78e11fc6a5ef5cca2148258db9effd044b8c25
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93600786"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402806"
 ---
 # Set-AzDiagnosticSetting
 
 ## Sinopse
-Define as configurações de logs e métricas do recurso.
+Define as configurações de logs e métricas para o recurso.
 
-## SYNTAX
+## Sintaxe
 
-### OldSetDiagnosticSetting (padrão)
+### OldSetDiagnosticSetting (Padrão)
 ```
 Set-AzDiagnosticSetting -ResourceId <String> [-Name <String>] [-StorageAccountId <String>]
  [-ServiceBusRuleId <String>] [-EventHubName <String>] [-EventHubAuthorizationRuleId <String>]
@@ -37,28 +37,28 @@ Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProf
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzDiagnosticSetting** habilita ou desabilita cada intervalo de tempo e categoria de log para o recurso específico.
+## Descrição
+O cmdlet **Set-AzDiagnosticSetting** habilita ou desabilita cada categoria de granulação e log para o recurso específico.
 Os logs e as métricas são armazenados na conta de armazenamento especificada.
 Esse cmdlet implementa o padrão ShouldProcess, ou seja, ele pode solicitar confirmação do usuário antes de realmente criar, modificar ou remover o recurso.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: habilitar todas as métricas e registros para um recurso
+### Exemplo 1: Habilitar todas as métricas e logs para um recurso
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-Esse comando habilita todas as métricas e logs disponíveis para o Resource01.
+Esse comando habilita todas as métricas e logs disponíveis para Resource01.
 
-### Exemplo 2: desabilitar todas as métricas e registros
+### Exemplo 2: Desabilitar todas as métricas e logs
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
 Esse comando desabilita todas as métricas e logs disponíveis para o recurso Resource01.
 
-### Exemplo 3: habilitar/desabilitar várias categorias de métricas
+### Exemplo 3: Habilitar/desabilitar várias categorias de métricas
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-Esse comando desabilita o cateories de métricas chamado Category1 e Category2.
+Esse comando desabilita as categorias de métricas chamadas Categoria1 e Categoria2.
 Todas as outras categorias permanecem as mesmas.
 
-### Exemplo 4: habilitar/desabilitar várias categorias de log
+### Exemplo 4: Habilitar/desabilitar várias categorias de log
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-Esse comando habilita Category1 e Category2.
-Todas as outras categorias de métricas e registros permanecem as mesmas.
+Esse comando habilita Categoria1 e Categoria2.
+Todas as outras categorias de logs e métricas permanecem as mesmas.
 
-### Exemplo 4: habilitar um intervalo de tempo e várias categorias
+### Exemplo 4: Habilitar uma hora e várias categorias
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-Esse comando habilita somente o Category1, o Category2 e o intervalo de tempo PT1M.
-Todas as outras granularidades de tempo e categorias não são alteradas.
+Esse comando habilita apenas Categoria1, Categoria2 e hora em PT1M.
+Todos os outros períodos e categorias permanecem inalterados.
 
 ### Exemplo 5: usando o pipeline
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting
 ```
 
-Esse comando usa o pipeline do PowerShell para definir (não alterações feitas) uma configuração de diagnóstico.
+Esse comando usa o pipeline do PowerShell para definir (não alterar feita) uma configuração de diagnóstico.
 
-## OS
+## Parâmetros
 
 ### -Categoria
-Especifica a lista de categorias de log para habilitar ou desabilitar, de acordo com o valor de *Enabled*.
-Se nenhuma categoria for especificada, esse comando funcionará em todas as categorias com suporte. 
+Especifica a lista de categorias de log para habilitar ou desabilitar, de acordo com o valor *de Enabled.*
+Se nenhuma categoria for especificada, esse comando operará em todas as categorias com suporte.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### Habilitado para o
-Indica se os diagnósticos devem ser habilitados.
-Especifique $True para habilitar o diagnóstico ou $False para desabilitar o diagnóstico.
+### -Habilitado
+Indica se você deve habilitar o diagnóstico.
+Especifique $True para habilitar o diagnóstico ou $False desabilitar o diagnóstico.
 
 ```yaml
 Type: System.Boolean
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -EventHubName
-O nome do hub de eventos
+O nome do hub de evento
 
 ```yaml
 Type: System.String
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-O objeto de entrada (possível no pipeline) O nome e o ResourceId serão extraídos deste objeto.
+O objeto de entrada (possível a partir do pipeline.) O nome e a IDdoprotetor serão extraídos deste objeto.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -226,7 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -MetricCategory
-A lista de categorias métricas. Se nenhuma categoria for especificada, esse comando funcionará em todas as categorias com suporte. 
+A lista de categorias métricas.
+Se nenhuma categoria for especificada, esse comando operará em todas as categorias com suporte.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -241,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-O nome da configuração de diagnóstico. O valor padrão é **serviço**.
+O nome da configuração de diagnóstico. O valor padrão é **serviço.**
 
 ```yaml
 Type: System.String
@@ -286,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Especifica a política de retenção, em dias.
+Especifica a política de retenção em dias.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -301,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-A ID da regra de barramento do serviço.
+A ID da Regra de BarraMento de Serviço.
 
 ```yaml
 Type: System.String
@@ -316,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountId
-Especifica a ID da conta de armazenamento na qual os dados são salvos.
+Especifica a ID da conta de Armazenamento na qual os dados são armazenados.
 
 ```yaml
 Type: System.String
@@ -330,9 +331,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Timegranular
-Especifica o intervalo de tempo para habilitar ou desabilitar as métricas, de acordo com o valor de *Enabled*.
-Se você não especificar um intervalo de tempo, esse comando funcionará em todos os refinamentos de tempo disponíveis.
+### -Timegrain
+Especifica os tempos de tempo para habilitar ou desabilitar para métricas, de acordo com o valor *de Habilitado.*
+Se você não especificar uma hora, esse comando operará em todos os tempos disponíveis.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -346,8 +347,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Workspaceid
-A ID do espaço de trabalho
+### -WorkspaceId
+A ID do recurso do espaço de trabalho Do Log Analytics para enviar logs/métricas para
 
 ```yaml
 Type: System.String
@@ -361,7 +362,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -377,7 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -392,27 +393,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Collections. Generic. List ' 1 [System. String, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable ' 1 [[System. Boolean, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable ' 1 [[System. Int32, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
