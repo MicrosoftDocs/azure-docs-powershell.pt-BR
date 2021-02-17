@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/st
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-ms.openlocfilehash: 0776b10a14236ac4806ccc166f24b1dd5a3ee3de
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 5f707b4e6a2610f8a62ce807c5549ee03e6697d8
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100115049"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407889"
 ---
 # Start-AzNetworkWatcherResourceTroubleshooting
 
@@ -249,4 +249,4 @@ Palavras-chave: azure, azurerm, arm, resource, management, manager, network, net
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

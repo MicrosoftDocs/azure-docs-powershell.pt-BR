@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 541293160a1cf9e3d32de5d378c24d1ee4b2705b
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 6843712d1b3a9fe33f54754535730771b917ec6e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100111592"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400035"
 ---
 # Remove-AzApplicationGatewaySslProfilePolicy
 
@@ -36,7 +36,7 @@ PS C:\> $profile  = Get-AzApplicationGatewaySslProfile -Name "Profile01" -Applic
 PS C:\> $profile = Remove-AzApplicationGatewaySslProfilePolicy -SslProfile $profile
 ```
 
-O primeiro comando obtém o gateway de aplicativo chamado ApplicationGateway01 no grupo de recursos chamado ResourceGroup01 e o armazena na variável $AppGw. O segundo comando obtém o perfil SSL chamado Perfil01 para $AppGw e o armazena na variável $profile usuário. O último comando remove a política ssl do perfil SSL armazenado no $profile.
+O primeiro comando obtém o gateway de aplicativo chamado ApplicationGateway01 no grupo de recursos chamado ResourceGroup01 e o armazena na variável $AppGw. O segundo comando obtém o perfil SSL chamado Profile01 para $AppGw e o armazena na variável $profile dados. O último comando remove a política ssl do perfil SSL armazenado no $profile.
 
 ## Parâmetros
 
@@ -116,9 +116,7 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[New-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
 
-[Add-AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
 [Get-AzApplicationGatewaySslProfilePolicy](./Get-AzApplicationGatewaySslProfilePolicy.md)
 

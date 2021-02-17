@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-ms.openlocfilehash: 757332267d2db2f797bb2f7ca2a39dbb32ee06c7
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: fee978a1500c0fc472ec8015a3e8dbbbdc8015bd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93941942"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407753"
 ---
 # Get-AzApiManagementCache
 
 ## Sinopse
-Obtenha os detalhes do cache.
+Obter os detalhes do Cache.
 
-## SYNTAX
+## Sintaxe
 
-### ContextParameterSet (padrão)
+### ContextParameterSet (Padrão)
 ```
 Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -30,12 +30,12 @@ Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
 Get-AzApiManagementCache -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Obtenha os detalhes do cache configurado no serviço de gerenciamento de API.
+## Descrição
+Obter os detalhes do Cache configurado no serviço de Gerenciamento de Api.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter todos os caches
+### Exemplo 1: Obter todos os Caches
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext
@@ -51,9 +51,9 @@ ResourceGroupName : Api-Default-West-US
 ServiceName       : contoso
 ```
 
-Obtém uma lista de todos os caches configurados no serviço de gerenciamento de API.
+Obtém uma lista de todos os Caches configurados no serviço de Gerenciamento de Api.
 
-### Exemplo 2: obter o cache especificado pelo identificador westus
+### Exemplo 2: Obter o Cache especificado pelo identificador westus
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
@@ -69,13 +69,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Obter os detalhes do cache especificado configurado para oesteus
+Obter os detalhes do Cache especificado configurado para westus
 
-## OS
+## Parâmetros
 
 ### -CacheId
 Identificador de um cache.
-Se especificado, você tentará localizar o cache pelo identificador.
+Se especificado, tentará encontrar o cache pelo identificador.
 Este parâmetro é opcional.
 
 ```yaml
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identificador de recursos ARM de um cache. Se especificado, você tentará localizar o cache pelo identificador. Esse parâmetro é obrigatório.
+Arm Resource Identifier de um cache. Se especificado, tentará encontrar o cache pelo identificador. Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -137,24 +137,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzApiManagementCache](./Get-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
