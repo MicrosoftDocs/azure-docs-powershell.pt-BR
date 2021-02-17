@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94114677"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415590"
 ---
 # Move-AzResource
 
 ## Sinopse
-Move um recurso para uma assinatura ou grupo de recursos diferente.
+Move um recurso para um grupo de recursos ou assinatura diferente.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,27 +26,27 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **move-AzResource** move os recursos existentes para um grupo de recursos diferente.
+## Descrição
+O **cmdlet Move-AzResource** move os recursos existentes para um grupo de recursos diferente.
 Esse grupo de recursos pode estar em uma assinatura diferente.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: mover um recurso para um grupo de recursos
+### Exemplo 1: Mover um recurso para um grupo de recursos
 ```
 PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storageAccounts" -ResourceName "ContosoStorageAccount"
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-O primeiro comando obtém um recurso denominado ContosoStorageAccount usando o cmdlet Get-AzResource e armazena esse recurso na variável $Resource.
-O segundo comando move o recurso para o grupo de recursos chamado ResourceGroup14.
-O comando identifica o recurso para mover usando a propriedade **ResourceId** de $Resource.
+O primeiro comando obtém um recurso chamado ContosoStorageAccount usando o cmdlet Get-AzResource e armazena esse recurso na variável $Resource.
+O segundo comando move esse recurso para o grupo de recursos chamado ResourceGroup14.
+O comando identifica o recurso a ser movimentado usando a propriedade **ResourceId** do $Resource.
 
-## OS
+## Parâmetros
 
 ### -ApiVersion
 Especifica a versão da API do provedor de recursos a ser usada.
-Se você não especificar uma versão, esse cmdlet usa a versão mais recente disponível.
+Se você não especificar uma versão, este cmdlet usará a versão disponível mais recente.
 
 ```yaml
 Type: System.String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationResourceGroupName
-Especifica o nome do grupo de recursos no qual esse cmdlet Move recursos.
+Especifica o nome do grupo de recursos para o qual este cmdlet move recursos.
 
 ```yaml
 Type: System.String
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationSubscriptionId
-Especifica a ID da assinatura na qual esse cmdlet Move recursos.
+Especifica a ID da assinatura para a qual este cmdlet move recursos.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -105,7 +105,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Forçar
 Força o comando a ser executado sem pedir confirmação do usuário.
 
 ```yaml
@@ -120,8 +120,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Pre
-Indica que esse cmdlet considera versões de API de pré-lançamento quando determina automaticamente qual versão usar.
+### -Pré-
+Indica que esse cmdlet considera as versões da API de pré-lançamento quando determina automaticamente qual versão usar.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Especifica uma matriz de IDs dos recursos que esse cmdlet Move.
+Especifica uma matriz de IDs dos recursos que esse cmdlet move.
 
 ```yaml
 Type: System.String[]
@@ -150,7 +150,7 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -182,23 +182,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. Nullable ' 1 [[System. GUID, System. Private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. String []
+### System.String[]
 
-## EXIBE
+## Saídas
 
-### System. Boolean
+### System.Boolean
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Localizar-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 

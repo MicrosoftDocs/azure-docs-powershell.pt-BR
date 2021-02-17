@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTopology.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherTopology.md
-ms.openlocfilehash: 492381477504d7ad7f3292978813a1b511b04cec
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 41b4494da9f10267461dab5f2a6d205d6f9f9c15
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93940373"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401242"
 ---
 # Get-AzNetworkWatcherTopology
 
 ## Sinopse
-Obtém uma exibição em nível de rede de recursos e suas relações em um grupo de recursos.
+Obtém uma exibição de nível de rede dos recursos e suas relações em um grupo de recursos.
 
-## SYNTAX
+## Sintaxe
 
-### SetByResource (padrão)
+### SetByResource (Padrão)
 ```
 Get-AzNetworkWatcherTopology -NetworkWatcher <PSNetworkWatcher> -TargetResourceGroupName <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,12 +37,12 @@ Get-AzNetworkWatcherTopology -Location <String> -TargetResourceGroupName <String
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet Get-AzNetworkWatcherTopology uma exibição em nível de rede de recursos e suas relações em um grupo de recursos. Observação: se os recursos de várias regiões estiverem no grupo de recursos, somente os recursos na mesma região do Inspetor de rede serão incluídos na saída JSON.
+## Descrição
+O Get-AzNetworkWatcherTopology cmdlet uma exibição de nível de rede de recursos e suas relações em um grupo de recursos. Observação: se os recursos de várias regiões residiram no grupo de recursos, somente os recursos na mesma região que o Watcher de Rede serão incluídos na saída JSON.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter uma topologia do Azure
+### Exemplo 1: Obter uma Topologia do Azure
 ```
 $networkWatcher = Get-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG 
 Get-AzNetworkWatcherTopology -NetworkWatcher $networkWatcher -ResourceGroupName testresourcegroup
@@ -140,12 +140,12 @@ TopologyResources : [
                     ]
 ```
 
-Neste exemplo, executamos o cmdlet Get-AzNetworkWatcherTopology em um grupo de recursos que contém uma VM, NIC, NSG e IP público.
+Neste exemplo, executaremos o cmdlet Get-AzNetworkWatcherTopology em um grupo de recursos que contém um VM, Nic, NSG e IP público.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -Local
-Localização do Inspetor de rede.
+Localização do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcher
-O recurso de Inspetor de rede.
+O recurso de watcher de rede.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-O nome do Inspetor de rede.
+O nome do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-O nome do grupo de recursos do Inspetor de rede.
+O nome do grupo de recursos do watcher de rede.
 
 ```yaml
 Type: System.String
@@ -235,20 +235,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSTopology
+### Microsoft.Azure.Commands.Network.Models.PSTopology
 
-## INFORMA
-Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede, Inspetor de rede, topologia, exibição 
+## Notas
+Palavras-chave: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, topology, view 
 
 ## LINKS RELACIONADOS
 
@@ -274,7 +274,7 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Parar-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
@@ -282,7 +282,7 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Parar-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
 [Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
@@ -302,7 +302,7 @@ Palavras-chave: Azure, azurerm, ARM, recurso, gerenciamento, gerente, rede, rede
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 

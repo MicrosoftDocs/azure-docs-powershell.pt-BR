@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementVirtualNetwork.md
-ms.openlocfilehash: 67020f99129dfa920aa1bbc5e22ac59c16affb32
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 496e65438a2c0ef5f09bbf961535eaa842062f25
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93771400"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400885"
 ---
 # New-AzApiManagementVirtualNetwork
 
 ## Sinopse
-Cria uma instância de PsApiManagementVirtualNetwork.
+Cria uma instância do PsApiManagementVirtualNetwork.
 
-## SYNTAX
+## Sintaxe
 
 ```
 New-AzApiManagementVirtualNetwork -SubnetResourceId <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **New-AzApiManagementVirtualNetwork** é um comando auxiliar para criar uma instância de **PsApiManagementVirtualNetwork**.
-Esse comando é usado com o cmdlet **Update-AzApiManagementDeployment** .
+## Descrição
+O cmdlet **New-AzApiManagementVirtualNetwork** é um comando auxiliar para criar uma instância de **PsApiManagementVirtualNetwork.**
+Esse comando é usado com **o cmdlet Set-AzApiManagement.**
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: criar uma rede virtual
+### Exemplo 1: Criar uma rede virtual
 ```
 PS C:\>$vnetName = "myvnet"
 PS C:\>$subnetName = "default"
@@ -42,20 +42,20 @@ PS C:\>$vnet = New-AzvirtualNetwork -Name $vnetName -ResourceGroupName $resource
 PS C:\>$virtualNetwork = New-AzApiManagementVirtualNetwork -Location $location -SubnetResourceId $vnet.Subnets[0].Id
 
 # Get the service
-PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName    
+PS C:\>$service = Get-AzApiManagement -ResourceGroupName $resourceGroupName -Name $apiManagementName
 PS C:\>$service.VirtualNetwork = $virtualNetwork
 PS C:\>$service.VpnType = "External"
 
 # Update the Deployment with Virtual Network
-PS C:\>Update-AzApiManagementDeployment -ApiManagement $service
+PS C:\>Set-AzApiManagement -ApiManagement $service
 ```
 
-Este exemplo cria uma rede virtual e, em seguida, chama o cmdlet **Update-AzApiManagementDeployment** .
+Este exemplo cria uma rede virtual e chama o cmdlet **Set-AzApiManagement.**
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetResourceId
-Especifica a ID do recurso de sub-rede da rede virtual.
+Especifica a ID de recurso da sub-rede da rede virtual.
 
 ```yaml
 Type: System.String
@@ -85,19 +85,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Nenhuma
+### Nenhum
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagementVirtualNetwork
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 

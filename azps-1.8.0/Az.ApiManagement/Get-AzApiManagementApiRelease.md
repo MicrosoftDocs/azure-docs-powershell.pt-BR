@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
-ms.openlocfilehash: 353fd6365f85ba71105f80324ba740b4d829a85a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4f9e917f17037e5f47b52501007da5556bde1187
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93595699"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401072"
 ---
 # Get-AzApiManagementApiRelease
 
 ## Sinopse
-Obtenha a versão da API.
+Obter o Lançamento da API.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> [-ReleaseId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzApiManagementApiRelease** Obtém uma ou mais versões da API de gerenciamento de API do Azure.
+## Descrição
+O cmdlet **Get-AzApiManagementApiRelease** recebe uma ou mais versões da API de Gerenciamento de API do Azure.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter todas as versões da API
+### Exemplo 1: Obter todas as versões da API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065
@@ -43,9 +43,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contos
 ```
 
-Esse comando obtém todas as versões da API do `echo-api` contexto especificado.
+Esse comando obtém todas as versões da `echo-api` API para o contexto especificado.
 
-### Exemplo 2: obter as informações de versão do lançamento da API específica
+### Exemplo 2: Obter as informações de versão da versão específica da API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065 -ReleaseId 5afccaf6b89fd067426d402e
@@ -61,12 +61,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contos
 ```
 
-Esse comando obtém as informações de versões de uma determinada API com o releaseid especificado.
+Esse comando obtém as informações de versões de uma API específica com o releaseId especificado.
 
-## OS
+## Parâmetros
 
 ### -ApiId
-Identificador de API a ser procurado.
+Identificador de API a ser pesquisado.
 Se especificado, você tentará obter a API pela ID.
 
 ```yaml
@@ -82,8 +82,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -112,8 +112,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Rereleaseid
-O identificador do lançamento.
+### -ReleaseId
+O identificador do Lançamento.
 
 ```yaml
 Type: System.String
@@ -128,19 +128,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -148,4 +148,4 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

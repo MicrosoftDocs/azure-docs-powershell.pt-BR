@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: e22b9d85bbc17897742fa2ac0cbdf3e2d8187d5b
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: d6d11590699b52bb7245222ddaa01fbc42938d22
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100114112"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415471"
 ---
 # Remove-AzNetworkWatcherPacketCapture
 
@@ -39,7 +39,7 @@ Remove-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <Stri
 ```
 
 ## Descrição
-A Remove-AzNetworkWatcherPacketCapture remove um recurso de captura de pacote. É recomendável ligar para Stop-AzNetworkWatcherPacketCapture antes de chamar Remove-AzNetworkWatcherPacketCapture. Se a sessão de captura de pacote estiver em execução Remove-AzNetworkWatcherPacketCapture chamada de captura de pacote poderá não ser salva. Se a sessão for interrompida antes da remoção, o arquivo .cap que contém dados de captura não será removido. 
+A Remove-AzNetworkWatcherPacketCapture remove um recurso de captura de pacote. É recomendável ligar para Stop-AzNetworkWatcherPacketCapture antes de chamar Remove-AzNetworkWatcherPacketCapture. Se a sessão de captura de pacotes estiver em execução Remove-AzNetworkWatcherPacketCapture chamada de captura de pacote poderá não ser salva. Se a sessão for interrompida antes da remoção, o arquivo .cap que contém dados de captura não será removido. 
 
 ## Exemplos
 
@@ -273,4 +273,4 @@ Palavras-chave: azure, azurerm, arm, resource, management, manager, network, net
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

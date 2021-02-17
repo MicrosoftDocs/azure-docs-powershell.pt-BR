@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendCredential.md
-ms.openlocfilehash: 246b465c64242913fb0d05981b0f221605c6a0d0
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d1f82a3f51f5f33fe4240a7327aa333b64d4fdd5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93595643"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400953"
 ---
 # New-AzApiManagementBackendCredential
 
 ## Sinopse
-Cria um novo contrato de credencial back-end.
+Cria um novo contrato de Credencial back-end.
 
-## SYNTAX
+## Sintaxe
 
 ```
 New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query <Hashtable>]
@@ -25,12 +25,12 @@ New-AzApiManagementBackendCredential [-CertificateThumbprint <String[]>] [-Query
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Cria um novo contrato de credencial back-end.
+## Descrição
+Cria um novo contrato de Credencial back-end.
 
-## EXEMPLOS
+## Exemplos
 
-### Criar uma In-Memory objeto de credenciais de back-end
+### Criar um Backend Credentials In-Memory Object
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -38,12 +38,12 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-Cria um contrato de credenciais de back-end
+Cria um Contrato de Credenciais de Backend
 
-## OS
+## Parâmetros
 
 ### -AuthorizationHeaderParameter
-Cabeçalho de autorização usado para o back-end.
+Header de Autorização usado para o Backend.
 Este parâmetro é opcional.
 
 ```yaml
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationHeaderScheme
-Esquema de autorização usado para o back-end.
+Esquema de Autorização usado para o Backend.
 Este parâmetro é opcional.
 
 ```yaml
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificateThumbprint
-Impressões digitais de certificado de cliente.
+Miniaturas de certificado do cliente.
 Este parâmetro é opcional.
 
 ```yaml
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 ```
 
 ### -Header
-Valores de parâmetro de cabeçalho aceitos pelo back-end.
+Valores de parâmetro de header aceitos por Backend.
 Este parâmetro é opcional.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -Consulta
-Valores de parâmetro de consulta aceitos pelo back-end.
+Valores de parâmetro de consulta aceitos por Backend.
 Este parâmetro é opcional.
 
 ```yaml
@@ -138,21 +138,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Nenhuma
+### Nenhum
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 

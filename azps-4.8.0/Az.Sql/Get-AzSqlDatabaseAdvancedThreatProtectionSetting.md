@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-Az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 8090ee9cf6ec251668dbeadba6b18a7cde4898c4
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 9035f2a03ac04a9bc99248c48675ab3c69b84207
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94113266"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415352"
 ---
 # Get-AzSqlDatabaseAdvancedThreatProtectionSetting
 
 ## Sinopse
 Obtém as configurações avançadas de proteção contra ameaças para um banco de dados.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzSqlDatabaseAdvancedThreatProtectionSetting [-ServerName] <String> [-DatabaseName] <String>
@@ -26,13 +26,13 @@ Get-AzSqlDatabaseAdvancedThreatProtectionSetting [-ServerName] <String> [-Databa
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** Obtém as configurações avançadas de proteção contra ameaças de um banco de dados SQL do Azure.
-Para usar esse cmdlet, especifique os parâmetros *ResourceGroupName* , *ServerName* e *DatabaseName* para identificar o banco de dados para o qual esse cmdlet obtém as configurações.
+## Descrição
+O cmdlet **Get-AzSqlDatabaseAdvancedThreatProtectionSetting** obtém as configurações avançadas de proteção contra ameaças de um banco de dados SQL do Azure.
+Para usar esse cmdlet, especifique os parâmetros *ResourceGroupName,* *ServerName* e *DatabaseName* para identificar o banco de dados para o qual esse cmdlet obtém as configurações.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter as configurações avançadas de proteção contra ameaças para um banco de dados
+### Exemplo 1: Obter as configurações avançadas de proteção contra ameaças para um banco de dados
 ```
 PS C:\>Get-AzSqlDatabaseAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01"
 DatabaseName                 : Database01
@@ -46,12 +46,12 @@ ExcludedDetectionTypes       : {}
 RetentionInDays              : 0
 ```
 
-Este comando obtém as configurações avançadas de proteção contra ameaças para um banco de dados denominado Database01.
-O banco de dados está localizado no servidor chamado Server01, que é atribuído à ResourceGroup11 do grupo de recursos.
+Esse comando obtém as configurações avançadas de proteção contra ameaças para um banco de dados chamado Banco de Dados01.
+O banco de dados está localizado no servidor chamado Server01, que é atribuído ao grupo de recursos ResourceGroup11.
 
-## OS
+## Parâmetros
 
-### -DatabaseName
+### -Nomedo Banco de Dados
 Especifica o nome de um banco de dados.
 
 ```yaml
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Especifica o nome do grupo de recursos ao qual o servidor está atribuído.
+Especifica o nome do grupo de recursos ao qual o servidor é atribuído.
 
 ```yaml
 Type: System.String
@@ -96,7 +96,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomedoservidor
+### -ServerName
 Especifica o nome de um servidor.
 
 ```yaml
@@ -111,7 +111,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -143,21 +143,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Sql. ThreatDetection. Model. DatabaseAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
 
 
 
