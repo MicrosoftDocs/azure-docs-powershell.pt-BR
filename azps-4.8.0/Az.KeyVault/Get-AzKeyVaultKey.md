@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 0de3582d9a5cbdaba8555cf53bd9038d3eaf15b2
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e0601285bf2adc7204cd5a946e07d032579e080b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111739"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404710"
 ---
 # Get-AzKeyVaultKey
 
 ## Sinopse
-Obtém chaves do cofre de chaves.
+Obtém as chaves do Cofre de Teclas.
 
-## SYNTAX
+## Sintaxe
 
-### ByVaultName (padrão)
+### ByVaultName (Padrão)
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-OutFile <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions] [-O
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzKeyVaultKey** Obtém as chaves do cofre de chaves do Azure.
-Esse cmdlet obtém um determinado **Microsoft. Azure. Commands. subvault. Models. keybundle** ou uma lista de todos os objetos **keybundle** em um cofre de chaves ou por versão.
+## Descrição
+O **cmdlet Get-AzKeyVaultKey** obtém as teclas do Cofre de Teclas do Azure.
+Este cmdlet obtém um **Microsoft.Azure.Commands.KeyVault.Models.KeyBundle** específico ou uma lista de todos os objetos **KeyBundle** em um cofre de teclas ou por versão.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter todas as chaves em um cofre de chaves
+### Exemplo 1: Obter todas as chaves em um cofre de chave
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Esse comando obtém todas as chaves no cofre de chaves chamado contoso.
+Esse comando obtém todas as chaves no cofre de chave chamado Contoso.
 
-### Exemplo 2: obter a versão atual de uma chave
+### Exemplo 2: Obter a versão atual de uma chave
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Esse comando obtém a versão atual da chave chamada Test1 no cofre de chaves chamado contoso.
+Esse comando obtém a versão atual da chave chamada teste1 no cofre de chaves chamado Contoso.
 
-### Exemplo 3: obter todas as versões de uma chave
+### Exemplo 3: Obter todas as versões de uma chave
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-Este comando obtém todas as versões a chave chamada ITPfx na chave vaultnamed contoso.
+Esse comando obtém todas as versões da chave itpfx chamada ITPfx no cofre de teclas chamado Contoso.
 
-### Exemplo 4: obter uma versão específica de uma chave
+### Exemplo 4: Obter uma versão específica de uma chave
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-Esse comando obtém uma versão específica da chave chamada Test1 no cofre de chaves chamado contoso.
-Depois de executar esse comando, você pode inspecionar várias propriedades da chave navegando no objeto $Key.
+Esse comando obtém uma versão específica da chave chamada teste1 no cofre de chaves chamado Contoso.
+Depois de executar esse comando, você pode inspecionar várias propriedades da chave navegando pelo objeto $Key dados.
 
-### Exemplo 5: obter todas as chaves que foram excluídas, mas não eliminadas para este cofre de chaves.
+### Exemplo 5: Obter todas as chaves que foram excluídas, mas não limpas para esse cofre de chaves.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Esse comando obtém todas as chaves que foram excluídas anteriormente, mas não foram limpas, no cofre de chaves chamado contoso.
+Esse comando obtém todas as teclas que foram excluídas anteriormente, mas não limpas, no cofre de chaves chamado Contoso.
 
-### Exemplo 6: Obtém a chave ITPfx que foi excluída, mas não é eliminada para este cofre de chaves.
+### Exemplo 6: obtém a chave ITPfx que foi excluída, mas não limpa para esse cofre de chave.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-Esse comando obtém a chave test3 que foi excluída anteriormente, mas não foi eliminada, no cofre de chaves chamado contoso.
-Esse comando retornará metadados como a data de exclusão e a data de descarte programada dessa chave excluída.
+Esse comando obtém o teste de chave3 que foi excluído anteriormente, mas não limpo, no cofre de chave chamado Contoso.
+Esse comando retornará metadados como a data de exclusão e a data de purgação agendada dessa chave excluída.
 
-### Exemplo 7: obter todas as chaves em um cofre de chaves usando a filtragem
+### Exemplo 7: Obter todas as chaves em um cofre de teclas usando filtragem
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,22 +251,22 @@ Purge Disabled : False
 Tags           :
 ```
 
-Esse comando obtém todas as chaves no cofre de chaves chamada contoso que começam com "Test".
+Esse comando obtém todas as chaves no cofre de teclas chamado Contoso que começam com "teste".
 
-### Exemplo 8: baixar uma chave pública como um arquivo. pem
+### Exemplo 8: Baixar uma chave pública como um arquivo .pem
 
 ```powershell
 PS C:\> $path = "D:\public.pem"
 PS C:\> Get-AzKeyVaultKey -VaultName $vaultName -KeyName $keyName -OutFile $path
 ```
 
-Você pode baixar a chave pública de uma chave RSA especificando o `-OutFile` parâmetro.
-Esta é uma etapa da importação de chaves protegidas pelo HSM para o cofre de chaves do Azure. Vejam https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
+Você pode baixar a chave pública de uma tecla RSA especificando o `-OutFile` parâmetro.
+Esta é uma etapa da importação de chaves protegidas por HSM para o Cofre de Teclas do Azure. Ver https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -282,9 +282,9 @@ Accept wildcard characters: False
 
 ### -IncludeVersions
 Indica que esse cmdlet obtém todas as versões de uma chave.
-A versão atual de uma chave é a primeira na lista.
-Se você especificar esse parâmetro, também deverá especificar o *nome* e os parâmetros de *cofrename* .
-Se você não especificar o parâmetro *IncludeVersions* , esse cmdlet obtém a versão atual da chave com o *nome* especificado.
+A versão atual de uma chave é a primeira da lista.
+Se você especificar esse parâmetro, também deverá especificar os parâmetros *Nome* e *Nomedo* Cofre.
+Se você não especificar o parâmetro *IncludeVersions,* este cmdlet obtém a versão atual da chave com o Nome *especificado.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Objeto do keyvault.
+Objeto KeyVault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -313,8 +313,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Inremovestate
-Especifica se as chaves excluídas anteriormente devem ser mostradas na saída
+### -InRemovedState
+Especifica se as teclas excluídas anteriormente na saída
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -329,7 +329,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome do pacote de chaves a obter.
+Especifica o nome do pacote de chaves a ser obter.
 
 ```yaml
 Type: System.String
@@ -355,8 +355,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Outfile
-Especifica o arquivo de saída para o qual esse cmdlet salva a chave. A chave pública é salva no formato PEM por padrão.
+### -OutFile
+Especifica o arquivo de saída para o qual este cmdlet salva a chave. A chave pública é salva no formato PEM por padrão.
 
 ```yaml
 Type: System.String
@@ -371,7 +371,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID do recurso do keyvault.
+ID do Recurso KeyVault.
 
 ```yaml
 Type: System.String
@@ -385,9 +385,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Cofrename
-Especifica o nome do cofre de chaves do qual este cmdlet obtém chaves.
-Esse cmdlet constrói o nome de domínio totalmente qualificado (FQDN) de um cofre de chaves com base no nome especificado por esse parâmetro e no ambiente selecionado.
+### -Nomedo Cofre
+Especifica o nome do cofre de chave do qual este cmdlet obtém chaves.
+Este cmdlet construirá o nome de domínio totalmente qualificado (FQDN) de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente selecionado.
 
 ```yaml
 Type: System.String
@@ -403,7 +403,7 @@ Accept wildcard characters: False
 
 ### -Versão
 Especifica a versão da chave.
-Esse cmdlet constrói o FQDN de uma chave com base no nome do cofre de chaves, no ambiente selecionado atualmente, no nome da chave e na versão de chave.
+Este cmdlet construirá o FQDN de uma chave com base no nome do cofre de chave, no ambiente selecionado no momento, no nome da chave e na versão da chave.
 
 ```yaml
 Type: System.String
@@ -418,25 +418,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -446,5 +446,4 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Desfazer-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 

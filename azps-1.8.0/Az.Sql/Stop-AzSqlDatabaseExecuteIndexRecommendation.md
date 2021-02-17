@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/stop-a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Stop-AzSqlDatabaseExecuteIndexRecommendation.md
-ms.openlocfilehash: 9b21c290b2d5e5b6056297bba7d4196dd68d68d2
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7f13b1a1a5daad4e7c97de962943bb859f6a09df
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93598735"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399474"
 ---
 # Stop-AzSqlDatabaseExecuteIndexRecommendation
 
 ## Sinopse
 Interrompe o fluxo de trabalho que executa uma operação de índice recomendada.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Stop-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName <String>
@@ -26,10 +26,10 @@ Stop-AzSqlDatabaseExecuteIndexRecommendation -ServerName <String> -DatabaseName 
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 O cmdlet **Stop-AzSqlDatabaseExecuteIndexRecommendation** interrompe o fluxo de trabalho que executa uma operação de índice recomendada.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1: parar de executar uma recomendação de índice
 ```
@@ -38,9 +38,9 @@ PS C:\>Stop-AzSqlDatabaseExecuteIndexRecommendation -ResourceGroup "ResourceGrou
 
 Esse comando para de executar uma recomendação de índice.
 
-## OS
+## Parâmetros
 
-### -DatabaseName
+### -Nomedo Banco de Dados
 Especifica o nome do banco de dados para o qual esse cmdlet interrompe o fluxo de trabalho.
 
 ```yaml
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Especifica o nome do grupo de recursos ao qual o servidor está atribuído.
+Especifica o nome do grupo de recursos ao qual o servidor é atribuído.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nomedoservidor
+### -ServerName
 Especifica o servidor que hospeda o banco de dados para o qual esse cmdlet interrompe um fluxo de trabalho.
 
 ```yaml
@@ -116,21 +116,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Sql. Model. IndexRecommendation
+### Microsoft.Azure.Commands.Sql.Model.IndexRecommendation
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzSqlDatabaseIndexRecommendations](./Get-AzSqlDatabaseIndexRecommendations.md)
 
 [Start-AzSqlDatabaseExecuteIndexRecommendation](./Start-AzSqlDatabaseExecuteIndexRecommendation.md)
 
