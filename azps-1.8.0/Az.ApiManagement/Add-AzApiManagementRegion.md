@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93595708"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401174"
 ---
-# <span data-ttu-id="ecb8d-101">Add-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="ecb8d-101">Add-AzApiManagementRegion</span></span>
+# <span data-ttu-id="dc6c2-101">Add-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="dc6c2-101">Add-AzApiManagementRegion</span></span>
 
-## <span data-ttu-id="ecb8d-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="ecb8d-102">SYNOPSIS</span></span>
-<span data-ttu-id="ecb8d-103">Adiciona novas regiões de implantação a uma instância de PsApiManagement.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-103">Adds new deployment regions to a PsApiManagement instance.</span></span>
+## <span data-ttu-id="dc6c2-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="dc6c2-102">SYNOPSIS</span></span>
+<span data-ttu-id="dc6c2-103">Adiciona novas regiões de implantação a uma instância PsApiManagement.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-103">Adds new deployment regions to a PsApiManagement instance.</span></span>
 
-## <span data-ttu-id="ecb8d-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ecb8d-104">SYNTAX</span></span>
+## <span data-ttu-id="dc6c2-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="dc6c2-104">SYNTAX</span></span>
 
 ```
 Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-Sku <PsApiManagementSku>]
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ecb8d-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="ecb8d-105">DESCRIPTION</span></span>
-<span data-ttu-id="ecb8d-106">O cmdlet **Add-AzApiManagementRegion** adiciona uma nova instância do tipo **PsApiManagementRegion** à coleção de **AdditionalRegions** da instância fornecida do tipo **Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement**.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-106">The **Add-AzApiManagementRegion** cmdlet adds new instance of type **PsApiManagementRegion** to the collection of **AdditionalRegions** of provided instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.</span></span>
-<span data-ttu-id="ecb8d-107">Esse cmdlet não implanta algo sozinha, mas atualiza a instância do **PsApiManagement** na memória.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-107">This cmdlet does not deploy anything by itself but updates instance of **PsApiManagement** in-memory.</span></span>
-<span data-ttu-id="ecb8d-108">Para atualizar uma implantação de um gerenciamento de API, passe a instância **PsApiManagement** modificada para Update-AzApiManagementDeployment.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-108">To update a deployment of an API Management pass the modified **PsApiManagement** Instance to Update-AzApiManagementDeployment.</span></span>
+## <span data-ttu-id="dc6c2-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="dc6c2-105">DESCRIPTION</span></span>
+<span data-ttu-id="dc6c2-106">O cmdlet **Add-AzApiManagementRegion** adiciona uma nova instância do tipo **PsApiManagementRegion** ao conjunto de **AdditionalRegions** da instância fornecida do tipo **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement.**</span><span class="sxs-lookup"><span data-stu-id="dc6c2-106">The **Add-AzApiManagementRegion** cmdlet adds new instance of type **PsApiManagementRegion** to the collection of **AdditionalRegions** of provided instance of type **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement**.</span></span>
+<span data-ttu-id="dc6c2-107">Este cmdlet não implanta nada sozinho, mas atualiza a instância do **PsApiManagement** na memória.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-107">This cmdlet does not deploy anything by itself but updates instance of **PsApiManagement** in-memory.</span></span>
+<span data-ttu-id="dc6c2-108">Para atualizar uma implantação de um Gerenciamento de API, passe a Instância **PsApiManagement** modificada para Set-AzApiManagement.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-108">To update a deployment of an API Management pass the modified **PsApiManagement** Instance to Set-AzApiManagement.</span></span>
 
-## <span data-ttu-id="ecb8d-109">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="ecb8d-109">EXAMPLES</span></span>
+## <span data-ttu-id="dc6c2-109">Exemplos</span><span class="sxs-lookup"><span data-stu-id="dc6c2-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="ecb8d-110">Exemplo 1: adicionar novas regiões de implantação a uma instância do PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="ecb8d-110">Example 1: Add new deployment regions to a PsApiManagement instance</span></span>
+### <span data-ttu-id="dc6c2-110">Exemplo 1: Adicionar novas regiões de implantação a uma instância PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="dc6c2-110">Example 1: Add new deployment regions to a PsApiManagement instance</span></span>
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-<span data-ttu-id="ecb8d-111">Esse comando adiciona duas unidades de SKU Premium e a região chamada leste EUA à instância **PsApiManagement** .</span><span class="sxs-lookup"><span data-stu-id="ecb8d-111">This command adds two premium SKU units and the region named East US to the **PsApiManagement** instance.</span></span>
+<span data-ttu-id="dc6c2-111">Esse comando adiciona duas unidades de SKU premium e a região chamada Leste dos EUA à **instância PsApiManagement.**</span><span class="sxs-lookup"><span data-stu-id="dc6c2-111">This command adds two premium SKU units and the region named East US to the **PsApiManagement** instance.</span></span>
 
-### <span data-ttu-id="ecb8d-112">Exemplo 2: adicionar novas regiões de implantação a uma instância do PsApiManagement e atualizar a implantação</span><span class="sxs-lookup"><span data-stu-id="ecb8d-112">Example 2: Add new deployment regions to a PsApiManagement instance and then update deployment</span></span>
+### <span data-ttu-id="dc6c2-112">Exemplo 2: Adicionar novas regiões de implantação a uma instância PsApiManagement e atualizar a implantação</span><span class="sxs-lookup"><span data-stu-id="dc6c2-112">Example 2: Add new deployment regions to a PsApiManagement instance and then update deployment</span></span>
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-<span data-ttu-id="ecb8d-113">Esse comando obtém um objeto **PsApiManagement** , adiciona duas unidades de SKU Premium para a região chamada leste EUA e atualiza a implantação.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-113">This command gets a **PsApiManagement** object, adds two premium SKU units for the region named East US, and then updates deployment.</span></span>
+<span data-ttu-id="dc6c2-113">Esse comando obtém um **objeto PsApiManagement,** adiciona duas unidades de SKU premium para a região chamada Leste dos EUA e atualiza a implantação.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-113">This command gets a **PsApiManagement** object, adds two premium SKU units for the region named East US, and then updates deployment.</span></span>
 
-## <span data-ttu-id="ecb8d-114">OS</span><span class="sxs-lookup"><span data-stu-id="ecb8d-114">PARAMETERS</span></span>
+## <span data-ttu-id="dc6c2-114">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="dc6c2-114">PARAMETERS</span></span>
 
-### <span data-ttu-id="ecb8d-115">-ApiManagement</span><span class="sxs-lookup"><span data-stu-id="ecb8d-115">-ApiManagement</span></span>
-<span data-ttu-id="ecb8d-116">Especifica a instância **PsApiManagement** para a qual esse cmdlet adiciona mais regiões de implantação.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-116">Specifies the **PsApiManagement** instance that this cmdlet adds additional deployment regions to.</span></span>
+### <span data-ttu-id="dc6c2-115">-ApiManagement</span><span class="sxs-lookup"><span data-stu-id="dc6c2-115">-ApiManagement</span></span>
+<span data-ttu-id="dc6c2-116">Especifica a **instância PsApiManagement à** que este cmdlet adiciona regiões de implantação.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-116">Specifies the **PsApiManagement** instance that this cmdlet adds additional deployment regions to.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -64,8 +64,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-117">-Capacidade</span><span class="sxs-lookup"><span data-stu-id="ecb8d-117">-Capacity</span></span>
-<span data-ttu-id="ecb8d-118">Especifica a capacidade de SKU da região de implantação.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-118">Specifies the SKU capacity of the deployment region.</span></span>
+### <span data-ttu-id="dc6c2-117">-Capacidade</span><span class="sxs-lookup"><span data-stu-id="dc6c2-117">-Capacity</span></span>
+<span data-ttu-id="dc6c2-118">Especifica a capacidade da SKU da região de implantação.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-118">Specifies the SKU capacity of the deployment region.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -79,8 +79,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ecb8d-119">-DefaultProfile</span></span>
-<span data-ttu-id="ecb8d-120">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="dc6c2-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="dc6c2-119">-DefaultProfile</span></span>
+<span data-ttu-id="dc6c2-120">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -94,9 +94,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-121">-Local</span><span class="sxs-lookup"><span data-stu-id="ecb8d-121">-Location</span></span>
-<span data-ttu-id="ecb8d-122">Especifica o local da nova região de implantação entre a região com suporte para o serviço de gerenciamento de API.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-122">Specifies the location of the new deployment region amongst the supported region for Api Management service.</span></span>
-<span data-ttu-id="ecb8d-123">Para obter locais válidos, use o cmdlet Get-AzResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | em que {$ _. ResourceTypes [0]. ResourceTypename-EQ "serviço"} | Locais do Select-Object</span><span class="sxs-lookup"><span data-stu-id="ecb8d-123">To obtain valid locations, use the cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations</span></span>
+### <span data-ttu-id="dc6c2-121">-Local</span><span class="sxs-lookup"><span data-stu-id="dc6c2-121">-Location</span></span>
+<span data-ttu-id="dc6c2-122">Especifica o local da nova região de implantação entre a região com suporte para o serviço de Gerenciamento de Api.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-122">Specifies the location of the new deployment region amongst the supported region for Api Management service.</span></span>
+<span data-ttu-id="dc6c2-123">Para obter locais válidos, use o cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | onde {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object locais</span><span class="sxs-lookup"><span data-stu-id="dc6c2-123">To obtain valid locations, use the cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | where {$_.ResourceTypes[0].ResourceTypeName -eq "service"} | Select-Object Locations</span></span>
 
 ```yaml
 Type: System.String
@@ -110,12 +110,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-124">-SKU</span><span class="sxs-lookup"><span data-stu-id="ecb8d-124">-Sku</span></span>
-<span data-ttu-id="ecb8d-125">Especifica a camada da região de implantação.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-125">Specifies the tier of the deployment region.</span></span>
-<span data-ttu-id="ecb8d-126">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="ecb8d-126">Valid values are:</span></span> 
-- <span data-ttu-id="ecb8d-127">Event</span><span class="sxs-lookup"><span data-stu-id="ecb8d-127">Developer</span></span>
-- <span data-ttu-id="ecb8d-128">Oficial</span><span class="sxs-lookup"><span data-stu-id="ecb8d-128">Standard</span></span>
-- <span data-ttu-id="ecb8d-129">Gratifica</span><span class="sxs-lookup"><span data-stu-id="ecb8d-129">Premium</span></span>
+### <span data-ttu-id="dc6c2-124">-SKU</span><span class="sxs-lookup"><span data-stu-id="dc6c2-124">-Sku</span></span>
+<span data-ttu-id="dc6c2-125">Especifica o nível da região de implantação.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-125">Specifies the tier of the deployment region.</span></span>
+<span data-ttu-id="dc6c2-126">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="dc6c2-126">Valid values are:</span></span>
+- <span data-ttu-id="dc6c2-127">Desenvolvedor</span><span class="sxs-lookup"><span data-stu-id="dc6c2-127">Developer</span></span>
+- <span data-ttu-id="dc6c2-128">Padrão</span><span class="sxs-lookup"><span data-stu-id="dc6c2-128">Standard</span></span>
+- <span data-ttu-id="dc6c2-129">Premium</span><span class="sxs-lookup"><span data-stu-id="dc6c2-129">Premium</span></span>
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
@@ -130,8 +130,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-130">-VirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="ecb8d-130">-VirtualNetwork</span></span>
-<span data-ttu-id="ecb8d-131">Especifica uma configuração de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-131">Specifies a virtual network configuration.</span></span>
+### <span data-ttu-id="dc6c2-130">-VirtualNetwork</span><span class="sxs-lookup"><span data-stu-id="dc6c2-130">-VirtualNetwork</span></span>
+<span data-ttu-id="dc6c2-131">Especifica uma configuração de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-131">Specifies a virtual network configuration.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementVirtualNetwork
@@ -145,26 +145,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ecb8d-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ecb8d-132">CommonParameters</span></span>
-<span data-ttu-id="ecb8d-133">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ecb8d-134">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="ecb8d-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="dc6c2-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dc6c2-132">CommonParameters</span></span>
+<span data-ttu-id="dc6c2-133">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dc6c2-134">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="dc6c2-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ecb8d-135">SENSORES</span><span class="sxs-lookup"><span data-stu-id="ecb8d-135">INPUTS</span></span>
+## <span data-ttu-id="dc6c2-135">Entradas</span><span class="sxs-lookup"><span data-stu-id="dc6c2-135">INPUTS</span></span>
 
-### <span data-ttu-id="ecb8d-136">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="ecb8d-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+### <span data-ttu-id="dc6c2-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="dc6c2-136">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
 
-## <span data-ttu-id="ecb8d-137">EXIBE</span><span class="sxs-lookup"><span data-stu-id="ecb8d-137">OUTPUTS</span></span>
+## <span data-ttu-id="dc6c2-137">Saídas</span><span class="sxs-lookup"><span data-stu-id="dc6c2-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="ecb8d-138">Microsoft. Azure. Commands. ApiManagement. Models. PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="ecb8d-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
+### <span data-ttu-id="dc6c2-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span><span class="sxs-lookup"><span data-stu-id="dc6c2-138">Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement</span></span>
 
-## <span data-ttu-id="ecb8d-139">INFORMA</span><span class="sxs-lookup"><span data-stu-id="ecb8d-139">NOTES</span></span>
-* <span data-ttu-id="ecb8d-140">O cmdlet grava a instância do **PsApiManagement** atualizado em pipeline.</span><span class="sxs-lookup"><span data-stu-id="ecb8d-140">The cmdlet writes updated **PsApiManagement** instance to pipeline.</span></span>
+## <span data-ttu-id="dc6c2-139">Notas</span><span class="sxs-lookup"><span data-stu-id="dc6c2-139">NOTES</span></span>
+* <span data-ttu-id="dc6c2-140">O cmdlet grava a instância **PsApiManagement atualizada** no pipeline.</span><span class="sxs-lookup"><span data-stu-id="dc6c2-140">The cmdlet writes updated **PsApiManagement** instance to pipeline.</span></span>
 
-## <span data-ttu-id="ecb8d-141">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="ecb8d-141">RELATED LINKS</span></span>
+## <span data-ttu-id="dc6c2-141">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="dc6c2-141">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ecb8d-142">Remove-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="ecb8d-142">Remove-AzApiManagementRegion</span></span>](./Remove-AzApiManagementRegion.md)
+[<span data-ttu-id="dc6c2-142">Remove-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="dc6c2-142">Remove-AzApiManagementRegion</span></span>](./Remove-AzApiManagementRegion.md)
 
-[<span data-ttu-id="ecb8d-143">Update-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="ecb8d-143">Update-AzApiManagementRegion</span></span>](./Update-AzApiManagementRegion.md)
+[<span data-ttu-id="dc6c2-143">Update-AzApiManagementRegion</span><span class="sxs-lookup"><span data-stu-id="dc6c2-143">Update-AzApiManagementRegion</span></span>](./Update-AzApiManagementRegion.md)
 
-[<span data-ttu-id="ecb8d-144">Update-AzApiManagementDeployment</span><span class="sxs-lookup"><span data-stu-id="ecb8d-144">Update-AzApiManagementDeployment</span></span>](./Update-AzApiManagementDeployment.md)
+[<span data-ttu-id="dc6c2-144">Set-AzApiManagement</span><span class="sxs-lookup"><span data-stu-id="dc6c2-144">Set-AzApiManagement</span></span>](./Set-AzApiManagement.md)
 
 
