@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: eb88be102f390d9e94ba938eeb6d116af6a79fab
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 50919ba7857a57039e2afcdcd5cc4b469f91e612
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93600450"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401888"
 ---
 # Get-AzVpnClientPackage
 
 ## Sinopse
 Obtém informações sobre um pacote de cliente VPN.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <String>
  -ProcessorArchitecture <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzVpnClientPackage** Obtém informações sobre os pacotes de cliente VPN disponíveis em um gateway de rede virtual.
-Os pacotes do cliente contêm dados de configuração que permitem que um computador cliente faça uma conexão VPN com uma rede virtual do Azure; os computadores cliente devem ter o pacote de configuração correto instalado para fazer uma conexão VPN.
-Pacotes de configuração diferentes estão disponíveis com base na versão do Windows do computador cliente (por exemplo, Windows 7 ou Windows 10) e na arquitetura do processador do computador cliente (AMD64 ou x86).
-Você deve especificar o tipo de arquitetura ao executar **Get-AzVpnClientPackage**.
+## Descrição
+O cmdlet **Get-AzVpnClientPackage** obtém informações sobre os pacotes de cliente VPN disponíveis em um gateway de rede virtual.
+Os pacotes cliente contêm dados de configuração que permitem que um computador cliente faça uma conexão VPN com uma rede virtual do Azure; os computadores cliente devem ter o pacote de configuração correto instalado para fazer uma conexão VPN.
+Pacotes de configuração diferentes estão disponíveis com base na versão do Windows do computador cliente (por exemplo, Windows 7 ou Windows 10) e na arquitetura de processador do computador cliente (AMD64 ou x86).
+Você deve especificar o tipo de arquitetura ao executar **Get-AzVpnClientPackage.**
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter informações sobre um pacote de cliente VPN da arquitetura do processador
+### Exemplo 1: Obter informações sobre um pacote de cliente VPN de arquitetura de processador
 ```
 PS C:\>Get-AzVpnClientPackage -ProcessorArchitecture -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -ProcessorArchitecture "Amd64"
 ```
 
-Esse comando obtém informações sobre os pacotes do cliente VPN AMD64 armazenados no gateway de rede virtual chamado ContosoVirtualNetworkGateway.
-Para obter informações sobre os pacotes do cliente x86, defina o valor do parâmetro *ProcessorArchitecture* para x86.
+Este comando obtém informações sobre os pacotes de cliente VPN AMD64 armazenados no gateway de rede virtual chamado ContosoVirtualNetworkGateway.
+Para obter informações sobre os pacotes cliente x86, de definir o valor do parâmetro *ProcessorArchitecture* como x86.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
-Especifica o tipo de arquitetura de CPU para o qual o pacote do cliente foi projetado.
-Os valores válidos são AMD64 e x86.
+Especifica o tipo de arquitetura de CPU para o qual o pacote cliente foi projetado.
+Os valores válidos são Amd64 e X86.
 
 ```yaml
 Type: System.String
@@ -76,8 +76,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Especifica o nome do grupo de recursos ao qual o gateway de rede virtual está atribuído.
-Grupos de recursos categorizam itens para ajudar a simplificar o gerenciamento de inventário e a administração geral do Azure.
+Especifica o nome do grupo de recursos ao que o gateway de rede virtual está atribuído.
+Os grupos de recursos categorizam itens para ajudar a simplificar o gerenciamento de estoque e a administração geral do Azure.
 
 ```yaml
 Type: System.String
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGatewayName
-Especifica o nome do gateway de rede virtual onde as informações do pacote do cliente são armazenadas.
+Especifica o nome do gateway de rede virtual onde as informações do pacote do cliente estão armazenadas.
 
 ```yaml
 Type: System.String
@@ -107,22 +107,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### System. String
+### System.String
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Redimensionar-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
+[Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 
