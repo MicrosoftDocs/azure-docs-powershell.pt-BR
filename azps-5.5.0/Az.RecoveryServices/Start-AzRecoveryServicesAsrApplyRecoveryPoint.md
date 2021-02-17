@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: 893298c3349d2d7ceaa998a1f147ce8dd590f101
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: b06501fafbc573e10ac7d5dba3435dbf96342ba0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100114537"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407549"
 ---
 # Start-AzRecoveryServicesAsrApplyRecoveryPoint
 
 ## Sinopse
-Altera um ponto de recuperação de um item com falha em relação a um item protegido antes de cometer a operação de failover.
+Altera um ponto de recuperação para um item com falha sobre protegido antes de cometer a operação de failover.
 
 ## Sintaxe
 
@@ -27,7 +27,7 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
 ```
 
 ## Descrição
-O **Start-AzRecoveryServicesAsrApplyRecoveryPoint** altera o ponto de recuperação de um item com falha em relação ao item protegido antes que ele cometa a operação de failover.
+O **Start-AzRecoveryServicesAsrApplyRecoveryPoint** altera o ponto de recuperação de um item com falha em relação a um item protegido antes de comprometer a operação de failover.
 
 ## Exemplos
 
@@ -41,7 +41,7 @@ Começa a aplicar o ponto de recuperação especificado ao item protegido de rep
 ## Parâmetros
 
 ### -DataEncryptionPrimaryCertFile
-Especifica o arquivo de certificado principal se a criptografia de dados estiver sendo usada.
+Especifica o arquivo de certificado principal se a criptografia de dados está sendo usada.
 
 ```yaml
 Type: System.String
@@ -161,4 +161,4 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 ## LINKS RELACIONADOS
 
-[Cmdlets de Recuperação de Site do Azure](./Az.SiteRecovery.md)
+

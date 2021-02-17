@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayClientAuthConfiguration.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzApplicationGatewayClientAuthConfiguration.md
-ms.openlocfilehash: 92d3945e92dc4996fbbe3fc0abbcc296ab141621
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 64dc67a59b739ac7cab51c9c4a02fd7a73f8b4cc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100113466"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407583"
 ---
 # Remove-AzApplicationGatewayClientAuthConfiguration
 
@@ -87,7 +87,6 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [New-AzApplicationGatewayClientAuthConfiguration](./New-AzApplicationGatewayClientAuthConfiguration.md)
 
-[Add-AzApplicationGatewayClientAuthConfiguration](./Add-AzApplicationGatewayClientAuthConfiguration.md)
 
 [Get-AzApplicationGatewayClientAuthConfiguration](./Get-AzApplicationGatewayClientAuthConfiguration.md)
 

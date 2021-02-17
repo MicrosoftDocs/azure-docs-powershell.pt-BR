@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: 00c9d6e5a5a729ca5a5119b812873078acb38326
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 956fcf09006e8e65d029bb5e380abc5de0e15c17
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93776368"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399916"
 ---
 # Remove-AzADApplication
 
 ## Sinopse
-Exclui o aplicativo Azure Active Directory.
+Exclui o aplicativo do azure Active Directory.
 
-## SYNTAX
+## Sintaxe
 
-### ObjectIdParameterSet (padrão)
+### ObjectIdParameterSet (Padrão)
 ```
 Remove-AzADApplication -ObjectId <Guid> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -44,39 +44,39 @@ Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Exclui o aplicativo Azure Active Directory.
+## Descrição
+Exclui o aplicativo do azure Active Directory.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1-remover aplicativo por ID do objeto
+### Exemplo 1 - Remover aplicativo por id de objeto
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-Remove o aplicativo com a ID de objeto "b4cd1619-80b3-4cfb-9f8f-9f2333425738" do locatário.
+Remove o aplicativo com a ID do objeto 'b4cd1619-80b3-4cfb-9f8f-9f233425738' do locatário.
 
-### Exemplo 2-remover aplicativo por ID do aplicativo
+### Exemplo 2 - Remover aplicativo por ID do aplicativo
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-Remove o aplicativo com a ID de aplicativo ' f9c5ea4f-28f0-401A-A491-491a037fa346 ' do locatário.
+Remove o aplicativo com a ID do aplicativo 'f9c5ea4f-28f0-401a-a491-491a037fa346' do locatário.
 
-### Exemplo 3-remover o aplicativo por meio do encanamento
+### Exemplo 3 - Remover aplicativo por piping
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-Obtém o aplicativo com a ID de objeto ' b4cd1619-80b3-4cfb-9f8f-9f2333425738 ' e canaliza-se para o cmdlet Remove-AzADApplication para remover o aplicativo do locatário.
+Obtém o aplicativo com a ID do objeto 'b4cd1619-80b3-4cfb-9f8f-9f233425738' e os canos que vão para o cmdlet Remove-AzADApplication para remover o aplicativo do locatário.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
-A ID do aplicativo a ser removida.
+A ID do aplicativo a ser removido.
 
 ```yaml
 Type: System.Guid
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Alternar para excluir um aplicativo sem confirmação.
+### -Forçar
+Alternar para excluir um aplicativo sem uma confirmação.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se o comando foi concluído, a especificação será retorna true se o comando foi bem-sucedido.
+Especificar isso retornará verdadeiro se o comando tiver sido bem-sucedido.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,7 +180,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -212,23 +212,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. ActiveDirectory. PSADApplication
-Parâmetros: inputobject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADApplication
+Parâmetros: InputObject (ByValue)
 
-## EXIBE
+## Saídas
 
-### System. Boolean
+### System.Boolean
 
-## INFORMA
-Palavras-chave: Azure, AZ, braço, recurso, gerenciamento, gerente, recurso, grupo, modelo, implantação
+## Notas
+Palavras-chave: azure, Az, arm, resource, management, manager, resource, group, template, deployment
 
 ## LINKS RELACIONADOS
 
@@ -236,7 +236,6 @@ Palavras-chave: Azure, AZ, braço, recurso, gerenciamento, gerente, recurso, gru
 
 [Get-AzADApplication](./Get-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
 [Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
 
