@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: 0e8a4eeaad1f033377ab11d7361d71c8a63a9dc2
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: fb82b00f998ed0c2b7473d4a3e0bcb9b3dc60630
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100114119"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400018"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
@@ -37,7 +37,7 @@ Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -Expre
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Exemplo 2: remover uma configuração de conexão de circuito usando a piping de um circuito do ExpressRoute
+### Exemplo 2: remover uma configuração de conexão de circuito usando o Piping de um Circuito do ExpressRoute
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
@@ -169,7 +169,7 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [Set-AzExpressRoute CircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[New-AzExpressRoute CircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
 
 [Set-AzExpressRoute Circuit](Set-AzExpressRouteCircuit.md)
 

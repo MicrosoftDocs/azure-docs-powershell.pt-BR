@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 8eba8d26bcac5de16be3e2cda5e8ca80356aea11
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: ec91fecd41138238bc4d89fa81d77bae4730c770
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100114695"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407600"
 ---
 # Get-AzVpnClientPackage
 
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ```
 
 ### -VirtualNetworkGatewayName
-Especifica o nome do gateway de rede virtual onde as informações do pacote do cliente são armazenadas.
+Especifica o nome do gateway de rede virtual onde as informações do pacote do cliente estão armazenadas.
 
 ```yaml
 Type: System.String
@@ -123,6 +123,5 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 
