@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: b8fdacf86de0e85c6f0ce241e743fc73066beb71
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 81e246162fc6c28cb23fa3015f92e43116759b4b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93941327"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413278"
 ---
 # Get-AzNotificationHubListKey
 
 ## Sinopse
 Obtém as cadeias de conexão primária e secundária associadas a uma regra de autorização do hub de notificação.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzNotificationHubListKey** retorna as cadeias de conexão primária e secundária de uma regra de autorização de assinatura de acesso compartilhado (SAS) do hub de notificação.
-Regras de autorização gerenciem os direitos de usuário ao Hub.
-Cada regra inclui uma cadeia de conexão principal e secundária.
-Essas cadeias de conexão (URIs) executam o seguinte:
+## Descrição
+O cmdlet **Get-AzNotificationHubListKey** retorna as cadeias de conexão primária e secundária de uma regra de autorização SAS (Assinatura de Acesso Compartilhado) do hub de notificação.
+As regras de autorização gerenciam os direitos do usuário para o hub.
+Cada regra inclui uma cadeia de conexão primária e secundária.
+Estas cadeias de conexão (URIs) executam o seguinte:
 - Aponte os usuários para um recurso.
-- Inclua um token contendo parâmetros de consulta.
+- Inclua um token que contém parâmetros de consulta.
 Um desses parâmetros, a assinatura, é usado para autenticar o usuário e fornecer o nível de acesso especificado.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter as cadeias de conexão primária e secundária para uma regra de autorização
+### Exemplo 1: Obter as cadeias de conexão primária e secundária para uma regra de autorização
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-Esse comando obtém as cadeias de conexão primária e secundária para a regra de autorização ListenRule, uma regra atribuída ao Hub de notificação ContosoInternalHub.
-O comando deve incluir o namespace Hub e o grupo de recursos.
+Esse comando obtém as cadeias de conexão primária e secundária para a regra de autorização ListenRule, uma regra atribuída ao hub de notificação contosoInternalHub.
+O comando deve incluir o namespace do hub e o grupo de recursos.
 
-## OS
+## Parâmetros
 
 ### -AuthorizationRule
-Especifica o nome de uma regra de autenticação de assinatura de acesso compartilhado (SAS).
-Essas regras determinam o tipo de acesso que os usuários têm ao Hub de notificação.
+Especifica o nome de uma regra de autenticação de Assinatura de Acesso Compartilhado (SAS).
+Essas regras determinam o tipo de acesso que os usuários têm ao hub de notificação.
 
 ```yaml
 Type: System.String
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -78,8 +78,8 @@ Accept wildcard characters: False
 ```
 
 ### -Namespace
-Especifica o namespace ao qual o Hub de notificações está atribuído.
-Os namespaces fornecem uma maneira de agrupar e categorizar os hubs de notificação.
+Especifica o namespace ao qual o hub de notificação está atribuído.
+Os namespaces oferecem uma maneira de agrupar e categorizar os hubs de notificação.
 
 ```yaml
 Type: System.String
@@ -94,8 +94,8 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationHub
-Especifica o Hub de notificação para o qual esse cmdlet atribui uma regra de autorização.
-Os hubs de notificação são usados para enviar notificações por push para vários clientes, independentemente da plataforma usada por esses clientes.
+Especifica o hub de notificação ao que este cmdlet atribui uma regra de autorização.
+Os hubs de notificação são usados para enviar notificações por push para vários clientes independentemente da plataforma usada por esses clientes.
 
 ```yaml
 Type: System.String
@@ -109,9 +109,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Resource
-Especifica o grupo de recursos ao qual o Hub de notificações está atribuído.
-Grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente gerenciamento de inventário e administração do Azure.
+### -ResourceGroup
+Especifica o grupo de recursos ao qual o hub de notificação está atribuído.
+Os grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente o gerenciamento de estoque e a administração do Azure.
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Management. NotificationHubs. Models. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 

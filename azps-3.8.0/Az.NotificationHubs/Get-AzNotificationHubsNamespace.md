@@ -6,62 +6,62 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespace.md
-ms.openlocfilehash: 021f83895494fa56cbd60032c37eecdc0007460b
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 93ee8ceb15d3c07942f87c0187f4b04b8ac4aaa5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93777214"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413295"
 ---
 # Get-AzNotificationHubsNamespace
 
 ## Sinopse
 Obtém informações sobre um namespace do hub de notificação.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzNotificationHubsNamespace [[-ResourceGroup] <String>] [[-Namespace] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-**O cmdlet Get-AzNotificationHubsNamespace** Obtém informações sobre namespaces do hub de notificação.
-Esse cmdlet oferece a opção de obter informações para todos os namespaces, informações sobre os namespaces atribuídos a um grupo de recursos especificado; ou para retornar informações sobre um namespace específico.
-Namespaces são recipientes lógicos que ajudam você a organizar e gerenciar seus hubs de notificação.
-Você deve ter pelo menos um namespace de Hub de notificação: todos os hubs de notificação devem ser atribuídos a um namespace.
-Um único namespace pode alojar vários hubs, o que significa que você pode só precisar de um namespace em sua organização.
-No entanto, você também pode ter vários namespaces para organizar melhor seus hubs, ou para dar a pessoas específicas permissão para gerenciar um subconjunto de hubs selecionado.
-O cmdlet **Get-AzNotificationHubsNamespace** retorna informações básicas sobre o próprio namespace.
+## Descrição
+**O cmdlet Get-AzNotificationHubsNamespace** obtém informações sobre namespaces do hub de notificação.
+Este cmdlet fornece a opção de obter informações para todos os seus namespaces, informações sobre os namespaces atribuídos a um grupo de recursos especificado; ou para retornar informações sobre um espaço de nome específico.
+Os namespaces são contêineres lógicos que ajudam você a organizar e gerenciar seus hubs de notificação.
+Você deve ter pelo menos um namespace do hub de notificação: todos os hubs de notificação devem ser atribuídos a um namespace.
+Um único namespace pode ter vários hubs, o que significa que talvez você só precise de um namespace em sua organização.
+No entanto, você também pode ter vários namespaces para organizar melhor seus hubs ou para dar permissão a indivíduos específicos para gerenciar um subconjunto de hubs selecionado.
+O **cmdlet Get-AzNotificationHubsNamespace retorna** informações básicas sobre o próprio namespace.
 Para obter informações sobre as regras de autorização associadas a um namespace, use Get-AzNotificationHubsNamespaceAuthorizationRules.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: obter informações para todos os namespaces do hub de notificação
+### Exemplo 1: Obter informações para todos os namespaces do hub de notificação
 ```
 PS C:\>Get-AzNotificationHubsNamespace
 ```
 
 Esse comando retorna informações para todos os namespaces do hub de notificação.
 
-### Exemplo 2: obter informações para um único namespace Hub de notificação
+### Exemplo 2: Obter informações para um único espaço de nome de hub de notificação
 ```
 PS C:\>Get-AzNotificationHubsNamespace -Namespace "ContosoNamespace"
 ```
 
-Esse comando obtém informações para um único namespace Hub de notificação: ContosoNamespace.
+Este comando obtém informações para um único namespace de hub de notificação: ContosoNamespace.
 
-### Exemplo 3: obter informações para todos os hubs de notificação atribuídos a um namespace específico
+### Exemplo 3: Obter informações para todos os hubs de notificação atribuídos a um espaço de nome específico
 ```
 PS C:\>Get-AzNotificationHubsNamespace -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-Esse comando obtém informações para todos os namespaces do hub de notificação atribuídos à ContosoNotificationsGroup do grupo de recursos.
+Esse comando obtém informações para todos os namespaces do hub de notificação atribuídos ao grupo de recursos ContosoNotificationsGroup.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 Especifica um nome exclusivo para o namespace.
-Os namespaces fornecem uma maneira de agrupar e categorizar os hubs de notificação.
+Os namespaces oferecem uma maneira de agrupar e categorizar os hubs de notificação.
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Resource
-Especifica o grupo de recursos ao qual o namespace está atribuído.
-Grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente gerenciamento de inventário e administração do Azure.
+### -ResourceGroup
+Especifica o grupo de recursos ao qual o namespace é atribuído.
+Os grupos de recursos organizam itens como namespaces, hubs de notificação e regras de autorização de maneiras que ajudam a simplesmente o gerenciamento de estoque e a administração do Azure.
 
 ```yaml
 Type: System.String
@@ -108,21 +108,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. NotificationHubs. Models. Namespaceattributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NamespaceAttributes
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzNotificationHubsNamespaceAuthorizationRules](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
 [New-AzNotificationHubsNamespace](./New-AzNotificationHubsNamespace.md)
 

@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
-ms.openlocfilehash: 9b2b94fbd6a308f9d927483e78e060a273354738
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 263e54adc39103a704dc4ea0bd30f396b5d00fc9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93944998"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413601"
 ---
 # New-AzApiManagementApiRelease
 
 ## Sinopse
-Cria uma versão de API de uma revisão de API
+Cria uma versão da API de uma revisão da API
 
-## SYNTAX
+## Sintaxe
 
 ```
 New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ApiRevision <String>
@@ -25,13 +25,13 @@ New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> 
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## Descrição
 
-O cmdlet **New-AzApiManagementApiRelease** cria uma versão de API para uma revisão de API no contexto de gerenciamento de API. Uma versão é usada para fazer com que a revisão da API seja a revisão atual.
+O cmdlet **New-AzApiManagementApiRelease** cria uma Versão da API para uma Revisão da API no contexto de Gerenciamento de API. Um Lançamento é usado para tornar a Revisão da Api como Revisão Atual.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: criar uma versão de API para uma revisão de API
+### Exemplo 1: Criar uma versão da API para uma revisão da API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>New-AzApiManagementApiRelease -Context $context  -ApiId 5adf6fbf0faadf3ad8558065 -ApiRevision 6 -Note "Releasing version 6"
@@ -49,12 +49,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Esse comando cria uma versão de API da revisão `2` do `echo-api` .
+Este comando cria uma Versão de Revisão da API `2` do `echo-api` .
 
-## OS
+## Parâmetros
 
 ### -ApiId
-Identificador para a nova API.
+Identificador da nova API.
 
 ```yaml
 Type: System.String
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApiRevision
-Identificador da revisão da API.
+Identificador da Revisão da Api.
 
 ```yaml
 Type: System.String
@@ -84,8 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,8 +114,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nota
-Notas de versão da API. Este parâmetro é opcional
+### -Observação
+Notas de Versão da Api. Este parâmetro é opcional
 
 ```yaml
 Type: System.String
@@ -129,10 +129,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Rereleaseid
-Identificador para a versão da API.
+### -ReleaseId
+Identificador para o Lançamento da Api.
 Este parâmetro é opcional.
-Se não for gerado um identificador especificado.
+Se não especificado, o identificador será gerado.
 
 ```yaml
 Type: System.String
@@ -146,7 +146,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,19 +177,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
@@ -197,4 +197,4 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

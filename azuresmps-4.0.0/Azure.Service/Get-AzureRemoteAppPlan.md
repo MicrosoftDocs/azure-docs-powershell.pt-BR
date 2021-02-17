@@ -3,34 +3,34 @@ external help file: Microsoft.WindowsAzure.Commands.RemoteApp.dll-Help.xml
 ms.assetid: A1599617-FAB8-42AE-B066-2B4682F0BA21
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 6b5c05a33ea14df95945d9539e53602db8abd79c
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: e453d8051e2be4ef72cc4d005c403ea051a6cdce
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93946578"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410932"
 ---
 # Get-AzureRemoteAppPlan
 
 ## Sinopse
-Lista os planos do RemoteApp do Azure.
+Lista os planos do Azure RemoteApp.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Get-AzureRemoteAppPlan [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Get-AzureRemoteAppPlan** lista os planos do Azure RemoteApp.
+## Descrição
+O **cmdlet Get-AzureRemoteAppPlan** lista os planos do Azure RemoteApp.
 
-## EXEMPLOS
+## Exemplos
 
-## OS
+## Parâmetros
 
 ### -Perfil
-Especifica o perfil do Azure do qual este cmdlet lê.
-Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+Especifica o perfil do Azure do qual este cmdlet é lido.
+Se você não especificar um perfil, esse cmdlet será lido do perfil padrão local.
 
 ```yaml
 Type: AzureSMProfile
@@ -45,16 +45,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-## EXIBE
+## Saídas
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Cmdlets do Azure RemoteApp](./Azure.RemoteApp.md)
+
 
 
