@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100112778"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405135"
 ---
 # Resize-AzVirtualNetworkGateway
 
@@ -35,7 +35,7 @@ Para obter mais informações, consulte https://azure.microsoft.com/en-us/pricin
 
 ## Exemplos
 
-### Exemplo 1: Alterar o tamanho de um gateway de rede virtual
+### Exemplo 1: alterar o tamanho de um gateway de rede virtual
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
@@ -121,7 +121,7 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 ### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
 ## Notas
-Não é possível reutilizar de SKUs Basic/Standard/HighPerformance para as novas SKUs VpnGw1/VpnGw2/VpnGw3. O resize ainda não é permitido de/para VpnGw1AZ/VpnGw2AZ/VpnGw3AZ ou ErGw1AZ/ErGw2AZ/ErGw3AZ. O resize só é permitido dentro da 'série' SKU, por exemplo, VpnGw1AZ pode ser resized to/from VpnGw2AZ/VpnGw3AZ e ErGw1AZ pode ser resized to/from ErGw2AZ/ErGw3AZ. Veja https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways as instruções.
+Não é possível reutilizar de SKUs Basic/Standard/HighPerformance para as novas SKUs VpnGw1/VpnGw2/VpnGw3. O resize ainda não é permitido de/para VpnGw1AZ/VpnGw2AZ/VpnGw3AZ ou ErGw1AZ/ErGw2AZ/ErGw3AZ. O resize só é permitido dentro da 'série' SKU, por exemplo, o VpnGw1AZ pode ser resized para/de VpnGw2AZ/VpnGw3AZ e ErGw1AZ pode ser resized para/a partir de ErGw2AZ/ErGw3AZ. Confira https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways as instruções.
 
 ## LINKS RELACIONADOS
 
@@ -137,4 +137,3 @@ Não é possível reutilizar de SKUs Basic/Standard/HighPerformance para as nova
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
