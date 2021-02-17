@@ -5,38 +5,38 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 26bf7b91b330032e05f96f425cb21908fc3df55d
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 92c5166794808d08a925c458afc14fe4b6dca834
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93596130"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408722"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
 ## Sinopse
-Recupera um segredo excluído em um cofre de chaves para um estado ativo.
+Recupera um segredo excluído em um cofre de chave em um estado ativo.
 
-## SYNTAX
+## Sintaxe
 
-### Padrão (padrão)
+### Padrão (Padrão)
 ```
 Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### InputObject
+### Inputobject
 ```
 Undo-AzKeyVaultSecretRemoval [-InputObject] <PSDeletedKeyVaultSecretIdentityItem>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Undo-AzKeyVaultSecretRemoval** recuperará um segredo excluído anteriormente.
-O segredo recuperado estará ativo e poderá ser usado para todas as operações de segredo normal.
-O chamador precisa ter a permissão ' recuperar ' para executar essa operação.
+## Descrição
+O cmdlet **Undo-AzKeyVaultSecsecoval** recuperará um segredo excluído anteriormente.
+O segredo recuperado estará ativo e poderá ser usado para todas as operações secretas normais.
+O chamador precisa ter permissão de 'recuperar' para executar esta operação.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```powershell
@@ -55,12 +55,12 @@ Content Type :
 Tags         :
 ```
 
-Esse comando recuperará o segredo ' MySecret ', que foi excluído anteriormente, em um estado ativo e utilizável.
+Esse comando recuperará o segredo "MySecsecsec" que foi excluído anteriormente em um estado ativo e acessível.
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -90,8 +90,8 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Nome do segredo.
-O cmdlet constrói o FQDN de um segredo do nome do cofre, do ambiente selecionado no momento e do nome do segredo.
+Nome secreto.
+O Cmdlet constrói o FQDN de um segredo do nome do cofre, do ambiente selecionado no momento e do nome secreto.
 
 ```yaml
 Type: System.String
@@ -105,9 +105,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cofrename
+### -Nomedo Cofre
 Nome do cofre.
-O cmdlet constrói o FQDN de um cofre com base no nome e no ambiente selecionado no momento.
+O Cmdlet construirá o FQDN de um cofre com base no nome e no ambiente selecionado no momento.
 
 ```yaml
 Type: System.String
@@ -121,7 +121,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -153,22 +153,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecitorIdentityItem
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultSecret
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSec cue
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
+[Remove-AzKeyVaultSec cue](./Remove-AzKeyVaultSecret.md)
 
-[Add-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
-[Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)
+[Get-AzKeyVaultSec cue](./Get-AzKeyVaultSecret.md)
