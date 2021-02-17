@@ -5,29 +5,29 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayConnectionDraining.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewayConnectionDraining.md
-ms.openlocfilehash: d04dc0c3d9d446941870f30578f50d5ecd795009
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 042eb9bdff35cb406a879b454b3b78451a89d789
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93600065"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401752"
 ---
 # Set-AzApplicationGatewayConnectionDraining
 
 ## Sinopse
-Modifica a configuração de descarga da conexão de um objeto de configurações HTTP back-end.
+Modifica a configuração de drenamento de conexão de um objeto de configurações HTTP de back-end.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Set-AzApplicationGatewayConnectionDraining -BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>
  -Enabled <Boolean> -DrainTimeoutInSec <Int32> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzApplicationGatewayWebApplicationFirewallConfiguration** modifica a configuração de descarga da configuração de um objeto de configurações http back-end.
+## Descrição
+O cmdlet **Set-AzApplicationGatewayWebApplicationFirewallConfiguration** modifica a configuração de esgotamento de conexão de um objeto de configurações HTTP de back-end.
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```
@@ -36,14 +36,14 @@ PS C:\> $Settings  = Get-AzApplicationGatewayBackendHttpSettings -Name "Settings
 PS C:\> Set-AzApplicationGatewayConnectionDraining -BackendHttpSettings $poolSetting02 -Enabled $False -DrainTimeoutInSec 3600
 ```
 
-O primeiro comando obtém o gateway do aplicativo chamado ApplicationGateway01 no grupo de recursos chamado ResourceGroup01 e o armazena na variável $AppGw.
-O segundo comando obtém as configurações HTTP back-end chamadas Settings01 para $AppGw e armazena as configurações na variável $Settings.
-O último comando modifica a configuração de descarga da configuração do objeto de configurações HTTP back-end armazenado no $Settings definindo Enabled como false e DrainTimeoutInSec como 3600.
+O primeiro comando obtém o gateway de aplicativo chamado ApplicationGateway01 no grupo de recursos chamado ResourceGroup01 e o armazena na variável $AppGw.
+O segundo comando obtém as configurações HTTP de back-end chamadas Configurações01 para $AppGw e armazena as configurações na variável $Settings back-end.
+O último comando modifica a configuração de esgotamento de conexão do objeto de configurações HTTP de back-end armazenado no $Settings configurando Habilitado para False e DrainTimeoutInSec como 3600.
 
-## OS
+## Parâmetros
 
 ### -BackendHttpSettings
-As configurações http de back-end
+As configurações de http back-end
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -73,8 +73,8 @@ Accept wildcard characters: False
 ```
 
 ### -DrainTimeoutInSec
-O número de segundos que a conexão drenada está ativa.
-Os valores aceitáveis variam de 1 segundo a 3600 segundos.
+O número de segundos de estouros de conexão está ativo.
+Valores aceitáveis variam de 1 segundo a 3600 segundos.
 
 ```yaml
 Type: System.Int32
@@ -88,8 +88,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### Habilitado para o
-Se a descarga de conexão está habilitada ou não.
+### -Habilitado
+Se a conexão está habilitada ou não.
 
 ```yaml
 Type: System.Boolean
@@ -104,23 +104,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendHttpSettings
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSApplicationGatewayBackendHttpSettings
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
 [Get-AzApplicationGateway](./Get-AzApplicationGateway.md)
 
-[Get-AzApplicationGatewayBackendHttpSettings](./Get-AzApplicationGatewayBackendHttpSettings.md)
 
 [Get-AzApplicationGatewayConnectionDraining](./Get-AzApplicationGatewayConnectionDraining.md)
 
