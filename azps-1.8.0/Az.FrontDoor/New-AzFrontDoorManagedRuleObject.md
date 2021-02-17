@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorManagedRuleObject.md
-ms.openlocfilehash: b6035e991b585ba296a9fdc591ccbdb44dd1b089
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c72573f467377a4ea16fd487a8cee5f0055a5cee
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93770852"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401446"
 ---
 # New-AzFrontDoorManagedRuleObject
 
 ## Sinopse
-Criar objeto ManagedRule para criação de política WAF
+Criar Objeto ManagedRule para criação de política WAF
 
-## SYNTAX
+## Sintaxe
 
 ```
 New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
@@ -25,10 +25,10 @@ New-AzFrontDoorManagedRuleObject -Type <String> -Version <String>
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Criar objeto ManagedRule para criação de política WAF
+## Descrição
+Criar Objeto ManagedRule para criação de política WAF
 
-## EXEMPLOS
+## Exemplos
 
 ### Exemplo 1
 ```powershell
@@ -46,12 +46,12 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 {SQLI, XSS}        DefaultRuleSet preview-0.1
 ```
 
-Criar um objeto ManagedRule
+Criar um Objeto ManagedRule
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 ```
 
 ### -RuleGroupOverride
-Lista de configurações de substituição do provedor gerenciado do Azure
+Lista de configuração de substituição do provedor gerenciado do Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -80,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Digite
-Tipo de RuleSet
+### -Tipo
+Tipo do ruleset
 
 ```yaml
 Type: System.String
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Versão
-Versão do RuleSet
+Versão do ruleset
 
 ```yaml
 Type: System.String
@@ -111,20 +111,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Nenhuma
+### Nenhum
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. FrontDoor. Models. PSAzureManagedRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
 [New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
- [Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md) 
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md) 
  [New-AzFrontDoorRuleGroupOverrideObject](./New-AzFrontDoorRuleGroupOverrideObject.md)
