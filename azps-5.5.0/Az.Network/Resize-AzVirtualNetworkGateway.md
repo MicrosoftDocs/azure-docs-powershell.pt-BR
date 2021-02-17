@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100112778"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405135"
 ---
-# <span data-ttu-id="71b2b-101">Resize-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-101">Resize-AzVirtualNetworkGateway</span></span>
+# <span data-ttu-id="a655b-101">Resize-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-101">Resize-AzVirtualNetworkGateway</span></span>
 
-## <span data-ttu-id="71b2b-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="71b2b-102">SYNOPSIS</span></span>
-<span data-ttu-id="71b2b-103">Resize um gateway de rede virtual existente.</span><span class="sxs-lookup"><span data-stu-id="71b2b-103">Resizes an existing virtual network gateway.</span></span>
+## <span data-ttu-id="a655b-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="a655b-102">SYNOPSIS</span></span>
+<span data-ttu-id="a655b-103">Resize um gateway de rede virtual existente.</span><span class="sxs-lookup"><span data-stu-id="a655b-103">Resizes an existing virtual network gateway.</span></span>
 
-## <span data-ttu-id="71b2b-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="71b2b-104">SYNTAX</span></span>
+## <span data-ttu-id="a655b-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="a655b-104">SYNTAX</span></span>
 
 ```
 Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> -GatewaySku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="71b2b-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="71b2b-105">DESCRIPTION</span></span>
-<span data-ttu-id="71b2b-106">O **cmdlet Resize-AzVirtualNetworkGateway** permite que você altere a unidade de armazenamento de ações (SKU) para um gateway de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="71b2b-106">The **Resize-AzVirtualNetworkGateway** cmdlet enables you to change the stock-keeping unit (SKU) for a virtual network gateway.</span></span>
-<span data-ttu-id="71b2b-107">As SKUs determinam os recursos de um gateway, incluindo coisas como produtividade e o número máximo de túnel IP permitido.</span><span class="sxs-lookup"><span data-stu-id="71b2b-107">SKUs determine the capabilities of a gateway, including such things as throughput and the maximum number of IP tunnels that are allowed.</span></span>
-<span data-ttu-id="71b2b-108">O Azure oferece suporte a VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (às vezes chamados de SKUs Pequenas, Médias e Grandes).</span><span class="sxs-lookup"><span data-stu-id="71b2b-108">Azure supports Basic, Standard, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (sometimes referred to as Small, Medium, and Large SKUs).</span></span>
-<span data-ttu-id="71b2b-109">Para obter informações detalhadas sobre os recursos de cada tipo de SKU, consulte https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .</span><span class="sxs-lookup"><span data-stu-id="71b2b-109">For detailed information about the capabilities of each SKU type, see https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/.</span></span>
-<span data-ttu-id="71b2b-110">Lembre-se de que as SKUs são diferentes no preço, bem como nos recursos.</span><span class="sxs-lookup"><span data-stu-id="71b2b-110">Keep in mind that SKUs differ in pricing as well as capabilities.</span></span>
-<span data-ttu-id="71b2b-111">Para obter mais informações, consulte https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .</span><span class="sxs-lookup"><span data-stu-id="71b2b-111">For more information, see https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/.</span></span>
+## <span data-ttu-id="a655b-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="a655b-105">DESCRIPTION</span></span>
+<span data-ttu-id="a655b-106">O **cmdlet Resize-AzVirtualNetworkGateway** permite que você altere a unidade de armazenamento de ações (SKU) para um gateway de rede virtual.</span><span class="sxs-lookup"><span data-stu-id="a655b-106">The **Resize-AzVirtualNetworkGateway** cmdlet enables you to change the stock-keeping unit (SKU) for a virtual network gateway.</span></span>
+<span data-ttu-id="a655b-107">As SKUs determinam os recursos de um gateway, incluindo coisas como produtividade e o número máximo de túnel IP permitido.</span><span class="sxs-lookup"><span data-stu-id="a655b-107">SKUs determine the capabilities of a gateway, including such things as throughput and the maximum number of IP tunnels that are allowed.</span></span>
+<span data-ttu-id="a655b-108">O Azure oferece suporte a VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (às vezes chamados de SKUs Pequenas, Médias e Grandes).</span><span class="sxs-lookup"><span data-stu-id="a655b-108">Azure supports Basic, Standard, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKUs (sometimes referred to as Small, Medium, and Large SKUs).</span></span>
+<span data-ttu-id="a655b-109">Para obter informações detalhadas sobre os recursos de cada tipo de SKU, consulte https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .</span><span class="sxs-lookup"><span data-stu-id="a655b-109">For detailed information about the capabilities of each SKU type, see https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/.</span></span>
+<span data-ttu-id="a655b-110">Lembre-se de que as SKUs são diferentes no preço, bem como nos recursos.</span><span class="sxs-lookup"><span data-stu-id="a655b-110">Keep in mind that SKUs differ in pricing as well as capabilities.</span></span>
+<span data-ttu-id="a655b-111">Para obter mais informações, consulte https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .</span><span class="sxs-lookup"><span data-stu-id="a655b-111">For more information, see https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/.</span></span>
 
-## <span data-ttu-id="71b2b-112">Exemplos</span><span class="sxs-lookup"><span data-stu-id="71b2b-112">EXAMPLES</span></span>
+## <span data-ttu-id="a655b-112">Exemplos</span><span class="sxs-lookup"><span data-stu-id="a655b-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="71b2b-113">Exemplo 1: Alterar o tamanho de um gateway de rede virtual</span><span class="sxs-lookup"><span data-stu-id="71b2b-113">Example 1: Change the size of a virtual network gateway</span></span>
+### <span data-ttu-id="a655b-113">Exemplo 1: alterar o tamanho de um gateway de rede virtual</span><span class="sxs-lookup"><span data-stu-id="a655b-113">Example 1: Change the size of a virtual network gateway</span></span>
 ```
 PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
-<span data-ttu-id="71b2b-114">Este exemplo altera o tamanho de um gateway de rede virtual chamado ContosoVirtualGateway.</span><span class="sxs-lookup"><span data-stu-id="71b2b-114">This example changes the size of a virtual network gateway named ContosoVirtualGateway.</span></span>
-<span data-ttu-id="71b2b-115">O primeiro comando cria uma referência de objeto para ContosoVirtualGateway; essa referência de objeto é armazenada em uma variável chamada $Gateway.</span><span class="sxs-lookup"><span data-stu-id="71b2b-115">The first command creates an object reference to ContosoVirtualGateway; this object reference is stored in a variable named $Gateway.</span></span>
-<span data-ttu-id="71b2b-116">O segundo comando usa o cmdlet **Resize-AzVirtualNetworkGateway** para definir a propriedade *GatewaySku* como Basic.</span><span class="sxs-lookup"><span data-stu-id="71b2b-116">The second command then uses the **Resize-AzVirtualNetworkGateway** cmdlet to set the *GatewaySku* property to Basic.</span></span>
+<span data-ttu-id="a655b-114">Este exemplo altera o tamanho de um gateway de rede virtual chamado ContosoVirtualGateway.</span><span class="sxs-lookup"><span data-stu-id="a655b-114">This example changes the size of a virtual network gateway named ContosoVirtualGateway.</span></span>
+<span data-ttu-id="a655b-115">O primeiro comando cria uma referência de objeto para ContosoVirtualGateway; essa referência de objeto é armazenada em uma variável chamada $Gateway.</span><span class="sxs-lookup"><span data-stu-id="a655b-115">The first command creates an object reference to ContosoVirtualGateway; this object reference is stored in a variable named $Gateway.</span></span>
+<span data-ttu-id="a655b-116">O segundo comando usa o cmdlet **Resize-AzVirtualNetworkGateway** para definir a propriedade *GatewaySku* como Basic.</span><span class="sxs-lookup"><span data-stu-id="a655b-116">The second command then uses the **Resize-AzVirtualNetworkGateway** cmdlet to set the *GatewaySku* property to Basic.</span></span>
 
-## <span data-ttu-id="71b2b-117">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="71b2b-117">PARAMETERS</span></span>
+## <span data-ttu-id="a655b-117">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="a655b-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="71b2b-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="71b2b-118">-DefaultProfile</span></span>
-<span data-ttu-id="71b2b-119">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="71b2b-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="a655b-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a655b-118">-DefaultProfile</span></span>
+<span data-ttu-id="a655b-119">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="a655b-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -62,21 +62,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="71b2b-120">-GatewaySku</span><span class="sxs-lookup"><span data-stu-id="71b2b-120">-GatewaySku</span></span>
-<span data-ttu-id="71b2b-121">Especifica o novo tipo de SKU do gateway.</span><span class="sxs-lookup"><span data-stu-id="71b2b-121">Specifies the new type of gateway SKU.</span></span>
-<span data-ttu-id="71b2b-122">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="71b2b-122">The acceptable values for this parameter are:</span></span>
-- <span data-ttu-id="71b2b-123">Basic</span><span class="sxs-lookup"><span data-stu-id="71b2b-123">Basic</span></span>
-- <span data-ttu-id="71b2b-124">Padrão</span><span class="sxs-lookup"><span data-stu-id="71b2b-124">Standard</span></span>
-- <span data-ttu-id="71b2b-125">Alto desempenho</span><span class="sxs-lookup"><span data-stu-id="71b2b-125">High Performance</span></span>
-- <span data-ttu-id="71b2b-126">VpnGw1</span><span class="sxs-lookup"><span data-stu-id="71b2b-126">VpnGw1</span></span>
-- <span data-ttu-id="71b2b-127">VpnGw2</span><span class="sxs-lookup"><span data-stu-id="71b2b-127">VpnGw2</span></span>
-- <span data-ttu-id="71b2b-128">VpnGw3</span><span class="sxs-lookup"><span data-stu-id="71b2b-128">VpnGw3</span></span>
-- <span data-ttu-id="71b2b-129">VpnGw1AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-129">VpnGw1AZ</span></span> 
-- <span data-ttu-id="71b2b-130">VpnGw2AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-130">VpnGw2AZ</span></span> 
-- <span data-ttu-id="71b2b-131">VpnGw3AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-131">VpnGw3AZ</span></span> 
-- <span data-ttu-id="71b2b-132">ErGw1AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-132">ErGw1AZ</span></span> 
-- <span data-ttu-id="71b2b-133">ErGw2AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-133">ErGw2AZ</span></span> 
-- <span data-ttu-id="71b2b-134">ErGw3AZ</span><span class="sxs-lookup"><span data-stu-id="71b2b-134">ErGw3AZ</span></span> 
+### <span data-ttu-id="a655b-120">-GatewaySku</span><span class="sxs-lookup"><span data-stu-id="a655b-120">-GatewaySku</span></span>
+<span data-ttu-id="a655b-121">Especifica o novo tipo de SKU do gateway.</span><span class="sxs-lookup"><span data-stu-id="a655b-121">Specifies the new type of gateway SKU.</span></span>
+<span data-ttu-id="a655b-122">Os valores aceitáveis para este parâmetro são:</span><span class="sxs-lookup"><span data-stu-id="a655b-122">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="a655b-123">Basic</span><span class="sxs-lookup"><span data-stu-id="a655b-123">Basic</span></span>
+- <span data-ttu-id="a655b-124">Padrão</span><span class="sxs-lookup"><span data-stu-id="a655b-124">Standard</span></span>
+- <span data-ttu-id="a655b-125">Alto desempenho</span><span class="sxs-lookup"><span data-stu-id="a655b-125">High Performance</span></span>
+- <span data-ttu-id="a655b-126">VpnGw1</span><span class="sxs-lookup"><span data-stu-id="a655b-126">VpnGw1</span></span>
+- <span data-ttu-id="a655b-127">VpnGw2</span><span class="sxs-lookup"><span data-stu-id="a655b-127">VpnGw2</span></span>
+- <span data-ttu-id="a655b-128">VpnGw3</span><span class="sxs-lookup"><span data-stu-id="a655b-128">VpnGw3</span></span>
+- <span data-ttu-id="a655b-129">VpnGw1AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-129">VpnGw1AZ</span></span> 
+- <span data-ttu-id="a655b-130">VpnGw2AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-130">VpnGw2AZ</span></span> 
+- <span data-ttu-id="a655b-131">VpnGw3AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-131">VpnGw3AZ</span></span> 
+- <span data-ttu-id="a655b-132">ErGw1AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-132">ErGw1AZ</span></span> 
+- <span data-ttu-id="a655b-133">ErGw2AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-133">ErGw2AZ</span></span> 
+- <span data-ttu-id="a655b-134">ErGw3AZ</span><span class="sxs-lookup"><span data-stu-id="a655b-134">ErGw3AZ</span></span> 
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="71b2b-135">-VirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-135">-VirtualNetworkGateway</span></span>
-<span data-ttu-id="71b2b-136">Especifica uma referência de objeto ao gateway de rede virtual a ser resized.</span><span class="sxs-lookup"><span data-stu-id="71b2b-136">Specifies an object reference to the virtual network gateway to be resized.</span></span>
-<span data-ttu-id="71b2b-137">Você pode criar essa referência de objeto usando o Get-AzVirtualNetworkGateway e especificando o nome do gateway.</span><span class="sxs-lookup"><span data-stu-id="71b2b-137">You can create this object reference by using the Get-AzVirtualNetworkGateway and specifying the name of the gateway.</span></span>
+### <span data-ttu-id="a655b-135">-VirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-135">-VirtualNetworkGateway</span></span>
+<span data-ttu-id="a655b-136">Especifica uma referência de objeto ao gateway de rede virtual a ser resized.</span><span class="sxs-lookup"><span data-stu-id="a655b-136">Specifies an object reference to the virtual network gateway to be resized.</span></span>
+<span data-ttu-id="a655b-137">Você pode criar essa referência de objeto usando o Get-AzVirtualNetworkGateway e especificando o nome do gateway.</span><span class="sxs-lookup"><span data-stu-id="a655b-137">You can create this object reference by using the Get-AzVirtualNetworkGateway and specifying the name of the gateway.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -107,34 +107,33 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="71b2b-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="71b2b-138">CommonParameters</span></span>
-<span data-ttu-id="71b2b-139">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="71b2b-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="71b2b-140">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="71b2b-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="a655b-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a655b-138">CommonParameters</span></span>
+<span data-ttu-id="a655b-139">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a655b-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a655b-140">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="a655b-140">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="71b2b-141">Entradas</span><span class="sxs-lookup"><span data-stu-id="71b2b-141">INPUTS</span></span>
+## <span data-ttu-id="a655b-141">Entradas</span><span class="sxs-lookup"><span data-stu-id="a655b-141">INPUTS</span></span>
 
-### <span data-ttu-id="71b2b-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
+### <span data-ttu-id="a655b-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-142">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
 
-### <span data-ttu-id="71b2b-143">System.String</span><span class="sxs-lookup"><span data-stu-id="71b2b-143">System.String</span></span>
+### <span data-ttu-id="a655b-143">System.String</span><span class="sxs-lookup"><span data-stu-id="a655b-143">System.String</span></span>
 
-## <span data-ttu-id="71b2b-144">Saídas</span><span class="sxs-lookup"><span data-stu-id="71b2b-144">OUTPUTS</span></span>
+## <span data-ttu-id="a655b-144">Saídas</span><span class="sxs-lookup"><span data-stu-id="a655b-144">OUTPUTS</span></span>
 
-### <span data-ttu-id="71b2b-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
+### <span data-ttu-id="a655b-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-145">Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway</span></span>
 
-## <span data-ttu-id="71b2b-146">Notas</span><span class="sxs-lookup"><span data-stu-id="71b2b-146">NOTES</span></span>
-<span data-ttu-id="71b2b-147">Não é possível reutilizar de SKUs Basic/Standard/HighPerformance para as novas SKUs VpnGw1/VpnGw2/VpnGw3.</span><span class="sxs-lookup"><span data-stu-id="71b2b-147">You cannot resize from Basic/Standard/HighPerformance SKUs to the new VpnGw1/VpnGw2/VpnGw3 SKUs.</span></span> <span data-ttu-id="71b2b-148">O resize ainda não é permitido de/para VpnGw1AZ/VpnGw2AZ/VpnGw3AZ ou ErGw1AZ/ErGw2AZ/ErGw3AZ.</span><span class="sxs-lookup"><span data-stu-id="71b2b-148">Further resize is not allowed from/to VpnGw1AZ/VpnGw2AZ/VpnGw3AZ or ErGw1AZ/ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="71b2b-149">O resize só é permitido dentro da 'série' SKU, por exemplo, VpnGw1AZ pode ser resized to/from VpnGw2AZ/VpnGw3AZ e ErGw1AZ pode ser resized to/from ErGw2AZ/ErGw3AZ.</span><span class="sxs-lookup"><span data-stu-id="71b2b-149">Resize is allowed only within the SKU 'series' e.g VpnGw1AZ can be resized to/from VpnGw2AZ/VpnGw3AZ and ErGw1AZ can be resized to/from ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="71b2b-150">Veja https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways as instruções.</span><span class="sxs-lookup"><span data-stu-id="71b2b-150">See https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways for instructions.</span></span>
+## <span data-ttu-id="a655b-146">Notas</span><span class="sxs-lookup"><span data-stu-id="a655b-146">NOTES</span></span>
+<span data-ttu-id="a655b-147">Não é possível reutilizar de SKUs Basic/Standard/HighPerformance para as novas SKUs VpnGw1/VpnGw2/VpnGw3.</span><span class="sxs-lookup"><span data-stu-id="a655b-147">You cannot resize from Basic/Standard/HighPerformance SKUs to the new VpnGw1/VpnGw2/VpnGw3 SKUs.</span></span> <span data-ttu-id="a655b-148">O resize ainda não é permitido de/para VpnGw1AZ/VpnGw2AZ/VpnGw3AZ ou ErGw1AZ/ErGw2AZ/ErGw3AZ.</span><span class="sxs-lookup"><span data-stu-id="a655b-148">Further resize is not allowed from/to VpnGw1AZ/VpnGw2AZ/VpnGw3AZ or ErGw1AZ/ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="a655b-149">O resize só é permitido dentro da 'série' SKU, por exemplo, o VpnGw1AZ pode ser resized para/de VpnGw2AZ/VpnGw3AZ e ErGw1AZ pode ser resized para/a partir de ErGw2AZ/ErGw3AZ.</span><span class="sxs-lookup"><span data-stu-id="a655b-149">Resize is allowed only within the SKU 'series' e.g VpnGw1AZ can be resized to/from VpnGw2AZ/VpnGw3AZ and ErGw1AZ can be resized to/from ErGw2AZ/ErGw3AZ.</span></span> <span data-ttu-id="a655b-150">Confira https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways as instruções.</span><span class="sxs-lookup"><span data-stu-id="a655b-150">See https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways for instructions.</span></span>
 
-## <span data-ttu-id="71b2b-151">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="71b2b-151">RELATED LINKS</span></span>
+## <span data-ttu-id="a655b-151">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="a655b-151">RELATED LINKS</span></span>
 
-[<span data-ttu-id="71b2b-152">Get-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-152">Get-AzVirtualNetworkGateway</span></span>](./Get-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="a655b-152">Get-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-152">Get-AzVirtualNetworkGateway</span></span>](./Get-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="71b2b-153">New-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-153">New-AzVirtualNetworkGateway</span></span>](./New-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="a655b-153">New-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-153">New-AzVirtualNetworkGateway</span></span>](./New-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="71b2b-154">Remove-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-154">Remove-AzVirtualNetworkGateway</span></span>](./Remove-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="a655b-154">Remove-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-154">Remove-AzVirtualNetworkGateway</span></span>](./Remove-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="71b2b-155">Reset-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-155">Reset-AzVirtualNetworkGateway</span></span>](./Reset-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="a655b-155">Reset-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-155">Reset-AzVirtualNetworkGateway</span></span>](./Reset-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="71b2b-156">Set-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="71b2b-156">Set-AzVirtualNetworkGateway</span></span>](./Set-AzVirtualNetworkGateway.md)
+[<span data-ttu-id="a655b-156">Set-AzVirtualNetworkGateway</span><span class="sxs-lookup"><span data-stu-id="a655b-156">Set-AzVirtualNetworkGateway</span></span>](./Set-AzVirtualNetworkGateway.md)
 
-[<span data-ttu-id="71b2b-157">Get-AzVpnClientPackage</span><span class="sxs-lookup"><span data-stu-id="71b2b-157">Get-AzVpnClientPackage</span></span>](./Get-AzVpnClientPackage.md)
+[<span data-ttu-id="a655b-157">Get-AzVpnClientPackage</span><span class="sxs-lookup"><span data-stu-id="a655b-157">Get-AzVpnClientPackage</span></span>](./Get-AzVpnClientPackage.md)
 
-[<span data-ttu-id="71b2b-158">Set-AzVirtualNetworkGatewayVpnClientConfig</span><span class="sxs-lookup"><span data-stu-id="71b2b-158">Set-AzVirtualNetworkGatewayVpnClientConfig</span></span>](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
