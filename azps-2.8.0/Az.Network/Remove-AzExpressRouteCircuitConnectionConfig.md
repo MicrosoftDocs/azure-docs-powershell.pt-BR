@@ -6,46 +6,46 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: bf69b628224baa74014d75b4c687a15d830d13c7
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c596dffcef97dfbb1cabbc5ca2c2455a7768c25f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93771538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409929"
 ---
-# <span data-ttu-id="ab8e1-101">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="ab8e1-101">Remove-AzExpressRouteCircuitConnectionConfig</span></span>
+# <span data-ttu-id="e6f6e-101">Remove-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="e6f6e-101">Remove-AzExpressRouteCircuitConnectionConfig</span></span>
 
-## <span data-ttu-id="ab8e1-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="ab8e1-102">SYNOPSIS</span></span>
-<span data-ttu-id="ab8e1-103">Remove uma configuração de conexão de circuito do ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-103">Removes an ExpressRoute circuit connection configuration.</span></span>
+## <span data-ttu-id="e6f6e-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="e6f6e-102">SYNOPSIS</span></span>
+<span data-ttu-id="e6f6e-103">Remove uma configuração de conexão de circuito do ExpressRoute.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-103">Removes an ExpressRoute circuit connection configuration.</span></span>
 
-## <span data-ttu-id="ab8e1-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ab8e1-104">SYNTAX</span></span>
+## <span data-ttu-id="e6f6e-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="e6f6e-104">SYNTAX</span></span>
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ab8e1-105">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="ab8e1-105">DESCRIPTION</span></span>
-<span data-ttu-id="ab8e1-106">O cmdlet **Remove-AzExpressRouteCircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado circuito de rota expressa.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-106">The **Remove-AzExpressRouteCircuitConnectionConfig** cmdlet removes an ExpressRoute circuit connection configuration associated with a given Express Route Circuit.</span></span>
+## <span data-ttu-id="e6f6e-105">Descrição</span><span class="sxs-lookup"><span data-stu-id="e6f6e-105">DESCRIPTION</span></span>
+<span data-ttu-id="e6f6e-106">O cmdlet **Remove-AzExpressRoute CircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado Circuito de Rota Expressa.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-106">The **Remove-AzExpressRouteCircuitConnectionConfig** cmdlet removes an ExpressRoute circuit connection configuration associated with a given Express Route Circuit.</span></span>
 
-## <span data-ttu-id="ab8e1-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="ab8e1-107">EXAMPLES</span></span>
+## <span data-ttu-id="e6f6e-107">Exemplos</span><span class="sxs-lookup"><span data-stu-id="e6f6e-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="ab8e1-108">Exemplo 1: remover uma configuração de conexão de circuito de um circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="ab8e1-108">Example 1: Remove a circuit connection configuration from an ExpressRoute circuit</span></span>
+### <span data-ttu-id="e6f6e-108">Exemplo 1: Remover uma configuração de conexão de circuito de um circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="e6f6e-108">Example 1: Remove a circuit connection configuration from an ExpressRoute circuit</span></span>
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### <span data-ttu-id="ab8e1-109">Exemplo 2: remover uma configuração de conexão de circuito usando o encanamento de um circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="ab8e1-109">Example 2: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit</span></span>
+### <span data-ttu-id="e6f6e-109">Exemplo 2: remover uma configuração de conexão de circuito usando o Piping de um Circuito do ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="e6f6e-109">Example 2: Remove a circuit connection configuration using Piping from an ExpressRoute Circuit</span></span>
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
 
-## <span data-ttu-id="ab8e1-110">OS</span><span class="sxs-lookup"><span data-stu-id="ab8e1-110">PARAMETERS</span></span>
+## <span data-ttu-id="e6f6e-110">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="e6f6e-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="ab8e1-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ab8e1-111">-DefaultProfile</span></span>
-<span data-ttu-id="ab8e1-112">As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="e6f6e-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e6f6e-111">-DefaultProfile</span></span>
+<span data-ttu-id="e6f6e-112">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-112">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab8e1-113">-ExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-113">-ExpressRouteCircuit</span></span>
-<span data-ttu-id="ab8e1-114">O circuito do ExpressRoute que contém a configuração de emparelhamento a ser removida.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-114">The ExpressRoute circuit containing the peering configuration to be removed.</span></span>
+### <span data-ttu-id="e6f6e-113">-ExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-113">-ExpressRouteCircuit</span></span>
+<span data-ttu-id="e6f6e-114">O circuito do ExpressRoute que contém a configuração de peering a ser removido.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-114">The ExpressRoute circuit containing the peering configuration to be removed.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -74,8 +74,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab8e1-115">-Nome</span><span class="sxs-lookup"><span data-stu-id="ab8e1-115">-Name</span></span>
-<span data-ttu-id="ab8e1-116">O nome da configuração de conexão de circuito a ser removida.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-116">The name of the circuit connection configuration to be removed.</span></span>
+### <span data-ttu-id="e6f6e-115">-Nome</span><span class="sxs-lookup"><span data-stu-id="e6f6e-115">-Name</span></span>
+<span data-ttu-id="e6f6e-116">O nome da configuração de conexão de circuito a ser removido.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-116">The name of the circuit connection configuration to be removed.</span></span>
 
 ```yaml
 Type: System.String
@@ -89,8 +89,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab8e1-117">-Confirme</span><span class="sxs-lookup"><span data-stu-id="ab8e1-117">-Confirm</span></span>
-<span data-ttu-id="ab8e1-118">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-118">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="e6f6e-117">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="e6f6e-117">-Confirm</span></span>
+<span data-ttu-id="e6f6e-118">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-118">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -104,8 +104,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab8e1-119">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ab8e1-119">-WhatIf</span></span>
-<span data-ttu-id="ab8e1-120">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-120">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="ab8e1-121">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-121">The cmdlet is not run.</span></span>
+### <span data-ttu-id="e6f6e-119">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="e6f6e-119">-WhatIf</span></span>
+<span data-ttu-id="e6f6e-120">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-120">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="e6f6e-121">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-121">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -119,31 +119,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ab8e1-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ab8e1-122">CommonParameters</span></span>
-<span data-ttu-id="ab8e1-123">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ab8e1-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ab8e1-124">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="ab8e1-124">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e6f6e-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e6f6e-122">CommonParameters</span></span>
+<span data-ttu-id="e6f6e-123">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e6f6e-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e6f6e-124">Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e6f6e-124">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ab8e1-125">SENSORES</span><span class="sxs-lookup"><span data-stu-id="ab8e1-125">INPUTS</span></span>
+## <span data-ttu-id="e6f6e-125">Entradas</span><span class="sxs-lookup"><span data-stu-id="e6f6e-125">INPUTS</span></span>
 
-### <span data-ttu-id="ab8e1-126">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-126">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="e6f6e-126">Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-126">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="ab8e1-127">EXIBE</span><span class="sxs-lookup"><span data-stu-id="ab8e1-127">OUTPUTS</span></span>
+## <span data-ttu-id="e6f6e-127">Saídas</span><span class="sxs-lookup"><span data-stu-id="e6f6e-127">OUTPUTS</span></span>
 
-### <span data-ttu-id="ab8e1-128">Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-128">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
+### <span data-ttu-id="e6f6e-128">Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-128">Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit</span></span>
 
-## <span data-ttu-id="ab8e1-129">INFORMA</span><span class="sxs-lookup"><span data-stu-id="ab8e1-129">NOTES</span></span>
+## <span data-ttu-id="e6f6e-129">Notas</span><span class="sxs-lookup"><span data-stu-id="e6f6e-129">NOTES</span></span>
 
-## <span data-ttu-id="ab8e1-130">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="ab8e1-130">RELATED LINKS</span></span>
+## <span data-ttu-id="e6f6e-130">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="e6f6e-130">RELATED LINKS</span></span>
 
-[<span data-ttu-id="ab8e1-131">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-131">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+[<span data-ttu-id="e6f6e-131">Get-AzExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-131">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="ab8e1-132">Get-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="ab8e1-132">Get-AzExpressRouteCircuitConnectionConfig</span></span>](Get-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="e6f6e-132">Get-AzExpressRoute CircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="e6f6e-132">Get-AzExpressRouteCircuitConnectionConfig</span></span>](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="ab8e1-133">Add-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="ab8e1-133">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
+[<span data-ttu-id="e6f6e-133">Add-AzExpressRoute CircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="e6f6e-133">Add-AzExpressRouteCircuitConnectionConfig</span></span>](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="ab8e1-134">Set-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="ab8e1-134">Set-AzExpressRouteCircuitConnectionConfig</span></span>](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="ab8e1-135">New-AzExpressRouteCircuitConnectionConfig</span><span class="sxs-lookup"><span data-stu-id="ab8e1-135">New-AzExpressRouteCircuitConnectionConfig</span></span>](New-AzExpressRouteCircuitConnectionConfig.md)
 
-[<span data-ttu-id="ab8e1-136">Set-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-136">Set-AzExpressRouteCircuit</span></span>](Set-AzExpressRouteCircuit.md)
 
-[<span data-ttu-id="ab8e1-137">Get-AzExpressRouteCircuit</span><span class="sxs-lookup"><span data-stu-id="ab8e1-137">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
+
+[<span data-ttu-id="e6f6e-134">Set-AzExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-134">Set-AzExpressRouteCircuit</span></span>](Set-AzExpressRouteCircuit.md)
+
+[<span data-ttu-id="e6f6e-135">Get-AzExpressRoute Circuit</span><span class="sxs-lookup"><span data-stu-id="e6f6e-135">Get-AzExpressRouteCircuit</span></span>](Get-AzExpressRouteCircuit.md)
