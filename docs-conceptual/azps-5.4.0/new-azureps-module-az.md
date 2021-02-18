@@ -1,17 +1,17 @@
 ---
 title: Introdução do módulo Az PowerShell do Azure
 description: Introdução do módulo Az PowerShell, recomendado para interagir com o Azure e como substituição para o módulo AzureRM PowerShell.
-ms.date: 12/1/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: b52b6995fb50a6ce502d42e7df588ca72340a1e7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573404"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411255"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Introdução do módulo Az PowerShell do Azure
 
@@ -78,7 +78,9 @@ Se os scripts ainda estiverem baseados no módulo AzureRM, temos vários recurso
 
 O Az é o módulo do PowerShell mais atual para o Azure. Problemas ou solicitações de recursos podem ser registrados diretamente no [repositório do GitHub](https://github.com/Azure/azure-powershell) ou por meio do suporte da Microsoft se você tiver um contrato de suporte. As solicitações de recursos serão implementadas na última versão do Az. Problemas críticos serão implementados nas duas últimas versões do Az.
 
-O AzureRM deixará de receber novos cmdlets ou recursos. No entanto, o módulo AzureRM ainda está oficialmente mantido e receberá correções críticas até fevereiro de 2021.
+Como os módulos do AZ PowerShell agora têm todas as funcionalidades dos módulos do AzureRM PowerShell e muito mais, vamos desativar os módulos do AzureRM PowerShell em 29 de fevereiro de 2024.
+
+Para evitar interrupções de serviço, [atualize seus scripts](https://aka.ms/azpsmigrate) que usam módulos do AzureRM PowerShell para usar módulos do AZ PowerShell em 29 de fevereiro de 2024. Para atualizar seus scripts automaticamente, siga o [guia de início rápido](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
 
 ## <a name="data-collection"></a>Coleta de dados
 
