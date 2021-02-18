@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93955535"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410150"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
 ## Sinopse
-Remove todas as permissões de um usuário ou aplicativo de um cofre de chaves.
+Remove todas as permissões de um usuário ou aplicativo de um cofre de chave.
 
-## SYNTAX
+## Sintaxe
 
-### ByUserPrincipalName (padrão)
+### ByUserPrincipalName (Padrão)
 ```
 Remove-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -UserPrincipalName <String>
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Remove-AzKeyVaultAccessPolicy** remove todas as permissões para um usuário ou aplicativo ou para todos os usuários e aplicativos de um cofre de chaves.
-Mesmo que você remova todas as permissões, o proprietário da assinatura do Azure que contém o cofre de chaves pode adicionar permissões ao cofre de chaves.
-Observe que, embora a especificação do grupo de recursos seja opcional para esse cmdlet, você deve fazê-lo para melhorar o desempenho.
+## Descrição
+O cmdlet **Remove-AzKeyVaultAccessPolicy** remove todas as permissões de um usuário ou aplicativo ou para todos os usuários e aplicativos de um cofre de chave.
+Mesmo que você remova todas as permissões, o proprietário da assinatura do Azure que contém o cofre de chaves poderá adicionar permissões ao cofre de chaves.
+Observe que, embora especificar o grupo de recursos seja opcional para esse cmdlet, você deve fazê-lo para melhorar o desempenho.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover permissões de um usuário
+### Exemplo 1: Remover permissões de um usuário
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,32 +158,32 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-Esse comando Remove todas as permissões que um usuário PattiFuller@contoso.com tem no cofre de chaves chamado Contoso03Vault.  Se-PassThru for especificado, o objeto do keyvault será retornado.
+Esse comando remove todas as permissões que um usuário tem PattiFuller@contoso.com no cofre de chave chamado Contoso03Vault.  Se -PassThru for especificado, o objeto KeyVault será retornado.
 
-### Exemplo 2: remover as permissões de um aplicativo
+### Exemplo 2: Remover permissões para um aplicativo
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
-Esse comando Remove todas as permissões que um aplicativo tem no cofre de chaves chamado Contoso03Vault.
-Este exemplo identifica o aplicativo usando o nome principal do serviço registrado no Azure Active Directory http://payroll.contoso.com .
+Esse comando remove todas as permissões que um aplicativo tem no cofre de teclas chamado Contoso03Vault.
+Este exemplo identifica o aplicativo usando o nome da entidade de serviço registrado no Azure Active `http://payroll.contoso.com` Directory.
 
-### Exemplo 3: remover as permissões de um aplicativo usando sua ID de objeto
+### Exemplo 3: remover permissões para um aplicativo usando sua ID de objeto
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
-Esse comando Remove todas as permissões que um aplicativo tem no cofre de chaves chamado Contoso03Vault.
-Este exemplo identifica o aplicativo pela ID de objeto da entidade de serviço.
+Esse comando remove todas as permissões que um aplicativo tem no cofre de teclas chamado Contoso03Vault.
+Este exemplo identifica o aplicativo pela ID do objeto da entidade de serviço.
 
-### Exemplo 4: remover permissões para o provedor de recursos Microsoft. Compute
+### Exemplo 4: Remover permissões para o provedor de recursos Microsoft.Compute
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Esse comando Remove a permissão do provedor de recursos Microsoft. COMPUTE para obter os segredos da Contoso03Vault.
+Este comando remove a permissão do provedor de recursos Microsoft.Compute para obter segredos da Contoso03Vault.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
 Especifica a ID do aplicativo cujas permissões devem ser removidas
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Especifica o endereço de email do usuário do qual o acesso você deseja remover.
+Especifica o endereço de email do usuário cujo acesso você deseja remover.
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Se especificado, desabilita a recuperação de segredos deste cofre de chaves pelo provedor de recursos Microsoft. Compute quando referenciado na criação de recursos.
+Se especificado, desabilita a recuperação de segredos desse cofre de chave pelo provedor de recursos Microsoft.Compute quando referenciado na criação de recursos.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Se especificado, desabilita a recuperação de segredos deste cofre de chaves por criptografia de disco do Azure.
+Se especificado, desabilita a recuperação de segredos deste cofre de chaves pela Criptografia de Disco do Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Se especificado, desabilita a recuperação de segredos deste cofre de chaves pelo Azure Resource Manager quando referenciado nos modelos.
+Se especificado, desabilita a recuperação de segredos desse cofre de chaves pelo Gerenciador de Recursos do Azure quando referenciado em modelos.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Objeto do cofre de chaves.
+Objeto do Cofre de Teclas.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Especifica a ID de objeto da entidade de usuário ou serviço do Azure Active Directory para a qual as permissões são removidas.
+Especifica a ID do objeto da entidade de usuário ou serviço no Azure Active Directory para a qual remover permissões.
 
 ```yaml
 Type: System.String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 Retorna um objeto que representa o item com o qual você está trabalhando.
-Por padrão, esse cmdlet não gera nenhuma saída.
+Por padrão, esse cmdlet não gera saída.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,8 +322,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Especifica o nome do grupo de recursos associado ao cofre de chaves cuja política de acesso está sendo modificada.
-Se não for especificado, esse cmdlet pesquisará o cofre de chaves na assinatura atual.
+Especifica o nome do grupo de recursos associado ao cofre de chave cuja política de acesso está sendo modificada.
+Se não especificado, este cmdlet pesquisa o cofre de chave na assinatura atual.
 
 ```yaml
 Type: System.String
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID do recurso do keyvault.
+ID do Recurso KeyVault.
 
 ```yaml
 Type: System.String
@@ -352,9 +352,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Serviceprincipalnamename
-Especifica o nome principal do serviço do aplicativo cujas permissões você deseja remover.
-Especifique a identificação do aplicativo, também conhecida como ID do cliente, registrada para o aplicativo no Azure Active Directory.
+### -ServicePrincipalName
+Especifica o nome da entidade de serviço do aplicativo cujas permissões você deseja remover.
+Especifique a ID do aplicativo, também conhecida como ID do cliente, registrada para o aplicativo no Azure Active Directory.
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Especifica o nome UPN do usuário cujo acesso você deseja remover.
+Especifica o nome principal do usuário cujo acesso você deseja remover.
 
 ```yaml
 Type: System.String
@@ -383,9 +383,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cofrename
-Especifica o nome do cofre de chaves.
-Esse cmdlet Remove permissões para o cofre de chaves que esse parâmetro especifica.
+### -Nomedo Cofre
+Especifica o nome do cofre de chave.
+Este cmdlet remove permissões para o cofre de teclas especificado por esse parâmetro.
 
 ```yaml
 Type: System.String
@@ -399,7 +399,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -415,7 +415,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -431,19 +431,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 

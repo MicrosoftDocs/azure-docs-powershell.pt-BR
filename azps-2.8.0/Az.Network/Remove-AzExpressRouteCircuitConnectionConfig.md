@@ -6,46 +6,46 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: bf69b628224baa74014d75b4c687a15d830d13c7
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c596dffcef97dfbb1cabbc5ca2c2455a7768c25f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93771538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409929"
 ---
 # Remove-AzExpressRouteCircuitConnectionConfig
 
 ## Sinopse
 Remove uma configuração de conexão de circuito do ExpressRoute.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Remove-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Remove-AzExpressRouteCircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado circuito de rota expressa.
+## Descrição
+O cmdlet **Remove-AzExpressRoute CircuitConnectionConfig** remove uma configuração de conexão de circuito do ExpressRoute associada a um determinado Circuito de Rota Expressa.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover uma configuração de conexão de circuito de um circuito do ExpressRoute
+### Exemplo 1: Remover uma configuração de conexão de circuito de um circuito do ExpressRoute
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Exemplo 2: remover uma configuração de conexão de circuito usando o encanamento de um circuito do ExpressRoute
+### Exemplo 2: remover uma configuração de conexão de circuito usando o Piping de um Circuito do ExpressRoute
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Remove-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName|Set-AzExpressRouteCircuit
 ```
 
-## OS
+## Parâmetros
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpressRouteCircuit
-O circuito do ExpressRoute que contém a configuração de emparelhamento a ser removida.
+### -ExpressRoute Circuit
+O circuito do ExpressRoute que contém a configuração de peering a ser removido.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-O nome da configuração de conexão de circuito a ser removida.
+O nome da configuração de conexão de circuito a ser removido.
 
 ```yaml
 Type: System.String
@@ -89,7 +89,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,30 +120,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Network. Models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRoute Circuit
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+[Get-AzExpressRoute Circuit](Get-AzExpressRouteCircuit.md)
 
-[Get-AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
+[Get-AzExpressRoute CircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
 
-[Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
+[Add-AzExpressRoute CircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
-[Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
+
+[Set-AzExpressRoute Circuit](Set-AzExpressRouteCircuit.md)
+
+[Get-AzExpressRoute Circuit](Get-AzExpressRouteCircuit.md)

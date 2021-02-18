@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94113769"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406002"
 ---
 # Add-AzEnvironment
 
 ## Sinopse
-Adiciona pontos de extremidade e metadados para uma instância do Azure Resource Manager.
+Adiciona pontos de extremidade e metadados para uma instância do Gerenciador de Recursos do Azure.
 
-## SYNTAX
+## Sintaxe
 
-### Nome (padrão)
+### Nome (Padrão)
 ```
 Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-ServiceEndpoint] <String>]
  [[-ManagementPortalUrl] <String>] [[-StorageEndpoint] <String>] [[-ActiveDirectoryEndpoint] <String>]
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### Descobertas
+### Descoberta
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet Add-AzEnvironment adiciona pontos de extremidade e metadados para habilitar cmdlets do Azure Resource Manager para se conectar a uma nova instância do Azure Resource Manager.
-Os ambientes internos AzureCloud e AzureChinaCloud direcionam as instâncias públicas existentes do Azure Resource Manager.
+## Descrição
+O cmdlet Add-AzEnvironment adiciona pontos de extremidade e metadados para permitir que cmdlets do Gerenciador de Recursos do Azure se conectem a uma nova instância do Gerenciador de Recursos do Azure.
+Os ambientes integrados do AzureCloud e do AzureChinaCloud visam instâncias públicas existentes do Azure Resource Manager.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: Criando e modificando um novo ambiente
+### Exemplo 1: criar e modificar um novo ambiente
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-Neste exemplo, estamos criando um novo ambiente do Azure com exemplos de pontos de extremidade usando Add-AzEnvironment, e estamos alterando o valor dos atributos ActiveDirectoryEndpoint e GraphEndpoint do ambiente criado usando o cmdlet Set-AzEnvironment.
+Neste exemplo, estamos criando um novo ambiente do Azure com pontos de extremidade de exemplo usando o Add-AzEnvironment e, em seguida, estamos alterando o valor dos atributos ActiveDirectoryEndpoint e GraphEndpoint do ambiente criado usando o cmdlet Set-AzEnvironment.
 
-### Exemplo 2: descobrindo um novo ambiente via URI
+### Exemplo 2: descobrir um novo ambiente por meio do Uri
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-Neste exemplo, estamos descobrindo um novo ambiente do Azure do https://configuredmetadata.net URI.
+Neste exemplo, estamos descobrindo um novo ambiente do Azure a partir do `https://configuredmetadata.net` Uri.
 
-## OS
+## Parâmetros
 
 ### -ActiveDirectoryEndpoint
-Especifica a autoridade base para a autenticação do Azure Active Directory.
+Especifica a autoridade base para autenticação do Azure Active Directory.
 
 ```yaml
 Type: System.String
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-Especifica a audiência para tokens que autenticam solicitações de pontos de extremidade do Azure Resource Manager ou RDFE (gerenciamento de serviço).
+Especifica a audiência para tokens que autenticam solicitações para pontos de extremidade do Azure Resource Manager ou RDFE (Gerenciamento de Serviços).
 
 ```yaml
 Type: System.String
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -ARMEndpoint
-O ponto de extremidade do Azure Resource Manager
+O ponto de extremidade do Gerenciador de Recursos do Azure
 
 ```yaml
 Type: System.String
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Descoberta automática
-Descobre ambientes por meio de um ponto de extremidade padrão ou configurado.
+### -Descoberta Automática
+Descobre ambientes por padrão ou ponto de extremidade configurado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointResourceId
-O identificador de recurso do recurso do Azure Analysis Services.
+O identificador de recursos do recurso do Azure Analysis Services.
 
 ```yaml
 Type: System.String
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointSuffix
-O ponto de extremidade a ser usado ao se comunicar com a API do Azure log Analytics.
+O ponto de extremidade a ser usado ao se comunicar com a API do Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointResourceId
-O identificador de recurso do serviço de atestado do Azure que é o destinatário do token solicitado.
+O identificador de recurso do serviço Azure Attestation que é o destinatário do token solicitado.
 
 ```yaml
 Type: System.String
@@ -287,7 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAttestationServiceEndpointSuffix
-Sufixo DNS do serviço de atestado do Azure.
+Sufixo DNS do serviço Azure Attestation.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix
-Sufixo DNS do trabalho e dos serviços de catálogo do Azure data Lake Analytics
+Sufixo DNS dos serviços de trabalho e catálogo do Azure Data Lake Analytics
 
 ```yaml
 Type: System.String
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeStoreFileSystemEndpointSuffix
-Sufixo DNS do sistema de arquivos do Azure data Lake Store. Exemplo: azuredatalake.net
+Sufixo DNS do FileSystem do Azure Data Lake Store. Exemplo: azuredatalake.net
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultDnsSuffix
-Sufixo DNS do serviço de compartimento de chave do Azure. Exemplo é vault-int.azure-int.net
+Sufixo DNS do serviço Cofre de Chave do Azure. Exemplo é vault-int.azure-int.net
 
 ```yaml
 Type: System.String
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultServiceEndpointResourceId
-Identificador de recurso do serviço de dados de compartimento de chave do Azure que é o destinatário do token solicitado.
+Identificador de recurso do serviço de dados do Cofre de Chaves do Azure que é o destinatário do token solicitado.
 
 ```yaml
 Type: System.String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpoint
-O ponto de extremidade a ser usado ao se comunicar com a API do Azure log Analytics.
+O ponto de extremidade a ser usado ao se comunicar com a API do Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpointResourceId
-A audiência para tokens de autenticação com a API do Azure log Analytics.
+A audiência de tokens autenticando com a API do Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointResourceId
-O identificador de recurso da análise do Azure Synapse que é o destinatário do token solicitado.
+O identificador de recurso da Análise Synapse do Azure que é o destinatário do token solicitado.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointSuffix
-Sufixo DNS da análise do Azure Synapse.
+Sufixo DNS do Azure Synapse Analytics.
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -BatchEndpointResourceId
-O identificador de recurso do serviço de lote do Azure que é o destinatário do token solicitado
+O identificador de recurso do serviço Lote do Azure que é o destinatário do token solicitado
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataLakeAudience
-A audiência para tokens de autenticação com o ponto de extremidade de serviços de data Lake do AD.
+A audiência para tokens autenticando com o ponto de extremidade do AD Data Lake Services.
 
 ```yaml
 Type: System.String
@@ -452,7 +452,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, o locatário e a assinatura usados para comunicação com o Azure
+As credenciais, locatário e assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -467,7 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAdfsAuthentication
-Indica que o ADFS (serviços de Federação do Active Directory) Authentication local é permitido.
+Indica que a autenticação local dos Serviços de Federação do Active Directory (ADFS) é permitida.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -482,7 +482,7 @@ Accept wildcard characters: False
 ```
 
 ### -GalleryEndpoint
-Especifica o ponto de extremidade para a Galeria de modelos de implantação do Azure Resource Manager.
+Especifica o ponto de extremidade da galeria de modelos de implantação do Azure Resource Manager.
 
 ```yaml
 Type: System.String
@@ -497,7 +497,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphAudience
-A audiência para tokens de autenticação com o ponto de extremidade do gráfico do AD.
+A audiência para tokens autenticando com o Ponto de Extremidade do AD Graph.
 
 ```yaml
 Type: System.String
@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphEndpoint
-Especifica a URL para solicitações de gráfico (metadados do Active Directory).
+Especifica a URL das solicitações de Graph (metadados do Active Directory).
 
 ```yaml
 Type: System.String
@@ -527,7 +527,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementPortalUrl
-Especifica a URL para o portal de gerenciamento.
+Especifica a URL do Portal de Gerenciamento.
 
 ```yaml
 Type: System.String
@@ -542,7 +542,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome do ambiente a ser adicionado.
+Especifica o nome do ambiente a ser acrescentado.
 
 ```yaml
 Type: System.String
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-Especifica a URL na qual os arquivos. publishsettings podem ser baixados.
+Especifica a URL a partir da qual os arquivos .publishsettings podem ser baixados.
 
 ```yaml
 Type: System.String
@@ -572,7 +572,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceManagerEndpoint
-Especifica a URL para as solicitações do Azure Resource Manager.
+Especifica a URL das solicitações do Gerenciador de Recursos do Azure.
 
 ```yaml
 Type: System.String
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 ```
 
 ### -Escopo
-Determina o escopo das alterações de contexto, por exemplo, se as alterações se aplicam somente ao processo atual ou a todas as sessões iniciadas por esse usuário.
+Determina o escopo das alterações de contexto, por exemplo, se as alterações se aplicam apenas ao processo atual ou a todas as sessões iniciadas por esse usuário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -603,7 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceEndpoint
-Especifica o ponto de extremidade para solicitações de gerenciamento de serviço (RDFE).
+Especifica o ponto de extremidade para solicitações de Gerenciamento de Serviço (RDFE).
 
 ```yaml
 Type: System.String
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlDatabaseDnsSuffix
-Especifica o sufixo de nome de domínio dos servidores de banco de dados SQL do Azure.
+Especifica o sufixo de nome de domínio para servidores de banco de dados SQL do Azure.
 
 ```yaml
 Type: System.String
@@ -633,7 +633,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEndpoint
-Especifica o ponto de extremidade do armazenamento (BLOB, tabela, fila e arquivo).
+Especifica o ponto de extremidade para acesso de armazenamento (blob, tabela, fila e arquivo).
 
 ```yaml
 Type: System.String
@@ -648,7 +648,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficManagerDnsSuffix
-Especifica o sufixo de nome de domínio dos serviços do Gerenciador de tráfego do Azure.
+Especifica o sufixo de nome de domínio para os serviços do Gerenciador de Tráfego do Azure.
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URI
-Especifica o URI do recurso de Internet para buscar ambientes.
+### -Uri
+Especifica o URI do recurso da Internet para buscar ambientes.
 
 ```yaml
 Type: System.Uri
@@ -677,7 +677,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -708,19 +708,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. Profile. Models. PSAzureEnvironment
+### Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
