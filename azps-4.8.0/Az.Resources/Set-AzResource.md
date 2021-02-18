@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
-ms.openlocfilehash: 7a4929ffff531bb11b19b44ca9c0914c71662c8d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 82e06a4736a613111efac452eb1fced2713dc470
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93947646"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415743"
 ---
 # Set-AzResource
 
 ## Sinopse
 Modifica um recurso.
 
-## SYNTAX
+## Sintaxe
 
-### ByResourceId (padrão)
+### ByResourceId (Padrão)
 ```
 Set-AzResource [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>] [-Sku <Hashtable>]
  [-Tag <Hashtable>] [-UsePatchSemantics] [-AsJob] -ResourceId <String> [-ODataQuery <String>] [-Force]
@@ -54,24 +54,24 @@ Set-AzResource [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>] [-S
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzResource** modifica um recurso existente do Azure.
-Especifique um recurso a ser modificado por nome e tipo ou por ID.
+## Descrição
+O **cmdlet Set-AzResource** modifica um recurso existente do Azure.
+Especifique um recurso para modificar por nome e tipo ou por ID.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: modificar um recurso
+### Exemplo 1: Modificar um recurso
 ```
 PS C:\> $Resource = Get-AzResource -ResourceType Microsoft.Web/sites -ResourceGroupName ResourceGroup11 -ResourceName ContosoSite
 PS C:\> $Resource.Properties.Enabled = "False"
 PS C:\> $Resource | Set-AzResource -Force
 ```
 
-O primeiro comando obtém o recurso denominado ContosoSite usando o cmdlet Get-AzResource e, em seguida, armazena-o na variável $Resource.
+O primeiro comando obtém o recurso contosoSite usando o cmdlet Get-AzResource e, em seguida, o armazena na variável $Resource dados.
 O segundo comando modifica uma propriedade de $Resource.
-O comando final atualiza o recurso para corresponder ao $Resource.
+O comando final atualiza o recurso para corresponder $Resource.
 
-### Exemplo 2: modificar todos os recursos em um determinado grupo de recursos
+### Exemplo 2: Modificar todos os recursos em um determinado grupo de recursos
 ```
 PS C:\> $Resource = Get-AzResource -ResourceGroupName testrg
 PS C:\> $Resource | ForEach-Object { $_.Tags.Add("testkey", "testval") }
@@ -99,17 +99,17 @@ Properties        : @{key=value}
 Sku               : @{name=A0}
 ```
 
-O primeiro comando obtém os recursos no grupo de recursos testrg e, em seguida, os armazena na variável $Resource.
+O primeiro comando obtém os recursos no grupo de recursos testrg e os armazena na variável $Resource dados.
 
-O segundo comando itera em cada um desses recursos no grupo de recursos e adiciona uma nova marca a ele.
+O segundo comando itera sobre cada um desses recursos no grupo de recursos e adiciona uma nova marca a eles.
 
 O comando final atualiza cada um desses recursos.
 
-## OS
+## Parâmetros
 
 ### -ApiVersion
 Especifica a versão da API do provedor de recursos a ser usada.
-Se você não especificar uma versão, esse cmdlet usa a versão mais recente disponível.
+Se você não especificar uma versão, este cmdlet usará a versão disponível mais recente.
 
 ```yaml
 Type: System.String
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -AsJob
-Executar o cmdlet em segundo plano
+Executar cmdlet em segundo plano
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 
 ### -ExtensionResourceName
 Especifica o nome de um recurso de extensão para o recurso.
-Por exemplo, para especificar um banco de dados, use o seguinte formato: nome do banco de dados nome do servidor `/`
+Por exemplo, para especificar um banco de dados, use o seguinte formato: nome do banco de dados de nome `/` do servidor
 
 ```yaml
 Type: System.String
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceType
-Especifica o tipo de recurso para um recurso de extensão.
+Especifica o tipo de recurso de um recurso de extensão.
 Por exemplo, se o recurso de extensão for um banco de dados, especifique o seguinte: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
@@ -185,7 +185,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Forçar
 Força o comando a ser executado sem pedir confirmação do usuário.
 
 ```yaml
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-A representação do objeto do recurso a ser atualizado.
+A representação de objeto do recurso a ser atualizado.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
@@ -215,7 +215,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Kind
+### -Tipo
 Especifica o tipo de recurso do recurso.
 
 ```yaml
@@ -231,8 +231,8 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Especifica um filtro de estilo Open Data Protocol (OData).
-Esse cmdlet acrescenta esse valor à solicitação, além de outros filtros.
+Especifica um filtro de estilo OData (Open Data Protocol).
+Esse cmdlet anexa esse valor à solicitação além de outros filtros.
 
 ```yaml
 Type: System.String
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 ```
 
 ### -Plano
-Especifica as propriedades do plano de recursos, como uma tabela de hash, para o recurso.
+Especifica as propriedades do plano de recursos, como uma tabela hash, para o recurso.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -261,8 +261,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Pre
-Indica que esse cmdlet considera versões de API de pré-lançamento quando determina automaticamente qual versão usar.
+### -Pré-
+Indica que esse cmdlet considera as versões da API de pré-lançamento quando determina automaticamente qual versão usar.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Especifica o nome do grupo de recursos em que esse cmdlet modifica o recurso.
+Especifica o nome do grupo de recursos onde esse cmdlet modifica o recurso.
 
 ```yaml
 Type: System.String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Especifica a ID do recurso totalmente qualificado, incluindo a assinatura, como no exemplo a seguir: `/subscriptions/` ID da assinatura`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Especifica a ID de recurso totalmente qualificada, incluindo a assinatura, como no exemplo a `/subscriptions/` seguir: ID da assinatura`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -SKU
-Especifica o objeto SKU do recurso como uma tabela de hash.
+Especifica o objeto SKU do recurso como uma tabela hash.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -368,8 +368,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Marca
-Pares de valores chave na forma de uma tabela de hash. Por exemplo: @ {Key0 = "value0"; key1 = $null; Key2 = "value2"}
+### -Tag
+Pares de valor-chave na forma de uma tabela hash. Por exemplo: @{key0="value0";key1=$null;key2="value2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -413,7 +413,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -429,7 +429,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -445,27 +445,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ResourceManager. cmdlets. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
 
-### System. String
+### System.String
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## EXIBE
+## Saídas
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Localizar-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
