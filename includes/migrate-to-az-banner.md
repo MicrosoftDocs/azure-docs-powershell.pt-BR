@@ -1,12 +1,14 @@
 ---
 ms.topic: include
-ms.date: 09/03/2020
-ms.openlocfilehash: 7d25bfbc7b7efbb2a96209f6e485c07c2be2bd57
-ms.sourcegitcommit: 6071038ed955107220a01156550a541bf68d0266
+ms.date: 02/12/2021
+ms.openlocfilehash: 78920c064b776c4b2bc219a6d02810d34d64ae4f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "89496874"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100515041"
 ---
 > [!IMPORTANT]
-> Você está em uma página da Web de uma versão desatualizada do Azure PowerShell. Todas as versões do módulo AzureRM PowerShell estão desatualizadas, mas o suporte continua. Agora o módulo Az PowerShell é o módulo do PowerShell recomendado para interagir com o Azure. Para começar a usar o módulo do Az PowerShell, confira [_Instalar o Azure PowerShell_](https://docs.microsoft.com/powershell/azure/install-az-ps). Para saber como migrar para o módulo Az PowerShell, confira [_Migrar o Azure PowerShell do AzureRM para o Az_](https://aka.ms/azpsmigrate).
+> Como os módulos do AZ PowerShell agora têm todas as funcionalidades dos módulos do AzureRM PowerShell e muito mais, vamos desativar os módulos do AzureRM PowerShell em 29 de fevereiro de 2024.
+
+> Para evitar interrupções de serviço, [atualize seus scripts](https://aka.ms/azpsmigrate) que usam módulos do AzureRM PowerShell para usar módulos do AZ PowerShell em 29 de fevereiro de 2024. Para atualizar seus scripts automaticamente, siga o [guia de início rápido](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
