@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: da6460bf0a1126a11345336e4d55c300728bbd66
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 61125ae7d9fa78ec9f121cc9b60610258ad2c67c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100117601"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405390"
 ---
 # Add-AzKeyVaultKey
 
@@ -116,11 +116,11 @@ Use este cmdlet para adicionar teclas usando qualquer um dos seguintes métodos:
 - Crie uma chave no software no serviço Cofre de Chave.
 - Importe uma chave do seu próprio módulo de segurança de hardware (HSM) para HSMs no serviço Cofre de Teclas.
 - Importe uma chave de um arquivo .pfx no computador.
-- Importe uma chave de um arquivo .pfx em seu computador para módulos de segurança de hardware (HSMs) no serviço Cofre de Teclas.
+- Importe uma chave de um arquivo .pfx no seu computador para módulos de segurança de hardware (HSMs) no serviço Cofre de Teclas.
 Para qualquer uma dessas operações, você pode fornecer atributos principais ou aceitar configurações padrão.
 Se você criar ou importar uma chave com o mesmo nome de uma chave existente no seu cofre de chaves, a chave original será atualizada com os valores especificados para a nova chave. Você pode acessar os valores anteriores usando o URI específico de versão para essa versão da chave. Para saber mais sobre as principais versões e a estrutura do URI, consulte [Sobre](http://go.microsoft.com/fwlink/?linkid=518560) Chaves e Segredos na documentação da API REST do Cofre de Chaves.
 Observação: para importar uma chave do seu próprio módulo de segurança de hardware, primeiro você deve gerar um pacote BYOK (um arquivo com uma extensão de nome de arquivo .byok) usando o conjunto de ferramentas BYOK do Azure Key Vault. Para obter mais informações, consulte Como gerar e transferir HSM-Protected chaves do Cofre de Teclas [do Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
-Como prática ideal, fazer o back up da chave depois que ela for criada ou atualizada usando o cmdlet Backup-AzKeyVaultKey usuário. Não há nenhuma funcionalidade de preenchimento indefinível, portanto, se você excluir acidentalmente sua chave ou excluí-la e mudar de ideia, a chave não será recuperável, a menos que você tenha um backup dela que possa restaurar.
+Como prática ideal, fazer o back up da chave depois que ela for criada ou atualizada usando o cmdlet Backup-AzKeyVaultKey usuário. Não há funcionalidade de preenchimento indefinível, portanto, se você excluir acidentalmente sua chave ou excluí-la e mudar de ideia, a chave não poderá ser recuperada, a menos que você tenha um backup dela que possa restaurar.
 
 ## Exemplos
 
@@ -141,7 +141,7 @@ Purge Disabled : False
 Tags           :
 ```
 
-Esse comando cria uma chave protegida por software chamada ITSoftware no cofre de chave chamado Contoso.
+Esse comando cria uma chave protegida por software chamada ITSoftware no cofre de chaves chamado Contoso.
 
 ### Exemplo 2: Criar uma chave protegida por HSM
 ```powershell
@@ -209,10 +209,10 @@ Tags           :
 ```
 
 Esse comando importa a chave chamada ITByok do local especificado pelo parâmetro *KeyFilePath.* A chave importada é uma chave protegida por HSM.
-Para importar uma chave do seu próprio módulo de segurança de hardware, primeiro você deve gerar um pacote BYOK (um arquivo com uma extensão de nome de arquivo .byok) usando o conjunto de ferramentas BYOK do Cofre de Chave do Azure.
+Para importar uma chave do seu próprio módulo de segurança de hardware, primeiro você deve gerar um pacote BYOK (um arquivo com uma extensão de nome de arquivo .byok) usando o conjunto de ferramentas BYOK do Cofre de Teclas do Azure.
 Para obter mais informações, consulte Como gerar e transferir HSM-Protected chaves do Cofre de Teclas [do Azure.](http://go.microsoft.com/fwlink/?LinkId=522252)
 
-### Exemplo 5: importar uma chave protegida por software
+### Exemplo 5: Importar uma chave protegida por software
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -232,7 +232,7 @@ Tags           :
 
 O primeiro comando converte uma cadeia de caracteres em uma cadeia de caracteres segura usando o cmdlet **ConvertTo-SecureString** e, em seguida, armazena essa cadeia de caracteres na variável $Password. Para obter mais informações, digite `Get-Help
 ConvertTo-SecureString` .
-O segundo comando cria uma senha de software no cofre de teclas contoso. O comando especifica o local da chave e a senha armazenadas no $Password.
+O segundo comando cria uma senha de software no cofre de teclas contoso. O comando especifica o local da chave e a senha armazenadas $Password.
 
 ### Exemplo 6: importar uma chave e atribuir atributos
 ```powershell
@@ -337,7 +337,7 @@ Accept wildcard characters: False
 ```
 
 ### -Desabilitar
-Indica que a chave que você está adicionando está definida como um estado inicial de desabilitação. Qualquer tentativa de uso da chave falhará. Use este parâmetro se você estiver pré-carregar as teclas que pretende habilitar mais tarde.
+Indica que a chave que você está adicionando está definida como um estado inicial de desabilitado. Qualquer tentativa de usar a chave falhará. Use este parâmetro se você estiver pré-carregar as teclas que pretende habilitar mais tarde.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -512,7 +512,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nome
-Especifica o nome da chave a ser adicionar ao cofre de teclas. Este cmdlet construirá o nome de domínio totalmente qualificado (FQDN) de uma chave com base no nome especificado por esse parâmetro, o nome do cofre de chave e seu ambiente atual. O nome deve ser uma cadeia de caracteres de 1 a 63 caracteres com apenas 0 a 9, a-z, A-Z e - (o símbolo de traço).
+Especifica o nome da chave a ser adicionar ao cofre de chaves. Este cmdlet construirá o nome de domínio totalmente qualificado (FQDN) de uma chave com base no nome especificado por esse parâmetro, o nome do cofre de chave e seu ambiente atual. O nome deve ser uma cadeia de caracteres de 1 a 63 caracteres com apenas 0 a 9, a-z, A-Z e - (o símbolo de traço).
 
 ```yaml
 Type: System.String
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 ```
 
 ### -Nomedo Cofre
-Especifica o nome do cofre de chave ao qual este cmdlet adiciona a chave. Esse cmdlet construirá o FQDN de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente atual.
+Especifica o nome do cofre de chave ao qual este cmdlet adiciona a chave. Este cmdlet construirá o FQDN de um cofre de teclas com base no nome especificado por esse parâmetro e no ambiente atual.
 
 ```yaml
 Type: System.String
@@ -655,4 +655,3 @@ Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVa
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)

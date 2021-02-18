@@ -3,19 +3,19 @@ external help file: Microsoft.WindowsAzure.Commands.SqlDatabase.dll-Help.xml
 ms.assetid: CB601E21-424D-4B09-85E5-A4B2A5068267
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 2b7674cb5b7abc489dc6aa6d3746f499b9686312
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 7716587787515221a6e016436a6e3d030c1ab0eb
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "93946403"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405611"
 ---
 # Stop-AzureSqlDatabaseCopy
 
 ## Sinopse
-Finaliza uma relação de cópia contínua.
+Termina uma relação de cópia contínua.
 
-## SYNTAX
+## Sintaxe
 
 ### ByInputObject
 ```
@@ -37,45 +37,45 @@ Stop-AzureSqlDatabaseCopy -ServerName <String> -DatabaseName <String> [-PartnerS
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **Stop-AzureSqlDatabaseCopy** Finaliza uma relação de cópia contínua.
-Esse cmdlet interrompe a movimentação de dados entre o banco de dados de origem e o banco de dados secundário ou de destino e, em seguida, altera o estado do banco de dados secundário para ser um banco de dados online autônomo.
+## Descrição
+O cmdlet **Stop-AzureSqlDatabaseCopy** termina uma relação de cópia contínua.
+Esse cmdlet interrompe o movimento de dados entre o banco de dados de origem e o banco de dados secundário ou de destino e altera o estado do banco de dados secundário para ser um banco de dados online autônomo.
 
-Há duas maneiras de finalizar uma relação de cópia contínua, rescisão ou término planejado e rescisão forçado com possível perda de dados.
-No servidor que hospeda o banco de dados de origem, você pode executar esse cmdlet no modo de término ou de término forçado.
-No servidor que hospeda o banco de dados secundário, você deve usar o modo de terminação forçado.
+Há duas maneiras de encerrar uma relação de cópia contínua, rescisão ou rescisão planejada e rescisão forçada com possível perda de dados.
+No servidor que hospeda o banco de dados de origem, você pode executar esse cmdlet no modo de rescisão ou rescisão forçada.
+No servidor que hospeda o banco de dados secundário, você deve usar o modo de rescisão forçada.
 
-Uma conclusão planejada aguarda até todas as transações confirmadas no banco de dados de origem, no momento em que você executar o cmdlet, foram duplicadas para o banco de dados secundário.
-A rescisão forçada não aguarda a replicação de nenhuma transação confirmada pendente e pode causar possível perda de dados no banco de dados secundário.
+Uma rescisão planejada espera até que todas as transações comprometidas no banco de dados de origem, no momento em que você executar o cmdlet, tenham sido replicadas para o banco de dados secundário.
+A rescisão forçada não espera a replicação de quaisquer transações pendentes comprometidas e pode causar uma possível perda de dados no banco de dados secundário.
 
-Embora o status de replicação esteja pendente, somente a terminação forçada pode encerrar com êxito uma relação de cópia contínua.
-Se o status de replicação estiver pendente, a rescisão não forçada não será aceita.
+Embora o status de replicação seja PENDENTE, somente a rescisão forçada pode encerrar com êxito uma relação de cópia contínua.
+Se o status de replicação estiver PENDENTE, não há suporte para rescisão forçada.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: encerrar uma relação de cópia contínua
+### Exemplo 1: Encerrar uma relação de cópia contínua
 ```
 PS C:\>Stop-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders" -PartnerServer "bk0b8kf658"
 ```
 
-Esse comando encerra a relação de cópia contínua do banco de dados chamado pedidos no servidor chamado lpqd0zbr8y.
+Esse comando encerra a relação de cópia contínua do banco de dados chamado Pedidos no servidor chamado lpqd0zbr8y.
 O servidor chamado bk0b8kf658 hospeda o banco de dados secundário.
 
-### Exemplo 2: finalizar forçosamente uma relação de cópia contínua
+### Exemplo 2: encerrar uma relação de cópia contínua
 ```
 PS C:\>$DatabaseCopy = Get-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -DatabaseName "Orders"
 PS C:\> $DatabaseCopy | Stop-AzureSqlDatabaseCopy -ServerName "lpqd0zbr8y" -ForcedTermination
 ```
 
-O primeiro comando obtém a relação de cópia de banco de dados para o banco de dados chamado Orders no servidor chamado lpqd0zbr8y.
+O primeiro comando obtém a relação de cópia de banco de dados do banco de dados chamado Pedidos no servidor chamado lpqd0zbr8y.
 
-O segundo comando finaliza forçosamente uma relação de cópia contínua do servidor que hospeda o banco de dados secundário.
+O segundo comando encerrará uma relação de cópia contínua do servidor que hospeda o banco de dados secundário.
 
-## OS
+## Parâmetros
 
 ### -Banco de dados
-Especifica um objeto que representa o banco de dados SQL de origem do Azure.
-Esse cmdlet termina a relação de cópia contínua do banco de dados que esse parâmetro especifica.
+Especifica um objeto que representa o banco de dados SQL do Azure de origem.
+Este cmdlet encerra a relação de cópia contínua do banco de dados especificado por esse parâmetro.
 
 ```yaml
 Type: Database
@@ -91,8 +91,8 @@ Accept wildcard characters: False
 
 ### -DatabaseCopy
 Especifica um objeto que representa um banco de dados.
-Esse cmdlet termina a relação de cópia contínua do banco de dados que esse parâmetro especifica.
-Esse parâmetro aceita entrada de pipeline.
+Este cmdlet encerra a relação de cópia contínua do banco de dados especificado por esse parâmetro.
+Este parâmetro aceita a entrada de pipeline.
 
 ```yaml
 Type: DatabaseCopy
@@ -106,9 +106,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DatabaseName
+### -Nomedo Banco de Dados
 Especifica o nome de um banco de dados.
-Esse cmdlet termina a relação de cópia contínua do banco de dados que esse parâmetro especifica.
+Este cmdlet encerra a relação de cópia contínua do banco de dados especificado por esse parâmetro.
 
 ```yaml
 Type: String
@@ -122,7 +122,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
+### -Forçar
 Força o comando a ser executado sem pedir confirmação do usuário.
 
 ```yaml
@@ -138,10 +138,10 @@ Accept wildcard characters: False
 ```
 
 ### -ForcedTermination
-Indica que esse cmdlet causa o encerramento forçado da relação de cópia contínua.
+Indica que esse cmdlet causa rescisão forçada da relação de cópia contínua.
 A rescisão forçada pode causar perda de dados.
 Para executar esse cmdlet em um servidor que hospeda o banco de dados de destino, você deve especificar esse parâmetro.
-Para executar esse cmdlet em um servidor que hospeda o banco de dados de origem, se o banco de dados secundário estiver indisponível, você deve especificar esse parâmetro.
+Para executar esse cmdlet em um servidor que hospeda o banco de dados de origem, se o banco de dados secundário não estiver disponível, especifique esse parâmetro.
 
 ```yaml
 Type: SwitchParameter
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 
 ### -PartnerDatabase
 Especifica o nome do banco de dados secundário.
-Se você especificar um nome, ele deve corresponder ao nome do banco de dados de origem.
+Se você especificar um nome, ele deverá corresponder ao nome do banco de dados de origem.
 
 ```yaml
 Type: String
@@ -187,8 +187,8 @@ Accept wildcard characters: False
 ```
 
 ### -Perfil
-Especifica o perfil do Azure do qual este cmdlet lê.
-Se você não especificar um perfil, esse cmdlet lerá do perfil padrão local.
+Especifica o perfil do Azure do qual este cmdlet é lido.
+Se você não especificar um perfil, esse cmdlet será lido do perfil padrão local.
 
 ```yaml
 Type: AzureSMProfile
@@ -202,7 +202,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nomedoservidor
+### -ServerName
 Especifica o nome do servidor no qual o banco de dados de origem reside.
 
 ```yaml
@@ -217,7 +217,7 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado.
+Mostra o que acontece se o cmdlet for executado.
 O cmdlet não é executado.
 
 ```yaml
@@ -249,27 +249,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## Entradas
 
-### Microsoft. WindowsAzure. Commands. SQLDatabase. Model. DatabaseCopy
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Model.DatabaseCopy
 
-### Microsoft. WindowsAzure. Commands. SQLDatabase. Services. Server. Database
+### Microsoft.WindowsAzure.Commands.SqlDatabase.Services.Server.Database
 
-## EXIBE
+## Saídas
 
-### Nenhuma
+### Nenhum
 
-## INFORMA
-* Autenticação: esse cmdlet requer autenticação baseada em certificado. Para obter um exemplo de como usar a autenticação baseada em certificado para definir a assinatura atual, consulte o cmdlet **New-AzureSqlDatabaseServerContext** .
-* Restrições: no servidor que hospeda o banco de dados secundário, há suporte somente para encerramento forçado.
-* Impacto da rescisão no antigo banco de dados secundário: após a rescisão, o banco de dados secundário se torna um banco de dados independente. Se a propagação já estiver concluída no banco de dados secundário, após o término, este banco de dados está aberto para acesso total. Se o banco de dados de origem for um banco de dados de leitura e gravação, o primeiro banco de dados secundário se tornará um banco de dados de leitura-gravação.
+## Notas
+* Autenticação: esse cmdlet requer autenticação baseada em certificado. Para ver um exemplo de como usar a autenticação baseada em certificado para definir a assinatura atual, consulte o cmdlet **New-AzureSqlDatabaseServerContext.**
+* Restrições: no servidor que hospeda o banco de dados secundário, há suporte apenas para rescisão forçada.
+* Impacto da rescisão no antigo banco de dados secundário: após a rescisão, o banco de dados secundário torna-se um banco de dados independente. Se a semeação já tiver sido concluída no banco de dados secundário, após a rescisão, esse banco de dados será aberto para acesso total. Se o banco de dados de origem for um banco de dados de leitura-gravação, o antigo banco de dados secundário também se tornará um banco de dados de leitura-gravação.
 
-  Se a propagação estiver em andamento, a propagação será abortada, e o antigo banco de dados secundário nunca se tornará visível no servidor que hospeda o banco de dados secundário.
+  Se o semeamento estiver em andamento, a semeação será cancelada e o antigo banco de dados secundário nunca ficará visível no servidor que hospeda o banco de dados secundário.
 
-* Você pode definir o banco de dados de origem como modo somente leitura. Isso garante que os bancos de dados secundários e de origem sejam sincronizados após a rescisão e certifique-se de que nenhuma transação seja comprometida durante a rescisão. Quando o encerramento terminar, defina a fonte de volta para o modo de leitura-gravação. Opcionalmente, você também pode definir o antigo banco de dados secundário para o modo de leitura-gravação.
-* Monitoramento: para verificar o status das operações na origem e no destino da relação de cópia contínua, use o cmdlet **Get-AzureSqlDatabaseOperation** .
+* Você pode definir o banco de dados de origem para o modo somente leitura. Isso garante que os bancos de dados de origem e secundários sejam sincronizados após a rescisão e garante que nenhuma transação seja comprometida durante a rescisão. Quando a rescisão terminar, de definir a origem de volta para o modo de leitura e gravação. Opcionalmente, você também pode definir o antigo banco de dados secundário para o modo de leitura-gravação.
+* Monitoramento: para verificar o status das operações na origem e no destino da relação de cópia contínua, use o cmdlet **Get-AzureSqlDatabaseOperation.**
 
 ## LINKS RELACIONADOS
 
@@ -277,9 +277,9 @@ Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,
 
 [Operações para bancos de dados SQL do Azure](https://msdn.microsoft.com/en-us/library/azure/dn505719.aspx)
 
-[Parar cópia do banco de dados](https://msdn.microsoft.com/en-us/library/dn509573.aspx)
+[Parar Cópia do Banco de Dados](https://msdn.microsoft.com/en-us/library/dn509573.aspx)
 
-[Cmdlets do banco de dados SQL do Azure](./Azure.SQLDatabase.md)
+
 
 [Get-AzureSqlDatabaseCopy](./Get-AzureSqlDatabaseCopy.md)
 
