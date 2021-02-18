@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
-ms.openlocfilehash: 503f7be9d4d7f595ac8d337568038d7e7e724d1f
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 5846435df4921e425e12e908539849fda0bd2472
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93773824"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405730"
 ---
-# <span data-ttu-id="4f86f-101">New-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="4f86f-101">New-AzSqlSyncMember</span></span>
+# <span data-ttu-id="a5aa2-101">New-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="a5aa2-101">New-AzSqlSyncMember</span></span>
 
-## <span data-ttu-id="4f86f-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="4f86f-102">SYNOPSIS</span></span>
-<span data-ttu-id="4f86f-103">Cria um membro de sincronização do banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-103">Creates an Azure SQL Database Sync Member.</span></span>
+## <span data-ttu-id="a5aa2-102">Sinopse</span><span class="sxs-lookup"><span data-stu-id="a5aa2-102">SYNOPSIS</span></span>
+<span data-ttu-id="a5aa2-103">Cria um Membro de Sincronização de Banco de Dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-103">Creates an Azure SQL Database Sync Member.</span></span>
 
-## <span data-ttu-id="4f86f-104">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="4f86f-104">SYNTAX</span></span>
+## <span data-ttu-id="a5aa2-104">Sintaxe</span><span class="sxs-lookup"><span data-stu-id="a5aa2-104">SYNTAX</span></span>
 
-### <span data-ttu-id="4f86f-105">AzureSqlDatabase (padrão)</span><span class="sxs-lookup"><span data-stu-id="4f86f-105">AzureSqlDatabase (Default)</span></span>
+### <span data-ttu-id="a5aa2-105">AzureSqlDatabase (Padrão)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-105">AzureSqlDatabase (Default)</span></span>
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -MemberServerName <String>
  -MemberDatabaseName <String> -MemberDatabaseCredential <PSCredential> [-SyncDirection <String>]
@@ -27,7 +27,7 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -MemberServerNam
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="4f86f-106">OnPremisesDatabaseSyncAgentComponent</span><span class="sxs-lookup"><span data-stu-id="4f86f-106">OnPremisesDatabaseSyncAgentComponent</span></span>
+### <span data-ttu-id="a5aa2-106">OnPremisesDatabaseSyncAgentComponent</span><span class="sxs-lookup"><span data-stu-id="a5aa2-106">OnPremisesDatabaseSyncAgentComponent</span></span>
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SyncAgentResourceGroupName <String>
  -SyncAgentServerName <String> -SyncAgentName <String> -SqlServerDatabaseId <String> [-SyncDirection <String>]
@@ -35,7 +35,7 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SyncAgentResour
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="4f86f-107">OnPremisesDatabaseSyncAgentResourceID</span><span class="sxs-lookup"><span data-stu-id="4f86f-107">OnPremisesDatabaseSyncAgentResourceID</span></span>
+### <span data-ttu-id="a5aa2-107">OnPremisesDatabaseSyncAgentResourceID</span><span class="sxs-lookup"><span data-stu-id="a5aa2-107">OnPremisesDatabaseSyncAgentResourceID</span></span>
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDatabaseId <String>
  -SyncAgentResourceID <String> [-SyncDirection <String>] [-SyncGroupName] <String> [-ServerName] <String>
@@ -43,12 +43,12 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDataba
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="4f86f-108">DESCRITIVO</span><span class="sxs-lookup"><span data-stu-id="4f86f-108">DESCRIPTION</span></span>
-<span data-ttu-id="4f86f-109">O cmdlet **New-AzSqlSyncMember** cria um membro de sincronização do banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-109">The **New-AzSqlSyncMember** cmdlet creates an Azure SQL Database Sync Member.</span></span>
+## <span data-ttu-id="a5aa2-108">Descrição</span><span class="sxs-lookup"><span data-stu-id="a5aa2-108">DESCRIPTION</span></span>
+<span data-ttu-id="a5aa2-109">O **cmdlet New-AzSqlSyncMember** cria um Membro de Sincronização de Banco de Dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-109">The **New-AzSqlSyncMember** cmdlet creates an Azure SQL Database Sync Member.</span></span>
 
-## <span data-ttu-id="4f86f-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="4f86f-110">EXAMPLES</span></span>
+## <span data-ttu-id="a5aa2-110">Exemplos</span><span class="sxs-lookup"><span data-stu-id="a5aa2-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="4f86f-111">Exemplo 1: criar um membro de sincronização para um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-111">Example 1: Create a sync member for an Azure SQL database.</span></span>
+### <span data-ttu-id="a5aa2-111">Exemplo 1: Criar um membro de sincronização para um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-111">Example 1: Create a sync member for an Azure SQL database.</span></span>
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -70,9 +70,9 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-<span data-ttu-id="4f86f-112">Esse comando cria um membro de sincronização para um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-112">This command creates a sync member for an Azure SQL database.</span></span>
+<span data-ttu-id="a5aa2-112">Esse comando cria um membro de sincronização para um banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-112">This command creates a sync member for an Azure SQL database.</span></span>
 
-### <span data-ttu-id="4f86f-113">Exemplo 2: criar um membro de sincronização para um banco de dados do SQL Server local</span><span class="sxs-lookup"><span data-stu-id="4f86f-113">Example 2: Create a sync member for an on-premises SQL Server database</span></span>
+### <span data-ttu-id="a5aa2-113">Exemplo 2: Criar um membro de sincronização para um banco de dados do SQL Server local</span><span class="sxs-lookup"><span data-stu-id="a5aa2-113">Example 2: Create a sync member for an on-premises SQL Server database</span></span>
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -95,12 +95,12 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-<span data-ttu-id="4f86f-114">Esse comando cria um membro de sincronização para um banco de dados SQL local.</span><span class="sxs-lookup"><span data-stu-id="4f86f-114">This command creates a sync member for an on-premises SQL database.</span></span>
+<span data-ttu-id="a5aa2-114">Esse comando cria um membro de sincronização para um banco de dados SQL local.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-114">This command creates a sync member for an on-premises SQL database.</span></span>
 
-## <span data-ttu-id="4f86f-115">OS</span><span class="sxs-lookup"><span data-stu-id="4f86f-115">PARAMETERS</span></span>
+## <span data-ttu-id="a5aa2-115">Parâmetros</span><span class="sxs-lookup"><span data-stu-id="a5aa2-115">PARAMETERS</span></span>
 
-### <span data-ttu-id="4f86f-116">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="4f86f-116">-DatabaseName</span></span>
-<span data-ttu-id="4f86f-117">O nome do banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-117">The name of the Azure SQL Database.</span></span>
+### <span data-ttu-id="a5aa2-116">-Nomedo Banco de Dados</span><span class="sxs-lookup"><span data-stu-id="a5aa2-116">-DatabaseName</span></span>
+<span data-ttu-id="a5aa2-117">O nome do Banco de Dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-117">The name of the Azure SQL Database.</span></span>
 
 ```yaml
 Type: System.String
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="4f86f-118">-DefaultProfile</span></span>
-<span data-ttu-id="4f86f-119">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure</span><span class="sxs-lookup"><span data-stu-id="4f86f-119">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="a5aa2-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="a5aa2-118">-DefaultProfile</span></span>
+<span data-ttu-id="a5aa2-119">As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="a5aa2-119">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -129,8 +129,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-120">-MemberDatabaseCredential</span><span class="sxs-lookup"><span data-stu-id="4f86f-120">-MemberDatabaseCredential</span></span>
-<span data-ttu-id="4f86f-121">A credencial (nome de usuário e senha) do banco de dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="4f86f-121">The credential (username and password) of the Azure SQL Database.</span></span>
+### <span data-ttu-id="a5aa2-120">-MemberDatabaseCredential</span><span class="sxs-lookup"><span data-stu-id="a5aa2-120">-MemberDatabaseCredential</span></span>
+<span data-ttu-id="a5aa2-121">A credencial (nome de usuário e senha) do Banco de Dados SQL do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-121">The credential (username and password) of the Azure SQL Database.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -144,8 +144,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-122">-MemberDatabaseName</span><span class="sxs-lookup"><span data-stu-id="4f86f-122">-MemberDatabaseName</span></span>
-<span data-ttu-id="4f86f-123">O nome do banco de dados SQL do Azure do banco de dados membro.</span><span class="sxs-lookup"><span data-stu-id="4f86f-123">The Azure SQL Database name of the member database.</span></span>
+### <span data-ttu-id="a5aa2-122">-MemberDatabaseName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-122">-MemberDatabaseName</span></span>
+<span data-ttu-id="a5aa2-123">O nome do banco de dados SQL do Azure do banco de dados do membro.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-123">The Azure SQL Database name of the member database.</span></span>
 
 ```yaml
 Type: System.String
@@ -159,8 +159,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-124">-MemberDatabaseType</span><span class="sxs-lookup"><span data-stu-id="4f86f-124">-MemberDatabaseType</span></span>
-<span data-ttu-id="4f86f-125">O tipo de banco de dados do membro.</span><span class="sxs-lookup"><span data-stu-id="4f86f-125">The database type of the member database.</span></span>
+### <span data-ttu-id="a5aa2-124">-MemberDatabaseType</span><span class="sxs-lookup"><span data-stu-id="a5aa2-124">-MemberDatabaseType</span></span>
+<span data-ttu-id="a5aa2-125">O tipo de banco de dados do banco de dados do membro.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-125">The database type of the member database.</span></span>
 
 ```yaml
 Type: System.String
@@ -175,8 +175,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-126">-MemberServerName</span><span class="sxs-lookup"><span data-stu-id="4f86f-126">-MemberServerName</span></span>
-<span data-ttu-id="4f86f-127">O nome do SQL Server do Azure do banco de dados membro.</span><span class="sxs-lookup"><span data-stu-id="4f86f-127">The Azure SQL Server Name of the member database.</span></span>
+### <span data-ttu-id="a5aa2-126">-MemberServerName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-126">-MemberServerName</span></span>
+<span data-ttu-id="a5aa2-127">O Nome do SQL Server do Azure do banco de dados do membro.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-127">The Azure SQL Server Name of the member database.</span></span>
 
 ```yaml
 Type: System.String
@@ -190,8 +190,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-128">-Nome</span><span class="sxs-lookup"><span data-stu-id="4f86f-128">-Name</span></span>
-<span data-ttu-id="4f86f-129">O nome do membro de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-129">The sync member name.</span></span>
+### <span data-ttu-id="a5aa2-128">-Nome</span><span class="sxs-lookup"><span data-stu-id="a5aa2-128">-Name</span></span>
+<span data-ttu-id="a5aa2-129">O nome do membro de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-129">The sync member name.</span></span>
 
 ```yaml
 Type: System.String
@@ -205,8 +205,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-130">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="4f86f-130">-ResourceGroupName</span></span>
-<span data-ttu-id="4f86f-131">O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="4f86f-131">The name of the resource group.</span></span>
+### <span data-ttu-id="a5aa2-130">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-130">-ResourceGroupName</span></span>
+<span data-ttu-id="a5aa2-131">O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-131">The name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -220,8 +220,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-132">-Nomedoservidor</span><span class="sxs-lookup"><span data-stu-id="4f86f-132">-ServerName</span></span>
-<span data-ttu-id="4f86f-133">O nome do Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="4f86f-133">The name of the Azure SQL Server.</span></span>
+### <span data-ttu-id="a5aa2-132">-ServerName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-132">-ServerName</span></span>
+<span data-ttu-id="a5aa2-133">O nome do SQL Server do Azure.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-133">The name of the Azure SQL Server.</span></span>
 
 ```yaml
 Type: System.String
@@ -235,8 +235,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-134">-SqlServerDatabaseId</span><span class="sxs-lookup"><span data-stu-id="4f86f-134">-SqlServerDatabaseId</span></span>
-<span data-ttu-id="4f86f-135">A ID do banco de dados do SQL Server que é conectada pelo agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-135">The id of the SQL server database which is connected by the sync agent.</span></span>
+### <span data-ttu-id="a5aa2-134">-SqlServerDatabaseId</span><span class="sxs-lookup"><span data-stu-id="a5aa2-134">-SqlServerDatabaseId</span></span>
+<span data-ttu-id="a5aa2-135">A id do banco de dados do sql server que está conectado pelo agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-135">The id of the SQL server database which is connected by the sync agent.</span></span>
 
 ```yaml
 Type: System.String
@@ -250,8 +250,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-136">-SyncAgentName</span><span class="sxs-lookup"><span data-stu-id="4f86f-136">-SyncAgentName</span></span>
-<span data-ttu-id="4f86f-137">O nome do agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-137">The name of the sync agent.</span></span>
+### <span data-ttu-id="a5aa2-136">-SyncAgentName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-136">-SyncAgentName</span></span>
+<span data-ttu-id="a5aa2-137">O nome do agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-137">The name of the sync agent.</span></span>
 
 ```yaml
 Type: System.String
@@ -265,8 +265,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-138">-SyncAgentResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="4f86f-138">-SyncAgentResourceGroupName</span></span>
-<span data-ttu-id="4f86f-139">O nome do grupo de recursos onde está o agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-139">The name of the resource group where the sync agent is under.</span></span>
+### <span data-ttu-id="a5aa2-138">-SyncAgentResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-138">-SyncAgentResourceGroupName</span></span>
+<span data-ttu-id="a5aa2-139">O nome do grupo de recursos no qual o agente de sincronização está.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-139">The name of the resource group where the sync agent is under.</span></span>
 
 ```yaml
 Type: System.String
@@ -280,8 +280,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-140">-SyncAgentResourceID</span><span class="sxs-lookup"><span data-stu-id="4f86f-140">-SyncAgentResourceID</span></span>
-<span data-ttu-id="4f86f-141">A ID do recurso do agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-141">The resource ID of the sync agent.</span></span>
+### <span data-ttu-id="a5aa2-140">-SyncAgentResourceID</span><span class="sxs-lookup"><span data-stu-id="a5aa2-140">-SyncAgentResourceID</span></span>
+<span data-ttu-id="a5aa2-141">A ID do recurso do agente de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-141">The resource ID of the sync agent.</span></span>
 
 ```yaml
 Type: System.String
@@ -295,8 +295,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-142">-SyncAgentServerName</span><span class="sxs-lookup"><span data-stu-id="4f86f-142">-SyncAgentServerName</span></span>
-<span data-ttu-id="4f86f-143">O nome do SQL Server do Azure no qual o agente de sincronização se encontra.</span><span class="sxs-lookup"><span data-stu-id="4f86f-143">The name of the Azure SQL Server where the sync agent is under.</span></span>
+### <span data-ttu-id="a5aa2-142">-SyncAgentServerName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-142">-SyncAgentServerName</span></span>
+<span data-ttu-id="a5aa2-143">O nome do SQL Server do Azure onde o agente de sincronização está.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-143">The name of the Azure SQL Server where the sync agent is under.</span></span>
 
 ```yaml
 Type: System.String
@@ -310,8 +310,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-144">-SyncDirection</span><span class="sxs-lookup"><span data-stu-id="4f86f-144">-SyncDirection</span></span>
-<span data-ttu-id="4f86f-145">A direção de sincronização deste membro de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-145">The sync direction of this sync member.</span></span>
+### <span data-ttu-id="a5aa2-144">-SyncDirection</span><span class="sxs-lookup"><span data-stu-id="a5aa2-144">-SyncDirection</span></span>
+<span data-ttu-id="a5aa2-145">A direção de sincronização deste membro de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-145">The sync direction of this sync member.</span></span>
 
 ```yaml
 Type: System.String
@@ -326,8 +326,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-146">-SyncGroupName</span><span class="sxs-lookup"><span data-stu-id="4f86f-146">-SyncGroupName</span></span>
-<span data-ttu-id="4f86f-147">O nome do grupo de sincronização.</span><span class="sxs-lookup"><span data-stu-id="4f86f-147">The sync group name.</span></span>
+### <span data-ttu-id="a5aa2-146">-SyncGroupName</span><span class="sxs-lookup"><span data-stu-id="a5aa2-146">-SyncGroupName</span></span>
+<span data-ttu-id="a5aa2-147">O nome do grupo de sincronização.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-147">The sync group name.</span></span>
 
 ```yaml
 Type: System.String
@@ -341,8 +341,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-148">-Confirme</span><span class="sxs-lookup"><span data-stu-id="4f86f-148">-Confirm</span></span>
-<span data-ttu-id="4f86f-149">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="4f86f-149">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="a5aa2-148">-Confirmar</span><span class="sxs-lookup"><span data-stu-id="a5aa2-148">-Confirm</span></span>
+<span data-ttu-id="a5aa2-149">Solicita confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-149">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -356,9 +356,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-150">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="4f86f-150">-WhatIf</span></span>
-<span data-ttu-id="4f86f-151">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="4f86f-151">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="4f86f-152">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="4f86f-152">The cmdlet is not run.</span></span>
+### <span data-ttu-id="a5aa2-150">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a5aa2-150">-WhatIf</span></span>
+<span data-ttu-id="a5aa2-151">Mostra o que acontece se o cmdlet for executado.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-151">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="a5aa2-152">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-152">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -372,24 +372,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="4f86f-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="4f86f-153">CommonParameters</span></span>
-<span data-ttu-id="4f86f-154">Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="4f86f-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="4f86f-155">Para obter mais informações, consulte [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="4f86f-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="a5aa2-153">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a5aa2-153">CommonParameters</span></span>
+<span data-ttu-id="a5aa2-154">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="a5aa2-154">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a5aa2-155">Para obter mais informações, [consulte about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="a5aa2-155">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="4f86f-156">SENSORES</span><span class="sxs-lookup"><span data-stu-id="4f86f-156">INPUTS</span></span>
+## <span data-ttu-id="a5aa2-156">Entradas</span><span class="sxs-lookup"><span data-stu-id="a5aa2-156">INPUTS</span></span>
 
-### <span data-ttu-id="4f86f-157">System. String</span><span class="sxs-lookup"><span data-stu-id="4f86f-157">System.String</span></span>
+### <span data-ttu-id="a5aa2-157">System.String</span><span class="sxs-lookup"><span data-stu-id="a5aa2-157">System.String</span></span>
 
-## <span data-ttu-id="4f86f-158">EXIBE</span><span class="sxs-lookup"><span data-stu-id="4f86f-158">OUTPUTS</span></span>
+## <span data-ttu-id="a5aa2-158">Saídas</span><span class="sxs-lookup"><span data-stu-id="a5aa2-158">OUTPUTS</span></span>
 
-### <span data-ttu-id="4f86f-159">Microsoft. Azure. Commands. Sql. datasync. Model. AzureSqlSyncMemberModel</span><span class="sxs-lookup"><span data-stu-id="4f86f-159">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel</span></span>
+### <span data-ttu-id="a5aa2-159">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel</span><span class="sxs-lookup"><span data-stu-id="a5aa2-159">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel</span></span>
 
-## <span data-ttu-id="4f86f-160">INFORMA</span><span class="sxs-lookup"><span data-stu-id="4f86f-160">NOTES</span></span>
+## <span data-ttu-id="a5aa2-160">Notas</span><span class="sxs-lookup"><span data-stu-id="a5aa2-160">NOTES</span></span>
 
-## <span data-ttu-id="4f86f-161">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="4f86f-161">RELATED LINKS</span></span>
+## <span data-ttu-id="a5aa2-161">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="a5aa2-161">RELATED LINKS</span></span>
 
-[<span data-ttu-id="4f86f-162">Get-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="4f86f-162">Get-AzSqlSyncMember</span></span>](./Get-AzSqlSyncMember.md)
+[<span data-ttu-id="a5aa2-162">Get-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="a5aa2-162">Get-AzSqlSyncMember</span></span>](./Get-AzSqlSyncMember.md)
 
-[<span data-ttu-id="4f86f-163">Set-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="4f86f-163">Set-AzSqlSyncMember</span></span>](./Set-AzSqlSyncMember.md)
 
-[<span data-ttu-id="4f86f-164">Remove-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="4f86f-164">Remove-AzSqlSyncMember</span></span>](./Remove-AzSqlSyncMember.md)
+[<span data-ttu-id="a5aa2-163">Remove-AzSqlSyncMember</span><span class="sxs-lookup"><span data-stu-id="a5aa2-163">Remove-AzSqlSyncMember</span></span>](./Remove-AzSqlSyncMember.md)
 
