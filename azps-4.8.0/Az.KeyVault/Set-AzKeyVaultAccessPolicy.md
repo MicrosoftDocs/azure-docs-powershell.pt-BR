@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94111709"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410711"
 ---
 # Set-AzKeyVaultAccessPolicy
 
 ## Sinopse
-Concede ou modifica permissões existentes para um usuário, aplicativo ou grupo de segurança para executar operações com um cofre de chaves.
+Concede ou modifica permissões existentes para que um usuário, aplicativo ou grupo de segurança execute operações com um cofre de chave.
 
-## SYNTAX
+## Sintaxe
 
-### ByUserPrincipalName (padrão)
+### ByUserPrincipalName (Padrão)
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -UserPrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -135,26 +135,26 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-Enab
  [<CommonParameters>]
 ```
 
-## DESCRITIVO
-O cmdlet **set-AzKeyVaultAccessPolicy** concede ou modifica permissões existentes para um usuário, aplicativo ou grupo de segurança para executar as operações especificadas com um cofre de chaves. Ele não modifica as permissões que outros usuários, aplicativos ou grupos de segurança têm no cofre de chaves.
+## Descrição
+O cmdlet **Set-AzKeyVaultAccessPolicy** concede ou modifica permissões existentes para que um usuário, aplicativo ou grupo de segurança execute as operações especificadas com um cofre de chave. Ele não modifica as permissões que outros usuários, aplicativos ou grupos de segurança têm no cofre de chaves.
 Se você estiver definindo permissões para um grupo de segurança, essa operação afetará apenas os usuários desse grupo de segurança.
-Todos os diretórios a seguir devem ser do mesmo diretório do Azure: 
-- O diretório padrão da assinatura do Azure em que o cofre de chaves reside.
-- O diretório do Azure que contém o usuário ou o grupo de aplicativos aos quais você está concedendo permissões.
-Exemplos de cenários quando essas condições não são atendidas e esse cmdlet não funcionará: 
-- Autorizar um usuário de outra organização a gerenciar seu cofre de chaves.
-Cada organização tem seu próprio diretório. 
+Os seguintes diretórios devem ser todos do mesmo diretório do Azure:
+- O diretório padrão da assinatura do Azure no qual reside o cofre de chave.
+- O diretório do Azure que contém o usuário ou o grupo de aplicativos ao qual você está concedendo permissões.
+Exemplos de cenários quando essas condições não são atendidas e este cmdlet não funcionará são:
+- Autorizando um usuário de uma organização diferente para gerenciar seu cofre de chaves.
+Cada organização tem seu próprio diretório.
 - Sua conta do Azure tem vários diretórios.
-Se você registrar um aplicativo em um diretório diferente do diretório padrão, não poderá autorizar esse aplicativo a usar o cofre de chaves.
+Se você registrar um aplicativo em um diretório diferente do diretório padrão, não poderá autorizar esse aplicativo a usar seu cofre de chave.
 O aplicativo deve estar no diretório padrão.
-Observe que, embora a especificação do grupo de recursos seja opcional para esse cmdlet, você deve fazê-lo para melhorar o desempenho.
+Observe que, embora especificar o grupo de recursos seja opcional para esse cmdlet, você deve fazê-lo para melhorar o desempenho.
 
 > [!NOTE]
 > Ao usar uma entidade de serviço para conceder permissões de política de acesso, você deve usar o `-BypassObjectIdValidation` parâmetro.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: conceder permissões a um usuário para um cofre de chaves e modificar as permissões
+### Exemplo 1: Conceder permissões a um usuário para um cofre de chave e modificar as permissões
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,60 +235,61 @@ Access Policies                  :
 Tags                             :
 ```
 
-O primeiro comando concede permissões para um usuário em seu Active Directory do Azure, PattiFuller@contoso.com para executar operações em chaves e segredos com um cofre de chaves chamado Contoso03Vault. O parâmetro *PassThru* resulta no objeto atualizado sendo retornado pelo cmdlet.
-O segundo comando modifica as permissões que foram concedidas ao PattiFuller@contoso.com primeiro comando, a fim de permitir a obtenção de segredos, além de definir e excluir essas permissões. As permissões para operações de chave permanecem inalteradas após esse comando.
-O último comando modifica as permissões existentes para PattiFuller@contoso.com remover todas as permissões para operações de chave. As permissões para operações secretas permanecem inalteradas após esse comando. 
+O primeiro comando concede permissões a um usuário em seu Azure Active Directory para executar operações em chaves e segredos com um cofre de chave chamado PattiFuller@contoso.com Contoso03Vault. O *parâmetro PassThru* resulta no objeto atualizado que está sendo retornado pelo cmdlet.
+O segundo comando modifica as permissões que foram concedidas no primeiro comando, para agora permitir a criação de segredos além de PattiFuller@contoso.com defini-las e excluí-las. As permissões para operações de tecla permanecem inalteradas após esse comando.
+O comando final modifica ainda mais as permissões existentes para PattiFuller@contoso.com remover todas as permissões para operações de chave. As permissões para operações secretas permanecem inalteradas após esse comando.
 
-### Exemplo 2: conceder permissões para uma entidade de serviço de aplicativo para ler e gravar segredos
+### Exemplo 2: Conceder permissões para uma entidade de serviço de aplicativo para ler e escrever segredos
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-Esse comando concede permissões para um aplicativo para um cofre de chaves chamado Contoso03Vault. O parâmetro *servicePrincipalName* especifica o aplicativo. O aplicativo deve ser registrado no Azure Active Directory. *O valor do parâmetro servicePrincipalName* deve ser o nome principal do aplicativo ou o GUID da ID do aplicativo.
-Este exemplo especifica o nome principal do serviço http://payroll.contoso.com , e o comando concede as permissões do aplicativo para ler e gravar segredos.
+Este comando concede permissões para um aplicativo para um cofre de chave chamado Contoso03Vault.
+O *parâmetro ServicePrincipalName* especifica o aplicativo. O aplicativo deve ser registrado no Azure Active Directory. O valor do parâmetro *ServicePrincipalName* deve ser o nome principal do serviço do aplicativo ou o GUID de ID do aplicativo.
+Este exemplo especifica o nome da entidade de serviço e o comando concede permissões ao aplicativo para `http://payroll.contoso.com` ler e escrever segredos.
 
-### Exemplo 3: conceder permissões para um aplicativo usando sua ID de objeto
+### Exemplo 3: Conceder permissões para um aplicativo usando sua ID de objeto
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-Esse comando concede as permissões do aplicativo para ler e gravar segredos.
-Este exemplo especifica o aplicativo que usa a ID de objeto da entidade de serviço do aplicativo.
+Esse comando concede permissões ao aplicativo para ler e escrever segredos.
+Este exemplo especifica o aplicativo usando a ID de objeto da entidade de serviço do aplicativo.
 
-### Exemplo 4: conceder permissões para um nome de usuário principal
+### Exemplo 4: Conceder permissões para um nome de entidade de usuário
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-Esse comando concede a obter, listar e definir permissões para o nome principal do usuário especificado para acessar os segredos.
+Esse comando concede permissões de obter, listar e definir permissões para o nome de usuário principal especificado para acesso a segredos.
 
-### Exemplo 5: habilitar os segredos para serem recuperados de um cofre de chaves pelo provedor de recursos Microsoft. Compute
+### Exemplo 5: Habilitar a recuperação de segredos de um cofre de chave pelo provedor de recursos Microsoft.Compute
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-Esse comando concede as permissões para que os segredos sejam recuperados do cofre da chave Contoso03Vault pelo provedor de recursos Microsoft. COMPUTE.
+Esse comando concede as permissões para que os segredos sejam recuperados do cofre de chave Contoso03Vault pelo provedor de recursos Microsoft.Compute.
 
-### Exemplo 6: conceder permissões a um grupo de segurança
+### Exemplo 6: Conceder permissões a um grupo de segurança
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-O primeiro comando usa o cmdlet Get-AzADGroup para obter todos os grupos do Active Directory. Na saída, você verá 3 grupos retornados, chamados **grupo1** , **group2** e **Group3**. Vários grupos podem ter o mesmo nome, mas sempre têm um ObjectId exclusivo. Quando mais de um grupo com o mesmo nome for retornado, use o ObjectId na saída para identificar o que você deseja usar.
-Em seguida, você usa a saída desse comando com Set-AzKeyVaultAccessPolicy para conceder permissões a group2 para o seu cofre de chaves, chamado **myownvault**. Este exemplo enumera os grupos chamados "group2" embutidos na mesma linha de comando.
-Pode haver vários grupos na lista retornada com o nome "group2".
+O primeiro comando usa o Get-AzADGroup cmdlet para obter todos os grupos do Active Directory. Na saída, você vê três grupos retornados, **denominados grupo1,** **grupo2** e **grupo3.** Vários grupos podem ter o mesmo nome, mas sempre têm uma ObjectId exclusiva. Quando mais de um grupo que tem o mesmo nome for retornado, use a ObjectId na saída para identificar o que você deseja usar.
+Em seguida, use a saída deste comando com o Set-AzKeyVaultAccessPolicy para conceder permissões ao grupo2 para o seu cofre de chaves, chamado **myownvault.** Este exemplo enumera os grupos denominados "grupo2" em linha na mesma linha de comando.
+Pode haver vários grupos na lista retornada que são chamados de "grupo2".
 Este exemplo escolhe o primeiro, indicado pelo índice \[ 0 \] na lista retornada.
 
-### Exemplo 7: conceder ao Azure acesso à proteção de informações à chave locatário gerenciada pelo cliente (BYOK)
+### Exemplo 7: Conceder acesso à Proteção de Informações do Azure à chave de locatário gerenciada pelo cliente (BYOK)
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-Esse comando autoriza a proteção de informações do Azure a usar uma chave gerenciada pelo cliente (a traga sua própria chave ou o cenário "BYOK") como a chave locatário do Azure Information Protection.
-Ao executar esse comando, especifique seu próprio nome do cofre de chaves, mas você deve especificar o parâmetro *servicePrincipalName* com o GUID **00000012-0000-0000-C000-000000000000** e especificar as permissões no exemplo.
+Este comando autoriza a Proteção de Informações do Azure a usar uma chave gerenciada pelo cliente (o cenário trazer sua própria chave ou "BYOK") como a chave de locatário da Proteção de Informações do Azure.
+Ao executar esse comando, especifique seu próprio nome de cofre de chave, mas você deve especificar o parâmetro *ServicePrincipalName* com o GUID **00000012-0000-0000-c000-00000000000** e especificar as permissões no exemplo.
 
-## OS
+## Parâmetros
 
 ### -ApplicationId
 Para uso futuro.
@@ -306,8 +307,8 @@ Accept wildcard characters: False
 ```
 
 ### -BypassObjectIdValidation
-Permite que você especifique uma ID de objeto sem validar que o objeto existe no Azure Active Directory.
-Use esse parâmetro somente se você quiser conceder acesso ao seu cofre de chaves a uma ID de objeto que se refere a um grupo de segurança delegado de outro locatário do Azure.
+Permite especificar uma ID de objeto sem validar que o objeto existe no Azure Active Directory.
+Use esse parâmetro somente se você quiser conceder acesso ao seu cofre de chave para uma ID de objeto que se refere a um grupo de segurança delegado de outro locatário do Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o Azure
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -337,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Especifica o endereço de email do usuário para o qual conceder permissões.
+Especifica o endereço de email do usuário ao qual conceder permissões.
 Esse endereço de email deve existir no diretório associado à assinatura atual e ser exclusivo.
 
 ```yaml
@@ -353,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Habilita o provedor de recursos Microsoft. Compute a recuperar segredos deste cofre de chaves quando esse cofre de chaves é referenciado na criação de recursos, por exemplo, ao criar uma máquina virtual.
+Permite que o provedor de recursos Microsoft.Compute recupere segredos desse cofre-chave quando esse cofre de chave é referenciado na criação de recursos, por exemplo, ao criar uma máquina virtual.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -368,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
-Habilita o serviço de criptografia de disco do Azure a obter segredos e a desencapsulação de chaves deste cofre de chaves.
+Habilita o serviço de criptografia de disco do Azure a obter segredos e desembrulhar chaves deste cofre de chaves.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Permite que o Azure Resource Manager obtenha os segredos deste cofre de chaves quando esse cofre de chaves é referenciado em uma implantação de modelo.
+Permite que o Gerenciador de Recursos do Azure receba segredos desse cofre de chave quando esse cofre de chave for referenciado em uma implantação de modelo.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -398,7 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### -InputObject
-Objeto do cofre de chaves
+Objeto do Cofre de Teclas
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Especifica a ID de objeto da entidade de usuário ou serviço do Azure Active Directory para a qual conceder permissões.
+Especifica a ID do objeto da entidade de usuário ou serviço no Azure Active Directory para a qual conceder permissões.
 
 ```yaml
 Type: System.String
@@ -429,7 +430,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 Retorna um objeto que representa o item com o qual você está trabalhando.
-Por padrão, esse cmdlet não gera nenhuma saída.
+Por padrão, esse cmdlet não gera saída.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -444,22 +445,22 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToCertificates
-Especifica uma matriz de permissões de certificado a serem concedidas a um usuário ou entidade de serviço.
-Os valores aceitáveis para esse parâmetro:
+Especifica uma matriz de permissões de certificado para conceder a um usuário ou entidade de serviço.
+Os valores aceitáveis para este parâmetro:
 - Obter
-- Programação
-- Remover
-- Criados
-- Importações
+- Lista
+- Excluir
+- Criar
+- Importação
 - Atualização
-- Managecontacts
-- Emissors
+- Gerenciar contatos
+- Getissuers
 - Listissuers
-- Emissores
+- Setissuers
 - Deleteissuers
 - Manageissuers
-- Gravação
-- Fazer
+- Recuperar
+- Backup
 - Restaurar
 - Purga
 
@@ -477,23 +478,23 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToKeys
-Especifica uma matriz de permissões de operações de chave a serem concedidas a um usuário ou serviço principal.
-Os valores aceitáveis para esse parâmetro:
-- Criptografá
-- Com
+Especifica uma matriz de permissões de operação chave para conceder a um usuário ou entidade de serviço.
+Os valores aceitáveis para este parâmetro:
+- Descriptografar
+- Criptografar
 - UnwrapKey
 - WrapKey
 - Verificar
-- Designa
+- Sinal
 - Obter
-- Programação
+- Lista
 - Atualização
-- Criados
-- Importações
-- Remover
-- Fazer
+- Criar
+- Importação
+- Excluir
+- Backup
 - Restaurar
-- Gravação
+- Recuperar
 - Purga
 
 ```yaml
@@ -509,16 +510,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PermissionsToSecrets
-Especifica uma matriz de permissões de operação secreta a serem concedidas a um usuário ou entidade de serviço.
-Os valores aceitáveis para esse parâmetro:
+### -PermissionsToSecsecções
+Especifica uma matriz de permissões de operação secreta para conceder a um usuário ou entidade de serviço.
+Os valores aceitáveis para este parâmetro:
 - Obter
-- Programação
-- Configurar
-- Remover
-- Fazer
+- Lista
+- Definir
+- Excluir
+- Backup
 - Restaurar
-- Gravação
+- Recuperar
 - Purga
 
 ```yaml
@@ -535,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToStorage
-Especifica as permissões da conta de armazenamento gerenciado e da operação de definição SaS a serem concedidas a um usuário ou entidade de serviço.
+Especifica permissões de operação de definição de saS e conta de armazenamento gerenciado para conceder a um usuário ou entidade de serviço.
 
 ```yaml
 Type: System.String[]
@@ -566,7 +567,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-ID do recurso do cofre de chaves
+ID do Recurso do Cofre de Chave
 
 ```yaml
 Type: System.String
@@ -580,9 +581,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Serviceprincipalnamename
-Especifica o nome principal do serviço do aplicativo para o qual conceder permissões.
-Especifique o ID do aplicativo, também conhecido como ID do cliente, registrado para o aplicativo no diretório AzureActive. O aplicativo com o nome da entidade de serviço que esse parâmetro especifica deve ser registrado no diretório do Azure que contém sua assinatura atual.
+### -ServicePrincipalName
+Especifica o nome da entidade de serviço do aplicativo ao qual conceder permissões.
+Especifique a ID do aplicativo, também conhecida como ID do cliente, registrada para o aplicativo no Diretório AzureActive. O aplicativo com o nome da entidade de serviço especificado por esse parâmetro deve ser registrado no diretório do Azure que contém sua assinatura atual.
 
 ```yaml
 Type: System.String
@@ -597,8 +598,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Especifica o nome UPN do usuário a quem conceder permissões.
-Este nome de usuário principal deve existir no diretório associado à assinatura atual.
+Especifica o nome principal do usuário ao qual conceder permissões.
+Esse nome de entidade de usuário deve existir no diretório associado à assinatura atual.
 
 ```yaml
 Type: System.String
@@ -612,9 +613,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Cofrename
-Especifica o nome de um cofre de chaves.
-Esse cmdlet modifica a política de acesso para o cofre de chaves que esse parâmetro especifica.
+### -VaultName
+Especifica o nome de um cofre de chave.
+Esse cmdlet modifica a política de acesso para o cofre de chave especificado por esse parâmetro.
 
 ```yaml
 Type: System.String
@@ -628,7 +629,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -644,7 +645,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -659,19 +660,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVaultIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
 
-### System. String
+### System.String
 
-## EXIBE
+## Saídas
 
-### Microsoft. Azure. Commands. keyvault. Models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
