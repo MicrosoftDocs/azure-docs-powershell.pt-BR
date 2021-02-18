@@ -5,41 +5,41 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: d1a353e9534cbfd2530bb67f5eeda92fbb6d72ff
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 073b32936be1e1614e495ca680a250498742ba66
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93943011"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414587"
 ---
 # Remove-AzApiManagementBackend
 
 ## Sinopse
-Remove um back-end.
+Remove um Backend.
 
-## SYNTAX
+## Sintaxe
 
 ```
 Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
-Remove um back-end especificado pelo identificador do gerenciamento de API.
+## Descrição
+Remove um back-end especificado pelo Identificador do Gerenciamento de Api.
 
-## EXEMPLOS
+## Exemplos
 
-### Exemplo 1: remover o back-end 123
+### Exemplo 1: Remover o Backend 123
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
 ```
 
-## OS
+## Parâmetros
 
-### -Backid
-Identificador do back-end existente.
-Esse parâmetro é obrigatório.
+### -BackendId
+Identificador de back-end existente.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: System.String
@@ -54,8 +54,8 @@ Accept wildcard characters: False
 ```
 
 ### -Contexto
-Instância do PsApiManagementContext.
-Esse parâmetro é obrigatório.
+Instância de PsApiManagementContext.
+Esse parâmetro é necessário.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,9 +85,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Se especificado, a operação será gravada true se a operação do caso for bem-sucedida.
+Se especificado, a gravação será verdadeira caso a operação seja bem-sucedida.
 Este parâmetro é opcional.
-O valor padrão é false.
+O valor padrão é falso.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,7 +101,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Confirme
+### -Confirmar
 Solicita confirmação antes de executar o cmdlet.
 
 ```yaml
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
+Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,25 +132,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## SENSORES
+## Entradas
 
-### Microsoft. Azure. Commands. ApiManagement. onmanagement. Models. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameter
 
-## EXIBE
+## Saídas
 
-### System. Boolean
+### System.Boolean
 
-## INFORMA
+## Notas
 
 ## LINKS RELACIONADOS
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
 [New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
