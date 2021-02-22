@@ -1,17 +1,17 @@
 ---
 title: Apresentação do módulo do Azure PowerShell
 description: Apresentação do novo módulo Az do Azure PowerShell, a substituição pelo módulo AzureRM.
-ms.date: 05/10/2019
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: f6ffd66d20943541c3591d41db7c72861f44204c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408370"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415454"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Apresentação do novo módulo Az do Azure PowerShell
 
@@ -45,7 +45,7 @@ Para atualizar de uma instalação existente do AzureRM:
 
 1. [Desinstalar o módulo AzureRM do Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Instalar o módulo Az do Azure PowerShell](install-az-ps.md)
-3. **OPCIONAL** : Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
+3. **OPCIONAL**: Habilite o modo de compatibilidade para adicionar aliases para cmdlets do AzureRM com [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) enquanto você se familiariza com o novo conjunto de comandos. Confira a próxima seção ou [Iniciar uma migração do AzureRM para o Az](migrate-from-azurerm-to-az.md) para obter mais detalhes.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Migrar os scripts existentes para o Az
 
@@ -63,6 +63,8 @@ O módulo Az tem um modo de compatibilidade para ajudá-lo a usar os scripts exi
 > [!IMPORTANT]
 > Embora os nomes dos cmdlets sejam convertidos em alias, ainda poderá haver parâmetros novos (ou renomeados) ou valores retornados alterados para os cmdlets do Az. Não espere que a habilitação de aliases cuide da migração para você. Confira a [lista completa de alterações da falha](migrate-az-1.0.0.md) para descobrir quando seus scripts podem exigir atualizações.
 
-## <a name="continued-support-for-azurerm"></a>Suporte contínuo para o AzureRM
+## <a name="support-for-azurerm"></a>Suporte para o AzureRM
 
-O AzureRM deixará de receber novos cmdlets ou recursos. No entanto, o módulo AzureRM ainda será oficialmente mantido e terá correções de bugs até dezembro de 2020.
+Como os módulos do AZ PowerShell agora têm todas as funcionalidades dos módulos do AzureRM PowerShell e muito mais, vamos desativar os módulos do AzureRM PowerShell em 29 de fevereiro de 2024.
+
+Para evitar interrupções de serviço, [atualize seus scripts](https://aka.ms/azpsmigrate) que usam módulos do AzureRM PowerShell para usar módulos do AZ PowerShell em 29 de fevereiro de 2024. Para atualizar seus scripts automaticamente, siga o [guia de início rápido](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
