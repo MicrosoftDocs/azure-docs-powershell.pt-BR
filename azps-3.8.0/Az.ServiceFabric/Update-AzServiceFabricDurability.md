@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 871583629936afe763032d1ce3e98ed4464298f9
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: b3009ea4aa8fbb85078986c8ef4cf4445a024f8d
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93943720"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684869"
 ---
 # Update-AzServiceFabricDurability
 
-## Sinopse
-Atualize a camada de durabilidade ou o VmSku de um tipo de nó no cluster.
+## SYNOPSIS
+Atualize a camada de durabilidade ou vmSku de um tipo de nó no cluster. Ele também atualizará a camada de durabilidade na extensão VM do Service Fabric no Conjunto de Escala de Máquina Virtual associado.
 
-## SYNTAX
+## SINTAXE
 
 ```
 Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -25,7 +25,7 @@ Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> 
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## DESCRIPTION
 Use **Update-AzServiceFabricDurability** para atualizar a durabilidade ou a SKU do cluster.
 
 ## EXEMPLOS
@@ -35,12 +35,12 @@ Use **Update-AzServiceFabricDurability** para atualizar a durabilidade ou a SKU 
 PS c:> Update-AzServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Esse comando altera o nível de durabilidade do NodeType ' NT1 ' para prata.
+Este comando altera a camada de durabilidade do NodeType 'nt1' para silver.
 
-## OS
+## PARÂMETROS
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Especifique o nome do cluster.
 
 ```yaml
@@ -115,8 +115,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Especifique a SKU do tipo de nó.
+### -Sku
+Especifique o SKU do tipo de nó.
 
 ```yaml
 Type: System.String
@@ -130,8 +130,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirme
-Solicita confirmação antes de executar o cmdlet.
+### -Confirm
+Solicita a confirmação antes de executar o cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,18 +161,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## INPUTS
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. imfabric. Models. DurabilityLevel
+### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
 
-## EXIBE
+## SAÍDAS
 
-### Microsoft. Azure. Commands. imfabric. Models. PSCluster
+### Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster
 
-## INFORMA
+## NOTES
 
 ## LINKS RELACIONADOS

@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.servi
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 56a6afff6551ae0191ac1f17d3a52c47940e045a
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: 7bc55521f04cf4d6e2bff18a01bfbdf4d76410f2
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93430845"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684986"
 ---
 # Update-AzureRmServiceFabricDurability
 
-## Sinopse
-Atualize a camada de durabilidade ou o VmSku de um tipo de nó no cluster.
+## SYNOPSIS
+Atualize a camada de durabilidade ou vmSku de um tipo de nó no cluster. Ele também atualizará a camada de durabilidade na extensão VM do Service Fabric no Conjunto de Escala de Máquina Virtual associado.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## SYNTAX
+## SINTAXE
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,7 +27,7 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## DESCRITIVO
+## DESCRIPTION
 Use **Update-AzureRmServiceFabricDurability** para atualizar a durabilidade ou a SKU do cluster.
 
 ## EXEMPLOS
@@ -37,12 +37,12 @@ Use **Update-AzureRmServiceFabricDurability** para atualizar a durabilidade ou a
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Esse comando altera o nível de durabilidade do NodeType ' NT1 ' para prata.
+Este comando altera a camada de durabilidade do NodeType 'nt1' para silver.
 
-## OS
+## PARÂMETROS
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usados para comunicação com o Azure.
+As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -72,7 +72,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Especifique o nome do cluster.
 
 ```yaml
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Especifique a SKU do tipo de nó.
+### -Sku
+Especifique o SKU do tipo de nó.
 
 ```yaml
 Type: System.String
@@ -132,8 +132,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirme
-Solicita confirmação antes de executar o cmdlet.
+### -Confirm
+Solicita a confirmação antes de executar o cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -163,20 +163,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Esse cmdlet dá suporte a parâmetros comuns:-debug,-ErrorAction,-ErrorVariable,-Informationaction,-InformationVariable,-OutVariable,-OutBuffer,-PipelineVariable,-Verbose-WarningAction e-WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## SENSORES
+## INPUTS
 
-### System. String
-Parâmetros: NodeType (ByValue), SKU (ByValue)
+### System.String
+Parâmetros: NodeType (ByValue), Sku (ByValue)
 
-### Microsoft. Azure. Commands. imfabric. Models. DurabilityLevel
+### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
 Parâmetros: DurabilityLevel (ByValue)
 
-## EXIBE
+## SAÍDAS
 
-### Microsoft. Azure. Commands. imfabric. Models. PSCluster
+### Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster
 
-## INFORMA
+## NOTES
 
 ## LINKS RELACIONADOS

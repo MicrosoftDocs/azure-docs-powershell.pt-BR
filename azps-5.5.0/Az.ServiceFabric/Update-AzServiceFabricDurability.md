@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 1a406ad937a545c9b2599966909809c7552ad7db
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 1a0da9869ccfdc6b8344240a8367a4c8dfcd2350
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100113983"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684884"
 ---
 # Update-AzServiceFabricDurability
 
-## Sinopse
-Atualize o nível de durabilidade ou vmSku de um tipo de nó no cluster.
+## SYNOPSIS
+Atualize a camada de durabilidade ou vmSku de um tipo de nó no cluster. Ele também atualizará a camada de durabilidade na extensão VM do Service Fabric no Conjunto de Escala de Máquina Virtual associado.
 
-## Sintaxe
+## SINTAXE
 
 ```
 Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -25,22 +25,22 @@ Update-AzServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> 
  [-Confirm] [<CommonParameters>]
 ```
 
-## Descrição
-Use **Update-AzServiceFabric Rastreaability** para atualizar a durabilidade ou a SKU do cluster.
+## DESCRIPTION
+Use **Update-AzServiceFabricDurability** para atualizar a durabilidade ou a SKU do cluster.
 
-## Exemplos
+## EXEMPLOS
 
 ### Exemplo 1
 ```
 PS c:> Update-AzServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-Esse comando altera o nível de durabilidade do NodeType 'nt1' para prata.
+Este comando altera a camada de durabilidade do NodeType 'nt1' para silver.
 
-## Parâmetros
+## PARÂMETROS
 
 ### -DefaultProfile
-As credenciais, a conta, o locatário e a assinatura usadas para comunicação com o azure.
+As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -70,7 +70,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Nome
+### -Name
 Especifique o nome do cluster.
 
 ```yaml
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Especifique o nome do tipo de nó de Malha de Serviço.
+Especifique o nome do tipo de nó do Service Fabric.
 
 ```yaml
 Type: System.String
@@ -115,8 +115,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Especifique a SKU do tipo de nó.
+### -Sku
+Especifique o SKU do tipo de nó.
 
 ```yaml
 Type: System.String
@@ -130,8 +130,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Confirmar
-Solicita confirmação antes de executar o cmdlet.
+### -Confirm
+Solicita a confirmação antes de executar o cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Mostra o que acontece se o cmdlet for executado. O cmdlet não é executado.
+Mostra o que aconteceria se o cmdlet fosse executado. O cmdlet não é executado.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,18 +161,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
-## Entradas
+## INPUTS
 
 ### System.String
 
 ### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
 
-## Saídas
+## SAÍDAS
 
 ### Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster
 
-## Notas
+## NOTES
 
 ## LINKS RELACIONADOS
