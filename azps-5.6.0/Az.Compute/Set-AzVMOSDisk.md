@@ -1,0 +1,460 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+ms.assetid: 8F7AF1B8-D769-452C-92CF-4486C3EB894D
+online version: https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMOSDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Set-AzVMOSDisk.md
+ms.openlocfilehash: 07d71e8fa7cd5c19cfc6f4aab8d27e5c5758b41c
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101891406"
+---
+# <span data-ttu-id="ef4a3-101">Set-AzVMOSDisk</span><span class="sxs-lookup"><span data-stu-id="ef4a3-101">Set-AzVMOSDisk</span></span>
+
+## <span data-ttu-id="ef4a3-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-102">SYNOPSIS</span></span>
+<span data-ttu-id="ef4a3-103">Define as propriedades de disco do sistema operacional em uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-103">Sets the operating system disk properties on a virtual machine.</span></span>
+
+## <span data-ttu-id="ef4a3-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="ef4a3-104">SYNTAX</span></span>
+
+### <span data-ttu-id="ef4a3-105">DefaultParamSet (Padrão)</span><span class="sxs-lookup"><span data-stu-id="ef4a3-105">DefaultParamSet (Default)</span></span>
+```
+Set-AzVMOSDisk [-VM] <PSVirtualMachine> [[-Name] <String>] [[-VhdUri] <String>] [[-Caching] <CachingTypes>]
+ [[-SourceImageUri] <String>] [[-CreateOption] <String>] [-DiskSizeInGB <Int32>] [-ManagedDiskId <String>]
+ [-StorageAccountType <String>] [-DiskEncryptionSetId <String>] [-WriteAccelerator] [-DiffDiskSetting <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ef4a3-106">WindowsParamSet</span><span class="sxs-lookup"><span data-stu-id="ef4a3-106">WindowsParamSet</span></span>
+```
+Set-AzVMOSDisk [-VM] <PSVirtualMachine> [[-Name] <String>] [[-VhdUri] <String>] [[-Caching] <CachingTypes>]
+ [[-SourceImageUri] <String>] [[-CreateOption] <String>] [-Windows] [-DiskSizeInGB <Int32>]
+ [-ManagedDiskId <String>] [-StorageAccountType <String>] [-DiskEncryptionSetId <String>] [-WriteAccelerator]
+ [-DiffDiskSetting <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ef4a3-107">WindowsDiskEncryptionParameterSet</span><span class="sxs-lookup"><span data-stu-id="ef4a3-107">WindowsDiskEncryptionParameterSet</span></span>
+```
+Set-AzVMOSDisk [-VM] <PSVirtualMachine> [[-Name] <String>] [[-VhdUri] <String>] [[-Caching] <CachingTypes>]
+ [[-SourceImageUri] <String>] [[-CreateOption] <String>] [-Windows] [-DiskEncryptionKeyUrl] <String>
+ [-DiskEncryptionKeyVaultId] <String> [[-KeyEncryptionKeyUrl] <String>] [[-KeyEncryptionKeyVaultId] <String>]
+ [-DiskSizeInGB <Int32>] [-ManagedDiskId <String>] [-StorageAccountType <String>]
+ [-DiskEncryptionSetId <String>] [-WriteAccelerator] [-DiffDiskSetting <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ef4a3-108">LinuxParamSet</span><span class="sxs-lookup"><span data-stu-id="ef4a3-108">LinuxParamSet</span></span>
+```
+Set-AzVMOSDisk [-VM] <PSVirtualMachine> [[-Name] <String>] [[-VhdUri] <String>] [[-Caching] <CachingTypes>]
+ [[-SourceImageUri] <String>] [[-CreateOption] <String>] [-Linux] [-DiskSizeInGB <Int32>]
+ [-ManagedDiskId <String>] [-StorageAccountType <String>] [-DiskEncryptionSetId <String>] [-WriteAccelerator]
+ [-DiffDiskSetting <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="ef4a3-109">LinuxDiskEncryptionParameterSet</span><span class="sxs-lookup"><span data-stu-id="ef4a3-109">LinuxDiskEncryptionParameterSet</span></span>
+```
+Set-AzVMOSDisk [-VM] <PSVirtualMachine> [[-Name] <String>] [[-VhdUri] <String>] [[-Caching] <CachingTypes>]
+ [[-SourceImageUri] <String>] [[-CreateOption] <String>] [-Linux] [-DiskEncryptionKeyUrl] <String>
+ [-DiskEncryptionKeyVaultId] <String> [[-KeyEncryptionKeyUrl] <String>] [[-KeyEncryptionKeyVaultId] <String>]
+ [-DiskSizeInGB <Int32>] [-ManagedDiskId <String>] [-StorageAccountType <String>]
+ [-DiskEncryptionSetId <String>] [-WriteAccelerator] [-DiffDiskSetting <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="ef4a3-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="ef4a3-110">DESCRIPTION</span></span>
+<span data-ttu-id="ef4a3-111">O cmdlet **Set-AzVMOSDisk** define as propriedades de disco do sistema operacional em uma máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-111">The **Set-AzVMOSDisk** cmdlet sets the operating system disk properties on a virtual machine.</span></span>
+
+## <span data-ttu-id="ef4a3-112">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="ef4a3-113">Exemplo 1: Definir propriedades em uma máquina virtual a partir da imagem da plataforma</span><span class="sxs-lookup"><span data-stu-id="ef4a3-113">Example 1: Set properties on a virtual machine from platform image</span></span>
+```
+PS C:\> $AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet13" 
+PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine17" -VMSize "Standard_A1" -AvailabilitySetID $AvailabilitySet.Id 
+PS C:\> Set-AzVMOSDisk -VM $VirtualMachine -Name "OsDisk12" -VhdUri "os.vhd" -Caching ReadWrite
+PS C:\> $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Linux -ComputerName "MainComputer" -Credential (Get-Credential) 
+PS C:\> $VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName "Canonical" -Offer "UbuntuServer" -Skus "15.10" -Version "latest" -Caching ReadWrite
+PS C:\> $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name "osDisk.vhd" -VhdUri "https://mystorageaccount.blob.core.windows.net/disks/" -CreateOption FromImage
+PS C:> New-AzVM -VM $VirtualMachine -ResouceGroupName "ResourceGroup11"
+```
+
+<span data-ttu-id="ef4a3-114">O primeiro comando obtém o conjunto de disponibilidade chamado AvailabilitySet13 no grupo de recursos chamado ResourceGroup11 e armazena esse objeto na variável $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-114">The first command gets the availability set named AvailabilitySet13 in the resource group named ResourceGroup11, and then stores that object in the $AvailabilitySet variable.</span></span>
+<span data-ttu-id="ef4a3-115">O segundo comando cria um objeto de máquina virtual e o armazena na variável $VirtualMachine.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-115">The second command creates a virtual machine object, and then stores it in the $VirtualMachine variable.</span></span>
+<span data-ttu-id="ef4a3-116">O comando atribui um nome e tamanho à máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-116">The command assigns a name and size to the virtual machine.</span></span>
+<span data-ttu-id="ef4a3-117">A máquina virtual pertence ao conjunto de disponibilidade armazenado $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-117">The virtual machine belongs to the availability set stored in $AvailabilitySet.</span></span>
+<span data-ttu-id="ef4a3-118">O comando final define as propriedades na máquina virtual em $VirtualMachine.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-118">The final command sets the properties on the virtual machine in $VirtualMachine.</span></span>
+
+### <span data-ttu-id="ef4a3-119">Exemplo 2: define propriedades em uma máquina virtual a partir da imagem de usuário generalizada</span><span class="sxs-lookup"><span data-stu-id="ef4a3-119">Example 2: Sets properties on a virtual machine from generalized user image</span></span>
+```
+PS C:\> $AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet13" 
+PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine17" -VMSize "Standard_A1"
+PS C:\> $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Linux -ComputerName "MainComputer" -Credential (Get-Credential)
+PS C:\> $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name "osDisk.vhd" -SourceImageUri "https://mystorageaccount.blob.core.windows.net/vhds/myOSImage.vhd" -VhdUri "https://mystorageaccount.blob.core.windows.net/disks/" -CreateOption fromImage -Linux
+PS C:> New-AzVM -VM $VirtualMachine -ResouceGroupName "ResourceGroup11"
+```
+
+<span data-ttu-id="ef4a3-120">O primeiro comando obtém o conjunto de disponibilidade chamado AvailabilitySet13 no grupo de recursos chamado ResourceGroup11 e armazena esse objeto na variável $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-120">The first command gets the availability set named AvailabilitySet13 in the resource group named ResourceGroup11 and stores that object in the $AvailabilitySet variable.</span></span>
+<span data-ttu-id="ef4a3-121">O segundo comando cria um objeto de máquina virtual e o armazena na $VirtualMachine variável.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-121">The second command creates a virtual machine object and stores it in the $VirtualMachine variable.</span></span>
+<span data-ttu-id="ef4a3-122">O comando atribui um nome e tamanho à máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-122">The command assigns a name and size to the virtual machine.</span></span>
+<span data-ttu-id="ef4a3-123">A máquina virtual pertence ao conjunto de disponibilidade armazenado $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-123">The virtual machine belongs to the availability set stored in $AvailabilitySet.</span></span>
+<span data-ttu-id="ef4a3-124">O comando final define as propriedades na máquina virtual em $VirtualMachine.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-124">The final command sets the properties on the virtual machine in $VirtualMachine.</span></span>
+
+### <span data-ttu-id="ef4a3-125">Exemplo 3: define propriedades em uma máquina virtual a partir de uma imagem de usuário especializada</span><span class="sxs-lookup"><span data-stu-id="ef4a3-125">Example 3: Sets properties on a virtual machine from specialized user image</span></span>
+```
+PS C:\> $AvailabilitySet = Get-AzAvailabilitySet -ResourceGroupName "ResourceGroup11" -Name "AvailabilitySet13" 
+PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine17" -VMSize "Standard_A1"
+PS C:\> $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name "osDisk.vhd" -VhdUri "https://mystorageaccount.blob.core.windows.net/disks/" -CreateOption Attach -Linux
+PS C:> New-AzVM -VM $VirtualMachine -ResouceGroupName "ResourceGroup11"
+```
+
+<span data-ttu-id="ef4a3-126">O primeiro comando obtém o conjunto de disponibilidade chamado AvailabilitySet13 no grupo de recursos chamado ResourceGroup11 e armazena esse objeto na variável $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-126">The first command gets the availability set named AvailabilitySet13 in the resource group named ResourceGroup11 and stores that object in the $AvailabilitySet variable.</span></span>
+<span data-ttu-id="ef4a3-127">O segundo comando cria um objeto de máquina virtual e o armazena na $VirtualMachine variável.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-127">The second command creates a virtual machine object and stores it in the $VirtualMachine variable.</span></span>
+<span data-ttu-id="ef4a3-128">O comando atribui um nome e tamanho à máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-128">The command assigns a name and size to the virtual machine.</span></span>
+<span data-ttu-id="ef4a3-129">A máquina virtual pertence ao conjunto de disponibilidade armazenado $AvailabilitySet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-129">The virtual machine belongs to the availability set stored in $AvailabilitySet.</span></span>
+<span data-ttu-id="ef4a3-130">O comando final define as propriedades na máquina virtual em $VirtualMachine.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-130">The final command sets the properties on the virtual machine in $VirtualMachine.</span></span>
+
+### <span data-ttu-id="ef4a3-131">Exemplo 4: definir as configurações de criptografia de disco em um disco do sistema operacional de máquina virtual</span><span class="sxs-lookup"><span data-stu-id="ef4a3-131">Example 4: Set the disk encryption settings on a virtual machine operating system disk</span></span>
+```
+PS C:\> $VirtualMachine = New-AzVMConfig -VMName "VirtualMachine17" -VMSize "Standard_A1"
+PS C:> $VirtualMachine = Set-AzVMOSDisk -VM $VirtualMachine -Name "OsDisk12" -VhdUri "os.vhd" -Caching ReadWrite -Windows -CreateOption "Attach" -DiskEncryptionKeyUrl "https://mytestvault.vault.azure.net/secrets/Test1/514ceb769c984379a7e0230bddaaaaaa" -DiskEncryptionKeyVaultId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mytestvault"
+PS C:> New-AzVM -VM $VirtualMachine -ResouceGroupName " ResourceGroup11"
+```
+
+<span data-ttu-id="ef4a3-132">Este exemplo define as configurações de criptografia de disco em um disco do sistema operacional de máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-132">This example sets the disk encryption settings on a virtual machine operating system disk.</span></span>
+
+## <span data-ttu-id="ef4a3-133">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-133">PARAMETERS</span></span>
+
+### <span data-ttu-id="ef4a3-134">-Cache</span><span class="sxs-lookup"><span data-stu-id="ef4a3-134">-Caching</span></span>
+<span data-ttu-id="ef4a3-135">Especifica o modo de cache do disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-135">Specifies the caching mode of the operating system disk.</span></span>
+<span data-ttu-id="ef4a3-136">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="ef4a3-136">Valid values are:</span></span> 
+- <span data-ttu-id="ef4a3-137">ReadOnly</span><span class="sxs-lookup"><span data-stu-id="ef4a3-137">ReadOnly</span></span>
+- <span data-ttu-id="ef4a3-138">ReadWrite O valor padrão é ReadWrite.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-138">ReadWrite The default value is ReadWrite.</span></span>
+<span data-ttu-id="ef4a3-139">Alterar o valor de cache faz com que a máquina virtual seja reiniciada.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-139">Changing the caching value causes the virtual machine to restart.</span></span>
+<span data-ttu-id="ef4a3-140">Essa configuração afeta o desempenho do disco.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-140">This setting affects the performance of the disk.</span></span>
+
+```yaml
+Type: System.Nullable`1[Microsoft.Azure.Management.Compute.Models.CachingTypes]
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, ReadOnly, ReadWrite
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-141">-CreateOption</span><span class="sxs-lookup"><span data-stu-id="ef4a3-141">-CreateOption</span></span>
+<span data-ttu-id="ef4a3-142">Especifica se esse cmdlet cria um disco na máquina virtual a partir de uma plataforma ou imagem de usuário ou anexa um disco existente.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-142">Specifies whether this cmdlet creates a disk in the virtual machine from a platform or user image, or attaches an existing disk.</span></span>
+<span data-ttu-id="ef4a3-143">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="ef4a3-143">Valid values are:</span></span> 
+- <span data-ttu-id="ef4a3-144">Anexar.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-144">Attach.</span></span>
+<span data-ttu-id="ef4a3-145">Especifique essa opção para criar uma máquina virtual a partir de um disco especializado.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-145">Specify this option to create a virtual machine from a specialized disk.</span></span>
+<span data-ttu-id="ef4a3-146">Quando você especificar essa opção, não especifique o *parâmetro SourceImageUri.*</span><span class="sxs-lookup"><span data-stu-id="ef4a3-146">When you specify this option, do not specify the *SourceImageUri* parameter.</span></span>
+<span data-ttu-id="ef4a3-147">Em vez disso, use Set-AzVMSourceImage cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-147">Instead, use the Set-AzVMSourceImage cmdlet.</span></span>
+<span data-ttu-id="ef4a3-148">Você também deve usar os parâmetros *Windows* ou *Linux* para dizer à plataforma do azure o tipo do sistema operacional no VHD.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-148">You must also use the use the *Windows* or *Linux* parameters to tell the azure platform the type of the operating system on the VHD.</span></span>
+<span data-ttu-id="ef4a3-149">O *parâmetro VhdUri* é suficiente para dizer à plataforma do azure o local do disco a ser anexado.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-149">The *VhdUri* parameter is enough to tell the azure platform the location of the disk to attach.</span></span> 
+- <span data-ttu-id="ef4a3-150">FromImage.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-150">FromImage.</span></span>
+<span data-ttu-id="ef4a3-151">Especifique essa opção para criar uma máquina virtual a partir de uma imagem de plataforma ou uma imagem de usuário generalizada.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-151">Specify this option to create a virtual machine from a platform image or a generalized user image.</span></span>
+<span data-ttu-id="ef4a3-152">No caso de uma imagem de usuário generalizada, você também precisa especificar o parâmetro *SourceImageUri* e os parâmetros *Windows* ou *Linux* para dizer à plataforma do Azure o local e o tipo do disco VHD do sistema operacional em vez de usar o cmdlet **Set-AzVMSourceImage.**</span><span class="sxs-lookup"><span data-stu-id="ef4a3-152">In the case of a generalized user image, you also need to specify the *SourceImageUri* parameter and either the *Windows* or *Linux* parameters to tell the Azure platform the location and type of the operating system disk VHD instead of using the **Set-AzVMSourceImage** cmdlet.</span></span>
+<span data-ttu-id="ef4a3-153">No caso de uma imagem de plataforma, o *parâmetro VhdUri* é suficiente.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-153">In the case of a platform image, the *VhdUri* parameter is sufficient.</span></span> 
+- <span data-ttu-id="ef4a3-154">Vazio.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-154">Empty.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-155">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ef4a3-155">-DefaultProfile</span></span>
+<span data-ttu-id="ef4a3-156">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-156">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-157">-DiffDiskSetting</span><span class="sxs-lookup"><span data-stu-id="ef4a3-157">-DiffDiskSetting</span></span>
+<span data-ttu-id="ef4a3-158">Especifica as configurações de disco de diferenciação para o disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-158">Specifies the differencing disk settings for operating system disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-159">-DiskEncryptionKeyUrl</span><span class="sxs-lookup"><span data-stu-id="ef4a3-159">-DiskEncryptionKeyUrl</span></span>
+<span data-ttu-id="ef4a3-160">Especifica o local da chave de criptografia de disco.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-160">Specifies the location of the disk encryption key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WindowsDiskEncryptionParameterSet, LinuxDiskEncryptionParameterSet
+Aliases:
+
+Required: True
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-161">-DiskEncryptionKeyVaultId</span><span class="sxs-lookup"><span data-stu-id="ef4a3-161">-DiskEncryptionKeyVaultId</span></span>
+<span data-ttu-id="ef4a3-162">Especifica a ID de recurso do Cofre de Chaves que contém a chave de criptografia de disco.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-162">Specifies the resource ID of the Key Vault containing the disk encryption key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WindowsDiskEncryptionParameterSet, LinuxDiskEncryptionParameterSet
+Aliases:
+
+Required: True
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-163">-DiskEncryptionSetId</span><span class="sxs-lookup"><span data-stu-id="ef4a3-163">-DiskEncryptionSetId</span></span>
+<span data-ttu-id="ef4a3-164">Especifica a ID de recurso do conjunto de criptografia de disco gerenciado pelo cliente.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-164">Specifies the resource Id of customer managed disk encryption set.</span></span>  <span data-ttu-id="ef4a3-165">Isso só pode ser especificado para disco gerenciado.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-165">This can only be specified for managed disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-166">-DiskSizeInGB</span><span class="sxs-lookup"><span data-stu-id="ef4a3-166">-DiskSizeInGB</span></span>
+<span data-ttu-id="ef4a3-167">Especifica o tamanho, em GB, do disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-167">Specifies the size, in GB, of the operating system disk.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-168">-KeyEncryptionKeyUrl</span><span class="sxs-lookup"><span data-stu-id="ef4a3-168">-KeyEncryptionKeyUrl</span></span>
+<span data-ttu-id="ef4a3-169">Especifica o local da chave de criptografia.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-169">Specifies the location of the key encryption key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WindowsDiskEncryptionParameterSet, LinuxDiskEncryptionParameterSet
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-170">-KeyEncryptionKeyVaultId</span><span class="sxs-lookup"><span data-stu-id="ef4a3-170">-KeyEncryptionKeyVaultId</span></span>
+<span data-ttu-id="ef4a3-171">Especifica a ID de recurso do Cofre de Chaves que contém a chave de criptografia.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-171">Specifies the resource ID of the Key Vault containing the key encryption key.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WindowsDiskEncryptionParameterSet, LinuxDiskEncryptionParameterSet
+Aliases:
+
+Required: False
+Position: 10
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-172">-Linux</span><span class="sxs-lookup"><span data-stu-id="ef4a3-172">-Linux</span></span>
+<span data-ttu-id="ef4a3-173">Indica que o sistema operacional na imagem do usuário é Linux.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-173">Indicates that the operating system on the user image is Linux.</span></span>
+<span data-ttu-id="ef4a3-174">Especifique esse parâmetro para a implantação da máquina virtual baseada em imagem do usuário.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-174">Specify this parameter for user image based virtual machine deployment.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: LinuxParamSet, LinuxDiskEncryptionParameterSet
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-175">-ManagedDiskId</span><span class="sxs-lookup"><span data-stu-id="ef4a3-175">-ManagedDiskId</span></span>
+<span data-ttu-id="ef4a3-176">Especifica a ID de um disco gerenciado.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-176">Specifies the ID of a managed disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-177">-Name</span><span class="sxs-lookup"><span data-stu-id="ef4a3-177">-Name</span></span>
+<span data-ttu-id="ef4a3-178">Especifica o nome do disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-178">Specifies the name of the operating system disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: OSDiskName, DiskName
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-179">-SourceImageUri</span><span class="sxs-lookup"><span data-stu-id="ef4a3-179">-SourceImageUri</span></span>
+<span data-ttu-id="ef4a3-180">Especifica o URI do VHD para cenários de imagem do usuário.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-180">Specifies the URI of the VHD for user image scenarios.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: SourceImage
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-181">-StorageAccountType</span><span class="sxs-lookup"><span data-stu-id="ef4a3-181">-StorageAccountType</span></span>
+<span data-ttu-id="ef4a3-182">Especifica o tipo de conta de armazenamento do disco gerenciado.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-182">Specifies the storage account type of managed disk.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-183">-VhdUri</span><span class="sxs-lookup"><span data-stu-id="ef4a3-183">-VhdUri</span></span>
+<span data-ttu-id="ef4a3-184">Especifica o URI (Uniform Resource Identifier) de um disco rígido virtual (VHD).</span><span class="sxs-lookup"><span data-stu-id="ef4a3-184">Specifies the Uniform Resource Identifier (URI) of a virtual hard disk (VHD).</span></span>
+<span data-ttu-id="ef4a3-185">Para uma máquina virtual baseada em imagem, esse parâmetro especifica o arquivo VHD a ser criado quando uma imagem de plataforma ou imagem de usuário é especificada.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-185">For an image based virtual machine, this parameter specifies the VHD file to create when a platform image or user image is specified.</span></span>
+<span data-ttu-id="ef4a3-186">Este é o local do qual o blob (objeto binário de imagem grande) é copiado para iniciar a máquina virtual.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-186">This is the location from which the image binary large object (BLOB) is copied to start the virtual machine.</span></span>
+<span data-ttu-id="ef4a3-187">Para um cenário de inicialização de máquina virtual baseada em disco, esse parâmetro especifica o arquivo VHD que a máquina virtual usa diretamente para iniciar.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-187">For a disk based virtual machine boot scenario, this parameter specifies the VHD file that the virtual machine uses directly for starting up.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: OSDiskVhdUri, DiskVhdUri
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-188">-VM</span><span class="sxs-lookup"><span data-stu-id="ef4a3-188">-VM</span></span>
+<span data-ttu-id="ef4a3-189">Especifica o objeto da máquina virtual local no qual definir as propriedades de disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-189">Specifies the local virtual machine object on which to set operating system disk properties.</span></span>
+<span data-ttu-id="ef4a3-190">Para obter um objeto de máquina virtual, use Get-AzVM cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-190">To obtain a virtual machine object, use the Get-AzVM cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Parameter Sets: (All)
+Aliases: VMProfile
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-191">-Windows</span><span class="sxs-lookup"><span data-stu-id="ef4a3-191">-Windows</span></span>
+<span data-ttu-id="ef4a3-192">Indica que o sistema operacional na imagem do usuário é o Windows.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-192">Indicates that the operating system on the user image is Windows.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: WindowsParamSet, WindowsDiskEncryptionParameterSet
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-193">-WriteAccelerator</span><span class="sxs-lookup"><span data-stu-id="ef4a3-193">-WriteAccelerator</span></span>
+<span data-ttu-id="ef4a3-194">Especifica se WriteAccelerator deve ser habilitado ou desabilitado no disco do sistema operacional.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-194">Specifies whether WriteAccelerator should be enabled or disabled on the OS disk.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ef4a3-195">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ef4a3-195">CommonParameters</span></span>
+<span data-ttu-id="ef4a3-196">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ef4a3-196">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ef4a3-197">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ef4a3-197">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="ef4a3-198">INPUTS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-198">INPUTS</span></span>
+
+### <span data-ttu-id="ef4a3-199">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="ef4a3-199">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
+
+### <span data-ttu-id="ef4a3-200">System.String</span><span class="sxs-lookup"><span data-stu-id="ef4a3-200">System.String</span></span>
+
+## <span data-ttu-id="ef4a3-201">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-201">OUTPUTS</span></span>
+
+### <span data-ttu-id="ef4a3-202">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="ef4a3-202">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
+
+## <span data-ttu-id="ef4a3-203">NOTES</span><span class="sxs-lookup"><span data-stu-id="ef4a3-203">NOTES</span></span>
+
+## <span data-ttu-id="ef4a3-204">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="ef4a3-204">RELATED LINKS</span></span>
+
+[<span data-ttu-id="ef4a3-205">Get-AzVM</span><span class="sxs-lookup"><span data-stu-id="ef4a3-205">Get-AzVM</span></span>](./Get-AzVM.md)
+
+[<span data-ttu-id="ef4a3-206">Get-AzAvailabilitySet</span><span class="sxs-lookup"><span data-stu-id="ef4a3-206">Get-AzAvailabilitySet</span></span>](./Get-AzAvailabilitySet.md)
+
+[<span data-ttu-id="ef4a3-207">New-AzVMConfig</span><span class="sxs-lookup"><span data-stu-id="ef4a3-207">New-AzVMConfig</span></span>](./New-AzVMConfig.md)
+
+
