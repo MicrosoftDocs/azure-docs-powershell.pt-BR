@@ -1,0 +1,411 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+online version: https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzPolicyAlias.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzPolicyAlias.md
+ms.openlocfilehash: cc77008f4aa8cb170dc86f0b7d9847fe40e87254
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101890735"
+---
+# Get-AzPolicyAlias
+
+## SYNOPSIS
+Get-AzPolicyAlias recupera e saídas tipos de recursos do provedor do Azure que têm aliases definidos e corresponder aos valores de parâmetros determinados. Se nenhum parâmetro for fornecido, todos os tipos de recursos do provedor que contenham um alias serão de saída.
+A opção -ListAvailable modifica esse comportamento listando todos os tipos de recursos correspondentes, incluindo aqueles sem aliases.
+
+## SINTAXE
+
+```
+Get-AzPolicyAlias [-NamespaceMatch <String>] [-ResourceTypeMatch <String>] [-AliasMatch <String>]
+ [-PathMatch <String>] [-ApiVersionMatch <String>] [-LocationMatch <String>] [-ListAvailable]
+ [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+O cmdlet **Get-AzPolicyAlias** obtém uma listagem de aliases de política.
+Aliases de política são usados pela Política do Azure para se referir às propriedades de tipo de recurso.
+Os parâmetros são fornecidos para limitar itens na listagem correspondendo a várias propriedades do tipo de recurso ou seus aliases.
+Um determinado valor de match corresponde se a cadeia de caracteres de destino o contiver usando comparação insensível a maiúsculas e minúsculas.
+
+## EXEMPLOS
+
+### Exemplo 1
+```powershell
+PS C:\> Get-AzPolicyAlias
+
+Namespace                     ResourceType                                   Aliases
+---------                     ------------                                   -------
+Microsoft.AnalysisServices    servers                                        {Microsoft.AnalysisServices/servers/state, Microsoft.AnalysisServices/s...
+Microsoft.Authorization       roleAssignments                                {Microsoft.Authorization/roleAssignments/roleDefinitionId, Microsoft.Au...
+Microsoft.Authorization       roleDefinitions                                {Microsoft.Authorization/roleDefinitions/type, Microsoft.Authorization/...
+
+...                           ...                                            ...
+
+Microsoft.Web                 hostingEnvironments                            {Microsoft.Web/hostingEnvironments/clusterSettings[*].name, Microsoft.W...
+Microsoft.Web                 sites/config                                   {Microsoft.Web/sites/config/httpLoggingEnabled, Microsoft.Web/sites/con...
+Microsoft.GuestConfiguration  guestConfigurationAssignments                  {Microsoft.GuestConfiguration/guestConfigurationAssignments/complianceS...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor que têm um alias.
+
+### Exemplo 2
+```powershell
+PS C:\> Get-AzPolicyAlias -ListAvailable
+
+Namespace                                ResourceType                                                        Aliases
+---------                                ------------                                                        -------
+
+...                                      ...                                                                 ...
+
+Microsoft.AlertsManagement               operations                                                          {}
+Microsoft.AnalysisServices               servers                                                             {Microsoft.AnalysisServices/servers/sta...
+Microsoft.AnalysisServices               locations                                                           {}
+
+...                                      ...                                                                 ...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor, incluindo aqueles sem aliases.
+
+### Exemplo 3
+```powershell
+PS C:\> Get-AzPolicyAlias -NamespaceMatch 'compute'
+
+Namespace         ResourceType                       Aliases
+---------         ------------                       -------
+Microsoft.Compute virtualMachines                    {Microsoft.Compute/licenseType, Microsoft.Compute/virtualMachines/availabilitySet.id, Microsoft...
+Microsoft.Compute virtualMachines/extensions         {Microsoft.Compute/virtualMachines/extensions/provisioningState, Microsoft.Compute/virtualMachi...
+Microsoft.Compute virtualMachineScaleSets            {Microsoft.Compute/VirtualMachineScaleSets/sku.name, Microsoft.Compute/VirtualMachineScaleSets/...
+Microsoft.Compute virtualMachineScaleSets/extensions {Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState, Microsoft.Compute/virt...
+Microsoft.Compute disks                              {Microsoft.Compute/imagePublisher, Microsoft.Compute/imageOffer, Microsoft.Compute/imageSku, Mi...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor cujo namespace corresponde a "computação" e contém um alias.
+
+### Exemplo 4
+```powershell
+PS C:\> Get-AzPolicyAlias -ResourceTypeMatch 'virtual'
+
+Namespace         ResourceType                           Aliases
+---------         ------------                           -------
+Microsoft.Compute virtualMachines                        {Microsoft.Compute/licenseType, Microsoft.Compute/virtualMachines/availabilitySet.id, Micro...
+Microsoft.Compute virtualMachines/extensions             {Microsoft.Compute/virtualMachines/extensions/provisioningState, Microsoft.Compute/virtualM...
+Microsoft.Compute virtualMachineScaleSets                {Microsoft.Compute/VirtualMachineScaleSets/sku.name, Microsoft.Compute/VirtualMachineScaleS...
+Microsoft.Compute virtualMachineScaleSets/extensions     {Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState, Microsoft.Compute/...
+Microsoft.Network virtualNetworks                        {Microsoft.Network/virtualNetworks/subnets[*].routeTable.id, Microsoft.Network/virtualNetwo...
+Microsoft.Network virtualNetworkGateways                 {Microsoft.Network/virtualNetworkGateways/sku.name, Microsoft.Network/virtualNetworkGateway...
+Microsoft.Network virtualNetworks/subnets                {Microsoft.Network/virtualNetworks/subnets/routeTable.id, Microsoft.Network/virtualNetworks...
+Microsoft.Network virtualNetworks/virtualNetworkPeerings {Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id}
+Microsoft.Sql     servers/virtualNetworkRules            {Microsoft.Sql/servers/virtualNetworkRules/virtualNetworkSubnetId, Microsoft.Sql/servers/vi...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor cujo tipo de recurso corresponde a "virtual" e contém um alias.
+
+### Exemplo 5
+```powershell
+PS C:\> Get-AzPolicyAlias -ResourceTypeMatch 'virtual' -ListAvailable
+
+Namespace                    ResourceType                                               Aliases
+---------                    ------------                                               -------
+
+...                          ...                                                        ...
+
+Microsoft.KeyVault           locations/deleteVirtualNetworkOrSubnets                    {}
+Microsoft.Network            virtualNetworks                                            {Microsoft.Network/virtualNetworks/subnets[*].routeTable.id,...
+Microsoft.Network            virtualNetworkGateways                                     {Microsoft.Network/virtualNetworkGateways/sku.name, Microsof...
+Microsoft.Network            locations/virtualNetworkAvailableEndpointServices          {}
+
+...                          ...                                                        ...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor cujo tipo de recurso corresponde a "virtual", incluindo aqueles sem aliases.
+
+### Exemplo 6
+```powershell
+PS C:\> Get-AzPolicyAlias -NamespaceMatch 'compute' -ResourceTypeMatch 'virtual'
+
+Namespace         ResourceType                       Aliases
+---------         ------------                       -------
+Microsoft.Compute virtualMachines                    {Microsoft.Compute/licenseType, Microsoft.Compute/virtualMachines/availabilitySet.id, Microsoft...
+Microsoft.Compute virtualMachines/extensions         {Microsoft.Compute/virtualMachines/extensions/provisioningState, Microsoft.Compute/virtualMachi...
+Microsoft.Compute virtualMachineScaleSets            {Microsoft.Compute/VirtualMachineScaleSets/sku.name, Microsoft.Compute/VirtualMachineScaleSets/...
+Microsoft.Compute virtualMachineScaleSets/extensions {Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState, Microsoft.Compute/virt...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor cujo namespace corresponde a "computação" e tipo de recurso corresponde a "virtual" e contém um alias.
+Observação: -NamespaceMatch e -ResourceTypeMatch fornecem jogos exclusivos, enquanto os outros são inclusivos.
+
+### Exemplo 7
+```powershell
+PS C:\> Get-AzPolicyAlias -AliasMatch 'virtual'
+
+Namespace            ResourceType                           Aliases
+---------            ------------                           -------
+Microsoft.Compute    virtualMachines                        {Microsoft.Compute/licenseType, Microsoft.Compute/virtualMachines/availabilitySet.id, Mi...
+Microsoft.Compute    virtualMachines/extensions             {Microsoft.Compute/virtualMachines/extensions/provisioningState, Microsoft.Compute/virtu...
+Microsoft.Compute    virtualMachineScaleSets                {Microsoft.Compute/VirtualMachineScaleSets/sku.name, Microsoft.Compute/VirtualMachineSca...
+Microsoft.Compute    virtualMachineScaleSets/extensions     {Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState, Microsoft.Compu...
+Microsoft.DocumentDB databaseAccounts                       {Microsoft.DocumentDB/databaseAccounts/sku.name, Microsoft.DocumentDB/databaseAccounts/v...
+Microsoft.HDInsight  clusters                               {Microsoft.HDInsight/clusters/clusterVersion, Microsoft.HDInsight/clusters/osType, Micro...
+Microsoft.KeyVault   vaults                                 {Microsoft.KeyVault/vaults/sku.name, Microsoft.KeyVault/vaults/sku.family, Microsoft.Key...
+Microsoft.Network    virtualNetworks                        {Microsoft.Network/virtualNetworks/subnets[*].routeTable.id, Microsoft.Network/virtualNe...
+Microsoft.Network    virtualNetworkGateways                 {Microsoft.Network/virtualNetworkGateways/sku.name, Microsoft.Network/virtualNetworkGate...
+Microsoft.Network    virtualNetworks/subnets                {Microsoft.Network/virtualNetworks/subnets/routeTable.id, Microsoft.Network/virtualNetwo...
+Microsoft.Network    virtualNetworks/virtualNetworkPeerings {Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id}
+Microsoft.Sql        servers/virtualNetworkRules            {Microsoft.Sql/servers/virtualNetworkRules/virtualNetworkSubnetId, Microsoft.Sql/servers...
+Microsoft.Storage    storageAccounts                        {Microsoft.Storage/storageAccounts/accountType, Microsoft.Storage/storageAccounts/sku.na...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor que contêm um alias correspondente a "virtual".
+
+### Exemplo 8
+```powershell
+PS C:\> Get-AzPolicyAlias -AliasMatch 'virtual' -PathMatch 'network'
+
+Namespace            ResourceType                           Aliases
+---------            ------------                           -------
+Microsoft.Compute    virtualMachines                        {Microsoft.Compute/licenseType, Microsoft.Compute/virtualMachines/availabilitySet.id, Mi...
+Microsoft.Compute    virtualMachines/extensions             {Microsoft.Compute/virtualMachines/extensions/provisioningState, Microsoft.Compute/virtu...
+Microsoft.Compute    virtualMachineScaleSets                {Microsoft.Compute/VirtualMachineScaleSets/sku.name, Microsoft.Compute/VirtualMachineSca...
+Microsoft.Compute    virtualMachineScaleSets/extensions     {Microsoft.Compute/virtualMachineScaleSets/extensions/provisioningState, Microsoft.Compu...
+Microsoft.DocumentDB databaseAccounts                       {Microsoft.DocumentDB/databaseAccounts/sku.name, Microsoft.DocumentDB/databaseAccounts/v...
+Microsoft.HDInsight  clusters                               {Microsoft.HDInsight/clusters/clusterVersion, Microsoft.HDInsight/clusters/osType, Micro...
+Microsoft.KeyVault   vaults                                 {Microsoft.KeyVault/vaults/sku.name, Microsoft.KeyVault/vaults/sku.family, Microsoft.Key...
+Microsoft.Network    virtualNetworks                        {Microsoft.Network/virtualNetworks/subnets[*].routeTable.id, Microsoft.Network/virtualNe...
+Microsoft.Network    networkInterfaces                      {Microsoft.Network/networkInterfaces/ipconfigurations[*].subnet.id, Microsoft.Network/ne...
+Microsoft.Network    networkSecurityGroups                  {Microsoft.Network/networkSecurityGroups/securityRules[*].protocol, Microsoft.Network/ne...
+Microsoft.Network    virtualNetworkGateways                 {Microsoft.Network/virtualNetworkGateways/sku.name, Microsoft.Network/virtualNetworkGate...
+Microsoft.Network    virtualNetworks/subnets                {Microsoft.Network/virtualNetworks/subnets/routeTable.id, Microsoft.Network/virtualNetwo...
+Microsoft.Network    virtualNetworks/virtualNetworkPeerings {Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id}
+Microsoft.Sql        servers/virtualNetworkRules            {Microsoft.Sql/servers/virtualNetworkRules/virtualNetworkSubnetId, Microsoft.Sql/servers...
+Microsoft.Storage    storageAccounts                        {Microsoft.Storage/storageAccounts/accountType, Microsoft.Storage/storageAccounts/sku.na...
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor que contêm um alias correspondente a "virtual" ou um alias com um caminho que corresponde a "rede".
+
+### Exemplo 9
+```powershell
+PS C:\> Get-AzPolicyAlias -ApiVersionMatch 'alpha'
+
+Namespace          ResourceType        Aliases
+---------          ------------        -------
+Microsoft.Cache    Redis               {Microsoft.Cache/Redis/sku.name, Microsoft.Cache/Redis/sku.family, Microsoft.Cache/Redis/sku.capacity, Micros...
+Microsoft.Cache    Redis/firewallrules {Microsoft.Cache/Redis/firewallrules/startIP, Microsoft.Cache/Redis/firewallrules/endIP}
+Microsoft.Security alerts              {Microsoft.Security/alerts/state}
+Microsoft.Security pricings            {Microsoft.Security/pricings/pricingTier}
+Microsoft.Security complianceResults   {Microsoft.Security/complianceResults/resourceStatus}
+
+
+PS C:\>
+```
+
+Lista todos os tipos de recursos do provedor com a versão da api alfa ou que contém um alias com uma versão da api alfa.
+
+## PARÂMETROS
+
+### -AliasMatch
+Inclui nos itens de saída com aliases cujo nome corresponde a esse valor.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Alias
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApiVersion
+Quando definido, indica a versão da API do provedor de recursos a ser usada. Se não for especificada, a versão da API será automaticamente determinada como a mais recente disponível.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApiVersionMatch
+Inclui nos itens de saída cujos tipos de recursos ou aliases têm uma versão de api correspondente.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.
+
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ListAvailable
+Inclui na saída itens correspondentes com e sem aliases.
+
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: ShowAll
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LocationMatch
+Inclui nos itens de saída cujos tipos de recursos têm um local correspondente.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Location
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NamespaceMatch
+Limita a saída a itens cujo namespace corresponde a esse valor.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name, Namespace
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PathMatch
+Inclui nos itens de saída com aliases que contêm um caminho que corresponde a esse valor.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Path
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Pre
+Quando definido, indica que o cmdlet deve usar versões da API de pré-lançamento ao determinar automaticamente qual versão usar.
+
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceTypeMatch
+Limita a saída a itens cujo tipo de recurso corresponde a esse valor.
+
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceType, Resource
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### Nenhum
+
+## SAÍDAS
+
+### Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.PsResourceProviderAlias
+
+## NOTES
+
+* Para expandir aliases ou qualquer outra propriedade, canaliza a saída para `select -ExpandProperty <property>` . Por exemplo: `Get-AzPolicyAlias -NamespaceMatch 'Microsoft.Cache' -ApiVersionMatch 'alpha' | select -ExpandProperty Aliases | select -Property Name -ExpandProperty Paths`
+
+* Propriedades adicionais estão disponíveis na saída e podem ser exibidas canalização da saída para `Format-List` . Por exemplo: `Get-AzPolicyAlias -NamespaceMatch 'Web' -ResourceTypeMatch site -PathMatch cert | Format-List`
+
+## LINKS RELACIONADOS
