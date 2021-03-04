@@ -1,0 +1,240 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.TrafficManager.dll-Help.xml
+Module Name: Az.TrafficManager
+ms.assetid: 8CC749F1-B961-4F8F-BAD4-2C0F4385D1C2
+online version: https://docs.microsoft.com/powershell/module/az.trafficmanager/disable-aztrafficmanagerendpoint
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Disable-AzTrafficManagerEndpoint.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/TrafficManager/TrafficManager/help/Disable-AzTrafficManagerEndpoint.md
+ms.openlocfilehash: e14f74af1c8e50ddc5bc3281fca71b1e2d740e3b
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101885236"
+---
+# <span data-ttu-id="47b95-101">Disable-AzTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-101">Disable-AzTrafficManagerEndpoint</span></span>
+
+## <span data-ttu-id="47b95-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="47b95-102">SYNOPSIS</span></span>
+<span data-ttu-id="47b95-103">Desabilita um ponto de extremidade em um perfil do Gerenciador de Tráfego.</span><span class="sxs-lookup"><span data-stu-id="47b95-103">Disables an endpoint in a Traffic Manager profile.</span></span>
+
+## <span data-ttu-id="47b95-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="47b95-104">SYNTAX</span></span>
+
+### <span data-ttu-id="47b95-105">Fields</span><span class="sxs-lookup"><span data-stu-id="47b95-105">Fields</span></span>
+```
+Disable-AzTrafficManagerEndpoint -Name <String> -Type <String> -ProfileName <String>
+ -ResourceGroupName <String> [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="47b95-106">Objeto</span><span class="sxs-lookup"><span data-stu-id="47b95-106">Object</span></span>
+```
+Disable-AzTrafficManagerEndpoint -TrafficManagerEndpoint <TrafficManagerEndpoint> [-Force]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="47b95-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="47b95-107">DESCRIPTION</span></span>
+<span data-ttu-id="47b95-108">O cmdlet **Disable-AzTrafficManagerEndpoint** desabilita um ponto de extremidade em um perfil do Gerenciador de Tráfego do Azure.</span><span class="sxs-lookup"><span data-stu-id="47b95-108">The **Disable-AzTrafficManagerEndpoint** cmdlet disables an endpoint in an Azure Traffic Manager profile.</span></span>
+
+<span data-ttu-id="47b95-109">Você pode usar o operador de pipeline para passar um **objeto TrafficManagerEndpoint** para esse cmdlet ou pode passar um **objeto TrafficManagerEndpoint** usando o parâmetro *TrafficManagerEndpoint.*</span><span class="sxs-lookup"><span data-stu-id="47b95-109">You can use the pipeline operator to pass a **TrafficManagerEndpoint** object to this cmdlet, or you can pass a **TrafficManagerEndpoint** object using the *TrafficManagerEndpoint* parameter.</span></span>
+
+<span data-ttu-id="47b95-110">Como alternativa, você pode especificar o nome e o tipo do ponto de extremidade usando os parâmetros *Name* e *Type,* juntamente com os parâmetros *ProfileName* e *ResourceGroupName.*</span><span class="sxs-lookup"><span data-stu-id="47b95-110">Alternatively, you can specify the endpoint name and type by using the *Name* and *Type* parameters, together with the *ProfileName* and *ResourceGroupName* parameters.</span></span>
+
+## <span data-ttu-id="47b95-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="47b95-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="47b95-112">Exemplo 1: Desabilitar um ponto de extremidade pelo nome</span><span class="sxs-lookup"><span data-stu-id="47b95-112">Example 1: Disable an endpoint by name</span></span>
+```
+PS C:\> Disable-AzTrafficManagerEndpoint -Name "contoso" -ProfileName "ContosoProfile" -ResourceGroupName ResourceGroup11 -Type ExternalEndpoints
+```
+
+<span data-ttu-id="47b95-113">Este comando desabilita o ponto de extremidade externo chamado contoso no perfil chamado ContosoProfile no grupo de recursos ResourceGroup11.</span><span class="sxs-lookup"><span data-stu-id="47b95-113">This command disables the external endpoint named contoso in the profile named ContosoProfile in resource group ResourceGroup11.</span></span>
+<span data-ttu-id="47b95-114">O comando solicita a confirmação.</span><span class="sxs-lookup"><span data-stu-id="47b95-114">The command prompts you for confirmation.</span></span>
+
+### <span data-ttu-id="47b95-115">Exemplo 2: desabilitar um ponto de extremidade usando o pipeline</span><span class="sxs-lookup"><span data-stu-id="47b95-115">Example 2: Disable an endpoint by using the pipeline</span></span>
+```
+PS C:\>Get-AzTrafficManagerEndpoint -Name "contoso" -Type ExternalEndpoints -ProfileName "ContosoProfile" -ResourceGroupName "ResourceGroup11" | Disable-AzTrafficManagerEndpoint -Force
+```
+
+<span data-ttu-id="47b95-116">Este comando obtém o ponto de extremidade externo chamado Contoso do perfil chamado ContosoProfile em ResourceGroup11.</span><span class="sxs-lookup"><span data-stu-id="47b95-116">This command gets the external endpoint named Contoso from the profile named ContosoProfile in ResourceGroup11.</span></span>
+<span data-ttu-id="47b95-117">Em seguida, o comando passa esse ponto de extremidade para o cmdlet **Disable-AzTrafficManagerEndpoint** usando o operador de pipeline.</span><span class="sxs-lookup"><span data-stu-id="47b95-117">The command then passes that endpoint to the **Disable-AzTrafficManagerEndpoint** cmdlet by using the pipeline operator.</span></span>
+<span data-ttu-id="47b95-118">Esse cmdlet desabilita esse ponto de extremidade.</span><span class="sxs-lookup"><span data-stu-id="47b95-118">That cmdlet disables that endpoint.</span></span>
+<span data-ttu-id="47b95-119">O comando especifica o parâmetro *Force.*</span><span class="sxs-lookup"><span data-stu-id="47b95-119">The command specifies the *Force* parameter.</span></span>
+<span data-ttu-id="47b95-120">Portanto, ele não solicita a confirmação.</span><span class="sxs-lookup"><span data-stu-id="47b95-120">Therefore, it does not prompt you for confirmation.</span></span>
+
+## <span data-ttu-id="47b95-121">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="47b95-121">PARAMETERS</span></span>
+
+### <span data-ttu-id="47b95-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="47b95-122">-DefaultProfile</span></span>
+<span data-ttu-id="47b95-123">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="47b95-123">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-124">-Force</span><span class="sxs-lookup"><span data-stu-id="47b95-124">-Force</span></span>
+<span data-ttu-id="47b95-125">Força o comando a ser executado sem pedir confirmação do usuário.</span><span class="sxs-lookup"><span data-stu-id="47b95-125">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-126">-Name</span><span class="sxs-lookup"><span data-stu-id="47b95-126">-Name</span></span>
+<span data-ttu-id="47b95-127">Especifica o nome do ponto de extremidade do Gerenciador de Tráfego que esse cmdlet desabilita.</span><span class="sxs-lookup"><span data-stu-id="47b95-127">Specifies the name of the Traffic Manager endpoint that this cmdlet disables.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Fields
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-128">-ProfileName</span><span class="sxs-lookup"><span data-stu-id="47b95-128">-ProfileName</span></span>
+<span data-ttu-id="47b95-129">Especifica o nome de um perfil do Gerenciador de Tráfego no qual esse cmdlet desabilita um ponto de extremidade.</span><span class="sxs-lookup"><span data-stu-id="47b95-129">Specifies the name of a Traffic Manager profile in which this cmdlet disables an endpoint.</span></span>
+<span data-ttu-id="47b95-130">Para obter um perfil, use o Get-AzTrafficManagerProfile cmdlet.</span><span class="sxs-lookup"><span data-stu-id="47b95-130">To obtain a profile, use the Get-AzTrafficManagerProfile cmdlet.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Fields
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="47b95-131">-ResourceGroupName</span></span>
+<span data-ttu-id="47b95-132">Especifica o nome de um grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="47b95-132">Specifies the name of a resource group.</span></span>
+<span data-ttu-id="47b95-133">Este cmdlet desabilita um ponto de extremidade do Gerenciador de Tráfego no grupo especificado por esse parâmetro.</span><span class="sxs-lookup"><span data-stu-id="47b95-133">This cmdlet disables a Traffic Manager endpoint in the group that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Fields
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-134">-TrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-134">-TrafficManagerEndpoint</span></span>
+<span data-ttu-id="47b95-135">Especifica o ponto de extremidade do Gerenciador de Tráfego que esse cmdlet desabilita.</span><span class="sxs-lookup"><span data-stu-id="47b95-135">Specifies the Traffic Manager endpoint that this cmdlet disables.</span></span>
+<span data-ttu-id="47b95-136">Para obter um **objeto TrafficManagerEndpoint,** use Get-AzTrafficManagerEndpoint cmdlet.</span><span class="sxs-lookup"><span data-stu-id="47b95-136">To obtain a **TrafficManagerEndpoint** object, use the Get-AzTrafficManagerEndpoint cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerEndpoint
+Parameter Sets: Object
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-137">-Type</span><span class="sxs-lookup"><span data-stu-id="47b95-137">-Type</span></span>
+<span data-ttu-id="47b95-138">Especifica o tipo de ponto de extremidade que esse cmdlet adiciona ao perfil do Gerenciador de Tráfego.</span><span class="sxs-lookup"><span data-stu-id="47b95-138">Specifies the type of endpoint that this cmdlet adds to the Traffic Manager profile.</span></span>
+<span data-ttu-id="47b95-139">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="47b95-139">Valid values are:</span></span> 
+
+- <span data-ttu-id="47b95-140">AzureEndpoints</span><span class="sxs-lookup"><span data-stu-id="47b95-140">AzureEndpoints</span></span>
+- <span data-ttu-id="47b95-141">ExternalEndpoints</span><span class="sxs-lookup"><span data-stu-id="47b95-141">ExternalEndpoints</span></span>
+- <span data-ttu-id="47b95-142">NestedEndpoints</span><span class="sxs-lookup"><span data-stu-id="47b95-142">NestedEndpoints</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Fields
+Aliases:
+Accepted values: AzureEndpoints, ExternalEndpoints, NestedEndpoints
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-143">-Confirm</span><span class="sxs-lookup"><span data-stu-id="47b95-143">-Confirm</span></span>
+<span data-ttu-id="47b95-144">Solicita a confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="47b95-144">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-145">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="47b95-145">-WhatIf</span></span>
+<span data-ttu-id="47b95-146">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="47b95-146">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="47b95-147">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="47b95-147">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="47b95-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="47b95-148">CommonParameters</span></span>
+<span data-ttu-id="47b95-149">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="47b95-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="47b95-150">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="47b95-150">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="47b95-151">INPUTS</span><span class="sxs-lookup"><span data-stu-id="47b95-151">INPUTS</span></span>
+
+### <span data-ttu-id="47b95-152">Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-152">Microsoft.Azure.Commands.TrafficManager.Models.TrafficManagerEndpoint</span></span>
+
+## <span data-ttu-id="47b95-153">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="47b95-153">OUTPUTS</span></span>
+
+### <span data-ttu-id="47b95-154">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="47b95-154">System.Boolean</span></span>
+
+## <span data-ttu-id="47b95-155">NOTES</span><span class="sxs-lookup"><span data-stu-id="47b95-155">NOTES</span></span>
+
+## <span data-ttu-id="47b95-156">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="47b95-156">RELATED LINKS</span></span>
+
+[<span data-ttu-id="47b95-157">Enable-AzTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-157">Enable-AzTrafficManagerEndpoint</span></span>](./Enable-AzTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="47b95-158">Get-AzTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-158">Get-AzTrafficManagerEndpoint</span></span>](./Get-AzTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="47b95-159">Get-AzTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="47b95-159">Get-AzTrafficManagerProfile</span></span>](./Get-AzTrafficManagerProfile.md)
+
+[<span data-ttu-id="47b95-160">New-AzTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-160">New-AzTrafficManagerEndpoint</span></span>](./New-AzTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="47b95-161">New-AzTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="47b95-161">New-AzTrafficManagerProfile</span></span>](./New-AzTrafficManagerProfile.md)
+
+[<span data-ttu-id="47b95-162">Remove-AzTrafficManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="47b95-162">Remove-AzTrafficManagerEndpoint</span></span>](./Remove-AzTrafficManagerEndpoint.md)
+
+[<span data-ttu-id="47b95-163">Set-AzTrafficManagerProfile</span><span class="sxs-lookup"><span data-stu-id="47b95-163">Set-AzTrafficManagerProfile</span></span>](./Set-AzTrafficManagerProfile.md)
+
+

@@ -1,0 +1,144 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ApiManagement.ServiceManagement.dll-Help.xml
+Module Name: Az.ApiManagement
+ms.assetid: 8C014335-9622-4F2E-A163-4B0C84531506
+online version: https://docs.microsoft.com/powershell/module/az.apimanagement/add-azapimanagementusertogroup
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementUserToGroup.md
+ms.openlocfilehash: a56acc56bc100365f999ef1ca9a5f42f53b36096
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101890898"
+---
+# <span data-ttu-id="ff154-101">Add-AzApiManagementUserToGroup</span><span class="sxs-lookup"><span data-stu-id="ff154-101">Add-AzApiManagementUserToGroup</span></span>
+
+## <span data-ttu-id="ff154-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ff154-102">SYNOPSIS</span></span>
+<span data-ttu-id="ff154-103">Adiciona um usuário a um grupo.</span><span class="sxs-lookup"><span data-stu-id="ff154-103">Adds a user to a group.</span></span>
+
+## <span data-ttu-id="ff154-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="ff154-104">SYNTAX</span></span>
+
+```
+Add-AzApiManagementUserToGroup -Context <PsApiManagementContext> -GroupId <String> -UserId <String> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="ff154-105">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="ff154-105">DESCRIPTION</span></span>
+<span data-ttu-id="ff154-106">O cmdlet **Add-AzApiManagementUserToGroup** adiciona um usuário a um grupo.</span><span class="sxs-lookup"><span data-stu-id="ff154-106">The **Add-AzApiManagementUserToGroup** cmdlet adds a user to a group.</span></span>
+
+## <span data-ttu-id="ff154-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="ff154-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="ff154-108">Exemplo 1: Adicionar um usuário a um grupo</span><span class="sxs-lookup"><span data-stu-id="ff154-108">Example 1: Add a user to a group</span></span>
+```
+PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+PS C:\>Add-AzApiManagementUserToGroup -Context $apimContext -GroupId "0001" -UserId "0123456789"
+```
+
+<span data-ttu-id="ff154-109">Este comando adiciona um usuário existente a um grupo existente.</span><span class="sxs-lookup"><span data-stu-id="ff154-109">This command adds an existing user to an existing group.</span></span>
+
+## <span data-ttu-id="ff154-110">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="ff154-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="ff154-111">-Context</span><span class="sxs-lookup"><span data-stu-id="ff154-111">-Context</span></span>
+<span data-ttu-id="ff154-112">Especifica um **objeto PsApiManagementContext.**</span><span class="sxs-lookup"><span data-stu-id="ff154-112">Specifies a **PsApiManagementContext** object.</span></span>
+<span data-ttu-id="ff154-113">Esse parâmetro é necessário.</span><span class="sxs-lookup"><span data-stu-id="ff154-113">This parameter is required.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ff154-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ff154-114">-DefaultProfile</span></span>
+<span data-ttu-id="ff154-115">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="ff154-115">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ff154-116">-GroupId</span><span class="sxs-lookup"><span data-stu-id="ff154-116">-GroupId</span></span>
+<span data-ttu-id="ff154-117">Especifica a ID do grupo.</span><span class="sxs-lookup"><span data-stu-id="ff154-117">Specifies the group ID.</span></span>
+<span data-ttu-id="ff154-118">Esse parâmetro é necessário.</span><span class="sxs-lookup"><span data-stu-id="ff154-118">This parameter is required.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ff154-119">-PassThru</span><span class="sxs-lookup"><span data-stu-id="ff154-119">-PassThru</span></span>
+<span data-ttu-id="ff154-120">passthru</span><span class="sxs-lookup"><span data-stu-id="ff154-120">passthru</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ff154-121">-UserId</span><span class="sxs-lookup"><span data-stu-id="ff154-121">-UserId</span></span>
+<span data-ttu-id="ff154-122">Especifica a ID do usuário.</span><span class="sxs-lookup"><span data-stu-id="ff154-122">Specifies the user ID.</span></span>
+<span data-ttu-id="ff154-123">Esse parâmetro é necessário.</span><span class="sxs-lookup"><span data-stu-id="ff154-123">This parameter is required.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ff154-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ff154-124">CommonParameters</span></span>
+<span data-ttu-id="ff154-125">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ff154-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ff154-126">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ff154-126">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="ff154-127">INPUTS</span><span class="sxs-lookup"><span data-stu-id="ff154-127">INPUTS</span></span>
+
+### <span data-ttu-id="ff154-128">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span><span class="sxs-lookup"><span data-stu-id="ff154-128">Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext</span></span>
+
+### <span data-ttu-id="ff154-129">System.String</span><span class="sxs-lookup"><span data-stu-id="ff154-129">System.String</span></span>
+
+### <span data-ttu-id="ff154-130">System.Management.Automation.SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="ff154-130">System.Management.Automation.SwitchParameter</span></span>
+
+## <span data-ttu-id="ff154-131">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="ff154-131">OUTPUTS</span></span>
+
+### <span data-ttu-id="ff154-132">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="ff154-132">System.Boolean</span></span>
+
+## <span data-ttu-id="ff154-133">NOTES</span><span class="sxs-lookup"><span data-stu-id="ff154-133">NOTES</span></span>
+
+## <span data-ttu-id="ff154-134">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="ff154-134">RELATED LINKS</span></span>
+
+[<span data-ttu-id="ff154-135">Get-AzApiManagementUser</span><span class="sxs-lookup"><span data-stu-id="ff154-135">Get-AzApiManagementUser</span></span>](./Get-AzApiManagementUser.md)
+
+[<span data-ttu-id="ff154-136">Remove-AzApiManagementUserFromGroup</span><span class="sxs-lookup"><span data-stu-id="ff154-136">Remove-AzApiManagementUserFromGroup</span></span>](./Remove-AzApiManagementUserFromGroup.md)
+
+
