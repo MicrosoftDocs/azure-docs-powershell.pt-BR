@@ -1,0 +1,268 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/powershell/module/az.network/remove-azvirtualhubvnetConnection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualHubVnetConnection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzVirtualHubVnetConnection.md
+ms.openlocfilehash: f5a48ec9ac28e13af7aaa763afe72437bed5fda4
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101892410"
+---
+# Remove-AzVirtualHubVnetConnection
+
+## SYNOPSIS
+O Remove-AzVirtualHubVnetConnection cmdlet remove uma Conexão de Rede Virtual do Azure que compara uma VNET remota à VNET do hub.
+
+## SINTAXE
+
+### ByHubVirtualNetworkConnectionName (Padrão)
+```
+Remove-AzVirtualHubVnetConnection -ResourceGroupName <String> -ParentResourceName <String> -Name <String>
+ [-AsJob] [-Force] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### ByHubVirtualNetworkConnectionObject
+```
+Remove-AzVirtualHubVnetConnection [-InputObject <PSHubVirtualNetworkConnection>] [-AsJob] [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByHubVirtualNetworkConnectionResourceId
+```
+Remove-AzVirtualHubVnetConnection -ResourceId <String> [-AsJob] [-Force] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+O Remove-AzVirtualHubVnetConnection cmdlet remove uma Conexão de Rede Virtual do Azure que compara uma VNET remota à VNET do hub.
+
+## EXEMPLOS
+
+### Exemplo 1
+
+```powershell
+PS C:\> New-AzResourceGroup -Location "West US" -Name "testRG"
+PS C:\> $frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "10.0.1.0/24"
+PS C:\> $backendSubnet  = New-AzVirtualNetworkSubnetConfig -Name backendSubnet  -AddressPrefix "10.0.2.0/24"
+PS C:\> $remoteVirtualNetwork = New-AzVirtualNetwork -Name "MyVirtualNetwork" -ResourceGroupName "testRG" -Location "West US" -AddressPrefix "10.0.0.0/16" -Subnet $frontendSubnet,$backendSubnet
+PS C:\> $virtualWan = New-AzVirtualWan -ResourceGroupName "testRG" -Name "myVirtualWAN" -Location "West US"
+PS C:\> New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24"
+PS C:\> New-AzVirtualHubVnetConnection -ResourceGroupName "testRG" -VirtualHubName "westushub" -Name "testvnetconnection" -RemoteVirtualNetwork $remoteVirtualNetwork
+PS C:\> Remove-AzVirtualHubVnetConnection -ResourceGroupName testRG -VirtualHubName westushub -Name testvnetconnection
+```
+
+O acima criará um grupo de recursos, WAN Virtual, Rede Virtual, Hub Virtual no Central US nesse grupo de recursos no Azure. Uma Conexão de Rede Virtual será criada posteriormente, que fará a conexão da Rede Virtual com o Hub Virtual.
+
+Depois que a conexão de rede virtual do hub é criada, ela remove a conexão de rede virtual do hub usando o nome do grupo de recursos, o nome do hub e o nome da conexão.
+
+### Exemplo 2
+
+```powershell
+PS C:\> New-AzResourceGroup -Location "West US" -Name "testRG"
+PS C:\> $frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "10.0.1.0/24"
+PS C:\> $backendSubnet  = New-AzVirtualNetworkSubnetConfig -Name backendSubnet  -AddressPrefix "10.0.2.0/24"
+PS C:\> $remoteVirtualNetwork = New-AzVirtualNetwork -Name "MyVirtualNetwork" -ResourceGroupName "testRG" -Location "West US" -AddressPrefix "10.0.0.0/16" -Subnet $frontendSubnet,$backendSubnet
+PS C:\> $virtualWan = New-AzVirtualWan -ResourceGroupName "testRG" -Name "myVirtualWAN" -Location "West US"
+PS C:\> New-AzVirtualHub -VirtualWan $virtualWan -ResourceGroupName "testRG" -Name "westushub" -AddressPrefix "10.0.1.0/24"
+PS C:\> New-AzVirtualHubVnetConnection -ResourceGroupName "testRG" -VirtualHubName "westushub" -Name "testvnetconnection" -RemoteVirtualNetwork $remoteVirtualNetwork
+PS C:\> Get-AzVirtualHubVnetConnection -ResourceGroupName testRG -VirtualHubName westushub -Name testvnetconnection | Remove-AzHubVnetConnection
+```
+
+O acima criará um grupo de recursos, WAN Virtual, Rede Virtual, Hub Virtual no Central US nesse grupo de recursos no Azure. Uma Conexão de Rede Virtual será criada posteriormente, que fará a conexão da Rede Virtual com o Hub Virtual.
+
+Depois que a conexão de rede virtual do hub é criada, ela remove a conexão de rede virtual do hub usando a canalização do powershell na saída do Get-AzHubVirtualNetworkConnection.
+
+## PARÂMETROS
+
+### -AsJob
+Executar cmdlet em segundo plano
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Não peça confirmação se quiser substituir um recurso
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+O recurso hubvirtualnetworkconnection a ser modificado.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSHubVirtualNetworkConnection
+Parameter Sets: ByHubVirtualNetworkConnectionObject
+Aliases: HubVirtualNetworkConnection
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name
+O nome do recurso.
+
+```yaml
+Type: System.String
+Parameter Sets: ByHubVirtualNetworkConnectionName
+Aliases: ResourceName, HubVirtualNetworkConnectionName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ParentResourceName
+O nome do recurso pai.
+
+```yaml
+Type: System.String
+Parameter Sets: ByHubVirtualNetworkConnectionName
+Aliases: VirtualHubName, ParentVirtualHubName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Retorna um objeto que representa o item com o qual você está trabalhando.
+Por padrão, esse cmdlet não gera nenhuma saída.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+O nome do grupo de recursos.
+
+```yaml
+Type: System.String
+Parameter Sets: ByHubVirtualNetworkConnectionName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+A id de recurso do recurso hubvirtualnetworkconnection a ser modificado.
+
+```yaml
+Type: System.String
+Parameter Sets: ByHubVirtualNetworkConnectionResourceId
+Aliases: HubVirtualNetworkConnectionId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Solicita a confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUTS
+
+### Microsoft.Azure.Commands.Network.Models.PSHubVirtualNetworkConnection
+
+### System.String
+
+## SAÍDAS
+
+### System.Boolean
+
+## NOTES
+
+## LINKS RELACIONADOS
+
+[Get-AzVirtualHubVnetConnection](./Get-AzVirtualHubVnetConnection.md)
+
+[New-AzVirtualHubVnetConnection](./New-AzVirtualHubVnetConnection.md)
