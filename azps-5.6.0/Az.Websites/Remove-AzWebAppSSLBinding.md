@@ -1,0 +1,256 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
+Module Name: Az.Websites
+ms.assetid: 3AB3D398-E5DB-4214-BA27-6E3B7D
+online version: https://docs.microsoft.com/powershell/module/az.websites/remove-azwebappsslbinding
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppSSLBinding.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Websites/Websites/help/Remove-AzWebAppSSLBinding.md
+ms.openlocfilehash: b1d9aa1f212ce31a8bb7fadeff4e0ca8afcf05e0
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101886300"
+---
+# <span data-ttu-id="b829c-101">Remove-AzWebAppSSLBinding</span><span class="sxs-lookup"><span data-stu-id="b829c-101">Remove-AzWebAppSSLBinding</span></span>
+
+## <span data-ttu-id="b829c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b829c-102">SYNOPSIS</span></span>
+<span data-ttu-id="b829c-103">Remove uma associação SSL de um certificado carregado.</span><span class="sxs-lookup"><span data-stu-id="b829c-103">Removes an SSL binding from an uploaded certificate.</span></span>
+
+## <span data-ttu-id="b829c-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="b829c-104">SYNTAX</span></span>
+
+### <span data-ttu-id="b829c-105">S1</span><span class="sxs-lookup"><span data-stu-id="b829c-105">S1</span></span>
+```
+Remove-AzWebAppSSLBinding [-Name] <String> [[-DeleteCertificate] <Boolean>] [-Force]
+ [-ResourceGroupName] <String> [-WebAppName] <String> [[-Slot] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="b829c-106">S2</span><span class="sxs-lookup"><span data-stu-id="b829c-106">S2</span></span>
+```
+Remove-AzWebAppSSLBinding [-Name] <String> [[-DeleteCertificate] <Boolean>] [-Force] [-WebApp] <PSSite>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="b829c-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="b829c-107">DESCRIPTION</span></span>
+<span data-ttu-id="b829c-108">O cmdlet **Remove-AzWebAppSSLBinding** remove uma associação SSL (Secure Sockets Layer) de um Aplicativo Web do Azure.</span><span class="sxs-lookup"><span data-stu-id="b829c-108">The **Remove-AzWebAppSSLBinding** cmdlet removes a Secure Sockets Layer (SSL) binding from an Azure Web App.</span></span>
+<span data-ttu-id="b829c-109">Associações SSL são usadas para associar um Aplicativo Web a um certificado.</span><span class="sxs-lookup"><span data-stu-id="b829c-109">SSL bindings are used to associate a Web App with a certificate.</span></span>
+
+## <span data-ttu-id="b829c-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="b829c-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="b829c-111">Exemplo 1: Remover uma associação SSL para um aplicativo Web</span><span class="sxs-lookup"><span data-stu-id="b829c-111">Example 1: Remove an SSL binding for a web app</span></span>
+```
+PS C:\>Remove-AzWebAppSSLBinding -ResourceGroupName "ContosoResourceGroup" -WebAppName "ContosoWebApp" -Name "www.contoso.com"
+```
+
+<span data-ttu-id="b829c-112">Este comando remove a associação SSL para o aplicativo Web ContosoWebApp.</span><span class="sxs-lookup"><span data-stu-id="b829c-112">This command removes the SSL binding for the web app ContosoWebApp.</span></span>
+<span data-ttu-id="b829c-113">Como o *parâmetro DeleteCertificate* não está incluído, o certificado será excluído se ele não tiver mais nenhuma associação SSL.</span><span class="sxs-lookup"><span data-stu-id="b829c-113">Since the *DeleteCertificate* parameter is not included, the certificate will be deleted if it no longer has any SSL bindings.</span></span>
+
+### <span data-ttu-id="b829c-114">Exemplo 2: Remover uma associação SSL sem remover o certificado</span><span class="sxs-lookup"><span data-stu-id="b829c-114">Example 2: Remove an SSL binding without removing the certificate</span></span>
+```
+PS C:\>Remove-AzWebAppSSLBinding -ResourceGroupName "ContosoResourceGroup" -WebAppName "ContosoWebApp" -Name "www.contoso.com" -DeleteCertificate $False
+```
+
+<span data-ttu-id="b829c-115">Semelhante ao Exemplo 1, esse comando também remove a associação SSL para o Web App ContosoWebApp.</span><span class="sxs-lookup"><span data-stu-id="b829c-115">Similar to Example 1, this command also removes the SSL binding for the Web App ContosoWebApp.</span></span>
+<span data-ttu-id="b829c-116">Nesse caso, no entanto, o *parâmetro DeleteCertificate* está incluído e o valor do parâmetro é definido como $False.</span><span class="sxs-lookup"><span data-stu-id="b829c-116">In this case, however, the *DeleteCertificate* parameter is included, and the parameter value is set to $False.</span></span>
+<span data-ttu-id="b829c-117">Isso significa que o certificado não será excluído, independentemente de ele ter alguma associação SSL ou não.</span><span class="sxs-lookup"><span data-stu-id="b829c-117">That means that the certificate will not be deleted regardless of whether it has any SSL bindings or not.</span></span>
+
+### <span data-ttu-id="b829c-118">Exemplo 3: usar uma referência de objeto para remover uma associação SSL</span><span class="sxs-lookup"><span data-stu-id="b829c-118">Example 3: Use an object reference to remove an SSL binding</span></span>
+```
+PS C:\>$WebApp = Get-AzWebApp -Name "ContosoWebApp"
+PS C:\> Remove-AzWebAppSSLBinding -WebApp $WebApp -Name "www.contoso.com"
+```
+
+<span data-ttu-id="b829c-119">Este exemplo usa uma referência de objeto ao site do Aplicativo Web para remover a associação SSL de um Aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="b829c-119">This example uses an object reference to the Web App website to remove the SSL binding for a Web App.</span></span>
+<span data-ttu-id="b829c-120">O primeiro comando usa o cmdlet Get-AzWebApp para criar uma referência de objeto ao Aplicativo Web chamado ContosoWebApp.</span><span class="sxs-lookup"><span data-stu-id="b829c-120">The first command uses the Get-AzWebApp cmdlet to create an object reference to the Web App named ContosoWebApp.</span></span>
+<span data-ttu-id="b829c-121">Essa referência de objeto é armazenada em uma variável chamada $WebApp.</span><span class="sxs-lookup"><span data-stu-id="b829c-121">That object reference is stored in a variable named $WebApp.</span></span>
+<span data-ttu-id="b829c-122">O segundo comando usa a referência de objeto e o cmdlet **Remove-AzWebAppSSLBinding** para remover a associação SSL.</span><span class="sxs-lookup"><span data-stu-id="b829c-122">The second command uses the object reference and the **Remove-AzWebAppSSLBinding** cmdlet to remove the SSL binding.</span></span>
+
+## <span data-ttu-id="b829c-123">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="b829c-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="b829c-124">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b829c-124">-DefaultProfile</span></span>
+<span data-ttu-id="b829c-125">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.</span><span class="sxs-lookup"><span data-stu-id="b829c-125">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-126">-DeleteCertificate</span><span class="sxs-lookup"><span data-stu-id="b829c-126">-DeleteCertificate</span></span>
+<span data-ttu-id="b829c-127">Especifica a ação a ser realizada se a associação SSL que está sendo removida é a única associação usada pelo certificado.</span><span class="sxs-lookup"><span data-stu-id="b829c-127">Specifies the action to take place if the SSL binding being removed is the only binding used by the certificate.</span></span>
+<span data-ttu-id="b829c-128">Se *DeleteCertificate* estiver definido como $False, o certificado não será excluído quando a associação for excluída.</span><span class="sxs-lookup"><span data-stu-id="b829c-128">If *DeleteCertificate* is set to $False, the certificate will not be deleted when the binding is deleted.</span></span>
+<span data-ttu-id="b829c-129">Se *DeleteCertificate* estiver definido como $True ou não estiver incluído no comando, o certificado será excluído juntamente com a associação SSL.</span><span class="sxs-lookup"><span data-stu-id="b829c-129">If *DeleteCertificate* is set to $True or is not included in the command, the certificate will be deleted along with the SSL binding.</span></span>
+<span data-ttu-id="b829c-130">O certificado só será excluído se a associação SSL que está sendo removida for a única associação usada pelo certificado.</span><span class="sxs-lookup"><span data-stu-id="b829c-130">The certificate will only be deleted if the SSL binding being removed is the only binding used by the certificate.</span></span>
+<span data-ttu-id="b829c-131">Se o certificado tiver mais de uma associação, o certificado não será removido independentemente do valor do *parâmetro DeleteCertificate.*</span><span class="sxs-lookup"><span data-stu-id="b829c-131">If the certificate has more than one binding, the certificate will not be removed regardless of the value of the *DeleteCertificate* parameter.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-132">-Force</span><span class="sxs-lookup"><span data-stu-id="b829c-132">-Force</span></span>
+<span data-ttu-id="b829c-133">Força o comando a ser executado sem pedir confirmação do usuário.</span><span class="sxs-lookup"><span data-stu-id="b829c-133">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-134">-Name</span><span class="sxs-lookup"><span data-stu-id="b829c-134">-Name</span></span>
+<span data-ttu-id="b829c-135">Especifica o nome do Aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="b829c-135">Specifies the name of the Web App.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-136">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b829c-136">-ResourceGroupName</span></span>
+<span data-ttu-id="b829c-137">Especifica o nome do grupo de recursos ao que o certificado é atribuído.</span><span class="sxs-lookup"><span data-stu-id="b829c-137">Specifies the name of the resource group that the certificate is assigned to.</span></span>
+<span data-ttu-id="b829c-138">Não é possível usar o *parâmetro ResourceGroupName* e o *parâmetro WebApp* no mesmo comando.</span><span class="sxs-lookup"><span data-stu-id="b829c-138">You cannot use the *ResourceGroupName* parameter and the *WebApp* parameter in the same command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: S1
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-139">-Slot</span><span class="sxs-lookup"><span data-stu-id="b829c-139">-Slot</span></span>
+<span data-ttu-id="b829c-140">Especifica o slot de implantação do Web App.</span><span class="sxs-lookup"><span data-stu-id="b829c-140">Specifies the Web App deployment slot.</span></span>
+<span data-ttu-id="b829c-141">Para obter um slot de implantação, use o Get-AzWebAppSlot cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b829c-141">To get a deployment slot, use the Get-AzWebAppSlot cmdlet.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: S1
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-142">-WebApp</span><span class="sxs-lookup"><span data-stu-id="b829c-142">-WebApp</span></span>
+<span data-ttu-id="b829c-143">Especifica um Aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="b829c-143">Specifies a Web App.</span></span>
+<span data-ttu-id="b829c-144">Para obter um Aplicativo Web, use o Get-AzWebApp cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b829c-144">To get a Web App, use the Get-AzWebApp cmdlet.</span></span>
+<span data-ttu-id="b829c-145">Não é possível usar o *parâmetro WebApp* no mesmo comando que o *parâmetro ResourceGroupName* e/ou *o WebAppName*.</span><span class="sxs-lookup"><span data-stu-id="b829c-145">You cannot use the *WebApp* parameter in the same command as the *ResourceGroupName* parameter and/or the *WebAppName*.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.WebApps.Models.PSSite
+Parameter Sets: S2
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-146">-WebAppName</span><span class="sxs-lookup"><span data-stu-id="b829c-146">-WebAppName</span></span>
+<span data-ttu-id="b829c-147">Especifica o nome do Aplicativo Web.</span><span class="sxs-lookup"><span data-stu-id="b829c-147">Specifies the name of the Web App.</span></span>
+<span data-ttu-id="b829c-148">Não é possível usar o *parâmetro WebAppName* e o *parâmetro WebApp* no mesmo comando.</span><span class="sxs-lookup"><span data-stu-id="b829c-148">You cannot use the *WebAppName* parameter and the *WebApp* parameter in the same command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: S1
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-149">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b829c-149">-Confirm</span></span>
+<span data-ttu-id="b829c-150">Solicita a confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b829c-150">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-151">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b829c-151">-WhatIf</span></span>
+<span data-ttu-id="b829c-152">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="b829c-152">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="b829c-153">O cmdlet não é executado. Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="b829c-153">The cmdlet is not run.Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="b829c-154">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="b829c-154">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b829c-155">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b829c-155">CommonParameters</span></span>
+<span data-ttu-id="b829c-156">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b829c-156">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b829c-157">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b829c-157">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b829c-158">INPUTS</span><span class="sxs-lookup"><span data-stu-id="b829c-158">INPUTS</span></span>
+
+### <span data-ttu-id="b829c-159">Microsoft.Azure.Commands.WebApps.Models.PSSite</span><span class="sxs-lookup"><span data-stu-id="b829c-159">Microsoft.Azure.Commands.WebApps.Models.PSSite</span></span>
+
+## <span data-ttu-id="b829c-160">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="b829c-160">OUTPUTS</span></span>
+
+### <span data-ttu-id="b829c-161">System.Void</span><span class="sxs-lookup"><span data-stu-id="b829c-161">System.Void</span></span>
+
+## <span data-ttu-id="b829c-162">NOTES</span><span class="sxs-lookup"><span data-stu-id="b829c-162">NOTES</span></span>
+
+## <span data-ttu-id="b829c-163">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="b829c-163">RELATED LINKS</span></span>
+
+[<span data-ttu-id="b829c-164">Get-AzWebAppSSLBinding</span><span class="sxs-lookup"><span data-stu-id="b829c-164">Get-AzWebAppSSLBinding</span></span>](./Get-AzWebAppSSLBinding.md)
+
+[<span data-ttu-id="b829c-165">New-AzWebAppSSLBinding</span><span class="sxs-lookup"><span data-stu-id="b829c-165">New-AzWebAppSSLBinding</span></span>](./New-AzWebAppSSLBinding.md)
+
+[<span data-ttu-id="b829c-166">Get-AzWebAppSlot</span><span class="sxs-lookup"><span data-stu-id="b829c-166">Get-AzWebAppSlot</span></span>](./Get-AzWebAppSlot.md)
+
+[<span data-ttu-id="b829c-167">Get-AzWebApp</span><span class="sxs-lookup"><span data-stu-id="b829c-167">Get-AzWebApp</span></span>](./Get-AzWebApp.md)
+
+

@@ -1,0 +1,239 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.NetAppFiles.dll-Help.xml
+Module Name: Az.NetAppFiles
+online version: https://docs.microsoft.com/powershell/module/az.netappfiles/approve-aznetappfilesreplication
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Approve-AzNetAppFilesReplication.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NetAppFiles/NetAppFiles/help/Approve-AzNetAppFilesReplication.md
+ms.openlocfilehash: ac562f95ad6d5cbc97e31cd3832b90d2aa2362e3
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101887473"
+---
+# <span data-ttu-id="043f4-101">Approve-AzNetAppFilesReplication</span><span class="sxs-lookup"><span data-stu-id="043f4-101">Approve-AzNetAppFilesReplication</span></span>
+
+## <span data-ttu-id="043f4-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="043f4-102">SYNOPSIS</span></span>
+<span data-ttu-id="043f4-103">Aprovar/autorizar a conexão de replicação no volume de origem</span><span class="sxs-lookup"><span data-stu-id="043f4-103">Approve/Authorize replication connection on the source volume</span></span>
+
+## <span data-ttu-id="043f4-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="043f4-104">SYNTAX</span></span>
+
+### <span data-ttu-id="043f4-105">ByFieldsParameterSet (Padrão)</span><span class="sxs-lookup"><span data-stu-id="043f4-105">ByFieldsParameterSet (Default)</span></span>
+```
+Approve-AzNetAppFilesReplication -ResourceGroupName <String> -AccountName <String> -PoolName <String>
+ -Name <String> -DataProtectionVolumeId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="043f4-106">ByResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="043f4-106">ByResourceIdParameterSet</span></span>
+```
+Approve-AzNetAppFilesReplication -ResourceId <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="043f4-107">ByObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="043f4-107">ByObjectParameterSet</span></span>
+```
+Approve-AzNetAppFilesReplication -InputObject <PSNetAppFilesVolume> [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="043f4-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="043f4-108">DESCRIPTION</span></span>
+<span data-ttu-id="043f4-109">Aprovar a conexão de replicação no volume de origem</span><span class="sxs-lookup"><span data-stu-id="043f4-109">Approve the replication connection on the source volume</span></span>
+
+## <span data-ttu-id="043f4-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="043f4-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="043f4-111">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="043f4-111">Example 1</span></span>
+```powershell
+PS C:\> Approve-AzNetAppFilesReplication -ResourceGroupName "MyRG" -AccountName "MyAnfAccount" -PoolName "MyAnfPool" -VolumeName "MyAnfVolume" -DataProtectionVolumeId "MyDestinationVolumeId"
+
+Output:
+remoteVolumeResourceId          : resourceId
+```
+
+<span data-ttu-id="043f4-112">Este comando aprova a replicação em MyAnfVolume.</span><span class="sxs-lookup"><span data-stu-id="043f4-112">This command Approves the Replication on MyAnfVolume.</span></span>
+
+## <span data-ttu-id="043f4-113">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="043f4-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="043f4-114">-AccountName</span><span class="sxs-lookup"><span data-stu-id="043f4-114">-AccountName</span></span>
+<span data-ttu-id="043f4-115">O nome da conta ANF do volume de origem de replicação</span><span class="sxs-lookup"><span data-stu-id="043f4-115">The name of the ANF account of the replication source volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-116">-DataProtectionVolumeId</span><span class="sxs-lookup"><span data-stu-id="043f4-116">-DataProtectionVolumeId</span></span>
+<span data-ttu-id="043f4-117">A ID do sistema de arquivos do volume de proteção de dados de destino</span><span class="sxs-lookup"><span data-stu-id="043f4-117">The file system id of the destination data protection volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="043f4-118">-DefaultProfile</span></span>
+<span data-ttu-id="043f4-119">As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="043f4-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="043f4-120">-InputObject</span></span>
+<span data-ttu-id="043f4-121">O objeto de volume de origem ANF para autorizar o destino de replicação</span><span class="sxs-lookup"><span data-stu-id="043f4-121">The ANF source volume object to authorized the replication destination</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-122">-Name</span><span class="sxs-lookup"><span data-stu-id="043f4-122">-Name</span></span>
+<span data-ttu-id="043f4-123">O nome do volume de origem de replicação da ANF</span><span class="sxs-lookup"><span data-stu-id="043f4-123">The name of the ANF replication source volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases: VolumeName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-124">-PassThru</span><span class="sxs-lookup"><span data-stu-id="043f4-124">-PassThru</span></span>
+<span data-ttu-id="043f4-125">Retornar se a autorização de replicação do volume especificado foi executada</span><span class="sxs-lookup"><span data-stu-id="043f4-125">Return whether replication authorization of the specified volume was performed</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-126">-PoolName</span><span class="sxs-lookup"><span data-stu-id="043f4-126">-PoolName</span></span>
+<span data-ttu-id="043f4-127">O nome do pool ANF do volume de origem de replicação</span><span class="sxs-lookup"><span data-stu-id="043f4-127">The name of the ANF pool of the replication source volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-128">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="043f4-128">-ResourceGroupName</span></span>
+<span data-ttu-id="043f4-129">O grupo de recursos do volume de origem de replicação ANF</span><span class="sxs-lookup"><span data-stu-id="043f4-129">The resource group of the ANF replication source volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-130">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="043f4-130">-ResourceId</span></span>
+<span data-ttu-id="043f4-131">A id de recurso do volume de origem de replicação ANF</span><span class="sxs-lookup"><span data-stu-id="043f4-131">The resource id of the ANF replication source volume</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-132">-Confirm</span><span class="sxs-lookup"><span data-stu-id="043f4-132">-Confirm</span></span>
+<span data-ttu-id="043f4-133">Solicita a confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="043f4-133">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-134">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="043f4-134">-WhatIf</span></span>
+<span data-ttu-id="043f4-135">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="043f4-135">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="043f4-136">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="043f4-136">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="043f4-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="043f4-137">CommonParameters</span></span>
+<span data-ttu-id="043f4-138">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="043f4-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="043f4-139">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="043f4-139">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="043f4-140">INPUTS</span><span class="sxs-lookup"><span data-stu-id="043f4-140">INPUTS</span></span>
+
+### <span data-ttu-id="043f4-141">System.String</span><span class="sxs-lookup"><span data-stu-id="043f4-141">System.String</span></span>
+
+### <span data-ttu-id="043f4-142">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume</span><span class="sxs-lookup"><span data-stu-id="043f4-142">Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesVolume</span></span>
+
+## <span data-ttu-id="043f4-143">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="043f4-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="043f4-144">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="043f4-144">System.Boolean</span></span>
+
+## <span data-ttu-id="043f4-145">NOTES</span><span class="sxs-lookup"><span data-stu-id="043f4-145">NOTES</span></span>
+
+## <span data-ttu-id="043f4-146">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="043f4-146">RELATED LINKS</span></span>

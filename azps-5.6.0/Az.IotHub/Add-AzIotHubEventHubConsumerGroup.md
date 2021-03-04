@@ -1,0 +1,146 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.IotHub.dll-Help.xml
+Module Name: Az.IotHub
+online version: https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubeventhubconsumergroup
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Add-AzIotHubEventHubConsumerGroup.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Add-AzIotHubEventHubConsumerGroup.md
+ms.openlocfilehash: 23f6c4b7d40f0ec2e02541f82d5d517019bd15fb
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101891361"
+---
+# <span data-ttu-id="d2a64-101">Add-AzIotHubEventHubConsumerGroup</span><span class="sxs-lookup"><span data-stu-id="d2a64-101">Add-AzIotHubEventHubConsumerGroup</span></span>
+
+## <span data-ttu-id="d2a64-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d2a64-102">SYNOPSIS</span></span>
+<span data-ttu-id="d2a64-103">Cria um grupo de consumidores eventhub.</span><span class="sxs-lookup"><span data-stu-id="d2a64-103">Creates an eventhub consumer group.</span></span>
+
+## <span data-ttu-id="d2a64-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="d2a64-104">SYNTAX</span></span>
+
+```
+Add-AzIotHubEventHubConsumerGroup [-ResourceGroupName] <String> [-Name] <String>
+ [-EventHubConsumerGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="d2a64-105">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="d2a64-105">DESCRIPTION</span></span>
+<span data-ttu-id="d2a64-106">Cria um grupo de consumidores no Eventhub associado ao IotHub especificado.</span><span class="sxs-lookup"><span data-stu-id="d2a64-106">Creates a consumer group in the Eventhub associated with the specified IotHub.</span></span>
+
+## <span data-ttu-id="d2a64-107">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="d2a64-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="d2a64-108">Exemplo 1: Adicionar um grupo de consumidores ao eventhub de telemetria</span><span class="sxs-lookup"><span data-stu-id="d2a64-108">Example 1: Add a consumer group to the telemetry eventhub</span></span>
+```
+PS C:\> Add-AzIotHubEventHubConsumerGroup -ResourceGroupName "myresourcegroup" -Name "myiothub" -EventHubConsumerGroupName "myconsumergroup"
+```
+
+<span data-ttu-id="d2a64-109">Adiciona um novo grupo de consumidores chamado "myconsumergroup" ao eventhub para eventos de telemetria no iothub chamado "myiothub"</span><span class="sxs-lookup"><span data-stu-id="d2a64-109">Adds a new consumergroup named "myconsumergroup" to the eventhub for telemetry events in the iothub named "myiothub"</span></span>
+
+## <span data-ttu-id="d2a64-110">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="d2a64-110">PARAMETERS</span></span>
+
+### <span data-ttu-id="d2a64-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d2a64-111">-DefaultProfile</span></span>
+<span data-ttu-id="d2a64-112">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="d2a64-112">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-113">-EventHubConsumerGroupName</span><span class="sxs-lookup"><span data-stu-id="d2a64-113">-EventHubConsumerGroupName</span></span>
+<span data-ttu-id="d2a64-114">Nome do EventHub ConsumerGroup que você deseja adicionar.</span><span class="sxs-lookup"><span data-stu-id="d2a64-114">Name of the EventHub ConsumerGroup that you want to add.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-115">-Name</span><span class="sxs-lookup"><span data-stu-id="d2a64-115">-Name</span></span>
+<span data-ttu-id="d2a64-116">Nome do Hub de Iot</span><span class="sxs-lookup"><span data-stu-id="d2a64-116">Name of the Iot Hub</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-117">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d2a64-117">-ResourceGroupName</span></span>
+<span data-ttu-id="d2a64-118">Nome do Grupo de Recursos.</span><span class="sxs-lookup"><span data-stu-id="d2a64-118">Name of the Resource Group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-119">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d2a64-119">-Confirm</span></span>
+<span data-ttu-id="d2a64-120">Solicita a confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="d2a64-120">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-121">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d2a64-121">-WhatIf</span></span>
+<span data-ttu-id="d2a64-122">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="d2a64-122">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="d2a64-123">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="d2a64-123">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d2a64-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d2a64-124">CommonParameters</span></span>
+<span data-ttu-id="d2a64-125">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d2a64-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d2a64-126">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="d2a64-126">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d2a64-127">INPUTS</span><span class="sxs-lookup"><span data-stu-id="d2a64-127">INPUTS</span></span>
+
+### <span data-ttu-id="d2a64-128">System.String</span><span class="sxs-lookup"><span data-stu-id="d2a64-128">System.String</span></span>
+
+## <span data-ttu-id="d2a64-129">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="d2a64-129">OUTPUTS</span></span>
+
+### <span data-ttu-id="d2a64-130">System.String</span><span class="sxs-lookup"><span data-stu-id="d2a64-130">System.String</span></span>
+
+## <span data-ttu-id="d2a64-131">NOTES</span><span class="sxs-lookup"><span data-stu-id="d2a64-131">NOTES</span></span>
+
+## <span data-ttu-id="d2a64-132">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="d2a64-132">RELATED LINKS</span></span>
