@@ -1,0 +1,222 @@
+---
+external help file: ''
+Module Name: Az.ImportExport
+online version: https://docs.microsoft.com/powershell/module/az.importexport/remove-azimportexport
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Remove-AzImportExport.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ImportExport/help/Remove-AzImportExport.md
+ms.openlocfilehash: c4ba805ca2f8f89fcc3ed23747f71c9efff01d47
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101888524"
+---
+# <span data-ttu-id="2c692-101">Remove-AzImportExport</span><span class="sxs-lookup"><span data-stu-id="2c692-101">Remove-AzImportExport</span></span>
+
+## <span data-ttu-id="2c692-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2c692-102">SYNOPSIS</span></span>
+<span data-ttu-id="2c692-103">Exclui um trabalho existente.</span><span class="sxs-lookup"><span data-stu-id="2c692-103">Deletes an existing job.</span></span>
+<span data-ttu-id="2c692-104">Somente trabalhos nos estados Criando ou Concluído podem ser excluídos.</span><span class="sxs-lookup"><span data-stu-id="2c692-104">Only jobs in the Creating or Completed states can be deleted.</span></span>
+
+## <span data-ttu-id="2c692-105">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="2c692-105">SYNTAX</span></span>
+
+### <span data-ttu-id="2c692-106">Excluir (Padrão)</span><span class="sxs-lookup"><span data-stu-id="2c692-106">Delete (Default)</span></span>
+```
+Remove-AzImportExport -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-AcceptLanguage <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="2c692-107">DeleteViaIdentity</span><span class="sxs-lookup"><span data-stu-id="2c692-107">DeleteViaIdentity</span></span>
+```
+Remove-AzImportExport -InputObject <IImportExportIdentity> [-AcceptLanguage <String>]
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="2c692-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="2c692-108">DESCRIPTION</span></span>
+<span data-ttu-id="2c692-109">Exclui um trabalho existente.</span><span class="sxs-lookup"><span data-stu-id="2c692-109">Deletes an existing job.</span></span>
+<span data-ttu-id="2c692-110">Somente trabalhos nos estados Criando ou Concluído podem ser excluídos.</span><span class="sxs-lookup"><span data-stu-id="2c692-110">Only jobs in the Creating or Completed states can be deleted.</span></span>
+
+## <span data-ttu-id="2c692-111">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="2c692-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="2c692-112">Exemplo 1: Remover o trabalho ImportExport por resourceGroup e nome do servidor</span><span class="sxs-lookup"><span data-stu-id="2c692-112">Example 1: Remove ImportExport job by resourceGroup and server name</span></span>
+```powershell
+PS C:\> Remove-AzImportExport -Name test-job -ResourceGroupName ImportTestRG
+```
+
+<span data-ttu-id="2c692-113">Este cmdlet remove o trabalho ImportExport por resourceGroup e nome do servidor.</span><span class="sxs-lookup"><span data-stu-id="2c692-113">This cmdlet removes ImportExport job by resourceGroup and server name.</span></span>
+
+### <span data-ttu-id="2c692-114">Exemplo 2: Remover o trabalho ImportExport por identidade</span><span class="sxs-lookup"><span data-stu-id="2c692-114">Example 2: Remove ImportExport job by identity</span></span>
+```powershell
+PS C:\> Get-AzImportExport -Name test-job -ResourceGroupName ImportTestRG | Remove-AzImportExport
+ 
+```
+
+<span data-ttu-id="2c692-115">Esse cmdlet remove o trabalho ImportExport por identidade.</span><span class="sxs-lookup"><span data-stu-id="2c692-115">These cmdlet removes ImportExport job by identity.</span></span>
+
+## <span data-ttu-id="2c692-116">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="2c692-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="2c692-117">-AcceptLanguage</span><span class="sxs-lookup"><span data-stu-id="2c692-117">-AcceptLanguage</span></span>
+<span data-ttu-id="2c692-118">Especifica o idioma preferencial para a resposta.</span><span class="sxs-lookup"><span data-stu-id="2c692-118">Specifies the preferred language for the response.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2c692-119">-DefaultProfile</span></span>
+<span data-ttu-id="2c692-120">As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="2c692-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-121">-InputObject</span><span class="sxs-lookup"><span data-stu-id="2c692-121">-InputObject</span></span>
+<span data-ttu-id="2c692-122">Parâmetro Identity Para construir, consulte a seção NOTES para propriedades INPUTOBJECT e crie uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="2c692-122">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-123">-Name</span><span class="sxs-lookup"><span data-stu-id="2c692-123">-Name</span></span>
+<span data-ttu-id="2c692-124">O nome do trabalho de importação/exportação.</span><span class="sxs-lookup"><span data-stu-id="2c692-124">The name of the import/export job.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases: JobName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-125">-PassThru</span><span class="sxs-lookup"><span data-stu-id="2c692-125">-PassThru</span></span>
+<span data-ttu-id="2c692-126">Retorna true quando o comando é bem-sucedido</span><span class="sxs-lookup"><span data-stu-id="2c692-126">Returns true when the command succeeds</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="2c692-127">-ResourceGroupName</span></span>
+<span data-ttu-id="2c692-128">O nome do grupo de recursos identifica exclusivamente o grupo de recursos dentro da assinatura do usuário.</span><span class="sxs-lookup"><span data-stu-id="2c692-128">The resource group name uniquely identifies the resource group within the user subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-129">-SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="2c692-129">-SubscriptionId</span></span>
+<span data-ttu-id="2c692-130">A ID da assinatura do usuário do Azure.</span><span class="sxs-lookup"><span data-stu-id="2c692-130">The subscription ID for the Azure user.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="2c692-131">-Confirm</span></span>
+<span data-ttu-id="2c692-132">Solicita a confirmação antes de executar o cmdlet.</span><span class="sxs-lookup"><span data-stu-id="2c692-132">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="2c692-133">-WhatIf</span></span>
+<span data-ttu-id="2c692-134">Mostra o que aconteceria se o cmdlet fosse executado.</span><span class="sxs-lookup"><span data-stu-id="2c692-134">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="2c692-135">O cmdlet não é executado.</span><span class="sxs-lookup"><span data-stu-id="2c692-135">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="2c692-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2c692-136">CommonParameters</span></span>
+<span data-ttu-id="2c692-137">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="2c692-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2c692-138">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="2c692-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="2c692-139">INPUTS</span><span class="sxs-lookup"><span data-stu-id="2c692-139">INPUTS</span></span>
+
+### <span data-ttu-id="2c692-140">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity</span><span class="sxs-lookup"><span data-stu-id="2c692-140">Microsoft.Azure.PowerShell.Cmdlets.ImportExport.Models.IImportExportIdentity</span></span>
+
+## <span data-ttu-id="2c692-141">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="2c692-141">OUTPUTS</span></span>
+
+### <span data-ttu-id="2c692-142">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="2c692-142">System.Boolean</span></span>
+
+## <span data-ttu-id="2c692-143">NOTES</span><span class="sxs-lookup"><span data-stu-id="2c692-143">NOTES</span></span>
+
+<span data-ttu-id="2c692-144">ALIASES</span><span class="sxs-lookup"><span data-stu-id="2c692-144">ALIASES</span></span>
+
+<span data-ttu-id="2c692-145">PROPRIEDADES DE PARÂMETRO COMPLEXO</span><span class="sxs-lookup"><span data-stu-id="2c692-145">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="2c692-146">Para criar os parâmetros descritos abaixo, construa uma tabela de hash contendo as propriedades apropriadas.</span><span class="sxs-lookup"><span data-stu-id="2c692-146">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="2c692-147">Para obter informações sobre tabelas de hash, execute Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="2c692-147">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="2c692-148">INPUTOBJECT <IImportExportIdentity> : Parâmetro Identity</span><span class="sxs-lookup"><span data-stu-id="2c692-148">INPUTOBJECT <IImportExportIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="2c692-149">`[Id <String>]`: Caminho da identidade do recurso</span><span class="sxs-lookup"><span data-stu-id="2c692-149">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="2c692-150">`[JobName <String>]`: O nome do trabalho de importação/exportação.</span><span class="sxs-lookup"><span data-stu-id="2c692-150">`[JobName <String>]`: The name of the import/export job.</span></span>
+  - <span data-ttu-id="2c692-151">`[LocationName <String>]`: O nome do local.</span><span class="sxs-lookup"><span data-stu-id="2c692-151">`[LocationName <String>]`: The name of the location.</span></span> <span data-ttu-id="2c692-152">Por exemplo, West US ou westus.</span><span class="sxs-lookup"><span data-stu-id="2c692-152">For example, West US or westus.</span></span>
+  - <span data-ttu-id="2c692-153">`[ResourceGroupName <String>]`: O nome do grupo de recursos identifica exclusivamente o grupo de recursos dentro da assinatura do usuário.</span><span class="sxs-lookup"><span data-stu-id="2c692-153">`[ResourceGroupName <String>]`: The resource group name uniquely identifies the resource group within the user subscription.</span></span>
+  - <span data-ttu-id="2c692-154">`[SubscriptionId <String>]`: A ID da assinatura do usuário do Azure.</span><span class="sxs-lookup"><span data-stu-id="2c692-154">`[SubscriptionId <String>]`: The subscription ID for the Azure user.</span></span>
+
+## <span data-ttu-id="2c692-155">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="2c692-155">RELATED LINKS</span></span>
+
