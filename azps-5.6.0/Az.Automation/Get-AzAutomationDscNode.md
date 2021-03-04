@@ -1,0 +1,247 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Automation.dll-Help.xml
+Module Name: Az.Automation
+ms.assetid: 6493186F-064B-45B7-8DFD-7799B1F2E5C9
+online version: https://docs.microsoft.com/powershell/module/az.automation/get-azautomationdscnode
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationDscNode.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Automation/Automation/help/Get-AzAutomationDscNode.md
+ms.openlocfilehash: 790c280d139f2770f08d5ecfed64acf42d0fc1c3
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101890316"
+---
+# <span data-ttu-id="54d51-101">Get-AzAutomationDscNode</span><span class="sxs-lookup"><span data-stu-id="54d51-101">Get-AzAutomationDscNode</span></span>
+
+## <span data-ttu-id="54d51-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="54d51-102">SYNOPSIS</span></span>
+<span data-ttu-id="54d51-103">Obtém nós DSC da Automação.</span><span class="sxs-lookup"><span data-stu-id="54d51-103">Gets DSC nodes from Automation.</span></span>
+
+## <span data-ttu-id="54d51-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="54d51-104">SYNTAX</span></span>
+
+### <span data-ttu-id="54d51-105">ByAll (Padrão)</span><span class="sxs-lookup"><span data-stu-id="54d51-105">ByAll (Default)</span></span>
+```
+Get-AzAutomationDscNode [-Status <DscNodeStatus>] [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="54d51-106">ById</span><span class="sxs-lookup"><span data-stu-id="54d51-106">ById</span></span>
+```
+Get-AzAutomationDscNode -Id <Guid> [-ResourceGroupName] <String> [-AutomationAccountName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="54d51-107">ByName</span><span class="sxs-lookup"><span data-stu-id="54d51-107">ByName</span></span>
+```
+Get-AzAutomationDscNode [-Status <DscNodeStatus>] -Name <String> [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="54d51-108">ByNodeConfiguration</span><span class="sxs-lookup"><span data-stu-id="54d51-108">ByNodeConfiguration</span></span>
+```
+Get-AzAutomationDscNode [-Status <DscNodeStatus>] -NodeConfigurationName <String> [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="54d51-109">ByConfiguration</span><span class="sxs-lookup"><span data-stu-id="54d51-109">ByConfiguration</span></span>
+```
+Get-AzAutomationDscNode -ConfigurationName <String> [-ResourceGroupName] <String>
+ [-AutomationAccountName] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="54d51-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="54d51-110">DESCRIPTION</span></span>
+<span data-ttu-id="54d51-111">O cmdlet **Get-AzAutomationDscNode** obtém nós APS Desired State Configuration (DSC) da Automação do Azure.</span><span class="sxs-lookup"><span data-stu-id="54d51-111">The **Get-AzAutomationDscNode** cmdlet gets APS Desired State Configuration (DSC) nodes from Azure Automation.</span></span>
+
+## <span data-ttu-id="54d51-112">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="54d51-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="54d51-113">Exemplo 1: Obter todos os nós DSC</span><span class="sxs-lookup"><span data-stu-id="54d51-113">Example 1: Get all DSC nodes</span></span>
+```
+PS C:\>Get-AzAutomationDscNode -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17"
+```
+
+<span data-ttu-id="54d51-114">Este comando obtém metadados para todos os nós DSC na conta de automação chamada Contoso17.</span><span class="sxs-lookup"><span data-stu-id="54d51-114">This command gets metadata for all DSC nodes in the Automation account named Contoso17.</span></span>
+
+### <span data-ttu-id="54d51-115">Exemplo 2: Obter todos os nós DSC para uma configuração DSC</span><span class="sxs-lookup"><span data-stu-id="54d51-115">Example 2: Get all DSC nodes for a DSC configuration</span></span>
+```
+PS C:\>Get-AzAutomationDscNode -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -ConfigurationName "ContosoConfiguration"
+```
+
+<span data-ttu-id="54d51-116">Este comando obtém metadados para todos os nós DSC na conta de Automação chamada Contoso17 mapeadas para uma configuração de nó DSC gerada pela configuração do DSC ContosoConfiguration.</span><span class="sxs-lookup"><span data-stu-id="54d51-116">This command gets metadata for all DSC nodes in the Automation account named Contoso17 that are mapped to a DSC node configuration which was generated by DSC configuration ContosoConfiguration.</span></span>
+
+### <span data-ttu-id="54d51-117">Exemplo 3: Obter um nó DSC por ID</span><span class="sxs-lookup"><span data-stu-id="54d51-117">Example 3: Get a DSC node by ID</span></span>
+```
+PS C:\>Get-AzAutomationDscNode -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Id c0a1718e-d8be-4fa3-91b6-82e1d3a36298
+```
+
+<span data-ttu-id="54d51-118">Este comando obtém metadados em um nó DSC com a ID especificada na conta de automação chamada Contoso17.</span><span class="sxs-lookup"><span data-stu-id="54d51-118">This command gets metadata on a DSC node with the specified ID in the Automation account named Contoso17.</span></span>
+
+### <span data-ttu-id="54d51-119">Exemplo 4: Obter um nó DSC pelo nome</span><span class="sxs-lookup"><span data-stu-id="54d51-119">Example 4: Get a DSC node by name</span></span>
+```
+PS C:\>Get-AzAutomationDscNode -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -Name "Computer14"
+```
+
+<span data-ttu-id="54d51-120">Este comando obtém metadados em um nó DSC com o nome Computer14 na conta de automação chamada Contoso17.</span><span class="sxs-lookup"><span data-stu-id="54d51-120">This command gets metadata on a DSC node with the name Computer14 in the Automation account named Contoso17.</span></span>
+
+### <span data-ttu-id="54d51-121">Exemplo 5: obter todos os nós DSC mapeados para uma configuração de nó DSC</span><span class="sxs-lookup"><span data-stu-id="54d51-121">Example 5: Get all DSC nodes mapped to a DSC node configuration</span></span>
+```
+PS C:\>Get-AzAutomationDscNode -ResourceGroupName "ResourceGroup03" -AutomationAccountName "Contoso17" -NodeConfigurationName "ContosoConfiguration.webserver"
+```
+
+<span data-ttu-id="54d51-122">Este comando obtém metadados em todos os nós DSC na conta de Automação chamada Contoso17 que são mapeadas para uma configuração de nó DSC chamada ContosoConfiguration.webserver.</span><span class="sxs-lookup"><span data-stu-id="54d51-122">This command gets metadata on all DSC nodes in the Automation account named Contoso17 that are mapped to a DSC node configuration named ContosoConfiguration.webserver.</span></span>
+
+## <span data-ttu-id="54d51-123">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="54d51-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="54d51-124">-AutomationAccountName</span><span class="sxs-lookup"><span data-stu-id="54d51-124">-AutomationAccountName</span></span>
+<span data-ttu-id="54d51-125">Especifica o nome da conta de automação que contém os nós DSC que esse cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="54d51-125">Specifies the name of the Automation account that contains the DSC nodes that this cmdlet gets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-126">-ConfigurationName</span><span class="sxs-lookup"><span data-stu-id="54d51-126">-ConfigurationName</span></span>
+<span data-ttu-id="54d51-127">Especifica o nome de uma configuração DSC.</span><span class="sxs-lookup"><span data-stu-id="54d51-127">Specifies the name of a DSC configuration.</span></span>
+<span data-ttu-id="54d51-128">Este cmdlet obtém nós DSC que corresponderem às configurações de nó geradas a partir da configuração especificada por esse parâmetro.</span><span class="sxs-lookup"><span data-stu-id="54d51-128">This cmdlet gets DSC nodes that match the node configurations generated from the configuration that this parameter specifies.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByConfiguration
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-129">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="54d51-129">-DefaultProfile</span></span>
+<span data-ttu-id="54d51-130">As credenciais, conta, locatário e assinatura usadas para comunicação com o azure</span><span class="sxs-lookup"><span data-stu-id="54d51-130">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-131">-Id</span><span class="sxs-lookup"><span data-stu-id="54d51-131">-Id</span></span>
+<span data-ttu-id="54d51-132">Especifica a ID exclusiva do nó DSC que este cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="54d51-132">Specifies the unique ID of the DSC node that this cmdlet gets.</span></span>
+
+```yaml
+Type: System.Guid
+Parameter Sets: ById
+Aliases: NodeId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-133">-Name</span><span class="sxs-lookup"><span data-stu-id="54d51-133">-Name</span></span>
+<span data-ttu-id="54d51-134">Especifica o nome de um nó DSC que esse cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="54d51-134">Specifies the name of a DSC node that this cmdlet gets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByName
+Aliases: NodeName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-135">-NodeConfigurationName</span><span class="sxs-lookup"><span data-stu-id="54d51-135">-NodeConfigurationName</span></span>
+<span data-ttu-id="54d51-136">Especifica o nome de uma configuração de nó que este cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="54d51-136">Specifies the name of a node configuration that this cmdlet gets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByNodeConfiguration
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-137">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="54d51-137">-ResourceGroupName</span></span>
+<span data-ttu-id="54d51-138">Especifica o nome de um grupo de recursos no qual este cmdlet obtém nós DSC.</span><span class="sxs-lookup"><span data-stu-id="54d51-138">Specifies the name of a resource group in which this cmdlet gets DSC nodes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-139">-Status</span><span class="sxs-lookup"><span data-stu-id="54d51-139">-Status</span></span>
+<span data-ttu-id="54d51-140">Especifica o status dos nós DSC que esse cmdlet obtém.</span><span class="sxs-lookup"><span data-stu-id="54d51-140">Specifies the status of the DSC nodes that this cmdlet gets.</span></span>
+<span data-ttu-id="54d51-141">Os valores válidos são:</span><span class="sxs-lookup"><span data-stu-id="54d51-141">Valid values are:</span></span> 
+- <span data-ttu-id="54d51-142">Compatível</span><span class="sxs-lookup"><span data-stu-id="54d51-142">Compliant</span></span> 
+- <span data-ttu-id="54d51-143">NotCompliant</span><span class="sxs-lookup"><span data-stu-id="54d51-143">NotCompliant</span></span>
+- <span data-ttu-id="54d51-144">Falha</span><span class="sxs-lookup"><span data-stu-id="54d51-144">Failed</span></span>
+- <span data-ttu-id="54d51-145">Pendente</span><span class="sxs-lookup"><span data-stu-id="54d51-145">Pending</span></span> 
+- <span data-ttu-id="54d51-146">Recebido</span><span class="sxs-lookup"><span data-stu-id="54d51-146">Received</span></span>
+- <span data-ttu-id="54d51-147">Não responsivo</span><span class="sxs-lookup"><span data-stu-id="54d51-147">Unresponsive</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Automation.Common.DscNodeStatus
+Parameter Sets: ByAll, ByName, ByNodeConfiguration
+Aliases:
+Accepted values: Compliant, NotCompliant, Failed, Pending, Received, Unresponsive
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="54d51-148">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="54d51-148">CommonParameters</span></span>
+<span data-ttu-id="54d51-149">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="54d51-149">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="54d51-150">Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="54d51-150">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="54d51-151">INPUTS</span><span class="sxs-lookup"><span data-stu-id="54d51-151">INPUTS</span></span>
+
+### <span data-ttu-id="54d51-152">System.Guid</span><span class="sxs-lookup"><span data-stu-id="54d51-152">System.Guid</span></span>
+
+### <span data-ttu-id="54d51-153">System.String</span><span class="sxs-lookup"><span data-stu-id="54d51-153">System.String</span></span>
+
+## <span data-ttu-id="54d51-154">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="54d51-154">OUTPUTS</span></span>
+
+### <span data-ttu-id="54d51-155">Microsoft.Azure.Commands.Automation.Model.DscNode</span><span class="sxs-lookup"><span data-stu-id="54d51-155">Microsoft.Azure.Commands.Automation.Model.DscNode</span></span>
+
+## <span data-ttu-id="54d51-156">NOTES</span><span class="sxs-lookup"><span data-stu-id="54d51-156">NOTES</span></span>
+
+## <span data-ttu-id="54d51-157">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="54d51-157">RELATED LINKS</span></span>
+
+[<span data-ttu-id="54d51-158">Register-AzAutomationDscNode</span><span class="sxs-lookup"><span data-stu-id="54d51-158">Register-AzAutomationDscNode</span></span>](./Register-AzAutomationDscNode.md)
+
+[<span data-ttu-id="54d51-159">Set-AzAutomationDscNode</span><span class="sxs-lookup"><span data-stu-id="54d51-159">Set-AzAutomationDscNode</span></span>](./Set-AzAutomationDscNode.md)
+
+[<span data-ttu-id="54d51-160">Unregister-AzAutomationDscNode</span><span class="sxs-lookup"><span data-stu-id="54d51-160">Unregister-AzAutomationDscNode</span></span>](./Unregister-AzAutomationDscNode.md)
+
+

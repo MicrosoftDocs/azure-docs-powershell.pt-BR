@@ -1,0 +1,157 @@
+---
+external help file: ''
+Module Name: Az.CustomProviders
+online version: https://docs.microsoft.com/powershell/module/az.customproviders/get-azcustomproviderassociation
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Get-AzCustomProviderAssociation.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/CustomProviders/help/Get-AzCustomProviderAssociation.md
+ms.openlocfilehash: f7c36ca53b00c0fc99e5afc6e6ba74f4cff62afb
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101891491"
+---
+# <span data-ttu-id="f6db2-101">Get-AzCustomProviderAssociation</span><span class="sxs-lookup"><span data-stu-id="f6db2-101">Get-AzCustomProviderAssociation</span></span>
+
+## <span data-ttu-id="f6db2-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="f6db2-102">SYNOPSIS</span></span>
+<span data-ttu-id="f6db2-103">Obter uma associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-103">Get an association.</span></span>
+
+## <span data-ttu-id="f6db2-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="f6db2-104">SYNTAX</span></span>
+
+### <span data-ttu-id="f6db2-105">Lista (Padrão)</span><span class="sxs-lookup"><span data-stu-id="f6db2-105">List (Default)</span></span>
+```
+Get-AzCustomProviderAssociation -Scope <String> [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="f6db2-106">Obter</span><span class="sxs-lookup"><span data-stu-id="f6db2-106">Get</span></span>
+```
+Get-AzCustomProviderAssociation -Name <String> -Scope <String> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="f6db2-107">GetViaIdentity</span><span class="sxs-lookup"><span data-stu-id="f6db2-107">GetViaIdentity</span></span>
+```
+Get-AzCustomProviderAssociation -InputObject <ICustomProvidersIdentity> [-DefaultProfile <PSObject>]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="f6db2-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="f6db2-108">DESCRIPTION</span></span>
+<span data-ttu-id="f6db2-109">Obter uma associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-109">Get an association.</span></span>
+
+## <span data-ttu-id="f6db2-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="f6db2-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="f6db2-111">Exemplo 1: Listar associações de provedores personalizadas</span><span class="sxs-lookup"><span data-stu-id="f6db2-111">Example 1: List custom provider associations</span></span>
+```powershell
+PS C:\> Get-AzCustomProviderAssociation
+
+Location  Name             Type
+--------  ----             ----
+East US 2 MyAssoc   Microsoft.CustomProviders/associations
+```
+
+<span data-ttu-id="f6db2-112">Listar todas as associações de provedores personalizadas para um determinado escopo.</span><span class="sxs-lookup"><span data-stu-id="f6db2-112">List all custom provider associations for a given scope.</span></span>
+
+### <span data-ttu-id="f6db2-113">Exemplo 2: Obter uma associação</span><span class="sxs-lookup"><span data-stu-id="f6db2-113">Example 2: Get an association</span></span>
+```powershell
+PS C:\> Get-AzCustomProviderAssociation -Scope $resourceId -Name MyAssoc
+
+Location  Name             Type
+--------  ----             ----
+East US 2 MyAssoc   Microsoft.CustomProviders/associations
+```
+
+<span data-ttu-id="f6db2-114">Obter detalhes de uma única associação CustomProvider</span><span class="sxs-lookup"><span data-stu-id="f6db2-114">Get details for a single CustomProvider association</span></span>
+
+## <span data-ttu-id="f6db2-115">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="f6db2-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="f6db2-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="f6db2-116">-DefaultProfile</span></span>
+<span data-ttu-id="f6db2-117">As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="f6db2-117">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f6db2-118">-InputObject</span><span class="sxs-lookup"><span data-stu-id="f6db2-118">-InputObject</span></span>
+<span data-ttu-id="f6db2-119">Parâmetro Identity Para construir, consulte a seção NOTES para propriedades INPUTOBJECT e crie uma tabela de hash.</span><span class="sxs-lookup"><span data-stu-id="f6db2-119">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.CustomProviders.Models.ICustomProvidersIdentity
+Parameter Sets: GetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f6db2-120">-Name</span><span class="sxs-lookup"><span data-stu-id="f6db2-120">-Name</span></span>
+<span data-ttu-id="f6db2-121">O nome da associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-121">The name of the association.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases: AssociationName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f6db2-122">-Scope</span><span class="sxs-lookup"><span data-stu-id="f6db2-122">-Scope</span></span>
+<span data-ttu-id="f6db2-123">O escopo da associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-123">The scope of the association.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: Get, List
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="f6db2-124">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="f6db2-124">CommonParameters</span></span>
+<span data-ttu-id="f6db2-125">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="f6db2-125">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="f6db2-126">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="f6db2-126">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="f6db2-127">INPUTS</span><span class="sxs-lookup"><span data-stu-id="f6db2-127">INPUTS</span></span>
+
+### <span data-ttu-id="f6db2-128">Microsoft.Azure.PowerShell.Cmdlets.CustomProviders.Models.ICustomProvidersIdentity</span><span class="sxs-lookup"><span data-stu-id="f6db2-128">Microsoft.Azure.PowerShell.Cmdlets.CustomProviders.Models.ICustomProvidersIdentity</span></span>
+
+## <span data-ttu-id="f6db2-129">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="f6db2-129">OUTPUTS</span></span>
+
+### <span data-ttu-id="f6db2-130">Microsoft.Azure.PowerShell.Cmdlets.CustomProviders.Models.Api20180901Preview.IAssociation</span><span class="sxs-lookup"><span data-stu-id="f6db2-130">Microsoft.Azure.PowerShell.Cmdlets.CustomProviders.Models.Api20180901Preview.IAssociation</span></span>
+
+## <span data-ttu-id="f6db2-131">NOTES</span><span class="sxs-lookup"><span data-stu-id="f6db2-131">NOTES</span></span>
+
+<span data-ttu-id="f6db2-132">ALIASES</span><span class="sxs-lookup"><span data-stu-id="f6db2-132">ALIASES</span></span>
+
+<span data-ttu-id="f6db2-133">PROPRIEDADES DE PARÂMETRO COMPLEXO</span><span class="sxs-lookup"><span data-stu-id="f6db2-133">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="f6db2-134">Para criar os parâmetros descritos abaixo, construa uma tabela de hash contendo as propriedades apropriadas.</span><span class="sxs-lookup"><span data-stu-id="f6db2-134">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="f6db2-135">Para obter informações sobre tabelas de hash, execute Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="f6db2-135">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="f6db2-136">INPUTOBJECT <ICustomProvidersIdentity> : Parâmetro Identity</span><span class="sxs-lookup"><span data-stu-id="f6db2-136">INPUTOBJECT <ICustomProvidersIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="f6db2-137">`[AssociationName <String>]`: O nome da associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-137">`[AssociationName <String>]`: The name of the association.</span></span>
+  - <span data-ttu-id="f6db2-138">`[Id <String>]`: Caminho da identidade do recurso</span><span class="sxs-lookup"><span data-stu-id="f6db2-138">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="f6db2-139">`[ResourceGroupName <String>]`: O nome do grupo de recursos.</span><span class="sxs-lookup"><span data-stu-id="f6db2-139">`[ResourceGroupName <String>]`: The name of the resource group.</span></span>
+  - <span data-ttu-id="f6db2-140">`[ResourceProviderName <String>]`: O nome do provedor de recursos.</span><span class="sxs-lookup"><span data-stu-id="f6db2-140">`[ResourceProviderName <String>]`: The name of the resource provider.</span></span>
+  - <span data-ttu-id="f6db2-141">`[Scope <String>]`: O escopo da associação.</span><span class="sxs-lookup"><span data-stu-id="f6db2-141">`[Scope <String>]`: The scope of the association.</span></span>
+  - <span data-ttu-id="f6db2-142">`[SubscriptionId <String>]`: A ID da assinatura do Azure.</span><span class="sxs-lookup"><span data-stu-id="f6db2-142">`[SubscriptionId <String>]`: The Azure subscription ID.</span></span> <span data-ttu-id="f6db2-143">Esta é uma cadeia de caracteres formatada por GUID (por exemplo, 000000000-0000-0000-0000-0000000000000000)</span><span class="sxs-lookup"><span data-stu-id="f6db2-143">This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</span></span>
+
+## <span data-ttu-id="f6db2-144">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="f6db2-144">RELATED LINKS</span></span>
+
