@@ -1,0 +1,206 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
+Module Name: Az.Synapse
+online version: https://docs.microsoft.com/powershell/module/az.synapse/get-azsynapseactivityrun
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseActivityRun.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseActivityRun.md
+ms.openlocfilehash: c32b0714a64e0fa97b5376861360bc3645995418
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101889118"
+---
+# <span data-ttu-id="3a56a-101">Get-AzSynapseActivityRun</span><span class="sxs-lookup"><span data-stu-id="3a56a-101">Get-AzSynapseActivityRun</span></span>
+
+## <span data-ttu-id="3a56a-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="3a56a-102">SYNOPSIS</span></span>
+<span data-ttu-id="3a56a-103">Obtém informações sobre as atividades executados para uma operação de pipeline.</span><span class="sxs-lookup"><span data-stu-id="3a56a-103">Gets information about activity runs for a pipeline run.</span></span>
+
+## <span data-ttu-id="3a56a-104">SINTAXE</span><span class="sxs-lookup"><span data-stu-id="3a56a-104">SYNTAX</span></span>
+
+### <span data-ttu-id="3a56a-105">GetByName (Padrão)</span><span class="sxs-lookup"><span data-stu-id="3a56a-105">GetByName (Default)</span></span>
+```
+Get-AzSynapseActivityRun -WorkspaceName <String> -PipelineName <String> -PipelineRunId <String>
+ -RunStartedAfter <DateTimeOffset> -RunStartedBefore <DateTimeOffset> [-ActivityName <String>]
+ [-Status <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="3a56a-106">GetByObject</span><span class="sxs-lookup"><span data-stu-id="3a56a-106">GetByObject</span></span>
+```
+Get-AzSynapseActivityRun -WorkspaceObject <PSSynapseWorkspace> -PipelineName <String> -PipelineRunId <String>
+ -RunStartedAfter <DateTimeOffset> -RunStartedBefore <DateTimeOffset> [-ActivityName <String>]
+ [-Status <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="3a56a-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="3a56a-107">DESCRIPTION</span></span>
+<span data-ttu-id="3a56a-108">O cmdlet **Get-AzSynapseActivityRun** obtém informações sobre as executações no espaço de trabalho para a operação de pipeline especificada que aconteceu no determinado período de tempo.</span><span class="sxs-lookup"><span data-stu-id="3a56a-108">The **Get-AzSynapseActivityRun** cmdlet gets information about runs in workspace for the specified pipeline run that happened in the given timeframe.</span></span> <span data-ttu-id="3a56a-109">Além disso, você pode especificar filtros para o nome da atividade e o status da executar.</span><span class="sxs-lookup"><span data-stu-id="3a56a-109">Additionally, you can specify filters for activity name and the status of the run.</span></span>
+
+## <span data-ttu-id="3a56a-110">EXEMPLOS</span><span class="sxs-lookup"><span data-stu-id="3a56a-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="3a56a-111">Exemplo 1</span><span class="sxs-lookup"><span data-stu-id="3a56a-111">Example 1</span></span>
+```powershell
+PS C:\> Get-AzSynapseActivityRun -WorkspaceName ContosoWorkspace -PipelineName ContosoPipeline -PipelineRunId "f288712d-fb08-4cb8-96ef-82d3b9b30621" -RunStartedAfter [DateTimeOffset]"2018-09-01T21:00" -RunStartedBefore [DateTimeOffset]"2018-09-30T21:00"
+```
+
+<span data-ttu-id="3a56a-112">Este comando obtém detalhes sobre todas as atividades executados no pipeline chamado ContosoPipeline executado com a ID "f288712d-fb08-4cb8-96ef-82d3b9b30621" que aconteceu entre "2018-09-01T21:00" e "2018-09-30T21:00".</span><span class="sxs-lookup"><span data-stu-id="3a56a-112">This command gets details about all activity runs in the pipeline called ContosoPipeline run with ID "f288712d-fb08-4cb8-96ef-82d3b9b30621" that happened between "2018-09-01T21:00" and "2018-09-30T21:00".</span></span>
+
+### <span data-ttu-id="3a56a-113">Exemplo 2</span><span class="sxs-lookup"><span data-stu-id="3a56a-113">Example 2</span></span>
+```powershell
+PS C:\> $ws = Get-AzSynapseWorkspace -Name ContosoWorkspace
+PS C:\> $ws | Get-AzSynapseActivityRun -PipelineName ContosoPipeline -PipelineRunId "f288712d-fb08-4cb8-96ef-82d3b9b30621" -RunStartedAfter [DateTimeOffset]"2018-09-01T21:00" -RunStartedBefore [DateTimeOffset]"2018-09-30T21:00"
+```
+
+<span data-ttu-id="3a56a-114">Este comando obtém detalhes sobre todas as atividades executados no pipeline chamado ContosoPipeline executado com iD "f288712d-fb08-4cb8-96ef-82d3b9b30621" que aconteceu entre "2018-09-01T21:00" e "2018-09-30T21:00" por meio do pipeline.</span><span class="sxs-lookup"><span data-stu-id="3a56a-114">This command gets details about all activity runs in the pipeline called ContosoPipeline run with ID "f288712d-fb08-4cb8-96ef-82d3b9b30621" that happened between "2018-09-01T21:00" and "2018-09-30T21:00" through pipeline.</span></span>
+
+## <span data-ttu-id="3a56a-115">PARÂMETROS</span><span class="sxs-lookup"><span data-stu-id="3a56a-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="3a56a-116">-ActivityName</span><span class="sxs-lookup"><span data-stu-id="3a56a-116">-ActivityName</span></span>
+<span data-ttu-id="3a56a-117">O nome da atividade.</span><span class="sxs-lookup"><span data-stu-id="3a56a-117">The name of the activity.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="3a56a-118">-DefaultProfile</span></span>
+<span data-ttu-id="3a56a-119">As credenciais, conta, locatário e assinatura usadas para comunicação com o Azure.</span><span class="sxs-lookup"><span data-stu-id="3a56a-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-120">-PipelineName</span><span class="sxs-lookup"><span data-stu-id="3a56a-120">-PipelineName</span></span>
+<span data-ttu-id="3a56a-121">O nome do pipeline.</span><span class="sxs-lookup"><span data-stu-id="3a56a-121">The pipeline name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-122">-PipelineRunId</span><span class="sxs-lookup"><span data-stu-id="3a56a-122">-PipelineRunId</span></span>
+<span data-ttu-id="3a56a-123">O identificador de executar pipeline.</span><span class="sxs-lookup"><span data-stu-id="3a56a-123">The pipeline run identifier.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-124">-RunStartedAfter</span><span class="sxs-lookup"><span data-stu-id="3a56a-124">-RunStartedAfter</span></span>
+<span data-ttu-id="3a56a-125">A hora em que o evento de executar foi atualizado no formato 'ISO 8601'.</span><span class="sxs-lookup"><span data-stu-id="3a56a-125">The time at or after which the run event was updated in 'ISO 8601' format.</span></span>
+
+```yaml
+Type: System.DateTimeOffset
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-126">-RunStartedBefore</span><span class="sxs-lookup"><span data-stu-id="3a56a-126">-RunStartedBefore</span></span>
+<span data-ttu-id="3a56a-127">A hora em que o evento de executar foi atualizado no formato 'ISO 8601'.</span><span class="sxs-lookup"><span data-stu-id="3a56a-127">The time at or before which the run event was updated in 'ISO 8601' format.</span></span>
+
+```yaml
+Type: System.DateTimeOffset
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-128">-Status</span><span class="sxs-lookup"><span data-stu-id="3a56a-128">-Status</span></span>
+<span data-ttu-id="3a56a-129">O status do pipeline executado.</span><span class="sxs-lookup"><span data-stu-id="3a56a-129">The status of the pipeline run.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-130">-WorkspaceName</span><span class="sxs-lookup"><span data-stu-id="3a56a-130">-WorkspaceName</span></span>
+<span data-ttu-id="3a56a-131">Nome do espaço de trabalho Synapse.</span><span class="sxs-lookup"><span data-stu-id="3a56a-131">Name of Synapse workspace.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-132">-WorkspaceObject</span><span class="sxs-lookup"><span data-stu-id="3a56a-132">-WorkspaceObject</span></span>
+<span data-ttu-id="3a56a-133">objeto de entrada do espaço de trabalho, geralmente passado pelo pipeline.</span><span class="sxs-lookup"><span data-stu-id="3a56a-133">workspace input object, usually passed through the pipeline.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace
+Parameter Sets: GetByObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="3a56a-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="3a56a-134">CommonParameters</span></span>
+<span data-ttu-id="3a56a-135">Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="3a56a-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="3a56a-136">Para obter mais informações, [consulte about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="3a56a-136">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="3a56a-137">INPUTS</span><span class="sxs-lookup"><span data-stu-id="3a56a-137">INPUTS</span></span>
+
+### <span data-ttu-id="3a56a-138">Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace</span><span class="sxs-lookup"><span data-stu-id="3a56a-138">Microsoft.Azure.Commands.Synapse.Models.PSSynapseWorkspace</span></span>
+
+## <span data-ttu-id="3a56a-139">SAÍDAS</span><span class="sxs-lookup"><span data-stu-id="3a56a-139">OUTPUTS</span></span>
+
+### <span data-ttu-id="3a56a-140">Microsoft.Azure.Commands.Synapse.Models.PSActivityRunsQueryResponse</span><span class="sxs-lookup"><span data-stu-id="3a56a-140">Microsoft.Azure.Commands.Synapse.Models.PSActivityRunsQueryResponse</span></span>
+
+## <span data-ttu-id="3a56a-141">NOTES</span><span class="sxs-lookup"><span data-stu-id="3a56a-141">NOTES</span></span>
+
+## <span data-ttu-id="3a56a-142">LINKS RELACIONADOS</span><span class="sxs-lookup"><span data-stu-id="3a56a-142">RELATED LINKS</span></span>
