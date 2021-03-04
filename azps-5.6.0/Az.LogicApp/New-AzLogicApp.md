@@ -1,0 +1,375 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.LogicApp.dll-Help.xml
+Module Name: Az.LogicApp
+ms.assetid: 8679240C-EA47-41C5-B8C1-A3C99547F42B
+online version: https://docs.microsoft.com/powershell/module/az.logicapp/new-azlogicapp
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/New-AzLogicApp.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/LogicApp/LogicApp/help/New-AzLogicApp.md
+ms.openlocfilehash: 98fb733f661d4d1c5a6c50ce472005763584a72c
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101887505"
+---
+# New-AzLogicApp
+
+## SYNOPSIS
+Cria um aplicativo lógico em um grupo de recursos.
+
+## SINTAXE
+
+### LogicAppWithDefinitionParameterSet
+```
+New-AzLogicApp -ResourceGroupName <String> -Name <String> -Location <String> [-State <String>]
+ -Definition <Object> [-IntegrationAccountId <String>] [-Parameters <Object>] [-ParameterFilePath <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### LogicAppWithDefinitionFileParameterSet
+```
+New-AzLogicApp -ResourceGroupName <String> -Name <String> -Location <String> [-State <String>]
+ -DefinitionFilePath <String> [-IntegrationAccountId <String>] [-Parameters <Object>]
+ [-ParameterFilePath <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## DESCRIPTION
+O cmdlet **New-AzLogicApp** cria um aplicativo lógico usando o recurso Aplicativos Lógicos.
+Um aplicativo lógico é uma coleção de ações ou gatilhos definidos na definição do Aplicativo Lógico.
+Este cmdlet retorna um **objeto Workflow.**
+Você pode criar um aplicativo lógico especificando um nome, local, definição do Aplicativo Lógico, grupo de recursos e plano.
+A Logic App definition and parameters are formatted in JavaScript Object Notation (JSON).
+Você pode usar um aplicativo lógico como modelo para definição e parâmetros.
+Este módulo dá suporte a parâmetros dinâmicos.
+Para usar um parâmetro dinâmico, digite-o no comando.
+Para descobrir os nomes dos parâmetros dinâmicos, digite um hífen (-) após o nome do cmdlet e pressione a tecla Tab repetidamente para passar pelos parâmetros disponíveis.
+Se você omitir um parâmetro de modelo necessário, o cmdlet solicitará o valor.
+Os valores de arquivo de parâmetro de modelo especificados na linha de comando têm precedência sobre os valores de parâmetro de modelo em um objeto de parâmetro de modelo.
+
+## EXEMPLOS
+
+### Exemplo 1: Criar um aplicativo lógico usando caminhos de arquivo de definição e parâmetros
+```
+PS C:\>New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03" -State "Enabled" -AppServicePlan "ServicePlan01" -DefinitionFilePath "d:\workflows\Definition03.json" -ParameterFilePath "d:\workflows\Parameters03.json"
+Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp03
+Name                         : LogicApp03
+Type                         : Microsoft.Logic/workflows
+Location                     : westus
+ChangedTime                  : 1/13/2016 2:41:39 PM
+CreatedTime                  : 1/13/2016 2:41:39 PM
+AccessEndpoint               : https://westus.logic.azure.com:443/subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourcegroups/ResourceGroup1/providers/Microsoft.Logic/workflows/LogicApp1
+State                        : Enabled
+DefinitionLinkUri            : 
+DefinitionLinkContentVersion : 
+Definition                   : {$schema, contentVersion, parameters, triggers...} 
+ParametersLinkUri            : 
+ParametersLinkContentVersion : 
+Parameters                   : {[destinationUri, Microsoft.Azure.Management.Logic.Models.WorkflowParameter]} 
+SkuName                      : Standard
+PlanName                     : ServicePlan01
+PlanType                     : Microsoft.Web/ServerFarms
+PlanId                       : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/ResourceGroup11/providers/Microsoft.Web/serverfarms/ServicePlan1
+Version                      : 08587489107859952120
+```
+
+Esse comando cria um aplicativo lógico no grupo de recursos especificado.
+O aplicativo lógico inclui a definição e os parâmetros especificados por caminhos de arquivo.
+
+### Exemplo 2: Criar um aplicativo lógico usando objetos de definição e parâmetros
+```
+PS C:\>New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp05" -Location "westus" -State "Enabled" -AppServicePlan "ServicePlan01" -Definition [IO.File]::ReadAllText("d:\Workflows\Definition.json") -Parameters @{name1="value1", name2="value2"}
+Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp05
+Name                         : LogicApp05
+Type                         : Microsoft.Logic/workflows
+Location                     : westus
+ChangedTime                  : 1/13/2016 2:41:39 PM
+CreatedTime                  : 1/13/2016 2:41:39 PM
+AccessEndpoint               : https://westus.logic.azure.com:443/subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourcegroups/ResourceGroup11/providers/Microsoft.Logic/workflows/LogicApp05
+State                        : Enabled
+DefinitionLinkUri            : 
+DefinitionLinkContentVersion : 
+Definition                   : {$schema, contentVersion, parameters, triggers...} 
+ParametersLinkUri            : 
+ParametersLinkContentVersion : 
+Parameters                   : {[destinationUri, Microsoft.Azure.Management.Logic.Models.WorkflowParameter]} 
+SkuName                      : Standard
+PlanName                     : ServicePlan1
+PlanType                     : Microsoft.Web/ServerFarms
+PlanId                       : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/ResourceGroup11/providers/Microsoft.Web/serverfarms/ServicePlan1
+Version                      : 08587489107859952120
+```
+
+Este comando cria um aplicativo lógico no grupo de recursos especificado.
+
+### Exemplo 3: Criar um aplicativo lógico usando o pipeline para especificar o grupo de recursos
+```
+PS C:\>Get-AzResourceGroup -ResourceGroupName "ResourceGroup11" | New-AzLogicApp -Name "LogicApp11" -State "Enabled" -AppServicePlan "ServicePlan01" -DefinitionFilePath "d:\Workflow\Definition.json" -ParameterFilePath "d:\Workflow\Parameters.json"
+Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp11
+Name                         : LogicApp11
+Type                         : Microsoft.Logic/workflows
+Location                     : westus
+ChangedTime                  : 1/13/2016 2:41:39 PM
+CreatedTime                  : 1/13/2016 2:41:39 PM
+AccessEndpoint               : https://westus.logic.azure.com:443/subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourcegroups/ResourceGroup11/providers/Microsoft.Logic/workflows/LogicApp11
+State                        : Enabled
+DefinitionLinkUri            : 
+DefinitionLinkContentVersion : 
+Definition                   : {$schema, contentVersion, parameters, triggers...} 
+ParametersLinkUri            : 
+ParametersLinkContentVersion : 
+Parameters                   : {[destinationUri, Microsoft.Azure.Management.Logic.Models.WorkflowParameter]} 
+SkuName                      : Standard
+PlanName                     : ServicePlan01
+PlanType                     : Microsoft.Web/ServerFarms
+PlanId                       : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/ResourceGroup11/providers/Microsoft.Web/serverfarms/ServicePlan01
+Version                      : 08587489107859952120
+```
+
+Este comando obtém o grupo de recursos chamado ResourceGroup11 usando o cmdlet Get-AzResourceGroup.
+O comando passa esse grupo de recursos para o cmdlet atual usando o operador de pipeline.
+O cmdlet atual cria um aplicativo lógico nesse grupo de recursos.
+O aplicativo lógico inclui a definição e os parâmetros especificados por caminhos de arquivo.
+
+### Exemplo 4: criar um aplicativo lógico com base em um aplicativo lógico existente
+```
+PS C:\>$Workflow = Get-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp03"
+PS C:\> New-AzLogicApp -ResourceGroupName "ResourceGroup11" -Name "LogicApp13" -State "Enabled" -AppServicePlan "ServicePlan01" -Definition $Workflow.Definition -Parameters $Workflow.Parameters
+Id                           : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/LogicAppCmdletTest/providers/Microsoft.Logic/workflows/LogicApp13
+Name                         : LogicApp13
+Type                         : Microsoft.Logic/workflows
+Location                     : westus
+ChangedTime                  : 1/13/2016 2:41:39 PM
+CreatedTime                  : 1/13/2016 2:41:39 PM
+AccessEndpoint               : https://westus.logic.azure.com:443/subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourcegroups/ResourceGroup11/providers/Microsoft.Logic/workflows/LogicApp13
+State                        : Enabled
+DefinitionLinkUri            : 
+DefinitionLinkContentVersion : 
+Definition                   : {$schema, contentVersion, parameters, triggers...} 
+ParametersLinkUri            : 
+ParametersLinkContentVersion : 
+Parameters                   : {[destinationUri, Microsoft.Azure.Management.Logic.Models.WorkflowParameter]} 
+SkuName                      : Standard
+PlanName                     : ServicePlan01
+PlanType                     : Microsoft.Web/ServerFarms
+PlanId                       : /subscriptions/57b7034d-72d4-433d-ace2-a7460aed6a99/resourceGroups/ResourceGroup11/providers/Microsoft.Web/serverfarms/ServicePlan01
+Version                      : 08587489107859952120
+```
+
+O primeiro comando obtém o aplicativo lógico chamado LogicApp03 usando Get-AzLogicApp cmdlet.
+O comando armazena o aplicativo lógico na variável $Workflow.
+O segundo comando cria um novo aplicativo lógico que usa a definição e os parâmetros do aplicativo lógico armazenado $Workflow.
+
+## PARÂMETROS
+
+### -DefaultProfile
+As credenciais, conta, locatário e assinatura usadas para comunicação com o azure
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Definition
+Especifica a definição para seu aplicativo lógico como um objeto ou uma cadeia de caracteres no formato JSON (Notação de Objeto JavaScript).
+
+```yaml
+Type: System.Object
+Parameter Sets: LogicAppWithDefinitionParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefinitionFilePath
+Especifica a definição de um aplicativo lógico como o caminho de um arquivo de definição no formato JSON.
+
+```yaml
+Type: System.String
+Parameter Sets: LogicAppWithDefinitionFileParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IntegrationAccountId
+Especifica uma ID de conta de integração para o aplicativo lógico.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Location
+Especifica o local do aplicativo lógico.
+Insira um local do data center do Azure, como o Oeste dos EUA ou o Sudeste Asiático.
+Você pode colocar um aplicativo lógico em qualquer local.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Name
+Especifica o nome do aplicativo lógico.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ParameterFilePath
+Especifica o caminho de um arquivo de parâmetro formatado JSON.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameters
+Especifica um objeto de coleção de parâmetros para o Aplicativo Lógico.
+Especifique uma tabela de hash, Dicionário \<string\> ou \<string, WorkflowParameter\> Dicionário.
+
+```yaml
+Type: System.Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Especifica o nome de um grupo de recursos.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -State
+Especifica o estado do aplicativo lógico.
+Os valores aceitáveis para este parâmetro são: Habilitado e Desabilitado.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Enabled, Disabled
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Solicita a confirmação antes de executar o cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Mostra o que aconteceria se o cmdlet fosse executado.
+O cmdlet não é executado.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUTS
+
+### System.String
+
+## SAÍDAS
+
+### System.Object
+
+## NOTES
+
+## LINKS RELACIONADOS
+
+[Get-AzLogicApp](./Get-AzLogicApp.md)
+
+[Remove-AzLogicApp](./Remove-AzLogicApp.md)
+
+[Set-AzLogicApp](./Set-AzLogicApp.md)
+
+[Start-AzLogicApp](./Start-AzLogicApp.md)
+
+

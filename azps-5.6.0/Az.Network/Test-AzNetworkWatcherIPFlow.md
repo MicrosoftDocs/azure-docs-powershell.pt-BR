@@ -1,0 +1,347 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/powershell/module/az.network/test-aznetworkwatcheripflow
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherIPFlow.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Test-AzNetworkWatcherIPFlow.md
+ms.openlocfilehash: 8be10fd630bbc9d4e1952150728d144b5f552fe6
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pt-BR
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101885352"
+---
+# Test-AzNetworkWatcherIPFlow
+
+## SYNOPSIS
+Retorna se o pacote é permitido ou negado a ou a partir de um destino específico.
+
+## SINTAXE
+
+### SetByResource (Padrão)
+```
+Test-AzNetworkWatcherIPFlow -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
+ -Direction <String> -Protocol <String> -RemoteIPAddress <String> -LocalIPAddress <String> -LocalPort <String>
+ [-RemotePort <String>] [-TargetNetworkInterfaceId <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### SetByName
+```
+Test-AzNetworkWatcherIPFlow -NetworkWatcherName <String> -ResourceGroupName <String>
+ -TargetVirtualMachineId <String> -Direction <String> -Protocol <String> -RemoteIPAddress <String>
+ -LocalIPAddress <String> -LocalPort <String> [-RemotePort <String>] [-TargetNetworkInterfaceId <String>]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### SetByLocation
+```
+Test-AzNetworkWatcherIPFlow -Location <String> -TargetVirtualMachineId <String> -Direction <String>
+ -Protocol <String> -RemoteIPAddress <String> -LocalIPAddress <String> -LocalPort <String>
+ [-RemotePort <String>] [-TargetNetworkInterfaceId <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+O cmdlet Test-AzNetworkWatcherIPFlow, para um recurso VM especificado e um pacote com direção especificada usando locais e remotos, endereços IP e portas, retorna se o pacote é permitido ou negado.
+
+## EXEMPLOS
+
+### Exemplo 1: Executar Test-AzNetworkWatcherIPFlow
+```
+$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
+$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
+$VM = Get-AzVM -ResourceGroupName testResourceGroup -Name VM0 
+$Nics = Get-AzNetworkInterface | Where-Object { $vm.NetworkProfile.NetworkInterfaces.Id -contains $_.Id }
+
+Test-AzNetworkWatcherIPFlow -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id -Direction Outbound -Protocol TCP -LocalIPAddress $nics[0].IpConfigurations[0].PrivateIpAddress -LocalPort 6895 -RemoteIPAddress 204.79.197.200 -RemotePort 80
+```
+
+Obtém o Watcher de Rede no Centro Oeste dos EUA para essa assinatura, obtém a VM e as Interfaces de Rede associadas. Em seguida, para a primeira Interface de Rede, executa Test-AzNetworkWatcherIPFlow o primeiro IP da primeira Interface de Rede para uma conexão de saída a um IP na Internet.
+
+## PARÂMETROS
+
+### -AsJob
+Executar cmdlet em segundo plano
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+As credenciais, conta, locatário e assinatura usadas para comunicação com o azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Direction
+Direção.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: Inbound, Outbound
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LocalIPAddress
+Endereço IP local.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -LocalPort
+Porta Local.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Location
+Local do watcher de rede.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByLocation
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NetworkWatcher
+O recurso do watcher de rede.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
+Parameter Sets: SetByResource
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -NetworkWatcherName
+O nome do watcher de rede.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByName
+Aliases: Name
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Protocol
+Protocolo.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: TCP, UDP
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RemoteIPAddress
+Endereço IP remoto.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -RemotePort
+Porta remota.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+O nome do grupo de recursos do watcher de rede.
+
+```yaml
+Type: System.String
+Parameter Sets: SetByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -TargetNetworkInterfaceId
+ID da interface de rede de destino.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetVirtualMachineId
+A ID da máquina virtual de destino.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+Este cmdlet dá suporte aos parâmetros comuns: -Depurar, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction e -WarningVariable. Para obter mais informações, consulte about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## INPUTS
+
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
+
+### System.String
+
+## SAÍDAS
+
+### Microsoft.Azure.Commands.Network.Models.PSIPFlowVerifyResult
+
+## NOTES
+Palavras-chave: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, flow, ip 
+
+## LINKS RELACIONADOS
+
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+
+[Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+
+[Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
+
+[Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
+
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+
+[Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
+
+[Set-AzNetworkWatcherConfigFlowLog](./Set-AzNetworkWatcherConfigFlowLog.md)
+
+[Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
+
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
+
+[Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
+
+[Get-AzNetworkWatcherReachabilityProvidersList](./Get-AzNetworkWatcherReachabilityProvidersList.md)
+
+[Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
+
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
+
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
